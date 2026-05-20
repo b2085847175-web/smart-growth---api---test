@@ -1,8 +1,10 @@
-target_env: "console"
+target_env: "dev"
 
 cases:
   - name: "context_hair_growth_inquiry"
     context_messages:
+      - role: "user"
+        content: "https://item.taobao.com/item.htm?id=764834167209"
       - role: "user"
         content: "https://mobile.yangkeduo.com/goods.html?goods_id=926584356669&_oak_rcto=YWJcNPdQab56BvWE2czKFNJGNGGqb-Z19Yr-xfH3XLFCjj8WHm3c_oVCbYh-cdxbRgU&page_from=63&_oc_trace_mark=199&_oc_mkt_domain=197&_oc_refer_ad=1&_oc_mkt_tr_sc=ddvideo_search_goodslist&_oc_adinfo=eyJzY2VuZV9pZCI6Mn0%3D&_oc_mkt_tr_token=zacjtrar33wisvs4wg6gyi3kfvcnnuckyx33kn4hhdwbulnthiwhgzfd4qk5nevd25jshbaxdynqnjfwttgtwput5ldxl4bgpxtsgeq&_oak_actype=34&_oak_sub_actype=0"
       - role: "assistant"

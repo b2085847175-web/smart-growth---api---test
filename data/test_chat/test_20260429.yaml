@@ -1,8 +1,10 @@
-target_env: "console"
+target_env: "dev"
 
 cases:
   - name: "context_lactation_usage_inquiry"
     context_messages:
+      - role: "user"
+        content: "https://item.taobao.com/item.htm?id=764834167209"
       - role: "user"
         content: "哺乳期可以用吗？"
       - role: "assistant"

@@ -4,6 +4,8 @@ cases:
   - name: "context_shipping_location_inquiry"
     context_messages:
       - role: "user"
+        content: "https://item.taobao.com/item.htm?id=764834167209"
+      - role: "user"
         content: "https://mobile.yangkeduo.com/goods.html?goods_id=866880505149&_oak_rcto=YWI-yx8-33PkySWctsFk5omAIPXOXPsJ7CPPIj9_XSsG-HGkFout-knP&page_from=63&_oc_trace_mark=199&_oc_adinfo=eyJwYWdlX3NuIjoxMDAxNCwic2NlbmVfaWQiOjJ9&_oc_refer_ad=1&_oak_actype=34&_oak_sub_actype=0"
       - role: "assistant"
         content: "亲亲，这款面霜含有水杨酸、烟酰胺、透明质酸等多重功效成分，可以有效收缩毛孔、淡化痘印、深层保湿，同时修复肌肤屏障哦"

@@ -1,8 +1,10 @@
 target_env: "dev"
 
 cases:
-  - name: 测试1
+  - name: "测试1"
+    context_messages:
+      - role: "user"
+        content: "https://item.taobao.com/item.htm?id=764834167209"
     turns:
       - question: "我等着收5元"
         expect: "打招呼"
-   

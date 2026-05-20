@@ -1,8 +1,10 @@
-target_env: "console"
+target_env: "dev"
 
 cases:
   - name: "context_product_function_inquiry"
     context_messages:
+      - role: "user"
+        content: "https://item.taobao.com/item.htm?id=764834167209"
       - role: "user"
         content: "这一款去痘痘痘印管用吗？"
       - role: "user"

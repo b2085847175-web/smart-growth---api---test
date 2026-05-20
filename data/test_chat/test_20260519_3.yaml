@@ -1,0 +1,20 @@
+target_env: "dev"
+
+cases:
+  - name: "context_cleanser_matching_mud_mask"
+    context_messages:
+      - role: "user"
+        content: "https://item.taobao.com/item.htm?id=764834167209"
+      - role: "user"
+        content: "https://h5.m.taobao.com/awp/core/detail.htm?xxc=sendProduct&id=1027827639462&identifier=2220454749301_3"
+      - role: "assistant"
+        content: "亲亲，这款洁面乳主打深层清洁、控油和祛痘，坚持用2-4周就能看到黑头、闭口减少，出油量下降，洗完柔润不紧绷哦"
+      - role: "user"
+        content: "警告"
+      - role: "assistant"
+        content: "[图片消息]"
+      - role: "user"
+        content: "警告"
+    turns:
+      - question: "有没有配套的清洁泥膜"
+        expect: "商品推荐与选购建议"

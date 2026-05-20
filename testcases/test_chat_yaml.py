@@ -3,7 +3,7 @@ import random
 import re
 import time
 import unittest
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 import yaml
 
@@ -13,12 +13,13 @@ from api_object.quality_inspection_api import QualityInspectionAPI
 from common.http_client import create_http_client
 from config.context_runtime import load_context_runtime
 from config.project_env import resolve_effective_env
+from testcases.case_product import normalize_inquiry_product
 from testcases.unittest_helpers import bind_case_tests
 
 
 def _load_suite() -> Dict[str, Any]:
     """加载主流程 YAML 套件，确定目标环境和待执行业务 case 列表。"""
-    cases_file = os.getenv("CHAT_CASES_FILE", "test_chat.yaml")
+    cases_file = os.getenv("CHAT_CASES_FILE", "test_CJ.yaml")
     if os.path.isabs(cases_file):
         data_path = cases_file
     else:
@@ -75,6 +76,43 @@ _CHAT_CASE_IDS = [
 ]
 
 
+def _normalize_context_messages(raw_messages: Any) -> List[Dict[str, str]]:
+    if not raw_messages:
+        return []
+    if not isinstance(raw_messages, list):
+        raise ValueError("context_messages must be a list")
+
+    context_messages: List[Dict[str, str]] = []
+    for index, message in enumerate(raw_messages, start=1):
+        if not isinstance(message, dict):
+            raise ValueError(f"context_messages[{index}] must be a dict")
+        role = str(message.get("role", "")).strip().lower()
+        content = str(message.get("content", "")).strip()
+        if role not in {"user", "assistant"}:
+            raise ValueError(f"context_messages[{index}].role must be user or assistant")
+        if not content:
+            raise ValueError(f"context_messages[{index}].content cannot be empty")
+        context_messages.append({"role": role, "content": content})
+    return context_messages
+
+
+def _prepare_context_messages(messages: List[Dict[str, str]]) -> List[Dict[str, Any]]:
+    if not messages:
+        return []
+
+    start_at = time.time() - len(messages) - 5
+    prepared: List[Dict[str, Any]] = []
+    for index, message in enumerate(messages):
+        prepared.append(
+            {
+                "role": message["role"],
+                "content": message["content"],
+                "created_at": start_at + index,
+            }
+        )
+    return prepared
+
+
 def _normalize_case_input(case_data: Dict[str, Any]) -> Dict[str, Any]:
     """归一化主流程 case，把 `turns/request/questions` 统一成多轮对话结构。"""
     expect_data = _normalize_expect(case_data.get("expect", {}))
@@ -95,8 +133,11 @@ def _normalize_case_input(case_data: Dict[str, Any]) -> Dict[str, Any]:
                     "expect": _normalize_expect(turn.get("expect", {})),
                 }
             )
+        context_messages = _normalize_context_messages(case_data.get("context_messages"))
         return {
             "name": case_data["name"],
+            "context_messages": context_messages,
+            "inquiry_product": case_data.get("inquiry_product"),
             "turns": turns,
         }
 
@@ -110,6 +151,7 @@ def _normalize_case_input(case_data: Dict[str, Any]) -> Dict[str, Any]:
             turns[-1]["expect"] = expect_data
         return {
             "name": case_data["name"],
+            "inquiry_product": case_data.get("inquiry_product"),
             "turns": turns,
         }
 
@@ -119,6 +161,7 @@ def _normalize_case_input(case_data: Dict[str, Any]) -> Dict[str, Any]:
         turns[-1]["expect"] = expect_data
     return {
         "name": case_data["name"],
+        "inquiry_product": case_data.get("inquiry_product"),
         "turns": turns,
     }
 
@@ -335,21 +378,28 @@ def _run_chat_and_quality_flow(chat_authenticated_apis: Dict[str, Any], case_dat
     case_name = normalized_case["name"]
     shop_id = runtime["shop_id"]
     turns = normalized_case["turns"]
+    context_messages = normalized_case.get("context_messages", [])
     runtime_username = build_runtime_username(case_name)
     case_label = f"{case_name}|username={runtime_username}"
     shop_name = runtime["shop_name"]
     account = runtime["chat_account"]
     platform = runtime["platform"]
     is_test = runtime["is_test"]
+    inquiry_product = normalize_inquiry_product(
+        normalized_case.get("inquiry_product"),
+        context_messages,
+        platform,
+    )
 
     assert turns, f"[{case_label}] turns 不能为空"
 
     _safe_print(
         f"CASE_CONTEXT case_name={case_name} runtime_username={runtime_username} "
-        f"shop_id={shop_id} turns_count={len(turns)}"
+        f"shop_id={shop_id} context_count={len(context_messages)} turns_count={len(turns)} "
+        f"inquiry_product={inquiry_product}"
     )
 
-    conversation_messages: List[Dict[str, Any]] = []
+    conversation_messages: List[Dict[str, Any]] = _prepare_context_messages(context_messages)
     turn_failures: List[str] = []
     chat_response: Dict[str, Any] = {}
 
@@ -375,6 +425,7 @@ def _run_chat_and_quality_flow(chat_authenticated_apis: Dict[str, Any], case_dat
             chat_response = chat_client.chat_answer(
                 account=account,
                 messages=list(conversation_messages),
+                inquiry_product=inquiry_product,
                 platform=platform,
                 shop_id=shop_id,
                 shop_name=shop_name,

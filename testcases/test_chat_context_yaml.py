@@ -3,6 +3,7 @@ import random
 import re
 import time
 import unittest
+from pathlib import Path
 from typing import Any, Dict, List
 
 import yaml
@@ -13,32 +14,117 @@ from api_object.quality_inspection_api import QualityInspectionAPI
 from common.http_client import create_http_client
 from config.context_runtime import load_context_runtime
 from config.project_env import resolve_effective_env
+from testcases.case_product import normalize_inquiry_product
 from testcases.unittest_helpers import bind_case_tests
 
 
-def _load_context_suite() -> Dict[str, Any]:
-    """加载上下文 YAML 套件，确定目标环境和待执行业务 case 列表。"""
-    cases_file = os.getenv("CHAT_CONTEXT_CASES_FILE", "test_chat/test_20260501_2.yaml")
-    if os.path.isabs(cases_file):
-        data_path = cases_file
-    else:
-        data_path = os.path.join(os.path.dirname(__file__), "..", "data", cases_file)
+_DEFAULT_CONTEXT_SUITE_FILES = (
+    "test_chat/test_20260414.yaml",
+    "test_chat/test_20260415_50.yaml",
+    "test_chat/test_20260416.yaml",
+    "test_chat/test_20260418.yaml",
+    "test_chat/test_20260425.yaml",
+    "test_chat/test_20260428.yaml",
+    "test_chat/test_20260429_2.yaml",
+    "test_chat/test_20260429.yaml",
+    "test_chat/test_20260501_2.yaml",
+    "test_chat/test_20260501.yaml",
+    "test_chat/test_20260516_2.yaml",
+    "test_chat/test_20260516.yaml",
+    "test_chat/test_20260519 copy.yaml",
+    "test_chat/test_20260519_2.yaml",
+    "test_chat/test_20260519_3.yaml",
+    "test_chat/test_20260519.yaml",
+)
+
+
+def _data_dir() -> Path:
+    return Path(__file__).resolve().parent.parent / "data"
+
+
+def _resolve_context_cases_files() -> List[Path]:
+    """解析待加载的上下文 YAML 列表，支持单文件、逗号分隔多文件或默认批量列表。"""
+    data_dir = _data_dir()
+    cases_file = os.getenv("CHAT_CONTEXT_CASES_FILE", "").strip()
+    if cases_file:
+        parts = [item.strip() for item in cases_file.split(",") if item.strip()]
+        return [_data_dir() / part if not os.path.isabs(part) else Path(part) for part in parts]
+
+    cases_files = os.getenv("CHAT_CONTEXT_CASES_FILES", "").strip()
+    if cases_files:
+        parts = [item.strip() for item in cases_files.split(",") if item.strip()]
+        return [_data_dir() / part if not os.path.isabs(part) else Path(part) for part in parts]
+
+    return [data_dir / relative_path for relative_path in _DEFAULT_CONTEXT_SUITE_FILES]
+
+
+def _load_context_suite_file(data_path: Path) -> Dict[str, Any]:
     with open(data_path, "r", encoding="utf-8") as file:
         suite = yaml.safe_load(file) or {}
 
     target_env = resolve_effective_env(str(suite.get("target_env", "")).strip().lower() or os.getenv("ENV", "dev"))
     if target_env not in {"dev", "console"}:
-        raise ValueError(f"context suite target_env must be dev or console, got: {suite.get('target_env')}")
+        raise ValueError(f"context suite target_env must be dev or console, got: {suite.get('target_env')} in {data_path}")
 
     cases = suite.get("cases") or []
     if not isinstance(cases, list):
-        raise ValueError("context suite cases must be a list")
+        raise ValueError(f"context suite cases must be a list in {data_path}")
 
     return {
         "target_env": target_env,
-        "cases_file": data_path,
+        "cases_file": str(data_path),
         "cases": cases,
     }
+
+
+def _merge_context_cases(suites: List[Dict[str, Any]]) -> Dict[str, Any]:
+    if not suites:
+        raise ValueError("no context suite files loaded")
+
+    target_env = resolve_effective_env(os.getenv("ENV", suites[0]["target_env"]))
+    merged_cases: List[Dict[str, Any]] = []
+    used_case_ids: set[str] = set()
+
+    for suite in suites:
+        suite_env = resolve_effective_env(suite["target_env"])
+        if suite_env != target_env:
+            raise ValueError(
+                f"context batch run requires the same target_env, got {suite_env} in {suite['cases_file']} "
+                f"but expected {target_env}"
+            )
+
+        file_stem = Path(suite["cases_file"]).stem
+        for index, case in enumerate(suite["cases"], start=1):
+            if not isinstance(case, dict):
+                continue
+            case_copy = dict(case)
+            raw_name = str(case_copy.get("name", "")).strip() or f"context_case_{index}"
+            case_id = f"{file_stem}::{raw_name}"
+            if case_id in used_case_ids:
+                case_id = f"{file_stem}::{raw_name}_{index}"
+            used_case_ids.add(case_id)
+            case_copy["name"] = case_id
+            case_copy["_suite_file"] = suite["cases_file"]
+            merged_cases.append(case_copy)
+
+    return {
+        "target_env": target_env,
+        "cases_files": [suite["cases_file"] for suite in suites],
+        "cases": merged_cases,
+    }
+
+
+def _load_context_suite() -> Dict[str, Any]:
+    """加载一个或多个上下文 YAML 套件，合并为统一 case 列表。"""
+    data_paths = _resolve_context_cases_files()
+    missing = [str(path) for path in data_paths if not path.exists()]
+    if missing:
+        raise FileNotFoundError(f"context suite file(s) not found: {', '.join(missing)}")
+
+    suites = [_load_context_suite_file(path) for path in data_paths]
+    merged = _merge_context_cases(suites)
+    merged["cases_file"] = ", ".join(merged["cases_files"])
+    return merged
 
 
 def _safe_print(message: str) -> None:
@@ -270,6 +356,7 @@ def _normalize_context_case(case_data: Dict[str, Any]) -> Dict[str, Any]:
     return {
         "name": case_name,
         "context_messages": context_messages,
+        "inquiry_product": case_data.get("inquiry_product"),
         "turns": turns,
     }
 
@@ -368,6 +455,13 @@ def _run_chat_context_flow(context_authenticated_apis: Dict[str, Any], case_data
     case_name = normalized_case["name"]
     shop_id = runtime["shop_id"]
     turns = normalized_case["turns"]
+    platform = runtime["platform"]
+    context_messages = normalized_case["context_messages"]
+    inquiry_product = normalize_inquiry_product(
+        normalized_case.get("inquiry_product"),
+        context_messages,
+        platform,
+    )
     runtime_username = build_runtime_username(case_name)
     case_label = f"{case_name}|username={runtime_username}"
     shop_name = runtime["shop_name"]
@@ -375,10 +469,11 @@ def _run_chat_context_flow(context_authenticated_apis: Dict[str, Any], case_data
     _safe_print(
         f"CONTEXT_CASE case_name={case_name} runtime_username={runtime_username} "
         f"shop_id={shop_id} target_env={runtime['target_env']} "
-        f"context_count={len(normalized_case['context_messages'])} turns_count={len(turns)}"
+        f"context_count={len(context_messages)} turns_count={len(turns)} "
+        f"inquiry_product={inquiry_product}"
     )
 
-    conversation_messages = _prepare_context_messages(normalized_case["context_messages"])
+    conversation_messages = _prepare_context_messages(context_messages)
     turn_failures: List[str] = []
 
     for turn_index, turn in enumerate(turns, start=1):
@@ -402,7 +497,8 @@ def _run_chat_context_flow(context_authenticated_apis: Dict[str, Any], case_data
             chat_response = chat_client.chat_answer(
                 account=runtime["chat_account"],
                 messages=list(conversation_messages),
-                platform=runtime["platform"],
+                inquiry_product=inquiry_product,
+                platform=platform,
                 shop_id=shop_id,
                 shop_name=shop_name,
                 username=runtime_username,
@@ -514,7 +610,9 @@ class TestChatContextYamlFlow(unittest.TestCase):
         _safe_print(
             f"CONTEXT_RUNTIME target_env={cls.context_runtime['target_env']} "
             f"auth_mode={cls.context_runtime['auth_mode']} "
-            f"base_url={cls.context_runtime['api_base_url']}"
+            f"base_url={cls.context_runtime['api_base_url']} "
+            f"cases_files={len(_CONTEXT_SUITE.get('cases_files', []))} "
+            f"cases_count={len(_CONTEXT_SUITE['cases'])}"
         )
         cls.context_access_token = _create_context_access_token(cls.context_runtime)
 

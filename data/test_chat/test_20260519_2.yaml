@@ -1,0 +1,23 @@
+target_env: "dev"
+
+cases:
+  - name: "context_taobao_express_no_sf"
+    context_messages:
+      - role: "user"
+        content: "https://item.taobao.com/item.htm?id=764834167209"
+      - role: "user"
+        content: "http://item.taobao.com/item.htm?id=1034290961496"
+      - role: "user"
+        content: "警告"
+      - role: "user"
+        content: "您好"
+      - role: "assistant"
+        content: "哈喽亲亲～在线等您吩咐💖"
+      - role: "user"
+        content: "请问发什么快递，不要顺丰"
+      - role: "assistant"
+        content: "宝子，那可以给您安排发中通或者邮政快递哦，需要指定不发顺丰的话，您可以在付款下单后联系人工客服备注的哈☺️"
+      - role: "assistant"
+        content: "❣️自行备注无效的哦~"
+    turns:
+      - question: "欧克欧克"
