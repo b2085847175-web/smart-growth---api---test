@@ -1,0 +1,21 @@
+target_env: "dev"
+
+cases:
+  - name: "context_makeup_oil_pregnant_usage"
+    context_messages:
+      - role: "user"
+        content: "https://item.taobao.com/item.htm?id=667173297402"
+      - role: "assistant"
+        content: "卸妆力强、乳化快，还特别温和不刺激呢~"
+      - role: "user"
+        content: "警告"
+      - role: "assistant"
+        content: "含向日葵籽油不皂化物和霍霍巴籽油，用完不拔干、不闷痘，还能养肤修护屏障，敏感肌也放心用哦~"
+      - role: "user"
+        content: "警告"
+      - role: "assistant"
+        content: "[图片消息]"
+      - role: "user"
+        content: "警告"
+    turns:
+      - question: "你好 这个卸妆油孕妇可以用？"

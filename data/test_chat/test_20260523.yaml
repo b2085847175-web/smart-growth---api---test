@@ -1,0 +1,27 @@
+target_env: "dev"
+
+cases:
+  - name: "context_price_increase_repurchase_order"
+    context_messages:
+      - role: "user"
+        content: "https://item.taobao.com/item.htm?id=850159582539"
+      - role: "user"
+        content: "警告"
+      - role: "user"
+        content: "在吗"
+      - role: "assistant"
+        content: "哈喽亲亲～在线等您吩咐💖"
+      - role: "user"
+        content: "怎么还涨价了"
+      - role: "assistant"
+        content: "宝子，非常理解您的感受～但价格在不同时间段活动力度不一样，难免会有一点浮动哦"
+      - role: "assistant"
+        content: "您是咱们老客，我给您申请个 5 元🧧优惠，收货联系我就返无条件返~"
+      - role: "user"
+        content: "以前买也不是这个价啊"
+      - role: "assistant"
+        content: "宝子，如果您需要现在回购，差价在20元以内的话，可以按照上一个订单价给您哦，这已经是大权限啦，还请多多谅解🤝"
+      - role: "assistant"
+        content: "需要的话可以现在直接付款下单哈，付款后在聊天发送 '转人工客服' 备注差价哦~😘"
+    turns:
+      - question: "怎么下单"

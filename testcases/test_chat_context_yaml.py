@@ -13,37 +13,31 @@ from api_object.chat_api import ChatAPI
 from api_object.quality_inspection_api import QualityInspectionAPI
 from common.http_client import create_http_client
 from config.context_runtime import load_context_runtime
-from config.project_env import resolve_effective_env
+from config.project_env import resolve_effective_env, resolve_suite_target_env
 from testcases.case_product import normalize_inquiry_product
 from testcases.unittest_helpers import bind_case_tests
-
-
-_DEFAULT_CONTEXT_SUITE_FILES = (
-    "test_chat/test_20260414.yaml",
-    "test_chat/test_20260415_50.yaml",
-    "test_chat/test_20260416.yaml",
-    "test_chat/test_20260418.yaml",
-    "test_chat/test_20260425.yaml",
-    "test_chat/test_20260428.yaml",
-    "test_chat/test_20260429_2.yaml",
-    "test_chat/test_20260429.yaml",
-    "test_chat/test_20260501_2.yaml",
-    "test_chat/test_20260501.yaml",
-    "test_chat/test_20260516_2.yaml",
-    "test_chat/test_20260516.yaml",
-    "test_chat/test_20260519 copy.yaml",
-    "test_chat/test_20260519_2.yaml",
-    "test_chat/test_20260519_3.yaml",
-    "test_chat/test_20260519.yaml",
-)
 
 
 def _data_dir() -> Path:
     return Path(__file__).resolve().parent.parent / "data"
 
 
+_DEFAULT_CONTEXT_SUITE_FILE = "test_chat/test_20260523_2.yaml"
+
+
+def _default_context_suite_files() -> List[str]:
+    """默认加载 data/test_chat/test_20260523_2.yaml。"""
+    return [_DEFAULT_CONTEXT_SUITE_FILE]
+
+
 def _resolve_context_cases_files() -> List[Path]:
-    """解析待加载的上下文 YAML 列表，支持单文件、逗号分隔多文件或默认批量列表。"""
+    """解析待加载的上下文 YAML 列表。
+
+    优先级：
+    1. CHAT_CONTEXT_CASES_FILE：单个文件或逗号分隔多文件
+    2. CHAT_CONTEXT_CASES_FILES：逗号分隔多文件
+    3. 默认：data/test_chat/test_20260523_2.yaml
+    """
     data_dir = _data_dir()
     cases_file = os.getenv("CHAT_CONTEXT_CASES_FILE", "").strip()
     if cases_file:
@@ -55,14 +49,19 @@ def _resolve_context_cases_files() -> List[Path]:
         parts = [item.strip() for item in cases_files.split(",") if item.strip()]
         return [_data_dir() / part if not os.path.isabs(part) else Path(part) for part in parts]
 
-    return [data_dir / relative_path for relative_path in _DEFAULT_CONTEXT_SUITE_FILES]
+    relative_paths = _default_context_suite_files()
+    if not relative_paths:
+        raise FileNotFoundError(
+            f"context suite default file not found: {_data_dir() / _DEFAULT_CONTEXT_SUITE_FILE}"
+        )
+    return [data_dir / relative_path for relative_path in relative_paths]
 
 
 def _load_context_suite_file(data_path: Path) -> Dict[str, Any]:
     with open(data_path, "r", encoding="utf-8") as file:
         suite = yaml.safe_load(file) or {}
 
-    target_env = resolve_effective_env(str(suite.get("target_env", "")).strip().lower() or os.getenv("ENV", "dev"))
+    target_env = resolve_suite_target_env(suite)
     if target_env not in {"dev", "console"}:
         raise ValueError(f"context suite target_env must be dev or console, got: {suite.get('target_env')} in {data_path}")
 
@@ -81,7 +80,7 @@ def _merge_context_cases(suites: List[Dict[str, Any]]) -> Dict[str, Any]:
     if not suites:
         raise ValueError("no context suite files loaded")
 
-    target_env = resolve_effective_env(os.getenv("ENV", suites[0]["target_env"]))
+    target_env = resolve_effective_env(suites[0]["target_env"])
     merged_cases: List[Dict[str, Any]] = []
     used_case_ids: set[str] = set()
 

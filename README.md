@@ -90,7 +90,8 @@ python -m unittest discover -s testcases -p "test_*.py" -v
 ## 环境规则
 
 - 优先读取 suite YAML 顶部的 `target_env`
-- `ENV` 只作为没有 `target_env` 时的兜底值
+- `.env` 中的 `ENV` **不会覆盖** YAML 已声明的 `target_env`；仅当 YAML 未写 `target_env` 时作为兜底
+- 切换运行环境时，改 YAML 的 `target_env` 即可；`.env` 的 `ENV` 可保留为本地默认兜底
 - `prod` 会被归一成 `console`
 - YAML 里只保留 `target_env` 和 case 内容，不再配置 `shop_id`
 - 店铺、账号、密码统一放在 `.env`
@@ -98,7 +99,7 @@ python -m unittest discover -s testcases -p "test_*.py" -v
 
 当前示例：
 
-- `dev` 对应店铺 `585`
+- `dev` 对应店铺 `588`
 - `console` 对应店铺 `347`
 
 ## `.env` 示例
@@ -112,7 +113,7 @@ AI_BASE_URL_DEV=https://dev.zhiyan.chat
 LOGIN_ACCOUNT_DEV=...
 LOGIN_PASSWORD_DEV=...
 CHAT_ACCOUNT_DEV=...
-CHAT_SHOP_ID_DEV=585
+CHAT_SHOP_ID_DEV=588
 CHAT_SHOP_NAME_DEV=...
 
 # console

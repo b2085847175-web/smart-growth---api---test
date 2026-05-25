@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from typing import Dict
+from typing import Any, Dict
 
 from dotenv import dotenv_values
 
@@ -38,6 +38,14 @@ def normalize_env_name(value: str, default: str = "dev") -> str:
 
 def resolve_effective_env(value: str, default: str = "dev") -> str:
     return normalize_env_name(value, default=default)
+
+
+def resolve_suite_target_env(suite: Dict[str, Any], *, fallback: str = "dev") -> str:
+    """Resolve target_env with YAML priority; fall back to .env ENV when YAML omits it."""
+    yaml_env = str(suite.get("target_env", "")).strip().lower()
+    if yaml_env:
+        return resolve_effective_env(yaml_env)
+    return resolve_effective_env(os.getenv("ENV", fallback))
 
 
 def get_explicit_api_base_url(target_env: str) -> str:

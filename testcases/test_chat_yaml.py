@@ -12,7 +12,7 @@ from api_object.chat_api import ChatAPI
 from api_object.quality_inspection_api import QualityInspectionAPI
 from common.http_client import create_http_client
 from config.context_runtime import load_context_runtime
-from config.project_env import resolve_effective_env
+from config.project_env import resolve_suite_target_env
 from testcases.case_product import normalize_inquiry_product
 from testcases.unittest_helpers import bind_case_tests
 
@@ -27,7 +27,7 @@ def _load_suite() -> Dict[str, Any]:
     with open(data_path, "r", encoding="utf-8") as file:
         suite = yaml.safe_load(file) or {}
 
-    target_env = resolve_effective_env(str(suite.get("target_env", "")).strip().lower() or os.getenv("ENV", "dev"))
+    target_env = resolve_suite_target_env(suite)
     if target_env not in {"dev", "console"}:
         raise ValueError(f"chat suite target_env must be dev or console, got: {suite.get('target_env')}")
 

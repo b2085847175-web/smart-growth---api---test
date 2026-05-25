@@ -1,0 +1,15 @@
+target_env: "dev"
+
+cases:
+  - name: "greeting_then_recommend_shampoo"
+    questions:
+      - "你好"
+      - "推荐一款洗发水"
+      - "实拍成分表有吗？"
+
+  - name: "product_size_then_shipping"
+    questions:
+      - "推荐一款洗发水"
+      - "这个尺寸多大？"
+      - "6.5cm是粗细吗"
+      - "是顺丰发货吗？"
