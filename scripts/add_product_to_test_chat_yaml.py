@@ -8,7 +8,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from testcases.case_product import DEFAULT_PRODUCT_URL, ensure_case_product_context
+from testcases.common.case_product import DEFAULT_PRODUCT_URL, ensure_case_product_context
 TEST_CHAT_DIR = ROOT / "data" / "test_chat"
 
 

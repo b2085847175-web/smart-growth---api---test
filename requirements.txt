@@ -1,7 +1,8 @@
 # API 自动化测试框架依赖包
 # Python 3.10+ 环境
 
-# 测试框架使用 Python 标准库 unittest，无需额外依赖
+# 测试框架
+pytest==8.2.2
 
 # HTTP 请求
 requests==2.31.0

@@ -29,7 +29,7 @@ class ChatAPI:
         prepared_messages = []
         for message in messages:
             current = dict(message)
-            current.setdefault("created_at", int(time.time()))
+            current["created_at"] = int(current.get("created_at", time.time()))
             prepared_messages.append(current)
 
         payload = {
