@@ -1,1 +1,3 @@
-{}
+{
+  "testcases/answer/test_answer_yaml.py::test_answer_yaml[match_score_sequential_001_chat_record_match_data]": true
+}
