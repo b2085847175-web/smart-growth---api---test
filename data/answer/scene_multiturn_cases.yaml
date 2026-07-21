@@ -1,0 +1,7505 @@
+# /chat/answer 场景多轮造数据
+# - 文件用途：由原单轮场景用例转换而来，用于批量构造多轮对话数据。
+# - assertions：false 表示不做业务断言，不校验 expect、match_score、质检或 final_reply。
+# - quality：false 表示不查询质检记录，避免造数据过程被质检结果阻断。
+# - cases：每个 case 至少 3 轮，按顺序发送并累积上下文。
+suite:
+  name: scene_multiturn
+  mode: sequential
+  quality: false
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+  quality_retries: 10
+  quality_retry_interval_seconds: 2
+  assertions: false
+target_env: dev
+cases:
+- name: scene_001_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个规格里面包含什么
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_001_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个套餐里都有啥
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_001_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这一套具体都有什么
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_001_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个SKU都包含什么
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_001_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个规格配了哪些东西
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_002_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这款多少毫升
+  - question: 这个量大概能用多久
+  - question: 买多件会更划算吗
+- name: scene_002_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 净含量是多少
+  - question: 这个量大概能用多久
+  - question: 买多件会更划算吗
+- name: scene_002_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个是多少克
+  - question: 这个量大概能用多久
+  - question: 买多件会更划算吗
+- name: scene_002_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 一盒有几片
+  - question: 这个量大概能用多久
+  - question: 买多件会更划算吗
+- name: scene_002_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 一共有多少支
+  - question: 这个量大概能用多久
+  - question: 买多件会更划算吗
+- name: scene_003_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个是什么颜色
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_003_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 偏冷调还是暖调
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_003_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个颜色深吗
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_003_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这是豆沙色吗
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_003_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有几个颜色
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_004_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这款主打什么功效
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_004_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有保湿作用吗
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_004_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能修护吗
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_004_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有什么作用
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_004_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个主要是干嘛的
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_005_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 防水吗
+  - question: 防护性能方面还有什么需要注意的吗
+  - question: 如果我继续下单，防护性能还有什么建议
+- name: scene_005_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 防汗吗
+  - question: 防护性能方面还有什么需要注意的吗
+  - question: 如果我继续下单，防护性能还有什么建议
+- name: scene_005_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 防潮吗
+  - question: 防护性能方面还有什么需要注意的吗
+  - question: 如果我继续下单，防护性能还有什么建议
+- name: scene_005_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 防泼溅吗
+  - question: 防护性能方面还有什么需要注意的吗
+  - question: 如果我继续下单，防护性能还有什么建议
+- name: scene_005_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 防护等级是多少
+  - question: 防护性能方面还有什么需要注意的吗
+  - question: 如果我继续下单，防护性能还有什么建议
+- name: scene_006_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 会不会褪色
+  - question: 稳定性表现方面还有什么需要注意的吗
+  - question: 如果我继续下单，稳定性表现还有什么建议
+- name: scene_006_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 容易掉色吗
+  - question: 稳定性表现方面还有什么需要注意的吗
+  - question: 如果我继续下单，稳定性表现还有什么建议
+- name: scene_006_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 会不会脱落
+  - question: 稳定性表现方面还有什么需要注意的吗
+  - question: 如果我继续下单，稳定性表现还有什么建议
+- name: scene_006_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 会不会开裂
+  - question: 稳定性表现方面还有什么需要注意的吗
+  - question: 如果我继续下单，稳定性表现还有什么建议
+- name: scene_006_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 会不会沾色
+  - question: 稳定性表现方面还有什么需要注意的吗
+  - question: 如果我继续下单，稳定性表现还有什么建议
+- name: scene_007_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能持续多久
+  - question: 持续时间方面还有什么需要注意的吗
+  - question: 如果我继续下单，持续时间还有什么建议
+- name: scene_007_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 效果能维持多久
+  - question: 持续时间方面还有什么需要注意的吗
+  - question: 如果我继续下单，持续时间还有什么建议
+- name: scene_007_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 气味能留多久
+  - question: 持续时间方面还有什么需要注意的吗
+  - question: 如果我继续下单，持续时间还有什么建议
+- name: scene_007_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 大概能撑几个小时
+  - question: 持续时间方面还有什么需要注意的吗
+  - question: 如果我继续下单，持续时间还有什么建议
+- name: scene_007_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个作用时间长吗
+  - question: 持续时间方面还有什么需要注意的吗
+  - question: 如果我继续下单，持续时间还有什么建议
+- name: scene_008_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 什么时候生产的
+  - question: 生产日期方面还有什么需要注意的吗
+  - question: 如果我继续下单，生产日期还有什么建议
+- name: scene_008_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 是近期生产的吗
+  - question: 生产日期方面还有什么需要注意的吗
+  - question: 如果我继续下单，生产日期还有什么建议
+- name: scene_008_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 离过期还有多久
+  - question: 生产日期方面还有什么需要注意的吗
+  - question: 如果我继续下单，生产日期还有什么建议
+- name: scene_008_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个批次新不新
+  - question: 生产日期方面还有什么需要注意的吗
+  - question: 如果我继续下单，生产日期还有什么建议
+- name: scene_009_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个瓶子是玻璃的吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_009_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 外壳是什么材质
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_009_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 刷毛是什么材质
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_009_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 泵头是金属的吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_009_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 内胆是什么材质
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_010_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个怎么用
+  - question: 使用说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，使用说明还有什么建议
+- name: scene_010_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 具体使用步骤是什么
+  - question: 使用说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，使用说明还有什么建议
+- name: scene_010_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个要怎么涂
+  - question: 使用说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，使用说明还有什么建议
+- name: scene_010_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么操作
+  - question: 使用说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，使用说明还有什么建议
+- name: scene_010_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 正确用法是什么
+  - question: 使用说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，使用说明还有什么建议
+- name: scene_011_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 使用时需要注意什么
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_011_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 用了能不能晒太阳
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_011_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 白天能不能用
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_011_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个要避光吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_011_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 需要避开眼周吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_011_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 破皮的时候能用吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_011_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有没有什么禁忌
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_011_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 哪些情况下不能用
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_011_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 使用前要不要先测试
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_012_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有实物图吗
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_012_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能看实物图片吗
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_012_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能看看是什么样子吗
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_012_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有商品图片吗
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_012_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有实拍图吗
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_012_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有效果图吗
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_013_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有实体店吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_013_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有线下门店吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_013_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有专柜吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_013_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你们有门店吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_013_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 哪里有实体店
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_013_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有专卖店吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_013_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 线下能买吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_014_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 线下门店卖的是一样的吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_014_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 专柜卖的是一样的吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_014_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 实体店卖的一样吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_014_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 线上线下是一样的吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_014_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 跟门店卖的是同款吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_014_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 和专柜的是一样的吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_014_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 线下和网上卖的是同一个吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_014_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 网店和实体店一样吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_015_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 推荐一下好用的
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_015_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 帮我推荐一下适合我的
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_015_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有没有适合我的
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_015_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你建议买哪个
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_015_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 哪个卖得最好
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_015_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 新手适合买哪个
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_015_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 第一次买选哪个
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_015_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 给我推荐一个
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_015_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你们家卖得好的有哪些
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_015_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 推荐一下你们家卖得好的
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_016_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个是预售商品吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_016_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这是现货还是预售
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_016_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 需要付定金才能买吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_016_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 是预约购买吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_016_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 预售和现货有什么区别
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_016_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能预订吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_016_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 预售啥时候发
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_016_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 货期多久
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_016_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 预售多久能发
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_016_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 预售规则是什么
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_017_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 什么时候补货
+  - question: 咨询商品补货时间方面还有什么需要注意的吗
+  - question: 如果我继续下单，咨询商品补货时间还有什么建议
+- name: scene_017_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 还会补货吗
+  - question: 咨询商品补货时间方面还有什么需要注意的吗
+  - question: 如果我继续下单，咨询商品补货时间还有什么建议
+- name: scene_017_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 大概什么时候有货
+  - question: 咨询商品补货时间方面还有什么需要注意的吗
+  - question: 如果我继续下单，咨询商品补货时间还有什么建议
+- name: scene_017_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 缺货多久补
+  - question: 咨询商品补货时间方面还有什么需要注意的吗
+  - question: 如果我继续下单，咨询商品补货时间还有什么建议
+- name: scene_017_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 什么时候恢复库存
+  - question: 咨询商品补货时间方面还有什么需要注意的吗
+  - question: 如果我继续下单，咨询商品补货时间还有什么建议
+- name: scene_018_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 几天能到
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_018_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发货后多久到
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_018_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 物流要几天
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_018_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 大概几天收到
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_018_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 什么时候能收到
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_018_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 多久送到
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_019_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 从哪里发货
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_019_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发货地是哪
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_019_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 从哪个仓库发
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_019_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 是哪个城市发货
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_019_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 从哪个地方的仓库发货
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_020_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以指定送货时间吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_020_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能周末送吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_020_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以延迟发货吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_020_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以晚点再发吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_020_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能指定哪天送吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_021_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以保密发货吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_021_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能隐私发货吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_021_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以匿名发货吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_021_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 外包装不要显示商品信息
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_022_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 想退款怎么操作
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_022_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 退款申请怎么填
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_022_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 退货退款流程是什么
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_022_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 退款原因填什么
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_022_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么申请退款
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_022_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 退款要多久到账
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_022_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么取消退款
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_022_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 退款的钱退哪里了
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_022_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 退款被拒绝了咋办
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_022_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么取消退款
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_022_11
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 退款审核要多久
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_023_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 地址填错了可以改吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_023_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 帮我改一下收货地址
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_023_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 电话写错了能改吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_023_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 收件人名字能改吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_023_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能换个地址发吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_023_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 门牌号写错了怎么改
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_024_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 麻烦尽快发货
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_024_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 帮我催一下发货
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_024_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能不能先给我发
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_024_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 请尽快安排发出
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_024_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能优先发货吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_025_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我要投诉
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_025_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我要举报你们
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_025_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我要申请平台介入
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_025_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这事我要维权
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_025_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 帮我转投诉处理
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_025_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我要投诉你们客服
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_025_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不处理我就去投诉
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_025_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 叫你们负责人来处理
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_025_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 315曝光了，你们卖的是伪劣商品
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_025_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 315都曝光了，你们还敢卖
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_025_11
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你们侵犯消费者权益了
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_025_12
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我要举报你们卖伪劣产品
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_025_13
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你们这是欺骗消费者
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_025_14
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这件事我要去12315投诉
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_025_15
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你们这种行为已经违法了
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_025_16
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这事我要追责到底
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_026_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 用了感觉一般
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_026_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 用着不太满意
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_026_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个效果没我想的好
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_026_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 感觉不好用
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_026_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 体验不太行
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_026_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 没有预期那么好
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_026_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 感觉不太适合我
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_026_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 用后不喜欢
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_026_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 实际体验一般般
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_026_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 没想象中那么好
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_026_11
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 买回来用了下不太满意
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_026_12
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个我用着不舒服
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_026_13
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 感觉不值这个价
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_026_14
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 效果一般
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_026_15
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 没有宣传的那么好
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_027_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有奖品吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_027_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 奖品在哪领
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_027_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 奖品怎么兑换
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_027_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能换奖品吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_027_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 活动奖品内容有哪些
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_027_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 奖品什么时候发
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_027_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 奖品是什么
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_027_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 二等奖是什么
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_027_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 虚拟奖品怎么用
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_028_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以带上飞机吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_028_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 高铁能带吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_028_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以飞机托运嘛
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_028_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能过安检吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_028_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 过安检有问题吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_028_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以带上动车吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_028_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 火车能带吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_028_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 带上高铁可以吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_029_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 没关系
+  - question: 表示没关系方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示没关系还有什么建议
+- name: scene_029_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不要紧
+  - question: 表示没关系方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示没关系还有什么建议
+- name: scene_029_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个没关系
+  - question: 表示没关系方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示没关系还有什么建议
+- name: scene_029_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 没事的
+  - question: 表示没关系方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示没关系还有什么建议
+- name: scene_030_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 完全看不懂
+  - question: 表示不理解方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示不理解还有什么建议
+- name: scene_030_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不明白
+  - question: 表示不理解方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示不理解还有什么建议
+- name: scene_030_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不太懂
+  - question: 表示不理解方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示不理解还有什么建议
+- name: scene_030_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 理解不了
+  - question: 表示不理解方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示不理解还有什么建议
+- name: scene_031_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 别老是一句话
+  - question: 不要重复说方面还有什么需要注意的吗
+  - question: 如果我继续下单，不要重复说还有什么建议
+- name: scene_031_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你怎么老是说这一句话呢
+  - question: 不要重复说方面还有什么需要注意的吗
+  - question: 如果我继续下单，不要重复说还有什么建议
+- name: scene_031_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 别老是发重复的
+  - question: 不要重复说方面还有什么需要注意的吗
+  - question: 如果我继续下单，不要重复说还有什么建议
+- name: scene_031_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么老是会这句话
+  - question: 不要重复说方面还有什么需要注意的吗
+  - question: 如果我继续下单，不要重复说还有什么建议
+- name: scene_031_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不要老说这几句话
+  - question: 不要重复说方面还有什么需要注意的吗
+  - question: 如果我继续下单，不要重复说还有什么建议
+- name: scene_032_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 拜拜
+  - question: 再见方面还有什么需要注意的吗
+  - question: 如果我继续下单，再见还有什么建议
+- name: scene_032_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 再聊
+  - question: 再见方面还有什么需要注意的吗
+  - question: 如果我继续下单，再见还有什么建议
+- name: scene_032_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: '886'
+  - question: 再见方面还有什么需要注意的吗
+  - question: 如果我继续下单，再见还有什么建议
+- name: scene_032_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 再见
+  - question: 再见方面还有什么需要注意的吗
+  - question: 如果我继续下单，再见还有什么建议
+- name: scene_032_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: bye
+  - question: 再见方面还有什么需要注意的吗
+  - question: 如果我继续下单，再见还有什么建议
+- name: scene_033_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 已申请
+  - question: 表示已提交方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示已提交还有什么建议
+- name: scene_033_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我刚提交了
+  - question: 表示已提交方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示已提交还有什么建议
+- name: scene_033_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 申请完了
+  - question: 表示已提交方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示已提交还有什么建议
+- name: scene_034_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不对
+  - question: 表示否认方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示否认还有什么建议
+- name: scene_034_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不是的
+  - question: 表示否认方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示否认还有什么建议
+- name: scene_034_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不可能
+  - question: 表示否认方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示否认还有什么建议
+- name: scene_035_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么办
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_035_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么解决
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_035_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么处理
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_035_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你们怎么解决这个问题
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_035_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 没有效果怎么办
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_035_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 用了感觉没效果怎么办
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_035_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 没效果怎么处理
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_035_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 效果不好怎么办
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_036_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 很好
+  - question: 表示满意方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示满意还有什么建议
+- name: scene_036_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 东西很好很喜欢
+  - question: 表示满意方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示满意还有什么建议
+- name: scene_036_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 非常棒
+  - question: 表示满意方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示满意还有什么建议
+- name: scene_036_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 很满意
+  - question: 表示满意方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示满意还有什么建议
+- name: scene_036_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 很棒
+  - question: 表示满意方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示满意还有什么建议
+- name: scene_037_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 嗯嗯
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_037_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 对的
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_037_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 好的
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_037_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 明白啦
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_037_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: ok
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_037_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 知道了
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_037_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_038_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我差评了哦
+  - question: 表示威胁/差评方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示威胁/差评还有什么建议
+- name: scene_038_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 已经差评了
+  - question: 表示威胁/差评方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示威胁/差评还有什么建议
+- name: scene_038_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 服务差必须差评
+  - question: 表示威胁/差评方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示威胁/差评还有什么建议
+- name: scene_038_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 别再发了，我给差评了
+  - question: 表示威胁/差评方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示威胁/差评还有什么建议
+- name: scene_038_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 要不我就给你差评
+  - question: 表示威胁/差评方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示威胁/差评还有什么建议
+- name: scene_039_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 麻烦给回复一下
+  - question: 要求回复方面还有什么需要注意的吗
+  - question: 如果我继续下单，要求回复还有什么建议
+- name: scene_039_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 看到了回复下
+  - question: 要求回复方面还有什么需要注意的吗
+  - question: 如果我继续下单，要求回复还有什么建议
+- name: scene_039_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 回我一下
+  - question: 要求回复方面还有什么需要注意的吗
+  - question: 如果我继续下单，要求回复还有什么建议
+- name: scene_040_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 拜托
+  - question: 求帮助方面还有什么需要注意的吗
+  - question: 如果我继续下单，求帮助还有什么建议
+- name: scene_040_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 帮下忙
+  - question: 求帮助方面还有什么需要注意的吗
+  - question: 如果我继续下单，求帮助还有什么建议
+- name: scene_040_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 求求了
+  - question: 求帮助方面还有什么需要注意的吗
+  - question: 如果我继续下单，求帮助还有什么建议
+- name: scene_040_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 求助求助
+  - question: 求帮助方面还有什么需要注意的吗
+  - question: 如果我继续下单，求帮助还有什么建议
+- name: scene_041_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 几点在线
+  - question: 询问工作时间方面还有什么需要注意的吗
+  - question: 如果我继续下单，询问工作时间还有什么建议
+- name: scene_041_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 客服几点上班呢
+  - question: 询问工作时间方面还有什么需要注意的吗
+  - question: 如果我继续下单，询问工作时间还有什么建议
+- name: scene_041_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你们几点上班
+  - question: 询问工作时间方面还有什么需要注意的吗
+  - question: 如果我继续下单，询问工作时间还有什么建议
+- name: scene_042_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 在另一家店买了
+  - question: 在别家购买方面还有什么需要注意的吗
+  - question: 如果我继续下单，在别家购买还有什么建议
+- name: scene_042_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 已经买了另一家了
+  - question: 在别家购买方面还有什么需要注意的吗
+  - question: 如果我继续下单，在别家购买还有什么建议
+- name: scene_042_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 在别的地方买了
+  - question: 在别家购买方面还有什么需要注意的吗
+  - question: 如果我继续下单，在别家购买还有什么建议
+- name: scene_042_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 已经在别家店买了
+  - question: 在别家购买方面还有什么需要注意的吗
+  - question: 如果我继续下单，在别家购买还有什么建议
+- name: scene_043_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 谢谢啦
+  - question: 表示感谢方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示感谢还有什么建议
+- name: scene_043_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 好的谢谢
+  - question: 表示感谢方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示感谢还有什么建议
+- name: scene_043_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 感谢
+  - question: 表示感谢方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示感谢还有什么建议
+- name: scene_044_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 气死我了
+  - question: 表示愤怒方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示愤怒还有什么建议
+- name: scene_044_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 烦死了
+  - question: 表示愤怒方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示愤怒还有什么建议
+- name: scene_044_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 太坑了吧
+  - question: 表示愤怒方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示愤怒还有什么建议
+- name: scene_044_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 恶心死了
+  - question: 表示愤怒方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示愤怒还有什么建议
+- name: scene_045_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你好呀
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_045_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你好
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_045_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 中午好
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_045_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你好，有人吗
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_045_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 在吗
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_045_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 在没
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_046_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 没看到
+  - question: 表示没找到方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示没找到还有什么建议
+- name: scene_046_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我没找到
+  - question: 表示没找到方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示没找到还有什么建议
+- name: scene_046_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 没看见
+  - question: 表示没找到方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示没找到还有什么建议
+- name: scene_046_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 没看到你发的
+  - question: 表示没找到方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示没找到还有什么建议
+- name: scene_047_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我看见了
+  - question: 表示找到了方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示找到了还有什么建议
+- name: scene_047_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 看到了
+  - question: 表示找到了方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示找到了还有什么建议
+- name: scene_047_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 找到了
+  - question: 表示找到了方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示找到了还有什么建议
+- name: scene_048_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 那算了吧
+  - question: 表示放弃方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示放弃还有什么建议
+- name: scene_048_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 那算了
+  - question: 表示放弃方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示放弃还有什么建议
+- name: scene_048_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 那算了，就那样吧
+  - question: 表示放弃方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示放弃还有什么建议
+- name: scene_049_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你是机器人吗
+  - question: 询问是否是机器人方面还有什么需要注意的吗
+  - question: 如果我继续下单，询问是否是机器人还有什么建议
+- name: scene_049_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 是人工客服吗
+  - question: 询问是否是机器人方面还有什么需要注意的吗
+  - question: 如果我继续下单，询问是否是机器人还有什么建议
+- name: scene_049_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 是机器人还是人工
+  - question: 询问是否是机器人方面还有什么需要注意的吗
+  - question: 如果我继续下单，询问是否是机器人还有什么建议
+- name: scene_049_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 来个真人
+  - question: 询问是否是机器人方面还有什么需要注意的吗
+  - question: 如果我继续下单，询问是否是机器人还有什么建议
+- name: scene_050_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 第一次买
+  - question: 表示首次购买方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示首次购买还有什么建议
+- name: scene_050_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我是第一次买你家的商品
+  - question: 表示首次购买方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示首次购买还有什么建议
+- name: scene_050_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 第一次买这个
+  - question: 表示首次购买方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示首次购买还有什么建议
+- name: scene_051_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我老客户了
+  - question: 表示老客户方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示老客户还有什么建议
+- name: scene_051_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我是回头客
+  - question: 表示老客户方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示老客户还有什么建议
+- name: scene_051_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 在你家买很多次了
+  - question: 表示老客户方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示老客户还有什么建议
+- name: scene_051_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我一直在你家买的
+  - question: 表示老客户方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示老客户还有什么建议
+- name: scene_052_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我再看看
+  - question: 表示需要考虑方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示需要考虑还有什么建议
+- name: scene_052_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我考虑一下
+  - question: 表示需要考虑方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示需要考虑还有什么建议
+- name: scene_052_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有点纠结
+  - question: 表示需要考虑方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示需要考虑还有什么建议
+- name: scene_052_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我再想想吧
+  - question: 表示需要考虑方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示需要考虑还有什么建议
+- name: scene_053_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 太失望了
+  - question: 表示失望方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示失望还有什么建议
+- name: scene_053_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 真让人失望
+  - question: 表示失望方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示失望还有什么建议
+- name: scene_053_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 失望透顶
+  - question: 表示失望方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示失望还有什么建议
+- name: scene_054_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 麻烦了
+  - question: 表示歉意方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示歉意还有什么建议
+- name: scene_054_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不好意思
+  - question: 表示歉意方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示歉意还有什么建议
+- name: scene_055_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 相信你们一次
+  - question: 表示相信方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示相信还有什么建议
+- name: scene_055_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我相信你
+  - question: 表示相信方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示相信还有什么建议
+- name: scene_055_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我相信你家
+  - question: 表示相信方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示相信还有什么建议
+- name: scene_056_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 还会再来的
+  - question: 表示还会再来方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示还会再来还有什么建议
+- name: scene_056_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 好的话下次还会再来的
+  - question: 表示还会再来方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示还会再来还有什么建议
+- name: scene_056_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 要是好用的话下次还来
+  - question: 表示还会再来方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示还会再来还有什么建议
+- name: scene_057_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你自己看下
+  - question: 要求查看下方面还有什么需要注意的吗
+  - question: 如果我继续下单，要求查看下还有什么建议
+- name: scene_057_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你们自己看看
+  - question: 要求查看下方面还有什么需要注意的吗
+  - question: 如果我继续下单，要求查看下还有什么建议
+- name: scene_057_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你看一下我发的什么
+  - question: 要求查看下方面还有什么需要注意的吗
+  - question: 如果我继续下单，要求查看下还有什么建议
+- name: scene_057_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你们看下聊天记录
+  - question: 要求查看下方面还有什么需要注意的吗
+  - question: 如果我继续下单，要求查看下还有什么建议
+- name: scene_058_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 好的我试一下
+  - question: 表示试试方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示试试还有什么建议
+- name: scene_058_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我自己试试看
+  - question: 表示试试方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示试试还有什么建议
+- name: scene_058_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我先试一下
+  - question: 表示试试方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示试试还有什么建议
+- name: scene_058_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 一会试试看吧
+  - question: 表示试试方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示试试还有什么建议
+- name: scene_058_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我试一下看看
+  - question: 表示试试方面还有什么需要注意的吗
+  - question: 如果我继续下单，表示试试还有什么建议
+- name: scene_059_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 垃圾
+  - question: 辱骂方面还有什么需要注意的吗
+  - question: 如果我继续下单，辱骂还有什么建议
+- name: scene_059_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 滚
+  - question: 辱骂方面还有什么需要注意的吗
+  - question: 如果我继续下单，辱骂还有什么建议
+- name: scene_059_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有病
+  - question: 辱骂方面还有什么需要注意的吗
+  - question: 如果我继续下单，辱骂还有什么建议
+- name: scene_059_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 神经病
+  - question: 辱骂方面还有什么需要注意的吗
+  - question: 如果我继续下单，辱骂还有什么建议
+- name: scene_060_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 祝老板生意兴隆财源广进
+  - question: 祝福祝愿方面还有什么需要注意的吗
+  - question: 如果我继续下单，祝福祝愿还有什么建议
+- name: scene_060_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 老板生意发大财
+  - question: 祝福祝愿方面还有什么需要注意的吗
+  - question: 如果我继续下单，祝福祝愿还有什么建议
+- name: scene_060_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 恭喜老板生意兴隆
+  - question: 祝福祝愿方面还有什么需要注意的吗
+  - question: 如果我继续下单，祝福祝愿还有什么建议
+- name: scene_060_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 恭喜发财
+  - question: 祝福祝愿方面还有什么需要注意的吗
+  - question: 如果我继续下单，祝福祝愿还有什么建议
+- name: scene_060_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 生意兴隆
+  - question: 祝福祝愿方面还有什么需要注意的吗
+  - question: 如果我继续下单，祝福祝愿还有什么建议
+- name: scene_061_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 商品页面里的那个专家是谁
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_061_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个代言人是哪个机构的
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_061_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 页面上写的认证是真的还是假的
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_061_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个品牌宣传信息可信么
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_061_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 页面上的人物信息能核实吗
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_061_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个不是你家的产品吗
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_061_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个商品是你们家的吗
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_062_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以备注吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_062_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 订单怎么加备注
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_062_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能帮我备注一下吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_062_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 忘记写备注了
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_062_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 备注内容能改吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_062_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 帮我在订单里写个备注
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_062_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 备注发货时间
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_062_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 备注颜色和尺寸
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_062_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以按备注发货吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_063_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个商品有运费险吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_063_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 运费险怎么理赔
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_063_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 没买到运费险怎么办
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_063_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 运费险能退吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_063_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你们的运费险怎么用
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_063_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 运费险要钱吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_063_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 运费险什么时候生效
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_063_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我想买个运费险
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_063_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 运费险是赠送的吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_064_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 赠品什么时候发
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_064_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 赠品可以换别的吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_064_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 赠品少发了咋办
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_064_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以不要赠品吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_064_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有买送活动吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_064_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 赠品是随机发吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_064_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我想多要个赠品行不行
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_065_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以只退一件吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_065_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我不想要了能退吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_065_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 没发货能退吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_065_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 拆封了还能退吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_065_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 包装拆了能退货吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_065_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 没有效果能退吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_065_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 无效可以退款吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_065_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 退款是全额退款吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_066_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能开电子发票吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_066_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发票抬头怎么填
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_066_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发票什么时候能开
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_066_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以开增值税专票吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_066_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发票金额不对怎么办
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_066_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 要发票怎么弄
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_066_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发票能单独寄吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_066_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 公司报销要什么发票
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_066_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发票开错了能改吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_066_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能给开张收据吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_066_11
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发票在哪里下载
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_066_12
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我想合并开发票
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_066_13
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发票能抽奖吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_066_14
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 开发票需要多长时间
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_066_15
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 开票是否可以加急处理
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_067_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 你们包安装吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_067_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 安装要另外收费吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_067_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么预约安装师傅
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_067_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 安装教程有吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_067_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能自己装吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_067_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 附近有安装点吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_067_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 安装要多久时间
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_067_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 送装一体是什么意思
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_067_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 挂墙上怎么收费
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_067_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不包安装能买吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_068_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个东西坏了能修吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_068_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有售后保障吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_068_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 质保期是多久
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_068_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 维修点在什么地方
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_068_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么申请售后
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_068_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 售后要钱吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_068_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我可以自己寄回去修吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_068_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这能换新的吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_068_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 维修运费谁出
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_068_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 售后电话是多少
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_069_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我想换个码数
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_069_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 换货流程是怎样的
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_069_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能换个颜色吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_069_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 换货要补差价吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_069_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 换货快递单号给我
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_069_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么申请换货
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_069_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以换其他款式吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_069_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 帮我换成大码的
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_069_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 换货申请怎么取消了
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_069_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 换货要自己出运费吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_070_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 收到的东西坏了
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_070_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 东西都碎了
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_070_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 收到变质商品了
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_070_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 包装破损严重
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_070_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 坏了一个赔吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_070_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 收到的东西臭了
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_070_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这能赔吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_070_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 都发霉了咋办
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_070_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 坏了包赔是真的吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_070_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 实物有损伤
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_071_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 跟图片不一样啊
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_071_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 实物和图片差别太大
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_071_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个跟图片相符吗
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_071_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 收到货跟图片不一样
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_071_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 是不是货不对板
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_071_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么跟图片差这么多
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_071_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 实物有出入吗
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_071_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这衣服和图片一样吗
+  - question: 实物和页面展示会有色差吗
+  - question: 如果收到后不合适可以怎么处理
+- name: scene_072_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个有保价吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_072_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 价格保护是多久
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_072_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能申请价保吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_072_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 保价从什么时候算
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_072_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有价格保护服务吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_072_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么申请价保
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_072_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 支持保价吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_072_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 保价条件是什么
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_073_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 换货要补多少钱
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_073_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有差价能退吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_073_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么补差价
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_073_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个差价能补吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_073_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能退差价给我吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_073_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 差价能退回吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_073_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 价格差太多了
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_073_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么处理差价
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_073_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 补差价怎么操作
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_073_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 买贵了能退差价吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_073_11
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 刚买就降价了能补吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_073_12
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 价格降了给我退差价
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_074_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这两款有什么不同
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_074_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这两个有啥区别
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_074_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 功能有什么区别
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_074_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这两款区别是什么
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_074_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这两个有什么不一样
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_074_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这三个有什么区别
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_074_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 价格不同差在哪里
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_074_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不同版本差在哪
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_074_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不同款式有啥区别
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_075_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 评价很差能买吗
+  - question: 对商品的疑问方面还有什么需要注意的吗
+  - question: 如果我继续下单，对商品的疑问还有什么建议
+- name: scene_075_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个好用吗
+  - question: 对商品的疑问方面还有什么需要注意的吗
+  - question: 如果我继续下单，对商品的疑问还有什么建议
+- name: scene_075_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 效果怎么样
+  - question: 对商品的疑问方面还有什么需要注意的吗
+  - question: 如果我继续下单，对商品的疑问还有什么建议
+- name: scene_075_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 看评价不太好啊
+  - question: 对商品的疑问方面还有什么需要注意的吗
+  - question: 如果我继续下单，对商品的疑问还有什么建议
+- name: scene_075_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 真的有效吗
+  - question: 对商品的疑问方面还有什么需要注意的吗
+  - question: 如果我继续下单，对商品的疑问还有什么建议
+- name: scene_075_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 会不会没效果
+  - question: 对商品的疑问方面还有什么需要注意的吗
+  - question: 如果我继续下单，对商品的疑问还有什么建议
+- name: scene_075_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 大家说这个一般
+  - question: 对商品的疑问方面还有什么需要注意的吗
+  - question: 如果我继续下单，对商品的疑问还有什么建议
+- name: scene_075_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 版型如何
+  - question: 对商品的疑问方面还有什么需要注意的吗
+  - question: 如果我继续下单，对商品的疑问还有什么建议
+- name: scene_075_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 评价不好呀
+  - question: 对商品的疑问方面还有什么需要注意的吗
+  - question: 如果我继续下单，对商品的疑问还有什么建议
+- name: scene_076_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 质量靠谱吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_076_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 做工怎么样
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_076_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这是什么材质
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_076_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 会不会有瑕疵
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_076_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 品控怎么样
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_076_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有质检报告吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_076_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 质量保证吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_076_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 会不会有质量问题
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_076_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 感觉像是次品
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_076_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 手感怎么样
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_076_11
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 用料扎实吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_077_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能定做吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_077_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 刻字怎么收费
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_077_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 定制要多长时间
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_077_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 来图定制行吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_077_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: diy可以吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_077_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能加logo吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_077_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 定尺寸行不行
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_077_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能帮我设计下吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_077_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 定制怎么收费
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_077_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 字数有限制吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_078_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这是哪生产的
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_078_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 厂家在哪里
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_078_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 是国产的吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_078_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有实体店吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_078_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 生产地是哪
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_078_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有专柜吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_078_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 哪个公司生产的
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_078_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 产地是哪里
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_079_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 还有现货吗
+  - question: 后面还会补货吗
+  - question: 有没有类似款可以替代
+- name: scene_079_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 还有货吗
+  - question: 后面还会补货吗
+  - question: 有没有类似款可以替代
+- name: scene_079_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个卖完了吗
+  - question: 后面还会补货吗
+  - question: 有没有类似款可以替代
+- name: scene_079_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个有库存吗
+  - question: 后面还会补货吗
+  - question: 有没有类似款可以替代
+- name: scene_080_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能送个礼品袋吗
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_080_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 需要礼盒包装吗
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_080_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有包装吗
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_080_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 包装怎么收费
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_080_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 需要礼品袋吗
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_080_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个包装好看吗
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_080_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能包装一下送人吗
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_080_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 包装要加钱吗
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_080_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 是礼盒装吗
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_080_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 包装规格多大
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_081_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能单买一个吗
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_081_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个单卖吗
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_081_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能拆开卖吗
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_081_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 只买一个行吗
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_081_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能单独买这个吗
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_081_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不买套餐可以吗
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_081_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 单只多少钱
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_081_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我想单买一个
+  - question: 这个规格适合日常使用吗
+  - question: 和其他规格有什么区别
+- name: scene_082_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么涨价了
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_082_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 价格有变动吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_082_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 现在什么价
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_082_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 比之前贵了
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_082_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 价格调整了吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_082_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这是原价吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_082_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 折扣后多少钱
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_082_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 今天什么价格
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_082_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 为什么价格不一样
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_083_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能代写贺卡吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_083_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能加张贺卡吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_083_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能写祝福语吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_083_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有代写服务吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_083_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以放卡片吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_083_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能帮忙写个卡片吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_083_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 贺卡怎么收费
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_083_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个支持贺卡吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_083_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 想要贺卡怎么弄
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_084_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这是什么牌
+  - question: 品牌咨询方面还有什么需要注意的吗
+  - question: 如果我继续下单，品牌咨询还有什么建议
+- name: scene_084_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 哪个牌子
+  - question: 品牌咨询方面还有什么需要注意的吗
+  - question: 如果我继续下单，品牌咨询还有什么建议
+- name: scene_084_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 是什么品牌
+  - question: 品牌咨询方面还有什么需要注意的吗
+  - question: 如果我继续下单，品牌咨询还有什么建议
+- name: scene_084_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 品牌授权了吗
+  - question: 品牌咨询方面还有什么需要注意的吗
+  - question: 如果我继续下单，品牌咨询还有什么建议
+- name: scene_084_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 牌子是哪个
+  - question: 品牌咨询方面还有什么需要注意的吗
+  - question: 如果我继续下单，品牌咨询还有什么建议
+- name: scene_084_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 属于哪个品牌
+  - question: 品牌咨询方面还有什么需要注意的吗
+  - question: 如果我继续下单，品牌咨询还有什么建议
+- name: scene_084_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 什么时候注册的
+  - question: 品牌咨询方面还有什么需要注意的吗
+  - question: 如果我继续下单，品牌咨询还有什么建议
+- name: scene_085_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 价格能便宜点吗
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_085_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 价格太高了
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_085_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能给个优惠吗
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_085_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有点贵啊
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_085_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能打个折吗
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_085_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么比别人贵
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_085_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能降点价吗
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_085_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 价格能商量吗
+  - question: 那我这种情况更推荐哪一款
+  - question: 使用前还有什么需要注意的
+- name: scene_086_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 安全等级多少
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_086_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 符合国标吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_086_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有3c认证吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_086_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 安全检测合格吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_086_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 符合什么标准
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_086_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有安全证书吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_086_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 达到a类标准了吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_086_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 安全检测报告有吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_086_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 符合国家标准吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_087_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 是正品吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_087_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 是真的吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_087_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不是假的吧
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_087_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 肯定是正品吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_087_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有正品保障吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_087_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么证明是正品
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_087_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个不会是假货吧
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_087_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 是原装正品吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_087_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 跟专柜一样吗
+  - question: 这个使用时有什么注意事项
+  - question: 如果收到后发现有问题怎么处理
+- name: scene_088_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个是新款吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_088_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这是新品吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_088_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 是不是最近新出的
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_088_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这是新款还是老款
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_088_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 什么时候发售
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_088_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 什么时候开卖
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_088_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 什么时候能买
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_088_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这是刚上的吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_088_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 首发是什么时候
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_088_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 第一批货吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_089_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有什么活动
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_089_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么最划算
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_089_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有优惠活动吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_089_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能参加活动吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_089_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 活动链接发我
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_089_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 秒杀怎么参加
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_089_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有满减活动吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_089_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 老客户有优惠吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_089_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 焕新周活动是什么
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_089_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 满赠联名礼包规则是什么
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_089_11
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有免单活动吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_089_12
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 多次购买有优惠吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_090_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 什么是购物金
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_090_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 购物金怎么用
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_090_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 购物金怎么充值
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_090_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 用购物金有积分吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_090_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 购物金能提现吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_090_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 购物金有效期多久
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_090_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 购物金怎么抵扣
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_090_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有膨胀金吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_091_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 购物券在哪领
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_091_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 购物券怎么用
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_091_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有购物券吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_091_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 购物券怎么没看到
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_091_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 购物券过期了怎么办
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_091_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 购物券能叠加吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_091_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 购物券怎么用不了
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_091_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 退款购物券返吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_092_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有优惠券吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_092_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 优惠券在哪
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_092_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 优惠券怎么领
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_092_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能发张券吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_092_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 满减券有吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_092_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 优惠券怎么用
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_092_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有券吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_092_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么领券
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_092_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 券在什么地方
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_092_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能用券吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_092_11
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 返券活动有吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_093_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有红包吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_093_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 红包怎么用
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_093_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 红包在哪领
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_093_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 返红包是真的吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_093_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 红包怎么没到账
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_093_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 红包能用吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_093_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 红包能叠加吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_093_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 退款成功后红包会退回吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_094_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 直播间什么价
+  - question: 直播专属规则方面还有什么需要注意的吗
+  - question: 如果我继续下单，直播专属规则还有什么建议
+- name: scene_094_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 直播有优惠吗
+  - question: 直播专属规则方面还有什么需要注意的吗
+  - question: 如果我继续下单，直播专属规则还有什么建议
+- name: scene_094_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 直播间福利
+  - question: 直播专属规则方面还有什么需要注意的吗
+  - question: 如果我继续下单，直播专属规则还有什么建议
+- name: scene_094_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 主播价多少
+  - question: 直播专属规则方面还有什么需要注意的吗
+  - question: 如果我继续下单，直播专属规则还有什么建议
+- name: scene_094_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 直播有抽奖吗
+  - question: 直播专属规则方面还有什么需要注意的吗
+  - question: 如果我继续下单，直播专属规则还有什么建议
+- name: scene_094_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 直播间券怎么领
+  - question: 直播专属规则方面还有什么需要注意的吗
+  - question: 如果我继续下单，直播专属规则还有什么建议
+- name: scene_094_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 看直播有优惠吗
+  - question: 直播专属规则方面还有什么需要注意的吗
+  - question: 如果我继续下单，直播专属规则还有什么建议
+- name: scene_094_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 直播专享价
+  - question: 直播专属规则方面还有什么需要注意的吗
+  - question: 如果我继续下单，直播专属规则还有什么建议
+- name: scene_094_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 直播间互动有奖吗
+  - question: 直播专属规则方面还有什么需要注意的吗
+  - question: 如果我继续下单，直播专属规则还有什么建议
+- name: scene_095_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 会员有什么好处
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_095_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么开通会员
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_095_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 会员要钱吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_095_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 是会员吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_095_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 会员能打折吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_095_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: VIP有什么特权
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_095_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 入会礼是什么
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_096_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 尾款什么时候付
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_096_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 忘记付尾款了
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_096_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 尾款在哪付
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_096_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 付尾款有提醒吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_096_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 尾款付不了怎么办
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_096_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 定金尾款怎么算
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_096_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 尾款时间到了吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_096_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能提前付尾款吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_097_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个免息吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_097_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 几期免息
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_097_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有免息活动吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_097_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 手续费多少
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_097_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么免息分期
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_097_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能分期吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_097_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 免息是真的吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_097_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 分期要利息吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_097_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 几期手续费免
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_097_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 支持信用卡分期吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_098_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有补贴吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_098_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 国家补贴多少
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_098_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 补贴怎么领
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_098_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 店铺有补贴吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_098_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 补贴政策是什么
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_098_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 谁能享受补贴
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_098_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 补贴什么时候发
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_098_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 补贴到账了吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_098_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么申请补贴
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_099_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有小样吗
+  - question: 试用装规则说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，试用装规则说明还有什么建议
+- name: scene_099_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有试用装吗
+  - question: 试用装规则说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，试用装规则说明还有什么建议
+- name: scene_099_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 送试用装吗
+  - question: 试用装规则说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，试用装规则说明还有什么建议
+- name: scene_099_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 试用装怎么领
+  - question: 试用装规则说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，试用装规则说明还有什么建议
+- name: scene_099_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 试用装免费吗
+  - question: 试用装规则说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，试用装规则说明还有什么建议
+- name: scene_099_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有样品吗
+  - question: 试用装规则说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，试用装规则说明还有什么建议
+- name: scene_099_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 试用装多少钱
+  - question: 试用装规则说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，试用装规则说明还有什么建议
+- name: scene_099_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 试用装链接在哪
+  - question: 试用装规则说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，试用装规则说明还有什么建议
+- name: scene_099_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 拍下送小样吗
+  - question: 试用装规则说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，试用装规则说明还有什么建议
+- name: scene_100_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 积分能抵扣吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_100_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有多少积分
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_100_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 积分怎么查
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_100_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 积分能换什么
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_100_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么获得积分
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_100_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 积分有效期多久
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_100_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 消费有积分吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_100_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 积分能提现吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_100_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么用积分
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_101_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 兑换码在哪
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_101_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么兑换
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_101_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 兑换码怎么用
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_101_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 充值码在哪
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_101_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 兑换码有效吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_101_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 兑换码激活
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_101_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么使用兑换码
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_102_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 包邮吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_102_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 运费多少钱
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_102_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 满多少包邮
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_102_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 运费怎么算
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_102_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 运费能退吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_102_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 偏远地区运费
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_102_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 加急运费多少
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_102_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不包邮地区
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_102_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发顺丰加钱吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_103_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发什么快递
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_103_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能发顺丰吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_103_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能改快递吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_103_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 快递电话多少
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_103_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能指定快递吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_103_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 支持什么快递
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_103_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 快递能到吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_104_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 物流不更新
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_104_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 快递丢了
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_104_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 一直没物流
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_104_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发错地方了
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_104_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 包裹异常
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_104_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 物流停滞
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_104_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 物流卡住了
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_104_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 快递异常怎么处理
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_104_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 一直停在一个地方
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_104_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 包裹派送异常
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_104_11
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 显示异常签收怎么办
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: express_001_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这快递好几天了还没到
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: express_001_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 快递怎么这么慢
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: express_001_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 物流怎么这么久
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: express_001_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 寄了这么久还没到
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: express_001_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么这么多天还在路上
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: express_001_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个快递怎么还没动静
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: express_001_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 物流卡了两天一直没更新
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: express_001_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我的快递是不是异常了，怎么一直不到
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: express_001_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 都过了预计时间了怎么还没送到
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: express_001_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 物流信息停在那里不动了怎么办
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: express_001_11
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 快递半天不派送是怎么回事
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_105_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能分两个地址发吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_105_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发两个地方
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_105_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发货前检查
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_105_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能合并发货吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_105_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 一起发可以吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_106_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 什么时候发货
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_106_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 今天能发吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_106_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 大概什么时候发
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_106_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 下单多久发货
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_106_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 多久安排发出
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_107_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 收到空包裹
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_107_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 少发了
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_107_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发错货了
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_107_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 数量不对
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_107_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么补发
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_107_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 缺货补发
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_107_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 重新发货
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_107_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 补发快递单
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_107_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 虚假发货
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_107_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 漏发了给我补发一下
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_107_11
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 少了一件麻烦补发
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_107_12
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个发错了重新补发
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_107_13
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 补发什么时候安排
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_108_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能送货上门吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_108_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能放驿站吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_108_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 取件码是多少
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_108_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能送上楼吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_108_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 放哪自取
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_108_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 快递派送时间
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_108_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能放到菜鸟驿站吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_108_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能放快递柜吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_109_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 快递单号多少
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_109_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 物流查不到
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_109_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 物流到哪了
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_109_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发给我单号
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_109_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 快递进度
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_109_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 查物流
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_109_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发货了吗
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_110_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有退货宝吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_110_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 退货宝怎么用
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_110_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能用退货宝吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_110_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 退货宝在哪
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_110_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 支持退货宝吗
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_110_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 退货宝服务
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_110_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 退货宝入口
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_110_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么开通退货宝
+  - question: 需要我准备哪些凭证
+  - question: 大概多久可以处理完成
+- name: scene_111_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 电话多少
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_111_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能电话吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_111_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 给个号码
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_111_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有联系方式吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_111_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 电话联系
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_111_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么联系你们
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_111_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 手机号多少
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_111_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 给个电话
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_112_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 返现吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_112_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 好评有礼吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_112_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 晒图有奖吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_112_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 给个好评
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_112_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 已好评
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_112_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 五星返现
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_112_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 评价有礼
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_112_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 好评返现活动
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_112_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发图有奖吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_113_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能合作吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_113_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有推广吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_113_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能带货吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_113_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 代运营合作
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_113_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 淘客合作
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_113_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 商务合作
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_113_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 一起合作
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_113_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有业务合作吗
+  - question: 具体要怎么预约或提交信息
+  - question: 处理时间大概需要多久
+- name: scene_114_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 好评刷的吧
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_114_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 评价是假的吧
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_114_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 刷单的吧
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_114_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 好评真实吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_114_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 评价可信吗
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_114_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这么多好评假的吧
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_114_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 刷出来的好评
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_114_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 虚假评价
+  - question: 这个权益有什么使用限制吗
+  - question: 下单后在哪里查看或处理
+- name: scene_115_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 收到了
+  - question: 已收到货物方面还有什么需要注意的吗
+  - question: 如果我继续下单，已收到货物还有什么建议
+- name: scene_115_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 货收到了
+  - question: 已收到货物方面还有什么需要注意的吗
+  - question: 如果我继续下单，已收到货物还有什么建议
+- name: scene_115_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 东西到了
+  - question: 已收到货物方面还有什么需要注意的吗
+  - question: 如果我继续下单，已收到货物还有什么建议
+- name: scene_115_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 收到了商品
+  - question: 已收到货物方面还有什么需要注意的吗
+  - question: 如果我继续下单，已收到货物还有什么建议
+- name: scene_115_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 确认收到
+  - question: 已收到货物方面还有什么需要注意的吗
+  - question: 如果我继续下单，已收到货物还有什么建议
+- name: scene_115_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 货已经拿到
+  - question: 已收到货物方面还有什么需要注意的吗
+  - question: 如果我继续下单，已收到货物还有什么建议
+- name: scene_116_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: '123456'
+  - question: 收到纯数字信息方面还有什么需要注意的吗
+  - question: 如果我继续下单，收到纯数字信息还有什么建议
+- name: scene_116_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: '8888'
+  - question: 收到纯数字信息方面还有什么需要注意的吗
+  - question: 如果我继续下单，收到纯数字信息还有什么建议
+- name: scene_116_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: '10086'
+  - question: 收到纯数字信息方面还有什么需要注意的吗
+  - question: 如果我继续下单，收到纯数字信息还有什么建议
+- name: scene_116_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 验证码
+  - question: 收到纯数字信息方面还有什么需要注意的吗
+  - question: 如果我继续下单，收到纯数字信息还有什么建议
+- name: scene_116_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 数字
+  - question: 收到纯数字信息方面还有什么需要注意的吗
+  - question: 如果我继续下单，收到纯数字信息还有什么建议
+- name: scene_117_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 发个地址
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_117_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 公司地址在哪
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_117_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 退货地址是什么
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_117_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 退货仓库地址（用于退货）
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_117_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 门店地址在哪里
+  - question: 一般多久可以发出
+  - question: 如果物流异常应该怎么处理
+- name: scene_118_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 拍错了
+  - question: 常见付款场景说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，常见付款场景说明还有什么建议
+- name: scene_118_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 买多了
+  - question: 常见付款场景说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，常见付款场景说明还有什么建议
+- name: scene_118_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么付款
+  - question: 常见付款场景说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，常见付款场景说明还有什么建议
+- name: scene_118_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能货到付款吗
+  - question: 常见付款场景说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，常见付款场景说明还有什么建议
+- name: scene_118_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 付款失败了
+  - question: 常见付款场景说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，常见付款场景说明还有什么建议
+- name: scene_118_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 付款了但显示交易关闭了
+  - question: 常见付款场景说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，常见付款场景说明还有什么建议
+- name: scene_118_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 我重复付款了
+  - question: 常见付款场景说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，常见付款场景说明还有什么建议
+- name: scene_118_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能合并付款吗
+  - question: 常见付款场景说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，常见付款场景说明还有什么建议
+- name: scene_118_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能先用后付吗
+  - question: 常见付款场景说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，常见付款场景说明还有什么建议
+- name: scene_119_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不等了
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_119_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 去别家看看
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_119_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不想要了
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_119_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 算了
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_119_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 换一家买
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_119_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不买了
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_119_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 去其他店
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_119_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 再看看吧
+  - question: 那我接下来应该怎么操作
+  - question: 如果还是解决不了可以找谁处理
+- name: scene_120_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能用微信支付吗
+  - question: 支付方式说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，支付方式说明还有什么建议
+- name: scene_120_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以用支付宝支付吗
+  - question: 支付方式说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，支付方式说明还有什么建议
+- name: scene_120_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 支持信用卡支付吗
+  - question: 支付方式说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，支付方式说明还有什么建议
+- name: scene_120_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以用银行卡支付吗
+  - question: 支付方式说明方面还有什么需要注意的吗
+  - question: 如果我继续下单，支付方式说明还有什么建议
+- name: scene_121_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 买不了
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_121_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 为什么不能下单
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_121_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有限制吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_121_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能拍吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_121_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 限购吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_121_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么买不了
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_121_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 可以买吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_121_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能下单吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_121_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 什么时候能买
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_121_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 分开拍可以吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_122_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能批发吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_122_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 有批发价吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_122_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 多买能优惠吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_122_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 批发价多少
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_122_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能团购吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_122_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 量大有优惠吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_122_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 买得多便宜吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_122_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 批发业务
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_122_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 大宗购买
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_122_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 批发多少钱
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_123_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 明天再买
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_123_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 等降价再买
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_123_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 等活动再买
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_123_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 考虑一下
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_123_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 再看看
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_123_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 等双十一
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_123_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 以后再说
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_123_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 晚点买
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_123_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不急买
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_124_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 支持花呗吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_124_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能用花呗分期吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_124_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 花呗手续费
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_124_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 花呗怎么还
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_124_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 分几期
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_124_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 花呗利息
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_124_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能用花呗吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_124_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 花呗分期付款
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_124_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不支持花呗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_124_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 免息分期吗
+  - question: 现在下单还能享受这个优惠吗
+  - question: 如果后面降价了可以补差价吗
+- name: scene_125_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 加不了购物车
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_125_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不能加购物车
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_125_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 购物车加购失败
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_125_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 没有购物车
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_125_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 购物车在哪
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_125_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么加购物车
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_125_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 购物车无法添加
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_125_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 加购不了
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_125_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不能加入购物车
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_126_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 下架了
+  - question: 后面还会补货吗
+  - question: 有没有类似款可以替代
+- name: scene_126_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 怎么下架了
+  - question: 后面还会补货吗
+  - question: 有没有类似款可以替代
+- name: scene_126_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 为什么没货了
+  - question: 后面还会补货吗
+  - question: 有没有类似款可以替代
+- name: scene_126_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 什么时候上架
+  - question: 后面还会补货吗
+  - question: 有没有类似款可以替代
+- name: scene_126_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 买不到了
+  - question: 后面还会补货吗
+  - question: 有没有类似款可以替代
+- name: scene_126_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 商品没了
+  - question: 后面还会补货吗
+  - question: 有没有类似款可以替代
+- name: scene_126_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 找不到商品
+  - question: 后面还会补货吗
+  - question: 有没有类似款可以替代
+- name: scene_127_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能加单吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_127_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能再拍一个吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_127_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 想多买一个
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_127_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 追加商品
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_127_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 补拍一个
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_127_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 订单能加货吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_127_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 再加一件
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_127_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能改单吗
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_127_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 合并订单
+  - question: 那我现在应该怎么下单
+  - question: 下单后还能修改信息吗
+- name: scene_storage_method_01
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个要怎么保存
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_02
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 需要冷藏吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_03
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 要放冰箱吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_04
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 常温保存可以吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_05
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 开封后怎么保存
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_06
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 要直立放吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_07
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 要避光吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_08
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 放在阴凉处就行吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_09
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 需要密封保存吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_10
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 要放干燥处吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_11
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 能放浴室吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_12
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 要冷冻吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_13
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个产品平时怎么存放啊
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_14
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个需要放在冰箱里面吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_15
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 不冷藏的话会不会坏掉
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_16
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个常温放着可以吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_17
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 开封以后要怎么保存比较好
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_18
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个要放在阴凉干燥的地方吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_19
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 需要避开太阳直晒吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_20
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个可以放在浴室里吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_21
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 用完之后要不要密封起来
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_22
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个要不要放冷冻层保存
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_23
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 夏天温度高会不会影响保存
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_24
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个放在室内就行还是要特别注意保存条件
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_25
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 开盖之后能不能直接放着不管
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
+- name: scene_storage_method_26
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  turns:
+  - question: 这个保存的时候需要竖着放吗
+  - question: 平时保存时还有什么禁忌吗
+  - question: 如果已经开封了还能放多久
