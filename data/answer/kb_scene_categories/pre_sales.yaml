@@ -1,0 +1,180 @@
+suite:
+  name: kb_scene_category_pre_sales
+  mode: sequential
+  quality: true
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+  quality_retries: 10
+  quality_retry_interval_seconds: 2
+  assertions: true
+target_env: dev
+category_groups:
+- key: ALL
+  name: 全部分类
+  count: 227
+- id: 696f3c783dceab0847703e11
+  key: PRE_SALES
+  name: 售前咨询
+  count: 2
+cases:
+- name: PRE_SALES_067_赠品相关_01
+  category: 售前咨询
+  category_key: PRE_SALES
+  scene_name: 赠品相关
+  scene_description: 赠品相关问题，包括赠品质量、赠品缺失、赠品属性、赠品选择、赠品更换、申请赠品、拒绝赠品、买一送一
+  question_example: 赠品什么时候发
+  turns:
+  - question: 赠品什么时候发
+    expect:
+      scene: 赠品相关
+- name: PRE_SALES_067_赠品相关_02
+  category: 售前咨询
+  category_key: PRE_SALES
+  scene_name: 赠品相关
+  scene_description: 赠品相关问题，包括赠品质量、赠品缺失、赠品属性、赠品选择、赠品更换、申请赠品、拒绝赠品、买一送一
+  question_example: 赠品可以换别的吗
+  turns:
+  - question: 赠品可以换别的吗
+    expect:
+      scene: 赠品相关
+- name: PRE_SALES_067_赠品相关_03
+  category: 售前咨询
+  category_key: PRE_SALES
+  scene_name: 赠品相关
+  scene_description: 赠品相关问题，包括赠品质量、赠品缺失、赠品属性、赠品选择、赠品更换、申请赠品、拒绝赠品、买一送一
+  question_example: 赠品少发了咋办
+  turns:
+  - question: 赠品少发了咋办
+    expect:
+      scene: 赠品相关
+- name: PRE_SALES_067_赠品相关_04
+  category: 售前咨询
+  category_key: PRE_SALES
+  scene_name: 赠品相关
+  scene_description: 赠品相关问题，包括赠品质量、赠品缺失、赠品属性、赠品选择、赠品更换、申请赠品、拒绝赠品、买一送一
+  question_example: 可以不要赠品吗
+  turns:
+  - question: 可以不要赠品吗
+    expect:
+      scene: 赠品相关
+- name: PRE_SALES_067_赠品相关_05
+  category: 售前咨询
+  category_key: PRE_SALES
+  scene_name: 赠品相关
+  scene_description: 赠品相关问题，包括赠品质量、赠品缺失、赠品属性、赠品选择、赠品更换、申请赠品、拒绝赠品、买一送一
+  question_example: 有买送活动吗
+  turns:
+  - question: 有买送活动吗
+    expect:
+      scene: 赠品相关
+- name: PRE_SALES_067_赠品相关_06
+  category: 售前咨询
+  category_key: PRE_SALES
+  scene_name: 赠品相关
+  scene_description: 赠品相关问题，包括赠品质量、赠品缺失、赠品属性、赠品选择、赠品更换、申请赠品、拒绝赠品、买一送一
+  question_example: 赠品是随机发吗
+  turns:
+  - question: 赠品是随机发吗
+    expect:
+      scene: 赠品相关
+- name: PRE_SALES_067_赠品相关_07
+  category: 售前咨询
+  category_key: PRE_SALES
+  scene_name: 赠品相关
+  scene_description: 赠品相关问题，包括赠品质量、赠品缺失、赠品属性、赠品选择、赠品更换、申请赠品、拒绝赠品、买一送一
+  question_example: 我想多要个赠品行不行
+  turns:
+  - question: 我想多要个赠品行不行
+    expect:
+      scene: 赠品相关
+- name: PRE_SALES_178_运费险服务_01
+  category: 售前咨询
+  category_key: PRE_SALES
+  scene_name: 运费险服务
+  scene_description: 运费险相关问题，包括是否有运费险、运费险购买、运费险理赔、运费险退还、运费险有效期、运费险失效、赠送运费险
+  question_example: 这个商品有运费险吗
+  turns:
+  - question: 这个商品有运费险吗
+    expect:
+      scene: 运费险服务
+- name: PRE_SALES_178_运费险服务_02
+  category: 售前咨询
+  category_key: PRE_SALES
+  scene_name: 运费险服务
+  scene_description: 运费险相关问题，包括是否有运费险、运费险购买、运费险理赔、运费险退还、运费险有效期、运费险失效、赠送运费险
+  question_example: 运费险怎么理赔
+  turns:
+  - question: 运费险怎么理赔
+    expect:
+      scene: 运费险服务
+- name: PRE_SALES_178_运费险服务_03
+  category: 售前咨询
+  category_key: PRE_SALES
+  scene_name: 运费险服务
+  scene_description: 运费险相关问题，包括是否有运费险、运费险购买、运费险理赔、运费险退还、运费险有效期、运费险失效、赠送运费险
+  question_example: 没买到运费险怎么办
+  turns:
+  - question: 没买到运费险怎么办
+    expect:
+      scene: 运费险服务
+- name: PRE_SALES_178_运费险服务_04
+  category: 售前咨询
+  category_key: PRE_SALES
+  scene_name: 运费险服务
+  scene_description: 运费险相关问题，包括是否有运费险、运费险购买、运费险理赔、运费险退还、运费险有效期、运费险失效、赠送运费险
+  question_example: 运费险能退吗
+  turns:
+  - question: 运费险能退吗
+    expect:
+      scene: 运费险服务
+- name: PRE_SALES_178_运费险服务_05
+  category: 售前咨询
+  category_key: PRE_SALES
+  scene_name: 运费险服务
+  scene_description: 运费险相关问题，包括是否有运费险、运费险购买、运费险理赔、运费险退还、运费险有效期、运费险失效、赠送运费险
+  question_example: 你们的运费险怎么用
+  turns:
+  - question: 你们的运费险怎么用
+    expect:
+      scene: 运费险服务
+- name: PRE_SALES_178_运费险服务_06
+  category: 售前咨询
+  category_key: PRE_SALES
+  scene_name: 运费险服务
+  scene_description: 运费险相关问题，包括是否有运费险、运费险购买、运费险理赔、运费险退还、运费险有效期、运费险失效、赠送运费险
+  question_example: 运费险要钱吗
+  turns:
+  - question: 运费险要钱吗
+    expect:
+      scene: 运费险服务
+- name: PRE_SALES_178_运费险服务_07
+  category: 售前咨询
+  category_key: PRE_SALES
+  scene_name: 运费险服务
+  scene_description: 运费险相关问题，包括是否有运费险、运费险购买、运费险理赔、运费险退还、运费险有效期、运费险失效、赠送运费险
+  question_example: 运费险什么时候生效
+  turns:
+  - question: 运费险什么时候生效
+    expect:
+      scene: 运费险服务
+- name: PRE_SALES_178_运费险服务_08
+  category: 售前咨询
+  category_key: PRE_SALES
+  scene_name: 运费险服务
+  scene_description: 运费险相关问题，包括是否有运费险、运费险购买、运费险理赔、运费险退还、运费险有效期、运费险失效、赠送运费险
+  question_example: 我想买个运费险
+  turns:
+  - question: 我想买个运费险
+    expect:
+      scene: 运费险服务
+- name: PRE_SALES_178_运费险服务_09
+  category: 售前咨询
+  category_key: PRE_SALES
+  scene_name: 运费险服务
+  scene_description: 运费险相关问题，包括是否有运费险、运费险购买、运费险理赔、运费险退还、运费险有效期、运费险失效、赠送运费险
+  question_example: 运费险是赠送的吗
+  turns:
+  - question: 运费险是赠送的吗
+    expect:
+      scene: 运费险服务

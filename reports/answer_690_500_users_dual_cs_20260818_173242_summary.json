@@ -1,0 +1,29 @@
+{
+  "target_env": "dev",
+  "base_url": "https://dev.zhiyan.chat",
+  "shop_id": "690",
+  "shop_name": "shop_690",
+  "unique_users": 500,
+  "single_customer_service_users": 450,
+  "dual_customer_service_users": 50,
+  "conversation_executions": 550,
+  "endpoint_turn_requests_planned": 2200,
+  "endpoint_turn_requests_attempted": 2200,
+  "endpoint_turn_requests_passed": 2200,
+  "workers": 50,
+  "questions": [
+    "这款洗发水适合油头吗",
+    "洗完会不会很干",
+    "建议多久洗一次",
+    "油头可以每天使用这款洗发水吗"
+  ],
+  "product_url": "https://item.taobao.com/item.htm?id=3825017609737338890",
+  "single_customer_service_account": "zhaowenlong",
+  "unique_dual_customer_service_accounts": 100,
+  "passed_conversations": 550,
+  "failed_conversations": 0,
+  "conversation_success_rate_percent": 100.0,
+  "duration_seconds": 935.271,
+  "error_counts": {},
+  "results_file": "E:\\code\\new-test-api - 副本\\reports\\answer_690_500_users_dual_cs_20260818_173242.jsonl"
+}

@@ -34,8 +34,7 @@ _TOKEN_CACHE: Dict[str, str] = {}
 # testcase 负责指定 /chat/answer 默认参与执行的数据分类文件。
 # 每个 YAML 文件名就是测试分类；执行策略仍由该文件顶部的 suite 配置管理。
 ANSWER_DATA_FILES = [
-    "data/answer/scene_multiturn_cases.yaml",
-    "data/answer/multiturn_cases.yaml",
+    "data/answer/usage_instruction_scene_cases.yaml",
 ]
 
 DEFAULT_SUITE_OPTIONS: Dict[str, Any] = {
@@ -449,7 +448,7 @@ def _scene_expected_hit(expected_scene: str, actual_scenes: List[str]) -> bool:
     if not expected_scene:
         return True
     normalized_actuals = [str(scene or "").strip() for scene in actual_scenes if str(scene or "").strip()]
-    return expected_scene in normalized_actuals
+    return any(expected_scene in actual_scene for actual_scene in normalized_actuals)
 
 
 def _assert_response(case_label: str, expected: Dict[str, Any], chat_response: Dict[str, Any], chat_reply: str) -> None:

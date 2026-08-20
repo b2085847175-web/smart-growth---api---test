@@ -1,0 +1,7180 @@
+suite:
+  name: kb_scene_category_product_info
+  mode: sequential
+  quality: true
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+  quality_retries: 10
+  quality_retry_interval_seconds: 2
+  assertions: true
+target_env: dev
+category_groups:
+- key: ALL
+  name: 全部分类
+  count: 227
+- id: 696f3c783dceab0847703e12
+  key: PRODUCT_INFO
+  name: 商品咨询
+  count: 116
+cases:
+- name: PRODUCT_INFO_001_适用年龄_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用年龄
+  scene_description: 买家咨询商品适合哪个年龄段使用，包含儿童、小孩、青少年、成人、老人等年龄相关问法。
+  question_example: 18岁可以用吗
+  turns:
+  - question: 18岁可以用吗
+    expect:
+      scene: 适用年龄
+- name: PRODUCT_INFO_001_适用年龄_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用年龄
+  scene_description: 买家咨询商品适合哪个年龄段使用，包含儿童、小孩、青少年、成人、老人等年龄相关问法。
+  question_example: 学生能用吗
+  turns:
+  - question: 学生能用吗
+    expect:
+      scene: 适用年龄
+- name: PRODUCT_INFO_001_适用年龄_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用年龄
+  scene_description: 买家咨询商品适合哪个年龄段使用，包含儿童、小孩、青少年、成人、老人等年龄相关问法。
+  question_example: 20岁适合吗
+  turns:
+  - question: 20岁适合吗
+    expect:
+      scene: 适用年龄
+- name: PRODUCT_INFO_001_适用年龄_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用年龄
+  scene_description: 买家咨询商品适合哪个年龄段使用，包含儿童、小孩、青少年、成人、老人等年龄相关问法。
+  question_example: 小孩能用吗
+  turns:
+  - question: 小孩能用吗
+    expect:
+      scene: 适用年龄
+- name: PRODUCT_INFO_001_适用年龄_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用年龄
+  scene_description: 买家咨询商品适合哪个年龄段使用，包含儿童、小孩、青少年、成人、老人等年龄相关问法。
+  question_example: 老人能用吗
+  turns:
+  - question: 老人能用吗
+    expect:
+      scene: 适用年龄
+- name: PRODUCT_INFO_002_适用性别_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用性别
+  scene_description: 买家咨询商品是否适合男性、女性或特定性别人群使用。
+  question_example: 男生能用吗
+  turns:
+  - question: 男生能用吗
+    expect:
+      scene: 适用性别
+- name: PRODUCT_INFO_002_适用性别_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用性别
+  scene_description: 买家咨询商品是否适合男性、女性或特定性别人群使用。
+  question_example: 女生适合吗
+  turns:
+  - question: 女生适合吗
+    expect:
+      scene: 适用性别
+- name: PRODUCT_INFO_002_适用性别_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用性别
+  scene_description: 买家咨询商品是否适合男性、女性或特定性别人群使用。
+  question_example: 男士可以用吗
+  turns:
+  - question: 男士可以用吗
+    expect:
+      scene: 适用性别
+- name: PRODUCT_INFO_002_适用性别_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用性别
+  scene_description: 买家咨询商品是否适合男性、女性或特定性别人群使用。
+  question_example: 女士能用这个吗
+  turns:
+  - question: 女士能用这个吗
+    expect:
+      scene: 适用性别
+- name: PRODUCT_INFO_002_适用性别_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用性别
+  scene_description: 买家咨询商品是否适合男性、女性或特定性别人群使用。
+  question_example: 男性适合这款吗
+  turns:
+  - question: 男性适合这款吗
+    expect:
+      scene: 适用性别
+- name: PRODUCT_INFO_003_适用季节_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用季节
+  scene_description: 买家咨询商品适合什么季节、温度或气候条件下使用。
+  question_example: 夏天能用吗
+  turns:
+  - question: 夏天能用吗
+    expect:
+      scene: 适用季节
+- name: PRODUCT_INFO_003_适用季节_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用季节
+  scene_description: 买家咨询商品适合什么季节、温度或气候条件下使用。
+  question_example: 适合春夏还是秋冬
+  turns:
+  - question: 适合春夏还是秋冬
+    expect:
+      scene: 适用季节
+- name: PRODUCT_INFO_003_适用季节_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用季节
+  scene_description: 买家咨询商品适合什么季节、温度或气候条件下使用。
+  question_example: 一年四季都能用吗
+  turns:
+  - question: 一年四季都能用吗
+    expect:
+      scene: 适用季节
+- name: PRODUCT_INFO_003_适用季节_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用季节
+  scene_description: 买家咨询商品适合什么季节、温度或气候条件下使用。
+  question_example: 冬天会不会太厚重
+  turns:
+  - question: 冬天会不会太厚重
+    expect:
+      scene: 适用季节
+- name: PRODUCT_INFO_003_适用季节_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用季节
+  scene_description: 买家咨询商品适合什么季节、温度或气候条件下使用。
+  question_example: 换季期间适合吗
+  turns:
+  - question: 换季期间适合吗
+    expect:
+      scene: 适用季节
+- name: PRODUCT_INFO_003_适用季节_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用季节
+  scene_description: 买家咨询商品适合什么季节、温度或气候条件下使用。
+  question_example: 冬季可以用吗
+  turns:
+  - question: 冬季可以用吗
+    expect:
+      scene: 适用季节
+- name: PRODUCT_INFO_003_适用季节_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用季节
+  scene_description: 买家咨询商品适合什么季节、温度或气候条件下使用。
+  question_example: 适合夏季还是冬季
+  turns:
+  - question: 适合夏季还是冬季
+    expect:
+      scene: 适用季节
+- name: PRODUCT_INFO_004_成分表_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 成分表
+  scene_description: 买家索要完整成分表、配方表、配料表、原料清单，或咨询商品是否含有某种具体成分。
+  question_example: 成分表发我看看
+  turns:
+  - question: 成分表发我看看
+    expect:
+      scene: 成分表
+- name: PRODUCT_INFO_004_成分表_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 成分表
+  scene_description: 买家索要完整成分表、配方表、配料表、原料清单，或咨询商品是否含有某种具体成分。
+  question_example: 完整配方有吗
+  turns:
+  - question: 完整配方有吗
+    expect:
+      scene: 成分表
+- name: PRODUCT_INFO_004_成分表_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 成分表
+  scene_description: 买家索要完整成分表、配方表、配料表、原料清单，或咨询商品是否含有某种具体成分。
+  question_example: 配料表在哪里看
+  turns:
+  - question: 配料表在哪里看
+    expect:
+      scene: 成分表
+- name: PRODUCT_INFO_004_成分表_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 成分表
+  scene_description: 买家索要完整成分表、配方表、配料表、原料清单，或咨询商品是否含有某种具体成分。
+  question_example: 全部成分有哪些
+  turns:
+  - question: 全部成分有哪些
+    expect:
+      scene: 成分表
+- name: PRODUCT_INFO_004_成分表_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 成分表
+  scene_description: 买家索要完整成分表、配方表、配料表、原料清单，或咨询商品是否含有某种具体成分。
+  question_example: 有详细成分表吗
+  turns:
+  - question: 有详细成分表吗
+    expect:
+      scene: 成分表
+- name: PRODUCT_INFO_004_成分表_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 成分表
+  scene_description: 买家索要完整成分表、配方表、配料表、原料清单，或咨询商品是否含有某种具体成分。
+  question_example: 有荧光剂吗
+  turns:
+  - question: 有荧光剂吗
+    expect:
+      scene: 成分表
+- name: PRODUCT_INFO_004_成分表_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 成分表
+  scene_description: 买家索要完整成分表、配方表、配料表、原料清单，或咨询商品是否含有某种具体成分。
+  question_example: 含酒精吗
+  turns:
+  - question: 含酒精吗
+    expect:
+      scene: 成分表
+- name: PRODUCT_INFO_005_清洗方式_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 清洗方式
+  scene_description: 买家咨询商品应该怎么清洗、怎么冲洗、怎么清洁，聚焦清洁方式本身。
+  question_example: 这个怎么洗
+  turns:
+  - question: 这个怎么洗
+    expect:
+      scene: 清洗方式
+- name: PRODUCT_INFO_005_清洗方式_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 清洗方式
+  scene_description: 买家咨询商品应该怎么清洗、怎么冲洗、怎么清洁，聚焦清洁方式本身。
+  question_example: 要怎么清洗
+  turns:
+  - question: 要怎么清洗
+    expect:
+      scene: 清洗方式
+- name: PRODUCT_INFO_005_清洗方式_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 清洗方式
+  scene_description: 买家咨询商品应该怎么清洗、怎么冲洗、怎么清洁，聚焦清洁方式本身。
+  question_example: 用清水洗就行吗
+  turns:
+  - question: 用清水洗就行吗
+    expect:
+      scene: 清洗方式
+- name: PRODUCT_INFO_005_清洗方式_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 清洗方式
+  scene_description: 买家咨询商品应该怎么清洗、怎么冲洗、怎么清洁，聚焦清洁方式本身。
+  question_example: 要不要用温水
+  turns:
+  - question: 要不要用温水
+    expect:
+      scene: 清洗方式
+- name: PRODUCT_INFO_005_清洗方式_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 清洗方式
+  scene_description: 买家咨询商品应该怎么清洗、怎么冲洗、怎么清洁，聚焦清洁方式本身。
+  question_example: 需要用专门清洁剂吗
+  turns:
+  - question: 需要用专门清洁剂吗
+    expect:
+      scene: 清洗方式
+- name: PRODUCT_INFO_005_清洗方式_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 清洗方式
+  scene_description: 买家咨询商品应该怎么清洗、怎么冲洗、怎么清洁，聚焦清洁方式本身。
+  question_example: 要不要反面洗
+  turns:
+  - question: 要不要反面洗
+    expect:
+      scene: 清洗方式
+- name: PRODUCT_INFO_005_清洗方式_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 清洗方式
+  scene_description: 买家咨询商品应该怎么清洗、怎么冲洗、怎么清洁，聚焦清洁方式本身。
+  question_example: 深浅分开洗吗
+  turns:
+  - question: 深浅分开洗吗
+    expect:
+      scene: 清洗方式
+- name: PRODUCT_INFO_005_清洗方式_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 清洗方式
+  scene_description: 买家咨询商品应该怎么清洗、怎么冲洗、怎么清洁，聚焦清洁方式本身。
+  question_example: 新衣服要先洗吗
+  turns:
+  - question: 新衣服要先洗吗
+    expect:
+      scene: 清洗方式
+- name: PRODUCT_INFO_006_版型_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 版型
+  scene_description: 买家咨询服装整体版型是宽松、修身、直筒、紧身等
+  question_example: 这款是不是宽松啊
+  turns:
+  - question: 这款是不是宽松啊
+    expect:
+      scene: 版型
+- name: PRODUCT_INFO_006_版型_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 版型
+  scene_description: 买家咨询服装整体版型是宽松、修身、直筒、紧身等
+  question_example: 这个款修身吗
+  turns:
+  - question: 这个款修身吗
+    expect:
+      scene: 版型
+- name: PRODUCT_INFO_006_版型_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 版型
+  scene_description: 买家咨询服装整体版型是宽松、修身、直筒、紧身等
+  question_example: 这个是偏宽松还是偏修身
+  turns:
+  - question: 这个是偏宽松还是偏修身
+    expect:
+      scene: 版型
+- name: PRODUCT_INFO_006_版型_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 版型
+  scene_description: 买家咨询服装整体版型是宽松、修身、直筒、紧身等
+  question_example: 版型会不会很贴身
+  turns:
+  - question: 版型会不会很贴身
+    expect:
+      scene: 版型
+- name: PRODUCT_INFO_006_版型_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 版型
+  scene_description: 买家咨询服装整体版型是宽松、修身、直筒、紧身等
+  question_example: 这个穿起来是直筒版吗
+  turns:
+  - question: 这个穿起来是直筒版吗
+    expect:
+      scene: 版型
+- name: PRODUCT_INFO_006_版型_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 版型
+  scene_description: 买家咨询服装整体版型是宽松、修身、直筒、紧身等
+  question_example: 这条裤子是直筒还是阔腿
+  turns:
+  - question: 这条裤子是直筒还是阔腿
+    expect:
+      scene: 版型
+- name: PRODUCT_INFO_006_版型_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 版型
+  scene_description: 买家咨询服装整体版型是宽松、修身、直筒、紧身等
+  question_example: A字版吗
+  turns:
+  - question: A字版吗
+    expect:
+      scene: 版型
+- name: PRODUCT_INFO_006_版型_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 版型
+  scene_description: 买家咨询服装整体版型是宽松、修身、直筒、紧身等
+  question_example: 是不是落肩款
+  turns:
+  - question: 是不是落肩款
+    expect:
+      scene: 版型
+- name: PRODUCT_INFO_006_版型_09
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 版型
+  scene_description: 买家咨询服装整体版型是宽松、修身、直筒、紧身等
+  question_example: 版型如何
+  turns:
+  - question: 版型如何
+    expect:
+      scene: 版型
+- name: PRODUCT_INFO_007_腰型设计_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 腰型设计
+  scene_description: 买家咨询裤装或裙装的腰型设计，如高腰、中腰、低腰
+  question_example: 这条裤子是高腰的吗
+  turns:
+  - question: 这条裤子是高腰的吗
+    expect:
+      scene: 腰型设计
+- name: PRODUCT_INFO_007_腰型设计_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 腰型设计
+  scene_description: 买家咨询裤装或裙装的腰型设计，如高腰、中腰、低腰
+  question_example: 请问是低腰吗
+  turns:
+  - question: 请问是低腰吗
+    expect:
+      scene: 腰型设计
+- name: PRODUCT_INFO_007_腰型设计_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 腰型设计
+  scene_description: 买家咨询裤装或裙装的腰型设计，如高腰、中腰、低腰
+  question_example: 这个是高腰还是中腰的
+  turns:
+  - question: 这个是高腰还是中腰的
+    expect:
+      scene: 腰型设计
+- name: PRODUCT_INFO_007_腰型设计_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 腰型设计
+  scene_description: 买家咨询裤装或裙装的腰型设计，如高腰、中腰、低腰
+  question_example: 腰线高不高
+  turns:
+  - question: 腰线高不高
+    expect:
+      scene: 腰型设计
+- name: PRODUCT_INFO_007_腰型设计_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 腰型设计
+  scene_description: 买家咨询裤装或裙装的腰型设计，如高腰、中腰、低腰
+  question_example: 这条裙子属于高腰款吗
+  turns:
+  - question: 这条裙子属于高腰款吗
+    expect:
+      scene: 腰型设计
+- name: PRODUCT_INFO_008_尺码标准_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 尺码标准
+  scene_description: 买家在购买前咨询尺码是否标准、是否偏大或偏小
+  question_example: 这个码数标准吗
+  turns:
+  - question: 这个码数标准吗
+    expect:
+      scene: 尺码标准
+- name: PRODUCT_INFO_008_尺码标准_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 尺码标准
+  scene_description: 买家在购买前咨询尺码是否标准、是否偏大或偏小
+  question_example: 码数会不会偏大或偏小
+  turns:
+  - question: 码数会不会偏大或偏小
+    expect:
+      scene: 尺码标准
+- name: PRODUCT_INFO_008_尺码标准_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 尺码标准
+  scene_description: 买家在购买前咨询尺码是否标准、是否偏大或偏小
+  question_example: 码正吗
+  turns:
+  - question: 码正吗
+    expect:
+      scene: 尺码标准
+- name: PRODUCT_INFO_008_尺码标准_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 尺码标准
+  scene_description: 买家在购买前咨询尺码是否标准、是否偏大或偏小
+  question_example: 这个尺码偏小吗
+  turns:
+  - question: 这个尺码偏小吗
+    expect:
+      scene: 尺码标准
+- name: PRODUCT_INFO_008_尺码标准_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 尺码标准
+  scene_description: 买家在购买前咨询尺码是否标准、是否偏大或偏小
+  question_example: 平时穿M这款要拍大一码吗
+  turns:
+  - question: 平时穿M这款要拍大一码吗
+    expect:
+      scene: 尺码标准
+- name: PRODUCT_INFO_009_尺码表_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 尺码表
+  scene_description: 买家咨询具体尺码参数、尺码换算、身高体重与尺码的对应关系，或索要尺码表
+  question_example: 这个码的胸围和肩宽是多大的
+  turns:
+  - question: 这个码的胸围和肩宽是多大的
+    expect:
+      scene: 尺码表
+- name: PRODUCT_INFO_009_尺码表_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 尺码表
+  scene_description: 买家咨询具体尺码参数、尺码换算、身高体重与尺码的对应关系，或索要尺码表
+  question_example: M码适合1米几的
+  turns:
+  - question: M码适合1米几的
+    expect:
+      scene: 尺码表
+- name: PRODUCT_INFO_009_尺码表_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 尺码表
+  scene_description: 买家咨询具体尺码参数、尺码换算、身高体重与尺码的对应关系，或索要尺码表
+  question_example: 175/74A裤长是多少
+  turns:
+  - question: 175/74A裤长是多少
+    expect:
+      scene: 尺码表
+- name: PRODUCT_INFO_009_尺码表_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 尺码表
+  scene_description: 买家咨询具体尺码参数、尺码换算、身高体重与尺码的对应关系，或索要尺码表
+  question_example: 尺码表有吗
+  turns:
+  - question: 尺码表有吗
+    expect:
+      scene: 尺码表
+- name: PRODUCT_INFO_009_尺码表_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 尺码表
+  scene_description: 买家咨询具体尺码参数、尺码换算、身高体重与尺码的对应关系，或索要尺码表
+  question_example: 按身高体重怎么选尺码
+  turns:
+  - question: 按身高体重怎么选尺码
+    expect:
+      scene: 尺码表
+- name: PRODUCT_INFO_009_尺码表_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 尺码表
+  scene_description: 买家咨询具体尺码参数、尺码换算、身高体重与尺码的对应关系，或索要尺码表
+  question_example: 腰围2尺1选多大
+  turns:
+  - question: 腰围2尺1选多大
+    expect:
+      scene: 尺码表
+- name: PRODUCT_INFO_010_尺码体系_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 尺码体系
+  scene_description: 买家咨询商品采用什么尺码体系，如国码、欧码、美码等
+  question_example: 这衣服美码吗
+  turns:
+  - question: 这衣服美码吗
+    expect:
+      scene: 尺码体系
+- name: PRODUCT_INFO_010_尺码体系_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 尺码体系
+  scene_description: 买家咨询商品采用什么尺码体系，如国码、欧码、美码等
+  question_example: 你们的尺寸是美码吗
+  turns:
+  - question: 你们的尺寸是美码吗
+    expect:
+      scene: 尺码体系
+- name: PRODUCT_INFO_010_尺码体系_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 尺码体系
+  scene_description: 买家咨询商品采用什么尺码体系，如国码、欧码、美码等
+  question_example: 你家衣服是欧码吗
+  turns:
+  - question: 你家衣服是欧码吗
+    expect:
+      scene: 尺码体系
+- name: PRODUCT_INFO_010_尺码体系_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 尺码体系
+  scene_description: 买家咨询商品采用什么尺码体系，如国码、欧码、美码等
+  question_example: 这是国码还是欧码
+  turns:
+  - question: 这是国码还是欧码
+    expect:
+      scene: 尺码体系
+- name: PRODUCT_INFO_010_尺码体系_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 尺码体系
+  scene_description: 买家咨询商品采用什么尺码体系，如国码、欧码、美码等
+  question_example: 这个尺码体系怎么区分
+  turns:
+  - question: 这个尺码体系怎么区分
+    expect:
+      scene: 尺码体系
+- name: PRODUCT_INFO_010_尺码体系_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 尺码体系
+  scene_description: 买家咨询商品采用什么尺码体系，如国码、欧码、美码等
+  question_example: 这款按国内尺码选就行吗
+  turns:
+  - question: 这款按国内尺码选就行吗
+    expect:
+      scene: 尺码体系
+- name: PRODUCT_INFO_011_模特尺码参考_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 模特尺码参考
+  scene_description: 买家咨询模特身高体重、模特所穿尺码，作为选码参考
+  question_example: 请问模特穿的什么码呢
+  turns:
+  - question: 请问模特穿的什么码呢
+    expect:
+      scene: 模特尺码参考
+- name: PRODUCT_INFO_011_模特尺码参考_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 模特尺码参考
+  scene_description: 买家咨询模特身高体重、模特所穿尺码，作为选码参考
+  question_example: 模特多高多重穿什么码
+  turns:
+  - question: 模特多高多重穿什么码
+    expect:
+      scene: 模特尺码参考
+- name: PRODUCT_INFO_011_模特尺码参考_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 模特尺码参考
+  scene_description: 买家咨询模特身高体重、模特所穿尺码，作为选码参考
+  question_example: 模特身高体重是多少
+  turns:
+  - question: 模特身高体重是多少
+    expect:
+      scene: 模特尺码参考
+- name: PRODUCT_INFO_011_模特尺码参考_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 模特尺码参考
+  scene_description: 买家咨询模特身高体重、模特所穿尺码，作为选码参考
+  question_example: 模特这件穿的是M吗
+  turns:
+  - question: 模特这件穿的是M吗
+    expect:
+      scene: 模特尺码参考
+- name: PRODUCT_INFO_011_模特尺码参考_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 模特尺码参考
+  scene_description: 买家咨询模特身高体重、模特所穿尺码，作为选码参考
+  question_example: 模特上身效果对应什么尺码
+  turns:
+  - question: 模特上身效果对应什么尺码
+    expect:
+      scene: 模特尺码参考
+- name: PRODUCT_INFO_012_大码/加大码_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 大码/加大码
+  scene_description: 买家咨询店铺是否有大码、加大码、胖体型可穿的款式
+  question_example: 有大码吗
+  turns:
+  - question: 有大码吗
+    expect:
+      scene: 大码/加大码
+- name: PRODUCT_INFO_012_大码/加大码_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 大码/加大码
+  scene_description: 买家咨询店铺是否有大码、加大码、胖体型可穿的款式
+  question_example: 还有大码的吗
+  turns:
+  - question: 还有大码的吗
+    expect:
+      scene: 大码/加大码
+- name: PRODUCT_INFO_012_大码/加大码_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 大码/加大码
+  scene_description: 买家咨询店铺是否有大码、加大码、胖体型可穿的款式
+  question_example: 胖一点能穿吗
+  turns:
+  - question: 胖一点能穿吗
+    expect:
+      scene: 大码/加大码
+- name: PRODUCT_INFO_012_大码/加大码_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 大码/加大码
+  scene_description: 买家咨询店铺是否有大码、加大码、胖体型可穿的款式
+  question_example: 有没有加大码
+  turns:
+  - question: 有没有加大码
+    expect:
+      scene: 大码/加大码
+- name: PRODUCT_INFO_012_大码/加大码_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 大码/加大码
+  scene_description: 买家咨询店铺是否有大码、加大码、胖体型可穿的款式
+  question_example: 大码款的有吗
+  turns:
+  - question: 大码款的有吗
+    expect:
+      scene: 大码/加大码
+- name: PRODUCT_INFO_012_大码/加大码_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 大码/加大码
+  scene_description: 买家咨询店铺是否有大码、加大码、胖体型可穿的款式
+  question_example: 这款有 plus 码吗
+  turns:
+  - question: 这款有 plus 码吗
+    expect:
+      scene: 大码/加大码
+- name: PRODUCT_INFO_013_上身效果_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 上身效果
+  scene_description: 买家咨询商品穿上后的视觉效果，如显瘦、显高、显腿长、显肩宽、显臃肿、垂感等
+  question_example: 上身显瘦吗
+  turns:
+  - question: 上身显瘦吗
+    expect:
+      scene: 上身效果
+- name: PRODUCT_INFO_013_上身效果_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 上身效果
+  scene_description: 买家咨询商品穿上后的视觉效果，如显瘦、显高、显腿长、显肩宽、显臃肿、垂感等
+  question_example: 会不会显壮
+  turns:
+  - question: 会不会显壮
+    expect:
+      scene: 上身效果
+- name: PRODUCT_INFO_013_上身效果_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 上身效果
+  scene_description: 买家咨询商品穿上后的视觉效果，如显瘦、显高、显腿长、显肩宽、显臃肿、垂感等
+  question_example: 显腿长吗
+  turns:
+  - question: 显腿长吗
+    expect:
+      scene: 上身效果
+- name: PRODUCT_INFO_013_上身效果_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 上身效果
+  scene_description: 买家咨询商品穿上后的视觉效果，如显瘦、显高、显腿长、显肩宽、显臃肿、垂感等
+  question_example: 会不会压个子
+  turns:
+  - question: 会不会压个子
+    expect:
+      scene: 上身效果
+- name: PRODUCT_INFO_013_上身效果_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 上身效果
+  scene_description: 买家咨询商品穿上后的视觉效果，如显瘦、显高、显腿长、显肩宽、显臃肿、垂感等
+  question_example: 垂感怎么样
+  turns:
+  - question: 垂感怎么样
+    expect:
+      scene: 上身效果
+- name: PRODUCT_INFO_013_上身效果_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 上身效果
+  scene_description: 买家咨询商品穿上后的视觉效果，如显瘦、显高、显腿长、显肩宽、显臃肿、垂感等
+  question_example: 会不会显臃肿
+  turns:
+  - question: 会不会显臃肿
+    expect:
+      scene: 上身效果
+- name: PRODUCT_INFO_013_上身效果_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 上身效果
+  scene_description: 买家咨询商品穿上后的视觉效果，如显瘦、显高、显腿长、显肩宽、显臃肿、垂感等
+  question_example: 这个穿上能修饰腿型吗
+  turns:
+  - question: 这个穿上能修饰腿型吗
+    expect:
+      scene: 上身效果
+- name: PRODUCT_INFO_013_上身效果_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 上身效果
+  scene_description: 买家咨询商品穿上后的视觉效果，如显瘦、显高、显腿长、显肩宽、显臃肿、垂感等
+  question_example: 穿上会不会显肩宽
+  turns:
+  - question: 穿上会不会显肩宽
+    expect:
+      scene: 上身效果
+- name: PRODUCT_INFO_014_身材适配_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 身材适配
+  scene_description: 买家咨询某种身材条件是否适合穿该商品，如小个子、微胖、苹果型、梨形身材、大胸、肩宽等
+  question_example: 小个子能穿吗
+  turns:
+  - question: 小个子能穿吗
+    expect:
+      scene: 身材适配
+- name: PRODUCT_INFO_014_身材适配_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 身材适配
+  scene_description: 买家咨询某种身材条件是否适合穿该商品，如小个子、微胖、苹果型、梨形身材、大胸、肩宽等
+  question_example: 微胖适合吗
+  turns:
+  - question: 微胖适合吗
+    expect:
+      scene: 身材适配
+- name: PRODUCT_INFO_014_身材适配_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 身材适配
+  scene_description: 买家咨询某种身材条件是否适合穿该商品，如小个子、微胖、苹果型、梨形身材、大胸、肩宽等
+  question_example: 梨形身材能穿吗
+  turns:
+  - question: 梨形身材能穿吗
+    expect:
+      scene: 身材适配
+- name: PRODUCT_INFO_014_身材适配_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 身材适配
+  scene_description: 买家咨询某种身材条件是否适合穿该商品，如小个子、微胖、苹果型、梨形身材、大胸、肩宽等
+  question_example: 大胸适合吗
+  turns:
+  - question: 大胸适合吗
+    expect:
+      scene: 身材适配
+- name: PRODUCT_INFO_014_身材适配_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 身材适配
+  scene_description: 买家咨询某种身材条件是否适合穿该商品，如小个子、微胖、苹果型、梨形身材、大胸、肩宽等
+  question_example: 肩宽穿合适吗
+  turns:
+  - question: 肩宽穿合适吗
+    expect:
+      scene: 身材适配
+- name: PRODUCT_INFO_014_身材适配_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 身材适配
+  scene_description: 买家咨询某种身材条件是否适合穿该商品，如小个子、微胖、苹果型、梨形身材、大胸、肩宽等
+  question_example: 胯宽穿会不会显胖
+  turns:
+  - question: 胯宽穿会不会显胖
+    expect:
+      scene: 身材适配
+- name: PRODUCT_INFO_015_肤色适配_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 肤色适配
+  scene_description: 买家结合肤色咨询某个服装颜色是否适合自己
+  question_example: 黄皮适合这个颜色吗
+  turns:
+  - question: 黄皮适合这个颜色吗
+    expect:
+      scene: 肤色适配
+- name: PRODUCT_INFO_015_肤色适配_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 肤色适配
+  scene_description: 买家结合肤色咨询某个服装颜色是否适合自己
+  question_example: 皮肤黑穿这个显白吗
+  turns:
+  - question: 皮肤黑穿这个显白吗
+    expect:
+      scene: 肤色适配
+- name: PRODUCT_INFO_015_肤色适配_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 肤色适配
+  scene_description: 买家结合肤色咨询某个服装颜色是否适合自己
+  question_example: 这个颜色会不会显黑
+  turns:
+  - question: 这个颜色会不会显黑
+    expect:
+      scene: 肤色适配
+- name: PRODUCT_INFO_015_肤色适配_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 肤色适配
+  scene_description: 买家结合肤色咨询某个服装颜色是否适合自己
+  question_example: 皮肤偏暗穿合适吗
+  turns:
+  - question: 皮肤偏暗穿合适吗
+    expect:
+      scene: 肤色适配
+- name: PRODUCT_INFO_015_肤色适配_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 肤色适配
+  scene_description: 买家结合肤色咨询某个服装颜色是否适合自己
+  question_example: 这个色适合白皮吗
+  turns:
+  - question: 这个色适合白皮吗
+    expect:
+      scene: 肤色适配
+- name: PRODUCT_INFO_016_适用场景_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用场景
+  scene_description: 买家咨询是否适合某类场景
+  question_example: 运动时可以穿吗
+  turns:
+  - question: 运动时可以穿吗
+    expect:
+      scene: 适用场景
+- name: PRODUCT_INFO_016_适用场景_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用场景
+  scene_description: 买家咨询是否适合某类场景
+  question_example: 跳绳可以穿这个内衣吗
+  turns:
+  - question: 跳绳可以穿这个内衣吗
+    expect:
+      scene: 适用场景
+- name: PRODUCT_INFO_016_适用场景_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用场景
+  scene_description: 买家咨询是否适合某类场景
+  question_example: 跑步的时候能穿吗
+  turns:
+  - question: 跑步的时候能穿吗
+    expect:
+      scene: 适用场景
+- name: PRODUCT_INFO_016_适用场景_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用场景
+  scene_description: 买家咨询是否适合某类场景
+  question_example: 这件适合通勤穿吗
+  turns:
+  - question: 这件适合通勤穿吗
+    expect:
+      scene: 适用场景
+- name: PRODUCT_INFO_016_适用场景_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用场景
+  scene_description: 买家咨询是否适合某类场景
+  question_example: 适合正式场合穿吗
+  turns:
+  - question: 适合正式场合穿吗
+    expect:
+      scene: 适用场景
+- name: PRODUCT_INFO_017_穿搭搭配_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 穿搭搭配
+  scene_description: 买家咨询服装与其他衣物、裤子、鞋子或配饰如何搭配
+  question_example: 这个搭配什么样的衣服或裤子
+  turns:
+  - question: 这个搭配什么样的衣服或裤子
+    expect:
+      scene: 穿搭搭配
+- name: PRODUCT_INFO_017_穿搭搭配_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 穿搭搭配
+  scene_description: 买家咨询服装与其他衣物、裤子、鞋子或配饰如何搭配
+  question_example: 这件上衣配什么裤子
+  turns:
+  - question: 这件上衣配什么裤子
+    expect:
+      scene: 穿搭搭配
+- name: PRODUCT_INFO_017_穿搭搭配_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 穿搭搭配
+  scene_description: 买家咨询服装与其他衣物、裤子、鞋子或配饰如何搭配
+  question_example: 这条裤子配什么鞋
+  turns:
+  - question: 这条裤子配什么鞋
+    expect:
+      scene: 穿搭搭配
+- name: PRODUCT_INFO_017_穿搭搭配_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 穿搭搭配
+  scene_description: 买家咨询服装与其他衣物、裤子、鞋子或配饰如何搭配
+  question_example: 模特身上的搭配有卖吗
+  turns:
+  - question: 模特身上的搭配有卖吗
+    expect:
+      scene: 穿搭搭配
+- name: PRODUCT_INFO_017_穿搭搭配_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 穿搭搭配
+  scene_description: 买家咨询服装与其他衣物、裤子、鞋子或配饰如何搭配
+  question_example: 这件衣服怎么搭比较好
+  turns:
+  - question: 这件衣服怎么搭比较好
+    expect:
+      scene: 穿搭搭配
+- name: PRODUCT_INFO_018_口袋设计_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 口袋设计
+  scene_description: 买家咨询商品是否有口袋、口袋位置或口袋类型
+  question_example: 有口袋吗
+  turns:
+  - question: 有口袋吗
+    expect:
+      scene: 口袋设计
+- name: PRODUCT_INFO_018_口袋设计_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 口袋设计
+  scene_description: 买家咨询商品是否有口袋、口袋位置或口袋类型
+  question_example: 胸前有兜吗
+  turns:
+  - question: 胸前有兜吗
+    expect:
+      scene: 口袋设计
+- name: PRODUCT_INFO_018_口袋设计_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 口袋设计
+  scene_description: 买家咨询商品是否有口袋、口袋位置或口袋类型
+  question_example: 两边有口袋吗
+  turns:
+  - question: 两边有口袋吗
+    expect:
+      scene: 口袋设计
+- name: PRODUCT_INFO_018_口袋设计_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 口袋设计
+  scene_description: 买家咨询商品是否有口袋、口袋位置或口袋类型
+  question_example: 口袋是真的还是装饰的
+  turns:
+  - question: 口袋是真的还是装饰的
+    expect:
+      scene: 口袋设计
+- name: PRODUCT_INFO_018_口袋设计_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 口袋设计
+  scene_description: 买家咨询商品是否有口袋、口袋位置或口袋类型
+  question_example: 裤子后面有口袋吗
+  turns:
+  - question: 裤子后面有口袋吗
+    expect:
+      scene: 口袋设计
+- name: PRODUCT_INFO_019_内衬结构_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 内衬结构
+  scene_description: 买家咨询商品是否带内衬、里布、打底层
+  question_example: 有内衬吗
+  turns:
+  - question: 有内衬吗
+    expect:
+      scene: 内衬结构
+- name: PRODUCT_INFO_019_内衬结构_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 内衬结构
+  scene_description: 买家咨询商品是否带内衬、里布、打底层
+  question_example: 里面有里布吗
+  turns:
+  - question: 里面有里布吗
+    expect:
+      scene: 内衬结构
+- name: PRODUCT_INFO_019_内衬结构_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 内衬结构
+  scene_description: 买家咨询商品是否带内衬、里布、打底层
+  question_example: 裙子有打底吗
+  turns:
+  - question: 裙子有打底吗
+    expect:
+      scene: 内衬结构
+- name: PRODUCT_INFO_019_内衬结构_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 内衬结构
+  scene_description: 买家咨询商品是否带内衬、里布、打底层
+  question_example: 裤子有内衬吗
+  turns:
+  - question: 裤子有内衬吗
+    expect:
+      scene: 内衬结构
+- name: PRODUCT_INFO_020_钢圈设计_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 钢圈设计
+  scene_description: 买家咨询文胸类商品是否带钢圈、软钢圈、无钢圈等支撑结构设计
+  question_example: 带钢圈吗
+  turns:
+  - question: 带钢圈吗
+    expect:
+      scene: 钢圈设计
+- name: PRODUCT_INFO_020_钢圈设计_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 钢圈设计
+  scene_description: 买家咨询文胸类商品是否带钢圈、软钢圈、无钢圈等支撑结构设计
+  question_example: 这款有钢圈吗
+  turns:
+  - question: 这款有钢圈吗
+    expect:
+      scene: 钢圈设计
+- name: PRODUCT_INFO_020_钢圈设计_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 钢圈设计
+  scene_description: 买家咨询文胸类商品是否带钢圈、软钢圈、无钢圈等支撑结构设计
+  question_example: 这款是有钢圈还是无钢圈的
+  turns:
+  - question: 这款是有钢圈还是无钢圈的
+    expect:
+      scene: 钢圈设计
+- name: PRODUCT_INFO_020_钢圈设计_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 钢圈设计
+  scene_description: 买家咨询文胸类商品是否带钢圈、软钢圈、无钢圈等支撑结构设计
+  question_example: 是软钢圈吗
+  turns:
+  - question: 是软钢圈吗
+    expect:
+      scene: 钢圈设计
+- name: PRODUCT_INFO_020_钢圈设计_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 钢圈设计
+  scene_description: 买家咨询文胸类商品是否带钢圈、软钢圈、无钢圈等支撑结构设计
+  question_example: 钢圈会不会硌
+  turns:
+  - question: 钢圈会不会硌
+    expect:
+      scene: 钢圈设计
+- name: PRODUCT_INFO_020_钢圈设计_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 钢圈设计
+  scene_description: 买家咨询文胸类商品是否带钢圈、软钢圈、无钢圈等支撑结构设计
+  question_example: 内衣里面有没有支撑圈
+  turns:
+  - question: 内衣里面有没有支撑圈
+    expect:
+      scene: 钢圈设计
+- name: PRODUCT_INFO_021_扣件设计_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 扣件设计
+  scene_description: 买家咨询服装或内衣商品是否带扣子、排扣、按扣、暗扣等扣件设计，以及扣件的位置、类型和数量
+  question_example: 有扣子吗
+  turns:
+  - question: 有扣子吗
+    expect:
+      scene: 扣件设计
+- name: PRODUCT_INFO_021_扣件设计_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 扣件设计
+  scene_description: 买家咨询服装或内衣商品是否带扣子、排扣、按扣、暗扣等扣件设计，以及扣件的位置、类型和数量
+  question_example: 前面有纽扣吗
+  turns:
+  - question: 前面有纽扣吗
+    expect:
+      scene: 扣件设计
+- name: PRODUCT_INFO_021_扣件设计_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 扣件设计
+  scene_description: 买家咨询服装或内衣商品是否带扣子、排扣、按扣、暗扣等扣件设计，以及扣件的位置、类型和数量
+  question_example: 是单排扣还是双排扣
+  turns:
+  - question: 是单排扣还是双排扣
+    expect:
+      scene: 扣件设计
+- name: PRODUCT_INFO_021_扣件设计_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 扣件设计
+  scene_description: 买家咨询服装或内衣商品是否带扣子、排扣、按扣、暗扣等扣件设计，以及扣件的位置、类型和数量
+  question_example: 有排扣吗
+  turns:
+  - question: 有排扣吗
+    expect:
+      scene: 扣件设计
+- name: PRODUCT_INFO_021_扣件设计_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 扣件设计
+  scene_description: 买家咨询服装或内衣商品是否带扣子、排扣、按扣、暗扣等扣件设计，以及扣件的位置、类型和数量
+  question_example: 几排扣
+  turns:
+  - question: 几排扣
+    expect:
+      scene: 扣件设计
+- name: PRODUCT_INFO_021_扣件设计_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 扣件设计
+  scene_description: 买家咨询服装或内衣商品是否带扣子、排扣、按扣、暗扣等扣件设计，以及扣件的位置、类型和数量
+  question_example: 后面有没有排扣
+  turns:
+  - question: 后面有没有排扣
+    expect:
+      scene: 扣件设计
+- name: PRODUCT_INFO_021_扣件设计_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 扣件设计
+  scene_description: 买家咨询服装或内衣商品是否带扣子、排扣、按扣、暗扣等扣件设计，以及扣件的位置、类型和数量
+  question_example: 是暗扣还是明扣
+  turns:
+  - question: 是暗扣还是明扣
+    expect:
+      scene: 扣件设计
+- name: PRODUCT_INFO_021_扣件设计_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 扣件设计
+  scene_description: 买家咨询服装或内衣商品是否带扣子、排扣、按扣、暗扣等扣件设计，以及扣件的位置、类型和数量
+  question_example: 袖口有扣子吗
+  turns:
+  - question: 袖口有扣子吗
+    expect:
+      scene: 扣件设计
+- name: PRODUCT_INFO_021_扣件设计_09
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 扣件设计
+  scene_description: 买家咨询服装或内衣商品是否带扣子、排扣、按扣、暗扣等扣件设计，以及扣件的位置、类型和数量
+  question_example: 领口能扣上吗
+  turns:
+  - question: 领口能扣上吗
+    expect:
+      scene: 扣件设计
+- name: PRODUCT_INFO_021_扣件设计_10
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 扣件设计
+  scene_description: 买家咨询服装或内衣商品是否带扣子、排扣、按扣、暗扣等扣件设计，以及扣件的位置、类型和数量
+  question_example: 这款是按扣还是纽扣
+  turns:
+  - question: 这款是按扣还是纽扣
+    expect:
+      scene: 扣件设计
+- name: PRODUCT_INFO_022_聚拢效果_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 聚拢效果
+  scene_description: 买家咨询内衣类商品是否有聚拢、上托、集中效果
+  question_example: 聚拢吗
+  turns:
+  - question: 聚拢吗
+    expect:
+      scene: 聚拢效果
+- name: PRODUCT_INFO_022_聚拢效果_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 聚拢效果
+  scene_description: 买家咨询内衣类商品是否有聚拢、上托、集中效果
+  question_example: 有上托效果吗
+  turns:
+  - question: 有上托效果吗
+    expect:
+      scene: 聚拢效果
+- name: PRODUCT_INFO_022_聚拢效果_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 聚拢效果
+  scene_description: 买家咨询内衣类商品是否有聚拢、上托、集中效果
+  question_example: 会不会集中
+  turns:
+  - question: 会不会集中
+    expect:
+      scene: 聚拢效果
+- name: PRODUCT_INFO_022_聚拢效果_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 聚拢效果
+  scene_description: 买家咨询内衣类商品是否有聚拢、上托、集中效果
+  question_example: 聚拢效果明显吗
+  turns:
+  - question: 聚拢效果明显吗
+    expect:
+      scene: 聚拢效果
+- name: PRODUCT_INFO_022_聚拢效果_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 聚拢效果
+  scene_description: 买家咨询内衣类商品是否有聚拢、上托、集中效果
+  question_example: 穿起来会不会更聚拢
+  turns:
+  - question: 穿起来会不会更聚拢
+    expect:
+      scene: 聚拢效果
+- name: PRODUCT_INFO_022_聚拢效果_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 聚拢效果
+  scene_description: 买家咨询内衣类商品是否有聚拢、上托、集中效果
+  question_example: 收副乳效果明显吗
+  turns:
+  - question: 收副乳效果明显吗
+    expect:
+      scene: 聚拢效果
+- name: PRODUCT_INFO_023_无痕设计_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 无痕设计
+  scene_description: 买家咨询内衣/打底类商品是否无痕、会不会勒出痕迹
+  question_example: 是无痕的吗
+  turns:
+  - question: 是无痕的吗
+    expect:
+      scene: 无痕设计
+- name: PRODUCT_INFO_023_无痕设计_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 无痕设计
+  scene_description: 买家咨询内衣/打底类商品是否无痕、会不会勒出痕迹
+  question_example: 会不会勒出印子
+  turns:
+  - question: 会不会勒出印子
+    expect:
+      scene: 无痕设计
+- name: PRODUCT_INFO_023_无痕设计_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 无痕设计
+  scene_description: 买家咨询内衣/打底类商品是否无痕、会不会勒出痕迹
+  question_example: 穿紧身衣会不会显痕
+  turns:
+  - question: 穿紧身衣会不会显痕
+    expect:
+      scene: 无痕设计
+- name: PRODUCT_INFO_023_无痕设计_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 无痕设计
+  scene_description: 买家咨询内衣/打底类商品是否无痕、会不会勒出痕迹
+  question_example: 边缘会不会有勒痕
+  turns:
+  - question: 边缘会不会有勒痕
+    expect:
+      scene: 无痕设计
+- name: PRODUCT_INFO_024_穿着稳固性_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 穿着稳固性
+  scene_description: 买家咨询服装或内衣穿着后是否会上滑、下掉、走位或滑动
+  question_example: 会不会走位
+  turns:
+  - question: 会不会走位
+    expect:
+      scene: 穿着稳固性
+- name: PRODUCT_INFO_024_穿着稳固性_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 穿着稳固性
+  scene_description: 买家咨询服装或内衣穿着后是否会上滑、下掉、走位或滑动
+  question_example: 不会走位吧
+  turns:
+  - question: 不会走位吧
+    expect:
+      scene: 穿着稳固性
+- name: PRODUCT_INFO_024_穿着稳固性_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 穿着稳固性
+  scene_description: 买家咨询服装或内衣穿着后是否会上滑、下掉、走位或滑动
+  question_example: 会滑动吗
+  turns:
+  - question: 会滑动吗
+    expect:
+      scene: 穿着稳固性
+- name: PRODUCT_INFO_024_穿着稳固性_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 穿着稳固性
+  scene_description: 买家咨询服装或内衣穿着后是否会上滑、下掉、走位或滑动
+  question_example: 穿着会不会往下掉
+  turns:
+  - question: 穿着会不会往下掉
+    expect:
+      scene: 穿着稳固性
+- name: PRODUCT_INFO_024_穿着稳固性_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 穿着稳固性
+  scene_description: 买家咨询服装或内衣穿着后是否会上滑、下掉、走位或滑动
+  question_example: 肩带会不会滑
+  turns:
+  - question: 肩带会不会滑
+    expect:
+      scene: 穿着稳固性
+- name: PRODUCT_INFO_025_咨询花纹/图案样式_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询花纹/图案样式
+  scene_description: 买家咨询服装的花纹、印花、刺绣、图案样式等外观细节
+  question_example: 花纹什么样
+  turns:
+  - question: 花纹什么样
+    expect:
+      scene: 咨询花纹/图案样式
+- name: PRODUCT_INFO_025_咨询花纹/图案样式_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询花纹/图案样式
+  scene_description: 买家咨询服装的花纹、印花、刺绣、图案样式等外观细节
+  question_example: 这个白点是印花还是刺绣
+  turns:
+  - question: 这个白点是印花还是刺绣
+    expect:
+      scene: 咨询花纹/图案样式
+- name: PRODUCT_INFO_025_咨询花纹/图案样式_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询花纹/图案样式
+  scene_description: 买家咨询服装的花纹、印花、刺绣、图案样式等外观细节
+  question_example: 这款是带花纹的吗
+  turns:
+  - question: 这款是带花纹的吗
+    expect:
+      scene: 咨询花纹/图案样式
+- name: PRODUCT_INFO_025_咨询花纹/图案样式_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询花纹/图案样式
+  scene_description: 买家咨询服装的花纹、印花、刺绣、图案样式等外观细节
+  question_example: 图案是印上去的吗
+  turns:
+  - question: 图案是印上去的吗
+    expect:
+      scene: 咨询花纹/图案样式
+- name: PRODUCT_INFO_025_咨询花纹/图案样式_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询花纹/图案样式
+  scene_description: 买家咨询服装的花纹、印花、刺绣、图案样式等外观细节
+  question_example: 有刺绣元素吗
+  turns:
+  - question: 有刺绣元素吗
+    expect:
+      scene: 咨询花纹/图案样式
+- name: PRODUCT_INFO_026_厚薄程度_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 厚薄程度
+  scene_description: 买家咨询商品厚薄程度、是否加绒、是否加厚、是否夹棉
+  question_example: 厚吗
+  turns:
+  - question: 厚吗
+    expect:
+      scene: 厚薄程度
+- name: PRODUCT_INFO_026_厚薄程度_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 厚薄程度
+  scene_description: 买家咨询商品厚薄程度、是否加绒、是否加厚、是否夹棉
+  question_example: 薄吗
+  turns:
+  - question: 薄吗
+    expect:
+      scene: 厚薄程度
+- name: PRODUCT_INFO_026_厚薄程度_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 厚薄程度
+  scene_description: 买家咨询商品厚薄程度、是否加绒、是否加厚、是否夹棉
+  question_example: 加绒吗
+  turns:
+  - question: 加绒吗
+    expect:
+      scene: 厚薄程度
+- name: PRODUCT_INFO_026_厚薄程度_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 厚薄程度
+  scene_description: 买家咨询商品厚薄程度、是否加绒、是否加厚、是否夹棉
+  question_example: 是加厚款吗
+  turns:
+  - question: 是加厚款吗
+    expect:
+      scene: 厚薄程度
+- name: PRODUCT_INFO_026_厚薄程度_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 厚薄程度
+  scene_description: 买家咨询商品厚薄程度、是否加绒、是否加厚、是否夹棉
+  question_example: 里面有夹棉吗
+  turns:
+  - question: 里面有夹棉吗
+    expect:
+      scene: 厚薄程度
+- name: PRODUCT_INFO_026_厚薄程度_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 厚薄程度
+  scene_description: 买家咨询商品厚薄程度、是否加绒、是否加厚、是否夹棉
+  question_example: 单穿会不会薄
+  turns:
+  - question: 单穿会不会薄
+    expect:
+      scene: 厚薄程度
+- name: PRODUCT_INFO_027_充绒量/含绒量_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 充绒量/含绒量
+  scene_description: 买家咨询羽绒服、棉服等商品的填充物、含绒量、充绒量
+  question_example: 充绒量多少克
+  turns:
+  - question: 充绒量多少克
+    expect:
+      scene: 充绒量/含绒量
+- name: PRODUCT_INFO_027_充绒量/含绒量_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 充绒量/含绒量
+  scene_description: 买家咨询羽绒服、棉服等商品的填充物、含绒量、充绒量
+  question_example: 这款羽绒服充绒量是多少
+  turns:
+  - question: 这款羽绒服充绒量是多少
+    expect:
+      scene: 充绒量/含绒量
+- name: PRODUCT_INFO_027_充绒量/含绒量_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 充绒量/含绒量
+  scene_description: 买家咨询羽绒服、棉服等商品的填充物、含绒量、充绒量
+  question_example: 含绒量多少
+  turns:
+  - question: 含绒量多少
+    expect:
+      scene: 充绒量/含绒量
+- name: PRODUCT_INFO_027_充绒量/含绒量_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 充绒量/含绒量
+  scene_description: 买家咨询羽绒服、棉服等商品的填充物、含绒量、充绒量
+  question_example: 充绒克数是多少
+  turns:
+  - question: 充绒克数是多少
+    expect:
+      scene: 充绒量/含绒量
+- name: PRODUCT_INFO_027_充绒量/含绒量_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 充绒量/含绒量
+  scene_description: 买家咨询羽绒服、棉服等商品的填充物、含绒量、充绒量
+  question_example: 绒子含量是多少
+  turns:
+  - question: 绒子含量是多少
+    expect:
+      scene: 充绒量/含绒量
+- name: PRODUCT_INFO_028_透明度/透视感_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 透明度/透视感
+  scene_description: 买家咨询服装面料是否透、透明度如何、是否需要打底
+  question_example: 这个穿上透不透
+  turns:
+  - question: 这个穿上透不透
+    expect:
+      scene: 透明度/透视感
+- name: PRODUCT_INFO_028_透明度/透视感_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 透明度/透视感
+  scene_description: 买家咨询服装面料是否透、透明度如何、是否需要打底
+  question_example: 这个颜色透吗
+  turns:
+  - question: 这个颜色透吗
+    expect:
+      scene: 透明度/透视感
+- name: PRODUCT_INFO_028_透明度/透视感_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 透明度/透视感
+  scene_description: 买家咨询服装面料是否透、透明度如何、是否需要打底
+  question_example: 没有打底会不会透
+  turns:
+  - question: 没有打底会不会透
+    expect:
+      scene: 透明度/透视感
+- name: PRODUCT_INFO_028_透明度/透视感_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 透明度/透视感
+  scene_description: 买家咨询服装面料是否透、透明度如何、是否需要打底
+  question_example: 白色会不会透
+  turns:
+  - question: 白色会不会透
+    expect:
+      scene: 透明度/透视感
+- name: PRODUCT_INFO_028_透明度/透视感_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 透明度/透视感
+  scene_description: 买家咨询服装面料是否透、透明度如何、是否需要打底
+  question_example: 单穿会不会走光
+  turns:
+  - question: 单穿会不会走光
+    expect:
+      scene: 透明度/透视感
+- name: PRODUCT_INFO_028_透明度/透视感_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 透明度/透视感
+  scene_description: 买家咨询服装面料是否透、透明度如何、是否需要打底
+  question_example: 需要打底吗
+  turns:
+  - question: 需要打底吗
+    expect:
+      scene: 透明度/透视感
+- name: PRODUCT_INFO_028_透明度/透视感_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 透明度/透视感
+  scene_description: 买家咨询服装面料是否透、透明度如何、是否需要打底
+  question_example: 深色内衣穿着会显出来吗
+  turns:
+  - question: 深色内衣穿着会显出来吗
+    expect:
+      scene: 透明度/透视感
+- name: PRODUCT_INFO_029_软硬/手感_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 软硬/手感
+  scene_description: 买家咨询商品偏软还是偏硬、手感是否舒适
+  question_example: 面料是硬的还是软的
+  turns:
+  - question: 面料是硬的还是软的
+    expect:
+      scene: 软硬/手感
+- name: PRODUCT_INFO_029_软硬/手感_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 软硬/手感
+  scene_description: 买家咨询商品偏软还是偏硬、手感是否舒适
+  question_example: 这个面料会不会很硬
+  turns:
+  - question: 这个面料会不会很硬
+    expect:
+      scene: 软硬/手感
+- name: PRODUCT_INFO_029_软硬/手感_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 软硬/手感
+  scene_description: 买家咨询商品偏软还是偏硬、手感是否舒适
+  question_example: 手感偏软吗
+  turns:
+  - question: 手感偏软吗
+    expect:
+      scene: 软硬/手感
+- name: PRODUCT_INFO_029_软硬/手感_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 软硬/手感
+  scene_description: 买家咨询商品偏软还是偏硬、手感是否舒适
+  question_example: 布料摸起来扎不扎
+  turns:
+  - question: 布料摸起来扎不扎
+    expect:
+      scene: 软硬/手感
+- name: PRODUCT_INFO_029_软硬/手感_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 软硬/手感
+  scene_description: 买家咨询商品偏软还是偏硬、手感是否舒适
+  question_example: 这个料子柔软吗
+  turns:
+  - question: 这个料子柔软吗
+    expect:
+      scene: 软硬/手感
+- name: PRODUCT_INFO_030_保暖程度_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 保暖程度
+  scene_description: 买家咨询是否保暖
+  question_example: 保暖吗
+  turns:
+  - question: 保暖吗
+    expect:
+      scene: 保暖程度
+- name: PRODUCT_INFO_030_保暖程度_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 保暖程度
+  scene_description: 买家咨询是否保暖
+  question_example: 穿着暖和吗
+  turns:
+  - question: 穿着暖和吗
+    expect:
+      scene: 保暖程度
+- name: PRODUCT_INFO_030_保暖程度_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 保暖程度
+  scene_description: 买家咨询是否保暖
+  question_example: 会不会冷
+  turns:
+  - question: 会不会冷
+    expect:
+      scene: 保暖程度
+- name: PRODUCT_INFO_030_保暖程度_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 保暖程度
+  scene_description: 买家咨询是否保暖
+  question_example: 保暖效果怎么样
+  turns:
+  - question: 保暖效果怎么样
+    expect:
+      scene: 保暖程度
+- name: PRODUCT_INFO_030_保暖程度_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 保暖程度
+  scene_description: 买家咨询是否保暖
+  question_example: 冬天穿顶得住吗
+  turns:
+  - question: 冬天穿顶得住吗
+    expect:
+      scene: 保暖程度
+- name: PRODUCT_INFO_031_适合温度_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适合温度
+  scene_description: 买家咨询适合在什么温度环境下穿
+  question_example: 适合多少度穿
+  turns:
+  - question: 适合多少度穿
+    expect:
+      scene: 适合温度
+- name: PRODUCT_INFO_031_适合温度_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适合温度
+  scene_description: 买家咨询适合在什么温度环境下穿
+  question_example: 零下20度够穿吗
+  turns:
+  - question: 零下20度够穿吗
+    expect:
+      scene: 适合温度
+- name: PRODUCT_INFO_031_适合温度_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适合温度
+  scene_description: 买家咨询适合在什么温度环境下穿
+  question_example: 10度左右能穿吗
+  turns:
+  - question: 10度左右能穿吗
+    expect:
+      scene: 适合温度
+- name: PRODUCT_INFO_031_适合温度_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适合温度
+  scene_description: 买家咨询适合在什么温度环境下穿
+  question_example: 这件适合几度天气
+  turns:
+  - question: 这件适合几度天气
+    expect:
+      scene: 适合温度
+- name: PRODUCT_INFO_031_适合温度_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适合温度
+  scene_description: 买家咨询适合在什么温度环境下穿
+  question_example: 冬天多少度穿合适
+  turns:
+  - question: 冬天多少度穿合适
+    expect:
+      scene: 适合温度
+- name: PRODUCT_INFO_032_弹性/松紧_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 弹性/松紧
+  scene_description: 买家咨询商品面料或局部位置是否有弹性、松紧度如何、会不会勒
+  question_example: 有弹性吗
+  turns:
+  - question: 有弹性吗
+    expect:
+      scene: 弹性/松紧
+- name: PRODUCT_INFO_032_弹性/松紧_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 弹性/松紧
+  scene_description: 买家咨询商品面料或局部位置是否有弹性、松紧度如何、会不会勒
+  question_example: 弹性大吗
+  turns:
+  - question: 弹性大吗
+    expect:
+      scene: 弹性/松紧
+- name: PRODUCT_INFO_032_弹性/松紧_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 弹性/松紧
+  scene_description: 买家咨询商品面料或局部位置是否有弹性、松紧度如何、会不会勒
+  question_example: 裤腰有松紧吗
+  turns:
+  - question: 裤腰有松紧吗
+    expect:
+      scene: 弹性/松紧
+- name: PRODUCT_INFO_032_弹性/松紧_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 弹性/松紧
+  scene_description: 买家咨询商品面料或局部位置是否有弹性、松紧度如何、会不会勒
+  question_example: 会不会勒
+  turns:
+  - question: 会不会勒
+    expect:
+      scene: 弹性/松紧
+- name: PRODUCT_INFO_032_弹性/松紧_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 弹性/松紧
+  scene_description: 买家咨询商品面料或局部位置是否有弹性、松紧度如何、会不会勒
+  question_example: 面料弹不弹
+  turns:
+  - question: 面料弹不弹
+    expect:
+      scene: 弹性/松紧
+- name: PRODUCT_INFO_032_弹性/松紧_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 弹性/松紧
+  scene_description: 买家咨询商品面料或局部位置是否有弹性、松紧度如何、会不会勒
+  question_example: 袖口紧不紧
+  turns:
+  - question: 袖口紧不紧
+    expect:
+      scene: 弹性/松紧
+- name: PRODUCT_INFO_032_弹性/松紧_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 弹性/松紧
+  scene_description: 买家咨询商品面料或局部位置是否有弹性、松紧度如何、会不会勒
+  question_example: 布料拉伸感明显吗
+  turns:
+  - question: 布料拉伸感明显吗
+    expect:
+      scene: 弹性/松紧
+- name: PRODUCT_INFO_032_弹性/松紧_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 弹性/松紧
+  scene_description: 买家咨询商品面料或局部位置是否有弹性、松紧度如何、会不会勒
+  question_example: 穿起来包裹感会不会太紧
+  turns:
+  - question: 穿起来包裹感会不会太紧
+    expect:
+      scene: 弹性/松紧
+- name: PRODUCT_INFO_033_透气性_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 透气性
+  scene_description: 买家咨询商品是否透气、吸汗、闷不闷
+  question_example: 透气吗
+  turns:
+  - question: 透气吗
+    expect:
+      scene: 透气性
+- name: PRODUCT_INFO_033_透气性_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 透气性
+  scene_description: 买家咨询商品是否透气、吸汗、闷不闷
+  question_example: 吸汗吗
+  turns:
+  - question: 吸汗吗
+    expect:
+      scene: 透气性
+- name: PRODUCT_INFO_033_透气性_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 透气性
+  scene_description: 买家咨询商品是否透气、吸汗、闷不闷
+  question_example: 穿着闷不闷
+  turns:
+  - question: 穿着闷不闷
+    expect:
+      scene: 透气性
+- name: PRODUCT_INFO_033_透气性_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 透气性
+  scene_description: 买家咨询商品是否透气、吸汗、闷不闷
+  question_example: 裤子会不会不透气
+  turns:
+  - question: 裤子会不会不透气
+    expect:
+      scene: 透气性
+- name: PRODUCT_INFO_033_透气性_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 透气性
+  scene_description: 买家咨询商品是否透气、吸汗、闷不闷
+  question_example: 夏天穿会不会闷
+  turns:
+  - question: 夏天穿会不会闷
+    expect:
+      scene: 透气性
+- name: PRODUCT_INFO_033_透气性_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 透气性
+  scene_description: 买家咨询商品是否透气、吸汗、闷不闷
+  question_example: 这个料子散热好吗
+  turns:
+  - question: 这个料子散热好吗
+    expect:
+      scene: 透气性
+- name: PRODUCT_INFO_034_面料耐久性_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 面料耐久性
+  scene_description: 买家咨询服装面料在穿着或清洗后是否容易缩水、起球、掉毛、变形、易皱、勾丝等
+  question_example: 这款面料缩水吗
+  turns:
+  - question: 这款面料缩水吗
+    expect:
+      scene: 面料耐久性
+- name: PRODUCT_INFO_034_面料耐久性_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 面料耐久性
+  scene_description: 买家咨询服装面料在穿着或清洗后是否容易缩水、起球、掉毛、变形、易皱、勾丝等
+  question_example: 洗后会不会变形
+  turns:
+  - question: 洗后会不会变形
+    expect:
+      scene: 面料耐久性
+- name: PRODUCT_INFO_034_面料耐久性_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 面料耐久性
+  scene_description: 买家咨询服装面料在穿着或清洗后是否容易缩水、起球、掉毛、变形、易皱、勾丝等
+  question_example: 这个会起球吗
+  turns:
+  - question: 这个会起球吗
+    expect:
+      scene: 面料耐久性
+- name: PRODUCT_INFO_034_面料耐久性_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 面料耐久性
+  scene_description: 买家咨询服装面料在穿着或清洗后是否容易缩水、起球、掉毛、变形、易皱、勾丝等
+  question_example: 穿在身上会不会掉毛
+  turns:
+  - question: 穿在身上会不会掉毛
+    expect:
+      scene: 面料耐久性
+- name: PRODUCT_INFO_034_面料耐久性_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 面料耐久性
+  scene_description: 买家咨询服装面料在穿着或清洗后是否容易缩水、起球、掉毛、变形、易皱、勾丝等
+  question_example: 衣服会皱吗
+  turns:
+  - question: 衣服会皱吗
+    expect:
+      scene: 面料耐久性
+- name: PRODUCT_INFO_034_面料耐久性_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 面料耐久性
+  scene_description: 买家咨询服装面料在穿着或清洗后是否容易缩水、起球、掉毛、变形、易皱、勾丝等
+  question_example: 容易勾丝吗
+  turns:
+  - question: 容易勾丝吗
+    expect:
+      scene: 面料耐久性
+- name: PRODUCT_INFO_034_面料耐久性_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 面料耐久性
+  scene_description: 买家咨询服装面料在穿着或清洗后是否容易缩水、起球、掉毛、变形、易皱、勾丝等
+  question_example: 这个布会不会越穿越起毛
+  turns:
+  - question: 这个布会不会越穿越起毛
+    expect:
+      scene: 面料耐久性
+- name: PRODUCT_INFO_035_色差_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 色差
+  scene_description: 买家咨询实物颜色与图片展示之间是否存在色差，聚焦购买前的色彩偏差说明
+  question_example: 这个和图片有色差吗
+  turns:
+  - question: 这个和图片有色差吗
+    expect:
+      scene: 色差
+- name: PRODUCT_INFO_035_色差_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 色差
+  scene_description: 买家咨询实物颜色与图片展示之间是否存在色差，聚焦购买前的色彩偏差说明
+  question_example: 这个颜色会偏淡或者偏深吗
+  turns:
+  - question: 这个颜色会偏淡或者偏深吗
+    expect:
+      scene: 色差
+- name: PRODUCT_INFO_035_色差_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 色差
+  scene_description: 买家咨询实物颜色与图片展示之间是否存在色差，聚焦购买前的色彩偏差说明
+  question_example: 这个色差会大吗
+  turns:
+  - question: 这个色差会大吗
+    expect:
+      scene: 色差
+- name: PRODUCT_INFO_035_色差_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 色差
+  scene_description: 买家咨询实物颜色与图片展示之间是否存在色差，聚焦购买前的色彩偏差说明
+  question_example: 实物颜色会不会比图深
+  turns:
+  - question: 实物颜色会不会比图深
+    expect:
+      scene: 色差
+- name: PRODUCT_INFO_035_色差_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 色差
+  scene_description: 买家咨询实物颜色与图片展示之间是否存在色差，聚焦购买前的色彩偏差说明
+  question_example: 图片和实物颜色差得多吗
+  turns:
+  - question: 图片和实物颜色差得多吗
+    expect:
+      scene: 色差
+- name: PRODUCT_INFO_036_吊牌相关_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 吊牌相关
+  scene_description: 买家咨询服装吊牌是否齐全、缺少吊牌是否正常
+  question_example: 我买的衣服没有吊牌
+  turns:
+  - question: 我买的衣服没有吊牌
+    expect:
+      scene: 吊牌相关
+- name: PRODUCT_INFO_036_吊牌相关_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 吊牌相关
+  scene_description: 买家咨询服装吊牌是否齐全、缺少吊牌是否正常
+  question_example: 拆开就没有吊牌
+  turns:
+  - question: 拆开就没有吊牌
+    expect:
+      scene: 吊牌相关
+- name: PRODUCT_INFO_036_吊牌相关_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 吊牌相关
+  scene_description: 买家咨询服装吊牌是否齐全、缺少吊牌是否正常
+  question_example: 怎么没有吊牌
+  turns:
+  - question: 怎么没有吊牌
+    expect:
+      scene: 吊牌相关
+- name: PRODUCT_INFO_036_吊牌相关_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 吊牌相关
+  scene_description: 买家咨询服装吊牌是否齐全、缺少吊牌是否正常
+  question_example: 吊牌齐全吗
+  turns:
+  - question: 吊牌齐全吗
+    expect:
+      scene: 吊牌相关
+- name: PRODUCT_INFO_037_是否起静电_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否起静电
+  scene_description: 买家咨询服装是否会起静电
+  question_example: 穿着会静电吗
+  turns:
+  - question: 穿着会静电吗
+    expect:
+      scene: 是否起静电
+- name: PRODUCT_INFO_037_是否起静电_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否起静电
+  scene_description: 买家咨询服装是否会起静电
+  question_example: 这个衣服会有静电吗
+  turns:
+  - question: 这个衣服会有静电吗
+    expect:
+      scene: 是否起静电
+- name: PRODUCT_INFO_037_是否起静电_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否起静电
+  scene_description: 买家咨询服装是否会起静电
+  question_example: 这个布料会静电吗
+  turns:
+  - question: 这个布料会静电吗
+    expect:
+      scene: 是否起静电
+- name: PRODUCT_INFO_037_是否起静电_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否起静电
+  scene_description: 买家咨询服装是否会起静电
+  question_example: 会不会起静电
+  turns:
+  - question: 会不会起静电
+    expect:
+      scene: 是否起静电
+- name: PRODUCT_INFO_038_孕期/哺乳期适用_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 孕期/哺乳期适用
+  scene_description: 买家咨询商品在怀孕、备孕、哺乳等阶段是否可以使用。
+  question_example: 孕妇可以用吗
+  turns:
+  - question: 孕妇可以用吗
+    expect:
+      scene: 孕期/哺乳期适用
+- name: PRODUCT_INFO_038_孕期/哺乳期适用_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 孕期/哺乳期适用
+  scene_description: 买家咨询商品在怀孕、备孕、哺乳等阶段是否可以使用。
+  question_example: 怀孕期间能用吗
+  turns:
+  - question: 怀孕期间能用吗
+    expect:
+      scene: 孕期/哺乳期适用
+- name: PRODUCT_INFO_038_孕期/哺乳期适用_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 孕期/哺乳期适用
+  scene_description: 买家咨询商品在怀孕、备孕、哺乳等阶段是否可以使用。
+  question_example: 备孕能用吗
+  turns:
+  - question: 备孕能用吗
+    expect:
+      scene: 孕期/哺乳期适用
+- name: PRODUCT_INFO_038_孕期/哺乳期适用_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 孕期/哺乳期适用
+  scene_description: 买家咨询商品在怀孕、备孕、哺乳等阶段是否可以使用。
+  question_example: 哺乳期能用吗
+  turns:
+  - question: 哺乳期能用吗
+    expect:
+      scene: 孕期/哺乳期适用
+- name: PRODUCT_INFO_038_孕期/哺乳期适用_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 孕期/哺乳期适用
+  scene_description: 买家咨询商品在怀孕、备孕、哺乳等阶段是否可以使用。
+  question_example: 喂奶期间可以用吗
+  turns:
+  - question: 喂奶期间可以用吗
+    expect:
+      scene: 孕期/哺乳期适用
+- name: PRODUCT_INFO_038_孕期/哺乳期适用_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 孕期/哺乳期适用
+  scene_description: 买家咨询商品在怀孕、备孕、哺乳等阶段是否可以使用。
+  question_example: 孕妇能用吗
+  turns:
+  - question: 孕妇能用吗
+    expect:
+      scene: 孕期/哺乳期适用
+- name: PRODUCT_INFO_039_使用频率_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用频率
+  scene_description: 买家咨询多久用一次、一天能用几次、能否天天使用。
+  question_example: 多久用一次
+  turns:
+  - question: 多久用一次
+    expect:
+      scene: 使用频率
+- name: PRODUCT_INFO_039_使用频率_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用频率
+  scene_description: 买家咨询多久用一次、一天能用几次、能否天天使用。
+  question_example: 一天可以用几次
+  turns:
+  - question: 一天可以用几次
+    expect:
+      scene: 使用频率
+- name: PRODUCT_INFO_039_使用频率_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用频率
+  scene_description: 买家咨询多久用一次、一天能用几次、能否天天使用。
+  question_example: 可以天天用吗
+  turns:
+  - question: 可以天天用吗
+    expect:
+      scene: 使用频率
+- name: PRODUCT_INFO_039_使用频率_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用频率
+  scene_description: 买家咨询多久用一次、一天能用几次、能否天天使用。
+  question_example: 一周用几次合适
+  turns:
+  - question: 一周用几次合适
+    expect:
+      scene: 使用频率
+- name: PRODUCT_INFO_039_使用频率_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用频率
+  scene_description: 买家咨询多久用一次、一天能用几次、能否天天使用。
+  question_example: 早晚都能用吗
+  turns:
+  - question: 早晚都能用吗
+    expect:
+      scene: 使用频率
+- name: PRODUCT_INFO_039_使用频率_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用频率
+  scene_description: 买家咨询多久用一次、一天能用几次、能否天天使用。
+  question_example: 一天能用几次
+  turns:
+  - question: 一天能用几次
+    expect:
+      scene: 使用频率
+- name: PRODUCT_INFO_039_使用频率_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用频率
+  scene_description: 买家咨询多久用一次、一天能用几次、能否天天使用。
+  question_example: '123123123'
+  turns:
+  - question: '123123123'
+    expect:
+      scene: 使用频率
+- name: PRODUCT_INFO_040_单次用量_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 单次用量
+  scene_description: 买家咨询每次用多少、每次取多少量更合适。
+  question_example: 一次用多少合适
+  turns:
+  - question: 一次用多少合适
+    expect:
+      scene: 单次用量
+- name: PRODUCT_INFO_040_单次用量_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 单次用量
+  scene_description: 买家咨询每次用多少、每次取多少量更合适。
+  question_example: 每次用几泵
+  turns:
+  - question: 每次用几泵
+    expect:
+      scene: 单次用量
+- name: PRODUCT_INFO_040_单次用量_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 单次用量
+  scene_description: 买家咨询每次用多少、每次取多少量更合适。
+  question_example: 一次涂多厚
+  turns:
+  - question: 一次涂多厚
+    expect:
+      scene: 单次用量
+- name: PRODUCT_INFO_040_单次用量_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 单次用量
+  scene_description: 买家咨询每次用多少、每次取多少量更合适。
+  question_example: 每次需要用多少
+  turns:
+  - question: 每次需要用多少
+    expect:
+      scene: 单次用量
+- name: PRODUCT_INFO_040_单次用量_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 单次用量
+  scene_description: 买家咨询每次用多少、每次取多少量更合适。
+  question_example: 一回要用多少量
+  turns:
+  - question: 一回要用多少量
+    expect:
+      scene: 单次用量
+- name: PRODUCT_INFO_040_单次用量_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 单次用量
+  scene_description: 买家咨询每次用多少、每次取多少量更合适。
+  question_example: 多久洗一次
+  turns:
+  - question: 多久洗一次
+    expect:
+      scene: 单次用量
+- name: PRODUCT_INFO_041_可使用时长_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 可使用时长
+  scene_description: 买家咨询商品大概能用多久，侧重时间长度。
+  question_example: 一瓶大概能用多久
+  turns:
+  - question: 一瓶大概能用多久
+    expect:
+      scene: 可使用时长
+- name: PRODUCT_INFO_041_可使用时长_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 可使用时长
+  scene_description: 买家咨询商品大概能用多久，侧重时间长度。
+  question_example: 一盒能用多久
+  turns:
+  - question: 一盒能用多久
+    expect:
+      scene: 可使用时长
+- name: PRODUCT_INFO_041_可使用时长_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 可使用时长
+  scene_description: 买家咨询商品大概能用多久，侧重时间长度。
+  question_example: 这个正常能用几个月
+  turns:
+  - question: 这个正常能用几个月
+    expect:
+      scene: 可使用时长
+- name: PRODUCT_INFO_041_可使用时长_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 可使用时长
+  scene_description: 买家咨询商品大概能用多久，侧重时间长度。
+  question_example: 如果每天用能用多久
+  turns:
+  - question: 如果每天用能用多久
+    expect:
+      scene: 可使用时长
+- name: PRODUCT_INFO_041_可使用时长_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 可使用时长
+  scene_description: 买家咨询商品大概能用多久，侧重时间长度。
+  question_example: 这个能撑多久
+  turns:
+  - question: 这个能撑多久
+    expect:
+      scene: 可使用时长
+- name: PRODUCT_INFO_041_可使用时长_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 可使用时长
+  scene_description: 买家咨询商品大概能用多久，侧重时间长度。
+  question_example: 一瓶吃多长时间
+  turns:
+  - question: 一瓶吃多长时间
+    expect:
+      scene: 可使用时长
+- name: PRODUCT_INFO_042_可使用次数_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 可使用次数
+  scene_description: 买家咨询单个商品大概能使用多少次，侧重次数。
+  question_example: 这瓶大概能用几次
+  turns:
+  - question: 这瓶大概能用几次
+    expect:
+      scene: 可使用次数
+- name: PRODUCT_INFO_042_可使用次数_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 可使用次数
+  scene_description: 买家咨询单个商品大概能使用多少次，侧重次数。
+  question_example: 一盒能敷几次
+  turns:
+  - question: 一盒能敷几次
+    expect:
+      scene: 可使用次数
+- name: PRODUCT_INFO_042_可使用次数_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 可使用次数
+  scene_description: 买家咨询单个商品大概能使用多少次，侧重次数。
+  question_example: 这支能用多少回
+  turns:
+  - question: 这支能用多少回
+    expect:
+      scene: 可使用次数
+- name: PRODUCT_INFO_042_可使用次数_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 可使用次数
+  scene_description: 买家咨询单个商品大概能使用多少次，侧重次数。
+  question_example: 正常使用能撑多少次
+  turns:
+  - question: 正常使用能撑多少次
+    expect:
+      scene: 可使用次数
+- name: PRODUCT_INFO_042_可使用次数_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 可使用次数
+  scene_description: 买家咨询单个商品大概能使用多少次，侧重次数。
+  question_example: 一套能用多少次
+  turns:
+  - question: 一套能用多少次
+    expect:
+      scene: 可使用次数
+- name: PRODUCT_INFO_043_商品尺寸_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品尺寸
+  scene_description: 买家咨询商品长宽高、体积大小。
+  question_example: 尺寸多大
+  turns:
+  - question: 尺寸多大
+    expect:
+      scene: 商品尺寸
+- name: PRODUCT_INFO_043_商品尺寸_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品尺寸
+  scene_description: 买家咨询商品长宽高、体积大小。
+  question_example: 机身多长
+  turns:
+  - question: 机身多长
+    expect:
+      scene: 商品尺寸
+- name: PRODUCT_INFO_043_商品尺寸_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品尺寸
+  scene_description: 买家咨询商品长宽高、体积大小。
+  question_example: 多宽
+  turns:
+  - question: 多宽
+    expect:
+      scene: 商品尺寸
+- name: PRODUCT_INFO_043_商品尺寸_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品尺寸
+  scene_description: 买家咨询商品长宽高、体积大小。
+  question_example: 体积大不大
+  turns:
+  - question: 体积大不大
+    expect:
+      scene: 商品尺寸
+- name: PRODUCT_INFO_044_清洗难易_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 清洗难易
+  scene_description: 买家咨询商品是否容易洗净、是否好清洁、冲洗是否方便、清洗后是否容易残留。
+  question_example: 这个好不好洗
+  turns:
+  - question: 这个好不好洗
+    expect:
+      scene: 清洗难易
+- name: PRODUCT_INFO_044_清洗难易_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 清洗难易
+  scene_description: 买家咨询商品是否容易洗净、是否好清洁、冲洗是否方便、清洗后是否容易残留。
+  question_example: 容易清洗吗
+  turns:
+  - question: 容易清洗吗
+    expect:
+      scene: 清洗难易
+- name: PRODUCT_INFO_044_清洗难易_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 清洗难易
+  scene_description: 买家咨询商品是否容易洗净、是否好清洁、冲洗是否方便、清洗后是否容易残留。
+  question_example: 好清理吗
+  turns:
+  - question: 好清理吗
+    expect:
+      scene: 清洗难易
+- name: PRODUCT_INFO_044_清洗难易_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 清洗难易
+  scene_description: 买家咨询商品是否容易洗净、是否好清洁、冲洗是否方便、清洗后是否容易残留。
+  question_example: 会不会洗不干净
+  turns:
+  - question: 会不会洗不干净
+    expect:
+      scene: 清洗难易
+- name: PRODUCT_INFO_044_清洗难易_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 清洗难易
+  scene_description: 买家咨询商品是否容易洗净、是否好清洁、冲洗是否方便、清洗后是否容易残留。
+  question_example: 会不会有残留
+  turns:
+  - question: 会不会有残留
+    expect:
+      scene: 清洗难易
+- name: PRODUCT_INFO_045_适用肤质_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用肤质
+  scene_description: 买家咨询商品适合哪类肤质或特殊肌肤状态使用，包含干皮、油皮、混干、混油、中性肤质，以及敏感肌、痘肌、屏障受损、刷酸期、医美后等。
+  question_example: 油皮适合吗
+  turns:
+  - question: 油皮适合吗
+    expect:
+      scene: 适用肤质
+- name: PRODUCT_INFO_045_适用肤质_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用肤质
+  scene_description: 买家咨询商品适合哪类肤质或特殊肌肤状态使用，包含干皮、油皮、混干、混油、中性肤质，以及敏感肌、痘肌、屏障受损、刷酸期、医美后等。
+  question_example: 干皮能用吗
+  turns:
+  - question: 干皮能用吗
+    expect:
+      scene: 适用肤质
+- name: PRODUCT_INFO_045_适用肤质_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用肤质
+  scene_description: 买家咨询商品适合哪类肤质或特殊肌肤状态使用，包含干皮、油皮、混干、混油、中性肤质，以及敏感肌、痘肌、屏障受损、刷酸期、医美后等。
+  question_example: 混油皮能用吗
+  turns:
+  - question: 混油皮能用吗
+    expect:
+      scene: 适用肤质
+- name: PRODUCT_INFO_045_适用肤质_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用肤质
+  scene_description: 买家咨询商品适合哪类肤质或特殊肌肤状态使用，包含干皮、油皮、混干、混油、中性肤质，以及敏感肌、痘肌、屏障受损、刷酸期、医美后等。
+  question_example: 敏感肌能用吗
+  turns:
+  - question: 敏感肌能用吗
+    expect:
+      scene: 适用肤质
+- name: PRODUCT_INFO_045_适用肤质_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用肤质
+  scene_description: 买家咨询商品适合哪类肤质或特殊肌肤状态使用，包含干皮、油皮、混干、混油、中性肤质，以及敏感肌、痘肌、屏障受损、刷酸期、医美后等。
+  question_example: 痘肌能用吗
+  turns:
+  - question: 痘肌能用吗
+    expect:
+      scene: 适用肤质
+- name: PRODUCT_INFO_045_适用肤质_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用肤质
+  scene_description: 买家咨询商品适合哪类肤质或特殊肌肤状态使用，包含干皮、油皮、混干、混油、中性肤质，以及敏感肌、痘肌、屏障受损、刷酸期、医美后等。
+  question_example: 屏障受损能用吗
+  turns:
+  - question: 屏障受损能用吗
+    expect:
+      scene: 适用肤质
+- name: PRODUCT_INFO_045_适用肤质_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用肤质
+  scene_description: 买家咨询商品适合哪类肤质或特殊肌肤状态使用，包含干皮、油皮、混干、混油、中性肤质，以及敏感肌、痘肌、屏障受损、刷酸期、医美后等。
+  question_example: 刷酸期间能用吗
+  turns:
+  - question: 刷酸期间能用吗
+    expect:
+      scene: 适用肤质
+- name: PRODUCT_INFO_045_适用肤质_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用肤质
+  scene_description: 买家咨询商品适合哪类肤质或特殊肌肤状态使用，包含干皮、油皮、混干、混油、中性肤质，以及敏感肌、痘肌、屏障受损、刷酸期、医美后等。
+  question_example: 医美后可以用吗
+  turns:
+  - question: 医美后可以用吗
+    expect:
+      scene: 适用肤质
+- name: PRODUCT_INFO_046_适用部位_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用部位
+  scene_description: 买家咨询商品适用于身体哪个部位，如面部、眼周、唇部、头皮、身体等。
+  question_example: 这个能涂眼周吗
+  turns:
+  - question: 这个能涂眼周吗
+    expect:
+      scene: 适用部位
+- name: PRODUCT_INFO_046_适用部位_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用部位
+  scene_description: 买家咨询商品适用于身体哪个部位，如面部、眼周、唇部、头皮、身体等。
+  question_example: 可以用在唇部吗
+  turns:
+  - question: 可以用在唇部吗
+    expect:
+      scene: 适用部位
+- name: PRODUCT_INFO_046_适用部位_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用部位
+  scene_description: 买家咨询商品适用于身体哪个部位，如面部、眼周、唇部、头皮、身体等。
+  question_example: 能擦身体吗
+  turns:
+  - question: 能擦身体吗
+    expect:
+      scene: 适用部位
+- name: PRODUCT_INFO_046_适用部位_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用部位
+  scene_description: 买家咨询商品适用于身体哪个部位，如面部、眼周、唇部、头皮、身体等。
+  question_example: 这个能抹脖子吗
+  turns:
+  - question: 这个能抹脖子吗
+    expect:
+      scene: 适用部位
+- name: PRODUCT_INFO_046_适用部位_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用部位
+  scene_description: 买家咨询商品适用于身体哪个部位，如面部、眼周、唇部、头皮、身体等。
+  question_example: 头皮能用吗
+  turns:
+  - question: 头皮能用吗
+    expect:
+      scene: 适用部位
+- name: PRODUCT_INFO_047_气味/味道_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 气味/味道
+  scene_description: 买家咨询商品有没有味道、是什么味道、属于什么香型或气味风格。
+  question_example: 这款是什么味道
+  turns:
+  - question: 这款是什么味道
+    expect:
+      scene: 气味/味道
+- name: PRODUCT_INFO_047_气味/味道_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 气味/味道
+  scene_description: 买家咨询商品有没有味道、是什么味道、属于什么香型或气味风格。
+  question_example: 偏花香还是果香
+  turns:
+  - question: 偏花香还是果香
+    expect:
+      scene: 气味/味道
+- name: PRODUCT_INFO_047_气味/味道_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 气味/味道
+  scene_description: 买家咨询商品有没有味道、是什么味道、属于什么香型或气味风格。
+  question_example: 有没有味道
+  turns:
+  - question: 有没有味道
+    expect:
+      scene: 气味/味道
+- name: PRODUCT_INFO_047_气味/味道_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 气味/味道
+  scene_description: 买家咨询商品有没有味道、是什么味道、属于什么香型或气味风格。
+  question_example: 闻起来香吗
+  turns:
+  - question: 闻起来香吗
+    expect:
+      scene: 气味/味道
+- name: PRODUCT_INFO_047_气味/味道_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 气味/味道
+  scene_description: 买家咨询商品有没有味道、是什么味道、属于什么香型或气味风格。
+  question_example: 是不是无香的
+  turns:
+  - question: 是不是无香的
+    expect:
+      scene: 气味/味道
+- name: PRODUCT_INFO_048_过敏风险_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 过敏风险
+  scene_description: 买家咨询商品是否容易引起过敏、泛红、发痒等过敏型反应。
+  question_example: 会过敏吗
+  turns:
+  - question: 会过敏吗
+    expect:
+      scene: 过敏风险
+- name: PRODUCT_INFO_048_过敏风险_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 过敏风险
+  scene_description: 买家咨询商品是否容易引起过敏、泛红、发痒等过敏型反应。
+  question_example: 会不会泛红
+  turns:
+  - question: 会不会泛红
+    expect:
+      scene: 过敏风险
+- name: PRODUCT_INFO_048_过敏风险_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 过敏风险
+  scene_description: 买家咨询商品是否容易引起过敏、泛红、发痒等过敏型反应。
+  question_example: 会不会发痒
+  turns:
+  - question: 会不会发痒
+    expect:
+      scene: 过敏风险
+- name: PRODUCT_INFO_048_过敏风险_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 过敏风险
+  scene_description: 买家咨询商品是否容易引起过敏、泛红、发痒等过敏型反应。
+  question_example: 容易过敏的人能用吗
+  turns:
+  - question: 容易过敏的人能用吗
+    expect:
+      scene: 过敏风险
+- name: PRODUCT_INFO_048_过敏风险_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 过敏风险
+  scene_description: 买家咨询商品是否容易引起过敏、泛红、发痒等过敏型反应。
+  question_example: 会不会有过敏反应
+  turns:
+  - question: 会不会有过敏反应
+    expect:
+      scene: 过敏风险
+- name: PRODUCT_INFO_049_刺激/刺痛风险_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 刺激/刺痛风险
+  scene_description: 买家咨询商品是否会引起刺痛、灼热、刺激、辣眼等刺激性反应。
+  question_example: 会不会刺痛
+  turns:
+  - question: 会不会刺痛
+    expect:
+      scene: 刺激/刺痛风险
+- name: PRODUCT_INFO_049_刺激/刺痛风险_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 刺激/刺痛风险
+  scene_description: 买家咨询商品是否会引起刺痛、灼热、刺激、辣眼等刺激性反应。
+  question_example: 会不会刺激皮肤
+  turns:
+  - question: 会不会刺激皮肤
+    expect:
+      scene: 刺激/刺痛风险
+- name: PRODUCT_INFO_049_刺激/刺痛风险_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 刺激/刺痛风险
+  scene_description: 买家咨询商品是否会引起刺痛、灼热、刺激、辣眼等刺激性反应。
+  question_example: 会不会有灼热感
+  turns:
+  - question: 会不会有灼热感
+    expect:
+      scene: 刺激/刺痛风险
+- name: PRODUCT_INFO_049_刺激/刺痛风险_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 刺激/刺痛风险
+  scene_description: 买家咨询商品是否会引起刺痛、灼热、刺激、辣眼等刺激性反应。
+  question_example: 会不会辣眼睛
+  turns:
+  - question: 会不会辣眼睛
+    expect:
+      scene: 刺激/刺痛风险
+- name: PRODUCT_INFO_049_刺激/刺痛风险_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 刺激/刺痛风险
+  scene_description: 买家咨询商品是否会引起刺痛、灼热、刺激、辣眼等刺激性反应。
+  question_example: 上脸会不会刺刺的
+  turns:
+  - question: 上脸会不会刺刺的
+    expect:
+      scene: 刺激/刺痛风险
+- name: PRODUCT_INFO_050_供电方式_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 供电方式
+  scene_description: 买家咨询洗护工具是插电、充电、干电池、USB 供电还是其他供电方式。
+  question_example: 这是插电的还是充电的
+  turns:
+  - question: 这是插电的还是充电的
+    expect:
+      scene: 供电方式
+- name: PRODUCT_INFO_050_供电方式_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 供电方式
+  scene_description: 买家咨询洗护工具是插电、充电、干电池、USB 供电还是其他供电方式。
+  question_example: 用干电池供电的吗
+  turns:
+  - question: 用干电池供电的吗
+    expect:
+      scene: 供电方式
+- name: PRODUCT_INFO_050_供电方式_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 供电方式
+  scene_description: 买家咨询洗护工具是插电、充电、干电池、USB 供电还是其他供电方式。
+  question_example: USB 供电吗
+  turns:
+  - question: USB 供电吗
+    expect:
+      scene: 供电方式
+- name: PRODUCT_INFO_050_供电方式_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 供电方式
+  scene_description: 买家咨询洗护工具是插电、充电、干电池、USB 供电还是其他供电方式。
+  question_example: 是不是直插电源的
+  turns:
+  - question: 是不是直插电源的
+    expect:
+      scene: 供电方式
+- name: PRODUCT_INFO_051_适配机型/型号_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适配机型/型号
+  scene_description: 买家咨询配件、刷头、刀头、替换头等是否适配某个型号或某类机器。
+  question_example: 适配哪种机型
+  turns:
+  - question: 适配哪种机型
+    expect:
+      scene: 适配机型/型号
+- name: PRODUCT_INFO_051_适配机型/型号_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适配机型/型号
+  scene_description: 买家咨询配件、刷头、刀头、替换头等是否适配某个型号或某类机器。
+  question_example: 适合什么机型
+  turns:
+  - question: 适合什么机型
+    expect:
+      scene: 适配机型/型号
+- name: PRODUCT_INFO_051_适配机型/型号_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适配机型/型号
+  scene_description: 买家咨询配件、刷头、刀头、替换头等是否适配某个型号或某类机器。
+  question_example: 这个配件适配哪种型号
+  turns:
+  - question: 这个配件适配哪种型号
+    expect:
+      scene: 适配机型/型号
+- name: PRODUCT_INFO_051_适配机型/型号_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适配机型/型号
+  scene_description: 买家咨询配件、刷头、刀头、替换头等是否适配某个型号或某类机器。
+  question_example: 这个刀头适合哪个型号
+  turns:
+  - question: 这个刀头适合哪个型号
+    expect:
+      scene: 适配机型/型号
+- name: PRODUCT_INFO_052_续航时长_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 续航时长
+  scene_description: 买家咨询商品充满电后能用多久。
+  question_example: 充满电能用多久
+  turns:
+  - question: 充满电能用多久
+    expect:
+      scene: 续航时长
+- name: PRODUCT_INFO_052_续航时长_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 续航时长
+  scene_description: 买家咨询商品充满电后能用多久。
+  question_example: 续航多久
+  turns:
+  - question: 续航多久
+    expect:
+      scene: 续航时长
+- name: PRODUCT_INFO_052_续航时长_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 续航时长
+  scene_description: 买家咨询商品充满电后能用多久。
+  question_example: 能连续用多长时间
+  turns:
+  - question: 能连续用多长时间
+    expect:
+      scene: 续航时长
+- name: PRODUCT_INFO_052_续航时长_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 续航时长
+  scene_description: 买家咨询商品充满电后能用多久。
+  question_example: 一次充电能撑多久
+  turns:
+  - question: 一次充电能撑多久
+    expect:
+      scene: 续航时长
+- name: PRODUCT_INFO_053_商品功率_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品功率
+  scene_description: 买家咨询商品功率大小。
+  question_example: 功率多少瓦
+  turns:
+  - question: 功率多少瓦
+    expect:
+      scene: 商品功率
+- name: PRODUCT_INFO_053_商品功率_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品功率
+  scene_description: 买家咨询商品功率大小。
+  question_example: 这款多少W
+  turns:
+  - question: 这款多少W
+    expect:
+      scene: 商品功率
+- name: PRODUCT_INFO_053_商品功率_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品功率
+  scene_description: 买家咨询商品功率大小。
+  question_example: 功率大吗
+  turns:
+  - question: 功率大吗
+    expect:
+      scene: 商品功率
+- name: PRODUCT_INFO_054_电池类型及容量_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 电池类型及容量
+  scene_description: 买家咨询电池容量、类型、型号。
+  question_example: 这款电池容量多少
+  turns:
+  - question: 这款电池容量多少
+    expect:
+      scene: 电池类型及容量
+- name: PRODUCT_INFO_054_电池类型及容量_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 电池类型及容量
+  scene_description: 买家咨询电池容量、类型、型号。
+  question_example: 是多少毫安的
+  turns:
+  - question: 是多少毫安的
+    expect:
+      scene: 电池类型及容量
+- name: PRODUCT_INFO_054_电池类型及容量_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 电池类型及容量
+  scene_description: 买家咨询电池容量、类型、型号。
+  question_example: 是锂电池吗
+  turns:
+  - question: 是锂电池吗
+    expect:
+      scene: 电池类型及容量
+- name: PRODUCT_INFO_054_电池类型及容量_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 电池类型及容量
+  scene_description: 买家咨询电池容量、类型、型号。
+  question_example: 用几号电池
+  turns:
+  - question: 用几号电池
+    expect:
+      scene: 电池类型及容量
+- name: PRODUCT_INFO_054_电池类型及容量_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 电池类型及容量
+  scene_description: 买家咨询电池容量、类型、型号。
+  question_example: 电池型号是什么
+  turns:
+  - question: 电池型号是什么
+    expect:
+      scene: 电池类型及容量
+- name: PRODUCT_INFO_055_噪音分贝_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 噪音分贝
+  scene_description: 买家咨询使用时声音是否大、噪音多少。
+  question_example: 声音大吗
+  turns:
+  - question: 声音大吗
+    expect:
+      scene: 噪音分贝
+- name: PRODUCT_INFO_055_噪音分贝_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 噪音分贝
+  scene_description: 买家咨询使用时声音是否大、噪音多少。
+  question_example: 噪音多少分贝
+  turns:
+  - question: 噪音多少分贝
+    expect:
+      scene: 噪音分贝
+- name: PRODUCT_INFO_055_噪音分贝_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 噪音分贝
+  scene_description: 买家咨询使用时声音是否大、噪音多少。
+  question_example: 会不会很吵
+  turns:
+  - question: 会不会很吵
+    expect:
+      scene: 噪音分贝
+- name: PRODUCT_INFO_055_噪音分贝_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 噪音分贝
+  scene_description: 买家咨询使用时声音是否大、噪音多少。
+  question_example: 晚上用会不会扰民
+  turns:
+  - question: 晚上用会不会扰民
+    expect:
+      scene: 噪音分贝
+- name: PRODUCT_INFO_056_充电时长_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 充电时长
+  scene_description: 买家咨询从没电到充满需要多久。
+  question_example: 充满电要多久
+  turns:
+  - question: 充满电要多久
+    expect:
+      scene: 充电时长
+- name: PRODUCT_INFO_056_充电时长_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 充电时长
+  scene_description: 买家咨询从没电到充满需要多久。
+  question_example: 充电时间多长
+  turns:
+  - question: 充电时间多长
+    expect:
+      scene: 充电时长
+- name: PRODUCT_INFO_056_充电时长_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 充电时长
+  scene_description: 买家咨询从没电到充满需要多久。
+  question_example: 多久能充满
+  turns:
+  - question: 多久能充满
+    expect:
+      scene: 充电时长
+- name: PRODUCT_INFO_056_充电时长_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 充电时长
+  scene_description: 买家咨询从没电到充满需要多久。
+  question_example: 快充吗
+  turns:
+  - question: 快充吗
+    expect:
+      scene: 充电时长
+- name: PRODUCT_INFO_057_是否可干湿两用_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否可干湿两用
+  scene_description: 买家咨询商品能否干用湿用两种方式都支持。
+  question_example: 可以干湿两用吗
+  turns:
+  - question: 可以干湿两用吗
+    expect:
+      scene: 是否可干湿两用
+- name: PRODUCT_INFO_057_是否可干湿两用_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否可干湿两用
+  scene_description: 买家咨询商品能否干用湿用两种方式都支持。
+  question_example: 洗澡时能用吗
+  turns:
+  - question: 洗澡时能用吗
+    expect:
+      scene: 是否可干湿两用
+- name: PRODUCT_INFO_057_是否可干湿两用_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否可干湿两用
+  scene_description: 买家咨询商品能否干用湿用两种方式都支持。
+  question_example: 湿手能用吗
+  turns:
+  - question: 湿手能用吗
+    expect:
+      scene: 是否可干湿两用
+- name: PRODUCT_INFO_057_是否可干湿两用_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否可干湿两用
+  scene_description: 买家咨询商品能否干用湿用两种方式都支持。
+  question_example: 干用可以吗
+  turns:
+  - question: 干用可以吗
+    expect:
+      scene: 是否可干湿两用
+- name: PRODUCT_INFO_060_使用说明_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用说明
+  scene_description: 买家咨询商品怎么用、怎么操作、步骤是什么。
+  question_example: 这个怎么用
+  turns:
+  - question: 这个怎么用
+    expect:
+      scene: 使用说明
+- name: PRODUCT_INFO_060_使用说明_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用说明
+  scene_description: 买家咨询商品怎么用、怎么操作、步骤是什么。
+  question_example: 具体使用步骤是什么
+  turns:
+  - question: 具体使用步骤是什么
+    expect:
+      scene: 使用说明
+- name: PRODUCT_INFO_060_使用说明_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用说明
+  scene_description: 买家咨询商品怎么用、怎么操作、步骤是什么。
+  question_example: 这个要怎么涂
+  turns:
+  - question: 这个要怎么涂
+    expect:
+      scene: 使用说明
+- name: PRODUCT_INFO_060_使用说明_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用说明
+  scene_description: 买家咨询商品怎么用、怎么操作、步骤是什么。
+  question_example: 怎么操作
+  turns:
+  - question: 怎么操作
+    expect:
+      scene: 使用说明
+- name: PRODUCT_INFO_060_使用说明_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用说明
+  scene_description: 买家咨询商品怎么用、怎么操作、步骤是什么。
+  question_example: 正确用法是什么
+  turns:
+  - question: 正确用法是什么
+    expect:
+      scene: 使用说明
+- name: PRODUCT_INFO_060_使用说明_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用说明
+  scene_description: 买家咨询商品怎么用、怎么操作、步骤是什么。
+  question_example: 使用视频发一个
+  turns:
+  - question: 使用视频发一个
+    expect:
+      scene: 使用说明
+- name: PRODUCT_INFO_060_使用说明_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用说明
+  scene_description: 买家咨询商品怎么用、怎么操作、步骤是什么。
+  question_example: 有操作视频吗
+  turns:
+  - question: 有操作视频吗
+    expect:
+      scene: 使用说明
+- name: PRODUCT_INFO_060_使用说明_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用说明
+  scene_description: 买家咨询商品怎么用、怎么操作、步骤是什么。
+  question_example: 有教学视频吗
+  turns:
+  - question: 有教学视频吗
+    expect:
+      scene: 使用说明
+- name: PRODUCT_INFO_060_使用说明_09
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用说明
+  scene_description: 买家咨询商品怎么用、怎么操作、步骤是什么。
+  question_example: 说明书
+  turns:
+  - question: 说明书
+    expect:
+      scene: 使用说明
+- name: PRODUCT_INFO_091_商品页面信息核实_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品页面信息核实
+  scene_description: 用户对商品页面中的信息真实性、归属关系、主体身份、宣传描述等进行核实确认，包括确认商品是否属于本店/本品牌/本店铺在售商品，或核实页面中的人物、机构、品牌、宣传信息是否属实。
+  question_example: 商品页面里的那个专家是谁
+  turns:
+  - question: 商品页面里的那个专家是谁
+    expect:
+      scene: 商品页面信息核实
+- name: PRODUCT_INFO_091_商品页面信息核实_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品页面信息核实
+  scene_description: 用户对商品页面中的信息真实性、归属关系、主体身份、宣传描述等进行核实确认，包括确认商品是否属于本店/本品牌/本店铺在售商品，或核实页面中的人物、机构、品牌、宣传信息是否属实。
+  question_example: 这个代言人是哪个机构的
+  turns:
+  - question: 这个代言人是哪个机构的
+    expect:
+      scene: 商品页面信息核实
+- name: PRODUCT_INFO_091_商品页面信息核实_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品页面信息核实
+  scene_description: 用户对商品页面中的信息真实性、归属关系、主体身份、宣传描述等进行核实确认，包括确认商品是否属于本店/本品牌/本店铺在售商品，或核实页面中的人物、机构、品牌、宣传信息是否属实。
+  question_example: 页面上写的认证是真的还是假的
+  turns:
+  - question: 页面上写的认证是真的还是假的
+    expect:
+      scene: 商品页面信息核实
+- name: PRODUCT_INFO_091_商品页面信息核实_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品页面信息核实
+  scene_description: 用户对商品页面中的信息真实性、归属关系、主体身份、宣传描述等进行核实确认，包括确认商品是否属于本店/本品牌/本店铺在售商品，或核实页面中的人物、机构、品牌、宣传信息是否属实。
+  question_example: 这个品牌宣传信息可信么
+  turns:
+  - question: 这个品牌宣传信息可信么
+    expect:
+      scene: 商品页面信息核实
+- name: PRODUCT_INFO_091_商品页面信息核实_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品页面信息核实
+  scene_description: 用户对商品页面中的信息真实性、归属关系、主体身份、宣传描述等进行核实确认，包括确认商品是否属于本店/本品牌/本店铺在售商品，或核实页面中的人物、机构、品牌、宣传信息是否属实。
+  question_example: 页面上的人物信息能核实吗
+  turns:
+  - question: 页面上的人物信息能核实吗
+    expect:
+      scene: 商品页面信息核实
+- name: PRODUCT_INFO_091_商品页面信息核实_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品页面信息核实
+  scene_description: 用户对商品页面中的信息真实性、归属关系、主体身份、宣传描述等进行核实确认，包括确认商品是否属于本店/本品牌/本店铺在售商品，或核实页面中的人物、机构、品牌、宣传信息是否属实。
+  question_example: 这个不是你家的产品吗
+  turns:
+  - question: 这个不是你家的产品吗
+    expect:
+      scene: 商品页面信息核实
+- name: PRODUCT_INFO_091_商品页面信息核实_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品页面信息核实
+  scene_description: 用户对商品页面中的信息真实性、归属关系、主体身份、宣传描述等进行核实确认，包括确认商品是否属于本店/本品牌/本店铺在售商品，或核实页面中的人物、机构、品牌、宣传信息是否属实。
+  question_example: 这个商品是你们家的吗
+  turns:
+  - question: 这个商品是你们家的吗
+    expect:
+      scene: 商品页面信息核实
+- name: PRODUCT_INFO_091_商品页面信息核实_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品页面信息核实
+  scene_description: 用户对商品页面中的信息真实性、归属关系、主体身份、宣传描述等进行核实确认，包括确认商品是否属于本店/本品牌/本店铺在售商品，或核实页面中的人物、机构、品牌、宣传信息是否属实。
+  question_example: 页面上写的专利能查到吗
+  turns:
+  - question: 页面上写的专利能查到吗
+    expect:
+      scene: 商品页面信息核实
+- name: PRODUCT_INFO_122_乘机乘车携带咨询_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 乘机乘车携带咨询
+  scene_description: 询问商品能否带上飞机、高铁等交通工具，包括托运和过安检等场景
+  question_example: 可以带上飞机吗
+  turns:
+  - question: 可以带上飞机吗
+    expect:
+      scene: 乘机乘车携带咨询
+- name: PRODUCT_INFO_122_乘机乘车携带咨询_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 乘机乘车携带咨询
+  scene_description: 询问商品能否带上飞机、高铁等交通工具，包括托运和过安检等场景
+  question_example: 高铁能带吗
+  turns:
+  - question: 高铁能带吗
+    expect:
+      scene: 乘机乘车携带咨询
+- name: PRODUCT_INFO_122_乘机乘车携带咨询_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 乘机乘车携带咨询
+  scene_description: 询问商品能否带上飞机、高铁等交通工具，包括托运和过安检等场景
+  question_example: 可以飞机托运嘛
+  turns:
+  - question: 可以飞机托运嘛
+    expect:
+      scene: 乘机乘车携带咨询
+- name: PRODUCT_INFO_122_乘机乘车携带咨询_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 乘机乘车携带咨询
+  scene_description: 询问商品能否带上飞机、高铁等交通工具，包括托运和过安检等场景
+  question_example: 能过安检吗
+  turns:
+  - question: 能过安检吗
+    expect:
+      scene: 乘机乘车携带咨询
+- name: PRODUCT_INFO_122_乘机乘车携带咨询_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 乘机乘车携带咨询
+  scene_description: 询问商品能否带上飞机、高铁等交通工具，包括托运和过安检等场景
+  question_example: 过安检有问题吗
+  turns:
+  - question: 过安检有问题吗
+    expect:
+      scene: 乘机乘车携带咨询
+- name: PRODUCT_INFO_122_乘机乘车携带咨询_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 乘机乘车携带咨询
+  scene_description: 询问商品能否带上飞机、高铁等交通工具，包括托运和过安检等场景
+  question_example: 可以带上动车吗
+  turns:
+  - question: 可以带上动车吗
+    expect:
+      scene: 乘机乘车携带咨询
+- name: PRODUCT_INFO_122_乘机乘车携带咨询_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 乘机乘车携带咨询
+  scene_description: 询问商品能否带上飞机、高铁等交通工具，包括托运和过安检等场景
+  question_example: 火车能带吗
+  turns:
+  - question: 火车能带吗
+    expect:
+      scene: 乘机乘车携带咨询
+- name: PRODUCT_INFO_122_乘机乘车携带咨询_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 乘机乘车携带咨询
+  scene_description: 询问商品能否带上飞机、高铁等交通工具，包括托运和过安检等场景
+  question_example: 带上高铁可以吗
+  turns:
+  - question: 带上高铁可以吗
+    expect:
+      scene: 乘机乘车携带咨询
+- name: PRODUCT_INFO_136_不满意不喜欢_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 不满意不喜欢
+  scene_description: 买家对商品表达不满意、不喜欢、体验不好、效果不及预期、觉得不好用等反馈。
+  question_example: 用了感觉一般
+  turns:
+  - question: 用了感觉一般
+    expect:
+      scene: 不满意不喜欢
+- name: PRODUCT_INFO_136_不满意不喜欢_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 不满意不喜欢
+  scene_description: 买家对商品表达不满意、不喜欢、体验不好、效果不及预期、觉得不好用等反馈。
+  question_example: 用着不太满意
+  turns:
+  - question: 用着不太满意
+    expect:
+      scene: 不满意不喜欢
+- name: PRODUCT_INFO_136_不满意不喜欢_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 不满意不喜欢
+  scene_description: 买家对商品表达不满意、不喜欢、体验不好、效果不及预期、觉得不好用等反馈。
+  question_example: 这个效果没我想的好
+  turns:
+  - question: 这个效果没我想的好
+    expect:
+      scene: 不满意不喜欢
+- name: PRODUCT_INFO_136_不满意不喜欢_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 不满意不喜欢
+  scene_description: 买家对商品表达不满意、不喜欢、体验不好、效果不及预期、觉得不好用等反馈。
+  question_example: 感觉不好用
+  turns:
+  - question: 感觉不好用
+    expect:
+      scene: 不满意不喜欢
+- name: PRODUCT_INFO_136_不满意不喜欢_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 不满意不喜欢
+  scene_description: 买家对商品表达不满意、不喜欢、体验不好、效果不及预期、觉得不好用等反馈。
+  question_example: 体验不太行
+  turns:
+  - question: 体验不太行
+    expect:
+      scene: 不满意不喜欢
+- name: PRODUCT_INFO_136_不满意不喜欢_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 不满意不喜欢
+  scene_description: 买家对商品表达不满意、不喜欢、体验不好、效果不及预期、觉得不好用等反馈。
+  question_example: 没有预期那么好
+  turns:
+  - question: 没有预期那么好
+    expect:
+      scene: 不满意不喜欢
+- name: PRODUCT_INFO_136_不满意不喜欢_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 不满意不喜欢
+  scene_description: 买家对商品表达不满意、不喜欢、体验不好、效果不及预期、觉得不好用等反馈。
+  question_example: 感觉不太适合我
+  turns:
+  - question: 感觉不太适合我
+    expect:
+      scene: 不满意不喜欢
+- name: PRODUCT_INFO_136_不满意不喜欢_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 不满意不喜欢
+  scene_description: 买家对商品表达不满意、不喜欢、体验不好、效果不及预期、觉得不好用等反馈。
+  question_example: 用后不喜欢
+  turns:
+  - question: 用后不喜欢
+    expect:
+      scene: 不满意不喜欢
+- name: PRODUCT_INFO_136_不满意不喜欢_09
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 不满意不喜欢
+  scene_description: 买家对商品表达不满意、不喜欢、体验不好、效果不及预期、觉得不好用等反馈。
+  question_example: 实际体验一般般
+  turns:
+  - question: 实际体验一般般
+    expect:
+      scene: 不满意不喜欢
+- name: PRODUCT_INFO_136_不满意不喜欢_10
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 不满意不喜欢
+  scene_description: 买家对商品表达不满意、不喜欢、体验不好、效果不及预期、觉得不好用等反馈。
+  question_example: 没想象中那么好
+  turns:
+  - question: 没想象中那么好
+    expect:
+      scene: 不满意不喜欢
+- name: PRODUCT_INFO_136_不满意不喜欢_11
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 不满意不喜欢
+  scene_description: 买家对商品表达不满意、不喜欢、体验不好、效果不及预期、觉得不好用等反馈。
+  question_example: 买回来用了下不太满意
+  turns:
+  - question: 买回来用了下不太满意
+    expect:
+      scene: 不满意不喜欢
+- name: PRODUCT_INFO_136_不满意不喜欢_12
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 不满意不喜欢
+  scene_description: 买家对商品表达不满意、不喜欢、体验不好、效果不及预期、觉得不好用等反馈。
+  question_example: 这个我用着不舒服
+  turns:
+  - question: 这个我用着不舒服
+    expect:
+      scene: 不满意不喜欢
+- name: PRODUCT_INFO_136_不满意不喜欢_13
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 不满意不喜欢
+  scene_description: 买家对商品表达不满意、不喜欢、体验不好、效果不及预期、觉得不好用等反馈。
+  question_example: 感觉不值这个价
+  turns:
+  - question: 感觉不值这个价
+    expect:
+      scene: 不满意不喜欢
+- name: PRODUCT_INFO_136_不满意不喜欢_14
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 不满意不喜欢
+  scene_description: 买家对商品表达不满意、不喜欢、体验不好、效果不及预期、觉得不好用等反馈。
+  question_example: 效果一般
+  turns:
+  - question: 效果一般
+    expect:
+      scene: 不满意不喜欢
+- name: PRODUCT_INFO_136_不满意不喜欢_15
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 不满意不喜欢
+  scene_description: 买家对商品表达不满意、不喜欢、体验不好、效果不及预期、觉得不好用等反馈。
+  question_example: 没有宣传的那么好
+  turns:
+  - question: 没有宣传的那么好
+    expect:
+      scene: 不满意不喜欢
+- name: PRODUCT_INFO_137_咨询预售商品及规则_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询预售商品及规则
+  scene_description: 用户咨询商品是否属于预售/预约购买，以及预售相关规则，包括是否需要定金、预售与现货区别、是否可预订、预售发货时间、货期长短等，不包含预售尾款支付时间、尾款补付、定金尾款计算等问题。
+  question_example: 这个是预售商品吗
+  turns:
+  - question: 这个是预售商品吗
+    expect:
+      scene: 咨询预售商品及规则
+- name: PRODUCT_INFO_137_咨询预售商品及规则_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询预售商品及规则
+  scene_description: 用户咨询商品是否属于预售/预约购买，以及预售相关规则，包括是否需要定金、预售与现货区别、是否可预订、预售发货时间、货期长短等，不包含预售尾款支付时间、尾款补付、定金尾款计算等问题。
+  question_example: 这是现货还是预售
+  turns:
+  - question: 这是现货还是预售
+    expect:
+      scene: 咨询预售商品及规则
+- name: PRODUCT_INFO_137_咨询预售商品及规则_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询预售商品及规则
+  scene_description: 用户咨询商品是否属于预售/预约购买，以及预售相关规则，包括是否需要定金、预售与现货区别、是否可预订、预售发货时间、货期长短等，不包含预售尾款支付时间、尾款补付、定金尾款计算等问题。
+  question_example: 需要付定金才能买吗
+  turns:
+  - question: 需要付定金才能买吗
+    expect:
+      scene: 咨询预售商品及规则
+- name: PRODUCT_INFO_137_咨询预售商品及规则_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询预售商品及规则
+  scene_description: 用户咨询商品是否属于预售/预约购买，以及预售相关规则，包括是否需要定金、预售与现货区别、是否可预订、预售发货时间、货期长短等，不包含预售尾款支付时间、尾款补付、定金尾款计算等问题。
+  question_example: 是预约购买吗
+  turns:
+  - question: 是预约购买吗
+    expect:
+      scene: 咨询预售商品及规则
+- name: PRODUCT_INFO_137_咨询预售商品及规则_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询预售商品及规则
+  scene_description: 用户咨询商品是否属于预售/预约购买，以及预售相关规则，包括是否需要定金、预售与现货区别、是否可预订、预售发货时间、货期长短等，不包含预售尾款支付时间、尾款补付、定金尾款计算等问题。
+  question_example: 预售和现货有什么区别
+  turns:
+  - question: 预售和现货有什么区别
+    expect:
+      scene: 咨询预售商品及规则
+- name: PRODUCT_INFO_137_咨询预售商品及规则_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询预售商品及规则
+  scene_description: 用户咨询商品是否属于预售/预约购买，以及预售相关规则，包括是否需要定金、预售与现货区别、是否可预订、预售发货时间、货期长短等，不包含预售尾款支付时间、尾款补付、定金尾款计算等问题。
+  question_example: 能预订吗
+  turns:
+  - question: 能预订吗
+    expect:
+      scene: 咨询预售商品及规则
+- name: PRODUCT_INFO_137_咨询预售商品及规则_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询预售商品及规则
+  scene_description: 用户咨询商品是否属于预售/预约购买，以及预售相关规则，包括是否需要定金、预售与现货区别、是否可预订、预售发货时间、货期长短等，不包含预售尾款支付时间、尾款补付、定金尾款计算等问题。
+  question_example: 预售啥时候发
+  turns:
+  - question: 预售啥时候发
+    expect:
+      scene: 咨询预售商品及规则
+- name: PRODUCT_INFO_137_咨询预售商品及规则_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询预售商品及规则
+  scene_description: 用户咨询商品是否属于预售/预约购买，以及预售相关规则，包括是否需要定金、预售与现货区别、是否可预订、预售发货时间、货期长短等，不包含预售尾款支付时间、尾款补付、定金尾款计算等问题。
+  question_example: 货期多久
+  turns:
+  - question: 货期多久
+    expect:
+      scene: 咨询预售商品及规则
+- name: PRODUCT_INFO_137_咨询预售商品及规则_09
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询预售商品及规则
+  scene_description: 用户咨询商品是否属于预售/预约购买，以及预售相关规则，包括是否需要定金、预售与现货区别、是否可预订、预售发货时间、货期长短等，不包含预售尾款支付时间、尾款补付、定金尾款计算等问题。
+  question_example: 预售多久能发
+  turns:
+  - question: 预售多久能发
+    expect:
+      scene: 咨询预售商品及规则
+- name: PRODUCT_INFO_137_咨询预售商品及规则_10
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询预售商品及规则
+  scene_description: 用户咨询商品是否属于预售/预约购买，以及预售相关规则，包括是否需要定金、预售与现货区别、是否可预订、预售发货时间、货期长短等，不包含预售尾款支付时间、尾款补付、定金尾款计算等问题。
+  question_example: 预售规则是什么
+  turns:
+  - question: 预售规则是什么
+    expect:
+      scene: 咨询预售商品及规则
+- name: PRODUCT_INFO_138_咨询商品补货时间_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品补货时间
+  scene_description: 用户询问售罄/缺货商品什么时候补货、是否还会补货、何时恢复库存。
+  question_example: 什么时候补货
+  turns:
+  - question: 什么时候补货
+    expect:
+      scene: 咨询商品补货时间
+- name: PRODUCT_INFO_138_咨询商品补货时间_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品补货时间
+  scene_description: 用户询问售罄/缺货商品什么时候补货、是否还会补货、何时恢复库存。
+  question_example: 还会补货吗
+  turns:
+  - question: 还会补货吗
+    expect:
+      scene: 咨询商品补货时间
+- name: PRODUCT_INFO_138_咨询商品补货时间_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品补货时间
+  scene_description: 用户询问售罄/缺货商品什么时候补货、是否还会补货、何时恢复库存。
+  question_example: 大概什么时候有货
+  turns:
+  - question: 大概什么时候有货
+    expect:
+      scene: 咨询商品补货时间
+- name: PRODUCT_INFO_138_咨询商品补货时间_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品补货时间
+  scene_description: 用户询问售罄/缺货商品什么时候补货、是否还会补货、何时恢复库存。
+  question_example: 缺货多久补
+  turns:
+  - question: 缺货多久补
+    expect:
+      scene: 咨询商品补货时间
+- name: PRODUCT_INFO_138_咨询商品补货时间_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品补货时间
+  scene_description: 用户询问售罄/缺货商品什么时候补货、是否还会补货、何时恢复库存。
+  question_example: 什么时候恢复库存
+  turns:
+  - question: 什么时候恢复库存
+    expect:
+      scene: 咨询商品补货时间
+- name: PRODUCT_INFO_138_咨询商品补货时间_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品补货时间
+  scene_description: 用户询问售罄/缺货商品什么时候补货、是否还会补货、何时恢复库存。
+  question_example: 急需补货
+  turns:
+  - question: 急需补货
+    expect:
+      scene: 咨询商品补货时间
+- name: PRODUCT_INFO_143_商品推荐与选购建议_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品推荐与选购建议
+  scene_description: 用户希望客服根据使用需求、购买场景或店铺在售商品，推荐合适的商品、帮助判断买哪个更合适，或介绍店铺卖得好的商品。适用于“推荐一下、帮我选、适合我的是哪个、你觉得我买哪个好、你们家卖得好的有哪些”等选购建议类问题，不包含单纯询问商品区别、商品功效、商品质量、价格、库存等客观信息。
+  question_example: 推荐一下好用的
+  turns:
+  - question: 推荐一下好用的
+    expect:
+      scene: 商品推荐与选购建议
+- name: PRODUCT_INFO_143_商品推荐与选购建议_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品推荐与选购建议
+  scene_description: 用户希望客服根据使用需求、购买场景或店铺在售商品，推荐合适的商品、帮助判断买哪个更合适，或介绍店铺卖得好的商品。适用于“推荐一下、帮我选、适合我的是哪个、你觉得我买哪个好、你们家卖得好的有哪些”等选购建议类问题，不包含单纯询问商品区别、商品功效、商品质量、价格、库存等客观信息。
+  question_example: 帮我推荐一下适合我的
+  turns:
+  - question: 帮我推荐一下适合我的
+    expect:
+      scene: 商品推荐与选购建议
+- name: PRODUCT_INFO_143_商品推荐与选购建议_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品推荐与选购建议
+  scene_description: 用户希望客服根据使用需求、购买场景或店铺在售商品，推荐合适的商品、帮助判断买哪个更合适，或介绍店铺卖得好的商品。适用于“推荐一下、帮我选、适合我的是哪个、你觉得我买哪个好、你们家卖得好的有哪些”等选购建议类问题，不包含单纯询问商品区别、商品功效、商品质量、价格、库存等客观信息。
+  question_example: 有没有适合我的
+  turns:
+  - question: 有没有适合我的
+    expect:
+      scene: 商品推荐与选购建议
+- name: PRODUCT_INFO_143_商品推荐与选购建议_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品推荐与选购建议
+  scene_description: 用户希望客服根据使用需求、购买场景或店铺在售商品，推荐合适的商品、帮助判断买哪个更合适，或介绍店铺卖得好的商品。适用于“推荐一下、帮我选、适合我的是哪个、你觉得我买哪个好、你们家卖得好的有哪些”等选购建议类问题，不包含单纯询问商品区别、商品功效、商品质量、价格、库存等客观信息。
+  question_example: 你建议买哪个
+  turns:
+  - question: 你建议买哪个
+    expect:
+      scene: 商品推荐与选购建议
+- name: PRODUCT_INFO_143_商品推荐与选购建议_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品推荐与选购建议
+  scene_description: 用户希望客服根据使用需求、购买场景或店铺在售商品，推荐合适的商品、帮助判断买哪个更合适，或介绍店铺卖得好的商品。适用于“推荐一下、帮我选、适合我的是哪个、你觉得我买哪个好、你们家卖得好的有哪些”等选购建议类问题，不包含单纯询问商品区别、商品功效、商品质量、价格、库存等客观信息。
+  question_example: 哪个卖得最好
+  turns:
+  - question: 哪个卖得最好
+    expect:
+      scene: 商品推荐与选购建议
+- name: PRODUCT_INFO_143_商品推荐与选购建议_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品推荐与选购建议
+  scene_description: 用户希望客服根据使用需求、购买场景或店铺在售商品，推荐合适的商品、帮助判断买哪个更合适，或介绍店铺卖得好的商品。适用于“推荐一下、帮我选、适合我的是哪个、你觉得我买哪个好、你们家卖得好的有哪些”等选购建议类问题，不包含单纯询问商品区别、商品功效、商品质量、价格、库存等客观信息。
+  question_example: 新手适合买哪个
+  turns:
+  - question: 新手适合买哪个
+    expect:
+      scene: 商品推荐与选购建议
+- name: PRODUCT_INFO_143_商品推荐与选购建议_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品推荐与选购建议
+  scene_description: 用户希望客服根据使用需求、购买场景或店铺在售商品，推荐合适的商品、帮助判断买哪个更合适，或介绍店铺卖得好的商品。适用于“推荐一下、帮我选、适合我的是哪个、你觉得我买哪个好、你们家卖得好的有哪些”等选购建议类问题，不包含单纯询问商品区别、商品功效、商品质量、价格、库存等客观信息。
+  question_example: 第一次买选哪个
+  turns:
+  - question: 第一次买选哪个
+    expect:
+      scene: 商品推荐与选购建议
+- name: PRODUCT_INFO_143_商品推荐与选购建议_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品推荐与选购建议
+  scene_description: 用户希望客服根据使用需求、购买场景或店铺在售商品，推荐合适的商品、帮助判断买哪个更合适，或介绍店铺卖得好的商品。适用于“推荐一下、帮我选、适合我的是哪个、你觉得我买哪个好、你们家卖得好的有哪些”等选购建议类问题，不包含单纯询问商品区别、商品功效、商品质量、价格、库存等客观信息。
+  question_example: 给我推荐一个
+  turns:
+  - question: 给我推荐一个
+    expect:
+      scene: 商品推荐与选购建议
+- name: PRODUCT_INFO_143_商品推荐与选购建议_09
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品推荐与选购建议
+  scene_description: 用户希望客服根据使用需求、购买场景或店铺在售商品，推荐合适的商品、帮助判断买哪个更合适，或介绍店铺卖得好的商品。适用于“推荐一下、帮我选、适合我的是哪个、你觉得我买哪个好、你们家卖得好的有哪些”等选购建议类问题，不包含单纯询问商品区别、商品功效、商品质量、价格、库存等客观信息。
+  question_example: 你们家卖得好的有哪些
+  turns:
+  - question: 你们家卖得好的有哪些
+    expect:
+      scene: 商品推荐与选购建议
+- name: PRODUCT_INFO_143_商品推荐与选购建议_10
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品推荐与选购建议
+  scene_description: 用户希望客服根据使用需求、购买场景或店铺在售商品，推荐合适的商品、帮助判断买哪个更合适，或介绍店铺卖得好的商品。适用于“推荐一下、帮我选、适合我的是哪个、你觉得我买哪个好、你们家卖得好的有哪些”等选购建议类问题，不包含单纯询问商品区别、商品功效、商品质量、价格、库存等客观信息。
+  question_example: 推荐一下你们家卖得好的
+  turns:
+  - question: 推荐一下你们家卖得好的
+    expect:
+      scene: 商品推荐与选购建议
+- name: PRODUCT_INFO_143_商品推荐与选购建议_11
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品推荐与选购建议
+  scene_description: 用户希望客服根据使用需求、购买场景或店铺在售商品，推荐合适的商品、帮助判断买哪个更合适，或介绍店铺卖得好的商品。适用于“推荐一下、帮我选、适合我的是哪个、你觉得我买哪个好、你们家卖得好的有哪些”等选购建议类问题，不包含单纯询问商品区别、商品功效、商品质量、价格、库存等客观信息。
+  question_example: 发一下链接
+  turns:
+  - question: 发一下链接
+    expect:
+      scene: 商品推荐与选购建议
+- name: PRODUCT_INFO_143_商品推荐与选购建议_12
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品推荐与选购建议
+  scene_description: 用户希望客服根据使用需求、购买场景或店铺在售商品，推荐合适的商品、帮助判断买哪个更合适，或介绍店铺卖得好的商品。适用于“推荐一下、帮我选、适合我的是哪个、你觉得我买哪个好、你们家卖得好的有哪些”等选购建议类问题，不包含单纯询问商品区别、商品功效、商品质量、价格、库存等客观信息。
+  question_example: 发个链接
+  turns:
+  - question: 发个链接
+    expect:
+      scene: 商品推荐与选购建议
+- name: PRODUCT_INFO_143_商品推荐与选购建议_13
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品推荐与选购建议
+  scene_description: 用户希望客服根据使用需求、购买场景或店铺在售商品，推荐合适的商品、帮助判断买哪个更合适，或介绍店铺卖得好的商品。适用于“推荐一下、帮我选、适合我的是哪个、你觉得我买哪个好、你们家卖得好的有哪些”等选购建议类问题，不包含单纯询问商品区别、商品功效、商品质量、价格、库存等客观信息。
+  question_example: 有替换装链接吗
+  turns:
+  - question: 有替换装链接吗
+    expect:
+      scene: 商品推荐与选购建议
+- name: PRODUCT_INFO_144_咨询线下门店/专柜信息_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询线下门店/专柜信息
+  scene_description: 买家咨询品牌或商品是否有实体店、线下门店、专柜、专卖店等线下销售渠道信息。
+  question_example: 有实体店吗
+  turns:
+  - question: 有实体店吗
+    expect:
+      scene: 咨询线下门店/专柜信息
+- name: PRODUCT_INFO_144_咨询线下门店/专柜信息_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询线下门店/专柜信息
+  scene_description: 买家咨询品牌或商品是否有实体店、线下门店、专柜、专卖店等线下销售渠道信息。
+  question_example: 有线下门店吗
+  turns:
+  - question: 有线下门店吗
+    expect:
+      scene: 咨询线下门店/专柜信息
+- name: PRODUCT_INFO_144_咨询线下门店/专柜信息_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询线下门店/专柜信息
+  scene_description: 买家咨询品牌或商品是否有实体店、线下门店、专柜、专卖店等线下销售渠道信息。
+  question_example: 有专柜吗
+  turns:
+  - question: 有专柜吗
+    expect:
+      scene: 咨询线下门店/专柜信息
+- name: PRODUCT_INFO_144_咨询线下门店/专柜信息_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询线下门店/专柜信息
+  scene_description: 买家咨询品牌或商品是否有实体店、线下门店、专柜、专卖店等线下销售渠道信息。
+  question_example: 你们有门店吗
+  turns:
+  - question: 你们有门店吗
+    expect:
+      scene: 咨询线下门店/专柜信息
+- name: PRODUCT_INFO_144_咨询线下门店/专柜信息_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询线下门店/专柜信息
+  scene_description: 买家咨询品牌或商品是否有实体店、线下门店、专柜、专卖店等线下销售渠道信息。
+  question_example: 哪里有实体店
+  turns:
+  - question: 哪里有实体店
+    expect:
+      scene: 咨询线下门店/专柜信息
+- name: PRODUCT_INFO_144_咨询线下门店/专柜信息_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询线下门店/专柜信息
+  scene_description: 买家咨询品牌或商品是否有实体店、线下门店、专柜、专卖店等线下销售渠道信息。
+  question_example: 有专卖店吗
+  turns:
+  - question: 有专卖店吗
+    expect:
+      scene: 咨询线下门店/专柜信息
+- name: PRODUCT_INFO_144_咨询线下门店/专柜信息_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询线下门店/专柜信息
+  scene_description: 买家咨询品牌或商品是否有实体店、线下门店、专柜、专卖店等线下销售渠道信息。
+  question_example: 线下能买吗
+  turns:
+  - question: 线下能买吗
+    expect:
+      scene: 咨询线下门店/专柜信息
+- name: PRODUCT_INFO_145_咨询线上线下商品是否一致_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询线上线下商品是否一致
+  scene_description: 买家咨询线上店铺商品与线下门店、实体店、专柜所售商品是否相同，是否为同款、同货、同品质等。
+  question_example: 线下门店卖的是一样的吗
+  turns:
+  - question: 线下门店卖的是一样的吗
+    expect:
+      scene: 咨询线上线下商品是否一致
+- name: PRODUCT_INFO_145_咨询线上线下商品是否一致_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询线上线下商品是否一致
+  scene_description: 买家咨询线上店铺商品与线下门店、实体店、专柜所售商品是否相同，是否为同款、同货、同品质等。
+  question_example: 专柜卖的是一样的吗
+  turns:
+  - question: 专柜卖的是一样的吗
+    expect:
+      scene: 咨询线上线下商品是否一致
+- name: PRODUCT_INFO_145_咨询线上线下商品是否一致_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询线上线下商品是否一致
+  scene_description: 买家咨询线上店铺商品与线下门店、实体店、专柜所售商品是否相同，是否为同款、同货、同品质等。
+  question_example: 实体店卖的一样吗
+  turns:
+  - question: 实体店卖的一样吗
+    expect:
+      scene: 咨询线上线下商品是否一致
+- name: PRODUCT_INFO_145_咨询线上线下商品是否一致_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询线上线下商品是否一致
+  scene_description: 买家咨询线上店铺商品与线下门店、实体店、专柜所售商品是否相同，是否为同款、同货、同品质等。
+  question_example: 线上线下是一样的吗
+  turns:
+  - question: 线上线下是一样的吗
+    expect:
+      scene: 咨询线上线下商品是否一致
+- name: PRODUCT_INFO_145_咨询线上线下商品是否一致_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询线上线下商品是否一致
+  scene_description: 买家咨询线上店铺商品与线下门店、实体店、专柜所售商品是否相同，是否为同款、同货、同品质等。
+  question_example: 跟门店卖的是同款吗
+  turns:
+  - question: 跟门店卖的是同款吗
+    expect:
+      scene: 咨询线上线下商品是否一致
+- name: PRODUCT_INFO_145_咨询线上线下商品是否一致_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询线上线下商品是否一致
+  scene_description: 买家咨询线上店铺商品与线下门店、实体店、专柜所售商品是否相同，是否为同款、同货、同品质等。
+  question_example: 和专柜的是一样的吗
+  turns:
+  - question: 和专柜的是一样的吗
+    expect:
+      scene: 咨询线上线下商品是否一致
+- name: PRODUCT_INFO_145_咨询线上线下商品是否一致_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询线上线下商品是否一致
+  scene_description: 买家咨询线上店铺商品与线下门店、实体店、专柜所售商品是否相同，是否为同款、同货、同品质等。
+  question_example: 线下和网上卖的是同一个吗
+  turns:
+  - question: 线下和网上卖的是同一个吗
+    expect:
+      scene: 咨询线上线下商品是否一致
+- name: PRODUCT_INFO_145_咨询线上线下商品是否一致_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询线上线下商品是否一致
+  scene_description: 买家咨询线上店铺商品与线下门店、实体店、专柜所售商品是否相同，是否为同款、同货、同品质等。
+  question_example: 网店和实体店一样吗
+  turns:
+  - question: 网店和实体店一样吗
+    expect:
+      scene: 咨询线上线下商品是否一致
+- name: PRODUCT_INFO_146_是否有实物图_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否有实物图
+  scene_description: 买家咨询商品是否有实物图。
+  question_example: 有实物图吗
+  turns:
+  - question: 有实物图吗
+    expect:
+      scene: 是否有实物图
+- name: PRODUCT_INFO_146_是否有实物图_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否有实物图
+  scene_description: 买家咨询商品是否有实物图。
+  question_example: 能看实物图片吗
+  turns:
+  - question: 能看实物图片吗
+    expect:
+      scene: 是否有实物图
+- name: PRODUCT_INFO_146_是否有实物图_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否有实物图
+  scene_description: 买家咨询商品是否有实物图。
+  question_example: 能看看是什么样子吗
+  turns:
+  - question: 能看看是什么样子吗
+    expect:
+      scene: 是否有实物图
+- name: PRODUCT_INFO_146_是否有实物图_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否有实物图
+  scene_description: 买家咨询商品是否有实物图。
+  question_example: 有商品图片吗
+  turns:
+  - question: 有商品图片吗
+    expect:
+      scene: 是否有实物图
+- name: PRODUCT_INFO_146_是否有实物图_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否有实物图
+  scene_description: 买家咨询商品是否有实物图。
+  question_example: 有实拍图吗
+  turns:
+  - question: 有实拍图吗
+    expect:
+      scene: 是否有实物图
+- name: PRODUCT_INFO_146_是否有实物图_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否有实物图
+  scene_description: 买家咨询商品是否有实物图。
+  question_example: 有效果图吗
+  turns:
+  - question: 有效果图吗
+    expect:
+      scene: 是否有实物图
+- name: PRODUCT_INFO_147_商品规格_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品规格
+  scene_description: 买家确认规格、套餐、组合、SKU 里具体包含哪些商品、部件、工具或数量等。
+  question_example: 这个规格里面包含什么
+  turns:
+  - question: 这个规格里面包含什么
+    expect:
+      scene: 商品规格
+- name: PRODUCT_INFO_147_商品规格_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品规格
+  scene_description: 买家确认规格、套餐、组合、SKU 里具体包含哪些商品、部件、工具或数量等。
+  question_example: 这个套餐里都有啥
+  turns:
+  - question: 这个套餐里都有啥
+    expect:
+      scene: 商品规格
+- name: PRODUCT_INFO_147_商品规格_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品规格
+  scene_description: 买家确认规格、套餐、组合、SKU 里具体包含哪些商品、部件、工具或数量等。
+  question_example: 这一套具体都有什么
+  turns:
+  - question: 这一套具体都有什么
+    expect:
+      scene: 商品规格
+- name: PRODUCT_INFO_147_商品规格_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品规格
+  scene_description: 买家确认规格、套餐、组合、SKU 里具体包含哪些商品、部件、工具或数量等。
+  question_example: 这个SKU都包含什么
+  turns:
+  - question: 这个SKU都包含什么
+    expect:
+      scene: 商品规格
+- name: PRODUCT_INFO_147_商品规格_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品规格
+  scene_description: 买家确认规格、套餐、组合、SKU 里具体包含哪些商品、部件、工具或数量等。
+  question_example: 这个规格配了哪些东西
+  turns:
+  - question: 这个规格配了哪些东西
+    expect:
+      scene: 商品规格
+- name: PRODUCT_INFO_147_商品规格_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品规格
+  scene_description: 买家确认规格、套餐、组合、SKU 里具体包含哪些商品、部件、工具或数量等。
+  question_example: 这套里面都有啥
+  turns:
+  - question: 这套里面都有啥
+    expect:
+      scene: 商品规格
+- name: PRODUCT_INFO_147_商品规格_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品规格
+  scene_description: 买家确认规格、套餐、组合、SKU 里具体包含哪些商品、部件、工具或数量等。
+  question_example: 这个套装包含几件
+  turns:
+  - question: 这个套装包含几件
+    expect:
+      scene: 商品规格
+- name: PRODUCT_INFO_147_商品规格_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品规格
+  scene_description: 买家确认规格、套餐、组合、SKU 里具体包含哪些商品、部件、工具或数量等。
+  question_example: 这款是单件还是套装
+  turns:
+  - question: 这款是单件还是套装
+    expect:
+      scene: 商品规格
+- name: PRODUCT_INFO_147_商品规格_09
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品规格
+  scene_description: 买家确认规格、套餐、组合、SKU 里具体包含哪些商品、部件、工具或数量等。
+  question_example: 这个组合里有腰带吗
+  turns:
+  - question: 这个组合里有腰带吗
+    expect:
+      scene: 商品规格
+- name: PRODUCT_INFO_147_商品规格_10
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品规格
+  scene_description: 买家确认规格、套餐、组合、SKU 里具体包含哪些商品、部件、工具或数量等。
+  question_example: 一套是不是上衣加裤子
+  turns:
+  - question: 一套是不是上衣加裤子
+    expect:
+      scene: 商品规格
+- name: PRODUCT_INFO_148_容量/净含量/数量_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 容量/净含量/数量
+  scene_description: 买家咨询商品的容量、净含量、重量、支数、片数、件数等基础规格参数。
+  question_example: 这款多少毫升
+  turns:
+  - question: 这款多少毫升
+    expect:
+      scene: 容量/净含量/数量
+- name: PRODUCT_INFO_148_容量/净含量/数量_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 容量/净含量/数量
+  scene_description: 买家咨询商品的容量、净含量、重量、支数、片数、件数等基础规格参数。
+  question_example: 净含量是多少
+  turns:
+  - question: 净含量是多少
+    expect:
+      scene: 容量/净含量/数量
+- name: PRODUCT_INFO_148_容量/净含量/数量_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 容量/净含量/数量
+  scene_description: 买家咨询商品的容量、净含量、重量、支数、片数、件数等基础规格参数。
+  question_example: 这个是多少克
+  turns:
+  - question: 这个是多少克
+    expect:
+      scene: 容量/净含量/数量
+- name: PRODUCT_INFO_148_容量/净含量/数量_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 容量/净含量/数量
+  scene_description: 买家咨询商品的容量、净含量、重量、支数、片数、件数等基础规格参数。
+  question_example: 一盒有几片
+  turns:
+  - question: 一盒有几片
+    expect:
+      scene: 容量/净含量/数量
+- name: PRODUCT_INFO_148_容量/净含量/数量_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 容量/净含量/数量
+  scene_description: 买家咨询商品的容量、净含量、重量、支数、片数、件数等基础规格参数。
+  question_example: 一共有多少支
+  turns:
+  - question: 一共有多少支
+    expect:
+      scene: 容量/净含量/数量
+- name: PRODUCT_INFO_148_容量/净含量/数量_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 容量/净含量/数量
+  scene_description: 买家咨询商品的容量、净含量、重量、支数、片数、件数等基础规格参数。
+  question_example: 一盒几双
+  turns:
+  - question: 一盒几双
+    expect:
+      scene: 容量/净含量/数量
+- name: PRODUCT_INFO_148_容量/净含量/数量_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 容量/净含量/数量
+  scene_description: 买家咨询商品的容量、净含量、重量、支数、片数、件数等基础规格参数。
+  question_example: 一包几条
+  turns:
+  - question: 一包几条
+    expect:
+      scene: 容量/净含量/数量
+- name: PRODUCT_INFO_148_容量/净含量/数量_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 容量/净含量/数量
+  scene_description: 买家咨询商品的容量、净含量、重量、支数、片数、件数等基础规格参数。
+  question_example: 这套一共几件
+  turns:
+  - question: 这套一共几件
+    expect:
+      scene: 容量/净含量/数量
+- name: PRODUCT_INFO_148_容量/净含量/数量_09
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 容量/净含量/数量
+  scene_description: 买家咨询商品的容量、净含量、重量、支数、片数、件数等基础规格参数。
+  question_example: 一组有几只
+  turns:
+  - question: 一组有几只
+    expect:
+      scene: 容量/净含量/数量
+- name: PRODUCT_INFO_148_容量/净含量/数量_10
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 容量/净含量/数量
+  scene_description: 买家咨询商品的容量、净含量、重量、支数、片数、件数等基础规格参数。
+  question_example: 这款有几件装
+  turns:
+  - question: 这款有几件装
+    expect:
+      scene: 容量/净含量/数量
+- name: PRODUCT_INFO_148_容量/净含量/数量_11
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 容量/净含量/数量
+  scene_description: 买家咨询商品的容量、净含量、重量、支数、片数、件数等基础规格参数。
+  question_example: 这个有多重
+  turns:
+  - question: 这个有多重
+    expect:
+      scene: 容量/净含量/数量
+- name: PRODUCT_INFO_148_容量/净含量/数量_12
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 容量/净含量/数量
+  scene_description: 买家咨询商品的容量、净含量、重量、支数、片数、件数等基础规格参数。
+  question_example: 这个是多少袋的
+  turns:
+  - question: 这个是多少袋的
+    expect:
+      scene: 容量/净含量/数量
+- name: PRODUCT_INFO_149_颜色信息_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 颜色信息
+  scene_description: 买家咨询商品颜色、色系、色调、色号等基础颜色信息。
+  question_example: 这个是什么颜色
+  turns:
+  - question: 这个是什么颜色
+    expect:
+      scene: 颜色信息
+- name: PRODUCT_INFO_149_颜色信息_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 颜色信息
+  scene_description: 买家咨询商品颜色、色系、色调、色号等基础颜色信息。
+  question_example: 偏冷调还是暖调
+  turns:
+  - question: 偏冷调还是暖调
+    expect:
+      scene: 颜色信息
+- name: PRODUCT_INFO_149_颜色信息_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 颜色信息
+  scene_description: 买家咨询商品颜色、色系、色调、色号等基础颜色信息。
+  question_example: 这个颜色深吗
+  turns:
+  - question: 这个颜色深吗
+    expect:
+      scene: 颜色信息
+- name: PRODUCT_INFO_149_颜色信息_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 颜色信息
+  scene_description: 买家咨询商品颜色、色系、色调、色号等基础颜色信息。
+  question_example: 这是豆沙色吗
+  turns:
+  - question: 这是豆沙色吗
+    expect:
+      scene: 颜色信息
+- name: PRODUCT_INFO_149_颜色信息_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 颜色信息
+  scene_description: 买家咨询商品颜色、色系、色调、色号等基础颜色信息。
+  question_example: 有几个颜色
+  turns:
+  - question: 有几个颜色
+    expect:
+      scene: 颜色信息
+- name: PRODUCT_INFO_150_功能/功效_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 功能/功效
+  scene_description: 买家咨询商品本身具备什么功能、作用或功效。
+  question_example: 这款主打什么功效
+  turns:
+  - question: 这款主打什么功效
+    expect:
+      scene: 功能/功效
+- name: PRODUCT_INFO_150_功能/功效_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 功能/功效
+  scene_description: 买家咨询商品本身具备什么功能、作用或功效。
+  question_example: 有保湿作用吗
+  turns:
+  - question: 有保湿作用吗
+    expect:
+      scene: 功能/功效
+- name: PRODUCT_INFO_150_功能/功效_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 功能/功效
+  scene_description: 买家咨询商品本身具备什么功能、作用或功效。
+  question_example: 能修护吗
+  turns:
+  - question: 能修护吗
+    expect:
+      scene: 功能/功效
+- name: PRODUCT_INFO_150_功能/功效_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 功能/功效
+  scene_description: 买家咨询商品本身具备什么功能、作用或功效。
+  question_example: 有什么作用
+  turns:
+  - question: 有什么作用
+    expect:
+      scene: 功能/功效
+- name: PRODUCT_INFO_150_功能/功效_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 功能/功效
+  scene_description: 买家咨询商品本身具备什么功能、作用或功效。
+  question_example: 这个主要是干嘛的
+  turns:
+  - question: 这个主要是干嘛的
+    expect:
+      scene: 功能/功效
+- name: PRODUCT_INFO_150_功能/功效_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 功能/功效
+  scene_description: 买家咨询商品本身具备什么功能、作用或功效。
+  question_example: 速干吗
+  turns:
+  - question: 速干吗
+    expect:
+      scene: 功能/功效
+- name: PRODUCT_INFO_150_功能/功效_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 功能/功效
+  scene_description: 买家咨询商品本身具备什么功能、作用或功效。
+  question_example: 防晒吗
+  turns:
+  - question: 防晒吗
+    expect:
+      scene: 功能/功效
+- name: PRODUCT_INFO_150_功能/功效_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 功能/功效
+  scene_description: 买家咨询商品本身具备什么功能、作用或功效。
+  question_example: 这个穿着实用吗
+  turns:
+  - question: 这个穿着实用吗
+    expect:
+      scene: 功能/功效
+- name: PRODUCT_INFO_151_防护性能_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 防护性能
+  scene_description: 买家咨询商品是否具备防水、防汗、防潮、防污、防泼溅等防护能力。
+  question_example: 防水吗
+  turns:
+  - question: 防水吗
+    expect:
+      scene: 防护性能
+- name: PRODUCT_INFO_151_防护性能_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 防护性能
+  scene_description: 买家咨询商品是否具备防水、防汗、防潮、防污、防泼溅等防护能力。
+  question_example: 防汗吗
+  turns:
+  - question: 防汗吗
+    expect:
+      scene: 防护性能
+- name: PRODUCT_INFO_151_防护性能_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 防护性能
+  scene_description: 买家咨询商品是否具备防水、防汗、防潮、防污、防泼溅等防护能力。
+  question_example: 防潮吗
+  turns:
+  - question: 防潮吗
+    expect:
+      scene: 防护性能
+- name: PRODUCT_INFO_151_防护性能_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 防护性能
+  scene_description: 买家咨询商品是否具备防水、防汗、防潮、防污、防泼溅等防护能力。
+  question_example: 防泼溅吗
+  turns:
+  - question: 防泼溅吗
+    expect:
+      scene: 防护性能
+- name: PRODUCT_INFO_151_防护性能_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 防护性能
+  scene_description: 买家咨询商品是否具备防水、防汗、防潮、防污、防泼溅等防护能力。
+  question_example: 防护等级是多少
+  turns:
+  - question: 防护等级是多少
+    expect:
+      scene: 防护性能
+- name: PRODUCT_INFO_151_防护性能_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 防护性能
+  scene_description: 买家咨询商品是否具备防水、防汗、防潮、防污、防泼溅等防护能力。
+  question_example: 淋点小雨可以吗
+  turns:
+  - question: 淋点小雨可以吗
+    expect:
+      scene: 防护性能
+- name: PRODUCT_INFO_151_防护性能_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 防护性能
+  scene_description: 买家咨询商品是否具备防水、防汗、防潮、防污、防泼溅等防护能力。
+  question_example: 防风吗
+  turns:
+  - question: 防风吗
+    expect:
+      scene: 防护性能
+- name: PRODUCT_INFO_151_防护性能_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 防护性能
+  scene_description: 买家咨询商品是否具备防水、防汗、防潮、防污、防泼溅等防护能力。
+  question_example: 外层能挡水吗
+  turns:
+  - question: 外层能挡水吗
+    expect:
+      scene: 防护性能
+- name: PRODUCT_INFO_152_稳定性表现_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 稳定性表现
+  scene_description: 买家咨询商品在使用或接触过程中是否容易掉色、褪色、脱落、沾染等。
+  question_example: 会不会褪色
+  turns:
+  - question: 会不会褪色
+    expect:
+      scene: 稳定性表现
+- name: PRODUCT_INFO_152_稳定性表现_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 稳定性表现
+  scene_description: 买家咨询商品在使用或接触过程中是否容易掉色、褪色、脱落、沾染等。
+  question_example: 容易掉色吗
+  turns:
+  - question: 容易掉色吗
+    expect:
+      scene: 稳定性表现
+- name: PRODUCT_INFO_152_稳定性表现_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 稳定性表现
+  scene_description: 买家咨询商品在使用或接触过程中是否容易掉色、褪色、脱落、沾染等。
+  question_example: 会不会脱落
+  turns:
+  - question: 会不会脱落
+    expect:
+      scene: 稳定性表现
+- name: PRODUCT_INFO_152_稳定性表现_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 稳定性表现
+  scene_description: 买家咨询商品在使用或接触过程中是否容易掉色、褪色、脱落、沾染等。
+  question_example: 会不会开裂
+  turns:
+  - question: 会不会开裂
+    expect:
+      scene: 稳定性表现
+- name: PRODUCT_INFO_152_稳定性表现_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 稳定性表现
+  scene_description: 买家咨询商品在使用或接触过程中是否容易掉色、褪色、脱落、沾染等。
+  question_example: 会不会沾色
+  turns:
+  - question: 会不会沾色
+    expect:
+      scene: 稳定性表现
+- name: PRODUCT_INFO_153_持续时间_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 持续时间
+  scene_description: 买家咨询商品的效果、气味、状态、热度等可以持续多久。
+  question_example: 能持续多久
+  turns:
+  - question: 能持续多久
+    expect:
+      scene: 持续时间
+- name: PRODUCT_INFO_153_持续时间_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 持续时间
+  scene_description: 买家咨询商品的效果、气味、状态、热度等可以持续多久。
+  question_example: 效果能维持多久
+  turns:
+  - question: 效果能维持多久
+    expect:
+      scene: 持续时间
+- name: PRODUCT_INFO_153_持续时间_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 持续时间
+  scene_description: 买家咨询商品的效果、气味、状态、热度等可以持续多久。
+  question_example: 气味能留多久
+  turns:
+  - question: 气味能留多久
+    expect:
+      scene: 持续时间
+- name: PRODUCT_INFO_153_持续时间_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 持续时间
+  scene_description: 买家咨询商品的效果、气味、状态、热度等可以持续多久。
+  question_example: 大概能撑几个小时
+  turns:
+  - question: 大概能撑几个小时
+    expect:
+      scene: 持续时间
+- name: PRODUCT_INFO_153_持续时间_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 持续时间
+  scene_description: 买家咨询商品的效果、气味、状态、热度等可以持续多久。
+  question_example: 这个作用时间长吗
+  turns:
+  - question: 这个作用时间长吗
+    expect:
+      scene: 持续时间
+- name: PRODUCT_INFO_154_生产日期_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 生产日期
+  scene_description: 买家咨询商品生产日期、批次日期、是否近期生产。
+  question_example: 什么时候生产的
+  turns:
+  - question: 什么时候生产的
+    expect:
+      scene: 生产日期
+- name: PRODUCT_INFO_154_生产日期_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 生产日期
+  scene_description: 买家咨询商品生产日期、批次日期、是否近期生产。
+  question_example: 是近期生产的吗
+  turns:
+  - question: 是近期生产的吗
+    expect:
+      scene: 生产日期
+- name: PRODUCT_INFO_154_生产日期_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 生产日期
+  scene_description: 买家咨询商品生产日期、批次日期、是否近期生产。
+  question_example: 离过期还有多久
+  turns:
+  - question: 离过期还有多久
+    expect:
+      scene: 生产日期
+- name: PRODUCT_INFO_154_生产日期_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 生产日期
+  scene_description: 买家咨询商品生产日期、批次日期、是否近期生产。
+  question_example: 这个批次新不新
+  turns:
+  - question: 这个批次新不新
+    expect:
+      scene: 生产日期
+- name: PRODUCT_INFO_155_商品材质_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品材质
+  scene_description: 买家咨询商品的材质构成。
+  question_example: 这个瓶子是玻璃的吗
+  turns:
+  - question: 这个瓶子是玻璃的吗
+    expect:
+      scene: 商品材质
+- name: PRODUCT_INFO_155_商品材质_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品材质
+  scene_description: 买家咨询商品的材质构成。
+  question_example: 外壳是什么材质
+  turns:
+  - question: 外壳是什么材质
+    expect:
+      scene: 商品材质
+- name: PRODUCT_INFO_155_商品材质_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品材质
+  scene_description: 买家咨询商品的材质构成。
+  question_example: 刷毛是什么材质
+  turns:
+  - question: 刷毛是什么材质
+    expect:
+      scene: 商品材质
+- name: PRODUCT_INFO_155_商品材质_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品材质
+  scene_description: 买家咨询商品的材质构成。
+  question_example: 泵头是金属的吗
+  turns:
+  - question: 泵头是金属的吗
+    expect:
+      scene: 商品材质
+- name: PRODUCT_INFO_155_商品材质_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品材质
+  scene_description: 买家咨询商品的材质构成。
+  question_example: 内胆是什么材质
+  turns:
+  - question: 内胆是什么材质
+    expect:
+      scene: 商品材质
+- name: PRODUCT_INFO_155_商品材质_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品材质
+  scene_description: 买家咨询商品的材质构成。
+  question_example: 是纯棉吗
+  turns:
+  - question: 是纯棉吗
+    expect:
+      scene: 商品材质
+- name: PRODUCT_INFO_155_商品材质_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品材质
+  scene_description: 买家咨询商品的材质构成。
+  question_example: 是羊毛吗
+  turns:
+  - question: 是羊毛吗
+    expect:
+      scene: 商品材质
+- name: PRODUCT_INFO_155_商品材质_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品材质
+  scene_description: 买家咨询商品的材质构成。
+  question_example: 是真丝吗
+  turns:
+  - question: 是真丝吗
+    expect:
+      scene: 商品材质
+- name: PRODUCT_INFO_156_注意事项_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 注意事项
+  scene_description: 买家咨询商品使用时需要注意的事项、限制条件或禁忌情况，包括是否需要避光、防晒、避开某些部位、特殊情况下是否慎用等。
+  question_example: 使用时需要注意什么
+  turns:
+  - question: 使用时需要注意什么
+    expect:
+      scene: 注意事项
+- name: PRODUCT_INFO_156_注意事项_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 注意事项
+  scene_description: 买家咨询商品使用时需要注意的事项、限制条件或禁忌情况，包括是否需要避光、防晒、避开某些部位、特殊情况下是否慎用等。
+  question_example: 用了能不能晒太阳
+  turns:
+  - question: 用了能不能晒太阳
+    expect:
+      scene: 注意事项
+- name: PRODUCT_INFO_156_注意事项_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 注意事项
+  scene_description: 买家咨询商品使用时需要注意的事项、限制条件或禁忌情况，包括是否需要避光、防晒、避开某些部位、特殊情况下是否慎用等。
+  question_example: 白天能不能用
+  turns:
+  - question: 白天能不能用
+    expect:
+      scene: 注意事项
+- name: PRODUCT_INFO_156_注意事项_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 注意事项
+  scene_description: 买家咨询商品使用时需要注意的事项、限制条件或禁忌情况，包括是否需要避光、防晒、避开某些部位、特殊情况下是否慎用等。
+  question_example: 这个要避光吗
+  turns:
+  - question: 这个要避光吗
+    expect:
+      scene: 注意事项
+- name: PRODUCT_INFO_156_注意事项_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 注意事项
+  scene_description: 买家咨询商品使用时需要注意的事项、限制条件或禁忌情况，包括是否需要避光、防晒、避开某些部位、特殊情况下是否慎用等。
+  question_example: 需要避开眼周吗
+  turns:
+  - question: 需要避开眼周吗
+    expect:
+      scene: 注意事项
+- name: PRODUCT_INFO_156_注意事项_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 注意事项
+  scene_description: 买家咨询商品使用时需要注意的事项、限制条件或禁忌情况，包括是否需要避光、防晒、避开某些部位、特殊情况下是否慎用等。
+  question_example: 破皮的时候能用吗
+  turns:
+  - question: 破皮的时候能用吗
+    expect:
+      scene: 注意事项
+- name: PRODUCT_INFO_156_注意事项_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 注意事项
+  scene_description: 买家咨询商品使用时需要注意的事项、限制条件或禁忌情况，包括是否需要避光、防晒、避开某些部位、特殊情况下是否慎用等。
+  question_example: 有没有什么禁忌
+  turns:
+  - question: 有没有什么禁忌
+    expect:
+      scene: 注意事项
+- name: PRODUCT_INFO_156_注意事项_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 注意事项
+  scene_description: 买家咨询商品使用时需要注意的事项、限制条件或禁忌情况，包括是否需要避光、防晒、避开某些部位、特殊情况下是否慎用等。
+  question_example: 哪些情况下不能用
+  turns:
+  - question: 哪些情况下不能用
+    expect:
+      scene: 注意事项
+- name: PRODUCT_INFO_156_注意事项_09
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 注意事项
+  scene_description: 买家咨询商品使用时需要注意的事项、限制条件或禁忌情况，包括是否需要避光、防晒、避开某些部位、特殊情况下是否慎用等。
+  question_example: 使用前要不要先测试
+  turns:
+  - question: 使用前要不要先测试
+    expect:
+      scene: 注意事项
+- name: PRODUCT_INFO_156_注意事项_10
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 注意事项
+  scene_description: 买家咨询商品使用时需要注意的事项、限制条件或禁忌情况，包括是否需要避光、防晒、避开某些部位、特殊情况下是否慎用等。
+  question_example: 能烘干吗
+  turns:
+  - question: 能烘干吗
+    expect:
+      scene: 注意事项
+- name: PRODUCT_INFO_156_注意事项_11
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 注意事项
+  scene_description: 买家咨询商品使用时需要注意的事项、限制条件或禁忌情况，包括是否需要避光、防晒、避开某些部位、特殊情况下是否慎用等。
+  question_example: 能不能漂白
+  turns:
+  - question: 能不能漂白
+    expect:
+      scene: 注意事项
+- name: PRODUCT_INFO_157_使用搭配_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用搭配
+  scene_description: 买家咨询商品能否与其他商品一起搭配、叠加、配合或混合使用。
+  question_example: 可以和A醇一起用吗
+  turns:
+  - question: 可以和A醇一起用吗
+    expect:
+      scene: 使用搭配
+- name: PRODUCT_INFO_157_使用搭配_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用搭配
+  scene_description: 买家咨询商品能否与其他商品一起搭配、叠加、配合或混合使用。
+  question_example: 能和防晒一起用吗
+  turns:
+  - question: 能和防晒一起用吗
+    expect:
+      scene: 使用搭配
+- name: PRODUCT_INFO_157_使用搭配_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用搭配
+  scene_description: 买家咨询商品能否与其他商品一起搭配、叠加、配合或混合使用。
+  question_example: 可以跟精华一起用吗
+  turns:
+  - question: 可以跟精华一起用吗
+    expect:
+      scene: 使用搭配
+- name: PRODUCT_INFO_157_使用搭配_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用搭配
+  scene_description: 买家咨询商品能否与其他商品一起搭配、叠加、配合或混合使用。
+  question_example: 能和别的商品一起用吗
+  turns:
+  - question: 能和别的商品一起用吗
+    expect:
+      scene: 使用搭配
+- name: PRODUCT_INFO_157_使用搭配_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用搭配
+  scene_description: 买家咨询商品能否与其他商品一起搭配、叠加、配合或混合使用。
+  question_example: 可以叠喷别的香水吗
+  turns:
+  - question: 可以叠喷别的香水吗
+    expect:
+      scene: 使用搭配
+- name: PRODUCT_INFO_158_使用顺序_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用顺序
+  scene_description: 买家咨询多个商品一起使用时的先后顺序。
+  question_example: 先用精华还是先用面霜
+  turns:
+  - question: 先用精华还是先用面霜
+    expect:
+      scene: 使用顺序
+- name: PRODUCT_INFO_158_使用顺序_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用顺序
+  scene_description: 买家咨询多个商品一起使用时的先后顺序。
+  question_example: 这个要用在第几步
+  turns:
+  - question: 这个要用在第几步
+    expect:
+      scene: 使用顺序
+- name: PRODUCT_INFO_158_使用顺序_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用顺序
+  scene_description: 买家咨询多个商品一起使用时的先后顺序。
+  question_example: 先敷面膜还是先涂精华
+  turns:
+  - question: 先敷面膜还是先涂精华
+    expect:
+      scene: 使用顺序
+- name: PRODUCT_INFO_158_使用顺序_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用顺序
+  scene_description: 买家咨询多个商品一起使用时的先后顺序。
+  question_example: 先防晒还是先妆前
+  turns:
+  - question: 先防晒还是先妆前
+    expect:
+      scene: 使用顺序
+- name: PRODUCT_INFO_158_使用顺序_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 使用顺序
+  scene_description: 买家咨询多个商品一起使用时的先后顺序。
+  question_example: 这个是在洁面后直接用吗
+  turns:
+  - question: 这个是在洁面后直接用吗
+    expect:
+      scene: 使用顺序
+- name: PRODUCT_INFO_159_保质期_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 保质期
+  scene_description: 买家咨询商品保质期，是不是临期，以及开封后还能保存多久、多久内需要用完。
+  question_example: 保质期是多久
+  turns:
+  - question: 保质期是多久
+    expect:
+      scene: 保质期
+- name: PRODUCT_INFO_159_保质期_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 保质期
+  scene_description: 买家咨询商品保质期，是不是临期，以及开封后还能保存多久、多久内需要用完。
+  question_example: 开封后能放多久
+  turns:
+  - question: 开封后能放多久
+    expect:
+      scene: 保质期
+- name: PRODUCT_INFO_159_保质期_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 保质期
+  scene_description: 买家咨询商品保质期，是不是临期，以及开封后还能保存多久、多久内需要用完。
+  question_example: 拆开后多久要用完
+  turns:
+  - question: 拆开后多久要用完
+    expect:
+      scene: 保质期
+- name: PRODUCT_INFO_159_保质期_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 保质期
+  scene_description: 买家咨询商品保质期，是不是临期，以及开封后还能保存多久、多久内需要用完。
+  question_example: 开瓶后保质期多久
+  turns:
+  - question: 开瓶后保质期多久
+    expect:
+      scene: 保质期
+- name: PRODUCT_INFO_159_保质期_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 保质期
+  scene_description: 买家咨询商品保质期，是不是临期，以及开封后还能保存多久、多久内需要用完。
+  question_example: 开封后还能放几个月
+  turns:
+  - question: 开封后还能放几个月
+    expect:
+      scene: 保质期
+- name: PRODUCT_INFO_159_保质期_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 保质期
+  scene_description: 买家咨询商品保质期，是不是临期，以及开封后还能保存多久、多久内需要用完。
+  question_example: 打开后最好多久内用掉
+  turns:
+  - question: 打开后最好多久内用掉
+    expect:
+      scene: 保质期
+- name: PRODUCT_INFO_159_保质期_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 保质期
+  scene_description: 买家咨询商品保质期，是不是临期，以及开封后还能保存多久、多久内需要用完。
+  question_example: 是不是临期
+  turns:
+  - question: 是不是临期
+    expect:
+      scene: 保质期
+- name: PRODUCT_INFO_160_储存方式_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 储存方式
+  scene_description: 买家咨询商品应如何保存、存放条件是什么，包括是否需要冷藏、冷冻、避光、密封、阴凉干燥保存、常温保存、开封后如何存放等。
+  question_example: 这个要怎么保存
+  turns:
+  - question: 这个要怎么保存
+    expect:
+      scene: 储存方式
+- name: PRODUCT_INFO_160_储存方式_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 储存方式
+  scene_description: 买家咨询商品应如何保存、存放条件是什么，包括是否需要冷藏、冷冻、避光、密封、阴凉干燥保存、常温保存、开封后如何存放等。
+  question_example: 需要冷藏吗
+  turns:
+  - question: 需要冷藏吗
+    expect:
+      scene: 储存方式
+- name: PRODUCT_INFO_160_储存方式_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 储存方式
+  scene_description: 买家咨询商品应如何保存、存放条件是什么，包括是否需要冷藏、冷冻、避光、密封、阴凉干燥保存、常温保存、开封后如何存放等。
+  question_example: 要放冰箱吗
+  turns:
+  - question: 要放冰箱吗
+    expect:
+      scene: 储存方式
+- name: PRODUCT_INFO_160_储存方式_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 储存方式
+  scene_description: 买家咨询商品应如何保存、存放条件是什么，包括是否需要冷藏、冷冻、避光、密封、阴凉干燥保存、常温保存、开封后如何存放等。
+  question_example: 常温保存可以吗
+  turns:
+  - question: 常温保存可以吗
+    expect:
+      scene: 储存方式
+- name: PRODUCT_INFO_160_储存方式_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 储存方式
+  scene_description: 买家咨询商品应如何保存、存放条件是什么，包括是否需要冷藏、冷冻、避光、密封、阴凉干燥保存、常温保存、开封后如何存放等。
+  question_example: 开封后怎么保存
+  turns:
+  - question: 开封后怎么保存
+    expect:
+      scene: 储存方式
+- name: PRODUCT_INFO_160_储存方式_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 储存方式
+  scene_description: 买家咨询商品应如何保存、存放条件是什么，包括是否需要冷藏、冷冻、避光、密封、阴凉干燥保存、常温保存、开封后如何存放等。
+  question_example: 要直立放吗
+  turns:
+  - question: 要直立放吗
+    expect:
+      scene: 储存方式
+- name: PRODUCT_INFO_161_商品价格_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品价格
+  scene_description: 买家直接询问商品当前售价、单价、到手价或某个链接、规格卖多少钱，不包含嫌贵、议价、优惠诉求，也不包含价格变动、降价、保价、退差价等问题。
+  question_example: 这个多少钱
+  turns:
+  - question: 这个多少钱
+    expect:
+      scene: 商品价格
+- name: PRODUCT_INFO_161_商品价格_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品价格
+  scene_description: 买家直接询问商品当前售价、单价、到手价或某个链接、规格卖多少钱，不包含嫌贵、议价、优惠诉求，也不包含价格变动、降价、保价、退差价等问题。
+  question_example: 这款卖多少
+  turns:
+  - question: 这款卖多少
+    expect:
+      scene: 商品价格
+- name: PRODUCT_INFO_161_商品价格_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品价格
+  scene_description: 买家直接询问商品当前售价、单价、到手价或某个链接、规格卖多少钱，不包含嫌贵、议价、优惠诉求，也不包含价格变动、降价、保价、退差价等问题。
+  question_example: 现在什么价格
+  turns:
+  - question: 现在什么价格
+    expect:
+      scene: 商品价格
+- name: PRODUCT_INFO_161_商品价格_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品价格
+  scene_description: 买家直接询问商品当前售价、单价、到手价或某个链接、规格卖多少钱，不包含嫌贵、议价、优惠诉求，也不包含价格变动、降价、保价、退差价等问题。
+  question_example: 到手价多少
+  turns:
+  - question: 到手价多少
+    expect:
+      scene: 商品价格
+- name: PRODUCT_INFO_161_商品价格_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品价格
+  scene_description: 买家直接询问商品当前售价、单价、到手价或某个链接、规格卖多少钱，不包含嫌贵、议价、优惠诉求，也不包含价格变动、降价、保价、退差价等问题。
+  question_example: 这个规格多少钱
+  turns:
+  - question: 这个规格多少钱
+    expect:
+      scene: 商品价格
+- name: PRODUCT_INFO_164_是否便携_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否便携
+  scene_description: 买家确认当前商品是否便携。
+  question_example: 方便携带吗
+  turns:
+  - question: 方便携带吗
+    expect:
+      scene: 是否便携
+- name: PRODUCT_INFO_164_是否便携_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否便携
+  scene_description: 买家确认当前商品是否便携。
+  question_example: 可以随身携带吗
+  turns:
+  - question: 可以随身携带吗
+    expect:
+      scene: 是否便携
+- name: PRODUCT_INFO_164_是否便携_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否便携
+  scene_description: 买家确认当前商品是否便携。
+  question_example: 携带是否方便
+  turns:
+  - question: 携带是否方便
+    expect:
+      scene: 是否便携
+- name: PRODUCT_INFO_165_是否需要清洗_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否需要清洗
+  scene_description: 买家咨询商品使用后是否需要清洗、冲洗、擦掉。
+  question_example: 这个需要洗掉吗
+  turns:
+  - question: 这个需要洗掉吗
+    expect:
+      scene: 是否需要清洗
+- name: PRODUCT_INFO_165_是否需要清洗_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否需要清洗
+  scene_description: 买家咨询商品使用后是否需要清洗、冲洗、擦掉。
+  question_example: 敷完要不要清洗
+  turns:
+  - question: 敷完要不要清洗
+    expect:
+      scene: 是否需要清洗
+- name: PRODUCT_INFO_165_是否需要清洗_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否需要清洗
+  scene_description: 买家咨询商品使用后是否需要清洗、冲洗、擦掉。
+  question_example: 能直接洗掉吗
+  turns:
+  - question: 能直接洗掉吗
+    expect:
+      scene: 是否需要清洗
+- name: PRODUCT_INFO_165_是否需要清洗_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否需要清洗
+  scene_description: 买家咨询商品使用后是否需要清洗、冲洗、擦掉。
+  question_example: 用完后要不要擦掉
+  turns:
+  - question: 用完后要不要擦掉
+    expect:
+      scene: 是否需要清洗
+- name: PRODUCT_INFO_165_是否需要清洗_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否需要清洗
+  scene_description: 买家咨询商品使用后是否需要清洗、冲洗、擦掉。
+  question_example: 这个需不需要冲洗
+  turns:
+  - question: 这个需不需要冲洗
+    expect:
+      scene: 是否需要清洗
+- name: PRODUCT_INFO_166_商品质地_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品质地
+  scene_description: 买家咨询商品本身的质地、状态或触感类型，如水状、膏状、乳状、啫喱状、粉状等。
+  question_example: 这是水状还是啫喱状
+  turns:
+  - question: 这是水状还是啫喱状
+    expect:
+      scene: 商品质地
+- name: PRODUCT_INFO_166_商品质地_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品质地
+  scene_description: 买家咨询商品本身的质地、状态或触感类型，如水状、膏状、乳状、啫喱状、粉状等。
+  question_example: 是膏状的吗
+  turns:
+  - question: 是膏状的吗
+    expect:
+      scene: 商品质地
+- name: PRODUCT_INFO_166_商品质地_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品质地
+  scene_description: 买家咨询商品本身的质地、状态或触感类型，如水状、膏状、乳状、啫喱状、粉状等。
+  question_example: 这个是乳液质地吗
+  turns:
+  - question: 这个是乳液质地吗
+    expect:
+      scene: 商品质地
+- name: PRODUCT_INFO_166_商品质地_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品质地
+  scene_description: 买家咨询商品本身的质地、状态或触感类型，如水状、膏状、乳状、啫喱状、粉状等。
+  question_example: 这款偏稀还是偏厚
+  turns:
+  - question: 这款偏稀还是偏厚
+    expect:
+      scene: 商品质地
+- name: PRODUCT_INFO_166_商品质地_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品质地
+  scene_description: 买家咨询商品本身的质地、状态或触感类型，如水状、膏状、乳状、啫喱状、粉状等。
+  question_example: 是不是啫喱质地
+  turns:
+  - question: 是不是啫喱质地
+    expect:
+      scene: 商品质地
+- name: PRODUCT_INFO_167_是否正装_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否正装
+  scene_description: 买家确认当前商品是否属于正装。
+  question_example: 这是正装吗
+  turns:
+  - question: 这是正装吗
+    expect:
+      scene: 是否正装
+- name: PRODUCT_INFO_167_是否正装_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否正装
+  scene_description: 买家确认当前商品是否属于正装。
+  question_example: 这个是小样吗
+  turns:
+  - question: 这个是小样吗
+    expect:
+      scene: 是否正装
+- name: PRODUCT_INFO_167_是否正装_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否正装
+  scene_description: 买家确认当前商品是否属于正装。
+  question_example: 这个链接卖的是正装吗
+  turns:
+  - question: 这个链接卖的是正装吗
+    expect:
+      scene: 是否正装
+- name: PRODUCT_INFO_168_色号适配_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 色号适配
+  scene_description: 买家在明确肤色、妆容或使用场景下，咨询更适合哪个色号。
+  question_example: 黄皮适合哪个色号
+  turns:
+  - question: 黄皮适合哪个色号
+    expect:
+      scene: 色号适配
+- name: PRODUCT_INFO_168_色号适配_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 色号适配
+  scene_description: 买家在明确肤色、妆容或使用场景下，咨询更适合哪个色号。
+  question_example: 冷白皮适合几号
+  turns:
+  - question: 冷白皮适合几号
+    expect:
+      scene: 色号适配
+- name: PRODUCT_INFO_168_色号适配_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 色号适配
+  scene_description: 买家在明确肤色、妆容或使用场景下，咨询更适合哪个色号。
+  question_example: 素颜适合哪个颜色
+  turns:
+  - question: 素颜适合哪个颜色
+    expect:
+      scene: 色号适配
+- name: PRODUCT_INFO_168_色号适配_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 色号适配
+  scene_description: 买家在明确肤色、妆容或使用场景下，咨询更适合哪个色号。
+  question_example: 通勤妆适合哪个色号
+  turns:
+  - question: 通勤妆适合哪个色号
+    expect:
+      scene: 色号适配
+- name: PRODUCT_INFO_168_色号适配_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 色号适配
+  scene_description: 买家在明确肤色、妆容或使用场景下，咨询更适合哪个色号。
+  question_example: 深唇更适合哪个颜色
+  turns:
+  - question: 深唇更适合哪个颜色
+    expect:
+      scene: 色号适配
+- name: PRODUCT_INFO_169_妆感表现_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 妆感表现
+  scene_description: 买家咨询商品上脸后的妆感、肤感与呈现效果。
+  question_example: 上脸是哑光还是水润
+  turns:
+  - question: 上脸是哑光还是水润
+    expect:
+      scene: 妆感表现
+- name: PRODUCT_INFO_169_妆感表现_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 妆感表现
+  scene_description: 买家咨询商品上脸后的妆感、肤感与呈现效果。
+  question_example: 会不会拔干
+  turns:
+  - question: 会不会拔干
+    expect:
+      scene: 妆感表现
+- name: PRODUCT_INFO_169_妆感表现_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 妆感表现
+  scene_description: 买家咨询商品上脸后的妆感、肤感与呈现效果。
+  question_example: 妆感自然吗
+  turns:
+  - question: 妆感自然吗
+    expect:
+      scene: 妆感表现
+- name: PRODUCT_INFO_169_妆感表现_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 妆感表现
+  scene_description: 买家咨询商品上脸后的妆感、肤感与呈现效果。
+  question_example: 会不会卡粉
+  turns:
+  - question: 会不会卡粉
+    expect:
+      scene: 妆感表现
+- name: PRODUCT_INFO_169_妆感表现_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 妆感表现
+  scene_description: 买家咨询商品上脸后的妆感、肤感与呈现效果。
+  question_example: 会不会显毛孔
+  turns:
+  - question: 会不会显毛孔
+    expect:
+      scene: 妆感表现
+- name: PRODUCT_INFO_170_见效周期_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 见效周期
+  scene_description: 买家咨询商品一般多久开始起作用、多久能看到变化。
+  question_example: 多久能看到效果
+  turns:
+  - question: 多久能看到效果
+    expect:
+      scene: 见效周期
+- name: PRODUCT_INFO_170_见效周期_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 见效周期
+  scene_description: 买家咨询商品一般多久开始起作用、多久能看到变化。
+  question_example: 一般几天见效
+  turns:
+  - question: 一般几天见效
+    expect:
+      scene: 见效周期
+- name: PRODUCT_INFO_170_见效周期_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 见效周期
+  scene_description: 买家咨询商品一般多久开始起作用、多久能看到变化。
+  question_example: 多久能看到改善
+  turns:
+  - question: 多久能看到改善
+    expect:
+      scene: 见效周期
+- name: PRODUCT_INFO_170_见效周期_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 见效周期
+  scene_description: 买家咨询商品一般多久开始起作用、多久能看到变化。
+  question_example: 要用多久才有变化
+  turns:
+  - question: 要用多久才有变化
+    expect:
+      scene: 见效周期
+- name: PRODUCT_INFO_170_见效周期_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 见效周期
+  scene_description: 买家咨询商品一般多久开始起作用、多久能看到变化。
+  question_example: 连续用多久能看出来
+  turns:
+  - question: 连续用多久能看出来
+    expect:
+      scene: 见效周期
+- name: PRODUCT_INFO_171_闷痘/爆痘风险_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 闷痘/爆痘风险
+  scene_description: 买家咨询商品是否容易闷痘、爆痘、长闭口或堵塞毛孔。
+  question_example: 会不会闷痘
+  turns:
+  - question: 会不会闷痘
+    expect:
+      scene: 闷痘/爆痘风险
+- name: PRODUCT_INFO_171_闷痘/爆痘风险_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 闷痘/爆痘风险
+  scene_description: 买家咨询商品是否容易闷痘、爆痘、长闭口或堵塞毛孔。
+  question_example: 会不会爆痘
+  turns:
+  - question: 会不会爆痘
+    expect:
+      scene: 闷痘/爆痘风险
+- name: PRODUCT_INFO_171_闷痘/爆痘风险_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 闷痘/爆痘风险
+  scene_description: 买家咨询商品是否容易闷痘、爆痘、长闭口或堵塞毛孔。
+  question_example: 会不会长闭口
+  turns:
+  - question: 会不会长闭口
+    expect:
+      scene: 闷痘/爆痘风险
+- name: PRODUCT_INFO_171_闷痘/爆痘风险_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 闷痘/爆痘风险
+  scene_description: 买家咨询商品是否容易闷痘、爆痘、长闭口或堵塞毛孔。
+  question_example: 会不会闷出痘痘
+  turns:
+  - question: 会不会闷出痘痘
+    expect:
+      scene: 闷痘/爆痘风险
+- name: PRODUCT_INFO_171_闷痘/爆痘风险_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 闷痘/爆痘风险
+  scene_description: 买家咨询商品是否容易闷痘、爆痘、长闭口或堵塞毛孔。
+  question_example: 会不会堵毛孔
+  turns:
+  - question: 会不会堵毛孔
+    expect:
+      scene: 闷痘/爆痘风险
+- name: PRODUCT_INFO_172_是否需要卸妆_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否需要卸妆
+  scene_description: 买家咨询使用某个商品后是否必须卸妆。
+  question_example: 这个需要卸妆吗
+  turns:
+  - question: 这个需要卸妆吗
+    expect:
+      scene: 是否需要卸妆
+- name: PRODUCT_INFO_172_是否需要卸妆_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否需要卸妆
+  scene_description: 买家咨询使用某个商品后是否必须卸妆。
+  question_example: 涂了这个要不要卸妆
+  turns:
+  - question: 涂了这个要不要卸妆
+    expect:
+      scene: 是否需要卸妆
+- name: PRODUCT_INFO_172_是否需要卸妆_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否需要卸妆
+  scene_description: 买家咨询使用某个商品后是否必须卸妆。
+  question_example: 用了还需要专门卸吗
+  turns:
+  - question: 用了还需要专门卸吗
+    expect:
+      scene: 是否需要卸妆
+- name: PRODUCT_INFO_172_是否需要卸妆_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否需要卸妆
+  scene_description: 买家咨询使用某个商品后是否必须卸妆。
+  question_example: 擦这个要卸吗
+  turns:
+  - question: 擦这个要卸吗
+    expect:
+      scene: 是否需要卸妆
+- name: PRODUCT_INFO_172_是否需要卸妆_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否需要卸妆
+  scene_description: 买家咨询使用某个商品后是否必须卸妆。
+  question_example: 这个是不是必须卸妆
+  turns:
+  - question: 这个是不是必须卸妆
+    expect:
+      scene: 是否需要卸妆
+- name: PRODUCT_INFO_173_卸妆方式_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 卸妆方式
+  scene_description: 买家咨询商品应该用什么方式卸除、是否容易卸掉、卸除效果如何。
+  question_example: 洗面奶能卸掉吗
+  turns:
+  - question: 洗面奶能卸掉吗
+    expect:
+      scene: 卸妆方式
+- name: PRODUCT_INFO_173_卸妆方式_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 卸妆方式
+  scene_description: 买家咨询商品应该用什么方式卸除、是否容易卸掉、卸除效果如何。
+  question_example: 要用卸妆水吗
+  turns:
+  - question: 要用卸妆水吗
+    expect:
+      scene: 卸妆方式
+- name: PRODUCT_INFO_173_卸妆方式_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 卸妆方式
+  scene_description: 买家咨询商品应该用什么方式卸除、是否容易卸掉、卸除效果如何。
+  question_example: 这个好不好卸
+  turns:
+  - question: 这个好不好卸
+    expect:
+      scene: 卸妆方式
+- name: PRODUCT_INFO_173_卸妆方式_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 卸妆方式
+  scene_description: 买家咨询商品应该用什么方式卸除、是否容易卸掉、卸除效果如何。
+  question_example: 难卸吗
+  turns:
+  - question: 难卸吗
+    expect:
+      scene: 卸妆方式
+- name: PRODUCT_INFO_173_卸妆方式_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 卸妆方式
+  scene_description: 买家咨询商品应该用什么方式卸除、是否容易卸掉、卸除效果如何。
+  question_example: 用卸妆油能洗掉吗
+  turns:
+  - question: 用卸妆油能洗掉吗
+    expect:
+      scene: 卸妆方式
+- name: PRODUCT_INFO_174_妆面稳定性_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 妆面稳定性
+  scene_description: 买家咨询彩妆商品是否容易晕妆、脱妆、沾杯、染唇、斑驳等妆面稳定性问题。
+  question_example: 会不会晕妆
+  turns:
+  - question: 会不会晕妆
+    expect:
+      scene: 妆面稳定性
+- name: PRODUCT_INFO_174_妆面稳定性_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 妆面稳定性
+  scene_description: 买家咨询彩妆商品是否容易晕妆、脱妆、沾杯、染唇、斑驳等妆面稳定性问题。
+  question_example: 会不会脱妆
+  turns:
+  - question: 会不会脱妆
+    expect:
+      scene: 妆面稳定性
+- name: PRODUCT_INFO_174_妆面稳定性_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 妆面稳定性
+  scene_description: 买家咨询彩妆商品是否容易晕妆、脱妆、沾杯、染唇、斑驳等妆面稳定性问题。
+  question_example: 会不会沾杯
+  turns:
+  - question: 会不会沾杯
+    expect:
+      scene: 妆面稳定性
+- name: PRODUCT_INFO_174_妆面稳定性_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 妆面稳定性
+  scene_description: 买家咨询彩妆商品是否容易晕妆、脱妆、沾杯、染唇、斑驳等妆面稳定性问题。
+  question_example: 会不会染唇
+  turns:
+  - question: 会不会染唇
+    expect:
+      scene: 妆面稳定性
+- name: PRODUCT_INFO_174_妆面稳定性_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 妆面稳定性
+  scene_description: 买家咨询彩妆商品是否容易晕妆、脱妆、沾杯、染唇、斑驳等妆面稳定性问题。
+  question_example: 会不会斑驳
+  turns:
+  - question: 会不会斑驳
+    expect:
+      scene: 妆面稳定性
+- name: PRODUCT_INFO_175_国妆特证_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 国妆特证
+  scene_description: 买家咨询商品是否属于特殊用途化妆品，是否具备国妆特证、特字号或特殊化妆品注册资质。
+  question_example: 这款有国妆特证吗
+  turns:
+  - question: 这款有国妆特证吗
+    expect:
+      scene: 国妆特证
+- name: PRODUCT_INFO_175_国妆特证_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 国妆特证
+  scene_description: 买家咨询商品是否属于特殊用途化妆品，是否具备国妆特证、特字号或特殊化妆品注册资质。
+  question_example: 防晒是不是特证商品
+  turns:
+  - question: 防晒是不是特证商品
+    expect:
+      scene: 国妆特证
+- name: PRODUCT_INFO_175_国妆特证_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 国妆特证
+  scene_description: 买家咨询商品是否属于特殊用途化妆品，是否具备国妆特证、特字号或特殊化妆品注册资质。
+  question_example: 祛斑类有没有特证
+  turns:
+  - question: 祛斑类有没有特证
+    expect:
+      scene: 国妆特证
+- name: PRODUCT_INFO_175_国妆特证_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 国妆特证
+  scene_description: 买家咨询商品是否属于特殊用途化妆品，是否具备国妆特证、特字号或特殊化妆品注册资质。
+  question_example: 这个属于特殊化妆品吗
+  turns:
+  - question: 这个属于特殊化妆品吗
+    expect:
+      scene: 国妆特证
+- name: PRODUCT_INFO_175_国妆特证_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 国妆特证
+  scene_description: 买家咨询商品是否属于特殊用途化妆品，是否具备国妆特证、特字号或特殊化妆品注册资质。
+  question_example: 这个有没有特字号
+  turns:
+  - question: 这个有没有特字号
+    expect:
+      scene: 国妆特证
+- name: PRODUCT_INFO_176_开启指引_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 开启指引
+  scene_description: 买家遇到瓶盖、泵头、喷头、按压头、旋钮等开启或操作异常，咨询如何正常打开或使用。
+  question_example: 泵头按不出来怎么办
+  turns:
+  - question: 泵头按不出来怎么办
+    expect:
+      scene: 开启指引
+- name: PRODUCT_INFO_176_开启指引_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 开启指引
+  scene_description: 买家遇到瓶盖、泵头、喷头、按压头、旋钮等开启或操作异常，咨询如何正常打开或使用。
+  question_example: 这个瓶盖怎么打开
+  turns:
+  - question: 这个瓶盖怎么打开
+    expect:
+      scene: 开启指引
+- name: PRODUCT_INFO_176_开启指引_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 开启指引
+  scene_description: 买家遇到瓶盖、泵头、喷头、按压头、旋钮等开启或操作异常，咨询如何正常打开或使用。
+  question_example: 喷头卡住了怎么办
+  turns:
+  - question: 喷头卡住了怎么办
+    expect:
+      scene: 开启指引
+- name: PRODUCT_INFO_176_开启指引_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 开启指引
+  scene_description: 买家遇到瓶盖、泵头、喷头、按压头、旋钮等开启或操作异常，咨询如何正常打开或使用。
+  question_example: 这个按压头怎么解锁
+  turns:
+  - question: 这个按压头怎么解锁
+    expect:
+      scene: 开启指引
+- name: PRODUCT_INFO_176_开启指引_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 开启指引
+  scene_description: 买家遇到瓶盖、泵头、喷头、按压头、旋钮等开启或操作异常，咨询如何正常打开或使用。
+  question_example: 这个头怎么旋开
+  turns:
+  - question: 这个头怎么旋开
+    expect:
+      scene: 开启指引
+- name: PRODUCT_INFO_176_开启指引_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 开启指引
+  scene_description: 买家遇到瓶盖、泵头、喷头、按压头、旋钮等开启或操作异常，咨询如何正常打开或使用。
+  question_example: 盖子怎么打开
+  turns:
+  - question: 盖子怎么打开
+    expect:
+      scene: 开启指引
+- name: PRODUCT_INFO_187_商品对比与差异说明_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品对比与差异说明
+  scene_description: 买家对两个或多个商品、版本、款式、型号之间进行比较，咨询它们有什么区别、有什么不同、差异在哪里、该如何区分
+  question_example: 这两款有什么不同
+  turns:
+  - question: 这两款有什么不同
+    expect:
+      scene: 商品对比与差异说明
+- name: PRODUCT_INFO_187_商品对比与差异说明_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品对比与差异说明
+  scene_description: 买家对两个或多个商品、版本、款式、型号之间进行比较，咨询它们有什么区别、有什么不同、差异在哪里、该如何区分
+  question_example: 这两个有啥区别
+  turns:
+  - question: 这两个有啥区别
+    expect:
+      scene: 商品对比与差异说明
+- name: PRODUCT_INFO_187_商品对比与差异说明_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品对比与差异说明
+  scene_description: 买家对两个或多个商品、版本、款式、型号之间进行比较，咨询它们有什么区别、有什么不同、差异在哪里、该如何区分
+  question_example: 功能有什么区别
+  turns:
+  - question: 功能有什么区别
+    expect:
+      scene: 商品对比与差异说明
+- name: PRODUCT_INFO_187_商品对比与差异说明_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品对比与差异说明
+  scene_description: 买家对两个或多个商品、版本、款式、型号之间进行比较，咨询它们有什么区别、有什么不同、差异在哪里、该如何区分
+  question_example: 这两款区别是什么
+  turns:
+  - question: 这两款区别是什么
+    expect:
+      scene: 商品对比与差异说明
+- name: PRODUCT_INFO_187_商品对比与差异说明_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品对比与差异说明
+  scene_description: 买家对两个或多个商品、版本、款式、型号之间进行比较，咨询它们有什么区别、有什么不同、差异在哪里、该如何区分
+  question_example: 这两个有什么不一样
+  turns:
+  - question: 这两个有什么不一样
+    expect:
+      scene: 商品对比与差异说明
+- name: PRODUCT_INFO_187_商品对比与差异说明_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品对比与差异说明
+  scene_description: 买家对两个或多个商品、版本、款式、型号之间进行比较，咨询它们有什么区别、有什么不同、差异在哪里、该如何区分
+  question_example: 这三个有什么区别
+  turns:
+  - question: 这三个有什么区别
+    expect:
+      scene: 商品对比与差异说明
+- name: PRODUCT_INFO_187_商品对比与差异说明_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品对比与差异说明
+  scene_description: 买家对两个或多个商品、版本、款式、型号之间进行比较，咨询它们有什么区别、有什么不同、差异在哪里、该如何区分
+  question_example: 价格不同差在哪里
+  turns:
+  - question: 价格不同差在哪里
+    expect:
+      scene: 商品对比与差异说明
+- name: PRODUCT_INFO_187_商品对比与差异说明_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品对比与差异说明
+  scene_description: 买家对两个或多个商品、版本、款式、型号之间进行比较，咨询它们有什么区别、有什么不同、差异在哪里、该如何区分
+  question_example: 不同版本差在哪
+  turns:
+  - question: 不同版本差在哪
+    expect:
+      scene: 商品对比与差异说明
+- name: PRODUCT_INFO_187_商品对比与差异说明_09
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品对比与差异说明
+  scene_description: 买家对两个或多个商品、版本、款式、型号之间进行比较，咨询它们有什么区别、有什么不同、差异在哪里、该如何区分
+  question_example: 不同款式有啥区别
+  turns:
+  - question: 不同款式有啥区别
+    expect:
+      scene: 商品对比与差异说明
+- name: PRODUCT_INFO_188_对商品的疑问_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 对商品的疑问
+  scene_description: 商品疑虑问题，包括负面评价、差评质疑、是否好用、买家秀
+  question_example: 评价很差能买吗
+  turns:
+  - question: 评价很差能买吗
+    expect:
+      scene: 对商品的疑问
+- name: PRODUCT_INFO_188_对商品的疑问_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 对商品的疑问
+  scene_description: 商品疑虑问题，包括负面评价、差评质疑、是否好用、买家秀
+  question_example: 这个好用吗
+  turns:
+  - question: 这个好用吗
+    expect:
+      scene: 对商品的疑问
+- name: PRODUCT_INFO_188_对商品的疑问_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 对商品的疑问
+  scene_description: 商品疑虑问题，包括负面评价、差评质疑、是否好用、买家秀
+  question_example: 看评价不太好啊
+  turns:
+  - question: 看评价不太好啊
+    expect:
+      scene: 对商品的疑问
+- name: PRODUCT_INFO_188_对商品的疑问_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 对商品的疑问
+  scene_description: 商品疑虑问题，包括负面评价、差评质疑、是否好用、买家秀
+  question_example: 会不会没效果
+  turns:
+  - question: 会不会没效果
+    expect:
+      scene: 对商品的疑问
+- name: PRODUCT_INFO_188_对商品的疑问_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 对商品的疑问
+  scene_description: 商品疑虑问题，包括负面评价、差评质疑、是否好用、买家秀
+  question_example: 大家说这个一般
+  turns:
+  - question: 大家说这个一般
+    expect:
+      scene: 对商品的疑问
+- name: PRODUCT_INFO_188_对商品的疑问_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 对商品的疑问
+  scene_description: 商品疑虑问题，包括负面评价、差评质疑、是否好用、买家秀
+  question_example: 评价不好呀
+  turns:
+  - question: 评价不好呀
+    expect:
+      scene: 对商品的疑问
+- name: PRODUCT_INFO_189_商品质量相关_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品质量相关
+  scene_description: 商品质量问题，包括材质做工、质检报告、瑕疵品、质量问题、油渍脏污、掉皮开裂、缺斤少两
+  question_example: 质量靠谱吗
+  turns:
+  - question: 质量靠谱吗
+    expect:
+      scene: 商品质量相关
+- name: PRODUCT_INFO_189_商品质量相关_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品质量相关
+  scene_description: 商品质量问题，包括材质做工、质检报告、瑕疵品、质量问题、油渍脏污、掉皮开裂、缺斤少两
+  question_example: 做工怎么样
+  turns:
+  - question: 做工怎么样
+    expect:
+      scene: 商品质量相关
+- name: PRODUCT_INFO_189_商品质量相关_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品质量相关
+  scene_description: 商品质量问题，包括材质做工、质检报告、瑕疵品、质量问题、油渍脏污、掉皮开裂、缺斤少两
+  question_example: 会不会有瑕疵
+  turns:
+  - question: 会不会有瑕疵
+    expect:
+      scene: 商品质量相关
+- name: PRODUCT_INFO_189_商品质量相关_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品质量相关
+  scene_description: 商品质量问题，包括材质做工、质检报告、瑕疵品、质量问题、油渍脏污、掉皮开裂、缺斤少两
+  question_example: 品控怎么样
+  turns:
+  - question: 品控怎么样
+    expect:
+      scene: 商品质量相关
+- name: PRODUCT_INFO_189_商品质量相关_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品质量相关
+  scene_description: 商品质量问题，包括材质做工、质检报告、瑕疵品、质量问题、油渍脏污、掉皮开裂、缺斤少两
+  question_example: 有质检报告吗
+  turns:
+  - question: 有质检报告吗
+    expect:
+      scene: 商品质量相关
+- name: PRODUCT_INFO_189_商品质量相关_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品质量相关
+  scene_description: 商品质量问题，包括材质做工、质检报告、瑕疵品、质量问题、油渍脏污、掉皮开裂、缺斤少两
+  question_example: 质量保证吗
+  turns:
+  - question: 质量保证吗
+    expect:
+      scene: 商品质量相关
+- name: PRODUCT_INFO_189_商品质量相关_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品质量相关
+  scene_description: 商品质量问题，包括材质做工、质检报告、瑕疵品、质量问题、油渍脏污、掉皮开裂、缺斤少两
+  question_example: 会不会有质量问题
+  turns:
+  - question: 会不会有质量问题
+    expect:
+      scene: 商品质量相关
+- name: PRODUCT_INFO_189_商品质量相关_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品质量相关
+  scene_description: 商品质量问题，包括材质做工、质检报告、瑕疵品、质量问题、油渍脏污、掉皮开裂、缺斤少两
+  question_example: 感觉像是次品
+  turns:
+  - question: 感觉像是次品
+    expect:
+      scene: 商品质量相关
+- name: PRODUCT_INFO_189_商品质量相关_09
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品质量相关
+  scene_description: 商品质量问题，包括材质做工、质检报告、瑕疵品、质量问题、油渍脏污、掉皮开裂、缺斤少两
+  question_example: 用料扎实吗
+  turns:
+  - question: 用料扎实吗
+    expect:
+      scene: 商品质量相关
+- name: PRODUCT_INFO_190_商品定制说明_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品定制说明
+  scene_description: 商品定制问题，包括是否可定制、定制费用、定制时间、定制流程、刻字加logo、定做尺寸、来图定制
+  question_example: 能定做吗
+  turns:
+  - question: 能定做吗
+    expect:
+      scene: 商品定制说明
+- name: PRODUCT_INFO_190_商品定制说明_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品定制说明
+  scene_description: 商品定制问题，包括是否可定制、定制费用、定制时间、定制流程、刻字加logo、定做尺寸、来图定制
+  question_example: 刻字怎么收费
+  turns:
+  - question: 刻字怎么收费
+    expect:
+      scene: 商品定制说明
+- name: PRODUCT_INFO_190_商品定制说明_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品定制说明
+  scene_description: 商品定制问题，包括是否可定制、定制费用、定制时间、定制流程、刻字加logo、定做尺寸、来图定制
+  question_example: 定制要多长时间
+  turns:
+  - question: 定制要多长时间
+    expect:
+      scene: 商品定制说明
+- name: PRODUCT_INFO_190_商品定制说明_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品定制说明
+  scene_description: 商品定制问题，包括是否可定制、定制费用、定制时间、定制流程、刻字加logo、定做尺寸、来图定制
+  question_example: 来图定制行吗
+  turns:
+  - question: 来图定制行吗
+    expect:
+      scene: 商品定制说明
+- name: PRODUCT_INFO_190_商品定制说明_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品定制说明
+  scene_description: 商品定制问题，包括是否可定制、定制费用、定制时间、定制流程、刻字加logo、定做尺寸、来图定制
+  question_example: diy可以吗
+  turns:
+  - question: diy可以吗
+    expect:
+      scene: 商品定制说明
+- name: PRODUCT_INFO_190_商品定制说明_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品定制说明
+  scene_description: 商品定制问题，包括是否可定制、定制费用、定制时间、定制流程、刻字加logo、定做尺寸、来图定制
+  question_example: 能加logo吗
+  turns:
+  - question: 能加logo吗
+    expect:
+      scene: 商品定制说明
+- name: PRODUCT_INFO_190_商品定制说明_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品定制说明
+  scene_description: 商品定制问题，包括是否可定制、定制费用、定制时间、定制流程、刻字加logo、定做尺寸、来图定制
+  question_example: 定尺寸行不行
+  turns:
+  - question: 定尺寸行不行
+    expect:
+      scene: 商品定制说明
+- name: PRODUCT_INFO_190_商品定制说明_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品定制说明
+  scene_description: 商品定制问题，包括是否可定制、定制费用、定制时间、定制流程、刻字加logo、定做尺寸、来图定制
+  question_example: 能帮我设计下吗
+  turns:
+  - question: 能帮我设计下吗
+    expect:
+      scene: 商品定制说明
+- name: PRODUCT_INFO_190_商品定制说明_09
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品定制说明
+  scene_description: 商品定制问题，包括是否可定制、定制费用、定制时间、定制流程、刻字加logo、定做尺寸、来图定制
+  question_example: 定制怎么收费
+  turns:
+  - question: 定制怎么收费
+    expect:
+      scene: 商品定制说明
+- name: PRODUCT_INFO_190_商品定制说明_10
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品定制说明
+  scene_description: 商品定制问题，包括是否可定制、定制费用、定制时间、定制流程、刻字加logo、定做尺寸、来图定制
+  question_example: 字数有限制吗
+  turns:
+  - question: 字数有限制吗
+    expect:
+      scene: 商品定制说明
+- name: PRODUCT_INFO_191_商品产地与货源_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品产地与货源
+  scene_description: 商品产地货源，包括产地查询、生产地、实体店、专柜、线下门店、生产商信息
+  question_example: 这是哪生产的
+  turns:
+  - question: 这是哪生产的
+    expect:
+      scene: 商品产地与货源
+- name: PRODUCT_INFO_191_商品产地与货源_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品产地与货源
+  scene_description: 商品产地货源，包括产地查询、生产地、实体店、专柜、线下门店、生产商信息
+  question_example: 厂家在哪里
+  turns:
+  - question: 厂家在哪里
+    expect:
+      scene: 商品产地与货源
+- name: PRODUCT_INFO_191_商品产地与货源_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品产地与货源
+  scene_description: 商品产地货源，包括产地查询、生产地、实体店、专柜、线下门店、生产商信息
+  question_example: 是国产的吗
+  turns:
+  - question: 是国产的吗
+    expect:
+      scene: 商品产地与货源
+- name: PRODUCT_INFO_191_商品产地与货源_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品产地与货源
+  scene_description: 商品产地货源，包括产地查询、生产地、实体店、专柜、线下门店、生产商信息
+  question_example: 有实体店吗
+  turns:
+  - question: 有实体店吗
+    expect:
+      scene: 商品产地与货源
+- name: PRODUCT_INFO_191_商品产地与货源_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品产地与货源
+  scene_description: 商品产地货源，包括产地查询、生产地、实体店、专柜、线下门店、生产商信息
+  question_example: 生产地是哪
+  turns:
+  - question: 生产地是哪
+    expect:
+      scene: 商品产地与货源
+- name: PRODUCT_INFO_191_商品产地与货源_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品产地与货源
+  scene_description: 商品产地货源，包括产地查询、生产地、实体店、专柜、线下门店、生产商信息
+  question_example: 有专柜吗
+  turns:
+  - question: 有专柜吗
+    expect:
+      scene: 商品产地与货源
+- name: PRODUCT_INFO_191_商品产地与货源_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品产地与货源
+  scene_description: 商品产地货源，包括产地查询、生产地、实体店、专柜、线下门店、生产商信息
+  question_example: 哪个公司生产的
+  turns:
+  - question: 哪个公司生产的
+    expect:
+      scene: 商品产地与货源
+- name: PRODUCT_INFO_191_商品产地与货源_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品产地与货源
+  scene_description: 商品产地货源，包括产地查询、生产地、实体店、专柜、线下门店、生产商信息
+  question_example: 产地是哪里
+  turns:
+  - question: 产地是哪里
+    expect:
+      scene: 商品产地与货源
+- name: PRODUCT_INFO_192_咨询商品库存_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品库存
+  scene_description: 用户想确认商品当前是否有库存、是否售罄。
+  question_example: 还有现货吗
+  turns:
+  - question: 还有现货吗
+    expect:
+      scene: 咨询商品库存
+- name: PRODUCT_INFO_192_咨询商品库存_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品库存
+  scene_description: 用户想确认商品当前是否有库存、是否售罄。
+  question_example: 还有货吗
+  turns:
+  - question: 还有货吗
+    expect:
+      scene: 咨询商品库存
+- name: PRODUCT_INFO_192_咨询商品库存_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品库存
+  scene_description: 用户想确认商品当前是否有库存、是否售罄。
+  question_example: 这个卖完了吗
+  turns:
+  - question: 这个卖完了吗
+    expect:
+      scene: 咨询商品库存
+- name: PRODUCT_INFO_192_咨询商品库存_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品库存
+  scene_description: 用户想确认商品当前是否有库存、是否售罄。
+  question_example: 这个有库存吗
+  turns:
+  - question: 这个有库存吗
+    expect:
+      scene: 咨询商品库存
+- name: PRODUCT_INFO_193_包装与礼袋服务_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 包装与礼袋服务
+  scene_description: 包装服务问题，包括礼品袋、礼盒、手提袋、包装方式、包装尺寸、包装材料、送人包装
+  question_example: 能送个礼品袋吗
+  turns:
+  - question: 能送个礼品袋吗
+    expect:
+      scene: 包装与礼袋服务
+- name: PRODUCT_INFO_193_包装与礼袋服务_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 包装与礼袋服务
+  scene_description: 包装服务问题，包括礼品袋、礼盒、手提袋、包装方式、包装尺寸、包装材料、送人包装
+  question_example: 需要礼盒包装吗
+  turns:
+  - question: 需要礼盒包装吗
+    expect:
+      scene: 包装与礼袋服务
+- name: PRODUCT_INFO_193_包装与礼袋服务_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 包装与礼袋服务
+  scene_description: 包装服务问题，包括礼品袋、礼盒、手提袋、包装方式、包装尺寸、包装材料、送人包装
+  question_example: 有包装吗
+  turns:
+  - question: 有包装吗
+    expect:
+      scene: 包装与礼袋服务
+- name: PRODUCT_INFO_193_包装与礼袋服务_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 包装与礼袋服务
+  scene_description: 包装服务问题，包括礼品袋、礼盒、手提袋、包装方式、包装尺寸、包装材料、送人包装
+  question_example: 包装怎么收费
+  turns:
+  - question: 包装怎么收费
+    expect:
+      scene: 包装与礼袋服务
+- name: PRODUCT_INFO_193_包装与礼袋服务_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 包装与礼袋服务
+  scene_description: 包装服务问题，包括礼品袋、礼盒、手提袋、包装方式、包装尺寸、包装材料、送人包装
+  question_example: 这个包装好看吗
+  turns:
+  - question: 这个包装好看吗
+    expect:
+      scene: 包装与礼袋服务
+- name: PRODUCT_INFO_193_包装与礼袋服务_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 包装与礼袋服务
+  scene_description: 包装服务问题，包括礼品袋、礼盒、手提袋、包装方式、包装尺寸、包装材料、送人包装
+  question_example: 能包装一下送人吗
+  turns:
+  - question: 能包装一下送人吗
+    expect:
+      scene: 包装与礼袋服务
+- name: PRODUCT_INFO_193_包装与礼袋服务_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 包装与礼袋服务
+  scene_description: 包装服务问题，包括礼品袋、礼盒、手提袋、包装方式、包装尺寸、包装材料、送人包装
+  question_example: 包装要加钱吗
+  turns:
+  - question: 包装要加钱吗
+    expect:
+      scene: 包装与礼袋服务
+- name: PRODUCT_INFO_193_包装与礼袋服务_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 包装与礼袋服务
+  scene_description: 包装服务问题，包括礼品袋、礼盒、手提袋、包装方式、包装尺寸、包装材料、送人包装
+  question_example: 是礼盒装吗
+  turns:
+  - question: 是礼盒装吗
+    expect:
+      scene: 包装与礼袋服务
+- name: PRODUCT_INFO_194_咨询商品是否单售_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品是否单售
+  scene_description: 商品单买问题，包括是否单售、单独购买、单只卖、拆单购买、组合单买
+  question_example: 能单买一个吗
+  turns:
+  - question: 能单买一个吗
+    expect:
+      scene: 咨询商品是否单售
+- name: PRODUCT_INFO_194_咨询商品是否单售_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品是否单售
+  scene_description: 商品单买问题，包括是否单售、单独购买、单只卖、拆单购买、组合单买
+  question_example: 这个单卖吗
+  turns:
+  - question: 这个单卖吗
+    expect:
+      scene: 咨询商品是否单售
+- name: PRODUCT_INFO_194_咨询商品是否单售_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品是否单售
+  scene_description: 商品单买问题，包括是否单售、单独购买、单只卖、拆单购买、组合单买
+  question_example: 能拆开卖吗
+  turns:
+  - question: 能拆开卖吗
+    expect:
+      scene: 咨询商品是否单售
+- name: PRODUCT_INFO_194_咨询商品是否单售_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品是否单售
+  scene_description: 商品单买问题，包括是否单售、单独购买、单只卖、拆单购买、组合单买
+  question_example: 只买一个行吗
+  turns:
+  - question: 只买一个行吗
+    expect:
+      scene: 咨询商品是否单售
+- name: PRODUCT_INFO_194_咨询商品是否单售_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品是否单售
+  scene_description: 商品单买问题，包括是否单售、单独购买、单只卖、拆单购买、组合单买
+  question_example: 能单独买这个吗
+  turns:
+  - question: 能单独买这个吗
+    expect:
+      scene: 咨询商品是否单售
+- name: PRODUCT_INFO_194_咨询商品是否单售_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品是否单售
+  scene_description: 商品单买问题，包括是否单售、单独购买、单只卖、拆单购买、组合单买
+  question_example: 不买套餐可以吗
+  turns:
+  - question: 不买套餐可以吗
+    expect:
+      scene: 咨询商品是否单售
+- name: PRODUCT_INFO_194_咨询商品是否单售_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品是否单售
+  scene_description: 商品单买问题，包括是否单售、单独购买、单只卖、拆单购买、组合单买
+  question_example: 单只多少钱
+  turns:
+  - question: 单只多少钱
+    expect:
+      scene: 咨询商品是否单售
+- name: PRODUCT_INFO_194_咨询商品是否单售_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询商品是否单售
+  scene_description: 商品单买问题，包括是否单售、单独购买、单只卖、拆单购买、组合单买
+  question_example: 我想单买一个
+  turns:
+  - question: 我想单买一个
+    expect:
+      scene: 咨询商品是否单售
+- name: PRODUCT_INFO_195_价格变动_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 价格变动
+  scene_description: 买家咨询同一商品在不同时间的价格变化情况，包括涨价、降价、恢复原价、活动价结束、今天和昨天价格不同等，不包含不同商品、不同规格之间的价格差异，也不包含退差价、保价诉求。
+  question_example: 怎么涨价了
+  turns:
+  - question: 怎么涨价了
+    expect:
+      scene: 价格变动
+- name: PRODUCT_INFO_195_价格变动_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 价格变动
+  scene_description: 买家咨询同一商品在不同时间的价格变化情况，包括涨价、降价、恢复原价、活动价结束、今天和昨天价格不同等，不包含不同商品、不同规格之间的价格差异，也不包含退差价、保价诉求。
+  question_example: 怎么又降价了
+  turns:
+  - question: 怎么又降价了
+    expect:
+      scene: 价格变动
+- name: PRODUCT_INFO_195_价格变动_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 价格变动
+  scene_description: 买家咨询同一商品在不同时间的价格变化情况，包括涨价、降价、恢复原价、活动价结束、今天和昨天价格不同等，不包含不同商品、不同规格之间的价格差异，也不包含退差价、保价诉求。
+  question_example: 昨天不是这个价格
+  turns:
+  - question: 昨天不是这个价格
+    expect:
+      scene: 价格变动
+- name: PRODUCT_INFO_195_价格变动_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 价格变动
+  scene_description: 买家咨询同一商品在不同时间的价格变化情况，包括涨价、降价、恢复原价、活动价结束、今天和昨天价格不同等，不包含不同商品、不同规格之间的价格差异，也不包含退差价、保价诉求。
+  question_example: 怎么今天价格不一样
+  turns:
+  - question: 怎么今天价格不一样
+    expect:
+      scene: 价格变动
+- name: PRODUCT_INFO_195_价格变动_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 价格变动
+  scene_description: 买家咨询同一商品在不同时间的价格变化情况，包括涨价、降价、恢复原价、活动价结束、今天和昨天价格不同等，不包含不同商品、不同规格之间的价格差异，也不包含退差价、保价诉求。
+  question_example: 活动结束了吗怎么变贵了
+  turns:
+  - question: 活动结束了吗怎么变贵了
+    expect:
+      scene: 价格变动
+- name: PRODUCT_INFO_196_代写贺卡服务_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 代写贺卡服务
+  scene_description: 贺卡服务问题，包括代写贺卡、添加卡片、祝福语、礼品卡、卡片内容
+  question_example: 能代写贺卡吗
+  turns:
+  - question: 能代写贺卡吗
+    expect:
+      scene: 代写贺卡服务
+- name: PRODUCT_INFO_196_代写贺卡服务_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 代写贺卡服务
+  scene_description: 贺卡服务问题，包括代写贺卡、添加卡片、祝福语、礼品卡、卡片内容
+  question_example: 能加张贺卡吗
+  turns:
+  - question: 能加张贺卡吗
+    expect:
+      scene: 代写贺卡服务
+- name: PRODUCT_INFO_196_代写贺卡服务_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 代写贺卡服务
+  scene_description: 贺卡服务问题，包括代写贺卡、添加卡片、祝福语、礼品卡、卡片内容
+  question_example: 能写祝福语吗
+  turns:
+  - question: 能写祝福语吗
+    expect:
+      scene: 代写贺卡服务
+- name: PRODUCT_INFO_196_代写贺卡服务_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 代写贺卡服务
+  scene_description: 贺卡服务问题，包括代写贺卡、添加卡片、祝福语、礼品卡、卡片内容
+  question_example: 有代写服务吗
+  turns:
+  - question: 有代写服务吗
+    expect:
+      scene: 代写贺卡服务
+- name: PRODUCT_INFO_196_代写贺卡服务_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 代写贺卡服务
+  scene_description: 贺卡服务问题，包括代写贺卡、添加卡片、祝福语、礼品卡、卡片内容
+  question_example: 可以放卡片吗
+  turns:
+  - question: 可以放卡片吗
+    expect:
+      scene: 代写贺卡服务
+- name: PRODUCT_INFO_196_代写贺卡服务_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 代写贺卡服务
+  scene_description: 贺卡服务问题，包括代写贺卡、添加卡片、祝福语、礼品卡、卡片内容
+  question_example: 能帮忙写个卡片吗
+  turns:
+  - question: 能帮忙写个卡片吗
+    expect:
+      scene: 代写贺卡服务
+- name: PRODUCT_INFO_196_代写贺卡服务_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 代写贺卡服务
+  scene_description: 贺卡服务问题，包括代写贺卡、添加卡片、祝福语、礼品卡、卡片内容
+  question_example: 贺卡怎么收费
+  turns:
+  - question: 贺卡怎么收费
+    expect:
+      scene: 代写贺卡服务
+- name: PRODUCT_INFO_196_代写贺卡服务_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 代写贺卡服务
+  scene_description: 贺卡服务问题，包括代写贺卡、添加卡片、祝福语、礼品卡、卡片内容
+  question_example: 这个支持贺卡吗
+  turns:
+  - question: 这个支持贺卡吗
+    expect:
+      scene: 代写贺卡服务
+- name: PRODUCT_INFO_196_代写贺卡服务_09
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 代写贺卡服务
+  scene_description: 贺卡服务问题，包括代写贺卡、添加卡片、祝福语、礼品卡、卡片内容
+  question_example: 想要贺卡怎么弄
+  turns:
+  - question: 想要贺卡怎么弄
+    expect:
+      scene: 代写贺卡服务
+- name: PRODUCT_INFO_197_品牌咨询_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 品牌咨询
+  scene_description: 品牌咨询问题，包括品牌查询、品牌厂家、品牌授权
+  question_example: 这是什么牌
+  turns:
+  - question: 这是什么牌
+    expect:
+      scene: 品牌咨询
+- name: PRODUCT_INFO_197_品牌咨询_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 品牌咨询
+  scene_description: 品牌咨询问题，包括品牌查询、品牌厂家、品牌授权
+  question_example: 哪个牌子
+  turns:
+  - question: 哪个牌子
+    expect:
+      scene: 品牌咨询
+- name: PRODUCT_INFO_197_品牌咨询_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 品牌咨询
+  scene_description: 品牌咨询问题，包括品牌查询、品牌厂家、品牌授权
+  question_example: 是什么品牌
+  turns:
+  - question: 是什么品牌
+    expect:
+      scene: 品牌咨询
+- name: PRODUCT_INFO_197_品牌咨询_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 品牌咨询
+  scene_description: 品牌咨询问题，包括品牌查询、品牌厂家、品牌授权
+  question_example: 品牌授权了吗
+  turns:
+  - question: 品牌授权了吗
+    expect:
+      scene: 品牌咨询
+- name: PRODUCT_INFO_197_品牌咨询_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 品牌咨询
+  scene_description: 品牌咨询问题，包括品牌查询、品牌厂家、品牌授权
+  question_example: 牌子是哪个
+  turns:
+  - question: 牌子是哪个
+    expect:
+      scene: 品牌咨询
+- name: PRODUCT_INFO_197_品牌咨询_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 品牌咨询
+  scene_description: 品牌咨询问题，包括品牌查询、品牌厂家、品牌授权
+  question_example: 属于哪个品牌
+  turns:
+  - question: 属于哪个品牌
+    expect:
+      scene: 品牌咨询
+- name: PRODUCT_INFO_197_品牌咨询_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 品牌咨询
+  scene_description: 品牌咨询问题，包括品牌查询、品牌厂家、品牌授权
+  question_example: 什么时候注册的
+  turns:
+  - question: 什么时候注册的
+    expect:
+      scene: 品牌咨询
+- name: PRODUCT_INFO_198_买家对高价敏感_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 买家对高价敏感
+  scene_description: 价格敏感问题，包括价格太贵、能否优惠、能否降价、议价、便宜点、价格对比
+  question_example: 价格能便宜点吗
+  turns:
+  - question: 价格能便宜点吗
+    expect:
+      scene: 买家对高价敏感
+- name: PRODUCT_INFO_198_买家对高价敏感_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 买家对高价敏感
+  scene_description: 价格敏感问题，包括价格太贵、能否优惠、能否降价、议价、便宜点、价格对比
+  question_example: 价格太高了
+  turns:
+  - question: 价格太高了
+    expect:
+      scene: 买家对高价敏感
+- name: PRODUCT_INFO_198_买家对高价敏感_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 买家对高价敏感
+  scene_description: 价格敏感问题，包括价格太贵、能否优惠、能否降价、议价、便宜点、价格对比
+  question_example: 能给个优惠吗
+  turns:
+  - question: 能给个优惠吗
+    expect:
+      scene: 买家对高价敏感
+- name: PRODUCT_INFO_198_买家对高价敏感_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 买家对高价敏感
+  scene_description: 价格敏感问题，包括价格太贵、能否优惠、能否降价、议价、便宜点、价格对比
+  question_example: 有点贵啊
+  turns:
+  - question: 有点贵啊
+    expect:
+      scene: 买家对高价敏感
+- name: PRODUCT_INFO_198_买家对高价敏感_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 买家对高价敏感
+  scene_description: 价格敏感问题，包括价格太贵、能否优惠、能否降价、议价、便宜点、价格对比
+  question_example: 能打个折吗
+  turns:
+  - question: 能打个折吗
+    expect:
+      scene: 买家对高价敏感
+- name: PRODUCT_INFO_198_买家对高价敏感_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 买家对高价敏感
+  scene_description: 价格敏感问题，包括价格太贵、能否优惠、能否降价、议价、便宜点、价格对比
+  question_example: 怎么比别人贵
+  turns:
+  - question: 怎么比别人贵
+    expect:
+      scene: 买家对高价敏感
+- name: PRODUCT_INFO_198_买家对高价敏感_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 买家对高价敏感
+  scene_description: 价格敏感问题，包括价格太贵、能否优惠、能否降价、议价、便宜点、价格对比
+  question_example: 能降点价吗
+  turns:
+  - question: 能降点价吗
+    expect:
+      scene: 买家对高价敏感
+- name: PRODUCT_INFO_198_买家对高价敏感_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 买家对高价敏感
+  scene_description: 价格敏感问题，包括价格太贵、能否优惠、能否降价、议价、便宜点、价格对比
+  question_example: 价格能商量吗
+  turns:
+  - question: 价格能商量吗
+    expect:
+      scene: 买家对高价敏感
+- name: PRODUCT_INFO_199_安全标准相关_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 安全标准相关
+  scene_description: 安全标准问题，包括安全等级、执行标准、国标认证、3c认证、a类标准、安全检测
+  question_example: 安全等级多少
+  turns:
+  - question: 安全等级多少
+    expect:
+      scene: 安全标准相关
+- name: PRODUCT_INFO_199_安全标准相关_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 安全标准相关
+  scene_description: 安全标准问题，包括安全等级、执行标准、国标认证、3c认证、a类标准、安全检测
+  question_example: 符合国标吗
+  turns:
+  - question: 符合国标吗
+    expect:
+      scene: 安全标准相关
+- name: PRODUCT_INFO_199_安全标准相关_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 安全标准相关
+  scene_description: 安全标准问题，包括安全等级、执行标准、国标认证、3c认证、a类标准、安全检测
+  question_example: 有3c认证吗
+  turns:
+  - question: 有3c认证吗
+    expect:
+      scene: 安全标准相关
+- name: PRODUCT_INFO_199_安全标准相关_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 安全标准相关
+  scene_description: 安全标准问题，包括安全等级、执行标准、国标认证、3c认证、a类标准、安全检测
+  question_example: 安全检测合格吗
+  turns:
+  - question: 安全检测合格吗
+    expect:
+      scene: 安全标准相关
+- name: PRODUCT_INFO_199_安全标准相关_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 安全标准相关
+  scene_description: 安全标准问题，包括安全等级、执行标准、国标认证、3c认证、a类标准、安全检测
+  question_example: 符合什么标准
+  turns:
+  - question: 符合什么标准
+    expect:
+      scene: 安全标准相关
+- name: PRODUCT_INFO_199_安全标准相关_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 安全标准相关
+  scene_description: 安全标准问题，包括安全等级、执行标准、国标认证、3c认证、a类标准、安全检测
+  question_example: 有安全证书吗
+  turns:
+  - question: 有安全证书吗
+    expect:
+      scene: 安全标准相关
+- name: PRODUCT_INFO_199_安全标准相关_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 安全标准相关
+  scene_description: 安全标准问题，包括安全等级、执行标准、国标认证、3c认证、a类标准、安全检测
+  question_example: 达到a类标准了吗
+  turns:
+  - question: 达到a类标准了吗
+    expect:
+      scene: 安全标准相关
+- name: PRODUCT_INFO_199_安全标准相关_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 安全标准相关
+  scene_description: 安全标准问题，包括安全等级、执行标准、国标认证、3c认证、a类标准、安全检测
+  question_example: 安全检测报告有吗
+  turns:
+  - question: 安全检测报告有吗
+    expect:
+      scene: 安全标准相关
+- name: PRODUCT_INFO_199_安全标准相关_09
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 安全标准相关
+  scene_description: 安全标准问题，包括安全等级、执行标准、国标认证、3c认证、a类标准、安全检测
+  question_example: 符合国家标准吗
+  turns:
+  - question: 符合国家标准吗
+    expect:
+      scene: 安全标准相关
+- name: PRODUCT_INFO_200_商品正品验证_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品正品验证
+  scene_description: 正品验证问题，包括是否正品、精仿高仿、真假对比、正品保障、假货质疑
+  question_example: 是正品吗
+  turns:
+  - question: 是正品吗
+    expect:
+      scene: 商品正品验证
+- name: PRODUCT_INFO_200_商品正品验证_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品正品验证
+  scene_description: 正品验证问题，包括是否正品、精仿高仿、真假对比、正品保障、假货质疑
+  question_example: 是真的吗
+  turns:
+  - question: 是真的吗
+    expect:
+      scene: 商品正品验证
+- name: PRODUCT_INFO_200_商品正品验证_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品正品验证
+  scene_description: 正品验证问题，包括是否正品、精仿高仿、真假对比、正品保障、假货质疑
+  question_example: 不是假的吧
+  turns:
+  - question: 不是假的吧
+    expect:
+      scene: 商品正品验证
+- name: PRODUCT_INFO_200_商品正品验证_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品正品验证
+  scene_description: 正品验证问题，包括是否正品、精仿高仿、真假对比、正品保障、假货质疑
+  question_example: 肯定是正品吗
+  turns:
+  - question: 肯定是正品吗
+    expect:
+      scene: 商品正品验证
+- name: PRODUCT_INFO_200_商品正品验证_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品正品验证
+  scene_description: 正品验证问题，包括是否正品、精仿高仿、真假对比、正品保障、假货质疑
+  question_example: 有正品保障吗
+  turns:
+  - question: 有正品保障吗
+    expect:
+      scene: 商品正品验证
+- name: PRODUCT_INFO_200_商品正品验证_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品正品验证
+  scene_description: 正品验证问题，包括是否正品、精仿高仿、真假对比、正品保障、假货质疑
+  question_example: 怎么证明是正品
+  turns:
+  - question: 怎么证明是正品
+    expect:
+      scene: 商品正品验证
+- name: PRODUCT_INFO_200_商品正品验证_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品正品验证
+  scene_description: 正品验证问题，包括是否正品、精仿高仿、真假对比、正品保障、假货质疑
+  question_example: 这个不会是假货吧
+  turns:
+  - question: 这个不会是假货吧
+    expect:
+      scene: 商品正品验证
+- name: PRODUCT_INFO_200_商品正品验证_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品正品验证
+  scene_description: 正品验证问题，包括是否正品、精仿高仿、真假对比、正品保障、假货质疑
+  question_example: 是原装正品吗
+  turns:
+  - question: 是原装正品吗
+    expect:
+      scene: 商品正品验证
+- name: PRODUCT_INFO_200_商品正品验证_09
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 商品正品验证
+  scene_description: 正品验证问题，包括是否正品、精仿高仿、真假对比、正品保障、假货质疑
+  question_example: 跟专柜一样吗
+  turns:
+  - question: 跟专柜一样吗
+    expect:
+      scene: 商品正品验证
+- name: PRODUCT_INFO_201_咨询新品/发售相关信息_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询新品/发售相关信息
+  scene_description: 买家咨询商品是否为新品/新款、是否新上市，以及商品的发售时间、开售时间、什么时候可以买等信息
+  question_example: 这个是新款吗
+  turns:
+  - question: 这个是新款吗
+    expect:
+      scene: 咨询新品/发售相关信息
+- name: PRODUCT_INFO_201_咨询新品/发售相关信息_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询新品/发售相关信息
+  scene_description: 买家咨询商品是否为新品/新款、是否新上市，以及商品的发售时间、开售时间、什么时候可以买等信息
+  question_example: 这是新品吗
+  turns:
+  - question: 这是新品吗
+    expect:
+      scene: 咨询新品/发售相关信息
+- name: PRODUCT_INFO_201_咨询新品/发售相关信息_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询新品/发售相关信息
+  scene_description: 买家咨询商品是否为新品/新款、是否新上市，以及商品的发售时间、开售时间、什么时候可以买等信息
+  question_example: 是不是最近新出的
+  turns:
+  - question: 是不是最近新出的
+    expect:
+      scene: 咨询新品/发售相关信息
+- name: PRODUCT_INFO_201_咨询新品/发售相关信息_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询新品/发售相关信息
+  scene_description: 买家咨询商品是否为新品/新款、是否新上市，以及商品的发售时间、开售时间、什么时候可以买等信息
+  question_example: 这是新款还是老款
+  turns:
+  - question: 这是新款还是老款
+    expect:
+      scene: 咨询新品/发售相关信息
+- name: PRODUCT_INFO_201_咨询新品/发售相关信息_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询新品/发售相关信息
+  scene_description: 买家咨询商品是否为新品/新款、是否新上市，以及商品的发售时间、开售时间、什么时候可以买等信息
+  question_example: 什么时候发售
+  turns:
+  - question: 什么时候发售
+    expect:
+      scene: 咨询新品/发售相关信息
+- name: PRODUCT_INFO_201_咨询新品/发售相关信息_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询新品/发售相关信息
+  scene_description: 买家咨询商品是否为新品/新款、是否新上市，以及商品的发售时间、开售时间、什么时候可以买等信息
+  question_example: 什么时候开卖
+  turns:
+  - question: 什么时候开卖
+    expect:
+      scene: 咨询新品/发售相关信息
+- name: PRODUCT_INFO_201_咨询新品/发售相关信息_07
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询新品/发售相关信息
+  scene_description: 买家咨询商品是否为新品/新款、是否新上市，以及商品的发售时间、开售时间、什么时候可以买等信息
+  question_example: 什么时候能买
+  turns:
+  - question: 什么时候能买
+    expect:
+      scene: 咨询新品/发售相关信息
+- name: PRODUCT_INFO_201_咨询新品/发售相关信息_08
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询新品/发售相关信息
+  scene_description: 买家咨询商品是否为新品/新款、是否新上市，以及商品的发售时间、开售时间、什么时候可以买等信息
+  question_example: 这是刚上的吗
+  turns:
+  - question: 这是刚上的吗
+    expect:
+      scene: 咨询新品/发售相关信息
+- name: PRODUCT_INFO_201_咨询新品/发售相关信息_09
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询新品/发售相关信息
+  scene_description: 买家咨询商品是否为新品/新款、是否新上市，以及商品的发售时间、开售时间、什么时候可以买等信息
+  question_example: 首发是什么时候
+  turns:
+  - question: 首发是什么时候
+    expect:
+      scene: 咨询新品/发售相关信息
+- name: PRODUCT_INFO_201_咨询新品/发售相关信息_10
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 咨询新品/发售相关信息
+  scene_description: 买家咨询商品是否为新品/新款、是否新上市，以及商品的发售时间、开售时间、什么时候可以买等信息
+  question_example: 第一批货吗
+  turns:
+  - question: 第一批货吗
+    expect:
+      scene: 咨询新品/发售相关信息
+- name: PRODUCT_INFO_222_是否有辐射_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否有辐射
+  scene_description: 买家咨询商品是否有辐射、辐射是否大。
+  question_example: 有辐射吗
+  turns:
+  - question: 有辐射吗
+    expect:
+      scene: 是否有辐射
+- name: PRODUCT_INFO_222_是否有辐射_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否有辐射
+  scene_description: 买家咨询商品是否有辐射、辐射是否大。
+  question_example: 辐射大不大
+  turns:
+  - question: 辐射大不大
+    expect:
+      scene: 是否有辐射
+- name: PRODUCT_INFO_222_是否有辐射_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否有辐射
+  scene_description: 买家咨询商品是否有辐射、辐射是否大。
+  question_example: 会不会有电磁辐射
+  turns:
+  - question: 会不会有电磁辐射
+    expect:
+      scene: 是否有辐射
+- name: PRODUCT_INFO_223_能效等级_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 能效等级
+  scene_description: 买家咨询商品能效等级、耗电级别。
+  question_example: 能效等级是多少
+  turns:
+  - question: 能效等级是多少
+    expect:
+      scene: 能效等级
+- name: PRODUCT_INFO_223_能效等级_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 能效等级
+  scene_description: 买家咨询商品能效等级、耗电级别。
+  question_example: 几级能效
+  turns:
+  - question: 几级能效
+    expect:
+      scene: 能效等级
+- name: PRODUCT_INFO_223_能效等级_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 能效等级
+  scene_description: 买家咨询商品能效等级、耗电级别。
+  question_example: 省电吗
+  turns:
+  - question: 省电吗
+    expect:
+      scene: 能效等级
+- name: PRODUCT_INFO_223_能效等级_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 能效等级
+  scene_description: 买家咨询商品能效等级、耗电级别。
+  question_example: 耗电等级是什么
+  turns:
+  - question: 耗电等级是什么
+    expect:
+      scene: 能效等级
+- name: PRODUCT_INFO_223_能效等级_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 能效等级
+  scene_description: 买家咨询商品能效等级、耗电级别。
+  question_example: 耗电高吗
+  turns:
+  - question: 耗电高吗
+    expect:
+      scene: 能效等级
+- name: PRODUCT_INFO_224_适用物品/材质_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用物品/材质
+  scene_description: 买家咨询洗护剂适用于哪些物品、面料、材质或清洁对象，如衣物、床品、羽绒服、木地板、滚筒洗衣机等，不包含头皮、身体等人体部位。
+  question_example: 这个可以直接喷床吗
+  turns:
+  - question: 这个可以直接喷床吗
+    expect:
+      scene: 适用物品/材质
+- name: PRODUCT_INFO_224_适用物品/材质_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用物品/材质
+  scene_description: 买家咨询洗护剂适用于哪些物品、面料、材质或清洁对象，如衣物、床品、羽绒服、木地板、滚筒洗衣机等，不包含头皮、身体等人体部位。
+  question_example: 只能用于滚筒洗衣机吗
+  turns:
+  - question: 只能用于滚筒洗衣机吗
+    expect:
+      scene: 适用物品/材质
+- name: PRODUCT_INFO_224_适用物品/材质_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用物品/材质
+  scene_description: 买家咨询洗护剂适用于哪些物品、面料、材质或清洁对象，如衣物、床品、羽绒服、木地板、滚筒洗衣机等，不包含头皮、身体等人体部位。
+  question_example: 羽绒服能用吗
+  turns:
+  - question: 羽绒服能用吗
+    expect:
+      scene: 适用物品/材质
+- name: PRODUCT_INFO_224_适用物品/材质_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用物品/材质
+  scene_description: 买家咨询洗护剂适用于哪些物品、面料、材质或清洁对象，如衣物、床品、羽绒服、木地板、滚筒洗衣机等，不包含头皮、身体等人体部位。
+  question_example: 宝宝衣服可以洗吗
+  turns:
+  - question: 宝宝衣服可以洗吗
+    expect:
+      scene: 适用物品/材质
+- name: PRODUCT_INFO_224_适用物品/材质_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用物品/材质
+  scene_description: 买家咨询洗护剂适用于哪些物品、面料、材质或清洁对象，如衣物、床品、羽绒服、木地板、滚筒洗衣机等，不包含头皮、身体等人体部位。
+  question_example: 木地板能喷吗
+  turns:
+  - question: 木地板能喷吗
+    expect:
+      scene: 适用物品/材质
+- name: PRODUCT_INFO_224_适用物品/材质_06
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 适用物品/材质
+  scene_description: 买家咨询洗护剂适用于哪些物品、面料、材质或清洁对象，如衣物、床品、羽绒服、木地板、滚筒洗衣机等，不包含头皮、身体等人体部位。
+  question_example: 内衣内裤能用吗
+  turns:
+  - question: 内衣内裤能用吗
+    expect:
+      scene: 适用物品/材质
+- name: PRODUCT_INFO_225_是否容易出泡及出泡量_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否容易出泡及出泡量
+  scene_description: 买家咨询洗护剂是否容易起泡、泡沫量大小、泡沫细腻程度。
+  question_example: 容易起泡吗
+  turns:
+  - question: 容易起泡吗
+    expect:
+      scene: 是否容易出泡及出泡量
+- name: PRODUCT_INFO_225_是否容易出泡及出泡量_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否容易出泡及出泡量
+  scene_description: 买家咨询洗护剂是否容易起泡、泡沫量大小、泡沫细腻程度。
+  question_example: 泡沫多吗
+  turns:
+  - question: 泡沫多吗
+    expect:
+      scene: 是否容易出泡及出泡量
+- name: PRODUCT_INFO_225_是否容易出泡及出泡量_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否容易出泡及出泡量
+  scene_description: 买家咨询洗护剂是否容易起泡、泡沫量大小、泡沫细腻程度。
+  question_example: 泡沫细不细
+  turns:
+  - question: 泡沫细不细
+    expect:
+      scene: 是否容易出泡及出泡量
+- name: PRODUCT_INFO_225_是否容易出泡及出泡量_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否容易出泡及出泡量
+  scene_description: 买家咨询洗护剂是否容易起泡、泡沫量大小、泡沫细腻程度。
+  question_example: 一搓就有泡吗
+  turns:
+  - question: 一搓就有泡吗
+    expect:
+      scene: 是否容易出泡及出泡量
+- name: PRODUCT_INFO_225_是否容易出泡及出泡量_05
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 是否容易出泡及出泡量
+  scene_description: 买家咨询洗护剂是否容易起泡、泡沫量大小、泡沫细腻程度。
+  question_example: 泡泡会不会很多
+  turns:
+  - question: 泡泡会不会很多
+    expect:
+      scene: 是否容易出泡及出泡量
+- name: PRODUCT_INFO_226_PH值/酸碱度_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: PH值/酸碱度
+  scene_description: 买家咨询洗护剂的 PH 值、偏酸还是偏碱、是否为弱酸性等。
+  question_example: pH值多少
+  turns:
+  - question: pH值多少
+    expect:
+      scene: PH值/酸碱度
+- name: PRODUCT_INFO_226_PH值/酸碱度_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: PH值/酸碱度
+  scene_description: 买家咨询洗护剂的 PH 值、偏酸还是偏碱、是否为弱酸性等。
+  question_example: 是酸性还是碱性
+  turns:
+  - question: 是酸性还是碱性
+    expect:
+      scene: PH值/酸碱度
+- name: PRODUCT_INFO_226_PH值/酸碱度_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: PH值/酸碱度
+  scene_description: 买家咨询洗护剂的 PH 值、偏酸还是偏碱、是否为弱酸性等。
+  question_example: 弱酸性吗
+  turns:
+  - question: 弱酸性吗
+    expect:
+      scene: PH值/酸碱度
+- name: PRODUCT_INFO_226_PH值/酸碱度_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: PH值/酸碱度
+  scene_description: 买家咨询洗护剂的 PH 值、偏酸还是偏碱、是否为弱酸性等。
+  question_example: 酸碱度高吗
+  turns:
+  - question: 酸碱度高吗
+    expect:
+      scene: PH值/酸碱度
+- name: PRODUCT_INFO_227_负离子/水离子_01
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 负离子/水离子
+  scene_description: 买家咨询是否有负离子、水离子等功能。
+  question_example: 有负离子吗
+  turns:
+  - question: 有负离子吗
+    expect:
+      scene: 负离子/水离子
+- name: PRODUCT_INFO_227_负离子/水离子_02
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 负离子/水离子
+  scene_description: 买家咨询是否有负离子、水离子等功能。
+  question_example: 带水离子功能吗
+  turns:
+  - question: 带水离子功能吗
+    expect:
+      scene: 负离子/水离子
+- name: PRODUCT_INFO_227_负离子/水离子_03
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 负离子/水离子
+  scene_description: 买家咨询是否有负离子、水离子等功能。
+  question_example: 负离子有用吗
+  turns:
+  - question: 负离子有用吗
+    expect:
+      scene: 负离子/水离子
+- name: PRODUCT_INFO_227_负离子/水离子_04
+  category: 商品咨询
+  category_key: PRODUCT_INFO
+  scene_name: 负离子/水离子
+  scene_description: 买家咨询是否有负离子、水离子等功能。
+  question_example: 是负离子款吗
+  turns:
+  - question: 是负离子款吗
+    expect:
+      scene: 负离子/水离子

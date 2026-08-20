@@ -1,0 +1,960 @@
+suite:
+  name: kb_scene_category_purchase
+  mode: sequential
+  quality: true
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+  quality_retries: 10
+  quality_retry_interval_seconds: 2
+  assertions: true
+target_env: dev
+category_groups:
+- key: ALL
+  name: 全部分类
+  count: 227
+- id: 696f3c783dceab0847703e17
+  key: PURCHASE
+  name: 购买咨询
+  count: 11
+cases:
+- name: PURCHASE_066_订单备注问题_01
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单备注问题
+  scene_description: 订单备注相关问题，包括添加备注、修改备注、备注说明、特殊要求填写、忘记备注、备注内容变更等
+  question_example: 可以备注吗
+  turns:
+  - question: 可以备注吗
+    expect:
+      scene: 订单备注问题
+- name: PURCHASE_066_订单备注问题_02
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单备注问题
+  scene_description: 订单备注相关问题，包括添加备注、修改备注、备注说明、特殊要求填写、忘记备注、备注内容变更等
+  question_example: 订单怎么加备注
+  turns:
+  - question: 订单怎么加备注
+    expect:
+      scene: 订单备注问题
+- name: PURCHASE_066_订单备注问题_03
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单备注问题
+  scene_description: 订单备注相关问题，包括添加备注、修改备注、备注说明、特殊要求填写、忘记备注、备注内容变更等
+  question_example: 能帮我备注一下吗
+  turns:
+  - question: 能帮我备注一下吗
+    expect:
+      scene: 订单备注问题
+- name: PURCHASE_066_订单备注问题_04
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单备注问题
+  scene_description: 订单备注相关问题，包括添加备注、修改备注、备注说明、特殊要求填写、忘记备注、备注内容变更等
+  question_example: 忘记写备注了
+  turns:
+  - question: 忘记写备注了
+    expect:
+      scene: 订单备注问题
+- name: PURCHASE_066_订单备注问题_05
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单备注问题
+  scene_description: 订单备注相关问题，包括添加备注、修改备注、备注说明、特殊要求填写、忘记备注、备注内容变更等
+  question_example: 备注内容能改吗
+  turns:
+  - question: 备注内容能改吗
+    expect:
+      scene: 订单备注问题
+- name: PURCHASE_066_订单备注问题_06
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单备注问题
+  scene_description: 订单备注相关问题，包括添加备注、修改备注、备注说明、特殊要求填写、忘记备注、备注内容变更等
+  question_example: 帮我在订单里写个备注
+  turns:
+  - question: 帮我在订单里写个备注
+    expect:
+      scene: 订单备注问题
+- name: PURCHASE_066_订单备注问题_07
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单备注问题
+  scene_description: 订单备注相关问题，包括添加备注、修改备注、备注说明、特殊要求填写、忘记备注、备注内容变更等
+  question_example: 备注发货时间
+  turns:
+  - question: 备注发货时间
+    expect:
+      scene: 订单备注问题
+- name: PURCHASE_066_订单备注问题_08
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单备注问题
+  scene_description: 订单备注相关问题，包括添加备注、修改备注、备注说明、特殊要求填写、忘记备注、备注内容变更等
+  question_example: 备注颜色和尺寸
+  turns:
+  - question: 备注颜色和尺寸
+    expect:
+      scene: 订单备注问题
+- name: PURCHASE_066_订单备注问题_09
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单备注问题
+  scene_description: 订单备注相关问题，包括添加备注、修改备注、备注说明、特殊要求填写、忘记备注、备注内容变更等
+  question_example: 可以按备注发货吗
+  turns:
+  - question: 可以按备注发货吗
+    expect:
+      scene: 订单备注问题
+- name: PURCHASE_076_常见付款场景说明_01
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 常见付款场景说明
+  scene_description: 付款问题，包括未付款订单、拍错买多、重复付款、付款失败、交易关闭、货到付款、合并付款、如何付款
+  question_example: 拍错了
+  turns:
+  - question: 拍错了
+    expect:
+      scene: 常见付款场景说明
+- name: PURCHASE_076_常见付款场景说明_02
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 常见付款场景说明
+  scene_description: 付款问题，包括未付款订单、拍错买多、重复付款、付款失败、交易关闭、货到付款、合并付款、如何付款
+  question_example: 买多了
+  turns:
+  - question: 买多了
+    expect:
+      scene: 常见付款场景说明
+- name: PURCHASE_076_常见付款场景说明_03
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 常见付款场景说明
+  scene_description: 付款问题，包括未付款订单、拍错买多、重复付款、付款失败、交易关闭、货到付款、合并付款、如何付款
+  question_example: 怎么付款
+  turns:
+  - question: 怎么付款
+    expect:
+      scene: 常见付款场景说明
+- name: PURCHASE_076_常见付款场景说明_04
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 常见付款场景说明
+  scene_description: 付款问题，包括未付款订单、拍错买多、重复付款、付款失败、交易关闭、货到付款、合并付款、如何付款
+  question_example: 能货到付款吗
+  turns:
+  - question: 能货到付款吗
+    expect:
+      scene: 常见付款场景说明
+- name: PURCHASE_076_常见付款场景说明_05
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 常见付款场景说明
+  scene_description: 付款问题，包括未付款订单、拍错买多、重复付款、付款失败、交易关闭、货到付款、合并付款、如何付款
+  question_example: 付款失败了
+  turns:
+  - question: 付款失败了
+    expect:
+      scene: 常见付款场景说明
+- name: PURCHASE_076_常见付款场景说明_06
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 常见付款场景说明
+  scene_description: 付款问题，包括未付款订单、拍错买多、重复付款、付款失败、交易关闭、货到付款、合并付款、如何付款
+  question_example: 付款了但显示交易关闭了
+  turns:
+  - question: 付款了但显示交易关闭了
+    expect:
+      scene: 常见付款场景说明
+- name: PURCHASE_076_常见付款场景说明_07
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 常见付款场景说明
+  scene_description: 付款问题，包括未付款订单、拍错买多、重复付款、付款失败、交易关闭、货到付款、合并付款、如何付款
+  question_example: 我重复付款了
+  turns:
+  - question: 我重复付款了
+    expect:
+      scene: 常见付款场景说明
+- name: PURCHASE_076_常见付款场景说明_08
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 常见付款场景说明
+  scene_description: 付款问题，包括未付款订单、拍错买多、重复付款、付款失败、交易关闭、货到付款、合并付款、如何付款
+  question_example: 能合并付款吗
+  turns:
+  - question: 能合并付款吗
+    expect:
+      scene: 常见付款场景说明
+- name: PURCHASE_076_常见付款场景说明_09
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 常见付款场景说明
+  scene_description: 付款问题，包括未付款订单、拍错买多、重复付款、付款失败、交易关闭、货到付款、合并付款、如何付款
+  question_example: 能先用后付吗
+  turns:
+  - question: 能先用后付吗
+    expect:
+      scene: 常见付款场景说明
+- name: PURCHASE_077_表示换店购买或不想要_01
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 表示换店购买或不想要
+  scene_description: 换店不买问题，包括去别家买、换店购买、不想要了、不等了、算了吧、去其他店
+  question_example: 不等了
+  turns:
+  - question: 不等了
+    expect:
+      scene: 表示换店购买或不想要
+- name: PURCHASE_077_表示换店购买或不想要_02
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 表示换店购买或不想要
+  scene_description: 换店不买问题，包括去别家买、换店购买、不想要了、不等了、算了吧、去其他店
+  question_example: 去别家看看
+  turns:
+  - question: 去别家看看
+    expect:
+      scene: 表示换店购买或不想要
+- name: PURCHASE_077_表示换店购买或不想要_03
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 表示换店购买或不想要
+  scene_description: 换店不买问题，包括去别家买、换店购买、不想要了、不等了、算了吧、去其他店
+  question_example: 不想要了
+  turns:
+  - question: 不想要了
+    expect:
+      scene: 表示换店购买或不想要
+- name: PURCHASE_077_表示换店购买或不想要_04
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 表示换店购买或不想要
+  scene_description: 换店不买问题，包括去别家买、换店购买、不想要了、不等了、算了吧、去其他店
+  question_example: 算了
+  turns:
+  - question: 算了
+    expect:
+      scene: 表示换店购买或不想要
+- name: PURCHASE_077_表示换店购买或不想要_05
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 表示换店购买或不想要
+  scene_description: 换店不买问题，包括去别家买、换店购买、不想要了、不等了、算了吧、去其他店
+  question_example: 换一家买
+  turns:
+  - question: 换一家买
+    expect:
+      scene: 表示换店购买或不想要
+- name: PURCHASE_077_表示换店购买或不想要_06
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 表示换店购买或不想要
+  scene_description: 换店不买问题，包括去别家买、换店购买、不想要了、不等了、算了吧、去其他店
+  question_example: 不买了
+  turns:
+  - question: 不买了
+    expect:
+      scene: 表示换店购买或不想要
+- name: PURCHASE_077_表示换店购买或不想要_07
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 表示换店购买或不想要
+  scene_description: 换店不买问题，包括去别家买、换店购买、不想要了、不等了、算了吧、去其他店
+  question_example: 去其他店
+  turns:
+  - question: 去其他店
+    expect:
+      scene: 表示换店购买或不想要
+- name: PURCHASE_077_表示换店购买或不想要_08
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 表示换店购买或不想要
+  scene_description: 换店不买问题，包括去别家买、换店购买、不想要了、不等了、算了吧、去其他店
+  question_example: 再看看吧
+  turns:
+  - question: 再看看吧
+    expect:
+      scene: 表示换店购买或不想要
+- name: PURCHASE_078_支付方式说明_01
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 支付方式说明
+  scene_description: 支付方式说明，包括微信支付、支付宝、信用卡支付、银行卡
+  question_example: 能用微信支付吗
+  turns:
+  - question: 能用微信支付吗
+    expect:
+      scene: 支付方式说明
+- name: PURCHASE_078_支付方式说明_02
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 支付方式说明
+  scene_description: 支付方式说明，包括微信支付、支付宝、信用卡支付、银行卡
+  question_example: 可以用支付宝支付吗
+  turns:
+  - question: 可以用支付宝支付吗
+    expect:
+      scene: 支付方式说明
+- name: PURCHASE_078_支付方式说明_03
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 支付方式说明
+  scene_description: 支付方式说明，包括微信支付、支付宝、信用卡支付、银行卡
+  question_example: 支持信用卡支付吗
+  turns:
+  - question: 支持信用卡支付吗
+    expect:
+      scene: 支付方式说明
+- name: PURCHASE_078_支付方式说明_04
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 支付方式说明
+  scene_description: 支付方式说明，包括微信支付、支付宝、信用卡支付、银行卡
+  question_example: 可以用银行卡支付吗
+  turns:
+  - question: 可以用银行卡支付吗
+    expect:
+      scene: 支付方式说明
+- name: PURCHASE_079_下单条件与限制_01
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 下单条件与限制
+  scene_description: 下单限制问题，包括无法下单、限购、购买限制、分开购买、什么时候能下单、为什么不能下单
+  question_example: 买不了
+  turns:
+  - question: 买不了
+    expect:
+      scene: 下单条件与限制
+- name: PURCHASE_079_下单条件与限制_02
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 下单条件与限制
+  scene_description: 下单限制问题，包括无法下单、限购、购买限制、分开购买、什么时候能下单、为什么不能下单
+  question_example: 为什么不能下单
+  turns:
+  - question: 为什么不能下单
+    expect:
+      scene: 下单条件与限制
+- name: PURCHASE_079_下单条件与限制_03
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 下单条件与限制
+  scene_description: 下单限制问题，包括无法下单、限购、购买限制、分开购买、什么时候能下单、为什么不能下单
+  question_example: 有限制吗
+  turns:
+  - question: 有限制吗
+    expect:
+      scene: 下单条件与限制
+- name: PURCHASE_079_下单条件与限制_04
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 下单条件与限制
+  scene_description: 下单限制问题，包括无法下单、限购、购买限制、分开购买、什么时候能下单、为什么不能下单
+  question_example: 能拍吗
+  turns:
+  - question: 能拍吗
+    expect:
+      scene: 下单条件与限制
+- name: PURCHASE_079_下单条件与限制_05
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 下单条件与限制
+  scene_description: 下单限制问题，包括无法下单、限购、购买限制、分开购买、什么时候能下单、为什么不能下单
+  question_example: 限购吗
+  turns:
+  - question: 限购吗
+    expect:
+      scene: 下单条件与限制
+- name: PURCHASE_079_下单条件与限制_06
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 下单条件与限制
+  scene_description: 下单限制问题，包括无法下单、限购、购买限制、分开购买、什么时候能下单、为什么不能下单
+  question_example: 怎么买不了
+  turns:
+  - question: 怎么买不了
+    expect:
+      scene: 下单条件与限制
+- name: PURCHASE_079_下单条件与限制_07
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 下单条件与限制
+  scene_description: 下单限制问题，包括无法下单、限购、购买限制、分开购买、什么时候能下单、为什么不能下单
+  question_example: 可以买吗
+  turns:
+  - question: 可以买吗
+    expect:
+      scene: 下单条件与限制
+- name: PURCHASE_079_下单条件与限制_08
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 下单条件与限制
+  scene_description: 下单限制问题，包括无法下单、限购、购买限制、分开购买、什么时候能下单、为什么不能下单
+  question_example: 能下单吗
+  turns:
+  - question: 能下单吗
+    expect:
+      scene: 下单条件与限制
+- name: PURCHASE_079_下单条件与限制_09
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 下单条件与限制
+  scene_description: 下单限制问题，包括无法下单、限购、购买限制、分开购买、什么时候能下单、为什么不能下单
+  question_example: 什么时候能买
+  turns:
+  - question: 什么时候能买
+    expect:
+      scene: 下单条件与限制
+- name: PURCHASE_079_下单条件与限制_10
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 下单条件与限制
+  scene_description: 下单限制问题，包括无法下单、限购、购买限制、分开购买、什么时候能下单、为什么不能下单
+  question_example: 分开拍可以吗
+  turns:
+  - question: 分开拍可以吗
+    expect:
+      scene: 下单条件与限制
+- name: PURCHASE_080_多购优惠与批发_01
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 多购优惠与批发
+  scene_description: 批发优惠问题，包括批发购买、批发价、多购优惠、买几送几、团购、大宗购买、批发业务
+  question_example: 能批发吗
+  turns:
+  - question: 能批发吗
+    expect:
+      scene: 多购优惠与批发
+- name: PURCHASE_080_多购优惠与批发_02
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 多购优惠与批发
+  scene_description: 批发优惠问题，包括批发购买、批发价、多购优惠、买几送几、团购、大宗购买、批发业务
+  question_example: 有批发价吗
+  turns:
+  - question: 有批发价吗
+    expect:
+      scene: 多购优惠与批发
+- name: PURCHASE_080_多购优惠与批发_03
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 多购优惠与批发
+  scene_description: 批发优惠问题，包括批发购买、批发价、多购优惠、买几送几、团购、大宗购买、批发业务
+  question_example: 多买能优惠吗
+  turns:
+  - question: 多买能优惠吗
+    expect:
+      scene: 多购优惠与批发
+- name: PURCHASE_080_多购优惠与批发_04
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 多购优惠与批发
+  scene_description: 批发优惠问题，包括批发购买、批发价、多购优惠、买几送几、团购、大宗购买、批发业务
+  question_example: 批发价多少
+  turns:
+  - question: 批发价多少
+    expect:
+      scene: 多购优惠与批发
+- name: PURCHASE_080_多购优惠与批发_05
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 多购优惠与批发
+  scene_description: 批发优惠问题，包括批发购买、批发价、多购优惠、买几送几、团购、大宗购买、批发业务
+  question_example: 能团购吗
+  turns:
+  - question: 能团购吗
+    expect:
+      scene: 多购优惠与批发
+- name: PURCHASE_080_多购优惠与批发_06
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 多购优惠与批发
+  scene_description: 批发优惠问题，包括批发购买、批发价、多购优惠、买几送几、团购、大宗购买、批发业务
+  question_example: 量大有优惠吗
+  turns:
+  - question: 量大有优惠吗
+    expect:
+      scene: 多购优惠与批发
+- name: PURCHASE_080_多购优惠与批发_07
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 多购优惠与批发
+  scene_description: 批发优惠问题，包括批发购买、批发价、多购优惠、买几送几、团购、大宗购买、批发业务
+  question_example: 买得多便宜吗
+  turns:
+  - question: 买得多便宜吗
+    expect:
+      scene: 多购优惠与批发
+- name: PURCHASE_080_多购优惠与批发_08
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 多购优惠与批发
+  scene_description: 批发优惠问题，包括批发购买、批发价、多购优惠、买几送几、团购、大宗购买、批发业务
+  question_example: 批发业务
+  turns:
+  - question: 批发业务
+    expect:
+      scene: 多购优惠与批发
+- name: PURCHASE_080_多购优惠与批发_09
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 多购优惠与批发
+  scene_description: 批发优惠问题，包括批发购买、批发价、多购优惠、买几送几、团购、大宗购买、批发业务
+  question_example: 大宗购买
+  turns:
+  - question: 大宗购买
+    expect:
+      scene: 多购优惠与批发
+- name: PURCHASE_080_多购优惠与批发_10
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 多购优惠与批发
+  scene_description: 批发优惠问题，包括批发购买、批发价、多购优惠、买几送几、团购、大宗购买、批发业务
+  question_example: 批发多少钱
+  turns:
+  - question: 批发多少钱
+    expect:
+      scene: 多购优惠与批发
+- name: PURCHASE_081_表示延迟下单_01
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 表示延迟下单
+  scene_description: 延迟下单问题，包括延迟购买、等降价、等活动、以后再买、明天再买、考虑一下、再看看
+  question_example: 明天再买
+  turns:
+  - question: 明天再买
+    expect:
+      scene: 表示延迟下单
+- name: PURCHASE_081_表示延迟下单_02
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 表示延迟下单
+  scene_description: 延迟下单问题，包括延迟购买、等降价、等活动、以后再买、明天再买、考虑一下、再看看
+  question_example: 等降价再买
+  turns:
+  - question: 等降价再买
+    expect:
+      scene: 表示延迟下单
+- name: PURCHASE_081_表示延迟下单_03
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 表示延迟下单
+  scene_description: 延迟下单问题，包括延迟购买、等降价、等活动、以后再买、明天再买、考虑一下、再看看
+  question_example: 等活动再买
+  turns:
+  - question: 等活动再买
+    expect:
+      scene: 表示延迟下单
+- name: PURCHASE_081_表示延迟下单_04
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 表示延迟下单
+  scene_description: 延迟下单问题，包括延迟购买、等降价、等活动、以后再买、明天再买、考虑一下、再看看
+  question_example: 考虑一下
+  turns:
+  - question: 考虑一下
+    expect:
+      scene: 表示延迟下单
+- name: PURCHASE_081_表示延迟下单_05
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 表示延迟下单
+  scene_description: 延迟下单问题，包括延迟购买、等降价、等活动、以后再买、明天再买、考虑一下、再看看
+  question_example: 再看看
+  turns:
+  - question: 再看看
+    expect:
+      scene: 表示延迟下单
+- name: PURCHASE_081_表示延迟下单_06
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 表示延迟下单
+  scene_description: 延迟下单问题，包括延迟购买、等降价、等活动、以后再买、明天再买、考虑一下、再看看
+  question_example: 等双十一
+  turns:
+  - question: 等双十一
+    expect:
+      scene: 表示延迟下单
+- name: PURCHASE_081_表示延迟下单_07
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 表示延迟下单
+  scene_description: 延迟下单问题，包括延迟购买、等降价、等活动、以后再买、明天再买、考虑一下、再看看
+  question_example: 以后再说
+  turns:
+  - question: 以后再说
+    expect:
+      scene: 表示延迟下单
+- name: PURCHASE_081_表示延迟下单_08
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 表示延迟下单
+  scene_description: 延迟下单问题，包括延迟购买、等降价、等活动、以后再买、明天再买、考虑一下、再看看
+  question_example: 晚点买
+  turns:
+  - question: 晚点买
+    expect:
+      scene: 表示延迟下单
+- name: PURCHASE_081_表示延迟下单_09
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 表示延迟下单
+  scene_description: 延迟下单问题，包括延迟购买、等降价、等活动、以后再买、明天再买、考虑一下、再看看
+  question_example: 不急买
+  turns:
+  - question: 不急买
+    expect:
+      scene: 表示延迟下单
+- name: PURCHASE_082_花呗支付与还款_01
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 花呗支付与还款
+  scene_description: 花呗问题，包括花呗分期、花呗还款、花呗手续费、支持花呗、不能用花呗、花呗利息、分期还款
+  question_example: 支持花呗吗
+  turns:
+  - question: 支持花呗吗
+    expect:
+      scene: 花呗支付与还款
+- name: PURCHASE_082_花呗支付与还款_02
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 花呗支付与还款
+  scene_description: 花呗问题，包括花呗分期、花呗还款、花呗手续费、支持花呗、不能用花呗、花呗利息、分期还款
+  question_example: 能用花呗分期吗
+  turns:
+  - question: 能用花呗分期吗
+    expect:
+      scene: 花呗支付与还款
+- name: PURCHASE_082_花呗支付与还款_03
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 花呗支付与还款
+  scene_description: 花呗问题，包括花呗分期、花呗还款、花呗手续费、支持花呗、不能用花呗、花呗利息、分期还款
+  question_example: 花呗手续费
+  turns:
+  - question: 花呗手续费
+    expect:
+      scene: 花呗支付与还款
+- name: PURCHASE_082_花呗支付与还款_04
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 花呗支付与还款
+  scene_description: 花呗问题，包括花呗分期、花呗还款、花呗手续费、支持花呗、不能用花呗、花呗利息、分期还款
+  question_example: 花呗怎么还
+  turns:
+  - question: 花呗怎么还
+    expect:
+      scene: 花呗支付与还款
+- name: PURCHASE_082_花呗支付与还款_05
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 花呗支付与还款
+  scene_description: 花呗问题，包括花呗分期、花呗还款、花呗手续费、支持花呗、不能用花呗、花呗利息、分期还款
+  question_example: 分几期
+  turns:
+  - question: 分几期
+    expect:
+      scene: 花呗支付与还款
+- name: PURCHASE_082_花呗支付与还款_06
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 花呗支付与还款
+  scene_description: 花呗问题，包括花呗分期、花呗还款、花呗手续费、支持花呗、不能用花呗、花呗利息、分期还款
+  question_example: 花呗利息
+  turns:
+  - question: 花呗利息
+    expect:
+      scene: 花呗支付与还款
+- name: PURCHASE_082_花呗支付与还款_07
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 花呗支付与还款
+  scene_description: 花呗问题，包括花呗分期、花呗还款、花呗手续费、支持花呗、不能用花呗、花呗利息、分期还款
+  question_example: 能用花呗吗
+  turns:
+  - question: 能用花呗吗
+    expect:
+      scene: 花呗支付与还款
+- name: PURCHASE_082_花呗支付与还款_08
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 花呗支付与还款
+  scene_description: 花呗问题，包括花呗分期、花呗还款、花呗手续费、支持花呗、不能用花呗、花呗利息、分期还款
+  question_example: 花呗分期付款
+  turns:
+  - question: 花呗分期付款
+    expect:
+      scene: 花呗支付与还款
+- name: PURCHASE_082_花呗支付与还款_09
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 花呗支付与还款
+  scene_description: 花呗问题，包括花呗分期、花呗还款、花呗手续费、支持花呗、不能用花呗、花呗利息、分期还款
+  question_example: 不支持花呗
+  turns:
+  - question: 不支持花呗
+    expect:
+      scene: 花呗支付与还款
+- name: PURCHASE_082_花呗支付与还款_10
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 花呗支付与还款
+  scene_description: 花呗问题，包括花呗分期、花呗还款、花呗手续费、支持花呗、不能用花呗、花呗利息、分期还款
+  question_example: 免息分期吗
+  turns:
+  - question: 免息分期吗
+    expect:
+      scene: 花呗支付与还款
+- name: PURCHASE_083_购物车限制原因_01
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 购物车限制原因
+  scene_description: 购物车问题，包括无法加购物车、购物车限制、加购失败、购物车错误、不能加入购物车
+  question_example: 加不了购物车
+  turns:
+  - question: 加不了购物车
+    expect:
+      scene: 购物车限制原因
+- name: PURCHASE_083_购物车限制原因_02
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 购物车限制原因
+  scene_description: 购物车问题，包括无法加购物车、购物车限制、加购失败、购物车错误、不能加入购物车
+  question_example: 不能加购物车
+  turns:
+  - question: 不能加购物车
+    expect:
+      scene: 购物车限制原因
+- name: PURCHASE_083_购物车限制原因_03
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 购物车限制原因
+  scene_description: 购物车问题，包括无法加购物车、购物车限制、加购失败、购物车错误、不能加入购物车
+  question_example: 购物车加购失败
+  turns:
+  - question: 购物车加购失败
+    expect:
+      scene: 购物车限制原因
+- name: PURCHASE_083_购物车限制原因_04
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 购物车限制原因
+  scene_description: 购物车问题，包括无法加购物车、购物车限制、加购失败、购物车错误、不能加入购物车
+  question_example: 没有购物车
+  turns:
+  - question: 没有购物车
+    expect:
+      scene: 购物车限制原因
+- name: PURCHASE_083_购物车限制原因_05
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 购物车限制原因
+  scene_description: 购物车问题，包括无法加购物车、购物车限制、加购失败、购物车错误、不能加入购物车
+  question_example: 购物车在哪
+  turns:
+  - question: 购物车在哪
+    expect:
+      scene: 购物车限制原因
+- name: PURCHASE_083_购物车限制原因_06
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 购物车限制原因
+  scene_description: 购物车问题，包括无法加购物车、购物车限制、加购失败、购物车错误、不能加入购物车
+  question_example: 怎么加购物车
+  turns:
+  - question: 怎么加购物车
+    expect:
+      scene: 购物车限制原因
+- name: PURCHASE_083_购物车限制原因_07
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 购物车限制原因
+  scene_description: 购物车问题，包括无法加购物车、购物车限制、加购失败、购物车错误、不能加入购物车
+  question_example: 购物车无法添加
+  turns:
+  - question: 购物车无法添加
+    expect:
+      scene: 购物车限制原因
+- name: PURCHASE_083_购物车限制原因_08
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 购物车限制原因
+  scene_description: 购物车问题，包括无法加购物车、购物车限制、加购失败、购物车错误、不能加入购物车
+  question_example: 加购不了
+  turns:
+  - question: 加购不了
+    expect:
+      scene: 购物车限制原因
+- name: PURCHASE_083_购物车限制原因_09
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 购物车限制原因
+  scene_description: 购物车问题，包括无法加购物车、购物车限制、加购失败、购物车错误、不能加入购物车
+  question_example: 不能加入购物车
+  turns:
+  - question: 不能加入购物车
+    expect:
+      scene: 购物车限制原因
+- name: PURCHASE_084_商品下架原因_01
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 商品下架原因
+  scene_description: 商品下架问题，包括为什么下架、已下架、商品停售、没货了、找不到商品、何时上架、重新上架
+  question_example: 下架了
+  turns:
+  - question: 下架了
+    expect:
+      scene: 商品下架原因
+- name: PURCHASE_084_商品下架原因_02
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 商品下架原因
+  scene_description: 商品下架问题，包括为什么下架、已下架、商品停售、没货了、找不到商品、何时上架、重新上架
+  question_example: 怎么下架了
+  turns:
+  - question: 怎么下架了
+    expect:
+      scene: 商品下架原因
+- name: PURCHASE_084_商品下架原因_03
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 商品下架原因
+  scene_description: 商品下架问题，包括为什么下架、已下架、商品停售、没货了、找不到商品、何时上架、重新上架
+  question_example: 为什么没货了
+  turns:
+  - question: 为什么没货了
+    expect:
+      scene: 商品下架原因
+- name: PURCHASE_084_商品下架原因_04
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 商品下架原因
+  scene_description: 商品下架问题，包括为什么下架、已下架、商品停售、没货了、找不到商品、何时上架、重新上架
+  question_example: 什么时候上架
+  turns:
+  - question: 什么时候上架
+    expect:
+      scene: 商品下架原因
+- name: PURCHASE_084_商品下架原因_05
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 商品下架原因
+  scene_description: 商品下架问题，包括为什么下架、已下架、商品停售、没货了、找不到商品、何时上架、重新上架
+  question_example: 买不到了
+  turns:
+  - question: 买不到了
+    expect:
+      scene: 商品下架原因
+- name: PURCHASE_084_商品下架原因_06
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 商品下架原因
+  scene_description: 商品下架问题，包括为什么下架、已下架、商品停售、没货了、找不到商品、何时上架、重新上架
+  question_example: 商品没了
+  turns:
+  - question: 商品没了
+    expect:
+      scene: 商品下架原因
+- name: PURCHASE_084_商品下架原因_07
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 商品下架原因
+  scene_description: 商品下架问题，包括为什么下架、已下架、商品停售、没货了、找不到商品、何时上架、重新上架
+  question_example: 找不到商品
+  turns:
+  - question: 找不到商品
+    expect:
+      scene: 商品下架原因
+- name: PURCHASE_085_订单加单与合并_01
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单加单与合并
+  scene_description: 加单合并问题，包括订单加单、补拍商品、合并订单、追加购买、加一件货、订单加货
+  question_example: 能加单吗
+  turns:
+  - question: 能加单吗
+    expect:
+      scene: 订单加单与合并
+- name: PURCHASE_085_订单加单与合并_02
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单加单与合并
+  scene_description: 加单合并问题，包括订单加单、补拍商品、合并订单、追加购买、加一件货、订单加货
+  question_example: 能再拍一个吗
+  turns:
+  - question: 能再拍一个吗
+    expect:
+      scene: 订单加单与合并
+- name: PURCHASE_085_订单加单与合并_03
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单加单与合并
+  scene_description: 加单合并问题，包括订单加单、补拍商品、合并订单、追加购买、加一件货、订单加货
+  question_example: 想多买一个
+  turns:
+  - question: 想多买一个
+    expect:
+      scene: 订单加单与合并
+- name: PURCHASE_085_订单加单与合并_04
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单加单与合并
+  scene_description: 加单合并问题，包括订单加单、补拍商品、合并订单、追加购买、加一件货、订单加货
+  question_example: 追加商品
+  turns:
+  - question: 追加商品
+    expect:
+      scene: 订单加单与合并
+- name: PURCHASE_085_订单加单与合并_05
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单加单与合并
+  scene_description: 加单合并问题，包括订单加单、补拍商品、合并订单、追加购买、加一件货、订单加货
+  question_example: 补拍一个
+  turns:
+  - question: 补拍一个
+    expect:
+      scene: 订单加单与合并
+- name: PURCHASE_085_订单加单与合并_06
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单加单与合并
+  scene_description: 加单合并问题，包括订单加单、补拍商品、合并订单、追加购买、加一件货、订单加货
+  question_example: 订单能加货吗
+  turns:
+  - question: 订单能加货吗
+    expect:
+      scene: 订单加单与合并
+- name: PURCHASE_085_订单加单与合并_07
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单加单与合并
+  scene_description: 加单合并问题，包括订单加单、补拍商品、合并订单、追加购买、加一件货、订单加货
+  question_example: 再加一件
+  turns:
+  - question: 再加一件
+    expect:
+      scene: 订单加单与合并
+- name: PURCHASE_085_订单加单与合并_08
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单加单与合并
+  scene_description: 加单合并问题，包括订单加单、补拍商品、合并订单、追加购买、加一件货、订单加货
+  question_example: 能改单吗
+  turns:
+  - question: 能改单吗
+    expect:
+      scene: 订单加单与合并
+- name: PURCHASE_085_订单加单与合并_09
+  category: 购买咨询
+  category_key: PURCHASE
+  scene_name: 订单加单与合并
+  scene_description: 加单合并问题，包括订单加单、补拍商品、合并订单、追加购买、加一件货、订单加货
+  question_example: 合并订单
+  turns:
+  - question: 合并订单
+    expect:
+      scene: 订单加单与合并

@@ -1,0 +1,1810 @@
+suite:
+  name: kb_scene_category_chat
+  mode: sequential
+  quality: true
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+  quality_retries: 10
+  quality_retry_interval_seconds: 2
+  assertions: true
+target_env: dev
+category_groups:
+- key: ALL
+  name: 全部分类
+  count: 227
+- id: 696f3c783dceab0847703e13
+  key: CHAT
+  name: 聊天互动
+  count: 39
+cases:
+- name: CHAT_061_询问是否是机器人_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 询问是否是机器人
+  scene_description: ''
+  question_example: 你是机器人吗
+  turns:
+  - question: 你是机器人吗
+    expect:
+      scene: 询问是否是机器人
+- name: CHAT_061_询问是否是机器人_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 询问是否是机器人
+  scene_description: ''
+  question_example: 是人工客服吗
+  turns:
+  - question: 是人工客服吗
+    expect:
+      scene: 询问是否是机器人
+- name: CHAT_061_询问是否是机器人_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 询问是否是机器人
+  scene_description: ''
+  question_example: 是机器人还是人工
+  turns:
+  - question: 是机器人还是人工
+    expect:
+      scene: 询问是否是机器人
+- name: CHAT_061_询问是否是机器人_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 询问是否是机器人
+  scene_description: ''
+  question_example: 来个真人
+  turns:
+  - question: 来个真人
+    expect:
+      scene: 询问是否是机器人
+- name: CHAT_069_索要联系方式_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 索要联系方式
+  scene_description: 联系方式问题，包括索要电话、电话号码、手机号码、联系方式、电话沟通、QQ微信
+  question_example: 电话多少
+  turns:
+  - question: 电话多少
+    expect:
+      scene: 索要联系方式
+- name: CHAT_069_索要联系方式_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 索要联系方式
+  scene_description: 联系方式问题，包括索要电话、电话号码、手机号码、联系方式、电话沟通、QQ微信
+  question_example: 能电话吗
+  turns:
+  - question: 能电话吗
+    expect:
+      scene: 索要联系方式
+- name: CHAT_069_索要联系方式_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 索要联系方式
+  scene_description: 联系方式问题，包括索要电话、电话号码、手机号码、联系方式、电话沟通、QQ微信
+  question_example: 给个号码
+  turns:
+  - question: 给个号码
+    expect:
+      scene: 索要联系方式
+- name: CHAT_069_索要联系方式_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 索要联系方式
+  scene_description: 联系方式问题，包括索要电话、电话号码、手机号码、联系方式、电话沟通、QQ微信
+  question_example: 有联系方式吗
+  turns:
+  - question: 有联系方式吗
+    expect:
+      scene: 索要联系方式
+- name: CHAT_069_索要联系方式_05
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 索要联系方式
+  scene_description: 联系方式问题，包括索要电话、电话号码、手机号码、联系方式、电话沟通、QQ微信
+  question_example: 电话联系
+  turns:
+  - question: 电话联系
+    expect:
+      scene: 索要联系方式
+- name: CHAT_069_索要联系方式_06
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 索要联系方式
+  scene_description: 联系方式问题，包括索要电话、电话号码、手机号码、联系方式、电话沟通、QQ微信
+  question_example: 怎么联系你们
+  turns:
+  - question: 怎么联系你们
+    expect:
+      scene: 索要联系方式
+- name: CHAT_069_索要联系方式_07
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 索要联系方式
+  scene_description: 联系方式问题，包括索要电话、电话号码、手机号码、联系方式、电话沟通、QQ微信
+  question_example: 手机号多少
+  turns:
+  - question: 手机号多少
+    expect:
+      scene: 索要联系方式
+- name: CHAT_069_索要联系方式_08
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 索要联系方式
+  scene_description: 联系方式问题，包括索要电话、电话号码、手机号码、联系方式、电话沟通、QQ微信
+  question_example: 给个电话
+  turns:
+  - question: 给个电话
+    expect:
+      scene: 索要联系方式
+- name: CHAT_070_好评相关_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 好评相关
+  scene_description: 好评返现问题，包括好评返现、五星好评、晒图评价、评价有礼、好评奖励、已好评、返现活动
+  question_example: 返现吗
+  turns:
+  - question: 返现吗
+    expect:
+      scene: 好评相关
+- name: CHAT_070_好评相关_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 好评相关
+  scene_description: 好评返现问题，包括好评返现、五星好评、晒图评价、评价有礼、好评奖励、已好评、返现活动
+  question_example: 好评有礼吗
+  turns:
+  - question: 好评有礼吗
+    expect:
+      scene: 好评相关
+- name: CHAT_070_好评相关_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 好评相关
+  scene_description: 好评返现问题，包括好评返现、五星好评、晒图评价、评价有礼、好评奖励、已好评、返现活动
+  question_example: 晒图有奖吗
+  turns:
+  - question: 晒图有奖吗
+    expect:
+      scene: 好评相关
+- name: CHAT_070_好评相关_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 好评相关
+  scene_description: 好评返现问题，包括好评返现、五星好评、晒图评价、评价有礼、好评奖励、已好评、返现活动
+  question_example: 给个好评
+  turns:
+  - question: 给个好评
+    expect:
+      scene: 好评相关
+- name: CHAT_070_好评相关_05
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 好评相关
+  scene_description: 好评返现问题，包括好评返现、五星好评、晒图评价、评价有礼、好评奖励、已好评、返现活动
+  question_example: 已好评
+  turns:
+  - question: 已好评
+    expect:
+      scene: 好评相关
+- name: CHAT_070_好评相关_06
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 好评相关
+  scene_description: 好评返现问题，包括好评返现、五星好评、晒图评价、评价有礼、好评奖励、已好评、返现活动
+  question_example: 五星返现
+  turns:
+  - question: 五星返现
+    expect:
+      scene: 好评相关
+- name: CHAT_070_好评相关_07
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 好评相关
+  scene_description: 好评返现问题，包括好评返现、五星好评、晒图评价、评价有礼、好评奖励、已好评、返现活动
+  question_example: 评价有礼
+  turns:
+  - question: 评价有礼
+    expect:
+      scene: 好评相关
+- name: CHAT_070_好评相关_08
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 好评相关
+  scene_description: 好评返现问题，包括好评返现、五星好评、晒图评价、评价有礼、好评奖励、已好评、返现活动
+  question_example: 好评返现活动
+  turns:
+  - question: 好评返现活动
+    expect:
+      scene: 好评相关
+- name: CHAT_070_好评相关_09
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 好评相关
+  scene_description: 好评返现问题，包括好评返现、五星好评、晒图评价、评价有礼、好评奖励、已好评、返现活动
+  question_example: 发图有奖吗
+  turns:
+  - question: 发图有奖吗
+    expect:
+      scene: 好评相关
+- name: CHAT_071_合作推广咨询_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 合作推广咨询
+  scene_description: 合作推广咨询，包括淘客推广、运营合作、带货合作、团购合作、联盟推广、商务合作
+  question_example: 能合作吗
+  turns:
+  - question: 能合作吗
+    expect:
+      scene: 合作推广咨询
+- name: CHAT_071_合作推广咨询_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 合作推广咨询
+  scene_description: 合作推广咨询，包括淘客推广、运营合作、带货合作、团购合作、联盟推广、商务合作
+  question_example: 有推广吗
+  turns:
+  - question: 有推广吗
+    expect:
+      scene: 合作推广咨询
+- name: CHAT_071_合作推广咨询_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 合作推广咨询
+  scene_description: 合作推广咨询，包括淘客推广、运营合作、带货合作、团购合作、联盟推广、商务合作
+  question_example: 能带货吗
+  turns:
+  - question: 能带货吗
+    expect:
+      scene: 合作推广咨询
+- name: CHAT_071_合作推广咨询_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 合作推广咨询
+  scene_description: 合作推广咨询，包括淘客推广、运营合作、带货合作、团购合作、联盟推广、商务合作
+  question_example: 代运营合作
+  turns:
+  - question: 代运营合作
+    expect:
+      scene: 合作推广咨询
+- name: CHAT_071_合作推广咨询_05
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 合作推广咨询
+  scene_description: 合作推广咨询，包括淘客推广、运营合作、带货合作、团购合作、联盟推广、商务合作
+  question_example: 淘客合作
+  turns:
+  - question: 淘客合作
+    expect:
+      scene: 合作推广咨询
+- name: CHAT_071_合作推广咨询_06
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 合作推广咨询
+  scene_description: 合作推广咨询，包括淘客推广、运营合作、带货合作、团购合作、联盟推广、商务合作
+  question_example: 商务合作
+  turns:
+  - question: 商务合作
+    expect:
+      scene: 合作推广咨询
+- name: CHAT_071_合作推广咨询_07
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 合作推广咨询
+  scene_description: 合作推广咨询，包括淘客推广、运营合作、带货合作、团购合作、联盟推广、商务合作
+  question_example: 一起合作
+  turns:
+  - question: 一起合作
+    expect:
+      scene: 合作推广咨询
+- name: CHAT_071_合作推广咨询_08
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 合作推广咨询
+  scene_description: 合作推广咨询，包括淘客推广、运营合作、带货合作、团购合作、联盟推广、商务合作
+  question_example: 有业务合作吗
+  turns:
+  - question: 有业务合作吗
+    expect:
+      scene: 合作推广咨询
+- name: CHAT_072_质疑好评真实性_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 质疑好评真实性
+  scene_description: 质疑刷单好评，包括质疑好评、刷单质疑、虚假好评、刷出来的好评、刷好评、评价真实性
+  question_example: 好评刷的吧
+  turns:
+  - question: 好评刷的吧
+    expect:
+      scene: 质疑好评真实性
+- name: CHAT_072_质疑好评真实性_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 质疑好评真实性
+  scene_description: 质疑刷单好评，包括质疑好评、刷单质疑、虚假好评、刷出来的好评、刷好评、评价真实性
+  question_example: 评价是假的吧
+  turns:
+  - question: 评价是假的吧
+    expect:
+      scene: 质疑好评真实性
+- name: CHAT_072_质疑好评真实性_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 质疑好评真实性
+  scene_description: 质疑刷单好评，包括质疑好评、刷单质疑、虚假好评、刷出来的好评、刷好评、评价真实性
+  question_example: 刷单的吧
+  turns:
+  - question: 刷单的吧
+    expect:
+      scene: 质疑好评真实性
+- name: CHAT_072_质疑好评真实性_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 质疑好评真实性
+  scene_description: 质疑刷单好评，包括质疑好评、刷单质疑、虚假好评、刷出来的好评、刷好评、评价真实性
+  question_example: 好评真实吗
+  turns:
+  - question: 好评真实吗
+    expect:
+      scene: 质疑好评真实性
+- name: CHAT_072_质疑好评真实性_05
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 质疑好评真实性
+  scene_description: 质疑刷单好评，包括质疑好评、刷单质疑、虚假好评、刷出来的好评、刷好评、评价真实性
+  question_example: 评价可信吗
+  turns:
+  - question: 评价可信吗
+    expect:
+      scene: 质疑好评真实性
+- name: CHAT_072_质疑好评真实性_06
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 质疑好评真实性
+  scene_description: 质疑刷单好评，包括质疑好评、刷单质疑、虚假好评、刷出来的好评、刷好评、评价真实性
+  question_example: 这么多好评假的吧
+  turns:
+  - question: 这么多好评假的吧
+    expect:
+      scene: 质疑好评真实性
+- name: CHAT_072_质疑好评真实性_07
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 质疑好评真实性
+  scene_description: 质疑刷单好评，包括质疑好评、刷单质疑、虚假好评、刷出来的好评、刷好评、评价真实性
+  question_example: 刷出来的好评
+  turns:
+  - question: 刷出来的好评
+    expect:
+      scene: 质疑好评真实性
+- name: CHAT_072_质疑好评真实性_08
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 质疑好评真实性
+  scene_description: 质疑刷单好评，包括质疑好评、刷单质疑、虚假好评、刷出来的好评、刷好评、评价真实性
+  question_example: 虚假评价
+  turns:
+  - question: 虚假评价
+    expect:
+      scene: 质疑好评真实性
+- name: CHAT_073_已收到货物_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 已收到货物
+  scene_description: 确认收货问题，包括已收到货物、收到货了、货收到了、确认收货、商品已收到
+  question_example: 收到了
+  turns:
+  - question: 收到了
+    expect:
+      scene: 已收到货物
+- name: CHAT_073_已收到货物_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 已收到货物
+  scene_description: 确认收货问题，包括已收到货物、收到货了、货收到了、确认收货、商品已收到
+  question_example: 货收到了
+  turns:
+  - question: 货收到了
+    expect:
+      scene: 已收到货物
+- name: CHAT_073_已收到货物_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 已收到货物
+  scene_description: 确认收货问题，包括已收到货物、收到货了、货收到了、确认收货、商品已收到
+  question_example: 东西到了
+  turns:
+  - question: 东西到了
+    expect:
+      scene: 已收到货物
+- name: CHAT_073_已收到货物_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 已收到货物
+  scene_description: 确认收货问题，包括已收到货物、收到货了、货收到了、确认收货、商品已收到
+  question_example: 收到了商品
+  turns:
+  - question: 收到了商品
+    expect:
+      scene: 已收到货物
+- name: CHAT_073_已收到货物_05
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 已收到货物
+  scene_description: 确认收货问题，包括已收到货物、收到货了、货收到了、确认收货、商品已收到
+  question_example: 确认收到
+  turns:
+  - question: 确认收到
+    expect:
+      scene: 已收到货物
+- name: CHAT_073_已收到货物_06
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 已收到货物
+  scene_description: 确认收货问题，包括已收到货物、收到货了、货收到了、确认收货、商品已收到
+  question_example: 货已经拿到
+  turns:
+  - question: 货已经拿到
+    expect:
+      scene: 已收到货物
+- name: CHAT_074_收到纯数字信息_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 收到纯数字信息
+  scene_description: 纯数字信息，包括数字输入、误发数字、验证码
+  question_example: '123456'
+  turns:
+  - question: '123456'
+    expect:
+      scene: 收到纯数字信息
+- name: CHAT_074_收到纯数字信息_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 收到纯数字信息
+  scene_description: 纯数字信息，包括数字输入、误发数字、验证码
+  question_example: '8888'
+  turns:
+  - question: '8888'
+    expect:
+      scene: 收到纯数字信息
+- name: CHAT_074_收到纯数字信息_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 收到纯数字信息
+  scene_description: 纯数字信息，包括数字输入、误发数字、验证码
+  question_example: '10086'
+  turns:
+  - question: '10086'
+    expect:
+      scene: 收到纯数字信息
+- name: CHAT_074_收到纯数字信息_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 收到纯数字信息
+  scene_description: 纯数字信息，包括数字输入、误发数字、验证码
+  question_example: 验证码
+  turns:
+  - question: 验证码
+    expect:
+      scene: 收到纯数字信息
+- name: CHAT_074_收到纯数字信息_05
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 收到纯数字信息
+  scene_description: 纯数字信息，包括数字输入、误发数字、验证码
+  question_example: 数字
+  turns:
+  - question: 数字
+    expect:
+      scene: 收到纯数字信息
+- name: CHAT_075_提供地址信息_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 提供地址信息
+  scene_description: 地址信息问题，包括公司/门店/退货/收货等用于联系或寄送的固定地址，不包含发货来源或物流路径相关问题
+  question_example: 发个地址
+  turns:
+  - question: 发个地址
+    expect:
+      scene: 提供地址信息
+- name: CHAT_075_提供地址信息_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 提供地址信息
+  scene_description: 地址信息问题，包括公司/门店/退货/收货等用于联系或寄送的固定地址，不包含发货来源或物流路径相关问题
+  question_example: 公司地址在哪
+  turns:
+  - question: 公司地址在哪
+    expect:
+      scene: 提供地址信息
+- name: CHAT_075_提供地址信息_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 提供地址信息
+  scene_description: 地址信息问题，包括公司/门店/退货/收货等用于联系或寄送的固定地址，不包含发货来源或物流路径相关问题
+  question_example: 退货地址是什么
+  turns:
+  - question: 退货地址是什么
+    expect:
+      scene: 提供地址信息
+- name: CHAT_075_提供地址信息_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 提供地址信息
+  scene_description: 地址信息问题，包括公司/门店/退货/收货等用于联系或寄送的固定地址，不包含发货来源或物流路径相关问题
+  question_example: 退货仓库地址（用于退货）
+  turns:
+  - question: 退货仓库地址（用于退货）
+    expect:
+      scene: 提供地址信息
+- name: CHAT_075_提供地址信息_05
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 提供地址信息
+  scene_description: 地址信息问题，包括公司/门店/退货/收货等用于联系或寄送的固定地址，不包含发货来源或物流路径相关问题
+  question_example: 门店地址在哪里
+  turns:
+  - question: 门店地址在哪里
+    expect:
+      scene: 提供地址信息
+- name: CHAT_092_表示没关系_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示没关系
+  scene_description: ''
+  question_example: 没关系
+  turns:
+  - question: 没关系
+    expect:
+      scene: 表示没关系
+- name: CHAT_092_表示没关系_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示没关系
+  scene_description: ''
+  question_example: 不要紧
+  turns:
+  - question: 不要紧
+    expect:
+      scene: 表示没关系
+- name: CHAT_092_表示没关系_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示没关系
+  scene_description: ''
+  question_example: 这个没关系
+  turns:
+  - question: 这个没关系
+    expect:
+      scene: 表示没关系
+- name: CHAT_092_表示没关系_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示没关系
+  scene_description: ''
+  question_example: 没事的
+  turns:
+  - question: 没事的
+    expect:
+      scene: 表示没关系
+- name: CHAT_093_表示不理解_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示不理解
+  scene_description: ''
+  question_example: 完全看不懂
+  turns:
+  - question: 完全看不懂
+    expect:
+      scene: 表示不理解
+- name: CHAT_093_表示不理解_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示不理解
+  scene_description: ''
+  question_example: 不明白
+  turns:
+  - question: 不明白
+    expect:
+      scene: 表示不理解
+- name: CHAT_093_表示不理解_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示不理解
+  scene_description: ''
+  question_example: 不太懂
+  turns:
+  - question: 不太懂
+    expect:
+      scene: 表示不理解
+- name: CHAT_093_表示不理解_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示不理解
+  scene_description: ''
+  question_example: 理解不了
+  turns:
+  - question: 理解不了
+    expect:
+      scene: 表示不理解
+- name: CHAT_094_不要重复说_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 不要重复说
+  scene_description: ''
+  question_example: 别老是一句话
+  turns:
+  - question: 别老是一句话
+    expect:
+      scene: 不要重复说
+- name: CHAT_094_不要重复说_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 不要重复说
+  scene_description: ''
+  question_example: 你怎么老是说这一句话呢
+  turns:
+  - question: 你怎么老是说这一句话呢
+    expect:
+      scene: 不要重复说
+- name: CHAT_094_不要重复说_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 不要重复说
+  scene_description: ''
+  question_example: 别老是发重复的
+  turns:
+  - question: 别老是发重复的
+    expect:
+      scene: 不要重复说
+- name: CHAT_094_不要重复说_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 不要重复说
+  scene_description: ''
+  question_example: 怎么老是会这句话
+  turns:
+  - question: 怎么老是会这句话
+    expect:
+      scene: 不要重复说
+- name: CHAT_094_不要重复说_05
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 不要重复说
+  scene_description: ''
+  question_example: 不要老说这几句话
+  turns:
+  - question: 不要老说这几句话
+    expect:
+      scene: 不要重复说
+- name: CHAT_095_再见_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 再见
+  scene_description: ''
+  question_example: 拜拜
+  turns:
+  - question: 拜拜
+    expect:
+      scene: 再见
+- name: CHAT_095_再见_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 再见
+  scene_description: ''
+  question_example: 再聊
+  turns:
+  - question: 再聊
+    expect:
+      scene: 再见
+- name: CHAT_095_再见_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 再见
+  scene_description: ''
+  question_example: '886'
+  turns:
+  - question: '886'
+    expect:
+      scene: 再见
+- name: CHAT_095_再见_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 再见
+  scene_description: ''
+  question_example: 再见
+  turns:
+  - question: 再见
+    expect:
+      scene: 再见
+- name: CHAT_095_再见_05
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 再见
+  scene_description: ''
+  question_example: bye
+  turns:
+  - question: bye
+    expect:
+      scene: 再见
+- name: CHAT_096_表示已提交_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示已提交
+  scene_description: ''
+  question_example: 已申请
+  turns:
+  - question: 已申请
+    expect:
+      scene: 表示已提交
+- name: CHAT_096_表示已提交_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示已提交
+  scene_description: ''
+  question_example: 我刚提交了
+  turns:
+  - question: 我刚提交了
+    expect:
+      scene: 表示已提交
+- name: CHAT_096_表示已提交_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示已提交
+  scene_description: ''
+  question_example: 申请完了
+  turns:
+  - question: 申请完了
+    expect:
+      scene: 表示已提交
+- name: CHAT_097_表示否认_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示否认
+  scene_description: ''
+  question_example: 不对
+  turns:
+  - question: 不对
+    expect:
+      scene: 表示否认
+- name: CHAT_097_表示否认_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示否认
+  scene_description: ''
+  question_example: 不是的
+  turns:
+  - question: 不是的
+    expect:
+      scene: 表示否认
+- name: CHAT_097_表示否认_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示否认
+  scene_description: ''
+  question_example: 不可能
+  turns:
+  - question: 不可能
+    expect:
+      scene: 表示否认
+- name: CHAT_098_询问如何处理_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 询问如何处理
+  scene_description: ''
+  question_example: 怎么办
+  turns:
+  - question: 怎么办
+    expect:
+      scene: 询问如何处理
+- name: CHAT_098_询问如何处理_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 询问如何处理
+  scene_description: ''
+  question_example: 怎么解决
+  turns:
+  - question: 怎么解决
+    expect:
+      scene: 询问如何处理
+- name: CHAT_098_询问如何处理_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 询问如何处理
+  scene_description: ''
+  question_example: 怎么处理
+  turns:
+  - question: 怎么处理
+    expect:
+      scene: 询问如何处理
+- name: CHAT_098_询问如何处理_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 询问如何处理
+  scene_description: ''
+  question_example: 你们怎么解决这个问题
+  turns:
+  - question: 你们怎么解决这个问题
+    expect:
+      scene: 询问如何处理
+- name: CHAT_098_询问如何处理_05
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 询问如何处理
+  scene_description: ''
+  question_example: 没有效果怎么办
+  turns:
+  - question: 没有效果怎么办
+    expect:
+      scene: 询问如何处理
+- name: CHAT_098_询问如何处理_06
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 询问如何处理
+  scene_description: ''
+  question_example: 用了感觉没效果怎么办
+  turns:
+  - question: 用了感觉没效果怎么办
+    expect:
+      scene: 询问如何处理
+- name: CHAT_098_询问如何处理_07
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 询问如何处理
+  scene_description: ''
+  question_example: 没效果怎么处理
+  turns:
+  - question: 没效果怎么处理
+    expect:
+      scene: 询问如何处理
+- name: CHAT_098_询问如何处理_08
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 询问如何处理
+  scene_description: ''
+  question_example: 效果不好怎么办
+  turns:
+  - question: 效果不好怎么办
+    expect:
+      scene: 询问如何处理
+- name: CHAT_099_表示满意_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示满意
+  scene_description: ''
+  question_example: 很好
+  turns:
+  - question: 很好
+    expect:
+      scene: 表示满意
+- name: CHAT_099_表示满意_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示满意
+  scene_description: ''
+  question_example: 东西很好很喜欢
+  turns:
+  - question: 东西很好很喜欢
+    expect:
+      scene: 表示满意
+- name: CHAT_099_表示满意_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示满意
+  scene_description: ''
+  question_example: 非常棒
+  turns:
+  - question: 非常棒
+    expect:
+      scene: 表示满意
+- name: CHAT_099_表示满意_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示满意
+  scene_description: ''
+  question_example: 很满意
+  turns:
+  - question: 很满意
+    expect:
+      scene: 表示满意
+- name: CHAT_099_表示满意_05
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示满意
+  scene_description: ''
+  question_example: 很棒
+  turns:
+  - question: 很棒
+    expect:
+      scene: 表示满意
+- name: CHAT_100_表示确认_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示确认
+  scene_description: ''
+  question_example: 嗯嗯
+  turns:
+  - question: 嗯嗯
+    expect:
+      scene: 表示确认
+- name: CHAT_100_表示确认_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示确认
+  scene_description: ''
+  question_example: 对的
+  turns:
+  - question: 对的
+    expect:
+      scene: 表示确认
+- name: CHAT_100_表示确认_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示确认
+  scene_description: ''
+  question_example: 好的
+  turns:
+  - question: 好的
+    expect:
+      scene: 表示确认
+- name: CHAT_100_表示确认_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示确认
+  scene_description: ''
+  question_example: 明白啦
+  turns:
+  - question: 明白啦
+    expect:
+      scene: 表示确认
+- name: CHAT_100_表示确认_05
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示确认
+  scene_description: ''
+  question_example: ok
+  turns:
+  - question: ok
+    expect:
+      scene: 表示确认
+- name: CHAT_100_表示确认_06
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示确认
+  scene_description: ''
+  question_example: 知道了
+  turns:
+  - question: 知道了
+    expect:
+      scene: 表示确认
+- name: CHAT_100_表示确认_07
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示确认
+  scene_description: ''
+  question_example: 可以
+  turns:
+  - question: 可以
+    expect:
+      scene: 表示确认
+- name: CHAT_101_表示威胁/差评_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示威胁/差评
+  scene_description: ''
+  question_example: 我差评了哦
+  turns:
+  - question: 我差评了哦
+    expect:
+      scene: 表示威胁/差评
+- name: CHAT_101_表示威胁/差评_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示威胁/差评
+  scene_description: ''
+  question_example: 已经差评了
+  turns:
+  - question: 已经差评了
+    expect:
+      scene: 表示威胁/差评
+- name: CHAT_101_表示威胁/差评_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示威胁/差评
+  scene_description: ''
+  question_example: 服务差必须差评
+  turns:
+  - question: 服务差必须差评
+    expect:
+      scene: 表示威胁/差评
+- name: CHAT_101_表示威胁/差评_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示威胁/差评
+  scene_description: ''
+  question_example: 别再发了，我给差评了
+  turns:
+  - question: 别再发了，我给差评了
+    expect:
+      scene: 表示威胁/差评
+- name: CHAT_101_表示威胁/差评_05
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示威胁/差评
+  scene_description: ''
+  question_example: 要不我就给你差评
+  turns:
+  - question: 要不我就给你差评
+    expect:
+      scene: 表示威胁/差评
+- name: CHAT_102_要求回复_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 要求回复
+  scene_description: ''
+  question_example: 麻烦给回复一下
+  turns:
+  - question: 麻烦给回复一下
+    expect:
+      scene: 要求回复
+- name: CHAT_102_要求回复_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 要求回复
+  scene_description: ''
+  question_example: 看到了回复下
+  turns:
+  - question: 看到了回复下
+    expect:
+      scene: 要求回复
+- name: CHAT_102_要求回复_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 要求回复
+  scene_description: ''
+  question_example: 回我一下
+  turns:
+  - question: 回我一下
+    expect:
+      scene: 要求回复
+- name: CHAT_103_求帮助_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 求帮助
+  scene_description: ''
+  question_example: 拜托
+  turns:
+  - question: 拜托
+    expect:
+      scene: 求帮助
+- name: CHAT_103_求帮助_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 求帮助
+  scene_description: ''
+  question_example: 帮下忙
+  turns:
+  - question: 帮下忙
+    expect:
+      scene: 求帮助
+- name: CHAT_103_求帮助_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 求帮助
+  scene_description: ''
+  question_example: 求求了
+  turns:
+  - question: 求求了
+    expect:
+      scene: 求帮助
+- name: CHAT_103_求帮助_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 求帮助
+  scene_description: ''
+  question_example: 求助求助
+  turns:
+  - question: 求助求助
+    expect:
+      scene: 求帮助
+- name: CHAT_104_询问工作时间_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 询问工作时间
+  scene_description: ''
+  question_example: 几点在线
+  turns:
+  - question: 几点在线
+    expect:
+      scene: 询问工作时间
+- name: CHAT_104_询问工作时间_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 询问工作时间
+  scene_description: ''
+  question_example: 客服几点上班呢
+  turns:
+  - question: 客服几点上班呢
+    expect:
+      scene: 询问工作时间
+- name: CHAT_104_询问工作时间_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 询问工作时间
+  scene_description: ''
+  question_example: 你们几点上班
+  turns:
+  - question: 你们几点上班
+    expect:
+      scene: 询问工作时间
+- name: CHAT_105_在别家购买_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 在别家购买
+  scene_description: ''
+  question_example: 在另一家店买了
+  turns:
+  - question: 在另一家店买了
+    expect:
+      scene: 在别家购买
+- name: CHAT_105_在别家购买_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 在别家购买
+  scene_description: ''
+  question_example: 已经买了另一家了
+  turns:
+  - question: 已经买了另一家了
+    expect:
+      scene: 在别家购买
+- name: CHAT_105_在别家购买_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 在别家购买
+  scene_description: ''
+  question_example: 在别的地方买了
+  turns:
+  - question: 在别的地方买了
+    expect:
+      scene: 在别家购买
+- name: CHAT_105_在别家购买_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 在别家购买
+  scene_description: ''
+  question_example: 已经在别家店买了
+  turns:
+  - question: 已经在别家店买了
+    expect:
+      scene: 在别家购买
+- name: CHAT_106_表示感谢_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示感谢
+  scene_description: ''
+  question_example: 谢谢啦
+  turns:
+  - question: 谢谢啦
+    expect:
+      scene: 表示感谢
+- name: CHAT_106_表示感谢_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示感谢
+  scene_description: ''
+  question_example: 好的谢谢
+  turns:
+  - question: 好的谢谢
+    expect:
+      scene: 表示感谢
+- name: CHAT_106_表示感谢_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示感谢
+  scene_description: ''
+  question_example: 感谢
+  turns:
+  - question: 感谢
+    expect:
+      scene: 表示感谢
+- name: CHAT_107_表示愤怒_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示愤怒
+  scene_description: ''
+  question_example: 气死我了
+  turns:
+  - question: 气死我了
+    expect:
+      scene: 表示愤怒
+- name: CHAT_107_表示愤怒_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示愤怒
+  scene_description: ''
+  question_example: 烦死了
+  turns:
+  - question: 烦死了
+    expect:
+      scene: 表示愤怒
+- name: CHAT_107_表示愤怒_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示愤怒
+  scene_description: ''
+  question_example: 太坑了吧
+  turns:
+  - question: 太坑了吧
+    expect:
+      scene: 表示愤怒
+- name: CHAT_107_表示愤怒_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示愤怒
+  scene_description: ''
+  question_example: 恶心死了
+  turns:
+  - question: 恶心死了
+    expect:
+      scene: 表示愤怒
+- name: CHAT_108_打招呼_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 打招呼
+  scene_description: ''
+  question_example: 你好呀
+  turns:
+  - question: 你好呀
+    expect:
+      scene: 打招呼
+- name: CHAT_108_打招呼_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 打招呼
+  scene_description: ''
+  question_example: 你好
+  turns:
+  - question: 你好
+    expect:
+      scene: 打招呼
+- name: CHAT_108_打招呼_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 打招呼
+  scene_description: ''
+  question_example: 中午好
+  turns:
+  - question: 中午好
+    expect:
+      scene: 打招呼
+- name: CHAT_108_打招呼_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 打招呼
+  scene_description: ''
+  question_example: 你好，有人吗
+  turns:
+  - question: 你好，有人吗
+    expect:
+      scene: 打招呼
+- name: CHAT_108_打招呼_05
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 打招呼
+  scene_description: ''
+  question_example: 在吗
+  turns:
+  - question: 在吗
+    expect:
+      scene: 打招呼
+- name: CHAT_108_打招呼_06
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 打招呼
+  scene_description: ''
+  question_example: 在没
+  turns:
+  - question: 在没
+    expect:
+      scene: 打招呼
+- name: CHAT_109_表示没找到_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示没找到
+  scene_description: ''
+  question_example: 没看到
+  turns:
+  - question: 没看到
+    expect:
+      scene: 表示没找到
+- name: CHAT_109_表示没找到_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示没找到
+  scene_description: ''
+  question_example: 我没找到
+  turns:
+  - question: 我没找到
+    expect:
+      scene: 表示没找到
+- name: CHAT_109_表示没找到_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示没找到
+  scene_description: ''
+  question_example: 没看见
+  turns:
+  - question: 没看见
+    expect:
+      scene: 表示没找到
+- name: CHAT_109_表示没找到_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示没找到
+  scene_description: ''
+  question_example: 没看到你发的
+  turns:
+  - question: 没看到你发的
+    expect:
+      scene: 表示没找到
+- name: CHAT_110_表示找到了_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示找到了
+  scene_description: ''
+  question_example: 我看见了
+  turns:
+  - question: 我看见了
+    expect:
+      scene: 表示找到了
+- name: CHAT_110_表示找到了_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示找到了
+  scene_description: ''
+  question_example: 看到了
+  turns:
+  - question: 看到了
+    expect:
+      scene: 表示找到了
+- name: CHAT_110_表示找到了_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示找到了
+  scene_description: ''
+  question_example: 找到了
+  turns:
+  - question: 找到了
+    expect:
+      scene: 表示找到了
+- name: CHAT_111_表示放弃_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示放弃
+  scene_description: ''
+  question_example: 那算了吧
+  turns:
+  - question: 那算了吧
+    expect:
+      scene: 表示放弃
+- name: CHAT_111_表示放弃_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示放弃
+  scene_description: ''
+  question_example: 那算了
+  turns:
+  - question: 那算了
+    expect:
+      scene: 表示放弃
+- name: CHAT_111_表示放弃_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示放弃
+  scene_description: ''
+  question_example: 那算了，就那样吧
+  turns:
+  - question: 那算了，就那样吧
+    expect:
+      scene: 表示放弃
+- name: CHAT_112_表示首次购买_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示首次购买
+  scene_description: ''
+  question_example: 第一次买
+  turns:
+  - question: 第一次买
+    expect:
+      scene: 表示首次购买
+- name: CHAT_112_表示首次购买_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示首次购买
+  scene_description: ''
+  question_example: 我是第一次买你家的商品
+  turns:
+  - question: 我是第一次买你家的商品
+    expect:
+      scene: 表示首次购买
+- name: CHAT_112_表示首次购买_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示首次购买
+  scene_description: ''
+  question_example: 第一次买这个
+  turns:
+  - question: 第一次买这个
+    expect:
+      scene: 表示首次购买
+- name: CHAT_113_表示老客户_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示老客户
+  scene_description: ''
+  question_example: 我老客户了
+  turns:
+  - question: 我老客户了
+    expect:
+      scene: 表示老客户
+- name: CHAT_113_表示老客户_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示老客户
+  scene_description: ''
+  question_example: 我是回头客
+  turns:
+  - question: 我是回头客
+    expect:
+      scene: 表示老客户
+- name: CHAT_113_表示老客户_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示老客户
+  scene_description: ''
+  question_example: 在你家买很多次了
+  turns:
+  - question: 在你家买很多次了
+    expect:
+      scene: 表示老客户
+- name: CHAT_113_表示老客户_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示老客户
+  scene_description: ''
+  question_example: 我一直在你家买的
+  turns:
+  - question: 我一直在你家买的
+    expect:
+      scene: 表示老客户
+- name: CHAT_114_表示需要考虑_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示需要考虑
+  scene_description: ''
+  question_example: 我再看看
+  turns:
+  - question: 我再看看
+    expect:
+      scene: 表示需要考虑
+- name: CHAT_114_表示需要考虑_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示需要考虑
+  scene_description: ''
+  question_example: 我考虑一下
+  turns:
+  - question: 我考虑一下
+    expect:
+      scene: 表示需要考虑
+- name: CHAT_114_表示需要考虑_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示需要考虑
+  scene_description: ''
+  question_example: 有点纠结
+  turns:
+  - question: 有点纠结
+    expect:
+      scene: 表示需要考虑
+- name: CHAT_114_表示需要考虑_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示需要考虑
+  scene_description: ''
+  question_example: 我再想想吧
+  turns:
+  - question: 我再想想吧
+    expect:
+      scene: 表示需要考虑
+- name: CHAT_115_表示失望_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示失望
+  scene_description: ''
+  question_example: 太失望了
+  turns:
+  - question: 太失望了
+    expect:
+      scene: 表示失望
+- name: CHAT_115_表示失望_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示失望
+  scene_description: ''
+  question_example: 真让人失望
+  turns:
+  - question: 真让人失望
+    expect:
+      scene: 表示失望
+- name: CHAT_115_表示失望_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示失望
+  scene_description: ''
+  question_example: 失望透顶
+  turns:
+  - question: 失望透顶
+    expect:
+      scene: 表示失望
+- name: CHAT_116_表示歉意_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示歉意
+  scene_description: ''
+  question_example: 麻烦了
+  turns:
+  - question: 麻烦了
+    expect:
+      scene: 表示歉意
+- name: CHAT_116_表示歉意_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示歉意
+  scene_description: ''
+  question_example: 不好意思
+  turns:
+  - question: 不好意思
+    expect:
+      scene: 表示歉意
+- name: CHAT_117_表示相信_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示相信
+  scene_description: ''
+  question_example: 相信你们一次
+  turns:
+  - question: 相信你们一次
+    expect:
+      scene: 表示相信
+- name: CHAT_117_表示相信_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示相信
+  scene_description: ''
+  question_example: 我相信你
+  turns:
+  - question: 我相信你
+    expect:
+      scene: 表示相信
+- name: CHAT_117_表示相信_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示相信
+  scene_description: ''
+  question_example: 我相信你家
+  turns:
+  - question: 我相信你家
+    expect:
+      scene: 表示相信
+- name: CHAT_118_表示还会再来_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示还会再来
+  scene_description: ''
+  question_example: 还会再来的
+  turns:
+  - question: 还会再来的
+    expect:
+      scene: 表示还会再来
+- name: CHAT_118_表示还会再来_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示还会再来
+  scene_description: ''
+  question_example: 好的话下次还会再来的
+  turns:
+  - question: 好的话下次还会再来的
+    expect:
+      scene: 表示还会再来
+- name: CHAT_118_表示还会再来_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示还会再来
+  scene_description: ''
+  question_example: 要是好用的话下次还来
+  turns:
+  - question: 要是好用的话下次还来
+    expect:
+      scene: 表示还会再来
+- name: CHAT_119_要求查看下_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 要求查看下
+  scene_description: ''
+  question_example: 你自己看下
+  turns:
+  - question: 你自己看下
+    expect:
+      scene: 要求查看下
+- name: CHAT_119_要求查看下_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 要求查看下
+  scene_description: ''
+  question_example: 你们自己看看
+  turns:
+  - question: 你们自己看看
+    expect:
+      scene: 要求查看下
+- name: CHAT_119_要求查看下_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 要求查看下
+  scene_description: ''
+  question_example: 你看一下我发的什么
+  turns:
+  - question: 你看一下我发的什么
+    expect:
+      scene: 要求查看下
+- name: CHAT_119_要求查看下_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 要求查看下
+  scene_description: ''
+  question_example: 你们看下聊天记录
+  turns:
+  - question: 你们看下聊天记录
+    expect:
+      scene: 要求查看下
+- name: CHAT_120_表示试试_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示试试
+  scene_description: ''
+  question_example: 好的我试一下
+  turns:
+  - question: 好的我试一下
+    expect:
+      scene: 表示试试
+- name: CHAT_120_表示试试_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示试试
+  scene_description: ''
+  question_example: 我自己试试看
+  turns:
+  - question: 我自己试试看
+    expect:
+      scene: 表示试试
+- name: CHAT_120_表示试试_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示试试
+  scene_description: ''
+  question_example: 我先试一下
+  turns:
+  - question: 我先试一下
+    expect:
+      scene: 表示试试
+- name: CHAT_120_表示试试_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示试试
+  scene_description: ''
+  question_example: 一会试试看吧
+  turns:
+  - question: 一会试试看吧
+    expect:
+      scene: 表示试试
+- name: CHAT_120_表示试试_05
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 表示试试
+  scene_description: ''
+  question_example: 我试一下看看
+  turns:
+  - question: 我试一下看看
+    expect:
+      scene: 表示试试
+- name: CHAT_121_辱骂_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 辱骂
+  scene_description: ''
+  question_example: 垃圾
+  turns:
+  - question: 垃圾
+    expect:
+      scene: 辱骂
+- name: CHAT_121_辱骂_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 辱骂
+  scene_description: ''
+  question_example: 滚
+  turns:
+  - question: 滚
+    expect:
+      scene: 辱骂
+- name: CHAT_121_辱骂_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 辱骂
+  scene_description: ''
+  question_example: 有病
+  turns:
+  - question: 有病
+    expect:
+      scene: 辱骂
+- name: CHAT_121_辱骂_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 辱骂
+  scene_description: ''
+  question_example: 神经病
+  turns:
+  - question: 神经病
+    expect:
+      scene: 辱骂
+- name: CHAT_125_祝福祝愿_01
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 祝福祝愿
+  scene_description: 用户向商家发送祝福祝愿语。
+  question_example: 祝老板生意兴隆财源广进
+  turns:
+  - question: 祝老板生意兴隆财源广进
+    expect:
+      scene: 祝福祝愿
+- name: CHAT_125_祝福祝愿_02
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 祝福祝愿
+  scene_description: 用户向商家发送祝福祝愿语。
+  question_example: 老板生意发大财
+  turns:
+  - question: 老板生意发大财
+    expect:
+      scene: 祝福祝愿
+- name: CHAT_125_祝福祝愿_03
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 祝福祝愿
+  scene_description: 用户向商家发送祝福祝愿语。
+  question_example: 恭喜老板生意兴隆
+  turns:
+  - question: 恭喜老板生意兴隆
+    expect:
+      scene: 祝福祝愿
+- name: CHAT_125_祝福祝愿_04
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 祝福祝愿
+  scene_description: 用户向商家发送祝福祝愿语。
+  question_example: 恭喜发财
+  turns:
+  - question: 恭喜发财
+    expect:
+      scene: 祝福祝愿
+- name: CHAT_125_祝福祝愿_05
+  category: 聊天互动
+  category_key: CHAT
+  scene_name: 祝福祝愿
+  scene_description: 用户向商家发送祝福祝愿语。
+  question_example: 生意兴隆
+  turns:
+  - question: 生意兴隆
+    expect:
+      scene: 祝福祝愿

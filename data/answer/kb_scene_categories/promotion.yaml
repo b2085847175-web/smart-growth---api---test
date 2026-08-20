@@ -1,0 +1,1240 @@
+suite:
+  name: kb_scene_category_promotion
+  mode: sequential
+  quality: true
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+  quality_retries: 10
+  quality_retry_interval_seconds: 2
+  assertions: true
+target_env: dev
+category_groups:
+- key: ALL
+  name: 全部分类
+  count: 227
+- id: 696f3c783dceab0847703e14
+  key: PROMOTION
+  name: 活动优惠
+  count: 14
+cases:
+- name: PROMOTION_123_奖品相关_01
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 奖品相关
+  scene_description: 奖品问题，包括奖品领取、奖品兑换、活动奖品、实物奖品、虚拟奖品
+  question_example: 有奖品吗
+  turns:
+  - question: 有奖品吗
+    expect:
+      scene: 奖品相关
+- name: PROMOTION_123_奖品相关_02
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 奖品相关
+  scene_description: 奖品问题，包括奖品领取、奖品兑换、活动奖品、实物奖品、虚拟奖品
+  question_example: 奖品在哪领
+  turns:
+  - question: 奖品在哪领
+    expect:
+      scene: 奖品相关
+- name: PROMOTION_123_奖品相关_03
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 奖品相关
+  scene_description: 奖品问题，包括奖品领取、奖品兑换、活动奖品、实物奖品、虚拟奖品
+  question_example: 奖品怎么兑换
+  turns:
+  - question: 奖品怎么兑换
+    expect:
+      scene: 奖品相关
+- name: PROMOTION_123_奖品相关_04
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 奖品相关
+  scene_description: 奖品问题，包括奖品领取、奖品兑换、活动奖品、实物奖品、虚拟奖品
+  question_example: 能换奖品吗
+  turns:
+  - question: 能换奖品吗
+    expect:
+      scene: 奖品相关
+- name: PROMOTION_123_奖品相关_05
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 奖品相关
+  scene_description: 奖品问题，包括奖品领取、奖品兑换、活动奖品、实物奖品、虚拟奖品
+  question_example: 活动奖品内容有哪些
+  turns:
+  - question: 活动奖品内容有哪些
+    expect:
+      scene: 奖品相关
+- name: PROMOTION_123_奖品相关_06
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 奖品相关
+  scene_description: 奖品问题，包括奖品领取、奖品兑换、活动奖品、实物奖品、虚拟奖品
+  question_example: 奖品什么时候发
+  turns:
+  - question: 奖品什么时候发
+    expect:
+      scene: 奖品相关
+- name: PROMOTION_123_奖品相关_07
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 奖品相关
+  scene_description: 奖品问题，包括奖品领取、奖品兑换、活动奖品、实物奖品、虚拟奖品
+  question_example: 奖品是什么
+  turns:
+  - question: 奖品是什么
+    expect:
+      scene: 奖品相关
+- name: PROMOTION_123_奖品相关_08
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 奖品相关
+  scene_description: 奖品问题，包括奖品领取、奖品兑换、活动奖品、实物奖品、虚拟奖品
+  question_example: 二等奖是什么
+  turns:
+  - question: 二等奖是什么
+    expect:
+      scene: 奖品相关
+- name: PROMOTION_123_奖品相关_09
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 奖品相关
+  scene_description: 奖品问题，包括奖品领取、奖品兑换、活动奖品、实物奖品、虚拟奖品
+  question_example: 虚拟奖品怎么用
+  turns:
+  - question: 虚拟奖品怎么用
+    expect:
+      scene: 奖品相关
+- name: PROMOTION_202_活动与促销规则_01
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 活动与促销规则
+  scene_description: 活动促销规则，包括优惠活动、秒杀活动、满减优惠、换购活动、活动时间、折扣门槛、活动链接
+  question_example: 有什么活动
+  turns:
+  - question: 有什么活动
+    expect:
+      scene: 活动与促销规则
+- name: PROMOTION_202_活动与促销规则_02
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 活动与促销规则
+  scene_description: 活动促销规则，包括优惠活动、秒杀活动、满减优惠、换购活动、活动时间、折扣门槛、活动链接
+  question_example: 怎么最划算
+  turns:
+  - question: 怎么最划算
+    expect:
+      scene: 活动与促销规则
+- name: PROMOTION_202_活动与促销规则_03
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 活动与促销规则
+  scene_description: 活动促销规则，包括优惠活动、秒杀活动、满减优惠、换购活动、活动时间、折扣门槛、活动链接
+  question_example: 有优惠活动吗
+  turns:
+  - question: 有优惠活动吗
+    expect:
+      scene: 活动与促销规则
+- name: PROMOTION_202_活动与促销规则_04
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 活动与促销规则
+  scene_description: 活动促销规则，包括优惠活动、秒杀活动、满减优惠、换购活动、活动时间、折扣门槛、活动链接
+  question_example: 能参加活动吗
+  turns:
+  - question: 能参加活动吗
+    expect:
+      scene: 活动与促销规则
+- name: PROMOTION_202_活动与促销规则_05
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 活动与促销规则
+  scene_description: 活动促销规则，包括优惠活动、秒杀活动、满减优惠、换购活动、活动时间、折扣门槛、活动链接
+  question_example: 秒杀怎么参加
+  turns:
+  - question: 秒杀怎么参加
+    expect:
+      scene: 活动与促销规则
+- name: PROMOTION_202_活动与促销规则_06
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 活动与促销规则
+  scene_description: 活动促销规则，包括优惠活动、秒杀活动、满减优惠、换购活动、活动时间、折扣门槛、活动链接
+  question_example: 有满减活动吗
+  turns:
+  - question: 有满减活动吗
+    expect:
+      scene: 活动与促销规则
+- name: PROMOTION_202_活动与促销规则_07
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 活动与促销规则
+  scene_description: 活动促销规则，包括优惠活动、秒杀活动、满减优惠、换购活动、活动时间、折扣门槛、活动链接
+  question_example: 老客户有优惠吗
+  turns:
+  - question: 老客户有优惠吗
+    expect:
+      scene: 活动与促销规则
+- name: PROMOTION_202_活动与促销规则_08
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 活动与促销规则
+  scene_description: 活动促销规则，包括优惠活动、秒杀活动、满减优惠、换购活动、活动时间、折扣门槛、活动链接
+  question_example: 焕新周活动是什么
+  turns:
+  - question: 焕新周活动是什么
+    expect:
+      scene: 活动与促销规则
+- name: PROMOTION_202_活动与促销规则_09
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 活动与促销规则
+  scene_description: 活动促销规则，包括优惠活动、秒杀活动、满减优惠、换购活动、活动时间、折扣门槛、活动链接
+  question_example: 满赠联名礼包规则是什么
+  turns:
+  - question: 满赠联名礼包规则是什么
+    expect:
+      scene: 活动与促销规则
+- name: PROMOTION_202_活动与促销规则_10
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 活动与促销规则
+  scene_description: 活动促销规则，包括优惠活动、秒杀活动、满减优惠、换购活动、活动时间、折扣门槛、活动链接
+  question_example: 有免单活动吗
+  turns:
+  - question: 有免单活动吗
+    expect:
+      scene: 活动与促销规则
+- name: PROMOTION_202_活动与促销规则_11
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 活动与促销规则
+  scene_description: 活动促销规则，包括优惠活动、秒杀活动、满减优惠、换购活动、活动时间、折扣门槛、活动链接
+  question_example: 多次购买有优惠吗
+  turns:
+  - question: 多次购买有优惠吗
+    expect:
+      scene: 活动与促销规则
+- name: PROMOTION_203_购物金相关_01
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 购物金相关
+  scene_description: 购物金问题，包括购物金充值、购物金使用、购物金抵扣、购物金有效期、购物金退款、购物金查询
+  question_example: 什么是购物金
+  turns:
+  - question: 什么是购物金
+    expect:
+      scene: 购物金相关
+- name: PROMOTION_203_购物金相关_02
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 购物金相关
+  scene_description: 购物金问题，包括购物金充值、购物金使用、购物金抵扣、购物金有效期、购物金退款、购物金查询
+  question_example: 购物金怎么用
+  turns:
+  - question: 购物金怎么用
+    expect:
+      scene: 购物金相关
+- name: PROMOTION_203_购物金相关_03
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 购物金相关
+  scene_description: 购物金问题，包括购物金充值、购物金使用、购物金抵扣、购物金有效期、购物金退款、购物金查询
+  question_example: 购物金怎么充值
+  turns:
+  - question: 购物金怎么充值
+    expect:
+      scene: 购物金相关
+- name: PROMOTION_203_购物金相关_04
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 购物金相关
+  scene_description: 购物金问题，包括购物金充值、购物金使用、购物金抵扣、购物金有效期、购物金退款、购物金查询
+  question_example: 用购物金有积分吗
+  turns:
+  - question: 用购物金有积分吗
+    expect:
+      scene: 购物金相关
+- name: PROMOTION_203_购物金相关_05
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 购物金相关
+  scene_description: 购物金问题，包括购物金充值、购物金使用、购物金抵扣、购物金有效期、购物金退款、购物金查询
+  question_example: 购物金能提现吗
+  turns:
+  - question: 购物金能提现吗
+    expect:
+      scene: 购物金相关
+- name: PROMOTION_203_购物金相关_06
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 购物金相关
+  scene_description: 购物金问题，包括购物金充值、购物金使用、购物金抵扣、购物金有效期、购物金退款、购物金查询
+  question_example: 购物金有效期多久
+  turns:
+  - question: 购物金有效期多久
+    expect:
+      scene: 购物金相关
+- name: PROMOTION_203_购物金相关_07
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 购物金相关
+  scene_description: 购物金问题，包括购物金充值、购物金使用、购物金抵扣、购物金有效期、购物金退款、购物金查询
+  question_example: 购物金怎么抵扣
+  turns:
+  - question: 购物金怎么抵扣
+    expect:
+      scene: 购物金相关
+- name: PROMOTION_203_购物金相关_08
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 购物金相关
+  scene_description: 购物金问题，包括购物金充值、购物金使用、购物金抵扣、购物金有效期、购物金退款、购物金查询
+  question_example: 有膨胀金吗
+  turns:
+  - question: 有膨胀金吗
+    expect:
+      scene: 购物金相关
+- name: PROMOTION_204_购物券相关_01
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 购物券相关
+  scene_description: 购物券问题，包括购物券领取、购物券使用、购物券退款、购物券未收到、购物券过期
+  question_example: 购物券在哪领
+  turns:
+  - question: 购物券在哪领
+    expect:
+      scene: 购物券相关
+- name: PROMOTION_204_购物券相关_02
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 购物券相关
+  scene_description: 购物券问题，包括购物券领取、购物券使用、购物券退款、购物券未收到、购物券过期
+  question_example: 购物券怎么用
+  turns:
+  - question: 购物券怎么用
+    expect:
+      scene: 购物券相关
+- name: PROMOTION_204_购物券相关_03
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 购物券相关
+  scene_description: 购物券问题，包括购物券领取、购物券使用、购物券退款、购物券未收到、购物券过期
+  question_example: 有购物券吗
+  turns:
+  - question: 有购物券吗
+    expect:
+      scene: 购物券相关
+- name: PROMOTION_204_购物券相关_04
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 购物券相关
+  scene_description: 购物券问题，包括购物券领取、购物券使用、购物券退款、购物券未收到、购物券过期
+  question_example: 购物券怎么没看到
+  turns:
+  - question: 购物券怎么没看到
+    expect:
+      scene: 购物券相关
+- name: PROMOTION_204_购物券相关_05
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 购物券相关
+  scene_description: 购物券问题，包括购物券领取、购物券使用、购物券退款、购物券未收到、购物券过期
+  question_example: 购物券过期了怎么办
+  turns:
+  - question: 购物券过期了怎么办
+    expect:
+      scene: 购物券相关
+- name: PROMOTION_204_购物券相关_06
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 购物券相关
+  scene_description: 购物券问题，包括购物券领取、购物券使用、购物券退款、购物券未收到、购物券过期
+  question_example: 购物券能叠加吗
+  turns:
+  - question: 购物券能叠加吗
+    expect:
+      scene: 购物券相关
+- name: PROMOTION_204_购物券相关_07
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 购物券相关
+  scene_description: 购物券问题，包括购物券领取、购物券使用、购物券退款、购物券未收到、购物券过期
+  question_example: 购物券怎么用不了
+  turns:
+  - question: 购物券怎么用不了
+    expect:
+      scene: 购物券相关
+- name: PROMOTION_204_购物券相关_08
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 购物券相关
+  scene_description: 购物券问题，包括购物券领取、购物券使用、购物券退款、购物券未收到、购物券过期
+  question_example: 退款购物券返吗
+  turns:
+  - question: 退款购物券返吗
+    expect:
+      scene: 购物券相关
+- name: PROMOTION_205_优惠券相关_01
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 优惠券相关
+  scene_description: 优惠券问题，包括优惠券领取、优惠券使用、优惠券返券、优惠券退款、店铺优惠券、满减券
+  question_example: 有优惠券吗
+  turns:
+  - question: 有优惠券吗
+    expect:
+      scene: 优惠券相关
+- name: PROMOTION_205_优惠券相关_02
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 优惠券相关
+  scene_description: 优惠券问题，包括优惠券领取、优惠券使用、优惠券返券、优惠券退款、店铺优惠券、满减券
+  question_example: 优惠券在哪
+  turns:
+  - question: 优惠券在哪
+    expect:
+      scene: 优惠券相关
+- name: PROMOTION_205_优惠券相关_03
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 优惠券相关
+  scene_description: 优惠券问题，包括优惠券领取、优惠券使用、优惠券返券、优惠券退款、店铺优惠券、满减券
+  question_example: 优惠券怎么领
+  turns:
+  - question: 优惠券怎么领
+    expect:
+      scene: 优惠券相关
+- name: PROMOTION_205_优惠券相关_04
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 优惠券相关
+  scene_description: 优惠券问题，包括优惠券领取、优惠券使用、优惠券返券、优惠券退款、店铺优惠券、满减券
+  question_example: 能发张券吗
+  turns:
+  - question: 能发张券吗
+    expect:
+      scene: 优惠券相关
+- name: PROMOTION_205_优惠券相关_05
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 优惠券相关
+  scene_description: 优惠券问题，包括优惠券领取、优惠券使用、优惠券返券、优惠券退款、店铺优惠券、满减券
+  question_example: 满减券有吗
+  turns:
+  - question: 满减券有吗
+    expect:
+      scene: 优惠券相关
+- name: PROMOTION_205_优惠券相关_06
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 优惠券相关
+  scene_description: 优惠券问题，包括优惠券领取、优惠券使用、优惠券返券、优惠券退款、店铺优惠券、满减券
+  question_example: 优惠券怎么用
+  turns:
+  - question: 优惠券怎么用
+    expect:
+      scene: 优惠券相关
+- name: PROMOTION_205_优惠券相关_07
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 优惠券相关
+  scene_description: 优惠券问题，包括优惠券领取、优惠券使用、优惠券返券、优惠券退款、店铺优惠券、满减券
+  question_example: 有券吗
+  turns:
+  - question: 有券吗
+    expect:
+      scene: 优惠券相关
+- name: PROMOTION_205_优惠券相关_08
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 优惠券相关
+  scene_description: 优惠券问题，包括优惠券领取、优惠券使用、优惠券返券、优惠券退款、店铺优惠券、满减券
+  question_example: 怎么领券
+  turns:
+  - question: 怎么领券
+    expect:
+      scene: 优惠券相关
+- name: PROMOTION_205_优惠券相关_09
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 优惠券相关
+  scene_description: 优惠券问题，包括优惠券领取、优惠券使用、优惠券返券、优惠券退款、店铺优惠券、满减券
+  question_example: 券在什么地方
+  turns:
+  - question: 券在什么地方
+    expect:
+      scene: 优惠券相关
+- name: PROMOTION_205_优惠券相关_10
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 优惠券相关
+  scene_description: 优惠券问题，包括优惠券领取、优惠券使用、优惠券返券、优惠券退款、店铺优惠券、满减券
+  question_example: 能用券吗
+  turns:
+  - question: 能用券吗
+    expect:
+      scene: 优惠券相关
+- name: PROMOTION_205_优惠券相关_11
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 优惠券相关
+  scene_description: 优惠券问题，包括优惠券领取、优惠券使用、优惠券返券、优惠券退款、店铺优惠券、满减券
+  question_example: 返券活动有吗
+  turns:
+  - question: 返券活动有吗
+    expect:
+      scene: 优惠券相关
+- name: PROMOTION_206_红包相关_01
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 红包相关
+  scene_description: 红包问题，包括返红包、红包使用、红包领取、红包退款、红包未收到、红包有效期
+  question_example: 有红包吗
+  turns:
+  - question: 有红包吗
+    expect:
+      scene: 红包相关
+- name: PROMOTION_206_红包相关_02
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 红包相关
+  scene_description: 红包问题，包括返红包、红包使用、红包领取、红包退款、红包未收到、红包有效期
+  question_example: 红包怎么用
+  turns:
+  - question: 红包怎么用
+    expect:
+      scene: 红包相关
+- name: PROMOTION_206_红包相关_03
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 红包相关
+  scene_description: 红包问题，包括返红包、红包使用、红包领取、红包退款、红包未收到、红包有效期
+  question_example: 红包在哪领
+  turns:
+  - question: 红包在哪领
+    expect:
+      scene: 红包相关
+- name: PROMOTION_206_红包相关_04
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 红包相关
+  scene_description: 红包问题，包括返红包、红包使用、红包领取、红包退款、红包未收到、红包有效期
+  question_example: 返红包是真的吗
+  turns:
+  - question: 返红包是真的吗
+    expect:
+      scene: 红包相关
+- name: PROMOTION_206_红包相关_05
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 红包相关
+  scene_description: 红包问题，包括返红包、红包使用、红包领取、红包退款、红包未收到、红包有效期
+  question_example: 红包怎么没到账
+  turns:
+  - question: 红包怎么没到账
+    expect:
+      scene: 红包相关
+- name: PROMOTION_206_红包相关_06
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 红包相关
+  scene_description: 红包问题，包括返红包、红包使用、红包领取、红包退款、红包未收到、红包有效期
+  question_example: 红包能用吗
+  turns:
+  - question: 红包能用吗
+    expect:
+      scene: 红包相关
+- name: PROMOTION_206_红包相关_07
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 红包相关
+  scene_description: 红包问题，包括返红包、红包使用、红包领取、红包退款、红包未收到、红包有效期
+  question_example: 红包能叠加吗
+  turns:
+  - question: 红包能叠加吗
+    expect:
+      scene: 红包相关
+- name: PROMOTION_206_红包相关_08
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 红包相关
+  scene_description: 红包问题，包括返红包、红包使用、红包领取、红包退款、红包未收到、红包有效期
+  question_example: 退款成功后红包会退回吗
+  turns:
+  - question: 退款成功后红包会退回吗
+    expect:
+      scene: 红包相关
+- name: PROMOTION_207_直播专属规则_01
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 直播专属规则
+  scene_description: 直播专属优惠，包括直播价格、直播优惠、直播抽奖、直播间福利、直播领券、直播互动、主播价
+  question_example: 直播间什么价
+  turns:
+  - question: 直播间什么价
+    expect:
+      scene: 直播专属规则
+- name: PROMOTION_207_直播专属规则_02
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 直播专属规则
+  scene_description: 直播专属优惠，包括直播价格、直播优惠、直播抽奖、直播间福利、直播领券、直播互动、主播价
+  question_example: 直播有优惠吗
+  turns:
+  - question: 直播有优惠吗
+    expect:
+      scene: 直播专属规则
+- name: PROMOTION_207_直播专属规则_03
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 直播专属规则
+  scene_description: 直播专属优惠，包括直播价格、直播优惠、直播抽奖、直播间福利、直播领券、直播互动、主播价
+  question_example: 直播间福利
+  turns:
+  - question: 直播间福利
+    expect:
+      scene: 直播专属规则
+- name: PROMOTION_207_直播专属规则_04
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 直播专属规则
+  scene_description: 直播专属优惠，包括直播价格、直播优惠、直播抽奖、直播间福利、直播领券、直播互动、主播价
+  question_example: 主播价多少
+  turns:
+  - question: 主播价多少
+    expect:
+      scene: 直播专属规则
+- name: PROMOTION_207_直播专属规则_05
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 直播专属规则
+  scene_description: 直播专属优惠，包括直播价格、直播优惠、直播抽奖、直播间福利、直播领券、直播互动、主播价
+  question_example: 直播有抽奖吗
+  turns:
+  - question: 直播有抽奖吗
+    expect:
+      scene: 直播专属规则
+- name: PROMOTION_207_直播专属规则_06
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 直播专属规则
+  scene_description: 直播专属优惠，包括直播价格、直播优惠、直播抽奖、直播间福利、直播领券、直播互动、主播价
+  question_example: 直播间券怎么领
+  turns:
+  - question: 直播间券怎么领
+    expect:
+      scene: 直播专属规则
+- name: PROMOTION_207_直播专属规则_07
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 直播专属规则
+  scene_description: 直播专属优惠，包括直播价格、直播优惠、直播抽奖、直播间福利、直播领券、直播互动、主播价
+  question_example: 看直播有优惠吗
+  turns:
+  - question: 看直播有优惠吗
+    expect:
+      scene: 直播专属规则
+- name: PROMOTION_207_直播专属规则_08
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 直播专属规则
+  scene_description: 直播专属优惠，包括直播价格、直播优惠、直播抽奖、直播间福利、直播领券、直播互动、主播价
+  question_example: 直播专享价
+  turns:
+  - question: 直播专享价
+    expect:
+      scene: 直播专属规则
+- name: PROMOTION_207_直播专属规则_09
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 直播专属规则
+  scene_description: 直播专属优惠，包括直播价格、直播优惠、直播抽奖、直播间福利、直播领券、直播互动、主播价
+  question_example: 直播间互动有奖吗
+  turns:
+  - question: 直播间互动有奖吗
+    expect:
+      scene: 直播专属规则
+- name: PROMOTION_208_会员权益说明_01
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 会员权益说明
+  scene_description: 会员权益问题，包括会员开通、会员特权、VIP会员、会员等级、会员折扣、退订会员、会员收费
+  question_example: 会员有什么好处
+  turns:
+  - question: 会员有什么好处
+    expect:
+      scene: 会员权益说明
+- name: PROMOTION_208_会员权益说明_02
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 会员权益说明
+  scene_description: 会员权益问题，包括会员开通、会员特权、VIP会员、会员等级、会员折扣、退订会员、会员收费
+  question_example: 怎么开通会员
+  turns:
+  - question: 怎么开通会员
+    expect:
+      scene: 会员权益说明
+- name: PROMOTION_208_会员权益说明_03
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 会员权益说明
+  scene_description: 会员权益问题，包括会员开通、会员特权、VIP会员、会员等级、会员折扣、退订会员、会员收费
+  question_example: 会员要钱吗
+  turns:
+  - question: 会员要钱吗
+    expect:
+      scene: 会员权益说明
+- name: PROMOTION_208_会员权益说明_04
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 会员权益说明
+  scene_description: 会员权益问题，包括会员开通、会员特权、VIP会员、会员等级、会员折扣、退订会员、会员收费
+  question_example: 是会员吗
+  turns:
+  - question: 是会员吗
+    expect:
+      scene: 会员权益说明
+- name: PROMOTION_208_会员权益说明_05
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 会员权益说明
+  scene_description: 会员权益问题，包括会员开通、会员特权、VIP会员、会员等级、会员折扣、退订会员、会员收费
+  question_example: 会员能打折吗
+  turns:
+  - question: 会员能打折吗
+    expect:
+      scene: 会员权益说明
+- name: PROMOTION_208_会员权益说明_06
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 会员权益说明
+  scene_description: 会员权益问题，包括会员开通、会员特权、VIP会员、会员等级、会员折扣、退订会员、会员收费
+  question_example: VIP有什么特权
+  turns:
+  - question: VIP有什么特权
+    expect:
+      scene: 会员权益说明
+- name: PROMOTION_208_会员权益说明_07
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 会员权益说明
+  scene_description: 会员权益问题，包括会员开通、会员特权、VIP会员、会员等级、会员折扣、退订会员、会员收费
+  question_example: 入会礼是什么
+  turns:
+  - question: 入会礼是什么
+    expect:
+      scene: 会员权益说明
+- name: PROMOTION_209_预售尾款支付流程_01
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 预售尾款支付流程
+  scene_description: 预售尾款问题，包括尾款支付、尾款时间、忘记付尾款、无法付尾款、尾款催付、定金尾款
+  question_example: 尾款什么时候付
+  turns:
+  - question: 尾款什么时候付
+    expect:
+      scene: 预售尾款支付流程
+- name: PROMOTION_209_预售尾款支付流程_02
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 预售尾款支付流程
+  scene_description: 预售尾款问题，包括尾款支付、尾款时间、忘记付尾款、无法付尾款、尾款催付、定金尾款
+  question_example: 忘记付尾款了
+  turns:
+  - question: 忘记付尾款了
+    expect:
+      scene: 预售尾款支付流程
+- name: PROMOTION_209_预售尾款支付流程_03
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 预售尾款支付流程
+  scene_description: 预售尾款问题，包括尾款支付、尾款时间、忘记付尾款、无法付尾款、尾款催付、定金尾款
+  question_example: 尾款在哪付
+  turns:
+  - question: 尾款在哪付
+    expect:
+      scene: 预售尾款支付流程
+- name: PROMOTION_209_预售尾款支付流程_04
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 预售尾款支付流程
+  scene_description: 预售尾款问题，包括尾款支付、尾款时间、忘记付尾款、无法付尾款、尾款催付、定金尾款
+  question_example: 付尾款有提醒吗
+  turns:
+  - question: 付尾款有提醒吗
+    expect:
+      scene: 预售尾款支付流程
+- name: PROMOTION_209_预售尾款支付流程_05
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 预售尾款支付流程
+  scene_description: 预售尾款问题，包括尾款支付、尾款时间、忘记付尾款、无法付尾款、尾款催付、定金尾款
+  question_example: 尾款付不了怎么办
+  turns:
+  - question: 尾款付不了怎么办
+    expect:
+      scene: 预售尾款支付流程
+- name: PROMOTION_209_预售尾款支付流程_06
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 预售尾款支付流程
+  scene_description: 预售尾款问题，包括尾款支付、尾款时间、忘记付尾款、无法付尾款、尾款催付、定金尾款
+  question_example: 定金尾款怎么算
+  turns:
+  - question: 定金尾款怎么算
+    expect:
+      scene: 预售尾款支付流程
+- name: PROMOTION_209_预售尾款支付流程_07
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 预售尾款支付流程
+  scene_description: 预售尾款问题，包括尾款支付、尾款时间、忘记付尾款、无法付尾款、尾款催付、定金尾款
+  question_example: 尾款时间到了吗
+  turns:
+  - question: 尾款时间到了吗
+    expect:
+      scene: 预售尾款支付流程
+- name: PROMOTION_209_预售尾款支付流程_08
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 预售尾款支付流程
+  scene_description: 预售尾款问题，包括尾款支付、尾款时间、忘记付尾款、无法付尾款、尾款催付、定金尾款
+  question_example: 能提前付尾款吗
+  turns:
+  - question: 能提前付尾款吗
+    expect:
+      scene: 预售尾款支付流程
+- name: PROMOTION_210_免息规则说明_01
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 免息规则说明
+  scene_description: 免息分期问题，包括免息活动、分期期数、免息条件、手续费利息、分期付款、信用卡分期
+  question_example: 这个免息吗
+  turns:
+  - question: 这个免息吗
+    expect:
+      scene: 免息规则说明
+- name: PROMOTION_210_免息规则说明_02
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 免息规则说明
+  scene_description: 免息分期问题，包括免息活动、分期期数、免息条件、手续费利息、分期付款、信用卡分期
+  question_example: 几期免息
+  turns:
+  - question: 几期免息
+    expect:
+      scene: 免息规则说明
+- name: PROMOTION_210_免息规则说明_03
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 免息规则说明
+  scene_description: 免息分期问题，包括免息活动、分期期数、免息条件、手续费利息、分期付款、信用卡分期
+  question_example: 有免息活动吗
+  turns:
+  - question: 有免息活动吗
+    expect:
+      scene: 免息规则说明
+- name: PROMOTION_210_免息规则说明_04
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 免息规则说明
+  scene_description: 免息分期问题，包括免息活动、分期期数、免息条件、手续费利息、分期付款、信用卡分期
+  question_example: 手续费多少
+  turns:
+  - question: 手续费多少
+    expect:
+      scene: 免息规则说明
+- name: PROMOTION_210_免息规则说明_05
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 免息规则说明
+  scene_description: 免息分期问题，包括免息活动、分期期数、免息条件、手续费利息、分期付款、信用卡分期
+  question_example: 怎么免息分期
+  turns:
+  - question: 怎么免息分期
+    expect:
+      scene: 免息规则说明
+- name: PROMOTION_210_免息规则说明_06
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 免息规则说明
+  scene_description: 免息分期问题，包括免息活动、分期期数、免息条件、手续费利息、分期付款、信用卡分期
+  question_example: 能分期吗
+  turns:
+  - question: 能分期吗
+    expect:
+      scene: 免息规则说明
+- name: PROMOTION_210_免息规则说明_07
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 免息规则说明
+  scene_description: 免息分期问题，包括免息活动、分期期数、免息条件、手续费利息、分期付款、信用卡分期
+  question_example: 免息是真的吗
+  turns:
+  - question: 免息是真的吗
+    expect:
+      scene: 免息规则说明
+- name: PROMOTION_210_免息规则说明_08
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 免息规则说明
+  scene_description: 免息分期问题，包括免息活动、分期期数、免息条件、手续费利息、分期付款、信用卡分期
+  question_example: 分期要利息吗
+  turns:
+  - question: 分期要利息吗
+    expect:
+      scene: 免息规则说明
+- name: PROMOTION_210_免息规则说明_09
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 免息规则说明
+  scene_description: 免息分期问题，包括免息活动、分期期数、免息条件、手续费利息、分期付款、信用卡分期
+  question_example: 几期手续费免
+  turns:
+  - question: 几期手续费免
+    expect:
+      scene: 免息规则说明
+- name: PROMOTION_210_免息规则说明_10
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 免息规则说明
+  scene_description: 免息分期问题，包括免息活动、分期期数、免息条件、手续费利息、分期付款、信用卡分期
+  question_example: 支持信用卡分期吗
+  turns:
+  - question: 支持信用卡分期吗
+    expect:
+      scene: 免息规则说明
+- name: PROMOTION_211_补贴相关政策_01
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 补贴相关政策
+  scene_description: 补贴政策问题，包括国家补贴、店铺补贴、政府补贴、补贴领取、补贴时间、补贴条件、补贴金额
+  question_example: 有补贴吗
+  turns:
+  - question: 有补贴吗
+    expect:
+      scene: 补贴相关政策
+- name: PROMOTION_211_补贴相关政策_02
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 补贴相关政策
+  scene_description: 补贴政策问题，包括国家补贴、店铺补贴、政府补贴、补贴领取、补贴时间、补贴条件、补贴金额
+  question_example: 国家补贴多少
+  turns:
+  - question: 国家补贴多少
+    expect:
+      scene: 补贴相关政策
+- name: PROMOTION_211_补贴相关政策_03
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 补贴相关政策
+  scene_description: 补贴政策问题，包括国家补贴、店铺补贴、政府补贴、补贴领取、补贴时间、补贴条件、补贴金额
+  question_example: 补贴怎么领
+  turns:
+  - question: 补贴怎么领
+    expect:
+      scene: 补贴相关政策
+- name: PROMOTION_211_补贴相关政策_04
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 补贴相关政策
+  scene_description: 补贴政策问题，包括国家补贴、店铺补贴、政府补贴、补贴领取、补贴时间、补贴条件、补贴金额
+  question_example: 店铺有补贴吗
+  turns:
+  - question: 店铺有补贴吗
+    expect:
+      scene: 补贴相关政策
+- name: PROMOTION_211_补贴相关政策_05
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 补贴相关政策
+  scene_description: 补贴政策问题，包括国家补贴、店铺补贴、政府补贴、补贴领取、补贴时间、补贴条件、补贴金额
+  question_example: 补贴政策是什么
+  turns:
+  - question: 补贴政策是什么
+    expect:
+      scene: 补贴相关政策
+- name: PROMOTION_211_补贴相关政策_06
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 补贴相关政策
+  scene_description: 补贴政策问题，包括国家补贴、店铺补贴、政府补贴、补贴领取、补贴时间、补贴条件、补贴金额
+  question_example: 谁能享受补贴
+  turns:
+  - question: 谁能享受补贴
+    expect:
+      scene: 补贴相关政策
+- name: PROMOTION_211_补贴相关政策_07
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 补贴相关政策
+  scene_description: 补贴政策问题，包括国家补贴、店铺补贴、政府补贴、补贴领取、补贴时间、补贴条件、补贴金额
+  question_example: 补贴什么时候发
+  turns:
+  - question: 补贴什么时候发
+    expect:
+      scene: 补贴相关政策
+- name: PROMOTION_211_补贴相关政策_08
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 补贴相关政策
+  scene_description: 补贴政策问题，包括国家补贴、店铺补贴、政府补贴、补贴领取、补贴时间、补贴条件、补贴金额
+  question_example: 补贴到账了吗
+  turns:
+  - question: 补贴到账了吗
+    expect:
+      scene: 补贴相关政策
+- name: PROMOTION_211_补贴相关政策_09
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 补贴相关政策
+  scene_description: 补贴政策问题，包括国家补贴、店铺补贴、政府补贴、补贴领取、补贴时间、补贴条件、补贴金额
+  question_example: 怎么申请补贴
+  turns:
+  - question: 怎么申请补贴
+    expect:
+      scene: 补贴相关政策
+- name: PROMOTION_212_试用装规则说明_01
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 试用装规则说明
+  scene_description: 试用装问题，包括小样试用、试用装领取、试用装免费、试用装数量、试用装链接、试用装型号
+  question_example: 有小样吗
+  turns:
+  - question: 有小样吗
+    expect:
+      scene: 试用装规则说明
+- name: PROMOTION_212_试用装规则说明_02
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 试用装规则说明
+  scene_description: 试用装问题，包括小样试用、试用装领取、试用装免费、试用装数量、试用装链接、试用装型号
+  question_example: 有试用装吗
+  turns:
+  - question: 有试用装吗
+    expect:
+      scene: 试用装规则说明
+- name: PROMOTION_212_试用装规则说明_03
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 试用装规则说明
+  scene_description: 试用装问题，包括小样试用、试用装领取、试用装免费、试用装数量、试用装链接、试用装型号
+  question_example: 送试用装吗
+  turns:
+  - question: 送试用装吗
+    expect:
+      scene: 试用装规则说明
+- name: PROMOTION_212_试用装规则说明_04
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 试用装规则说明
+  scene_description: 试用装问题，包括小样试用、试用装领取、试用装免费、试用装数量、试用装链接、试用装型号
+  question_example: 试用装怎么领
+  turns:
+  - question: 试用装怎么领
+    expect:
+      scene: 试用装规则说明
+- name: PROMOTION_212_试用装规则说明_05
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 试用装规则说明
+  scene_description: 试用装问题，包括小样试用、试用装领取、试用装免费、试用装数量、试用装链接、试用装型号
+  question_example: 试用装免费吗
+  turns:
+  - question: 试用装免费吗
+    expect:
+      scene: 试用装规则说明
+- name: PROMOTION_212_试用装规则说明_06
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 试用装规则说明
+  scene_description: 试用装问题，包括小样试用、试用装领取、试用装免费、试用装数量、试用装链接、试用装型号
+  question_example: 有样品吗
+  turns:
+  - question: 有样品吗
+    expect:
+      scene: 试用装规则说明
+- name: PROMOTION_212_试用装规则说明_07
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 试用装规则说明
+  scene_description: 试用装问题，包括小样试用、试用装领取、试用装免费、试用装数量、试用装链接、试用装型号
+  question_example: 试用装多少钱
+  turns:
+  - question: 试用装多少钱
+    expect:
+      scene: 试用装规则说明
+- name: PROMOTION_212_试用装规则说明_08
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 试用装规则说明
+  scene_description: 试用装问题，包括小样试用、试用装领取、试用装免费、试用装数量、试用装链接、试用装型号
+  question_example: 拍下送小样吗
+  turns:
+  - question: 拍下送小样吗
+    expect:
+      scene: 试用装规则说明
+- name: PROMOTION_213_积分相关问题_01
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 积分相关问题
+  scene_description: 积分相关问题，包括积分查询、积分兑换、积分抵扣、积分获取、会员积分、积分有效期
+  question_example: 积分能抵扣吗
+  turns:
+  - question: 积分能抵扣吗
+    expect:
+      scene: 积分相关问题
+- name: PROMOTION_213_积分相关问题_02
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 积分相关问题
+  scene_description: 积分相关问题，包括积分查询、积分兑换、积分抵扣、积分获取、会员积分、积分有效期
+  question_example: 有多少积分
+  turns:
+  - question: 有多少积分
+    expect:
+      scene: 积分相关问题
+- name: PROMOTION_213_积分相关问题_03
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 积分相关问题
+  scene_description: 积分相关问题，包括积分查询、积分兑换、积分抵扣、积分获取、会员积分、积分有效期
+  question_example: 积分怎么查
+  turns:
+  - question: 积分怎么查
+    expect:
+      scene: 积分相关问题
+- name: PROMOTION_213_积分相关问题_04
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 积分相关问题
+  scene_description: 积分相关问题，包括积分查询、积分兑换、积分抵扣、积分获取、会员积分、积分有效期
+  question_example: 积分能换什么
+  turns:
+  - question: 积分能换什么
+    expect:
+      scene: 积分相关问题
+- name: PROMOTION_213_积分相关问题_05
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 积分相关问题
+  scene_description: 积分相关问题，包括积分查询、积分兑换、积分抵扣、积分获取、会员积分、积分有效期
+  question_example: 怎么获得积分
+  turns:
+  - question: 怎么获得积分
+    expect:
+      scene: 积分相关问题
+- name: PROMOTION_213_积分相关问题_06
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 积分相关问题
+  scene_description: 积分相关问题，包括积分查询、积分兑换、积分抵扣、积分获取、会员积分、积分有效期
+  question_example: 积分有效期多久
+  turns:
+  - question: 积分有效期多久
+    expect:
+      scene: 积分相关问题
+- name: PROMOTION_213_积分相关问题_07
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 积分相关问题
+  scene_description: 积分相关问题，包括积分查询、积分兑换、积分抵扣、积分获取、会员积分、积分有效期
+  question_example: 消费有积分吗
+  turns:
+  - question: 消费有积分吗
+    expect:
+      scene: 积分相关问题
+- name: PROMOTION_213_积分相关问题_08
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 积分相关问题
+  scene_description: 积分相关问题，包括积分查询、积分兑换、积分抵扣、积分获取、会员积分、积分有效期
+  question_example: 积分能提现吗
+  turns:
+  - question: 积分能提现吗
+    expect:
+      scene: 积分相关问题
+- name: PROMOTION_213_积分相关问题_09
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 积分相关问题
+  scene_description: 积分相关问题，包括积分查询、积分兑换、积分抵扣、积分获取、会员积分、积分有效期
+  question_example: 怎么用积分
+  turns:
+  - question: 怎么用积分
+    expect:
+      scene: 积分相关问题
+- name: PROMOTION_214_充值兑换问题_01
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 充值兑换问题
+  scene_description: 兑换码充值问题，包括兑换码使用、充值方式、充值到账、兑换码激活
+  question_example: 兑换码在哪
+  turns:
+  - question: 兑换码在哪
+    expect:
+      scene: 充值兑换问题
+- name: PROMOTION_214_充值兑换问题_02
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 充值兑换问题
+  scene_description: 兑换码充值问题，包括兑换码使用、充值方式、充值到账、兑换码激活
+  question_example: 怎么兑换
+  turns:
+  - question: 怎么兑换
+    expect:
+      scene: 充值兑换问题
+- name: PROMOTION_214_充值兑换问题_03
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 充值兑换问题
+  scene_description: 兑换码充值问题，包括兑换码使用、充值方式、充值到账、兑换码激活
+  question_example: 兑换码怎么用
+  turns:
+  - question: 兑换码怎么用
+    expect:
+      scene: 充值兑换问题
+- name: PROMOTION_214_充值兑换问题_04
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 充值兑换问题
+  scene_description: 兑换码充值问题，包括兑换码使用、充值方式、充值到账、兑换码激活
+  question_example: 充值码在哪
+  turns:
+  - question: 充值码在哪
+    expect:
+      scene: 充值兑换问题
+- name: PROMOTION_214_充值兑换问题_05
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 充值兑换问题
+  scene_description: 兑换码充值问题，包括兑换码使用、充值方式、充值到账、兑换码激活
+  question_example: 兑换码有效吗
+  turns:
+  - question: 兑换码有效吗
+    expect:
+      scene: 充值兑换问题
+- name: PROMOTION_214_充值兑换问题_06
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 充值兑换问题
+  scene_description: 兑换码充值问题，包括兑换码使用、充值方式、充值到账、兑换码激活
+  question_example: 兑换码激活
+  turns:
+  - question: 兑换码激活
+    expect:
+      scene: 充值兑换问题
+- name: PROMOTION_214_充值兑换问题_07
+  category: 活动优惠
+  category_key: PROMOTION
+  scene_name: 充值兑换问题
+  scene_description: 兑换码充值问题，包括兑换码使用、充值方式、充值到账、兑换码激活
+  question_example: 怎么使用兑换码
+  turns:
+  - question: 怎么使用兑换码
+    expect:
+      scene: 充值兑换问题

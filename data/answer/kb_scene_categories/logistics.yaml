@@ -1,0 +1,1020 @@
+suite:
+  name: kb_scene_category_logistics
+  mode: sequential
+  quality: true
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+  quality_retries: 10
+  quality_retry_interval_seconds: 2
+  assertions: true
+target_env: dev
+category_groups:
+- key: ALL
+  name: 全部分类
+  count: 227
+- id: 696f3c783dceab0847703e15
+  key: LOGISTICS
+  name: 物流咨询
+  count: 14
+cases:
+- name: LOGISTICS_058_快递物流服务_01
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 快递物流服务
+  scene_description: 快递服务问题，包括快递选择、指定快递、配送范围、发顺丰、快递公司、快递电话
+  question_example: 发什么快递
+  turns:
+  - question: 发什么快递
+    expect:
+      scene: 快递物流服务
+- name: LOGISTICS_058_快递物流服务_02
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 快递物流服务
+  scene_description: 快递服务问题，包括快递选择、指定快递、配送范围、发顺丰、快递公司、快递电话
+  question_example: 能发顺丰吗
+  turns:
+  - question: 能发顺丰吗
+    expect:
+      scene: 快递物流服务
+- name: LOGISTICS_058_快递物流服务_03
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 快递物流服务
+  scene_description: 快递服务问题，包括快递选择、指定快递、配送范围、发顺丰、快递公司、快递电话
+  question_example: 能改快递吗
+  turns:
+  - question: 能改快递吗
+    expect:
+      scene: 快递物流服务
+- name: LOGISTICS_058_快递物流服务_04
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 快递物流服务
+  scene_description: 快递服务问题，包括快递选择、指定快递、配送范围、发顺丰、快递公司、快递电话
+  question_example: 快递电话多少
+  turns:
+  - question: 快递电话多少
+    expect:
+      scene: 快递物流服务
+- name: LOGISTICS_058_快递物流服务_05
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 快递物流服务
+  scene_description: 快递服务问题，包括快递选择、指定快递、配送范围、发顺丰、快递公司、快递电话
+  question_example: 能指定快递吗
+  turns:
+  - question: 能指定快递吗
+    expect:
+      scene: 快递物流服务
+- name: LOGISTICS_058_快递物流服务_06
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 快递物流服务
+  scene_description: 快递服务问题，包括快递选择、指定快递、配送范围、发顺丰、快递公司、快递电话
+  question_example: 支持什么快递
+  turns:
+  - question: 支持什么快递
+    expect:
+      scene: 快递物流服务
+- name: LOGISTICS_058_快递物流服务_07
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 快递物流服务
+  scene_description: 快递服务问题，包括快递选择、指定快递、配送范围、发顺丰、快递公司、快递电话
+  question_example: 快递能到吗
+  turns:
+  - question: 快递能到吗
+    expect:
+      scene: 快递物流服务
+- name: LOGISTICS_059_咨询送达时间_01
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询送达时间
+  scene_description: 用户询问发货后大概多久送达、物流运输需要几天、预计何时收到。
+  question_example: 几天能到
+  turns:
+  - question: 几天能到
+    expect:
+      scene: 咨询送达时间
+- name: LOGISTICS_059_咨询送达时间_02
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询送达时间
+  scene_description: 用户询问发货后大概多久送达、物流运输需要几天、预计何时收到。
+  question_example: 发货后多久到
+  turns:
+  - question: 发货后多久到
+    expect:
+      scene: 咨询送达时间
+- name: LOGISTICS_059_咨询送达时间_03
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询送达时间
+  scene_description: 用户询问发货后大概多久送达、物流运输需要几天、预计何时收到。
+  question_example: 物流要几天
+  turns:
+  - question: 物流要几天
+    expect:
+      scene: 咨询送达时间
+- name: LOGISTICS_059_咨询送达时间_04
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询送达时间
+  scene_description: 用户询问发货后大概多久送达、物流运输需要几天、预计何时收到。
+  question_example: 大概几天收到
+  turns:
+  - question: 大概几天收到
+    expect:
+      scene: 咨询送达时间
+- name: LOGISTICS_059_咨询送达时间_05
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询送达时间
+  scene_description: 用户询问发货后大概多久送达、物流运输需要几天、预计何时收到。
+  question_example: 什么时候能收到
+  turns:
+  - question: 什么时候能收到
+    expect:
+      scene: 咨询送达时间
+- name: LOGISTICS_059_咨询送达时间_06
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询送达时间
+  scene_description: 用户询问发货后大概多久送达、物流运输需要几天、预计何时收到。
+  question_example: 多久送到
+  turns:
+  - question: 多久送到
+    expect:
+      scene: 咨询送达时间
+- name: LOGISTICS_059_咨询送达时间_07
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询送达时间
+  scene_description: 用户询问发货后大概多久送达、物流运输需要几天、预计何时收到。
+  question_example: 还有多久到
+  turns:
+  - question: 还有多久到
+    expect:
+      scene: 咨询送达时间
+- name: LOGISTICS_059_咨询送达时间_08
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询送达时间
+  scene_description: 用户询问发货后大概多久送达、物流运输需要几天、预计何时收到。
+  question_example: 今日达可以不
+  turns:
+  - question: 今日达可以不
+    expect:
+      scene: 咨询送达时间
+- name: LOGISTICS_065_咨询发货时间_01
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询发货时间
+  scene_description: 用户询问订单按正常流程何时发货、多久安排出库。
+  question_example: 什么时候发货
+  turns:
+  - question: 什么时候发货
+    expect:
+      scene: 咨询发货时间
+- name: LOGISTICS_065_咨询发货时间_02
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询发货时间
+  scene_description: 用户询问订单按正常流程何时发货、多久安排出库。
+  question_example: 今天能发吗
+  turns:
+  - question: 今天能发吗
+    expect:
+      scene: 咨询发货时间
+- name: LOGISTICS_065_咨询发货时间_03
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询发货时间
+  scene_description: 用户询问订单按正常流程何时发货、多久安排出库。
+  question_example: 大概什么时候发
+  turns:
+  - question: 大概什么时候发
+    expect:
+      scene: 咨询发货时间
+- name: LOGISTICS_065_咨询发货时间_04
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询发货时间
+  scene_description: 用户询问订单按正常流程何时发货、多久安排出库。
+  question_example: 下单多久发货
+  turns:
+  - question: 下单多久发货
+    expect:
+      scene: 咨询发货时间
+- name: LOGISTICS_065_咨询发货时间_05
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询发货时间
+  scene_description: 用户询问订单按正常流程何时发货、多久安排出库。
+  question_example: 多久安排发出
+  turns:
+  - question: 多久安排发出
+    expect:
+      scene: 咨询发货时间
+- name: LOGISTICS_134_催促发货_01
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 催促发货
+  scene_description: 买家希望商家尽快安排发货，包括催单、要求优先发货、询问能否马上发出、尽快发货等诉求。
+  question_example: 麻烦尽快发货
+  turns:
+  - question: 麻烦尽快发货
+    expect:
+      scene: 催促发货
+- name: LOGISTICS_134_催促发货_02
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 催促发货
+  scene_description: 买家希望商家尽快安排发货，包括催单、要求优先发货、询问能否马上发出、尽快发货等诉求。
+  question_example: 帮我催一下发货
+  turns:
+  - question: 帮我催一下发货
+    expect:
+      scene: 催促发货
+- name: LOGISTICS_134_催促发货_03
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 催促发货
+  scene_description: 买家希望商家尽快安排发货，包括催单、要求优先发货、询问能否马上发出、尽快发货等诉求。
+  question_example: 能不能先给我发
+  turns:
+  - question: 能不能先给我发
+    expect:
+      scene: 催促发货
+- name: LOGISTICS_134_催促发货_04
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 催促发货
+  scene_description: 买家希望商家尽快安排发货，包括催单、要求优先发货、询问能否马上发出、尽快发货等诉求。
+  question_example: 请尽快安排发出
+  turns:
+  - question: 请尽快安排发出
+    expect:
+      scene: 催促发货
+- name: LOGISTICS_134_催促发货_05
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 催促发货
+  scene_description: 买家希望商家尽快安排发货，包括催单、要求优先发货、询问能否马上发出、尽快发货等诉求。
+  question_example: 能优先发货吗
+  turns:
+  - question: 能优先发货吗
+    expect:
+      scene: 催促发货
+- name: LOGISTICS_139_咨询发货仓库/发货地_01
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询发货仓库/发货地
+  scene_description: 用户询问商品从哪个城市、哪个仓库、哪个地区发出。
+  question_example: 从哪里发货
+  turns:
+  - question: 从哪里发货
+    expect:
+      scene: 咨询发货仓库/发货地
+- name: LOGISTICS_139_咨询发货仓库/发货地_02
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询发货仓库/发货地
+  scene_description: 用户询问商品从哪个城市、哪个仓库、哪个地区发出。
+  question_example: 发货地是哪
+  turns:
+  - question: 发货地是哪
+    expect:
+      scene: 咨询发货仓库/发货地
+- name: LOGISTICS_139_咨询发货仓库/发货地_03
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询发货仓库/发货地
+  scene_description: 用户询问商品从哪个城市、哪个仓库、哪个地区发出。
+  question_example: 从哪个仓库发
+  turns:
+  - question: 从哪个仓库发
+    expect:
+      scene: 咨询发货仓库/发货地
+- name: LOGISTICS_139_咨询发货仓库/发货地_04
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询发货仓库/发货地
+  scene_description: 用户询问商品从哪个城市、哪个仓库、哪个地区发出。
+  question_example: 是哪个城市发货
+  turns:
+  - question: 是哪个城市发货
+    expect:
+      scene: 咨询发货仓库/发货地
+- name: LOGISTICS_139_咨询发货仓库/发货地_05
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询发货仓库/发货地
+  scene_description: 用户询问商品从哪个城市、哪个仓库、哪个地区发出。
+  question_example: 从哪个地方的仓库发货
+  turns:
+  - question: 从哪个地方的仓库发货
+    expect:
+      scene: 咨询发货仓库/发货地
+- name: LOGISTICS_140_发货/配送时间特殊要求_01
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 发货/配送时间特殊要求
+  scene_description: 用户对发货/配送时间提出特殊要求，包括希望延迟发货、指定某天送达、指定时间段派送。
+  question_example: 可以指定送货时间吗
+  turns:
+  - question: 可以指定送货时间吗
+    expect:
+      scene: 发货/配送时间特殊要求
+- name: LOGISTICS_140_发货/配送时间特殊要求_02
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 发货/配送时间特殊要求
+  scene_description: 用户对发货/配送时间提出特殊要求，包括希望延迟发货、指定某天送达、指定时间段派送。
+  question_example: 能周末送吗
+  turns:
+  - question: 能周末送吗
+    expect:
+      scene: 发货/配送时间特殊要求
+- name: LOGISTICS_140_发货/配送时间特殊要求_03
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 发货/配送时间特殊要求
+  scene_description: 用户对发货/配送时间提出特殊要求，包括希望延迟发货、指定某天送达、指定时间段派送。
+  question_example: 可以延迟发货吗
+  turns:
+  - question: 可以延迟发货吗
+    expect:
+      scene: 发货/配送时间特殊要求
+- name: LOGISTICS_140_发货/配送时间特殊要求_04
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 发货/配送时间特殊要求
+  scene_description: 用户对发货/配送时间提出特殊要求，包括希望延迟发货、指定某天送达、指定时间段派送。
+  question_example: 可以晚点再发吗
+  turns:
+  - question: 可以晚点再发吗
+    expect:
+      scene: 发货/配送时间特殊要求
+- name: LOGISTICS_140_发货/配送时间特殊要求_05
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 发货/配送时间特殊要求
+  scene_description: 用户对发货/配送时间提出特殊要求，包括希望延迟发货、指定某天送达、指定时间段派送。
+  question_example: 能指定哪天送吗
+  turns:
+  - question: 能指定哪天送吗
+    expect:
+      scene: 发货/配送时间特殊要求
+- name: LOGISTICS_141_咨询保密发货/隐私发货_01
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询保密发货/隐私发货
+  scene_description: 用户要求隐私包装、匿名发货、不外露商品信息等保密发货要求。
+  question_example: 可以保密发货吗
+  turns:
+  - question: 可以保密发货吗
+    expect:
+      scene: 咨询保密发货/隐私发货
+- name: LOGISTICS_141_咨询保密发货/隐私发货_02
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询保密发货/隐私发货
+  scene_description: 用户要求隐私包装、匿名发货、不外露商品信息等保密发货要求。
+  question_example: 能隐私发货吗
+  turns:
+  - question: 能隐私发货吗
+    expect:
+      scene: 咨询保密发货/隐私发货
+- name: LOGISTICS_141_咨询保密发货/隐私发货_03
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询保密发货/隐私发货
+  scene_description: 用户要求隐私包装、匿名发货、不外露商品信息等保密发货要求。
+  question_example: 可以匿名发货吗
+  turns:
+  - question: 可以匿名发货吗
+    expect:
+      scene: 咨询保密发货/隐私发货
+- name: LOGISTICS_141_咨询保密发货/隐私发货_04
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 咨询保密发货/隐私发货
+  scene_description: 用户要求隐私包装、匿名发货、不外露商品信息等保密发货要求。
+  question_example: 外包装不要显示商品信息
+  turns:
+  - question: 外包装不要显示商品信息
+    expect:
+      scene: 咨询保密发货/隐私发货
+- name: LOGISTICS_215_运费与包邮政策_01
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 运费与包邮政策
+  scene_description: 运费包邮问题，包括运费计算、包邮条件、运费补贴、退运费、不包邮地区、加急运费
+  question_example: 包邮吗
+  turns:
+  - question: 包邮吗
+    expect:
+      scene: 运费与包邮政策
+- name: LOGISTICS_215_运费与包邮政策_02
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 运费与包邮政策
+  scene_description: 运费包邮问题，包括运费计算、包邮条件、运费补贴、退运费、不包邮地区、加急运费
+  question_example: 运费多少钱
+  turns:
+  - question: 运费多少钱
+    expect:
+      scene: 运费与包邮政策
+- name: LOGISTICS_215_运费与包邮政策_03
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 运费与包邮政策
+  scene_description: 运费包邮问题，包括运费计算、包邮条件、运费补贴、退运费、不包邮地区、加急运费
+  question_example: 满多少包邮
+  turns:
+  - question: 满多少包邮
+    expect:
+      scene: 运费与包邮政策
+- name: LOGISTICS_215_运费与包邮政策_04
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 运费与包邮政策
+  scene_description: 运费包邮问题，包括运费计算、包邮条件、运费补贴、退运费、不包邮地区、加急运费
+  question_example: 运费怎么算
+  turns:
+  - question: 运费怎么算
+    expect:
+      scene: 运费与包邮政策
+- name: LOGISTICS_215_运费与包邮政策_05
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 运费与包邮政策
+  scene_description: 运费包邮问题，包括运费计算、包邮条件、运费补贴、退运费、不包邮地区、加急运费
+  question_example: 运费能退吗
+  turns:
+  - question: 运费能退吗
+    expect:
+      scene: 运费与包邮政策
+- name: LOGISTICS_215_运费与包邮政策_06
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 运费与包邮政策
+  scene_description: 运费包邮问题，包括运费计算、包邮条件、运费补贴、退运费、不包邮地区、加急运费
+  question_example: 偏远地区运费
+  turns:
+  - question: 偏远地区运费
+    expect:
+      scene: 运费与包邮政策
+- name: LOGISTICS_215_运费与包邮政策_07
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 运费与包邮政策
+  scene_description: 运费包邮问题，包括运费计算、包邮条件、运费补贴、退运费、不包邮地区、加急运费
+  question_example: 加急运费多少
+  turns:
+  - question: 加急运费多少
+    expect:
+      scene: 运费与包邮政策
+- name: LOGISTICS_215_运费与包邮政策_08
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 运费与包邮政策
+  scene_description: 运费包邮问题，包括运费计算、包邮条件、运费补贴、退运费、不包邮地区、加急运费
+  question_example: 不包邮地区
+  turns:
+  - question: 不包邮地区
+    expect:
+      scene: 运费与包邮政策
+- name: LOGISTICS_215_运费与包邮政策_09
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 运费与包邮政策
+  scene_description: 运费包邮问题，包括运费计算、包邮条件、运费补贴、退运费、不包邮地区、加急运费
+  question_example: 发顺丰加钱吗
+  turns:
+  - question: 发顺丰加钱吗
+    expect:
+      scene: 运费与包邮政策
+- name: LOGISTICS_216_异常快递解决方法_01
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 异常快递解决方法
+  scene_description: 物流异常问题，包括物流不更新、丢件查不到、发错地址、包裹异常、物流停滞
+  question_example: 物流不更新
+  turns:
+  - question: 物流不更新
+    expect:
+      scene: 异常快递解决方法
+- name: LOGISTICS_216_异常快递解决方法_02
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 异常快递解决方法
+  scene_description: 物流异常问题，包括物流不更新、丢件查不到、发错地址、包裹异常、物流停滞
+  question_example: 快递丢了
+  turns:
+  - question: 快递丢了
+    expect:
+      scene: 异常快递解决方法
+- name: LOGISTICS_216_异常快递解决方法_03
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 异常快递解决方法
+  scene_description: 物流异常问题，包括物流不更新、丢件查不到、发错地址、包裹异常、物流停滞
+  question_example: 一直没物流
+  turns:
+  - question: 一直没物流
+    expect:
+      scene: 异常快递解决方法
+- name: LOGISTICS_216_异常快递解决方法_04
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 异常快递解决方法
+  scene_description: 物流异常问题，包括物流不更新、丢件查不到、发错地址、包裹异常、物流停滞
+  question_example: 发错地方了
+  turns:
+  - question: 发错地方了
+    expect:
+      scene: 异常快递解决方法
+- name: LOGISTICS_216_异常快递解决方法_05
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 异常快递解决方法
+  scene_description: 物流异常问题，包括物流不更新、丢件查不到、发错地址、包裹异常、物流停滞
+  question_example: 包裹异常
+  turns:
+  - question: 包裹异常
+    expect:
+      scene: 异常快递解决方法
+- name: LOGISTICS_216_异常快递解决方法_06
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 异常快递解决方法
+  scene_description: 物流异常问题，包括物流不更新、丢件查不到、发错地址、包裹异常、物流停滞
+  question_example: 物流停滞
+  turns:
+  - question: 物流停滞
+    expect:
+      scene: 异常快递解决方法
+- name: LOGISTICS_216_异常快递解决方法_07
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 异常快递解决方法
+  scene_description: 物流异常问题，包括物流不更新、丢件查不到、发错地址、包裹异常、物流停滞
+  question_example: 物流卡住了
+  turns:
+  - question: 物流卡住了
+    expect:
+      scene: 异常快递解决方法
+- name: LOGISTICS_216_异常快递解决方法_08
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 异常快递解决方法
+  scene_description: 物流异常问题，包括物流不更新、丢件查不到、发错地址、包裹异常、物流停滞
+  question_example: 快递异常怎么处理
+  turns:
+  - question: 快递异常怎么处理
+    expect:
+      scene: 异常快递解决方法
+- name: LOGISTICS_216_异常快递解决方法_09
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 异常快递解决方法
+  scene_description: 物流异常问题，包括物流不更新、丢件查不到、发错地址、包裹异常、物流停滞
+  question_example: 一直停在一个地方
+  turns:
+  - question: 一直停在一个地方
+    expect:
+      scene: 异常快递解决方法
+- name: LOGISTICS_216_异常快递解决方法_10
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 异常快递解决方法
+  scene_description: 物流异常问题，包括物流不更新、丢件查不到、发错地址、包裹异常、物流停滞
+  question_example: 包裹派送异常
+  turns:
+  - question: 包裹派送异常
+    expect:
+      scene: 异常快递解决方法
+- name: LOGISTICS_216_异常快递解决方法_11
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 异常快递解决方法
+  scene_description: 物流异常问题，包括物流不更新、丢件查不到、发错地址、包裹异常、物流停滞
+  question_example: 显示异常签收怎么办
+  turns:
+  - question: 显示异常签收怎么办
+    expect:
+      scene: 异常快递解决方法
+- name: LOGISTICS_217_发货形式与特殊要求_01
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 发货形式与特殊要求
+  scene_description: 发货方式问题，包括分地址发货、合并发货、发货检查、赠品是否同发
+  question_example: 能分两个地址发吗
+  turns:
+  - question: 能分两个地址发吗
+    expect:
+      scene: 发货形式与特殊要求
+- name: LOGISTICS_217_发货形式与特殊要求_02
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 发货形式与特殊要求
+  scene_description: 发货方式问题，包括分地址发货、合并发货、发货检查、赠品是否同发
+  question_example: 发两个地方
+  turns:
+  - question: 发两个地方
+    expect:
+      scene: 发货形式与特殊要求
+- name: LOGISTICS_217_发货形式与特殊要求_03
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 发货形式与特殊要求
+  scene_description: 发货方式问题，包括分地址发货、合并发货、发货检查、赠品是否同发
+  question_example: 发货前检查
+  turns:
+  - question: 发货前检查
+    expect:
+      scene: 发货形式与特殊要求
+- name: LOGISTICS_217_发货形式与特殊要求_04
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 发货形式与特殊要求
+  scene_description: 发货方式问题，包括分地址发货、合并发货、发货检查、赠品是否同发
+  question_example: 能合并发货吗
+  turns:
+  - question: 能合并发货吗
+    expect:
+      scene: 发货形式与特殊要求
+- name: LOGISTICS_217_发货形式与特殊要求_05
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 发货形式与特殊要求
+  scene_description: 发货方式问题，包括分地址发货、合并发货、发货检查、赠品是否同发
+  question_example: 一起发可以吗
+  turns:
+  - question: 一起发可以吗
+    expect:
+      scene: 发货形式与特殊要求
+- name: LOGISTICS_218_空包/少件补发政策_01
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 空包/少件补发政策
+  scene_description: 空包少件问题，包括收到空包、收到少件、虚假发货、补发重发、发错货、缺货、数量不对、补发物流等售后补发诉求
+  question_example: 收到空包裹
+  turns:
+  - question: 收到空包裹
+    expect:
+      scene: 空包/少件补发政策
+- name: LOGISTICS_218_空包/少件补发政策_02
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 空包/少件补发政策
+  scene_description: 空包少件问题，包括收到空包、收到少件、虚假发货、补发重发、发错货、缺货、数量不对、补发物流等售后补发诉求
+  question_example: 少发了
+  turns:
+  - question: 少发了
+    expect:
+      scene: 空包/少件补发政策
+- name: LOGISTICS_218_空包/少件补发政策_03
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 空包/少件补发政策
+  scene_description: 空包少件问题，包括收到空包、收到少件、虚假发货、补发重发、发错货、缺货、数量不对、补发物流等售后补发诉求
+  question_example: 发错货了
+  turns:
+  - question: 发错货了
+    expect:
+      scene: 空包/少件补发政策
+- name: LOGISTICS_218_空包/少件补发政策_04
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 空包/少件补发政策
+  scene_description: 空包少件问题，包括收到空包、收到少件、虚假发货、补发重发、发错货、缺货、数量不对、补发物流等售后补发诉求
+  question_example: 数量不对
+  turns:
+  - question: 数量不对
+    expect:
+      scene: 空包/少件补发政策
+- name: LOGISTICS_218_空包/少件补发政策_05
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 空包/少件补发政策
+  scene_description: 空包少件问题，包括收到空包、收到少件、虚假发货、补发重发、发错货、缺货、数量不对、补发物流等售后补发诉求
+  question_example: 怎么补发
+  turns:
+  - question: 怎么补发
+    expect:
+      scene: 空包/少件补发政策
+- name: LOGISTICS_218_空包/少件补发政策_06
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 空包/少件补发政策
+  scene_description: 空包少件问题，包括收到空包、收到少件、虚假发货、补发重发、发错货、缺货、数量不对、补发物流等售后补发诉求
+  question_example: 缺货补发
+  turns:
+  - question: 缺货补发
+    expect:
+      scene: 空包/少件补发政策
+- name: LOGISTICS_218_空包/少件补发政策_07
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 空包/少件补发政策
+  scene_description: 空包少件问题，包括收到空包、收到少件、虚假发货、补发重发、发错货、缺货、数量不对、补发物流等售后补发诉求
+  question_example: 重新发货
+  turns:
+  - question: 重新发货
+    expect:
+      scene: 空包/少件补发政策
+- name: LOGISTICS_218_空包/少件补发政策_08
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 空包/少件补发政策
+  scene_description: 空包少件问题，包括收到空包、收到少件、虚假发货、补发重发、发错货、缺货、数量不对、补发物流等售后补发诉求
+  question_example: 补发快递单
+  turns:
+  - question: 补发快递单
+    expect:
+      scene: 空包/少件补发政策
+- name: LOGISTICS_218_空包/少件补发政策_09
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 空包/少件补发政策
+  scene_description: 空包少件问题，包括收到空包、收到少件、虚假发货、补发重发、发错货、缺货、数量不对、补发物流等售后补发诉求
+  question_example: 虚假发货
+  turns:
+  - question: 虚假发货
+    expect:
+      scene: 空包/少件补发政策
+- name: LOGISTICS_218_空包/少件补发政策_10
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 空包/少件补发政策
+  scene_description: 空包少件问题，包括收到空包、收到少件、虚假发货、补发重发、发错货、缺货、数量不对、补发物流等售后补发诉求
+  question_example: 漏发了给我补发一下
+  turns:
+  - question: 漏发了给我补发一下
+    expect:
+      scene: 空包/少件补发政策
+- name: LOGISTICS_218_空包/少件补发政策_11
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 空包/少件补发政策
+  scene_description: 空包少件问题，包括收到空包、收到少件、虚假发货、补发重发、发错货、缺货、数量不对、补发物流等售后补发诉求
+  question_example: 少了一件麻烦补发
+  turns:
+  - question: 少了一件麻烦补发
+    expect:
+      scene: 空包/少件补发政策
+- name: LOGISTICS_218_空包/少件补发政策_12
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 空包/少件补发政策
+  scene_description: 空包少件问题，包括收到空包、收到少件、虚假发货、补发重发、发错货、缺货、数量不对、补发物流等售后补发诉求
+  question_example: 这个发错了重新补发
+  turns:
+  - question: 这个发错了重新补发
+    expect:
+      scene: 空包/少件补发政策
+- name: LOGISTICS_218_空包/少件补发政策_13
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 空包/少件补发政策
+  scene_description: 空包少件问题，包括收到空包、收到少件、虚假发货、补发重发、发错货、缺货、数量不对、补发物流等售后补发诉求
+  question_example: 补发什么时候安排
+  turns:
+  - question: 补发什么时候安排
+    expect:
+      scene: 空包/少件补发政策
+- name: LOGISTICS_219_派送/收货/送货问题_01
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 派送/收货/送货问题
+  scene_description: 收货派送问题，包括送货上门、延长收货、自动确认收货、取件码、送上楼、派送时间
+  question_example: 能送货上门吗
+  turns:
+  - question: 能送货上门吗
+    expect:
+      scene: 派送/收货/送货问题
+- name: LOGISTICS_219_派送/收货/送货问题_02
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 派送/收货/送货问题
+  scene_description: 收货派送问题，包括送货上门、延长收货、自动确认收货、取件码、送上楼、派送时间
+  question_example: 能放驿站吗
+  turns:
+  - question: 能放驿站吗
+    expect:
+      scene: 派送/收货/送货问题
+- name: LOGISTICS_219_派送/收货/送货问题_03
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 派送/收货/送货问题
+  scene_description: 收货派送问题，包括送货上门、延长收货、自动确认收货、取件码、送上楼、派送时间
+  question_example: 取件码是多少
+  turns:
+  - question: 取件码是多少
+    expect:
+      scene: 派送/收货/送货问题
+- name: LOGISTICS_219_派送/收货/送货问题_04
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 派送/收货/送货问题
+  scene_description: 收货派送问题，包括送货上门、延长收货、自动确认收货、取件码、送上楼、派送时间
+  question_example: 能送上楼吗
+  turns:
+  - question: 能送上楼吗
+    expect:
+      scene: 派送/收货/送货问题
+- name: LOGISTICS_219_派送/收货/送货问题_05
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 派送/收货/送货问题
+  scene_description: 收货派送问题，包括送货上门、延长收货、自动确认收货、取件码、送上楼、派送时间
+  question_example: 放哪自取
+  turns:
+  - question: 放哪自取
+    expect:
+      scene: 派送/收货/送货问题
+- name: LOGISTICS_219_派送/收货/送货问题_06
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 派送/收货/送货问题
+  scene_description: 收货派送问题，包括送货上门、延长收货、自动确认收货、取件码、送上楼、派送时间
+  question_example: 快递派送时间
+  turns:
+  - question: 快递派送时间
+    expect:
+      scene: 派送/收货/送货问题
+- name: LOGISTICS_219_派送/收货/送货问题_07
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 派送/收货/送货问题
+  scene_description: 收货派送问题，包括送货上门、延长收货、自动确认收货、取件码、送上楼、派送时间
+  question_example: 能放到菜鸟驿站吗
+  turns:
+  - question: 能放到菜鸟驿站吗
+    expect:
+      scene: 派送/收货/送货问题
+- name: LOGISTICS_219_派送/收货/送货问题_08
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 派送/收货/送货问题
+  scene_description: 收货派送问题，包括送货上门、延长收货、自动确认收货、取件码、送上楼、派送时间
+  question_example: 能放快递柜吗
+  turns:
+  - question: 能放快递柜吗
+    expect:
+      scene: 派送/收货/送货问题
+- name: LOGISTICS_220_物流进度查询_01
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 物流进度查询
+  scene_description: 物流查询问题，包括物流单号、物流进度、查物流、物流信息、快递单号、物流轨迹、发货状态
+  question_example: 快递单号多少
+  turns:
+  - question: 快递单号多少
+    expect:
+      scene: 物流进度查询
+- name: LOGISTICS_220_物流进度查询_02
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 物流进度查询
+  scene_description: 物流查询问题，包括物流单号、物流进度、查物流、物流信息、快递单号、物流轨迹、发货状态
+  question_example: 物流查不到
+  turns:
+  - question: 物流查不到
+    expect:
+      scene: 物流进度查询
+- name: LOGISTICS_220_物流进度查询_03
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 物流进度查询
+  scene_description: 物流查询问题，包括物流单号、物流进度、查物流、物流信息、快递单号、物流轨迹、发货状态
+  question_example: 物流到哪了
+  turns:
+  - question: 物流到哪了
+    expect:
+      scene: 物流进度查询
+- name: LOGISTICS_220_物流进度查询_04
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 物流进度查询
+  scene_description: 物流查询问题，包括物流单号、物流进度、查物流、物流信息、快递单号、物流轨迹、发货状态
+  question_example: 发给我单号
+  turns:
+  - question: 发给我单号
+    expect:
+      scene: 物流进度查询
+- name: LOGISTICS_220_物流进度查询_05
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 物流进度查询
+  scene_description: 物流查询问题，包括物流单号、物流进度、查物流、物流信息、快递单号、物流轨迹、发货状态
+  question_example: 快递进度
+  turns:
+  - question: 快递进度
+    expect:
+      scene: 物流进度查询
+- name: LOGISTICS_220_物流进度查询_06
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 物流进度查询
+  scene_description: 物流查询问题，包括物流单号、物流进度、查物流、物流信息、快递单号、物流轨迹、发货状态
+  question_example: 查物流
+  turns:
+  - question: 查物流
+    expect:
+      scene: 物流进度查询
+- name: LOGISTICS_220_物流进度查询_07
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 物流进度查询
+  scene_description: 物流查询问题，包括物流单号、物流进度、查物流、物流信息、快递单号、物流轨迹、发货状态
+  question_example: 发货了吗
+  turns:
+  - question: 发货了吗
+    expect:
+      scene: 物流进度查询
+- name: LOGISTICS_221_退货宝服务_01
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 退货宝服务
+  scene_description: 退货宝问题，包括退货宝使用、退货宝入口、退货宝服务、是否有退货宝、退货宝申请
+  question_example: 有退货宝吗
+  turns:
+  - question: 有退货宝吗
+    expect:
+      scene: 退货宝服务
+- name: LOGISTICS_221_退货宝服务_02
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 退货宝服务
+  scene_description: 退货宝问题，包括退货宝使用、退货宝入口、退货宝服务、是否有退货宝、退货宝申请
+  question_example: 退货宝怎么用
+  turns:
+  - question: 退货宝怎么用
+    expect:
+      scene: 退货宝服务
+- name: LOGISTICS_221_退货宝服务_03
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 退货宝服务
+  scene_description: 退货宝问题，包括退货宝使用、退货宝入口、退货宝服务、是否有退货宝、退货宝申请
+  question_example: 能用退货宝吗
+  turns:
+  - question: 能用退货宝吗
+    expect:
+      scene: 退货宝服务
+- name: LOGISTICS_221_退货宝服务_04
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 退货宝服务
+  scene_description: 退货宝问题，包括退货宝使用、退货宝入口、退货宝服务、是否有退货宝、退货宝申请
+  question_example: 退货宝在哪
+  turns:
+  - question: 退货宝在哪
+    expect:
+      scene: 退货宝服务
+- name: LOGISTICS_221_退货宝服务_05
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 退货宝服务
+  scene_description: 退货宝问题，包括退货宝使用、退货宝入口、退货宝服务、是否有退货宝、退货宝申请
+  question_example: 支持退货宝吗
+  turns:
+  - question: 支持退货宝吗
+    expect:
+      scene: 退货宝服务
+- name: LOGISTICS_221_退货宝服务_06
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 退货宝服务
+  scene_description: 退货宝问题，包括退货宝使用、退货宝入口、退货宝服务、是否有退货宝、退货宝申请
+  question_example: 退货宝服务
+  turns:
+  - question: 退货宝服务
+    expect:
+      scene: 退货宝服务
+- name: LOGISTICS_221_退货宝服务_07
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 退货宝服务
+  scene_description: 退货宝问题，包括退货宝使用、退货宝入口、退货宝服务、是否有退货宝、退货宝申请
+  question_example: 退货宝入口
+  turns:
+  - question: 退货宝入口
+    expect:
+      scene: 退货宝服务
+- name: LOGISTICS_221_退货宝服务_08
+  category: 物流咨询
+  category_key: LOGISTICS
+  scene_name: 退货宝服务
+  scene_description: 退货宝问题，包括退货宝使用、退货宝入口、退货宝服务、是否有退货宝、退货宝申请
+  question_example: 怎么开通退货宝
+  turns:
+  - question: 怎么开通退货宝
+    expect:
+      scene: 退货宝服务

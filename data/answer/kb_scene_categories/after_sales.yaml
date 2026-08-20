@@ -1,0 +1,1250 @@
+suite:
+  name: kb_scene_category_after_sales
+  mode: sequential
+  quality: true
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+  quality_retries: 10
+  quality_retry_interval_seconds: 2
+  assertions: true
+target_env: dev
+category_groups:
+- key: ALL
+  name: 全部分类
+  count: 227
+- id: 696f3c783dceab0847703e16
+  key: AFTER_SALES
+  name: 售后咨询
+  count: 12
+cases:
+- name: AFTER_SALES_068_售后维修支持_01
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 售后维修支持
+  scene_description: 售后维修相关问题，包括维修申请、质保期、保修期、维修网点、全国联保、售后政策、换新、寄修运费
+  question_example: 这个东西坏了能修吗
+  turns:
+  - question: 这个东西坏了能修吗
+    expect:
+      scene: 售后维修支持
+- name: AFTER_SALES_068_售后维修支持_02
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 售后维修支持
+  scene_description: 售后维修相关问题，包括维修申请、质保期、保修期、维修网点、全国联保、售后政策、换新、寄修运费
+  question_example: 有售后保障吗
+  turns:
+  - question: 有售后保障吗
+    expect:
+      scene: 售后维修支持
+- name: AFTER_SALES_068_售后维修支持_03
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 售后维修支持
+  scene_description: 售后维修相关问题，包括维修申请、质保期、保修期、维修网点、全国联保、售后政策、换新、寄修运费
+  question_example: 质保期是多久
+  turns:
+  - question: 质保期是多久
+    expect:
+      scene: 售后维修支持
+- name: AFTER_SALES_068_售后维修支持_04
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 售后维修支持
+  scene_description: 售后维修相关问题，包括维修申请、质保期、保修期、维修网点、全国联保、售后政策、换新、寄修运费
+  question_example: 维修点在什么地方
+  turns:
+  - question: 维修点在什么地方
+    expect:
+      scene: 售后维修支持
+- name: AFTER_SALES_068_售后维修支持_05
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 售后维修支持
+  scene_description: 售后维修相关问题，包括维修申请、质保期、保修期、维修网点、全国联保、售后政策、换新、寄修运费
+  question_example: 怎么申请售后
+  turns:
+  - question: 怎么申请售后
+    expect:
+      scene: 售后维修支持
+- name: AFTER_SALES_068_售后维修支持_06
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 售后维修支持
+  scene_description: 售后维修相关问题，包括维修申请、质保期、保修期、维修网点、全国联保、售后政策、换新、寄修运费
+  question_example: 售后要钱吗
+  turns:
+  - question: 售后要钱吗
+    expect:
+      scene: 售后维修支持
+- name: AFTER_SALES_068_售后维修支持_07
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 售后维修支持
+  scene_description: 售后维修相关问题，包括维修申请、质保期、保修期、维修网点、全国联保、售后政策、换新、寄修运费
+  question_example: 我可以自己寄回去修吗
+  turns:
+  - question: 我可以自己寄回去修吗
+    expect:
+      scene: 售后维修支持
+- name: AFTER_SALES_068_售后维修支持_08
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 售后维修支持
+  scene_description: 售后维修相关问题，包括维修申请、质保期、保修期、维修网点、全国联保、售后政策、换新、寄修运费
+  question_example: 这能换新的吗
+  turns:
+  - question: 这能换新的吗
+    expect:
+      scene: 售后维修支持
+- name: AFTER_SALES_068_售后维修支持_09
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 售后维修支持
+  scene_description: 售后维修相关问题，包括维修申请、质保期、保修期、维修网点、全国联保、售后政策、换新、寄修运费
+  question_example: 维修运费谁出
+  turns:
+  - question: 维修运费谁出
+    expect:
+      scene: 售后维修支持
+- name: AFTER_SALES_068_售后维修支持_10
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 售后维修支持
+  scene_description: 售后维修相关问题，包括维修申请、质保期、保修期、维修网点、全国联保、售后政策、换新、寄修运费
+  question_example: 售后电话是多少
+  turns:
+  - question: 售后电话是多少
+    expect:
+      scene: 售后维修支持
+- name: AFTER_SALES_133_订单收货地址修改_01
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 订单收货地址修改
+  scene_description: 买家要求修改订单收货地址，包括修改收件人、联系电话、详细地址、省市区信息，或下单后发现地址填错、地址不完整、需要更换收货地址等问题。
+  question_example: 地址填错了可以改吗
+  turns:
+  - question: 地址填错了可以改吗
+    expect:
+      scene: 订单收货地址修改
+- name: AFTER_SALES_133_订单收货地址修改_02
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 订单收货地址修改
+  scene_description: 买家要求修改订单收货地址，包括修改收件人、联系电话、详细地址、省市区信息，或下单后发现地址填错、地址不完整、需要更换收货地址等问题。
+  question_example: 帮我改一下收货地址
+  turns:
+  - question: 帮我改一下收货地址
+    expect:
+      scene: 订单收货地址修改
+- name: AFTER_SALES_133_订单收货地址修改_03
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 订单收货地址修改
+  scene_description: 买家要求修改订单收货地址，包括修改收件人、联系电话、详细地址、省市区信息，或下单后发现地址填错、地址不完整、需要更换收货地址等问题。
+  question_example: 电话写错了能改吗
+  turns:
+  - question: 电话写错了能改吗
+    expect:
+      scene: 订单收货地址修改
+- name: AFTER_SALES_133_订单收货地址修改_04
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 订单收货地址修改
+  scene_description: 买家要求修改订单收货地址，包括修改收件人、联系电话、详细地址、省市区信息，或下单后发现地址填错、地址不完整、需要更换收货地址等问题。
+  question_example: 收件人名字能改吗
+  turns:
+  - question: 收件人名字能改吗
+    expect:
+      scene: 订单收货地址修改
+- name: AFTER_SALES_133_订单收货地址修改_05
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 订单收货地址修改
+  scene_description: 买家要求修改订单收货地址，包括修改收件人、联系电话、详细地址、省市区信息，或下单后发现地址填错、地址不完整、需要更换收货地址等问题。
+  question_example: 能换个地址发吗
+  turns:
+  - question: 能换个地址发吗
+    expect:
+      scene: 订单收货地址修改
+- name: AFTER_SALES_133_订单收货地址修改_06
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 订单收货地址修改
+  scene_description: 买家要求修改订单收货地址，包括修改收件人、联系电话、详细地址、省市区信息，或下单后发现地址填错、地址不完整、需要更换收货地址等问题。
+  question_example: 门牌号写错了怎么改
+  turns:
+  - question: 门牌号写错了怎么改
+    expect:
+      scene: 订单收货地址修改
+- name: AFTER_SALES_135_投诉处理_01
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 投诉处理
+  scene_description: 买家明确提出投诉、举报、维权、申请平台介入，或以315曝光、伪劣商品、侵犯消费者权益、违法违规、追责等方式表达投诉诉求。
+  question_example: 我要投诉
+  turns:
+  - question: 我要投诉
+    expect:
+      scene: 投诉处理
+- name: AFTER_SALES_135_投诉处理_02
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 投诉处理
+  scene_description: 买家明确提出投诉、举报、维权、申请平台介入，或以315曝光、伪劣商品、侵犯消费者权益、违法违规、追责等方式表达投诉诉求。
+  question_example: 我要举报你们
+  turns:
+  - question: 我要举报你们
+    expect:
+      scene: 投诉处理
+- name: AFTER_SALES_135_投诉处理_03
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 投诉处理
+  scene_description: 买家明确提出投诉、举报、维权、申请平台介入，或以315曝光、伪劣商品、侵犯消费者权益、违法违规、追责等方式表达投诉诉求。
+  question_example: 我要申请平台介入
+  turns:
+  - question: 我要申请平台介入
+    expect:
+      scene: 投诉处理
+- name: AFTER_SALES_135_投诉处理_04
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 投诉处理
+  scene_description: 买家明确提出投诉、举报、维权、申请平台介入，或以315曝光、伪劣商品、侵犯消费者权益、违法违规、追责等方式表达投诉诉求。
+  question_example: 这事我要维权
+  turns:
+  - question: 这事我要维权
+    expect:
+      scene: 投诉处理
+- name: AFTER_SALES_135_投诉处理_05
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 投诉处理
+  scene_description: 买家明确提出投诉、举报、维权、申请平台介入，或以315曝光、伪劣商品、侵犯消费者权益、违法违规、追责等方式表达投诉诉求。
+  question_example: 帮我转投诉处理
+  turns:
+  - question: 帮我转投诉处理
+    expect:
+      scene: 投诉处理
+- name: AFTER_SALES_135_投诉处理_06
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 投诉处理
+  scene_description: 买家明确提出投诉、举报、维权、申请平台介入，或以315曝光、伪劣商品、侵犯消费者权益、违法违规、追责等方式表达投诉诉求。
+  question_example: 我要投诉你们客服
+  turns:
+  - question: 我要投诉你们客服
+    expect:
+      scene: 投诉处理
+- name: AFTER_SALES_135_投诉处理_07
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 投诉处理
+  scene_description: 买家明确提出投诉、举报、维权、申请平台介入，或以315曝光、伪劣商品、侵犯消费者权益、违法违规、追责等方式表达投诉诉求。
+  question_example: 不处理我就去投诉
+  turns:
+  - question: 不处理我就去投诉
+    expect:
+      scene: 投诉处理
+- name: AFTER_SALES_135_投诉处理_08
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 投诉处理
+  scene_description: 买家明确提出投诉、举报、维权、申请平台介入，或以315曝光、伪劣商品、侵犯消费者权益、违法违规、追责等方式表达投诉诉求。
+  question_example: 叫你们负责人来处理
+  turns:
+  - question: 叫你们负责人来处理
+    expect:
+      scene: 投诉处理
+- name: AFTER_SALES_135_投诉处理_09
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 投诉处理
+  scene_description: 买家明确提出投诉、举报、维权、申请平台介入，或以315曝光、伪劣商品、侵犯消费者权益、违法违规、追责等方式表达投诉诉求。
+  question_example: 315曝光了，你们卖的是伪劣商品
+  turns:
+  - question: 315曝光了，你们卖的是伪劣商品
+    expect:
+      scene: 投诉处理
+- name: AFTER_SALES_135_投诉处理_10
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 投诉处理
+  scene_description: 买家明确提出投诉、举报、维权、申请平台介入，或以315曝光、伪劣商品、侵犯消费者权益、违法违规、追责等方式表达投诉诉求。
+  question_example: 315都曝光了，你们还敢卖
+  turns:
+  - question: 315都曝光了，你们还敢卖
+    expect:
+      scene: 投诉处理
+- name: AFTER_SALES_135_投诉处理_11
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 投诉处理
+  scene_description: 买家明确提出投诉、举报、维权、申请平台介入，或以315曝光、伪劣商品、侵犯消费者权益、违法违规、追责等方式表达投诉诉求。
+  question_example: 你们侵犯消费者权益了
+  turns:
+  - question: 你们侵犯消费者权益了
+    expect:
+      scene: 投诉处理
+- name: AFTER_SALES_135_投诉处理_12
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 投诉处理
+  scene_description: 买家明确提出投诉、举报、维权、申请平台介入，或以315曝光、伪劣商品、侵犯消费者权益、违法违规、追责等方式表达投诉诉求。
+  question_example: 我要举报你们卖伪劣产品
+  turns:
+  - question: 我要举报你们卖伪劣产品
+    expect:
+      scene: 投诉处理
+- name: AFTER_SALES_135_投诉处理_13
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 投诉处理
+  scene_description: 买家明确提出投诉、举报、维权、申请平台介入，或以315曝光、伪劣商品、侵犯消费者权益、违法违规、追责等方式表达投诉诉求。
+  question_example: 你们这是欺骗消费者
+  turns:
+  - question: 你们这是欺骗消费者
+    expect:
+      scene: 投诉处理
+- name: AFTER_SALES_135_投诉处理_14
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 投诉处理
+  scene_description: 买家明确提出投诉、举报、维权、申请平台介入，或以315曝光、伪劣商品、侵犯消费者权益、违法违规、追责等方式表达投诉诉求。
+  question_example: 这件事我要去12315投诉
+  turns:
+  - question: 这件事我要去12315投诉
+    expect:
+      scene: 投诉处理
+- name: AFTER_SALES_135_投诉处理_15
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 投诉处理
+  scene_description: 买家明确提出投诉、举报、维权、申请平台介入，或以315曝光、伪劣商品、侵犯消费者权益、违法违规、追责等方式表达投诉诉求。
+  question_example: 你们这种行为已经违法了
+  turns:
+  - question: 你们这种行为已经违法了
+    expect:
+      scene: 投诉处理
+- name: AFTER_SALES_135_投诉处理_16
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 投诉处理
+  scene_description: 买家明确提出投诉、举报、维权、申请平台介入，或以315曝光、伪劣商品、侵犯消费者权益、违法违规、追责等方式表达投诉诉求。
+  question_example: 这事我要追责到底
+  turns:
+  - question: 这事我要追责到底
+    expect:
+      scene: 投诉处理
+- name: AFTER_SALES_142_咨询退款退货流程_01
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货流程
+  scene_description: 用户询问如何申请退款、退货退款怎么操作、退款申请如何填写、及退货退款的相关流程。
+  question_example: 想退款怎么操作
+  turns:
+  - question: 想退款怎么操作
+    expect:
+      scene: 咨询退款退货流程
+- name: AFTER_SALES_142_咨询退款退货流程_02
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货流程
+  scene_description: 用户询问如何申请退款、退货退款怎么操作、退款申请如何填写、及退货退款的相关流程。
+  question_example: 退款申请怎么填
+  turns:
+  - question: 退款申请怎么填
+    expect:
+      scene: 咨询退款退货流程
+- name: AFTER_SALES_142_咨询退款退货流程_03
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货流程
+  scene_description: 用户询问如何申请退款、退货退款怎么操作、退款申请如何填写、及退货退款的相关流程。
+  question_example: 退货退款流程是什么
+  turns:
+  - question: 退货退款流程是什么
+    expect:
+      scene: 咨询退款退货流程
+- name: AFTER_SALES_142_咨询退款退货流程_04
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货流程
+  scene_description: 用户询问如何申请退款、退货退款怎么操作、退款申请如何填写、及退货退款的相关流程。
+  question_example: 退款原因填什么
+  turns:
+  - question: 退款原因填什么
+    expect:
+      scene: 咨询退款退货流程
+- name: AFTER_SALES_142_咨询退款退货流程_05
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货流程
+  scene_description: 用户询问如何申请退款、退货退款怎么操作、退款申请如何填写、及退货退款的相关流程。
+  question_example: 怎么申请退款
+  turns:
+  - question: 怎么申请退款
+    expect:
+      scene: 咨询退款退货流程
+- name: AFTER_SALES_142_咨询退款退货流程_06
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货流程
+  scene_description: 用户询问如何申请退款、退货退款怎么操作、退款申请如何填写、及退货退款的相关流程。
+  question_example: 退款要多久到账
+  turns:
+  - question: 退款要多久到账
+    expect:
+      scene: 咨询退款退货流程
+- name: AFTER_SALES_142_咨询退款退货流程_07
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货流程
+  scene_description: 用户询问如何申请退款、退货退款怎么操作、退款申请如何填写、及退货退款的相关流程。
+  question_example: 怎么取消退款
+  turns:
+  - question: 怎么取消退款
+    expect:
+      scene: 咨询退款退货流程
+- name: AFTER_SALES_142_咨询退款退货流程_08
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货流程
+  scene_description: 用户询问如何申请退款、退货退款怎么操作、退款申请如何填写、及退货退款的相关流程。
+  question_example: 退款的钱退哪里了
+  turns:
+  - question: 退款的钱退哪里了
+    expect:
+      scene: 咨询退款退货流程
+- name: AFTER_SALES_142_咨询退款退货流程_09
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货流程
+  scene_description: 用户询问如何申请退款、退货退款怎么操作、退款申请如何填写、及退货退款的相关流程。
+  question_example: 退款被拒绝了咋办
+  turns:
+  - question: 退款被拒绝了咋办
+    expect:
+      scene: 咨询退款退货流程
+- name: AFTER_SALES_142_咨询退款退货流程_10
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货流程
+  scene_description: 用户询问如何申请退款、退货退款怎么操作、退款申请如何填写、及退货退款的相关流程。
+  question_example: 退款审核要多久
+  turns:
+  - question: 退款审核要多久
+    expect:
+      scene: 咨询退款退货流程
+- name: AFTER_SALES_179_咨询退款退货条件_01
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货条件
+  scene_description: 用户询问自身情况是否符合退款条件、商品是否支持退款
+  question_example: 可以只退一件吗
+  turns:
+  - question: 可以只退一件吗
+    expect:
+      scene: 咨询退款退货条件
+- name: AFTER_SALES_179_咨询退款退货条件_02
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货条件
+  scene_description: 用户询问自身情况是否符合退款条件、商品是否支持退款
+  question_example: 我不想要了能退吗
+  turns:
+  - question: 我不想要了能退吗
+    expect:
+      scene: 咨询退款退货条件
+- name: AFTER_SALES_179_咨询退款退货条件_03
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货条件
+  scene_description: 用户询问自身情况是否符合退款条件、商品是否支持退款
+  question_example: 没发货能退吗
+  turns:
+  - question: 没发货能退吗
+    expect:
+      scene: 咨询退款退货条件
+- name: AFTER_SALES_179_咨询退款退货条件_04
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货条件
+  scene_description: 用户询问自身情况是否符合退款条件、商品是否支持退款
+  question_example: 拆封了还能退吗
+  turns:
+  - question: 拆封了还能退吗
+    expect:
+      scene: 咨询退款退货条件
+- name: AFTER_SALES_179_咨询退款退货条件_05
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货条件
+  scene_description: 用户询问自身情况是否符合退款条件、商品是否支持退款
+  question_example: 包装拆了能退货吗
+  turns:
+  - question: 包装拆了能退货吗
+    expect:
+      scene: 咨询退款退货条件
+- name: AFTER_SALES_179_咨询退款退货条件_06
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货条件
+  scene_description: 用户询问自身情况是否符合退款条件、商品是否支持退款
+  question_example: 没有效果能退吗
+  turns:
+  - question: 没有效果能退吗
+    expect:
+      scene: 咨询退款退货条件
+- name: AFTER_SALES_179_咨询退款退货条件_07
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货条件
+  scene_description: 用户询问自身情况是否符合退款条件、商品是否支持退款
+  question_example: 无效可以退款吗
+  turns:
+  - question: 无效可以退款吗
+    expect:
+      scene: 咨询退款退货条件
+- name: AFTER_SALES_179_咨询退款退货条件_08
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 咨询退款退货条件
+  scene_description: 用户询问自身情况是否符合退款条件、商品是否支持退款
+  question_example: 退款是全额退款吗
+  turns:
+  - question: 退款是全额退款吗
+    expect:
+      scene: 咨询退款退货条件
+- name: AFTER_SALES_180_发票开具与管理_01
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 发票开具与管理
+  scene_description: 发票相关问题，包括开票金额、开票进度、发票抬头、发票类型、电子发票、增值税发票、发票下载、发票邮寄
+  question_example: 能开电子发票吗
+  turns:
+  - question: 能开电子发票吗
+    expect:
+      scene: 发票开具与管理
+- name: AFTER_SALES_180_发票开具与管理_02
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 发票开具与管理
+  scene_description: 发票相关问题，包括开票金额、开票进度、发票抬头、发票类型、电子发票、增值税发票、发票下载、发票邮寄
+  question_example: 发票抬头怎么填
+  turns:
+  - question: 发票抬头怎么填
+    expect:
+      scene: 发票开具与管理
+- name: AFTER_SALES_180_发票开具与管理_03
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 发票开具与管理
+  scene_description: 发票相关问题，包括开票金额、开票进度、发票抬头、发票类型、电子发票、增值税发票、发票下载、发票邮寄
+  question_example: 发票什么时候能开
+  turns:
+  - question: 发票什么时候能开
+    expect:
+      scene: 发票开具与管理
+- name: AFTER_SALES_180_发票开具与管理_04
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 发票开具与管理
+  scene_description: 发票相关问题，包括开票金额、开票进度、发票抬头、发票类型、电子发票、增值税发票、发票下载、发票邮寄
+  question_example: 可以开增值税专票吗
+  turns:
+  - question: 可以开增值税专票吗
+    expect:
+      scene: 发票开具与管理
+- name: AFTER_SALES_180_发票开具与管理_05
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 发票开具与管理
+  scene_description: 发票相关问题，包括开票金额、开票进度、发票抬头、发票类型、电子发票、增值税发票、发票下载、发票邮寄
+  question_example: 发票金额不对怎么办
+  turns:
+  - question: 发票金额不对怎么办
+    expect:
+      scene: 发票开具与管理
+- name: AFTER_SALES_180_发票开具与管理_06
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 发票开具与管理
+  scene_description: 发票相关问题，包括开票金额、开票进度、发票抬头、发票类型、电子发票、增值税发票、发票下载、发票邮寄
+  question_example: 要发票怎么弄
+  turns:
+  - question: 要发票怎么弄
+    expect:
+      scene: 发票开具与管理
+- name: AFTER_SALES_180_发票开具与管理_07
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 发票开具与管理
+  scene_description: 发票相关问题，包括开票金额、开票进度、发票抬头、发票类型、电子发票、增值税发票、发票下载、发票邮寄
+  question_example: 发票能单独寄吗
+  turns:
+  - question: 发票能单独寄吗
+    expect:
+      scene: 发票开具与管理
+- name: AFTER_SALES_180_发票开具与管理_08
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 发票开具与管理
+  scene_description: 发票相关问题，包括开票金额、开票进度、发票抬头、发票类型、电子发票、增值税发票、发票下载、发票邮寄
+  question_example: 公司报销要什么发票
+  turns:
+  - question: 公司报销要什么发票
+    expect:
+      scene: 发票开具与管理
+- name: AFTER_SALES_180_发票开具与管理_09
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 发票开具与管理
+  scene_description: 发票相关问题，包括开票金额、开票进度、发票抬头、发票类型、电子发票、增值税发票、发票下载、发票邮寄
+  question_example: 发票开错了能改吗
+  turns:
+  - question: 发票开错了能改吗
+    expect:
+      scene: 发票开具与管理
+- name: AFTER_SALES_180_发票开具与管理_10
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 发票开具与管理
+  scene_description: 发票相关问题，包括开票金额、开票进度、发票抬头、发票类型、电子发票、增值税发票、发票下载、发票邮寄
+  question_example: 能给开张收据吗
+  turns:
+  - question: 能给开张收据吗
+    expect:
+      scene: 发票开具与管理
+- name: AFTER_SALES_180_发票开具与管理_11
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 发票开具与管理
+  scene_description: 发票相关问题，包括开票金额、开票进度、发票抬头、发票类型、电子发票、增值税发票、发票下载、发票邮寄
+  question_example: 发票在哪里下载
+  turns:
+  - question: 发票在哪里下载
+    expect:
+      scene: 发票开具与管理
+- name: AFTER_SALES_180_发票开具与管理_12
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 发票开具与管理
+  scene_description: 发票相关问题，包括开票金额、开票进度、发票抬头、发票类型、电子发票、增值税发票、发票下载、发票邮寄
+  question_example: 我想合并开发票
+  turns:
+  - question: 我想合并开发票
+    expect:
+      scene: 发票开具与管理
+- name: AFTER_SALES_180_发票开具与管理_13
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 发票开具与管理
+  scene_description: 发票相关问题，包括开票金额、开票进度、发票抬头、发票类型、电子发票、增值税发票、发票下载、发票邮寄
+  question_example: 发票能抽奖吗
+  turns:
+  - question: 发票能抽奖吗
+    expect:
+      scene: 发票开具与管理
+- name: AFTER_SALES_180_发票开具与管理_14
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 发票开具与管理
+  scene_description: 发票相关问题，包括开票金额、开票进度、发票抬头、发票类型、电子发票、增值税发票、发票下载、发票邮寄
+  question_example: 开发票需要多长时间
+  turns:
+  - question: 开发票需要多长时间
+    expect:
+      scene: 发票开具与管理
+- name: AFTER_SALES_180_发票开具与管理_15
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 发票开具与管理
+  scene_description: 发票相关问题，包括开票金额、开票进度、发票抬头、发票类型、电子发票、增值税发票、发票下载、发票邮寄
+  question_example: 开票是否可以加急处理
+  turns:
+  - question: 开票是否可以加急处理
+    expect:
+      scene: 发票开具与管理
+- name: AFTER_SALES_181_安装服务详情_01
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 安装服务详情
+  scene_description: 安装服务相关问题，包括安装教程、安装费用、安装网点、预约安装、是否包安装、送装一体、自己安装
+  question_example: 你们包安装吗
+  turns:
+  - question: 你们包安装吗
+    expect:
+      scene: 安装服务详情
+- name: AFTER_SALES_181_安装服务详情_02
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 安装服务详情
+  scene_description: 安装服务相关问题，包括安装教程、安装费用、安装网点、预约安装、是否包安装、送装一体、自己安装
+  question_example: 安装要另外收费吗
+  turns:
+  - question: 安装要另外收费吗
+    expect:
+      scene: 安装服务详情
+- name: AFTER_SALES_181_安装服务详情_03
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 安装服务详情
+  scene_description: 安装服务相关问题，包括安装教程、安装费用、安装网点、预约安装、是否包安装、送装一体、自己安装
+  question_example: 怎么预约安装师傅
+  turns:
+  - question: 怎么预约安装师傅
+    expect:
+      scene: 安装服务详情
+- name: AFTER_SALES_181_安装服务详情_04
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 安装服务详情
+  scene_description: 安装服务相关问题，包括安装教程、安装费用、安装网点、预约安装、是否包安装、送装一体、自己安装
+  question_example: 安装教程有吗
+  turns:
+  - question: 安装教程有吗
+    expect:
+      scene: 安装服务详情
+- name: AFTER_SALES_181_安装服务详情_05
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 安装服务详情
+  scene_description: 安装服务相关问题，包括安装教程、安装费用、安装网点、预约安装、是否包安装、送装一体、自己安装
+  question_example: 能自己装吗
+  turns:
+  - question: 能自己装吗
+    expect:
+      scene: 安装服务详情
+- name: AFTER_SALES_181_安装服务详情_06
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 安装服务详情
+  scene_description: 安装服务相关问题，包括安装教程、安装费用、安装网点、预约安装、是否包安装、送装一体、自己安装
+  question_example: 附近有安装点吗
+  turns:
+  - question: 附近有安装点吗
+    expect:
+      scene: 安装服务详情
+- name: AFTER_SALES_181_安装服务详情_07
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 安装服务详情
+  scene_description: 安装服务相关问题，包括安装教程、安装费用、安装网点、预约安装、是否包安装、送装一体、自己安装
+  question_example: 安装要多久时间
+  turns:
+  - question: 安装要多久时间
+    expect:
+      scene: 安装服务详情
+- name: AFTER_SALES_181_安装服务详情_08
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 安装服务详情
+  scene_description: 安装服务相关问题，包括安装教程、安装费用、安装网点、预约安装、是否包安装、送装一体、自己安装
+  question_example: 送装一体是什么意思
+  turns:
+  - question: 送装一体是什么意思
+    expect:
+      scene: 安装服务详情
+- name: AFTER_SALES_181_安装服务详情_09
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 安装服务详情
+  scene_description: 安装服务相关问题，包括安装教程、安装费用、安装网点、预约安装、是否包安装、送装一体、自己安装
+  question_example: 挂墙上怎么收费
+  turns:
+  - question: 挂墙上怎么收费
+    expect:
+      scene: 安装服务详情
+- name: AFTER_SALES_181_安装服务详情_10
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 安装服务详情
+  scene_description: 安装服务相关问题，包括安装教程、安装费用、安装网点、预约安装、是否包安装、送装一体、自己安装
+  question_example: 不包安装能买吗
+  turns:
+  - question: 不包安装能买吗
+    expect:
+      scene: 安装服务详情
+- name: AFTER_SALES_182_换货流程及规则_01
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 换货流程及规则
+  scene_description: 换货相关问题，包括换货申请、换货流程、换货物流、换货地址、换货快递单号、无法换货、换货限制
+  question_example: 我想换个码数
+  turns:
+  - question: 我想换个码数
+    expect:
+      scene: 换货流程及规则
+- name: AFTER_SALES_182_换货流程及规则_02
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 换货流程及规则
+  scene_description: 换货相关问题，包括换货申请、换货流程、换货物流、换货地址、换货快递单号、无法换货、换货限制
+  question_example: 换货流程是怎样的
+  turns:
+  - question: 换货流程是怎样的
+    expect:
+      scene: 换货流程及规则
+- name: AFTER_SALES_182_换货流程及规则_03
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 换货流程及规则
+  scene_description: 换货相关问题，包括换货申请、换货流程、换货物流、换货地址、换货快递单号、无法换货、换货限制
+  question_example: 能换个颜色吗
+  turns:
+  - question: 能换个颜色吗
+    expect:
+      scene: 换货流程及规则
+- name: AFTER_SALES_182_换货流程及规则_04
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 换货流程及规则
+  scene_description: 换货相关问题，包括换货申请、换货流程、换货物流、换货地址、换货快递单号、无法换货、换货限制
+  question_example: 换货要补差价吗
+  turns:
+  - question: 换货要补差价吗
+    expect:
+      scene: 换货流程及规则
+- name: AFTER_SALES_182_换货流程及规则_05
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 换货流程及规则
+  scene_description: 换货相关问题，包括换货申请、换货流程、换货物流、换货地址、换货快递单号、无法换货、换货限制
+  question_example: 换货快递单号给我
+  turns:
+  - question: 换货快递单号给我
+    expect:
+      scene: 换货流程及规则
+- name: AFTER_SALES_182_换货流程及规则_06
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 换货流程及规则
+  scene_description: 换货相关问题，包括换货申请、换货流程、换货物流、换货地址、换货快递单号、无法换货、换货限制
+  question_example: 怎么申请换货
+  turns:
+  - question: 怎么申请换货
+    expect:
+      scene: 换货流程及规则
+- name: AFTER_SALES_182_换货流程及规则_07
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 换货流程及规则
+  scene_description: 换货相关问题，包括换货申请、换货流程、换货物流、换货地址、换货快递单号、无法换货、换货限制
+  question_example: 可以换其他款式吗
+  turns:
+  - question: 可以换其他款式吗
+    expect:
+      scene: 换货流程及规则
+- name: AFTER_SALES_182_换货流程及规则_08
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 换货流程及规则
+  scene_description: 换货相关问题，包括换货申请、换货流程、换货物流、换货地址、换货快递单号、无法换货、换货限制
+  question_example: 帮我换成大码的
+  turns:
+  - question: 帮我换成大码的
+    expect:
+      scene: 换货流程及规则
+- name: AFTER_SALES_182_换货流程及规则_09
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 换货流程及规则
+  scene_description: 换货相关问题，包括换货申请、换货流程、换货物流、换货地址、换货快递单号、无法换货、换货限制
+  question_example: 换货申请怎么取消了
+  turns:
+  - question: 换货申请怎么取消了
+    expect:
+      scene: 换货流程及规则
+- name: AFTER_SALES_182_换货流程及规则_10
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 换货流程及规则
+  scene_description: 换货相关问题，包括换货申请、换货流程、换货物流、换货地址、换货快递单号、无法换货、换货限制
+  question_example: 换货要自己出运费吗
+  turns:
+  - question: 换货要自己出运费吗
+    expect:
+      scene: 换货流程及规则
+- name: AFTER_SALES_183_破损变质处理方案_01
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 破损变质处理方案
+  scene_description: 商品破损变质问题，包括坏了包赔、商品损坏、商品变质、毛刺黑斑、断裂发臭、发霉长毛
+  question_example: 收到的东西坏了
+  turns:
+  - question: 收到的东西坏了
+    expect:
+      scene: 破损变质处理方案
+- name: AFTER_SALES_183_破损变质处理方案_02
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 破损变质处理方案
+  scene_description: 商品破损变质问题，包括坏了包赔、商品损坏、商品变质、毛刺黑斑、断裂发臭、发霉长毛
+  question_example: 东西都碎了
+  turns:
+  - question: 东西都碎了
+    expect:
+      scene: 破损变质处理方案
+- name: AFTER_SALES_183_破损变质处理方案_03
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 破损变质处理方案
+  scene_description: 商品破损变质问题，包括坏了包赔、商品损坏、商品变质、毛刺黑斑、断裂发臭、发霉长毛
+  question_example: 收到变质商品了
+  turns:
+  - question: 收到变质商品了
+    expect:
+      scene: 破损变质处理方案
+- name: AFTER_SALES_183_破损变质处理方案_04
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 破损变质处理方案
+  scene_description: 商品破损变质问题，包括坏了包赔、商品损坏、商品变质、毛刺黑斑、断裂发臭、发霉长毛
+  question_example: 包装破损严重
+  turns:
+  - question: 包装破损严重
+    expect:
+      scene: 破损变质处理方案
+- name: AFTER_SALES_183_破损变质处理方案_05
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 破损变质处理方案
+  scene_description: 商品破损变质问题，包括坏了包赔、商品损坏、商品变质、毛刺黑斑、断裂发臭、发霉长毛
+  question_example: 坏了一个赔吗
+  turns:
+  - question: 坏了一个赔吗
+    expect:
+      scene: 破损变质处理方案
+- name: AFTER_SALES_183_破损变质处理方案_06
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 破损变质处理方案
+  scene_description: 商品破损变质问题，包括坏了包赔、商品损坏、商品变质、毛刺黑斑、断裂发臭、发霉长毛
+  question_example: 收到的东西臭了
+  turns:
+  - question: 收到的东西臭了
+    expect:
+      scene: 破损变质处理方案
+- name: AFTER_SALES_183_破损变质处理方案_07
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 破损变质处理方案
+  scene_description: 商品破损变质问题，包括坏了包赔、商品损坏、商品变质、毛刺黑斑、断裂发臭、发霉长毛
+  question_example: 这能赔吗
+  turns:
+  - question: 这能赔吗
+    expect:
+      scene: 破损变质处理方案
+- name: AFTER_SALES_183_破损变质处理方案_08
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 破损变质处理方案
+  scene_description: 商品破损变质问题，包括坏了包赔、商品损坏、商品变质、毛刺黑斑、断裂发臭、发霉长毛
+  question_example: 都发霉了咋办
+  turns:
+  - question: 都发霉了咋办
+    expect:
+      scene: 破损变质处理方案
+- name: AFTER_SALES_183_破损变质处理方案_09
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 破损变质处理方案
+  scene_description: 商品破损变质问题，包括坏了包赔、商品损坏、商品变质、毛刺黑斑、断裂发臭、发霉长毛
+  question_example: 坏了包赔是真的吗
+  turns:
+  - question: 坏了包赔是真的吗
+    expect:
+      scene: 破损变质处理方案
+- name: AFTER_SALES_183_破损变质处理方案_10
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 破损变质处理方案
+  scene_description: 商品破损变质问题，包括坏了包赔、商品损坏、商品变质、毛刺黑斑、断裂发臭、发霉长毛
+  question_example: 实物有损伤
+  turns:
+  - question: 实物有损伤
+    expect:
+      scene: 破损变质处理方案
+- name: AFTER_SALES_184_实物与描述不符处理_01
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 实物与描述不符处理
+  scene_description: 实物与描述不符问题，包括货不对板、实物与图片不一致、商品和图片差距太大、款式不符
+  question_example: 跟图片不一样啊
+  turns:
+  - question: 跟图片不一样啊
+    expect:
+      scene: 实物与描述不符处理
+- name: AFTER_SALES_184_实物与描述不符处理_02
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 实物与描述不符处理
+  scene_description: 实物与描述不符问题，包括货不对板、实物与图片不一致、商品和图片差距太大、款式不符
+  question_example: 实物和图片差别太大
+  turns:
+  - question: 实物和图片差别太大
+    expect:
+      scene: 实物与描述不符处理
+- name: AFTER_SALES_184_实物与描述不符处理_03
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 实物与描述不符处理
+  scene_description: 实物与描述不符问题，包括货不对板、实物与图片不一致、商品和图片差距太大、款式不符
+  question_example: 这个跟图片相符吗
+  turns:
+  - question: 这个跟图片相符吗
+    expect:
+      scene: 实物与描述不符处理
+- name: AFTER_SALES_184_实物与描述不符处理_04
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 实物与描述不符处理
+  scene_description: 实物与描述不符问题，包括货不对板、实物与图片不一致、商品和图片差距太大、款式不符
+  question_example: 收到货跟图片不一样
+  turns:
+  - question: 收到货跟图片不一样
+    expect:
+      scene: 实物与描述不符处理
+- name: AFTER_SALES_184_实物与描述不符处理_05
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 实物与描述不符处理
+  scene_description: 实物与描述不符问题，包括货不对板、实物与图片不一致、商品和图片差距太大、款式不符
+  question_example: 是不是货不对板
+  turns:
+  - question: 是不是货不对板
+    expect:
+      scene: 实物与描述不符处理
+- name: AFTER_SALES_184_实物与描述不符处理_06
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 实物与描述不符处理
+  scene_description: 实物与描述不符问题，包括货不对板、实物与图片不一致、商品和图片差距太大、款式不符
+  question_example: 怎么跟图片差这么多
+  turns:
+  - question: 怎么跟图片差这么多
+    expect:
+      scene: 实物与描述不符处理
+- name: AFTER_SALES_184_实物与描述不符处理_07
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 实物与描述不符处理
+  scene_description: 实物与描述不符问题，包括货不对板、实物与图片不一致、商品和图片差距太大、款式不符
+  question_example: 实物有出入吗
+  turns:
+  - question: 实物有出入吗
+    expect:
+      scene: 实物与描述不符处理
+- name: AFTER_SALES_184_实物与描述不符处理_08
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 实物与描述不符处理
+  scene_description: 实物与描述不符问题，包括货不对板、实物与图片不一致、商品和图片差距太大、款式不符
+  question_example: 这衣服和图片一样吗
+  turns:
+  - question: 这衣服和图片一样吗
+    expect:
+      scene: 实物与描述不符处理
+- name: AFTER_SALES_185_价格保护政策_01
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格保护政策
+  scene_description: 价格保护相关问题，包括保价期限、申请保价、价格保护、保价时间
+  question_example: 这个有保价吗
+  turns:
+  - question: 这个有保价吗
+    expect:
+      scene: 价格保护政策
+- name: AFTER_SALES_185_价格保护政策_02
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格保护政策
+  scene_description: 价格保护相关问题，包括保价期限、申请保价、价格保护、保价时间
+  question_example: 价格保护是多久
+  turns:
+  - question: 价格保护是多久
+    expect:
+      scene: 价格保护政策
+- name: AFTER_SALES_185_价格保护政策_03
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格保护政策
+  scene_description: 价格保护相关问题，包括保价期限、申请保价、价格保护、保价时间
+  question_example: 能申请价保吗
+  turns:
+  - question: 能申请价保吗
+    expect:
+      scene: 价格保护政策
+- name: AFTER_SALES_185_价格保护政策_04
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格保护政策
+  scene_description: 价格保护相关问题，包括保价期限、申请保价、价格保护、保价时间
+  question_example: 保价从什么时候算
+  turns:
+  - question: 保价从什么时候算
+    expect:
+      scene: 价格保护政策
+- name: AFTER_SALES_185_价格保护政策_05
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格保护政策
+  scene_description: 价格保护相关问题，包括保价期限、申请保价、价格保护、保价时间
+  question_example: 有价格保护服务吗
+  turns:
+  - question: 有价格保护服务吗
+    expect:
+      scene: 价格保护政策
+- name: AFTER_SALES_185_价格保护政策_06
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格保护政策
+  scene_description: 价格保护相关问题，包括保价期限、申请保价、价格保护、保价时间
+  question_example: 怎么申请价保
+  turns:
+  - question: 怎么申请价保
+    expect:
+      scene: 价格保护政策
+- name: AFTER_SALES_185_价格保护政策_07
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格保护政策
+  scene_description: 价格保护相关问题，包括保价期限、申请保价、价格保护、保价时间
+  question_example: 支持保价吗
+  turns:
+  - question: 支持保价吗
+    expect:
+      scene: 价格保护政策
+- name: AFTER_SALES_185_价格保护政策_08
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格保护政策
+  scene_description: 价格保护相关问题，包括保价期限、申请保价、价格保护、保价时间
+  question_example: 保价条件是什么
+  turns:
+  - question: 保价条件是什么
+    expect:
+      scene: 价格保护政策
+- name: AFTER_SALES_186_价格差额处理_01
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格差额处理
+  scene_description: 差价相关问题，包括补差价、退差价、换货补差价、价格差异、买贵补差、降价退差等诉求
+  question_example: 换货要补多少钱
+  turns:
+  - question: 换货要补多少钱
+    expect:
+      scene: 价格差额处理
+- name: AFTER_SALES_186_价格差额处理_02
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格差额处理
+  scene_description: 差价相关问题，包括补差价、退差价、换货补差价、价格差异、买贵补差、降价退差等诉求
+  question_example: 有差价能退吗
+  turns:
+  - question: 有差价能退吗
+    expect:
+      scene: 价格差额处理
+- name: AFTER_SALES_186_价格差额处理_03
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格差额处理
+  scene_description: 差价相关问题，包括补差价、退差价、换货补差价、价格差异、买贵补差、降价退差等诉求
+  question_example: 怎么补差价
+  turns:
+  - question: 怎么补差价
+    expect:
+      scene: 价格差额处理
+- name: AFTER_SALES_186_价格差额处理_04
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格差额处理
+  scene_description: 差价相关问题，包括补差价、退差价、换货补差价、价格差异、买贵补差、降价退差等诉求
+  question_example: 这个差价能补吗
+  turns:
+  - question: 这个差价能补吗
+    expect:
+      scene: 价格差额处理
+- name: AFTER_SALES_186_价格差额处理_05
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格差额处理
+  scene_description: 差价相关问题，包括补差价、退差价、换货补差价、价格差异、买贵补差、降价退差等诉求
+  question_example: 能退差价给我吗
+  turns:
+  - question: 能退差价给我吗
+    expect:
+      scene: 价格差额处理
+- name: AFTER_SALES_186_价格差额处理_06
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格差额处理
+  scene_description: 差价相关问题，包括补差价、退差价、换货补差价、价格差异、买贵补差、降价退差等诉求
+  question_example: 差价能退回吗
+  turns:
+  - question: 差价能退回吗
+    expect:
+      scene: 价格差额处理
+- name: AFTER_SALES_186_价格差额处理_07
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格差额处理
+  scene_description: 差价相关问题，包括补差价、退差价、换货补差价、价格差异、买贵补差、降价退差等诉求
+  question_example: 价格差太多了
+  turns:
+  - question: 价格差太多了
+    expect:
+      scene: 价格差额处理
+- name: AFTER_SALES_186_价格差额处理_08
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格差额处理
+  scene_description: 差价相关问题，包括补差价、退差价、换货补差价、价格差异、买贵补差、降价退差等诉求
+  question_example: 怎么处理差价
+  turns:
+  - question: 怎么处理差价
+    expect:
+      scene: 价格差额处理
+- name: AFTER_SALES_186_价格差额处理_09
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格差额处理
+  scene_description: 差价相关问题，包括补差价、退差价、换货补差价、价格差异、买贵补差、降价退差等诉求
+  question_example: 补差价怎么操作
+  turns:
+  - question: 补差价怎么操作
+    expect:
+      scene: 价格差额处理
+- name: AFTER_SALES_186_价格差额处理_10
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格差额处理
+  scene_description: 差价相关问题，包括补差价、退差价、换货补差价、价格差异、买贵补差、降价退差等诉求
+  question_example: 买贵了能退差价吗
+  turns:
+  - question: 买贵了能退差价吗
+    expect:
+      scene: 价格差额处理
+- name: AFTER_SALES_186_价格差额处理_11
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格差额处理
+  scene_description: 差价相关问题，包括补差价、退差价、换货补差价、价格差异、买贵补差、降价退差等诉求
+  question_example: 刚买就降价了能补吗
+  turns:
+  - question: 刚买就降价了能补吗
+    expect:
+      scene: 价格差额处理
+- name: AFTER_SALES_186_价格差额处理_12
+  category: 售后咨询
+  category_key: AFTER_SALES
+  scene_name: 价格差额处理
+  scene_description: 差价相关问题，包括补差价、退差价、换货补差价、价格差异、买贵补差、降价退差等诉求
+  question_example: 价格降了给我退差价
+  turns:
+  - question: 价格降了给我退差价
+    expect:
+      scene: 价格差额处理

@@ -1,0 +1,210 @@
+suite:
+  name: kb_scene_category_special_message
+  mode: sequential
+  quality: true
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+  quality_retries: 10
+  quality_retry_interval_seconds: 2
+  assertions: true
+target_env: dev
+category_groups:
+- key: ALL
+  name: 全部分类
+  count: 227
+- id: 6981b94a2c740c87d04d1a66
+  key: SPECIAL_MESSAGE
+  name: 特殊消息
+  count: 19
+cases:
+- name: SPECIAL_MESSAGE_062_买家发送图片_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 买家发送图片
+  scene_description: ''
+  question_example: 买家发送图片[买家发送图片]
+  turns:
+  - question: 买家发送图片[买家发送图片]
+    expect:
+      scene: 买家发送图片
+- name: SPECIAL_MESSAGE_063_买家发送商品链接_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 买家发送商品链接
+  scene_description: ''
+  question_example: 买家发送商品链接[买家发送商品链接]
+  turns:
+  - question: 买家发送商品链接[买家发送商品链接]
+    expect:
+      scene: 买家发送商品链接
+- name: SPECIAL_MESSAGE_064_承诺评价返现_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 承诺评价返现
+  scene_description: ''
+  question_example: 承诺评价返现[承诺评价返现]
+  turns:
+  - question: 承诺评价返现[承诺评价返现]
+    expect:
+      scene: 承诺评价返现
+- name: SPECIAL_MESSAGE_086_买家发送视频_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 买家发送视频
+  scene_description: ''
+  question_example: 买家发送视频[买家发送视频]
+  turns:
+  - question: 买家发送视频[买家发送视频]
+    expect:
+      scene: 买家发送视频
+- name: SPECIAL_MESSAGE_087_买家发送文件_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 买家发送文件
+  scene_description: ''
+  question_example: 买家发送文件[买家发送文件]
+  turns:
+  - question: 买家发送文件[买家发送文件]
+    expect:
+      scene: 买家发送文件
+- name: SPECIAL_MESSAGE_088_买家发送或索要微信_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 买家发送或索要微信
+  scene_description: ''
+  question_example: 买家发送或索要微信[买家发送或索要微信]
+  turns:
+  - question: 买家发送或索要微信[买家发送或索要微信]
+    expect:
+      scene: 买家发送或索要微信
+- name: SPECIAL_MESSAGE_089_买家发送手机号_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 买家发送手机号
+  scene_description: ''
+  question_example: 买家发送手机号[买家发送手机号]
+  turns:
+  - question: 买家发送手机号[买家发送手机号]
+    expect:
+      scene: 买家发送手机号
+- name: SPECIAL_MESSAGE_090_买家发送订单_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 买家发送订单
+  scene_description: ''
+  question_example: 买家发送订单[买家发送订单]
+  turns:
+  - question: 买家发送订单[买家发送订单]
+    expect:
+      scene: 买家发送订单
+- name: SPECIAL_MESSAGE_124_买家发送其他链接_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 买家发送其他链接
+  scene_description: ''
+  question_example: 买家发送其他链接[买家发送其他链接]
+  turns:
+  - question: 买家发送其他链接[买家发送其他链接]
+    expect:
+      scene: 买家发送其他链接
+- name: SPECIAL_MESSAGE_126_申请补寄卡片_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 申请补寄卡片
+  scene_description: ''
+  question_example: 申请补寄卡片[申请补寄卡片]
+  turns:
+  - question: 申请补寄卡片[申请补寄卡片]
+    expect:
+      scene: 申请补寄卡片
+- name: SPECIAL_MESSAGE_127_申请修改地址卡片_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 申请修改地址卡片
+  scene_description: ''
+  question_example: 申请修改地址卡片[申请修改地址卡片]
+  turns:
+  - question: 申请修改地址卡片[申请修改地址卡片]
+    expect:
+      scene: 申请修改地址卡片
+- name: SPECIAL_MESSAGE_128_申请发票卡片_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 申请发票卡片
+  scene_description: ''
+  question_example: 申请发票卡片[申请发票卡片]
+  turns:
+  - question: 申请发票卡片[申请发票卡片]
+    expect:
+      scene: 申请发票卡片
+- name: SPECIAL_MESSAGE_129_物流投诉卡片_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 物流投诉卡片
+  scene_description: ''
+  question_example: 物流投诉卡片[物流投诉卡片]
+  turns:
+  - question: 物流投诉卡片[物流投诉卡片]
+    expect:
+      scene: 物流投诉卡片
+- name: SPECIAL_MESSAGE_130_申请退货退款卡片_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 申请退货退款卡片
+  scene_description: ''
+  question_example: 申请退货退款卡片[申请退货退款卡片]
+  turns:
+  - question: 申请退货退款卡片[申请退货退款卡片]
+    expect:
+      scene: 申请退货退款卡片
+- name: SPECIAL_MESSAGE_131_物流异常卡片_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 物流异常卡片
+  scene_description: ''
+  question_example: 物流异常卡片[物流异常卡片]
+  turns:
+  - question: 物流异常卡片[物流异常卡片]
+    expect:
+      scene: 物流异常卡片
+- name: SPECIAL_MESSAGE_132_平台介入卡片_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 平台介入卡片
+  scene_description: ''
+  question_example: 平台介入卡片[平台介入卡片]
+  turns:
+  - question: 平台介入卡片[平台介入卡片]
+    expect:
+      scene: 平台介入卡片
+- name: SPECIAL_MESSAGE_162_官方小二消息_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 官方小二消息
+  scene_description: ''
+  question_example: 官方小二消息[官方小二消息]
+  turns:
+  - question: 官方小二消息[官方小二消息]
+    expect:
+      scene: 官方小二消息
+- name: SPECIAL_MESSAGE_163_申请核查物流信息_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 申请核查物流信息
+  scene_description: ''
+  question_example: 申请核查物流信息[申请核查物流信息]
+  turns:
+  - question: 申请核查物流信息[申请核查物流信息]
+    expect:
+      scene: 申请核查物流信息
+- name: SPECIAL_MESSAGE_177_买家发送语音_01
+  category: 特殊消息
+  category_key: SPECIAL_MESSAGE
+  scene_name: 买家发送语音
+  scene_description: ''
+  question_example: 买家发送语音[买家发送语音]
+  turns:
+  - question: 买家发送语音[买家发送语音]
+    expect:
+      scene: 买家发送语音

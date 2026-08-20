@@ -1,0 +1,48 @@
+# /chat/answer 基础回复冒烟测试
+# - 用途：验证 AI 面对常见简单问题时可以正常返回回复。
+# - assertions: false 时不校验固定文案，但测试代码仍会校验接口成功且返回 assistant 消息。
+suite:
+  name: basic_reply_smoke
+  mode: sequential
+  quality: false
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+  assertions: false
+
+target_env: dev
+
+cases:
+  - name: recommend_shampoo
+    questions:
+      - 推荐一款洗发水
+
+  - name: recommend_body_wash
+    questions:
+      - 推荐一款沐浴露
+
+  - name: recommend_shampoo_for_oily_hair
+    questions:
+      - 我是油性头发，推荐一款适合的洗发水
+
+  - name: recommend_body_wash_for_dry_skin
+    questions:
+      - 皮肤比较干，推荐一款温和保湿的沐浴露
+
+  - name: simple_product_follow_up
+    questions:
+      - 推荐一款洗发水
+      - 这款适合每天使用吗
+      - 有没有优惠活动
+
+  - name: simple_greeting
+    questions:
+      - 你好，在吗
+
+  - name: simple_shipping_question
+    questions:
+      - 买完一般多久发货
+
+  - name: simple_after_sales_question
+    questions:
+      - 收到后不合适可以退货吗

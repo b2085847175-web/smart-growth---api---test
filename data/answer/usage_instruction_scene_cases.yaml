@@ -1,0 +1,198 @@
+# 商品包装内是否附带说明书的场景命中测试
+# - 每个 case 只包含一条独立问法。
+# - 无论问法明确或模糊，都断言质检结果命中“使用说明”场景。
+suite:
+  name: usage_instruction_scene
+  mode: sequential
+  quality: true
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+  quality_retries: 10
+  quality_retry_interval_seconds: 2
+  assertions: true
+
+target_env: dev
+
+cases:
+  # 明确问法
+  - name: usage_instruction_explicit_01
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 里面有说明书吗？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_explicit_02
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 包装里会附带使用说明书吗？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_explicit_03
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 收到货后有纸质说明书吗？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_explicit_04
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这个商品配说明书吗？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_explicit_05
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 请问盒子里面有没有操作手册？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_explicit_06
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 产品自带中文说明书吗？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_explicit_07
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 发货时会一起放使用指南吗？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_explicit_08
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 有详细的安装说明书吗？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_explicit_09
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 说明书是纸质的还是电子版的？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_explicit_10
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 配件里包含产品说明书吗？
+        expect:
+          scene: 使用说明
+
+  # 模糊、口语化问法
+  - name: usage_instruction_fuzzy_01
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这个怎么用，有教的吗？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_fuzzy_02
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 到手能看着学吗？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_fuzzy_03
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 里面有教怎么操作的东西吧？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_fuzzy_04
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 不会用咋办？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_fuzzy_05
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 有步骤可以照着弄吗？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_fuzzy_06
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 盒子里有那本小册子吗？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_fuzzy_07
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 买回来自己能研究明白吗？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_fuzzy_08
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 有使用教程没？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_fuzzy_09
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 会告诉我怎么装怎么用吧？
+        expect:
+          scene: 使用说明
+
+  - name: usage_instruction_fuzzy_10
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 有没有随货一起发的操作指南？
+        expect:
+          scene: 使用说明

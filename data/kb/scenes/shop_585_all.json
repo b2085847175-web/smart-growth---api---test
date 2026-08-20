@@ -1,0 +1,4385 @@
+{
+  "exported_at": "2026-08-20T11:26:05",
+  "request": {
+    "shop_id": "585",
+    "page_size": 100,
+    "fetch_all": true
+  },
+  "categories": [
+    {
+      "_id": "696f3c783dceab0847703e11",
+      "key": "PRE_SALES",
+      "name": "售前咨询",
+      "count": 2
+    },
+    {
+      "_id": "696f3c783dceab0847703e12",
+      "key": "PRODUCT_INFO",
+      "name": "商品咨询",
+      "count": 116
+    },
+    {
+      "_id": "696f3c783dceab0847703e13",
+      "key": "CHAT",
+      "name": "聊天互动",
+      "count": 39
+    },
+    {
+      "_id": "696f3c783dceab0847703e14",
+      "key": "PROMOTION",
+      "name": "活动优惠",
+      "count": 14
+    },
+    {
+      "_id": "696f3c783dceab0847703e15",
+      "key": "LOGISTICS",
+      "name": "物流咨询",
+      "count": 14
+    },
+    {
+      "_id": "696f3c783dceab0847703e16",
+      "key": "AFTER_SALES",
+      "name": "售后咨询",
+      "count": 12
+    },
+    {
+      "_id": "696f3c783dceab0847703e17",
+      "key": "PURCHASE",
+      "name": "购买咨询",
+      "count": 11
+    },
+    {
+      "_id": "6981b94a2c740c87d04d1a66",
+      "key": "SPECIAL_MESSAGE",
+      "name": "特殊消息",
+      "count": 19
+    }
+  ],
+  "scenes": [
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "适用年龄",
+      "scene_description": "买家咨询商品适合哪个年龄段使用，包含儿童、小孩、青少年、成人、老人等年龄相关问法。",
+      "question_examples": [
+        "18岁可以用吗",
+        "学生能用吗",
+        "20岁适合吗",
+        "小孩能用吗",
+        "老人能用吗"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "保健品行业",
+        "宠物行业",
+        "服装行业",
+        "食品行业",
+        "玩具行业",
+        "床上用品",
+        "3C数码",
+        "眼镜行业",
+        "户外装备",
+        "珠宝首饰",
+        "果蔬生鲜",
+        "母婴用品",
+        "书籍杂志"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "适用性别",
+      "scene_description": "买家咨询商品是否适合男性、女性或特定性别人群使用。",
+      "question_examples": [
+        "男生能用吗",
+        "女生适合吗",
+        "男士可以用吗",
+        "女士能用这个吗",
+        "男性适合这款吗"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "保健品行业",
+        "成人用品",
+        "宠物行业",
+        "服装行业",
+        "食品行业",
+        "玩具行业",
+        "床上用品",
+        "3C数码",
+        "眼镜行业",
+        "户外装备",
+        "珠宝首饰",
+        "母婴用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "适用季节",
+      "scene_description": "买家咨询商品适合什么季节、温度或气候条件下使用。",
+      "question_examples": [
+        "夏天能用吗",
+        "适合春夏还是秋冬",
+        "一年四季都能用吗",
+        "冬天会不会太厚重",
+        "换季期间适合吗",
+        "冬季可以用吗",
+        "适合夏季还是冬季"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "服装行业",
+        "户外装备",
+        "母婴用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "成分表",
+      "scene_description": "买家索要完整成分表、配方表、配料表、原料清单，或咨询商品是否含有某种具体成分。",
+      "question_examples": [
+        "成分表发我看看",
+        "完整配方有吗",
+        "配料表在哪里看",
+        "全部成分有哪些",
+        "有详细成分表吗",
+        "有荧光剂吗",
+        "含酒精吗"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "保健品行业",
+        "宠物行业",
+        "服装行业",
+        "食品行业",
+        "母婴用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "清洗方式",
+      "scene_description": "买家咨询商品应该怎么清洗、怎么冲洗、怎么清洁，聚焦清洁方式本身。",
+      "question_examples": [
+        "这个怎么洗",
+        "要怎么清洗",
+        "用清水洗就行吗",
+        "要不要用温水",
+        "需要用专门清洁剂吗",
+        "要不要反面洗",
+        "深浅分开洗吗",
+        "新衣服要先洗吗"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "成人用品",
+        "宠物行业",
+        "服装行业",
+        "玩具行业",
+        "烹饪厨具",
+        "床上用品",
+        "家电行业",
+        "眼镜行业",
+        "户外装备",
+        "珠宝首饰",
+        "家装主材",
+        "母婴用品",
+        "工业用具",
+        "汽车用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "版型",
+      "scene_description": "买家咨询服装整体版型是宽松、修身、直筒、紧身等",
+      "question_examples": [
+        "这款是不是宽松啊",
+        "这个款修身吗",
+        "这个是偏宽松还是偏修身",
+        "版型会不会很贴身",
+        "这个穿起来是直筒版吗",
+        "这条裤子是直筒还是阔腿",
+        "A字版吗",
+        "是不是落肩款",
+        "版型如何"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "腰型设计",
+      "scene_description": "买家咨询裤装或裙装的腰型设计，如高腰、中腰、低腰",
+      "question_examples": [
+        "这条裤子是高腰的吗",
+        "请问是低腰吗",
+        "这个是高腰还是中腰的",
+        "腰线高不高",
+        "这条裙子属于高腰款吗"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "尺码标准",
+      "scene_description": "买家在购买前咨询尺码是否标准、是否偏大或偏小",
+      "question_examples": [
+        "这个码数标准吗",
+        "码数会不会偏大或偏小",
+        "码正吗",
+        "这个尺码偏小吗",
+        "平时穿M这款要拍大一码吗"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "尺码表",
+      "scene_description": "买家咨询具体尺码参数、尺码换算、身高体重与尺码的对应关系，或索要尺码表",
+      "question_examples": [
+        "这个码的胸围和肩宽是多大的",
+        "M码适合1米几的",
+        "175/74A裤长是多少",
+        "尺码表有吗",
+        "按身高体重怎么选尺码",
+        "腰围2尺1选多大"
+      ],
+      "industry_names": [
+        "服装行业",
+        "母婴用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "尺码体系",
+      "scene_description": "买家咨询商品采用什么尺码体系，如国码、欧码、美码等",
+      "question_examples": [
+        "这衣服美码吗",
+        "你们的尺寸是美码吗",
+        "你家衣服是欧码吗",
+        "这是国码还是欧码",
+        "这个尺码体系怎么区分",
+        "这款按国内尺码选就行吗"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "模特尺码参考",
+      "scene_description": "买家咨询模特身高体重、模特所穿尺码，作为选码参考",
+      "question_examples": [
+        "请问模特穿的什么码呢",
+        "模特多高多重穿什么码",
+        "模特身高体重是多少",
+        "模特这件穿的是M吗",
+        "模特上身效果对应什么尺码"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "大码/加大码",
+      "scene_description": "买家咨询店铺是否有大码、加大码、胖体型可穿的款式",
+      "question_examples": [
+        "有大码吗",
+        "还有大码的吗",
+        "胖一点能穿吗",
+        "有没有加大码",
+        "大码款的有吗",
+        "这款有 plus 码吗"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "上身效果",
+      "scene_description": "买家咨询商品穿上后的视觉效果，如显瘦、显高、显腿长、显肩宽、显臃肿、垂感等",
+      "question_examples": [
+        "上身显瘦吗",
+        "会不会显壮",
+        "显腿长吗",
+        "会不会压个子",
+        "垂感怎么样",
+        "会不会显臃肿",
+        "这个穿上能修饰腿型吗",
+        "穿上会不会显肩宽"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "身材适配",
+      "scene_description": "买家咨询某种身材条件是否适合穿该商品，如小个子、微胖、苹果型、梨形身材、大胸、肩宽等",
+      "question_examples": [
+        "小个子能穿吗",
+        "微胖适合吗",
+        "梨形身材能穿吗",
+        "大胸适合吗",
+        "肩宽穿合适吗",
+        "胯宽穿会不会显胖"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "肤色适配",
+      "scene_description": "买家结合肤色咨询某个服装颜色是否适合自己",
+      "question_examples": [
+        "黄皮适合这个颜色吗",
+        "皮肤黑穿这个显白吗",
+        "这个颜色会不会显黑",
+        "皮肤偏暗穿合适吗",
+        "这个色适合白皮吗"
+      ],
+      "industry_names": [
+        "服装行业",
+        "眼镜行业",
+        "珠宝首饰"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "适用场景",
+      "scene_description": "买家咨询是否适合某类场景",
+      "question_examples": [
+        "运动时可以穿吗",
+        "跳绳可以穿这个内衣吗",
+        "跑步的时候能穿吗",
+        "这件适合通勤穿吗",
+        "适合正式场合穿吗"
+      ],
+      "industry_names": [
+        "服装行业",
+        "3C数码",
+        "眼镜行业",
+        "户外装备",
+        "手机配件",
+        "外设产品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "穿搭搭配",
+      "scene_description": "买家咨询服装与其他衣物、裤子、鞋子或配饰如何搭配",
+      "question_examples": [
+        "这个搭配什么样的衣服或裤子",
+        "这件上衣配什么裤子",
+        "这条裤子配什么鞋",
+        "模特身上的搭配有卖吗",
+        "这件衣服怎么搭比较好"
+      ],
+      "industry_names": [
+        "服装行业",
+        "眼镜行业",
+        "珠宝首饰"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "口袋设计",
+      "scene_description": "买家咨询商品是否有口袋、口袋位置或口袋类型",
+      "question_examples": [
+        "有口袋吗",
+        "胸前有兜吗",
+        "两边有口袋吗",
+        "口袋是真的还是装饰的",
+        "裤子后面有口袋吗"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "内衬结构",
+      "scene_description": "买家咨询商品是否带内衬、里布、打底层",
+      "question_examples": [
+        "有内衬吗",
+        "里面有里布吗",
+        "裙子有打底吗",
+        "裤子有内衬吗"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "钢圈设计",
+      "scene_description": "买家咨询文胸类商品是否带钢圈、软钢圈、无钢圈等支撑结构设计",
+      "question_examples": [
+        "带钢圈吗",
+        "这款有钢圈吗",
+        "这款是有钢圈还是无钢圈的",
+        "是软钢圈吗",
+        "钢圈会不会硌",
+        "内衣里面有没有支撑圈"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "扣件设计",
+      "scene_description": "买家咨询服装或内衣商品是否带扣子、排扣、按扣、暗扣等扣件设计，以及扣件的位置、类型和数量",
+      "question_examples": [
+        "有扣子吗",
+        "前面有纽扣吗",
+        "是单排扣还是双排扣",
+        "有排扣吗",
+        "几排扣",
+        "后面有没有排扣",
+        "是暗扣还是明扣",
+        "袖口有扣子吗",
+        "领口能扣上吗",
+        "这款是按扣还是纽扣"
+      ],
+      "industry_names": [
+        "服装行业",
+        "母婴用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "聚拢效果",
+      "scene_description": "买家咨询内衣类商品是否有聚拢、上托、集中效果",
+      "question_examples": [
+        "聚拢吗",
+        "有上托效果吗",
+        "会不会集中",
+        "聚拢效果明显吗",
+        "穿起来会不会更聚拢",
+        "收副乳效果明显吗"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "无痕设计",
+      "scene_description": "买家咨询内衣/打底类商品是否无痕、会不会勒出痕迹",
+      "question_examples": [
+        "是无痕的吗",
+        "会不会勒出印子",
+        "穿紧身衣会不会显痕",
+        "边缘会不会有勒痕"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "穿着稳固性",
+      "scene_description": "买家咨询服装或内衣穿着后是否会上滑、下掉、走位或滑动",
+      "question_examples": [
+        "会不会走位",
+        "不会走位吧",
+        "会滑动吗",
+        "穿着会不会往下掉",
+        "肩带会不会滑"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "咨询花纹/图案样式",
+      "scene_description": "买家咨询服装的花纹、印花、刺绣、图案样式等外观细节",
+      "question_examples": [
+        "花纹什么样",
+        "这个白点是印花还是刺绣",
+        "这款是带花纹的吗",
+        "图案是印上去的吗",
+        "有刺绣元素吗"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "厚薄程度",
+      "scene_description": "买家咨询商品厚薄程度、是否加绒、是否加厚、是否夹棉",
+      "question_examples": [
+        "厚吗",
+        "薄吗",
+        "加绒吗",
+        "是加厚款吗",
+        "里面有夹棉吗",
+        "单穿会不会薄"
+      ],
+      "industry_names": [
+        "箱包行业",
+        "服装行业",
+        "烹饪厨具",
+        "床上用品",
+        "户外装备",
+        "母婴用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "充绒量/含绒量",
+      "scene_description": "买家咨询羽绒服、棉服等商品的填充物、含绒量、充绒量",
+      "question_examples": [
+        "充绒量多少克",
+        "这款羽绒服充绒量是多少",
+        "含绒量多少",
+        "充绒克数是多少",
+        "绒子含量是多少"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "透明度/透视感",
+      "scene_description": "买家咨询服装面料是否透、透明度如何、是否需要打底",
+      "question_examples": [
+        "这个穿上透不透",
+        "这个颜色透吗",
+        "没有打底会不会透",
+        "白色会不会透",
+        "单穿会不会走光",
+        "需要打底吗",
+        "深色内衣穿着会显出来吗"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "软硬/手感",
+      "scene_description": "买家咨询商品偏软还是偏硬、手感是否舒适",
+      "question_examples": [
+        "面料是硬的还是软的",
+        "这个面料会不会很硬",
+        "手感偏软吗",
+        "布料摸起来扎不扎",
+        "这个料子柔软吗"
+      ],
+      "industry_names": [
+        "箱包行业",
+        "成人用品",
+        "服装行业",
+        "玩具行业",
+        "烹饪厨具",
+        "床上用品",
+        "3C数码"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "保暖程度",
+      "scene_description": "买家咨询是否保暖",
+      "question_examples": [
+        "保暖吗",
+        "穿着暖和吗",
+        "会不会冷",
+        "保暖效果怎么样",
+        "冬天穿顶得住吗"
+      ],
+      "industry_names": [
+        "宠物行业",
+        "服装行业",
+        "床上用品",
+        "户外装备",
+        "母婴用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "适合温度",
+      "scene_description": "买家咨询适合在什么温度环境下穿",
+      "question_examples": [
+        "适合多少度穿",
+        "零下20度够穿吗",
+        "10度左右能穿吗",
+        "这件适合几度天气",
+        "冬天多少度穿合适"
+      ],
+      "industry_names": [
+        "宠物行业",
+        "服装行业",
+        "床上用品",
+        "户外装备",
+        "母婴用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "弹性/松紧",
+      "scene_description": "买家咨询商品面料或局部位置是否有弹性、松紧度如何、会不会勒",
+      "question_examples": [
+        "有弹性吗",
+        "弹性大吗",
+        "裤腰有松紧吗",
+        "会不会勒",
+        "面料弹不弹",
+        "袖口紧不紧",
+        "布料拉伸感明显吗",
+        "穿起来包裹感会不会太紧"
+      ],
+      "industry_names": [
+        "服装行业",
+        "母婴用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "透气性",
+      "scene_description": "买家咨询商品是否透气、吸汗、闷不闷",
+      "question_examples": [
+        "透气吗",
+        "吸汗吗",
+        "穿着闷不闷",
+        "裤子会不会不透气",
+        "夏天穿会不会闷",
+        "这个料子散热好吗"
+      ],
+      "industry_names": [
+        "宠物行业",
+        "服装行业",
+        "床上用品",
+        "户外装备",
+        "母婴用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "面料耐久性",
+      "scene_description": "买家咨询服装面料在穿着或清洗后是否容易缩水、起球、掉毛、变形、易皱、勾丝等",
+      "question_examples": [
+        "这款面料缩水吗",
+        "洗后会不会变形",
+        "这个会起球吗",
+        "穿在身上会不会掉毛",
+        "衣服会皱吗",
+        "容易勾丝吗",
+        "这个布会不会越穿越起毛"
+      ],
+      "industry_names": [
+        "服装行业",
+        "户外装备",
+        "母婴用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "色差",
+      "scene_description": "买家咨询实物颜色与图片展示之间是否存在色差，聚焦购买前的色彩偏差说明",
+      "question_examples": [
+        "这个和图片有色差吗",
+        "这个颜色会偏淡或者偏深吗",
+        "这个色差会大吗",
+        "实物颜色会不会比图深",
+        "图片和实物颜色差得多吗"
+      ],
+      "industry_names": [
+        "服装行业",
+        "眼镜行业",
+        "珠宝首饰",
+        "手机配件",
+        "家装主材"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "吊牌相关",
+      "scene_description": "买家咨询服装吊牌是否齐全、缺少吊牌是否正常",
+      "question_examples": [
+        "我买的衣服没有吊牌",
+        "拆开就没有吊牌",
+        "怎么没有吊牌",
+        "吊牌齐全吗"
+      ],
+      "industry_names": [
+        "服装行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "是否起静电",
+      "scene_description": "买家咨询服装是否会起静电",
+      "question_examples": [
+        "穿着会静电吗",
+        "这个衣服会有静电吗",
+        "这个布料会静电吗",
+        "会不会起静电"
+      ],
+      "industry_names": [
+        "服装行业",
+        "工业用具"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "孕期/哺乳期适用",
+      "scene_description": "买家咨询商品在怀孕、备孕、哺乳等阶段是否可以使用。",
+      "question_examples": [
+        "孕妇可以用吗",
+        "怀孕期间能用吗",
+        "备孕能用吗",
+        "哺乳期能用吗",
+        "喂奶期间可以用吗",
+        "孕妇能用吗"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "保健品行业",
+        "食品行业",
+        "母婴用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "使用频率",
+      "scene_description": "买家咨询多久用一次、一天能用几次、能否天天使用。",
+      "question_examples": [
+        "多久用一次",
+        "一天可以用几次",
+        "可以天天用吗",
+        "一周用几次合适",
+        "早晚都能用吗",
+        "一天能用几次",
+        "123123123"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "保健品行业",
+        "宠物行业",
+        "母婴用品",
+        "汽车用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "单次用量",
+      "scene_description": "买家咨询每次用多少、每次取多少量更合适。",
+      "question_examples": [
+        "一次用多少合适",
+        "每次用几泵",
+        "一次涂多厚",
+        "每次需要用多少",
+        "一回要用多少量",
+        "多久洗一次"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "保健品行业",
+        "宠物行业",
+        "母婴用品",
+        "汽车用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "可使用时长",
+      "scene_description": "买家咨询商品大概能用多久，侧重时间长度。",
+      "question_examples": [
+        "一瓶大概能用多久",
+        "一盒能用多久",
+        "这个正常能用几个月",
+        "如果每天用能用多久",
+        "这个能撑多久",
+        "一瓶吃多长时间"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "保健品行业",
+        "成人用品",
+        "玩具行业",
+        "鞋类行业",
+        "母婴用品",
+        "汽车用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "可使用次数",
+      "scene_description": "买家咨询单个商品大概能使用多少次，侧重次数。",
+      "question_examples": [
+        "这瓶大概能用几次",
+        "一盒能敷几次",
+        "这支能用多少回",
+        "正常使用能撑多少次",
+        "一套能用多少次"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "保健品行业",
+        "宠物行业",
+        "母婴用品",
+        "汽车用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "商品尺寸",
+      "scene_description": "买家咨询商品长宽高、体积大小。",
+      "question_examples": [
+        "尺寸多大",
+        "机身多长",
+        "多宽",
+        "体积大不大"
+      ],
+      "industry_names": [
+        "洗护行业",
+        "箱包行业",
+        "成人用品",
+        "玩具行业",
+        "烹饪厨具",
+        "床上用品",
+        "3C数码",
+        "家电行业",
+        "眼镜行业",
+        "户外装备",
+        "珠宝首饰",
+        "手机配件",
+        "外设产品",
+        "家装主材",
+        "工业用具",
+        "汽车用品",
+        "书籍杂志"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "清洗难易",
+      "scene_description": "买家咨询商品是否容易洗净、是否好清洁、冲洗是否方便、清洗后是否容易残留。",
+      "question_examples": [
+        "这个好不好洗",
+        "容易清洗吗",
+        "好清理吗",
+        "会不会洗不干净",
+        "会不会有残留"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "成人用品",
+        "宠物行业",
+        "玩具行业",
+        "烹饪厨具",
+        "床上用品",
+        "家电行业",
+        "眼镜行业",
+        "户外装备",
+        "珠宝首饰",
+        "家装主材",
+        "母婴用品",
+        "工业用具",
+        "汽车用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "适用肤质",
+      "scene_description": "买家咨询商品适合哪类肤质或特殊肌肤状态使用，包含干皮、油皮、混干、混油、中性肤质，以及敏感肌、痘肌、屏障受损、刷酸期、医美后等。",
+      "question_examples": [
+        "油皮适合吗",
+        "干皮能用吗",
+        "混油皮能用吗",
+        "敏感肌能用吗",
+        "痘肌能用吗",
+        "屏障受损能用吗",
+        "刷酸期间能用吗",
+        "医美后可以用吗"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "母婴用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "适用部位",
+      "scene_description": "买家咨询商品适用于身体哪个部位，如面部、眼周、唇部、头皮、身体等。",
+      "question_examples": [
+        "这个能涂眼周吗",
+        "可以用在唇部吗",
+        "能擦身体吗",
+        "这个能抹脖子吗",
+        "头皮能用吗"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "鞋类行业",
+        "母婴用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "气味/味道",
+      "scene_description": "买家咨询商品有没有味道、是什么味道、属于什么香型或气味风格。",
+      "question_examples": [
+        "这款是什么味道",
+        "偏花香还是果香",
+        "有没有味道",
+        "闻起来香吗",
+        "是不是无香的"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "母婴用品",
+        "汽车用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "过敏风险",
+      "scene_description": "买家咨询商品是否容易引起过敏、泛红、发痒等过敏型反应。",
+      "question_examples": [
+        "会过敏吗",
+        "会不会泛红",
+        "会不会发痒",
+        "容易过敏的人能用吗",
+        "会不会有过敏反应"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "眼镜行业",
+        "珠宝首饰",
+        "果蔬生鲜",
+        "母婴用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "刺激/刺痛风险",
+      "scene_description": "买家咨询商品是否会引起刺痛、灼热、刺激、辣眼等刺激性反应。",
+      "question_examples": [
+        "会不会刺痛",
+        "会不会刺激皮肤",
+        "会不会有灼热感",
+        "会不会辣眼睛",
+        "上脸会不会刺刺的"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "眼镜行业",
+        "珠宝首饰",
+        "母婴用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "供电方式",
+      "scene_description": "买家咨询洗护工具是插电、充电、干电池、USB 供电还是其他供电方式。",
+      "question_examples": [
+        "这是插电的还是充电的",
+        "用干电池供电的吗",
+        "USB 供电吗",
+        "是不是直插电源的"
+      ],
+      "industry_names": [
+        "洗护行业",
+        "成人用品",
+        "玩具行业",
+        "3C数码",
+        "家电行业",
+        "户外装备",
+        "手机配件",
+        "外设产品",
+        "母婴用品",
+        "工业用具",
+        "汽车用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "适配机型/型号",
+      "scene_description": "买家咨询配件、刷头、刀头、替换头等是否适配某个型号或某类机器。",
+      "question_examples": [
+        "适配哪种机型",
+        "适合什么机型",
+        "这个配件适配哪种型号",
+        "这个刀头适合哪个型号"
+      ],
+      "industry_names": [
+        "洗护行业",
+        "手机配件",
+        "外设产品",
+        "母婴用品",
+        "工业用具",
+        "汽车用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "续航时长",
+      "scene_description": "买家咨询商品充满电后能用多久。",
+      "question_examples": [
+        "充满电能用多久",
+        "续航多久",
+        "能连续用多长时间",
+        "一次充电能撑多久"
+      ],
+      "industry_names": [
+        "洗护行业",
+        "成人用品",
+        "玩具行业",
+        "3C数码",
+        "家电行业",
+        "户外装备",
+        "手机配件",
+        "外设产品",
+        "母婴用品",
+        "工业用具",
+        "汽车用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "商品功率",
+      "scene_description": "买家咨询商品功率大小。",
+      "question_examples": [
+        "功率多少瓦",
+        "这款多少W",
+        "功率大吗"
+      ],
+      "industry_names": [
+        "洗护行业",
+        "成人用品",
+        "玩具行业",
+        "烹饪厨具",
+        "3C数码",
+        "家电行业",
+        "户外装备",
+        "手机配件",
+        "外设产品",
+        "家装主材",
+        "母婴用品",
+        "工业用具",
+        "汽车用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "电池类型及容量",
+      "scene_description": "买家咨询电池容量、类型、型号。",
+      "question_examples": [
+        "这款电池容量多少",
+        "是多少毫安的",
+        "是锂电池吗",
+        "用几号电池",
+        "电池型号是什么"
+      ],
+      "industry_names": [
+        "洗护行业",
+        "成人用品",
+        "玩具行业",
+        "3C数码",
+        "家电行业",
+        "户外装备",
+        "手机配件",
+        "外设产品",
+        "母婴用品",
+        "工业用具",
+        "汽车用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "噪音分贝",
+      "scene_description": "买家咨询使用时声音是否大、噪音多少。",
+      "question_examples": [
+        "声音大吗",
+        "噪音多少分贝",
+        "会不会很吵",
+        "晚上用会不会扰民"
+      ],
+      "industry_names": [
+        "洗护行业",
+        "家电行业",
+        "外设产品",
+        "母婴用品",
+        "工业用具",
+        "汽车用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "充电时长",
+      "scene_description": "买家咨询从没电到充满需要多久。",
+      "question_examples": [
+        "充满电要多久",
+        "充电时间多长",
+        "多久能充满",
+        "快充吗"
+      ],
+      "industry_names": [
+        "洗护行业",
+        "成人用品",
+        "玩具行业",
+        "3C数码",
+        "家电行业",
+        "户外装备",
+        "手机配件",
+        "外设产品",
+        "母婴用品",
+        "工业用具",
+        "汽车用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "是否可干湿两用",
+      "scene_description": "买家咨询商品能否干用湿用两种方式都支持。",
+      "question_examples": [
+        "可以干湿两用吗",
+        "洗澡时能用吗",
+        "湿手能用吗",
+        "干用可以吗"
+      ],
+      "industry_names": [
+        "洗护行业",
+        "母婴用品",
+        "工业用具",
+        "汽车用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e15",
+      "category_key": "LOGISTICS",
+      "category_name": "物流咨询",
+      "scene_name": "快递物流服务",
+      "scene_description": "快递服务问题，包括快递选择、指定快递、配送范围、发顺丰、快递公司、快递电话",
+      "question_examples": [
+        "发什么快递",
+        "能发顺丰吗",
+        "能改快递吗",
+        "快递电话多少",
+        "能指定快递吗",
+        "支持什么快递",
+        "快递能到吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e15",
+      "category_key": "LOGISTICS",
+      "category_name": "物流咨询",
+      "scene_name": "咨询送达时间",
+      "scene_description": "用户询问发货后大概多久送达、物流运输需要几天、预计何时收到。",
+      "question_examples": [
+        "几天能到",
+        "发货后多久到",
+        "物流要几天",
+        "大概几天收到",
+        "什么时候能收到",
+        "多久送到",
+        "还有多久到",
+        "今日达可以不"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "使用说明",
+      "scene_description": "买家咨询商品怎么用、怎么操作、步骤是什么。",
+      "question_examples": [
+        "这个怎么用",
+        "具体使用步骤是什么",
+        "这个要怎么涂",
+        "怎么操作",
+        "正确用法是什么",
+        "使用视频发一个",
+        "有操作视频吗",
+        "有教学视频吗",
+        "说明书"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "询问是否是机器人",
+      "scene_description": "",
+      "question_examples": [
+        "你是机器人吗",
+        "是人工客服吗",
+        "是机器人还是人工",
+        "来个真人"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "买家发送图片",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "买家发送商品链接",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "承诺评价返现",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e15",
+      "category_key": "LOGISTICS",
+      "category_name": "物流咨询",
+      "scene_name": "咨询发货时间",
+      "scene_description": "用户询问订单按正常流程何时发货、多久安排出库。",
+      "question_examples": [
+        "什么时候发货",
+        "今天能发吗",
+        "大概什么时候发",
+        "下单多久发货",
+        "多久安排发出"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e17",
+      "category_key": "PURCHASE",
+      "category_name": "购买咨询",
+      "scene_name": "订单备注问题",
+      "scene_description": "订单备注相关问题，包括添加备注、修改备注、备注说明、特殊要求填写、忘记备注、备注内容变更等",
+      "question_examples": [
+        "可以备注吗",
+        "订单怎么加备注",
+        "能帮我备注一下吗",
+        "忘记写备注了",
+        "备注内容能改吗",
+        "帮我在订单里写个备注",
+        "备注发货时间",
+        "备注颜色和尺寸",
+        "可以按备注发货吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e11",
+      "category_key": "PRE_SALES",
+      "category_name": "售前咨询",
+      "scene_name": "赠品相关",
+      "scene_description": "赠品相关问题，包括赠品质量、赠品缺失、赠品属性、赠品选择、赠品更换、申请赠品、拒绝赠品、买一送一",
+      "question_examples": [
+        "赠品什么时候发",
+        "赠品可以换别的吗",
+        "赠品少发了咋办",
+        "可以不要赠品吗",
+        "有买送活动吗",
+        "赠品是随机发吗",
+        "我想多要个赠品行不行"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e16",
+      "category_key": "AFTER_SALES",
+      "category_name": "售后咨询",
+      "scene_name": "售后维修支持",
+      "scene_description": "售后维修相关问题，包括维修申请、质保期、保修期、维修网点、全国联保、售后政策、换新、寄修运费",
+      "question_examples": [
+        "这个东西坏了能修吗",
+        "有售后保障吗",
+        "质保期是多久",
+        "维修点在什么地方",
+        "怎么申请售后",
+        "售后要钱吗",
+        "我可以自己寄回去修吗",
+        "这能换新的吗",
+        "维修运费谁出",
+        "售后电话是多少"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "索要联系方式",
+      "scene_description": "联系方式问题，包括索要电话、电话号码、手机号码、联系方式、电话沟通、QQ微信",
+      "question_examples": [
+        "电话多少",
+        "能电话吗",
+        "给个号码",
+        "有联系方式吗",
+        "电话联系",
+        "怎么联系你们",
+        "手机号多少",
+        "给个电话"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "好评相关",
+      "scene_description": "好评返现问题，包括好评返现、五星好评、晒图评价、评价有礼、好评奖励、已好评、返现活动",
+      "question_examples": [
+        "返现吗",
+        "好评有礼吗",
+        "晒图有奖吗",
+        "给个好评",
+        "已好评",
+        "五星返现",
+        "评价有礼",
+        "好评返现活动",
+        "发图有奖吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "合作推广咨询",
+      "scene_description": "合作推广咨询，包括淘客推广、运营合作、带货合作、团购合作、联盟推广、商务合作",
+      "question_examples": [
+        "能合作吗",
+        "有推广吗",
+        "能带货吗",
+        "代运营合作",
+        "淘客合作",
+        "商务合作",
+        "一起合作",
+        "有业务合作吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "质疑好评真实性",
+      "scene_description": "质疑刷单好评，包括质疑好评、刷单质疑、虚假好评、刷出来的好评、刷好评、评价真实性",
+      "question_examples": [
+        "好评刷的吧",
+        "评价是假的吧",
+        "刷单的吧",
+        "好评真实吗",
+        "评价可信吗",
+        "这么多好评假的吧",
+        "刷出来的好评",
+        "虚假评价"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "已收到货物",
+      "scene_description": "确认收货问题，包括已收到货物、收到货了、货收到了、确认收货、商品已收到",
+      "question_examples": [
+        "收到了",
+        "货收到了",
+        "东西到了",
+        "收到了商品",
+        "确认收到",
+        "货已经拿到"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "收到纯数字信息",
+      "scene_description": "纯数字信息，包括数字输入、误发数字、验证码",
+      "question_examples": [
+        "123456",
+        "8888",
+        "10086",
+        "验证码",
+        "数字"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "提供地址信息",
+      "scene_description": "地址信息问题，包括公司/门店/退货/收货等用于联系或寄送的固定地址，不包含发货来源或物流路径相关问题",
+      "question_examples": [
+        "发个地址",
+        "公司地址在哪",
+        "退货地址是什么",
+        "退货仓库地址（用于退货）",
+        "门店地址在哪里"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e17",
+      "category_key": "PURCHASE",
+      "category_name": "购买咨询",
+      "scene_name": "常见付款场景说明",
+      "scene_description": "付款问题，包括未付款订单、拍错买多、重复付款、付款失败、交易关闭、货到付款、合并付款、如何付款",
+      "question_examples": [
+        "拍错了",
+        "买多了",
+        "怎么付款",
+        "能货到付款吗",
+        "付款失败了",
+        "付款了但显示交易关闭了",
+        "我重复付款了",
+        "能合并付款吗",
+        "能先用后付吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e17",
+      "category_key": "PURCHASE",
+      "category_name": "购买咨询",
+      "scene_name": "表示换店购买或不想要",
+      "scene_description": "换店不买问题，包括去别家买、换店购买、不想要了、不等了、算了吧、去其他店",
+      "question_examples": [
+        "不等了",
+        "去别家看看",
+        "不想要了",
+        "算了",
+        "换一家买",
+        "不买了",
+        "去其他店",
+        "再看看吧"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e17",
+      "category_key": "PURCHASE",
+      "category_name": "购买咨询",
+      "scene_name": "支付方式说明",
+      "scene_description": "支付方式说明，包括微信支付、支付宝、信用卡支付、银行卡",
+      "question_examples": [
+        "能用微信支付吗",
+        "可以用支付宝支付吗",
+        "支持信用卡支付吗",
+        "可以用银行卡支付吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e17",
+      "category_key": "PURCHASE",
+      "category_name": "购买咨询",
+      "scene_name": "下单条件与限制",
+      "scene_description": "下单限制问题，包括无法下单、限购、购买限制、分开购买、什么时候能下单、为什么不能下单",
+      "question_examples": [
+        "买不了",
+        "为什么不能下单",
+        "有限制吗",
+        "能拍吗",
+        "限购吗",
+        "怎么买不了",
+        "可以买吗",
+        "能下单吗",
+        "什么时候能买",
+        "分开拍可以吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e17",
+      "category_key": "PURCHASE",
+      "category_name": "购买咨询",
+      "scene_name": "多购优惠与批发",
+      "scene_description": "批发优惠问题，包括批发购买、批发价、多购优惠、买几送几、团购、大宗购买、批发业务",
+      "question_examples": [
+        "能批发吗",
+        "有批发价吗",
+        "多买能优惠吗",
+        "批发价多少",
+        "能团购吗",
+        "量大有优惠吗",
+        "买得多便宜吗",
+        "批发业务",
+        "大宗购买",
+        "批发多少钱"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e17",
+      "category_key": "PURCHASE",
+      "category_name": "购买咨询",
+      "scene_name": "表示延迟下单",
+      "scene_description": "延迟下单问题，包括延迟购买、等降价、等活动、以后再买、明天再买、考虑一下、再看看",
+      "question_examples": [
+        "明天再买",
+        "等降价再买",
+        "等活动再买",
+        "考虑一下",
+        "再看看",
+        "等双十一",
+        "以后再说",
+        "晚点买",
+        "不急买"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e17",
+      "category_key": "PURCHASE",
+      "category_name": "购买咨询",
+      "scene_name": "花呗支付与还款",
+      "scene_description": "花呗问题，包括花呗分期、花呗还款、花呗手续费、支持花呗、不能用花呗、花呗利息、分期还款",
+      "question_examples": [
+        "支持花呗吗",
+        "能用花呗分期吗",
+        "花呗手续费",
+        "花呗怎么还",
+        "分几期",
+        "花呗利息",
+        "能用花呗吗",
+        "花呗分期付款",
+        "不支持花呗",
+        "免息分期吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e17",
+      "category_key": "PURCHASE",
+      "category_name": "购买咨询",
+      "scene_name": "购物车限制原因",
+      "scene_description": "购物车问题，包括无法加购物车、购物车限制、加购失败、购物车错误、不能加入购物车",
+      "question_examples": [
+        "加不了购物车",
+        "不能加购物车",
+        "购物车加购失败",
+        "没有购物车",
+        "购物车在哪",
+        "怎么加购物车",
+        "购物车无法添加",
+        "加购不了",
+        "不能加入购物车"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e17",
+      "category_key": "PURCHASE",
+      "category_name": "购买咨询",
+      "scene_name": "商品下架原因",
+      "scene_description": "商品下架问题，包括为什么下架、已下架、商品停售、没货了、找不到商品、何时上架、重新上架",
+      "question_examples": [
+        "下架了",
+        "怎么下架了",
+        "为什么没货了",
+        "什么时候上架",
+        "买不到了",
+        "商品没了",
+        "找不到商品"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e17",
+      "category_key": "PURCHASE",
+      "category_name": "购买咨询",
+      "scene_name": "订单加单与合并",
+      "scene_description": "加单合并问题，包括订单加单、补拍商品、合并订单、追加购买、加一件货、订单加货",
+      "question_examples": [
+        "能加单吗",
+        "能再拍一个吗",
+        "想多买一个",
+        "追加商品",
+        "补拍一个",
+        "订单能加货吗",
+        "再加一件",
+        "能改单吗",
+        "合并订单"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "买家发送视频",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "买家发送文件",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "买家发送或索要微信",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "买家发送手机号",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "买家发送订单",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "商品页面信息核实",
+      "scene_description": "用户对商品页面中的信息真实性、归属关系、主体身份、宣传描述等进行核实确认，包括确认商品是否属于本店/本品牌/本店铺在售商品，或核实页面中的人物、机构、品牌、宣传信息是否属实。",
+      "question_examples": [
+        "商品页面里的那个专家是谁",
+        "这个代言人是哪个机构的",
+        "页面上写的认证是真的还是假的",
+        "这个品牌宣传信息可信么",
+        "页面上的人物信息能核实吗",
+        "这个不是你家的产品吗",
+        "这个商品是你们家的吗",
+        "页面上写的专利能查到吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示没关系",
+      "scene_description": "",
+      "question_examples": [
+        "没关系",
+        "不要紧",
+        "这个没关系",
+        "没事的"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示不理解",
+      "scene_description": "",
+      "question_examples": [
+        "完全看不懂",
+        "不明白",
+        "不太懂",
+        "理解不了"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "不要重复说",
+      "scene_description": "",
+      "question_examples": [
+        "别老是一句话",
+        "你怎么老是说这一句话呢",
+        "别老是发重复的",
+        "怎么老是会这句话",
+        "不要老说这几句话"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "再见",
+      "scene_description": "",
+      "question_examples": [
+        "拜拜",
+        "再聊",
+        "886",
+        "再见",
+        "bye"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示已提交",
+      "scene_description": "",
+      "question_examples": [
+        "已申请",
+        "我刚提交了",
+        "申请完了"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示否认",
+      "scene_description": "",
+      "question_examples": [
+        "不对",
+        "不是的",
+        "不可能"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "询问如何处理",
+      "scene_description": "",
+      "question_examples": [
+        "怎么办",
+        "怎么解决",
+        "怎么处理",
+        "你们怎么解决这个问题",
+        "没有效果怎么办",
+        "用了感觉没效果怎么办",
+        "没效果怎么处理",
+        "效果不好怎么办"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示满意",
+      "scene_description": "",
+      "question_examples": [
+        "很好",
+        "东西很好很喜欢",
+        "非常棒",
+        "很满意",
+        "很棒"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示确认",
+      "scene_description": "",
+      "question_examples": [
+        "嗯嗯",
+        "对的",
+        "好的",
+        "明白啦",
+        "ok",
+        "知道了",
+        "可以"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示威胁/差评",
+      "scene_description": "",
+      "question_examples": [
+        "我差评了哦",
+        "已经差评了",
+        "服务差必须差评",
+        "别再发了，我给差评了",
+        "要不我就给你差评"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "要求回复",
+      "scene_description": "",
+      "question_examples": [
+        "麻烦给回复一下",
+        "看到了回复下",
+        "回我一下"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "求帮助",
+      "scene_description": "",
+      "question_examples": [
+        "拜托",
+        "帮下忙",
+        "求求了",
+        "求助求助"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "询问工作时间",
+      "scene_description": "",
+      "question_examples": [
+        "几点在线",
+        "客服几点上班呢",
+        "你们几点上班"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "在别家购买",
+      "scene_description": "",
+      "question_examples": [
+        "在另一家店买了",
+        "已经买了另一家了",
+        "在别的地方买了",
+        "已经在别家店买了"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示感谢",
+      "scene_description": "",
+      "question_examples": [
+        "谢谢啦",
+        "好的谢谢",
+        "感谢"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示愤怒",
+      "scene_description": "",
+      "question_examples": [
+        "气死我了",
+        "烦死了",
+        "太坑了吧",
+        "恶心死了"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "打招呼",
+      "scene_description": "",
+      "question_examples": [
+        "你好呀",
+        "你好",
+        "中午好",
+        "你好，有人吗",
+        "在吗",
+        "在没"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示没找到",
+      "scene_description": "",
+      "question_examples": [
+        "没看到",
+        "我没找到",
+        "没看见",
+        "没看到你发的"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示找到了",
+      "scene_description": "",
+      "question_examples": [
+        "我看见了",
+        "看到了",
+        "找到了"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示放弃",
+      "scene_description": "",
+      "question_examples": [
+        "那算了吧",
+        "那算了",
+        "那算了，就那样吧"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示首次购买",
+      "scene_description": "",
+      "question_examples": [
+        "第一次买",
+        "我是第一次买你家的商品",
+        "第一次买这个"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示老客户",
+      "scene_description": "",
+      "question_examples": [
+        "我老客户了",
+        "我是回头客",
+        "在你家买很多次了",
+        "我一直在你家买的"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示需要考虑",
+      "scene_description": "",
+      "question_examples": [
+        "我再看看",
+        "我考虑一下",
+        "有点纠结",
+        "我再想想吧"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示失望",
+      "scene_description": "",
+      "question_examples": [
+        "太失望了",
+        "真让人失望",
+        "失望透顶"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示歉意",
+      "scene_description": "",
+      "question_examples": [
+        "麻烦了",
+        "不好意思"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示相信",
+      "scene_description": "",
+      "question_examples": [
+        "相信你们一次",
+        "我相信你",
+        "我相信你家"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示还会再来",
+      "scene_description": "",
+      "question_examples": [
+        "还会再来的",
+        "好的话下次还会再来的",
+        "要是好用的话下次还来"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "要求查看下",
+      "scene_description": "",
+      "question_examples": [
+        "你自己看下",
+        "你们自己看看",
+        "你看一下我发的什么",
+        "你们看下聊天记录"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "表示试试",
+      "scene_description": "",
+      "question_examples": [
+        "好的我试一下",
+        "我自己试试看",
+        "我先试一下",
+        "一会试试看吧",
+        "我试一下看看"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "辱骂",
+      "scene_description": "",
+      "question_examples": [
+        "垃圾",
+        "滚",
+        "有病",
+        "神经病"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "乘机乘车携带咨询",
+      "scene_description": "询问商品能否带上飞机、高铁等交通工具，包括托运和过安检等场景",
+      "question_examples": [
+        "可以带上飞机吗",
+        "高铁能带吗",
+        "可以飞机托运嘛",
+        "能过安检吗",
+        "过安检有问题吗",
+        "可以带上动车吗",
+        "火车能带吗",
+        "带上高铁可以吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e14",
+      "category_key": "PROMOTION",
+      "category_name": "活动优惠",
+      "scene_name": "奖品相关",
+      "scene_description": "奖品问题，包括奖品领取、奖品兑换、活动奖品、实物奖品、虚拟奖品",
+      "question_examples": [
+        "有奖品吗",
+        "奖品在哪领",
+        "奖品怎么兑换",
+        "能换奖品吗",
+        "活动奖品内容有哪些",
+        "奖品什么时候发",
+        "奖品是什么",
+        "二等奖是什么",
+        "虚拟奖品怎么用"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "买家发送其他链接",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e13",
+      "category_key": "CHAT",
+      "category_name": "聊天互动",
+      "scene_name": "祝福祝愿",
+      "scene_description": "用户向商家发送祝福祝愿语。",
+      "question_examples": [
+        "祝老板生意兴隆财源广进",
+        "老板生意发大财",
+        "恭喜老板生意兴隆",
+        "恭喜发财",
+        "生意兴隆"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "申请补寄卡片",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "申请修改地址卡片",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "申请发票卡片",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "物流投诉卡片",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "申请退货退款卡片",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "物流异常卡片",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "平台介入卡片",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e16",
+      "category_key": "AFTER_SALES",
+      "category_name": "售后咨询",
+      "scene_name": "订单收货地址修改",
+      "scene_description": "买家要求修改订单收货地址，包括修改收件人、联系电话、详细地址、省市区信息，或下单后发现地址填错、地址不完整、需要更换收货地址等问题。",
+      "question_examples": [
+        "地址填错了可以改吗",
+        "帮我改一下收货地址",
+        "电话写错了能改吗",
+        "收件人名字能改吗",
+        "能换个地址发吗",
+        "门牌号写错了怎么改"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e15",
+      "category_key": "LOGISTICS",
+      "category_name": "物流咨询",
+      "scene_name": "催促发货",
+      "scene_description": "买家希望商家尽快安排发货，包括催单、要求优先发货、询问能否马上发出、尽快发货等诉求。",
+      "question_examples": [
+        "麻烦尽快发货",
+        "帮我催一下发货",
+        "能不能先给我发",
+        "请尽快安排发出",
+        "能优先发货吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e16",
+      "category_key": "AFTER_SALES",
+      "category_name": "售后咨询",
+      "scene_name": "投诉处理",
+      "scene_description": "买家明确提出投诉、举报、维权、申请平台介入，或以315曝光、伪劣商品、侵犯消费者权益、违法违规、追责等方式表达投诉诉求。",
+      "question_examples": [
+        "我要投诉",
+        "我要举报你们",
+        "我要申请平台介入",
+        "这事我要维权",
+        "帮我转投诉处理",
+        "我要投诉你们客服",
+        "不处理我就去投诉",
+        "叫你们负责人来处理",
+        "315曝光了，你们卖的是伪劣商品",
+        "315都曝光了，你们还敢卖",
+        "你们侵犯消费者权益了",
+        "我要举报你们卖伪劣产品",
+        "你们这是欺骗消费者",
+        "这件事我要去12315投诉",
+        "你们这种行为已经违法了",
+        "这事我要追责到底"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "不满意不喜欢",
+      "scene_description": "买家对商品表达不满意、不喜欢、体验不好、效果不及预期、觉得不好用等反馈。",
+      "question_examples": [
+        "用了感觉一般",
+        "用着不太满意",
+        "这个效果没我想的好",
+        "感觉不好用",
+        "体验不太行",
+        "没有预期那么好",
+        "感觉不太适合我",
+        "用后不喜欢",
+        "实际体验一般般",
+        "没想象中那么好",
+        "买回来用了下不太满意",
+        "这个我用着不舒服",
+        "感觉不值这个价",
+        "效果一般",
+        "没有宣传的那么好"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "咨询预售商品及规则",
+      "scene_description": "用户咨询商品是否属于预售/预约购买，以及预售相关规则，包括是否需要定金、预售与现货区别、是否可预订、预售发货时间、货期长短等，不包含预售尾款支付时间、尾款补付、定金尾款计算等问题。",
+      "question_examples": [
+        "这个是预售商品吗",
+        "这是现货还是预售",
+        "需要付定金才能买吗",
+        "是预约购买吗",
+        "预售和现货有什么区别",
+        "能预订吗",
+        "预售啥时候发",
+        "货期多久",
+        "预售多久能发",
+        "预售规则是什么"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "咨询商品补货时间",
+      "scene_description": "用户询问售罄/缺货商品什么时候补货、是否还会补货、何时恢复库存。",
+      "question_examples": [
+        "什么时候补货",
+        "还会补货吗",
+        "大概什么时候有货",
+        "缺货多久补",
+        "什么时候恢复库存",
+        "急需补货"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e15",
+      "category_key": "LOGISTICS",
+      "category_name": "物流咨询",
+      "scene_name": "咨询发货仓库/发货地",
+      "scene_description": "用户询问商品从哪个城市、哪个仓库、哪个地区发出。",
+      "question_examples": [
+        "从哪里发货",
+        "发货地是哪",
+        "从哪个仓库发",
+        "是哪个城市发货",
+        "从哪个地方的仓库发货"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e15",
+      "category_key": "LOGISTICS",
+      "category_name": "物流咨询",
+      "scene_name": "发货/配送时间特殊要求",
+      "scene_description": "用户对发货/配送时间提出特殊要求，包括希望延迟发货、指定某天送达、指定时间段派送。",
+      "question_examples": [
+        "可以指定送货时间吗",
+        "能周末送吗",
+        "可以延迟发货吗",
+        "可以晚点再发吗",
+        "能指定哪天送吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e15",
+      "category_key": "LOGISTICS",
+      "category_name": "物流咨询",
+      "scene_name": "咨询保密发货/隐私发货",
+      "scene_description": "用户要求隐私包装、匿名发货、不外露商品信息等保密发货要求。",
+      "question_examples": [
+        "可以保密发货吗",
+        "能隐私发货吗",
+        "可以匿名发货吗",
+        "外包装不要显示商品信息"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e16",
+      "category_key": "AFTER_SALES",
+      "category_name": "售后咨询",
+      "scene_name": "咨询退款退货流程",
+      "scene_description": "用户询问如何申请退款、退货退款怎么操作、退款申请如何填写、及退货退款的相关流程。",
+      "question_examples": [
+        "想退款怎么操作",
+        "退款申请怎么填",
+        "退货退款流程是什么",
+        "退款原因填什么",
+        "怎么申请退款",
+        "退款要多久到账",
+        "怎么取消退款",
+        "退款的钱退哪里了",
+        "退款被拒绝了咋办",
+        "退款审核要多久"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "商品推荐与选购建议",
+      "scene_description": "用户希望客服根据使用需求、购买场景或店铺在售商品，推荐合适的商品、帮助判断买哪个更合适，或介绍店铺卖得好的商品。适用于“推荐一下、帮我选、适合我的是哪个、你觉得我买哪个好、你们家卖得好的有哪些”等选购建议类问题，不包含单纯询问商品区别、商品功效、商品质量、价格、库存等客观信息。",
+      "question_examples": [
+        "推荐一下好用的",
+        "帮我推荐一下适合我的",
+        "有没有适合我的",
+        "你建议买哪个",
+        "哪个卖得最好",
+        "新手适合买哪个",
+        "第一次买选哪个",
+        "给我推荐一个",
+        "你们家卖得好的有哪些",
+        "推荐一下你们家卖得好的",
+        "发一下链接",
+        "发个链接",
+        "有替换装链接吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "咨询线下门店/专柜信息",
+      "scene_description": "买家咨询品牌或商品是否有实体店、线下门店、专柜、专卖店等线下销售渠道信息。",
+      "question_examples": [
+        "有实体店吗",
+        "有线下门店吗",
+        "有专柜吗",
+        "你们有门店吗",
+        "哪里有实体店",
+        "有专卖店吗",
+        "线下能买吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "咨询线上线下商品是否一致",
+      "scene_description": "买家咨询线上店铺商品与线下门店、实体店、专柜所售商品是否相同，是否为同款、同货、同品质等。",
+      "question_examples": [
+        "线下门店卖的是一样的吗",
+        "专柜卖的是一样的吗",
+        "实体店卖的一样吗",
+        "线上线下是一样的吗",
+        "跟门店卖的是同款吗",
+        "和专柜的是一样的吗",
+        "线下和网上卖的是同一个吗",
+        "网店和实体店一样吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "是否有实物图",
+      "scene_description": "买家咨询商品是否有实物图。",
+      "question_examples": [
+        "有实物图吗",
+        "能看实物图片吗",
+        "能看看是什么样子吗",
+        "有商品图片吗",
+        "有实拍图吗",
+        "有效果图吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "商品规格",
+      "scene_description": "买家确认规格、套餐、组合、SKU 里具体包含哪些商品、部件、工具或数量等。",
+      "question_examples": [
+        "这个规格里面包含什么",
+        "这个套餐里都有啥",
+        "这一套具体都有什么",
+        "这个SKU都包含什么",
+        "这个规格配了哪些东西",
+        "这套里面都有啥",
+        "这个套装包含几件",
+        "这款是单件还是套装",
+        "这个组合里有腰带吗",
+        "一套是不是上衣加裤子"
+      ],
+      "industry_names": [
+        "行业通用",
+        "鞋类行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "容量/净含量/数量",
+      "scene_description": "买家咨询商品的容量、净含量、重量、支数、片数、件数等基础规格参数。",
+      "question_examples": [
+        "这款多少毫升",
+        "净含量是多少",
+        "这个是多少克",
+        "一盒有几片",
+        "一共有多少支",
+        "一盒几双",
+        "一包几条",
+        "这套一共几件",
+        "一组有几只",
+        "这款有几件装",
+        "这个有多重",
+        "这个是多少袋的"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "颜色信息",
+      "scene_description": "买家咨询商品颜色、色系、色调、色号等基础颜色信息。",
+      "question_examples": [
+        "这个是什么颜色",
+        "偏冷调还是暖调",
+        "这个颜色深吗",
+        "这是豆沙色吗",
+        "有几个颜色"
+      ],
+      "industry_names": [
+        "行业通用",
+        "箱包行业",
+        "成人用品",
+        "宠物行业",
+        "玩具行业",
+        "床上用品",
+        "3C数码"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "功能/功效",
+      "scene_description": "买家咨询商品本身具备什么功能、作用或功效。",
+      "question_examples": [
+        "这款主打什么功效",
+        "有保湿作用吗",
+        "能修护吗",
+        "有什么作用",
+        "这个主要是干嘛的",
+        "速干吗",
+        "防晒吗",
+        "这个穿着实用吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "防护性能",
+      "scene_description": "买家咨询商品是否具备防水、防汗、防潮、防污、防泼溅等防护能力。",
+      "question_examples": [
+        "防水吗",
+        "防汗吗",
+        "防潮吗",
+        "防泼溅吗",
+        "防护等级是多少",
+        "淋点小雨可以吗",
+        "防风吗",
+        "外层能挡水吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "稳定性表现",
+      "scene_description": "买家咨询商品在使用或接触过程中是否容易掉色、褪色、脱落、沾染等。",
+      "question_examples": [
+        "会不会褪色",
+        "容易掉色吗",
+        "会不会脱落",
+        "会不会开裂",
+        "会不会沾色"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "持续时间",
+      "scene_description": "买家咨询商品的效果、气味、状态、热度等可以持续多久。",
+      "question_examples": [
+        "能持续多久",
+        "效果能维持多久",
+        "气味能留多久",
+        "大概能撑几个小时",
+        "这个作用时间长吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "生产日期",
+      "scene_description": "买家咨询商品生产日期、批次日期、是否近期生产。",
+      "question_examples": [
+        "什么时候生产的",
+        "是近期生产的吗",
+        "离过期还有多久",
+        "这个批次新不新"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "商品材质",
+      "scene_description": "买家咨询商品的材质构成。",
+      "question_examples": [
+        "这个瓶子是玻璃的吗",
+        "外壳是什么材质",
+        "刷毛是什么材质",
+        "泵头是金属的吗",
+        "内胆是什么材质",
+        "是纯棉吗",
+        "是羊毛吗",
+        "是真丝吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "注意事项",
+      "scene_description": "买家咨询商品使用时需要注意的事项、限制条件或禁忌情况，包括是否需要避光、防晒、避开某些部位、特殊情况下是否慎用等。",
+      "question_examples": [
+        "使用时需要注意什么",
+        "用了能不能晒太阳",
+        "白天能不能用",
+        "这个要避光吗",
+        "需要避开眼周吗",
+        "破皮的时候能用吗",
+        "有没有什么禁忌",
+        "哪些情况下不能用",
+        "使用前要不要先测试",
+        "能烘干吗",
+        "能不能漂白"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "使用搭配",
+      "scene_description": "买家咨询商品能否与其他商品一起搭配、叠加、配合或混合使用。",
+      "question_examples": [
+        "可以和A醇一起用吗",
+        "能和防晒一起用吗",
+        "可以跟精华一起用吗",
+        "能和别的商品一起用吗",
+        "可以叠喷别的香水吗"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "保健品行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "使用顺序",
+      "scene_description": "买家咨询多个商品一起使用时的先后顺序。",
+      "question_examples": [
+        "先用精华还是先用面霜",
+        "这个要用在第几步",
+        "先敷面膜还是先涂精华",
+        "先防晒还是先妆前",
+        "这个是在洁面后直接用吗"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "保健品行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "保质期",
+      "scene_description": "买家咨询商品保质期，是不是临期，以及开封后还能保存多久、多久内需要用完。",
+      "question_examples": [
+        "保质期是多久",
+        "开封后能放多久",
+        "拆开后多久要用完",
+        "开瓶后保质期多久",
+        "开封后还能放几个月",
+        "打开后最好多久内用掉",
+        "是不是临期"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "储存方式",
+      "scene_description": "买家咨询商品应如何保存、存放条件是什么，包括是否需要冷藏、冷冻、避光、密封、阴凉干燥保存、常温保存、开封后如何存放等。",
+      "question_examples": [
+        "这个要怎么保存",
+        "需要冷藏吗",
+        "要放冰箱吗",
+        "常温保存可以吗",
+        "开封后怎么保存",
+        "要直立放吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "商品价格",
+      "scene_description": "买家直接询问商品当前售价、单价、到手价或某个链接、规格卖多少钱，不包含嫌贵、议价、优惠诉求，也不包含价格变动、降价、保价、退差价等问题。",
+      "question_examples": [
+        "这个多少钱",
+        "这款卖多少",
+        "现在什么价格",
+        "到手价多少",
+        "这个规格多少钱"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "官方小二消息",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "申请核查物流信息",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "是否便携",
+      "scene_description": "买家确认当前商品是否便携。",
+      "question_examples": [
+        "方便携带吗",
+        "可以随身携带吗",
+        "携带是否方便"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "箱包行业",
+        "成人用品",
+        "玩具行业",
+        "烹饪厨具",
+        "3C数码",
+        "户外装备",
+        "手机配件",
+        "外设产品",
+        "工业用具",
+        "汽车用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "是否需要清洗",
+      "scene_description": "买家咨询商品使用后是否需要清洗、冲洗、擦掉。",
+      "question_examples": [
+        "这个需要洗掉吗",
+        "敷完要不要清洗",
+        "能直接洗掉吗",
+        "用完后要不要擦掉",
+        "这个需不需要冲洗"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业",
+        "成人用品",
+        "宠物行业",
+        "玩具行业",
+        "烹饪厨具",
+        "床上用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "商品质地",
+      "scene_description": "买家咨询商品本身的质地、状态或触感类型，如水状、膏状、乳状、啫喱状、粉状等。",
+      "question_examples": [
+        "这是水状还是啫喱状",
+        "是膏状的吗",
+        "这个是乳液质地吗",
+        "这款偏稀还是偏厚",
+        "是不是啫喱质地"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "是否正装",
+      "scene_description": "买家确认当前商品是否属于正装。",
+      "question_examples": [
+        "这是正装吗",
+        "这个是小样吗",
+        "这个链接卖的是正装吗"
+      ],
+      "industry_names": [
+        "美妆行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "色号适配",
+      "scene_description": "买家在明确肤色、妆容或使用场景下，咨询更适合哪个色号。",
+      "question_examples": [
+        "黄皮适合哪个色号",
+        "冷白皮适合几号",
+        "素颜适合哪个颜色",
+        "通勤妆适合哪个色号",
+        "深唇更适合哪个颜色"
+      ],
+      "industry_names": [
+        "美妆行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "妆感表现",
+      "scene_description": "买家咨询商品上脸后的妆感、肤感与呈现效果。",
+      "question_examples": [
+        "上脸是哑光还是水润",
+        "会不会拔干",
+        "妆感自然吗",
+        "会不会卡粉",
+        "会不会显毛孔"
+      ],
+      "industry_names": [
+        "美妆行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "见效周期",
+      "scene_description": "买家咨询商品一般多久开始起作用、多久能看到变化。",
+      "question_examples": [
+        "多久能看到效果",
+        "一般几天见效",
+        "多久能看到改善",
+        "要用多久才有变化",
+        "连续用多久能看出来"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "闷痘/爆痘风险",
+      "scene_description": "买家咨询商品是否容易闷痘、爆痘、长闭口或堵塞毛孔。",
+      "question_examples": [
+        "会不会闷痘",
+        "会不会爆痘",
+        "会不会长闭口",
+        "会不会闷出痘痘",
+        "会不会堵毛孔"
+      ],
+      "industry_names": [
+        "美妆行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "是否需要卸妆",
+      "scene_description": "买家咨询使用某个商品后是否必须卸妆。",
+      "question_examples": [
+        "这个需要卸妆吗",
+        "涂了这个要不要卸妆",
+        "用了还需要专门卸吗",
+        "擦这个要卸吗",
+        "这个是不是必须卸妆"
+      ],
+      "industry_names": [
+        "美妆行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "卸妆方式",
+      "scene_description": "买家咨询商品应该用什么方式卸除、是否容易卸掉、卸除效果如何。",
+      "question_examples": [
+        "洗面奶能卸掉吗",
+        "要用卸妆水吗",
+        "这个好不好卸",
+        "难卸吗",
+        "用卸妆油能洗掉吗"
+      ],
+      "industry_names": [
+        "美妆行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "妆面稳定性",
+      "scene_description": "买家咨询彩妆商品是否容易晕妆、脱妆、沾杯、染唇、斑驳等妆面稳定性问题。",
+      "question_examples": [
+        "会不会晕妆",
+        "会不会脱妆",
+        "会不会沾杯",
+        "会不会染唇",
+        "会不会斑驳"
+      ],
+      "industry_names": [
+        "美妆行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "国妆特证",
+      "scene_description": "买家咨询商品是否属于特殊用途化妆品，是否具备国妆特证、特字号或特殊化妆品注册资质。",
+      "question_examples": [
+        "这款有国妆特证吗",
+        "防晒是不是特证商品",
+        "祛斑类有没有特证",
+        "这个属于特殊化妆品吗",
+        "这个有没有特字号"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "开启指引",
+      "scene_description": "买家遇到瓶盖、泵头、喷头、按压头、旋钮等开启或操作异常，咨询如何正常打开或使用。",
+      "question_examples": [
+        "泵头按不出来怎么办",
+        "这个瓶盖怎么打开",
+        "喷头卡住了怎么办",
+        "这个按压头怎么解锁",
+        "这个头怎么旋开",
+        "盖子怎么打开"
+      ],
+      "industry_names": [
+        "美妆行业",
+        "洗护行业"
+      ]
+    },
+    {
+      "category_id": "6981b94a2c740c87d04d1a66",
+      "category_key": "SPECIAL_MESSAGE",
+      "category_name": "特殊消息",
+      "scene_name": "买家发送语音",
+      "scene_description": "",
+      "question_examples": [],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e11",
+      "category_key": "PRE_SALES",
+      "category_name": "售前咨询",
+      "scene_name": "运费险服务",
+      "scene_description": "运费险相关问题，包括是否有运费险、运费险购买、运费险理赔、运费险退还、运费险有效期、运费险失效、赠送运费险",
+      "question_examples": [
+        "这个商品有运费险吗",
+        "运费险怎么理赔",
+        "没买到运费险怎么办",
+        "运费险能退吗",
+        "你们的运费险怎么用",
+        "运费险要钱吗",
+        "运费险什么时候生效",
+        "我想买个运费险",
+        "运费险是赠送的吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e16",
+      "category_key": "AFTER_SALES",
+      "category_name": "售后咨询",
+      "scene_name": "咨询退款退货条件",
+      "scene_description": "用户询问自身情况是否符合退款条件、商品是否支持退款",
+      "question_examples": [
+        "可以只退一件吗",
+        "我不想要了能退吗",
+        "没发货能退吗",
+        "拆封了还能退吗",
+        "包装拆了能退货吗",
+        "没有效果能退吗",
+        "无效可以退款吗",
+        "退款是全额退款吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e16",
+      "category_key": "AFTER_SALES",
+      "category_name": "售后咨询",
+      "scene_name": "发票开具与管理",
+      "scene_description": "发票相关问题，包括开票金额、开票进度、发票抬头、发票类型、电子发票、增值税发票、发票下载、发票邮寄",
+      "question_examples": [
+        "能开电子发票吗",
+        "发票抬头怎么填",
+        "发票什么时候能开",
+        "可以开增值税专票吗",
+        "发票金额不对怎么办",
+        "要发票怎么弄",
+        "发票能单独寄吗",
+        "公司报销要什么发票",
+        "发票开错了能改吗",
+        "能给开张收据吗",
+        "发票在哪里下载",
+        "我想合并开发票",
+        "发票能抽奖吗",
+        "开发票需要多长时间",
+        "开票是否可以加急处理"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e16",
+      "category_key": "AFTER_SALES",
+      "category_name": "售后咨询",
+      "scene_name": "安装服务详情",
+      "scene_description": "安装服务相关问题，包括安装教程、安装费用、安装网点、预约安装、是否包安装、送装一体、自己安装",
+      "question_examples": [
+        "你们包安装吗",
+        "安装要另外收费吗",
+        "怎么预约安装师傅",
+        "安装教程有吗",
+        "能自己装吗",
+        "附近有安装点吗",
+        "安装要多久时间",
+        "送装一体是什么意思",
+        "挂墙上怎么收费",
+        "不包安装能买吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e16",
+      "category_key": "AFTER_SALES",
+      "category_name": "售后咨询",
+      "scene_name": "换货流程及规则",
+      "scene_description": "换货相关问题，包括换货申请、换货流程、换货物流、换货地址、换货快递单号、无法换货、换货限制",
+      "question_examples": [
+        "我想换个码数",
+        "换货流程是怎样的",
+        "能换个颜色吗",
+        "换货要补差价吗",
+        "换货快递单号给我",
+        "怎么申请换货",
+        "可以换其他款式吗",
+        "帮我换成大码的",
+        "换货申请怎么取消了",
+        "换货要自己出运费吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e16",
+      "category_key": "AFTER_SALES",
+      "category_name": "售后咨询",
+      "scene_name": "破损变质处理方案",
+      "scene_description": "商品破损变质问题，包括坏了包赔、商品损坏、商品变质、毛刺黑斑、断裂发臭、发霉长毛",
+      "question_examples": [
+        "收到的东西坏了",
+        "东西都碎了",
+        "收到变质商品了",
+        "包装破损严重",
+        "坏了一个赔吗",
+        "收到的东西臭了",
+        "这能赔吗",
+        "都发霉了咋办",
+        "坏了包赔是真的吗",
+        "实物有损伤"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e16",
+      "category_key": "AFTER_SALES",
+      "category_name": "售后咨询",
+      "scene_name": "实物与描述不符处理",
+      "scene_description": "实物与描述不符问题，包括货不对板、实物与图片不一致、商品和图片差距太大、款式不符",
+      "question_examples": [
+        "跟图片不一样啊",
+        "实物和图片差别太大",
+        "这个跟图片相符吗",
+        "收到货跟图片不一样",
+        "是不是货不对板",
+        "怎么跟图片差这么多",
+        "实物有出入吗",
+        "这衣服和图片一样吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e16",
+      "category_key": "AFTER_SALES",
+      "category_name": "售后咨询",
+      "scene_name": "价格保护政策",
+      "scene_description": "价格保护相关问题，包括保价期限、申请保价、价格保护、保价时间",
+      "question_examples": [
+        "这个有保价吗",
+        "价格保护是多久",
+        "能申请价保吗",
+        "保价从什么时候算",
+        "有价格保护服务吗",
+        "怎么申请价保",
+        "支持保价吗",
+        "保价条件是什么"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e16",
+      "category_key": "AFTER_SALES",
+      "category_name": "售后咨询",
+      "scene_name": "价格差额处理",
+      "scene_description": "差价相关问题，包括补差价、退差价、换货补差价、价格差异、买贵补差、降价退差等诉求",
+      "question_examples": [
+        "换货要补多少钱",
+        "有差价能退吗",
+        "怎么补差价",
+        "这个差价能补吗",
+        "能退差价给我吗",
+        "差价能退回吗",
+        "价格差太多了",
+        "怎么处理差价",
+        "补差价怎么操作",
+        "买贵了能退差价吗",
+        "刚买就降价了能补吗",
+        "价格降了给我退差价"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "商品对比与差异说明",
+      "scene_description": "买家对两个或多个商品、版本、款式、型号之间进行比较，咨询它们有什么区别、有什么不同、差异在哪里、该如何区分",
+      "question_examples": [
+        "这两款有什么不同",
+        "这两个有啥区别",
+        "功能有什么区别",
+        "这两款区别是什么",
+        "这两个有什么不一样",
+        "这三个有什么区别",
+        "价格不同差在哪里",
+        "不同版本差在哪",
+        "不同款式有啥区别"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "对商品的疑问",
+      "scene_description": "商品疑虑问题，包括负面评价、差评质疑、是否好用、买家秀",
+      "question_examples": [
+        "评价很差能买吗",
+        "这个好用吗",
+        "看评价不太好啊",
+        "会不会没效果",
+        "大家说这个一般",
+        "评价不好呀"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "商品质量相关",
+      "scene_description": "商品质量问题，包括材质做工、质检报告、瑕疵品、质量问题、油渍脏污、掉皮开裂、缺斤少两",
+      "question_examples": [
+        "质量靠谱吗",
+        "做工怎么样",
+        "会不会有瑕疵",
+        "品控怎么样",
+        "有质检报告吗",
+        "质量保证吗",
+        "会不会有质量问题",
+        "感觉像是次品",
+        "用料扎实吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "商品定制说明",
+      "scene_description": "商品定制问题，包括是否可定制、定制费用、定制时间、定制流程、刻字加logo、定做尺寸、来图定制",
+      "question_examples": [
+        "能定做吗",
+        "刻字怎么收费",
+        "定制要多长时间",
+        "来图定制行吗",
+        "diy可以吗",
+        "能加logo吗",
+        "定尺寸行不行",
+        "能帮我设计下吗",
+        "定制怎么收费",
+        "字数有限制吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "商品产地与货源",
+      "scene_description": "商品产地货源，包括产地查询、生产地、实体店、专柜、线下门店、生产商信息",
+      "question_examples": [
+        "这是哪生产的",
+        "厂家在哪里",
+        "是国产的吗",
+        "有实体店吗",
+        "生产地是哪",
+        "有专柜吗",
+        "哪个公司生产的",
+        "产地是哪里"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "咨询商品库存",
+      "scene_description": "用户想确认商品当前是否有库存、是否售罄。",
+      "question_examples": [
+        "还有现货吗",
+        "还有货吗",
+        "这个卖完了吗",
+        "这个有库存吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "包装与礼袋服务",
+      "scene_description": "包装服务问题，包括礼品袋、礼盒、手提袋、包装方式、包装尺寸、包装材料、送人包装",
+      "question_examples": [
+        "能送个礼品袋吗",
+        "需要礼盒包装吗",
+        "有包装吗",
+        "包装怎么收费",
+        "这个包装好看吗",
+        "能包装一下送人吗",
+        "包装要加钱吗",
+        "是礼盒装吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "咨询商品是否单售",
+      "scene_description": "商品单买问题，包括是否单售、单独购买、单只卖、拆单购买、组合单买",
+      "question_examples": [
+        "能单买一个吗",
+        "这个单卖吗",
+        "能拆开卖吗",
+        "只买一个行吗",
+        "能单独买这个吗",
+        "不买套餐可以吗",
+        "单只多少钱",
+        "我想单买一个"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "价格变动",
+      "scene_description": "买家咨询同一商品在不同时间的价格变化情况，包括涨价、降价、恢复原价、活动价结束、今天和昨天价格不同等，不包含不同商品、不同规格之间的价格差异，也不包含退差价、保价诉求。",
+      "question_examples": [
+        "怎么涨价了",
+        "怎么又降价了",
+        "昨天不是这个价格",
+        "怎么今天价格不一样",
+        "活动结束了吗怎么变贵了"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "代写贺卡服务",
+      "scene_description": "贺卡服务问题，包括代写贺卡、添加卡片、祝福语、礼品卡、卡片内容",
+      "question_examples": [
+        "能代写贺卡吗",
+        "能加张贺卡吗",
+        "能写祝福语吗",
+        "有代写服务吗",
+        "可以放卡片吗",
+        "能帮忙写个卡片吗",
+        "贺卡怎么收费",
+        "这个支持贺卡吗",
+        "想要贺卡怎么弄"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "品牌咨询",
+      "scene_description": "品牌咨询问题，包括品牌查询、品牌厂家、品牌授权",
+      "question_examples": [
+        "这是什么牌",
+        "哪个牌子",
+        "是什么品牌",
+        "品牌授权了吗",
+        "牌子是哪个",
+        "属于哪个品牌",
+        "什么时候注册的"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "买家对高价敏感",
+      "scene_description": "价格敏感问题，包括价格太贵、能否优惠、能否降价、议价、便宜点、价格对比",
+      "question_examples": [
+        "价格能便宜点吗",
+        "价格太高了",
+        "能给个优惠吗",
+        "有点贵啊",
+        "能打个折吗",
+        "怎么比别人贵",
+        "能降点价吗",
+        "价格能商量吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "安全标准相关",
+      "scene_description": "安全标准问题，包括安全等级、执行标准、国标认证、3c认证、a类标准、安全检测",
+      "question_examples": [
+        "安全等级多少",
+        "符合国标吗",
+        "有3c认证吗",
+        "安全检测合格吗",
+        "符合什么标准",
+        "有安全证书吗",
+        "达到a类标准了吗",
+        "安全检测报告有吗",
+        "符合国家标准吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "商品正品验证",
+      "scene_description": "正品验证问题，包括是否正品、精仿高仿、真假对比、正品保障、假货质疑",
+      "question_examples": [
+        "是正品吗",
+        "是真的吗",
+        "不是假的吧",
+        "肯定是正品吗",
+        "有正品保障吗",
+        "怎么证明是正品",
+        "这个不会是假货吧",
+        "是原装正品吗",
+        "跟专柜一样吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "咨询新品/发售相关信息",
+      "scene_description": "买家咨询商品是否为新品/新款、是否新上市，以及商品的发售时间、开售时间、什么时候可以买等信息",
+      "question_examples": [
+        "这个是新款吗",
+        "这是新品吗",
+        "是不是最近新出的",
+        "这是新款还是老款",
+        "什么时候发售",
+        "什么时候开卖",
+        "什么时候能买",
+        "这是刚上的吗",
+        "首发是什么时候",
+        "第一批货吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e14",
+      "category_key": "PROMOTION",
+      "category_name": "活动优惠",
+      "scene_name": "活动与促销规则",
+      "scene_description": "活动促销规则，包括优惠活动、秒杀活动、满减优惠、换购活动、活动时间、折扣门槛、活动链接",
+      "question_examples": [
+        "有什么活动",
+        "怎么最划算",
+        "有优惠活动吗",
+        "能参加活动吗",
+        "秒杀怎么参加",
+        "有满减活动吗",
+        "老客户有优惠吗",
+        "焕新周活动是什么",
+        "满赠联名礼包规则是什么",
+        "有免单活动吗",
+        "多次购买有优惠吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e14",
+      "category_key": "PROMOTION",
+      "category_name": "活动优惠",
+      "scene_name": "购物金相关",
+      "scene_description": "购物金问题，包括购物金充值、购物金使用、购物金抵扣、购物金有效期、购物金退款、购物金查询",
+      "question_examples": [
+        "什么是购物金",
+        "购物金怎么用",
+        "购物金怎么充值",
+        "用购物金有积分吗",
+        "购物金能提现吗",
+        "购物金有效期多久",
+        "购物金怎么抵扣",
+        "有膨胀金吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e14",
+      "category_key": "PROMOTION",
+      "category_name": "活动优惠",
+      "scene_name": "购物券相关",
+      "scene_description": "购物券问题，包括购物券领取、购物券使用、购物券退款、购物券未收到、购物券过期",
+      "question_examples": [
+        "购物券在哪领",
+        "购物券怎么用",
+        "有购物券吗",
+        "购物券怎么没看到",
+        "购物券过期了怎么办",
+        "购物券能叠加吗",
+        "购物券怎么用不了",
+        "退款购物券返吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e14",
+      "category_key": "PROMOTION",
+      "category_name": "活动优惠",
+      "scene_name": "优惠券相关",
+      "scene_description": "优惠券问题，包括优惠券领取、优惠券使用、优惠券返券、优惠券退款、店铺优惠券、满减券",
+      "question_examples": [
+        "有优惠券吗",
+        "优惠券在哪",
+        "优惠券怎么领",
+        "能发张券吗",
+        "满减券有吗",
+        "优惠券怎么用",
+        "有券吗",
+        "怎么领券",
+        "券在什么地方",
+        "能用券吗",
+        "返券活动有吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e14",
+      "category_key": "PROMOTION",
+      "category_name": "活动优惠",
+      "scene_name": "红包相关",
+      "scene_description": "红包问题，包括返红包、红包使用、红包领取、红包退款、红包未收到、红包有效期",
+      "question_examples": [
+        "有红包吗",
+        "红包怎么用",
+        "红包在哪领",
+        "返红包是真的吗",
+        "红包怎么没到账",
+        "红包能用吗",
+        "红包能叠加吗",
+        "退款成功后红包会退回吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e14",
+      "category_key": "PROMOTION",
+      "category_name": "活动优惠",
+      "scene_name": "直播专属规则",
+      "scene_description": "直播专属优惠，包括直播价格、直播优惠、直播抽奖、直播间福利、直播领券、直播互动、主播价",
+      "question_examples": [
+        "直播间什么价",
+        "直播有优惠吗",
+        "直播间福利",
+        "主播价多少",
+        "直播有抽奖吗",
+        "直播间券怎么领",
+        "看直播有优惠吗",
+        "直播专享价",
+        "直播间互动有奖吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e14",
+      "category_key": "PROMOTION",
+      "category_name": "活动优惠",
+      "scene_name": "会员权益说明",
+      "scene_description": "会员权益问题，包括会员开通、会员特权、VIP会员、会员等级、会员折扣、退订会员、会员收费",
+      "question_examples": [
+        "会员有什么好处",
+        "怎么开通会员",
+        "会员要钱吗",
+        "是会员吗",
+        "会员能打折吗",
+        "VIP有什么特权",
+        "入会礼是什么"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e14",
+      "category_key": "PROMOTION",
+      "category_name": "活动优惠",
+      "scene_name": "预售尾款支付流程",
+      "scene_description": "预售尾款问题，包括尾款支付、尾款时间、忘记付尾款、无法付尾款、尾款催付、定金尾款",
+      "question_examples": [
+        "尾款什么时候付",
+        "忘记付尾款了",
+        "尾款在哪付",
+        "付尾款有提醒吗",
+        "尾款付不了怎么办",
+        "定金尾款怎么算",
+        "尾款时间到了吗",
+        "能提前付尾款吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e14",
+      "category_key": "PROMOTION",
+      "category_name": "活动优惠",
+      "scene_name": "免息规则说明",
+      "scene_description": "免息分期问题，包括免息活动、分期期数、免息条件、手续费利息、分期付款、信用卡分期",
+      "question_examples": [
+        "这个免息吗",
+        "几期免息",
+        "有免息活动吗",
+        "手续费多少",
+        "怎么免息分期",
+        "能分期吗",
+        "免息是真的吗",
+        "分期要利息吗",
+        "几期手续费免",
+        "支持信用卡分期吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e14",
+      "category_key": "PROMOTION",
+      "category_name": "活动优惠",
+      "scene_name": "补贴相关政策",
+      "scene_description": "补贴政策问题，包括国家补贴、店铺补贴、政府补贴、补贴领取、补贴时间、补贴条件、补贴金额",
+      "question_examples": [
+        "有补贴吗",
+        "国家补贴多少",
+        "补贴怎么领",
+        "店铺有补贴吗",
+        "补贴政策是什么",
+        "谁能享受补贴",
+        "补贴什么时候发",
+        "补贴到账了吗",
+        "怎么申请补贴"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e14",
+      "category_key": "PROMOTION",
+      "category_name": "活动优惠",
+      "scene_name": "试用装规则说明",
+      "scene_description": "试用装问题，包括小样试用、试用装领取、试用装免费、试用装数量、试用装链接、试用装型号",
+      "question_examples": [
+        "有小样吗",
+        "有试用装吗",
+        "送试用装吗",
+        "试用装怎么领",
+        "试用装免费吗",
+        "有样品吗",
+        "试用装多少钱",
+        "拍下送小样吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e14",
+      "category_key": "PROMOTION",
+      "category_name": "活动优惠",
+      "scene_name": "积分相关问题",
+      "scene_description": "积分相关问题，包括积分查询、积分兑换、积分抵扣、积分获取、会员积分、积分有效期",
+      "question_examples": [
+        "积分能抵扣吗",
+        "有多少积分",
+        "积分怎么查",
+        "积分能换什么",
+        "怎么获得积分",
+        "积分有效期多久",
+        "消费有积分吗",
+        "积分能提现吗",
+        "怎么用积分"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e14",
+      "category_key": "PROMOTION",
+      "category_name": "活动优惠",
+      "scene_name": "充值兑换问题",
+      "scene_description": "兑换码充值问题，包括兑换码使用、充值方式、充值到账、兑换码激活",
+      "question_examples": [
+        "兑换码在哪",
+        "怎么兑换",
+        "兑换码怎么用",
+        "充值码在哪",
+        "兑换码有效吗",
+        "兑换码激活",
+        "怎么使用兑换码"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e15",
+      "category_key": "LOGISTICS",
+      "category_name": "物流咨询",
+      "scene_name": "运费与包邮政策",
+      "scene_description": "运费包邮问题，包括运费计算、包邮条件、运费补贴、退运费、不包邮地区、加急运费",
+      "question_examples": [
+        "包邮吗",
+        "运费多少钱",
+        "满多少包邮",
+        "运费怎么算",
+        "运费能退吗",
+        "偏远地区运费",
+        "加急运费多少",
+        "不包邮地区",
+        "发顺丰加钱吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e15",
+      "category_key": "LOGISTICS",
+      "category_name": "物流咨询",
+      "scene_name": "异常快递解决方法",
+      "scene_description": "物流异常问题，包括物流不更新、丢件查不到、发错地址、包裹异常、物流停滞",
+      "question_examples": [
+        "物流不更新",
+        "快递丢了",
+        "一直没物流",
+        "发错地方了",
+        "包裹异常",
+        "物流停滞",
+        "物流卡住了",
+        "快递异常怎么处理",
+        "一直停在一个地方",
+        "包裹派送异常",
+        "显示异常签收怎么办"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e15",
+      "category_key": "LOGISTICS",
+      "category_name": "物流咨询",
+      "scene_name": "发货形式与特殊要求",
+      "scene_description": "发货方式问题，包括分地址发货、合并发货、发货检查、赠品是否同发",
+      "question_examples": [
+        "能分两个地址发吗",
+        "发两个地方",
+        "发货前检查",
+        "能合并发货吗",
+        "一起发可以吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e15",
+      "category_key": "LOGISTICS",
+      "category_name": "物流咨询",
+      "scene_name": "空包/少件补发政策",
+      "scene_description": "空包少件问题，包括收到空包、收到少件、虚假发货、补发重发、发错货、缺货、数量不对、补发物流等售后补发诉求",
+      "question_examples": [
+        "收到空包裹",
+        "少发了",
+        "发错货了",
+        "数量不对",
+        "怎么补发",
+        "缺货补发",
+        "重新发货",
+        "补发快递单",
+        "虚假发货",
+        "漏发了给我补发一下",
+        "少了一件麻烦补发",
+        "这个发错了重新补发",
+        "补发什么时候安排"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e15",
+      "category_key": "LOGISTICS",
+      "category_name": "物流咨询",
+      "scene_name": "派送/收货/送货问题",
+      "scene_description": "收货派送问题，包括送货上门、延长收货、自动确认收货、取件码、送上楼、派送时间",
+      "question_examples": [
+        "能送货上门吗",
+        "能放驿站吗",
+        "取件码是多少",
+        "能送上楼吗",
+        "放哪自取",
+        "快递派送时间",
+        "能放到菜鸟驿站吗",
+        "能放快递柜吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e15",
+      "category_key": "LOGISTICS",
+      "category_name": "物流咨询",
+      "scene_name": "物流进度查询",
+      "scene_description": "物流查询问题，包括物流单号、物流进度、查物流、物流信息、快递单号、物流轨迹、发货状态",
+      "question_examples": [
+        "快递单号多少",
+        "物流查不到",
+        "物流到哪了",
+        "发给我单号",
+        "快递进度",
+        "查物流",
+        "发货了吗"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e15",
+      "category_key": "LOGISTICS",
+      "category_name": "物流咨询",
+      "scene_name": "退货宝服务",
+      "scene_description": "退货宝问题，包括退货宝使用、退货宝入口、退货宝服务、是否有退货宝、退货宝申请",
+      "question_examples": [
+        "有退货宝吗",
+        "退货宝怎么用",
+        "能用退货宝吗",
+        "退货宝在哪",
+        "支持退货宝吗",
+        "退货宝服务",
+        "退货宝入口",
+        "怎么开通退货宝"
+      ],
+      "industry_names": [
+        "行业通用"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "是否有辐射",
+      "scene_description": "买家咨询商品是否有辐射、辐射是否大。",
+      "question_examples": [
+        "有辐射吗",
+        "辐射大不大",
+        "会不会有电磁辐射"
+      ],
+      "industry_names": [
+        "洗护行业",
+        "家电行业",
+        "工业用具",
+        "汽车用品"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "能效等级",
+      "scene_description": "买家咨询商品能效等级、耗电级别。",
+      "question_examples": [
+        "能效等级是多少",
+        "几级能效",
+        "省电吗",
+        "耗电等级是什么",
+        "耗电高吗"
+      ],
+      "industry_names": [
+        "洗护行业",
+        "家电行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "适用物品/材质",
+      "scene_description": "买家咨询洗护剂适用于哪些物品、面料、材质或清洁对象，如衣物、床品、羽绒服、木地板、滚筒洗衣机等，不包含头皮、身体等人体部位。",
+      "question_examples": [
+        "这个可以直接喷床吗",
+        "只能用于滚筒洗衣机吗",
+        "羽绒服能用吗",
+        "宝宝衣服可以洗吗",
+        "木地板能喷吗",
+        "内衣内裤能用吗"
+      ],
+      "industry_names": [
+        "洗护行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "是否容易出泡及出泡量",
+      "scene_description": "买家咨询洗护剂是否容易起泡、泡沫量大小、泡沫细腻程度。",
+      "question_examples": [
+        "容易起泡吗",
+        "泡沫多吗",
+        "泡沫细不细",
+        "一搓就有泡吗",
+        "泡泡会不会很多"
+      ],
+      "industry_names": [
+        "洗护行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "PH值/酸碱度",
+      "scene_description": "买家咨询洗护剂的 PH 值、偏酸还是偏碱、是否为弱酸性等。",
+      "question_examples": [
+        "pH值多少",
+        "是酸性还是碱性",
+        "弱酸性吗",
+        "酸碱度高吗"
+      ],
+      "industry_names": [
+        "洗护行业"
+      ]
+    },
+    {
+      "category_id": "696f3c783dceab0847703e12",
+      "category_key": "PRODUCT_INFO",
+      "category_name": "商品咨询",
+      "scene_name": "负离子/水离子",
+      "scene_description": "买家咨询是否有负离子、水离子等功能。",
+      "question_examples": [
+        "有负离子吗",
+        "带水离子功能吗",
+        "负离子有用吗",
+        "是负离子款吗"
+      ],
+      "industry_names": [
+        "洗护行业"
+      ]
+    }
+  ],
+  "scene_count": 227,
+  "pages_fetched": 3,
+  "status_code": 200
+}

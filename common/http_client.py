@@ -1,4 +1,4 @@
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Iterable, Optional
 
 import requests
 from requests.adapters import HTTPAdapter
@@ -8,22 +8,34 @@ from config.settings import settings
 
 
 class HttpClient:
-    def __init__(self, base_url: Optional[str] = None, default_headers: Optional[Dict[str, str]] = None):
+    def __init__(
+        self,
+        base_url: Optional[str] = None,
+        default_headers: Optional[Dict[str, str]] = None,
+        retry_allowed_methods: Optional[Iterable[str]] = None,
+    ):
         self.session = requests.Session()
         self._use_settings_base_url = base_url is None
         self._use_settings_headers = default_headers is None
         self.base_url = (base_url or settings.get_api_base_url()).rstrip("/")
         self.timeout = settings.get_timeout()
 
-        headers = default_headers if default_headers is not None else settings.get_headers()
+        headers = (
+            default_headers if default_headers is not None else settings.get_headers()
+        )
         if headers:
             self.session.headers.update(headers)
 
+        allowed_methods = (
+            frozenset(str(method).upper() for method in retry_allowed_methods)
+            if retry_allowed_methods is not None
+            else frozenset({"GET", "POST"})
+        )
         retry_strategy = Retry(
             total=settings.get_retry_count(),
             backoff_factor=settings.get_retry_interval(),
             status_forcelist=[429, 500, 502, 503, 504],
-            allowed_methods=["GET", "POST"],
+            allowed_methods=allowed_methods,
         )
         adapter = HTTPAdapter(max_retries=retry_strategy)
         self.session.mount("http://", adapter)
@@ -51,7 +63,9 @@ class HttpClient:
         print(f"HTTP_RESPONSE method={method} url={url} status={response.status_code}")
         return response
 
-    def post(self, endpoint: str, json: Optional[Dict[str, Any]] = None, **kwargs) -> requests.Response:
+    def post(
+        self, endpoint: str, json: Optional[Dict[str, Any]] = None, **kwargs
+    ) -> requests.Response:
         return self.request("POST", endpoint, json=json, **kwargs)
 
     def set_header(self, key: str, value: str) -> None:
@@ -67,5 +81,13 @@ class HttpClient:
 http_client = HttpClient()
 
 
-def create_http_client(base_url: Optional[str] = None, default_headers: Optional[Dict[str, str]] = None) -> HttpClient:
-    return HttpClient(base_url=base_url, default_headers=default_headers)
+def create_http_client(
+    base_url: Optional[str] = None,
+    default_headers: Optional[Dict[str, str]] = None,
+    retry_allowed_methods: Optional[Iterable[str]] = None,
+) -> HttpClient:
+    return HttpClient(
+        base_url=base_url,
+        default_headers=default_headers,
+        retry_allowed_methods=retry_allowed_methods,
+    )
