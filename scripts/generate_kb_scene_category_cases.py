@@ -59,7 +59,7 @@ def _case_question_examples(scene: Dict[str, Any]) -> List[str]:
     if normalized:
         return normalized
     scene_name = str(scene.get("scene_name") or "").strip()
-    return [f"{scene_name}[{scene_name}]"] if scene_name else []
+    return [f"[{scene_name}]"] if scene_name else []
 
 
 def _build_case(

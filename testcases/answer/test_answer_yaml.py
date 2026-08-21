@@ -494,20 +494,33 @@ def _assert_quality_record(
     normalized_record: Dict[str, Any],
     chat_reply: str,
     final_reply_equals_chat: bool,
+    chat_response: Optional[Dict[str, Any]] = None,
 ) -> None:
     quality_expect = expected.get("quality", {}) if isinstance(expected.get("quality"), dict) else {}
     if final_reply_equals_chat or quality_expect.get("final_reply_equals_chat"):
         final_response_text = normalized_record["final_reply"]
-        assert final_response_text, f"[{case_label}] quality final_response was empty"
-        assert final_response_text == chat_reply, (
-            f"[{case_label}] chat reply and quality final_reply mismatch | "
-            f"chat: {chat_reply} | quality: {final_response_text}"
-        )
+        # Only allow empty text for forward-only responses
+        if not chat_reply and not final_response_text:
+            # Both empty - verify this is actually a forward response
+            if chat_response:
+                action_types = ChatAPI.extract_action_types(chat_response)
+                assert "forward" in action_types, (
+                    f"[{case_label}] both chat reply and quality final_reply are empty, "
+                    f"but response is not a forward action | action_types: {action_types}"
+                )
+            else:
+                raise AssertionError(f"[{case_label}] both chat reply and quality final_reply are empty")
+        else:
+            assert final_response_text == chat_reply, (
+                f"[{case_label}] chat reply and quality final_reply mismatch | "
+                f"chat: {chat_reply} | quality: {final_response_text}"
+            )
 
     for expected_text in _list_value(quality_expect.get("reply_contains")):
-        assert str(expected_text) in normalized_record["final_reply"], (
+        actual_reply = str(normalized_record.get("final_reply") or "")
+        assert str(expected_text) in actual_reply, (
             f"[{case_label}] quality final_reply missing expected text: {expected_text} | "
-            f"actual: {normalized_record['final_reply']}"
+            f"actual: {actual_reply}"
         )
 
     expected_level = quality_expect.get("level")
@@ -705,11 +718,13 @@ def _run_answer_case(
                 chat_response,
                 response_received_at=turn_response_at,
             )
-            assert assistant_messages, f"[{case_label}] turn {turn_index} returned no assistant messages"
             if assistant_messages:
                 conversation_messages.extend(assistant_messages)
             chat_reply = chat_client.extract_ai_reply(chat_response) or (
                 assistant_messages[-1]["content"] if assistant_messages else ""
+            )
+            assert assistant_messages or chat_client.has_effective_response(chat_response), (
+                f"[{case_label}] turn {turn_index} returned no assistant messages or AI actions"
             )
 
             if assertions_enabled and expected:
@@ -742,6 +757,7 @@ def _run_answer_case(
                         normalized_record,
                         chat_reply,
                         suite["final_reply_equals_chat"],
+                        chat_response,
                     )
 
             _safe_print(

@@ -62,12 +62,64 @@ class ChatAPI:
         return actions
 
     @classmethod
+    def extract_action_types(cls, response_data: Dict[str, Any]) -> List[str]:
+        """Extract action types from response.
+
+        Returns a list of unique action types in the order they appear.
+        Handles cases where response has actions but no assistant text.
+        """
+        action_types: List[str] = []
+        for action in cls._extract_ai_actions(response_data):
+            if not isinstance(action, dict):
+                continue
+            action_type = str(action.get("actionType") or "").strip()
+            if action_type and action_type not in action_types:
+                action_types.append(action_type)
+        return action_types
+
+    @classmethod
+    def has_effective_response(cls, response_data: Dict[str, Any]) -> bool:
+        """Check if response contains valid actions even without assistant text.
+
+        A response is considered effective if it contains at least one valid action:
+        - sendMessage: must have contentType="text" and non-empty content
+        - forward: must have a non-empty scene
+
+        Returns:
+            True if the response has at least one valid action, False otherwise.
+        """
+        actions = cls._extract_ai_actions(response_data)
+        for action in actions:
+            if not isinstance(action, dict):
+                continue
+            action_type = str(action.get("actionType") or "").strip()
+            payload = action.get("payload")
+            if not isinstance(payload, dict):
+                continue
+
+            # sendMessage must have non-empty text content
+            if action_type == "sendMessage":
+                content = payload.get("content")
+                if (payload.get("contentType") == "text"
+                    and content and str(content).strip()):
+                    return True
+            # forward must have a valid payload with scene
+            elif action_type == "forward":
+                scene = payload.get("scene")
+                if scene and str(scene).strip():
+                    return True
+
+        return False
+
+    @classmethod
     def extract_ai_reply(cls, response_data: Dict[str, Any]) -> Optional[str]:
         actions = cls._extract_ai_actions(response_data)
         for action in actions:
             if action.get("actionType") != "sendMessage":
                 continue
-            payload = action.get("payload", {})
+            payload = action.get("payload")
+            if not isinstance(payload, dict):
+                continue
             if payload.get("contentType") == "text":
                 return payload.get("content")
         return None
@@ -85,7 +137,9 @@ class ChatAPI:
         for action in actions:
             if action.get("actionType") != "sendMessage":
                 continue
-            payload = action.get("payload", {})
+            payload = action.get("payload")
+            if not isinstance(payload, dict):
+                continue
             if payload.get("contentType") != "text":
                 continue
             content = payload.get("content")

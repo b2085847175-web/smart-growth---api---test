@@ -3,7 +3,7 @@ from typing import Any, Dict
 import pytest
 
 from api_object.chat_api import ChatAPI
-from testcases.answer.test_answer_yaml import _run_answer_case
+from testcases.answer.test_answer_yaml import _assert_quality_record, _run_answer_case
 
 
 class _Response:
@@ -47,6 +47,205 @@ def test_chat_answer_normalizes_message_timestamps_to_integers() -> None:
     timestamps = [message["created_at"] for message in client.payload["messages"]]
     assert timestamps[0] == 123
     assert all(isinstance(timestamp, int) for timestamp in timestamps)
+
+
+def test_forward_only_response_is_an_effective_response() -> None:
+    response = {
+        "data": {
+            "ai_actions": [
+                {
+                    "actionType": "forward",
+                    "payload": {"scene": "客诉"},
+                }
+            ]
+        }
+    }
+
+    assert ChatAPI.extract_assistant_messages(response) == []
+    assert ChatAPI.extract_action_types(response) == ["forward"]
+    assert ChatAPI.has_effective_response(response)
+
+
+def test_invalid_forward_is_not_effective() -> None:
+    """Forward without scene in payload should not be effective."""
+    response = {
+        "data": {
+            "ai_actions": [
+                {
+                    "actionType": "forward",
+                    "payload": {},
+                }
+            ]
+        }
+    }
+
+    assert not ChatAPI.has_effective_response(response)
+
+
+@pytest.mark.parametrize("scene", ["", "   ", "\t\n"])
+def test_forward_with_whitespace_scene_is_not_effective(scene: str) -> None:
+    """Forward with only whitespace scene should not be effective."""
+    response = {
+        "data": {
+            "ai_actions": [
+                {
+                    "actionType": "forward",
+                    "payload": {"scene": scene},
+                }
+            ]
+        }
+    }
+
+    assert not ChatAPI.has_effective_response(response)
+
+
+def test_send_message_without_content_is_not_effective() -> None:
+    """sendMessage without actual content should not be effective."""
+    response = {
+        "data": {
+            "ai_actions": [
+                {
+                    "actionType": "sendMessage",
+                    "payload": {},
+                }
+            ]
+        }
+    }
+
+    assert not ChatAPI.has_effective_response(response)
+
+
+@pytest.mark.parametrize("content", ["", "   ", "\t\n"])
+def test_send_message_with_whitespace_only_is_not_effective(content: str) -> None:
+    """sendMessage with only whitespace should not be effective."""
+    response = {
+        "data": {
+            "ai_actions": [
+                {
+                    "actionType": "sendMessage",
+                    "payload": {
+                        "contentType": "text",
+                        "content": content,
+                    },
+                }
+            ]
+        }
+    }
+
+    assert not ChatAPI.has_effective_response(response)
+
+
+@pytest.mark.parametrize("payload", [None, "invalid", []])
+def test_non_mapping_action_payload_is_not_effective(payload: Any) -> None:
+    response = {
+        "data": {
+            "ai_actions": [
+                {
+                    "actionType": "sendMessage",
+                    "payload": payload,
+                }
+            ]
+        }
+    }
+
+    assert ChatAPI.extract_ai_reply(response) is None
+    assert ChatAPI.extract_assistant_messages(response) == []
+    assert not ChatAPI.has_effective_response(response)
+
+
+def test_unknown_action_is_not_effective() -> None:
+    """Unknown action types should not be considered effective."""
+    response = {
+        "data": {
+            "ai_actions": [
+                {
+                    "actionType": "unknownActionType",
+                    "payload": {"content": "unexpected"},
+                }
+            ]
+        }
+    }
+
+    assert not ChatAPI.has_effective_response(response)
+
+
+def test_send_message_with_content_is_effective() -> None:
+    """sendMessage with text content is effective even if not in assistant_messages."""
+    response = {
+        "data": {
+            "ai_actions": [
+                {
+                    "actionType": "sendMessage",
+                    "payload": {
+                        "contentType": "text",
+                        "content": "你好",
+                    },
+                }
+            ]
+        }
+    }
+
+    assert ChatAPI.has_effective_response(response)
+
+
+def _quality_record(final_reply: Any = None) -> Dict[str, Any]:
+    return {
+        "final_reply": final_reply,
+        "level": None,
+        "categories": [],
+        "stats_map": {},
+        "details_map": {},
+        "action_types": [],
+        "forward_scenes": [],
+    }
+
+
+def _chat_response(action_type: str, payload: Dict[str, Any]) -> Dict[str, Any]:
+    return {
+        "data": {
+            "ai_actions": [
+                {
+                    "actionType": action_type,
+                    "payload": payload,
+                }
+            ]
+        }
+    }
+
+
+def test_empty_replies_are_allowed_for_forward_response() -> None:
+    _assert_quality_record(
+        "forward-only",
+        {},
+        _quality_record(),
+        "",
+        True,
+        _chat_response("forward", {"scene": "客诉"}),
+    )
+
+
+def test_empty_replies_are_rejected_without_forward_response() -> None:
+    with pytest.raises(AssertionError, match="response is not a forward action"):
+        _assert_quality_record(
+            "empty-send-message",
+            {},
+            _quality_record(),
+            "",
+            True,
+            _chat_response("sendMessage", {"contentType": "text", "content": ""}),
+        )
+
+
+def test_one_empty_reply_is_rejected() -> None:
+    with pytest.raises(AssertionError, match="chat reply and quality final_reply mismatch"):
+        _assert_quality_record(
+            "reply-mismatch",
+            {},
+            _quality_record(),
+            "chat reply",
+            True,
+            _chat_response("sendMessage", {"contentType": "text", "content": "chat reply"}),
+        )
 
 
 def test_transport_error_fails_when_business_assertions_are_disabled() -> None:
