@@ -163,6 +163,8 @@ cython_debug/
 # 测试报告
 reports/html/
 reports/junit/
+allure-results/
+reports/allure/
 
 # 日志文件
 logs/
