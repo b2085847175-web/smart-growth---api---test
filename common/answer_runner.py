@@ -490,7 +490,7 @@ def _answer_items() -> List[Any]:
 
 
 
-def _normalize_context_messages(raw_messages: Any, case_name: str) -> List[Dict[str, str]]:
+def _normalize_context_messages(raw_messages: Any, case_name: str) -> List[Dict[str, Any]]:
 
     if not raw_messages:
 
@@ -500,7 +500,7 @@ def _normalize_context_messages(raw_messages: Any, case_name: str) -> List[Dict[
 
         raise ValueError(f"[{case_name}] context_messages must be a list")
 
-    context_messages: List[Dict[str, str]] = []
+    context_messages: List[Dict[str, Any]] = []
 
     for index, message in enumerate(raw_messages, start=1):
 
@@ -520,15 +520,45 @@ def _normalize_context_messages(raw_messages: Any, case_name: str) -> List[Dict[
 
             raise ValueError(f"[{case_name}] context_messages[{index}].content cannot be empty")
 
-        context_messages.append({"role": role, "content": content})
+        media_type = str(message.get("media_type", "text")).strip().lower() or "text"
+
+        media_url = str(message.get("media_url", "")).strip()
+
+        if media_type not in {"text", "image"}:
+
+            raise ValueError(f"[{case_name}] context_messages[{index}].media_type must be text or image")
+
+        if media_type == "image" and not media_url:
+
+            raise ValueError(f"[{case_name}] context_messages[{index}].media_url is required for image")
+
+        normalized_message: Dict[str, Any] = {
+            "role": role,
+            "content": content,
+            "media_type": media_type,
+            "media_url": media_url,
+        }
+
+        created_at = message.get("created_at")
+
+        if created_at is not None:
+
+            try:
+
+                normalized_message["created_at"] = int(float(created_at))
+
+            except (TypeError, ValueError):
+
+                raise ValueError(f"[{case_name}] context_messages[{index}].created_at must be a timestamp")
+
+        context_messages.append(normalized_message)
 
     return context_messages
 
 
 
 
-
-def _prepare_context_messages(messages: List[Dict[str, str]]) -> List[Dict[str, Any]]:
+def _prepare_context_messages(messages: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
     if not messages:
 
@@ -536,22 +566,31 @@ def _prepare_context_messages(messages: List[Dict[str, str]]) -> List[Dict[str, 
 
     start_at = time.time() - len(messages) - 5
 
-    return [
+    prepared_messages: List[Dict[str, Any]] = []
 
-        {
+    for index, message in enumerate(messages):
 
-            "role": message["role"],
+        created_at = message.get("created_at", start_at + index)
 
-            "content": message["content"],
+        try:
 
-            "created_at": start_at + index,
+            normalized_created_at = int(float(created_at))
 
-        }
+        except (TypeError, ValueError):
 
-        for index, message in enumerate(messages)
+            raise ValueError(f"invalid context message created_at: {created_at!r}")
 
-    ]
+        prepared_messages.append(
+            {
+                "role": message["role"],
+                "content": message["content"],
+                "media_type": message.get("media_type", "text"),
+                "media_url": message.get("media_url", ""),
+                "created_at": normalized_created_at,
+            }
+        )
 
+    return prepared_messages
 
 
 
@@ -726,7 +765,9 @@ def _normalize_case(case_data: Dict[str, Any]) -> Dict[str, Any]:
 
         "context_messages": context_messages,
 
-        "turns": [] if conversation_record else _normalize_turns(case_data, case_name),
+        "turns": [] if conversation_record or context_messages and not any(
+            key in case_data for key in ("turns", "questions", "request")
+        ) else _normalize_turns(case_data, case_name),
 
         "inquiry_product": inquiry_product,
 
@@ -1346,9 +1387,13 @@ def _run_answer_case(
 
     conversation_record = normalized_case["conversation_record"]
 
-    one_shot_context = bool(conversation_record)
-
     context_messages = conversation_record or normalized_case["context_messages"]
+
+    # context_messages can also be used as a context-only case: the last user
+    # message itself triggers the answer, so no extra "question" is required.
+    context_only = not conversation_record and not normalized_case["turns"] and bool(context_messages)
+
+    one_shot_context = bool(conversation_record) or context_only
 
     conversation_messages = _prepare_context_messages(context_messages)
 
@@ -1374,9 +1419,15 @@ def _run_answer_case(
 
         last_user_message = next(
 
-            message["content"] for message in reversed(conversation_record) if message["role"] == "user"
+            (message["content"] for message in reversed(context_messages) if message["role"] == "user"),
+
+            None,
 
         )
+
+        if last_user_message is None:
+
+            raise ValueError("context-only case must contain at least one user message")
 
         execution_turns = [
 

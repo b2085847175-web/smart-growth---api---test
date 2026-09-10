@@ -20,20 +20,20 @@ project_root/
 │   ├── http_client.py
 │   └── paths.py
 ├── config/
-│   ├── answer_entries.py        # answer 日常/回归/定时入口映射
+│   ├── answer_entries.py        # answer 只保留 daily / regression 两个入口
 │   ├── context_runtime.py
 │   ├── env.yaml
 │   ├── project_env.py
 │   └── settings.py
 ├── data/
 │   ├── answer/
-│   │   ├── core/                # 日常 + 回归共用基础数据
-│   │   ├── daily/               # 日常补充场景
+│   │   ├── core/                # 历史基础数据；默认不再执行
+│   │   ├── daily/               # 日常高频验证数据
 │   │   ├── regression/          # 回归补充场景
-│   │   ├── smoke/               # 快速冒烟
+│   │   ├── smoke/               # 归 regression 执行的冒烟数据
 │   │   └── kb_scene_categories/ # KB 场景生成数据
 │   ├── kb/scenes/               # KB 场景导出数据
-│   └── scheduled/               # Jenkins 定时任务数据包
+└── scheduled/                 # 历史定时数据；默认不再执行
 ├── scripts/                     # 数据生成、导出、导入和迁移工具
 ├── testcases/
 │   ├── answer/
@@ -51,35 +51,28 @@ project_root/
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-### 回归
+### 日常执行
+
+```powershell
+$env:ANSWER_ENTRY = "daily"
+.\.venv\Scripts\python.exe run_tests.py --env dev --pattern "test_daily_usage.py" -v
+```
+
+### 回归执行
 
 ```powershell
 $env:ANSWER_ENTRY = "regression"
 .\.venv\Scripts\python.exe run_tests.py --env dev --pattern "test_answer_yaml.py" -v
 ```
 
-### 日常
-
-```powershell
-$env:ANSWER_ENTRY = "daily_usage"
-.\.venv\Scripts\python.exe run_tests.py --env dev --pattern "test_daily_usage.py" -v
-```
-
-### Jenkins 定时数据包
-
-```powershell
-$env:ANSWER_ENTRY = "scheduled"
-.\.venv\Scripts\python.exe run_tests.py --env dev --pattern "test_answer_yaml.py" -q
-```
-
-只做收集校验，不请求接口：
+### 只做收集校验
 
 ```powershell
 $env:ANSWER_ENTRY = "regression"
 .\.venv\Scripts\python.exe run_tests.py --pattern "test_answer_yaml.py" --collect-only -q
 ```
 
-只执行部分 suite：
+### 只执行部分 suite
 
 ```powershell
 $env:ANSWER_SUITES = "main_flow,context,multiturn"
@@ -88,23 +81,17 @@ $env:ANSWER_SUITES = "main_flow,context,multiturn"
 
 ## answer 入口
 
-入口映射统一维护在 `config/answer_entries.py`：
+入口映射统一维护在 `config/answer_entries.py`，只保留两个入口：
 
-| entry | 默认入口 | 说明 |
+| entry | 默认测试文件 | 数据范围 |
 |---|---|---|
-| `regression` | `test_answer_yaml.py` | 完整回归：core + regression |
-| `daily_usage` | `test_daily_usage.py` | 日常执行：core + daily |
-| `scheduled` | `test_answer_yaml.py` | Jenkins 定时任务包 |
-| `smoke` | 可选 | 快速冒烟 |
-| `daily_question` | 可选 | 日常问题复现 |
-| `kb_scene` | 可选 | KB 场景聚合数据 |
-| `online_feedback` | 可选 | 线上反馈复现 |
-| `random_account` | 可选 | 随机账号冒烟 |
+| `daily` | `test_daily_usage.py` | daily（默认 1-2 个文件） |
+| `regression` | `test_answer_yaml.py` | regression + smoke |
 
 切换入口：
 
 ```powershell
-$env:ANSWER_ENTRY = "smoke"
+$env:ANSWER_ENTRY = "regression"
 .\.venv\Scripts\python.exe run_tests.py --env dev --pattern "test_answer_yaml.py" -v
 ```
 
@@ -112,9 +99,9 @@ $env:ANSWER_ENTRY = "smoke"
 
 详细规则见 `data/answer/README.md`。简要流程：
 
-1. 按用途把 YAML 放到 `core/`、`daily/`、`regression/` 或 `smoke/`。
+1. 按用途把 YAML 放到 `daily/` 或 `regression/`。
 2. 在 YAML 中定义唯一 `suite.name` 和具体 `cases`。
-3. 把文件路径注册到 `config/answer_entries.py` 对应 entry。
+3. 把文件路径注册到 `config/answer_entries.py` 对应的数据列表。
 4. 先执行 `--collect-only` 确认用例能被发现。
 
 YAML 推荐写法：
@@ -138,7 +125,7 @@ cases:
                 - "活动与促销规则"
 ```
 
-`turns` 只有一条就是单轮，多条就是多轮；`context_messages` 会先注入历史上下文。
+`turns` 只有一条就是单轮，多条就是多轮；`context_messages` 会先注入历史上下文。用户连续发送两条消息时，在 `context_messages` 中按顺序写多条 user 消息。
 
 ## 执行策略
 
@@ -165,3 +152,4 @@ suite 策略写在 YAML 文件头部：
 - `.env` 中的 `ENV` 只在 YAML 未写 `target_env` 时兜底。
 - `prod` 会被归一成 `console`。
 - 店铺、账号、密码统一放在 `.env`，推荐使用 `*_DEV` / `*_CONSOLE` 后缀。
+

@@ -23,7 +23,7 @@ pipeline {
     environment {
         // The YAML pack also declares dev, but keep the Jenkins choice explicit.
         ENV = 'dev'
-        ANSWER_ENTRY = 'scheduled'
+        ANSWER_ENTRY = 'daily'
         CHAT_SHOP_ID_DEV = '585'
         CHAT_SHOP_NAME_DEV = 'shop_585'
         CHAT_ACCOUNT_DEV = 'zhaowenlong01'

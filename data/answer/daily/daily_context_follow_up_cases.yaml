@@ -1,0 +1,24 @@
+﻿suite:
+  name: "daily_context_follow_up"
+  mode: "sequential"
+  quality: false
+  assertions: false
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+
+target_env: "console"
+
+cases:
+  - name: "promise_cashback_and_image_context_follow_up"
+    context_messages:
+      - role: "user"
+        content: "[承诺评价返现]"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789013612
+      - role: "user"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://chat-img.pddugc.com/chat-pic-mall-user-v1/2026-09-10/7b788296-8e89-4a8d-b1a4-71bc5c0e797f.jpeg"
+        created_at: 1789013613

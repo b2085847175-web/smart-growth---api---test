@@ -14,11 +14,11 @@ import pytest
 
 from api_object.chat_api import ChatAPI
 from common import answer_runner as runner
-from config.answer_entries import ANSWER_DEFAULT_ENTRY, ANSWER_ENTRIES
+from config.answer_entries import ANSWER_ENTRIES, REGRESSION_ENTRY
 
 
 def _selected_entry() -> str:
-    entry = os.getenv("ANSWER_ENTRY", ANSWER_DEFAULT_ENTRY).strip().lower()
+    entry = os.getenv("ANSWER_ENTRY", REGRESSION_ENTRY).strip().lower()
     if entry not in ANSWER_ENTRIES:
         raise ValueError(
             f"unknown ANSWER_ENTRY={entry!r}; available={sorted(ANSWER_ENTRIES)}"
