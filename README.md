@@ -1,8 +1,8 @@
-# AI 客服 answer 接口自动化
+﻿# AI 客服 answer 接口自动化
 
-这个仓库使用 `pytest` 测试 `/chat/answer` 接口。当前结构遵循：
+这个仓库使用 `pytest` 测试 `/chat/answer`、商品和属性接口。核心原则：
 
-`Python 负责统一执行逻辑，config 负责测试分类，data 负责具体用例。`
+`Python 负责统一执行逻辑，config 负责入口/分类映射，data 负责具体用例数据。`
 
 核心链路：
 
@@ -12,93 +12,112 @@
 
 ```text
 project_root/
-├── api_object/
-│   ├── auth_api.py
-│   ├── chat_api.py
-│   └── quality_inspection_api.py
+├── api_object/                  # 接口对象
 ├── common/
-│   └── http_client.py
+│   ├── answer_runner.py         # answer 用例执行引擎
+│   ├── case_order.py
+│   ├── case_product.py
+│   ├── http_client.py
+│   └── paths.py
 ├── config/
-│   ├── answer_test.yaml
+│   ├── answer_entries.py        # answer 日常/回归/定时入口映射
+│   ├── context_runtime.py
 │   ├── env.yaml
-│   ├── settings.py
-│   └── context_runtime.py
+│   ├── project_env.py
+│   └── settings.py
 ├── data/
+│   ├── answer/
+│   │   ├── core/                # 日常 + 回归共用基础数据
+│   │   ├── daily/               # 日常补充场景
+│   │   ├── regression/          # 回归补充场景
+│   │   ├── smoke/               # 快速冒烟
+│   │   └── kb_scene_categories/ # KB 场景生成数据
+│   ├── kb/scenes/               # KB 场景导出数据
+│   └── scheduled/               # Jenkins 定时任务数据包
+├── scripts/                     # 数据生成、导出、导入和迁移工具
 ├── testcases/
 │   ├── answer/
-│   │   └── test_answer_yaml.py
-│   └── common/
-│       ├── paths.py
-│       ├── case_product.py
-│       └── case_order.py
-├── .env
-├── .env.example
+│   │   ├── test_answer_yaml.py  # 回归入口 + answer 单元测试
+│   │   └── test_daily_usage.py  # 日常执行入口
+│   └── product/
+│       └── test_product.py
 ├── run_tests.py
 └── requirements.txt
 ```
 
 ## 安装与运行
 
-安装依赖：
-
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-运行全部 answer 测试：
+### 回归
 
 ```powershell
+$env:ANSWER_ENTRY = "regression"
 .\.venv\Scripts\python.exe run_tests.py --env dev --pattern "test_answer_yaml.py" -v
 ```
 
-只运行某一类 suite：
+### 日常
 
 ```powershell
-$env:ANSWER_SUITES="main_flow"
-.\.venv\Scripts\python.exe run_tests.py --env dev --pattern "test_answer_yaml.py" -v
+$env:ANSWER_ENTRY = "daily_usage"
+.\.venv\Scripts\python.exe run_tests.py --env dev --pattern "test_daily_usage.py" -v
 ```
 
-运行多个 suite：
+### Jenkins 定时数据包
 
 ```powershell
-$env:ANSWER_SUITES="main_flow,context,multiturn"
-.\.venv\Scripts\python.exe run_tests.py --env dev --pattern "test_answer_yaml.py" -v
+$env:ANSWER_ENTRY = "scheduled"
+.\.venv\Scripts\python.exe run_tests.py --env dev --pattern "test_answer_yaml.py" -q
 ```
 
-只做收集验证，不请求接口：
+只做收集校验，不请求接口：
 
 ```powershell
+$env:ANSWER_ENTRY = "regression"
 .\.venv\Scripts\python.exe run_tests.py --pattern "test_answer_yaml.py" --collect-only -q
 ```
 
-## 测试分类
+只执行部分 suite：
 
-测试分类统一写在 `config/answer_test.yaml`：
+```powershell
+$env:ANSWER_SUITES = "main_flow,context,multiturn"
+.\.venv\Scripts\python.exe run_tests.py --env dev --pattern "test_answer_yaml.py" -v
+```
 
-| suite | mode | 说明 |
-|------|------|------|
-| `main_flow` | `sequential` | 主流程：单轮/多轮 + 质检断言 |
-| `context` | `sequential` | 带历史消息上下文的对话 |
-| `multiturn` | `sequential` | 多轮对话，仅验证 answer 回复链路 |
-| `match_score` | `sequential` | 校验 answer 返回的 `match_score` |
-| `stability` | `stability` | 重复运行 case，统计命中率 |
-| `parallel` | `parallel` | 并发执行多条 case |
+## answer 入口
 
-`mode` 支持：
+入口映射统一维护在 `config/answer_entries.py`：
 
-- `sequential`：每条 case 单独执行。
-- `parallel`：一个 suite 内的 case 按 `workers` 并发执行。
-- `stability`：同一 case 按 `repeat` 重复执行，并用 `min_pass_rate` 判断是否达标。
+| entry | 默认入口 | 说明 |
+|---|---|---|
+| `regression` | `test_answer_yaml.py` | 完整回归：core + regression |
+| `daily_usage` | `test_daily_usage.py` | 日常执行：core + daily |
+| `scheduled` | `test_answer_yaml.py` | Jenkins 定时任务包 |
+| `smoke` | 可选 | 快速冒烟 |
+| `daily_question` | 可选 | 日常问题复现 |
+| `kb_scene` | 可选 | KB 场景聚合数据 |
+| `online_feedback` | 可选 | 线上反馈复现 |
+| `random_account` | 可选 | 随机账号冒烟 |
 
-## YAML 用例
+切换入口：
 
-data 文件只负责具体 case，支持三种写法：
+```powershell
+$env:ANSWER_ENTRY = "smoke"
+.\.venv\Scripts\python.exe run_tests.py --env dev --pattern "test_answer_yaml.py" -v
+```
 
-- `turns`
-- `questions`
-- `request`
+## 新增 answer 用例
 
-推荐写法：
+详细规则见 `data/answer/README.md`。简要流程：
+
+1. 按用途把 YAML 放到 `core/`、`daily/`、`regression/` 或 `smoke/`。
+2. 在 YAML 中定义唯一 `suite.name` 和具体 `cases`。
+3. 把文件路径注册到 `config/answer_entries.py` 对应 entry。
+4. 先执行 `--collect-only` 确认用例能被发现。
+
+YAML 推荐写法：
 
 ```yaml
 target_env: "dev"
@@ -119,19 +138,30 @@ cases:
                 - "活动与促销规则"
 ```
 
-规则：
+`turns` 只有一条就是单轮，多条就是多轮；`context_messages` 会先注入历史上下文。
 
-- `turns` 只有一条就是单轮，多条就是多轮。
-- 有 `context_messages` 就会先注入历史上下文。
-- suite 配置 `quality: true` 时会查询质检记录。
-- suite 配置 `match_score: true` 或 expect 中写了 `match_score` 时会校验匹配度。
-- suite 配置 `mode: parallel` 时按并发策略执行。
-- suite 配置 `mode: stability` 时按稳定性策略执行。
+## 执行策略
+
+suite 策略写在 YAML 文件头部：
+
+| mode | 说明 |
+|---|---|
+| `sequential` | 每条 case 单独执行 |
+| `parallel` | 一个 suite 内的 case 按 `workers` 并发 |
+| `stability` | 同一 case 按 `repeat` 重复执行，按 `min_pass_rate` 判断 |
+
+常用开关：
+
+- `quality: true` 查询并校验质检记录。
+- `assertions: true` 启用回复/知识/动作断言。
+- `match_score: true` 校验匹配度。
+- `final_reply_equals_chat: true` 校验最终回复与 chat 返回一致。
+- `turn_interval_seconds` 控制 turn 间隔。
+- `run_interval_seconds` 控制 case 间隔。
 
 ## 环境规则
 
 - 优先读取 data YAML 顶部的 `target_env`。
-- `.env` 中的 `ENV` 仅在 YAML 未写 `target_env` 时作为兜底。
+- `.env` 中的 `ENV` 只在 YAML 未写 `target_env` 时兜底。
 - `prod` 会被归一成 `console`。
-- 店铺、账号、密码统一放在 `.env`。
-- 推荐使用环境专属键：`*_DEV` / `*_CONSOLE`。
+- 店铺、账号、密码统一放在 `.env`，推荐使用 `*_DEV` / `*_CONSOLE` 后缀。

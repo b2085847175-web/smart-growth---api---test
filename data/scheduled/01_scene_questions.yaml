@@ -1,0 +1,612 @@
+# 定时任务数据:KB 场景问法(每条一个独立问法,带分类/场景元数据,不断言)
+# category/scene_name 仅为备注信息,引擎不消费;后续要开启场景命中校验时再加 expect.scene。
+suite:
+  name: scheduled_scene_questions
+  mode: sequential
+  quality: false
+  match_score: false
+  final_reply_equals_chat: false
+  assertions: false
+  turn_interval_seconds: 1
+target_env: dev
+cases:
+- name: AFTER_SALES_001
+  category: 售后咨询
+  scene_name: 售后维修支持
+  questions:
+  - 这个东西坏了能修吗
+- name: AFTER_SALES_002
+  category: 售后咨询
+  scene_name: 售后维修支持
+  questions:
+  - 有售后保障吗
+- name: AFTER_SALES_003
+  category: 售后咨询
+  scene_name: 售后维修支持
+  questions:
+  - 质保期是多久
+- name: AFTER_SALES_004
+  category: 售后咨询
+  scene_name: 售后维修支持
+  questions:
+  - 维修点在什么地方
+- name: AFTER_SALES_005
+  category: 售后咨询
+  scene_name: 售后维修支持
+  questions:
+  - 怎么申请售后
+- name: AFTER_SALES_006
+  category: 售后咨询
+  scene_name: 售后维修支持
+  questions:
+  - 售后要钱吗
+- name: AFTER_SALES_007
+  category: 售后咨询
+  scene_name: 售后维修支持
+  questions:
+  - 我可以自己寄回去修吗
+- name: AFTER_SALES_008
+  category: 售后咨询
+  scene_name: 售后维修支持
+  questions:
+  - 这能换新的吗
+- name: AFTER_SALES_009
+  category: 售后咨询
+  scene_name: 售后维修支持
+  questions:
+  - 维修运费谁出
+- name: AFTER_SALES_010
+  category: 售后咨询
+  scene_name: 售后维修支持
+  questions:
+  - 售后电话是多少
+- name: AFTER_SALES_011
+  category: 售后咨询
+  scene_name: 订单收货地址修改
+  questions:
+  - 地址填错了可以改吗
+- name: CHAT_012
+  category: 聊天互动
+  scene_name: 询问是否是机器人
+  questions:
+  - 你是机器人吗
+- name: CHAT_013
+  category: 聊天互动
+  scene_name: 询问是否是机器人
+  questions:
+  - 是人工客服吗
+- name: CHAT_014
+  category: 聊天互动
+  scene_name: 询问是否是机器人
+  questions:
+  - 是机器人还是人工
+- name: CHAT_015
+  category: 聊天互动
+  scene_name: 询问是否是机器人
+  questions:
+  - 来个真人
+- name: CHAT_016
+  category: 聊天互动
+  scene_name: 索要联系方式
+  questions:
+  - 电话多少
+- name: CHAT_017
+  category: 聊天互动
+  scene_name: 索要联系方式
+  questions:
+  - 能电话吗
+- name: CHAT_018
+  category: 聊天互动
+  scene_name: 索要联系方式
+  questions:
+  - 给个号码
+- name: CHAT_019
+  category: 聊天互动
+  scene_name: 索要联系方式
+  questions:
+  - 有联系方式吗
+- name: CHAT_020
+  category: 聊天互动
+  scene_name: 索要联系方式
+  questions:
+  - 电话联系
+- name: CHAT_021
+  category: 聊天互动
+  scene_name: 索要联系方式
+  questions:
+  - 怎么联系你们
+- name: CHAT_022
+  category: 聊天互动
+  scene_name: 索要联系方式
+  questions:
+  - 手机号多少
+- name: CHAT_023
+  category: 聊天互动
+  scene_name: 索要联系方式
+  questions:
+  - 给个电话
+- name: CHAT_024
+  category: 聊天互动
+  scene_name: 好评相关
+  questions:
+  - 返现吗
+- name: CHAT_025
+  category: 聊天互动
+  scene_name: 好评相关
+  questions:
+  - 好评有礼吗
+- name: CHAT_026
+  category: 聊天互动
+  scene_name: 好评相关
+  questions:
+  - 晒图有奖吗
+- name: CHAT_027
+  category: 聊天互动
+  scene_name: 好评相关
+  questions:
+  - 给个好评
+- name: LOGISTICS_028
+  category: 物流咨询
+  scene_name: 快递物流服务
+  questions:
+  - 发什么快递
+- name: LOGISTICS_029
+  category: 物流咨询
+  scene_name: 快递物流服务
+  questions:
+  - 能发顺丰吗
+- name: LOGISTICS_030
+  category: 物流咨询
+  scene_name: 快递物流服务
+  questions:
+  - 能改快递吗
+- name: LOGISTICS_031
+  category: 物流咨询
+  scene_name: 快递物流服务
+  questions:
+  - 快递电话多少
+- name: LOGISTICS_032
+  category: 物流咨询
+  scene_name: 快递物流服务
+  questions:
+  - 能指定快递吗
+- name: LOGISTICS_033
+  category: 物流咨询
+  scene_name: 快递物流服务
+  questions:
+  - 支持什么快递
+- name: LOGISTICS_034
+  category: 物流咨询
+  scene_name: 快递物流服务
+  questions:
+  - 快递能到吗
+- name: LOGISTICS_035
+  category: 物流咨询
+  scene_name: 咨询送达时间
+  questions:
+  - 几天能到
+- name: LOGISTICS_036
+  category: 物流咨询
+  scene_name: 咨询送达时间
+  questions:
+  - 发货后多久到
+- name: PRE_SALES_037
+  category: 售前咨询
+  scene_name: 赠品相关
+  questions:
+  - 赠品什么时候发
+- name: PRODUCT_INFO_038
+  category: 商品咨询
+  scene_name: 适用年龄
+  questions:
+  - 18岁可以用吗
+- name: PRODUCT_INFO_039
+  category: 商品咨询
+  scene_name: 适用年龄
+  questions:
+  - 学生能用吗
+- name: PRODUCT_INFO_040
+  category: 商品咨询
+  scene_name: 适用年龄
+  questions:
+  - 20岁适合吗
+- name: PRODUCT_INFO_041
+  category: 商品咨询
+  scene_name: 适用年龄
+  questions:
+  - 小孩能用吗
+- name: PRODUCT_INFO_042
+  category: 商品咨询
+  scene_name: 适用年龄
+  questions:
+  - 老人能用吗
+- name: PRODUCT_INFO_043
+  category: 商品咨询
+  scene_name: 适用性别
+  questions:
+  - 男生能用吗
+- name: PRODUCT_INFO_044
+  category: 商品咨询
+  scene_name: 适用性别
+  questions:
+  - 女生适合吗
+- name: PRODUCT_INFO_045
+  category: 商品咨询
+  scene_name: 适用性别
+  questions:
+  - 男士可以用吗
+- name: PRODUCT_INFO_046
+  category: 商品咨询
+  scene_name: 适用性别
+  questions:
+  - 女士能用这个吗
+- name: PRODUCT_INFO_047
+  category: 商品咨询
+  scene_name: 适用性别
+  questions:
+  - 男性适合这款吗
+- name: PRODUCT_INFO_048
+  category: 商品咨询
+  scene_name: 适用季节
+  questions:
+  - 夏天能用吗
+- name: PRODUCT_INFO_049
+  category: 商品咨询
+  scene_name: 适用季节
+  questions:
+  - 适合春夏还是秋冬
+- name: PRODUCT_INFO_050
+  category: 商品咨询
+  scene_name: 适用季节
+  questions:
+  - 一年四季都能用吗
+- name: PRODUCT_INFO_051
+  category: 商品咨询
+  scene_name: 适用季节
+  questions:
+  - 冬天会不会太厚重
+- name: PRODUCT_INFO_052
+  category: 商品咨询
+  scene_name: 适用季节
+  questions:
+  - 换季期间适合吗
+- name: PRODUCT_INFO_053
+  category: 商品咨询
+  scene_name: 适用季节
+  questions:
+  - 冬季可以用吗
+- name: PRODUCT_INFO_054
+  category: 商品咨询
+  scene_name: 适用季节
+  questions:
+  - 适合夏季还是冬季
+- name: PRODUCT_INFO_055
+  category: 商品咨询
+  scene_name: 成分表
+  questions:
+  - 成分表发我看看
+- name: PRODUCT_INFO_056
+  category: 商品咨询
+  scene_name: 成分表
+  questions:
+  - 完整配方有吗
+- name: PRODUCT_INFO_057
+  category: 商品咨询
+  scene_name: 成分表
+  questions:
+  - 配料表在哪里看
+- name: PRODUCT_INFO_058
+  category: 商品咨询
+  scene_name: 成分表
+  questions:
+  - 全部成分有哪些
+- name: PRODUCT_INFO_059
+  category: 商品咨询
+  scene_name: 成分表
+  questions:
+  - 有详细成分表吗
+- name: PRODUCT_INFO_060
+  category: 商品咨询
+  scene_name: 成分表
+  questions:
+  - 有荧光剂吗
+- name: PRODUCT_INFO_061
+  category: 商品咨询
+  scene_name: 成分表
+  questions:
+  - 含酒精吗
+- name: PRODUCT_INFO_062
+  category: 商品咨询
+  scene_name: 清洗方式
+  questions:
+  - 这个怎么洗
+- name: PRODUCT_INFO_063
+  category: 商品咨询
+  scene_name: 清洗方式
+  questions:
+  - 要怎么清洗
+- name: PRODUCT_INFO_064
+  category: 商品咨询
+  scene_name: 清洗方式
+  questions:
+  - 用清水洗就行吗
+- name: PRODUCT_INFO_065
+  category: 商品咨询
+  scene_name: 清洗方式
+  questions:
+  - 要不要用温水
+- name: PRODUCT_INFO_066
+  category: 商品咨询
+  scene_name: 清洗方式
+  questions:
+  - 需要用专门清洁剂吗
+- name: PRODUCT_INFO_067
+  category: 商品咨询
+  scene_name: 清洗方式
+  questions:
+  - 要不要反面洗
+- name: PRODUCT_INFO_068
+  category: 商品咨询
+  scene_name: 清洗方式
+  questions:
+  - 深浅分开洗吗
+- name: PRODUCT_INFO_069
+  category: 商品咨询
+  scene_name: 清洗方式
+  questions:
+  - 新衣服要先洗吗
+- name: PRODUCT_INFO_070
+  category: 商品咨询
+  scene_name: 版型
+  questions:
+  - 这款是不是宽松啊
+- name: PRODUCT_INFO_071
+  category: 商品咨询
+  scene_name: 版型
+  questions:
+  - 这个款修身吗
+- name: PRODUCT_INFO_072
+  category: 商品咨询
+  scene_name: 版型
+  questions:
+  - 这个是偏宽松还是偏修身
+- name: PRODUCT_INFO_073
+  category: 商品咨询
+  scene_name: 版型
+  questions:
+  - 版型会不会很贴身
+- name: PRODUCT_INFO_074
+  category: 商品咨询
+  scene_name: 版型
+  questions:
+  - 这个穿起来是直筒版吗
+- name: PRODUCT_INFO_075
+  category: 商品咨询
+  scene_name: 版型
+  questions:
+  - 这条裤子是直筒还是阔腿
+- name: PRODUCT_INFO_076
+  category: 商品咨询
+  scene_name: 版型
+  questions:
+  - A字版吗
+- name: PRODUCT_INFO_077
+  category: 商品咨询
+  scene_name: 版型
+  questions:
+  - 是不是落肩款
+- name: PRODUCT_INFO_078
+  category: 商品咨询
+  scene_name: 版型
+  questions:
+  - 版型如何
+- name: PRODUCT_INFO_079
+  category: 商品咨询
+  scene_name: 腰型设计
+  questions:
+  - 这条裤子是高腰的吗
+- name: PRODUCT_INFO_080
+  category: 商品咨询
+  scene_name: 腰型设计
+  questions:
+  - 请问是低腰吗
+- name: PRODUCT_INFO_081
+  category: 商品咨询
+  scene_name: 腰型设计
+  questions:
+  - 这个是高腰还是中腰的
+- name: PRODUCT_INFO_082
+  category: 商品咨询
+  scene_name: 腰型设计
+  questions:
+  - 腰线高不高
+- name: PRODUCT_INFO_083
+  category: 商品咨询
+  scene_name: 腰型设计
+  questions:
+  - 这条裙子属于高腰款吗
+- name: PRODUCT_INFO_084
+  category: 商品咨询
+  scene_name: 尺码标准
+  questions:
+  - 这个码数标准吗
+- name: PRODUCT_INFO_085
+  category: 商品咨询
+  scene_name: 尺码标准
+  questions:
+  - 码数会不会偏大或偏小
+- name: PRODUCT_INFO_086
+  category: 商品咨询
+  scene_name: 尺码标准
+  questions:
+  - 码正吗
+- name: PRODUCT_INFO_087
+  category: 商品咨询
+  scene_name: 尺码标准
+  questions:
+  - 这个尺码偏小吗
+- name: PRODUCT_INFO_088
+  category: 商品咨询
+  scene_name: 尺码标准
+  questions:
+  - 平时穿M这款要拍大一码吗
+- name: PRODUCT_INFO_089
+  category: 商品咨询
+  scene_name: 尺码表
+  questions:
+  - 这个码的胸围和肩宽是多大的
+- name: PRODUCT_INFO_090
+  category: 商品咨询
+  scene_name: 尺码表
+  questions:
+  - M码适合1米几的
+- name: PRODUCT_INFO_091
+  category: 商品咨询
+  scene_name: 尺码表
+  questions:
+  - 175/74A裤长是多少
+- name: PRODUCT_INFO_092
+  category: 商品咨询
+  scene_name: 尺码表
+  questions:
+  - 尺码表有吗
+- name: PRODUCT_INFO_093
+  category: 商品咨询
+  scene_name: 尺码表
+  questions:
+  - 按身高体重怎么选尺码
+- name: PRODUCT_INFO_094
+  category: 商品咨询
+  scene_name: 尺码表
+  questions:
+  - 腰围2尺1选多大
+- name: PRODUCT_INFO_095
+  category: 商品咨询
+  scene_name: 尺码体系
+  questions:
+  - 这衣服美码吗
+- name: PRODUCT_INFO_096
+  category: 商品咨询
+  scene_name: 尺码体系
+  questions:
+  - 你们的尺寸是美码吗
+- name: PRODUCT_INFO_097
+  category: 商品咨询
+  scene_name: 尺码体系
+  questions:
+  - 你家衣服是欧码吗
+- name: PRODUCT_INFO_098
+  category: 商品咨询
+  scene_name: 尺码体系
+  questions:
+  - 这是国码还是欧码
+- name: PRODUCT_INFO_099
+  category: 商品咨询
+  scene_name: 尺码体系
+  questions:
+  - 这个尺码体系怎么区分
+- name: PRODUCT_INFO_100
+  category: 商品咨询
+  scene_name: 尺码体系
+  questions:
+  - 这款按国内尺码选就行吗
+- name: PROMOTION_101
+  category: 活动优惠
+  scene_name: 奖品相关
+  questions:
+  - 有奖品吗
+- name: PROMOTION_102
+  category: 活动优惠
+  scene_name: 奖品相关
+  questions:
+  - 奖品在哪领
+- name: PROMOTION_103
+  category: 活动优惠
+  scene_name: 奖品相关
+  questions:
+  - 奖品怎么兑换
+- name: PROMOTION_104
+  category: 活动优惠
+  scene_name: 奖品相关
+  questions:
+  - 能换奖品吗
+- name: PROMOTION_105
+  category: 活动优惠
+  scene_name: 奖品相关
+  questions:
+  - 活动奖品内容有哪些
+- name: PROMOTION_106
+  category: 活动优惠
+  scene_name: 奖品相关
+  questions:
+  - 奖品什么时候发
+- name: PROMOTION_107
+  category: 活动优惠
+  scene_name: 奖品相关
+  questions:
+  - 奖品是什么
+- name: PROMOTION_108
+  category: 活动优惠
+  scene_name: 奖品相关
+  questions:
+  - 二等奖是什么
+- name: PROMOTION_109
+  category: 活动优惠
+  scene_name: 奖品相关
+  questions:
+  - 虚拟奖品怎么用
+- name: PROMOTION_110
+  category: 活动优惠
+  scene_name: 活动与促销规则
+  questions:
+  - 有什么活动
+- name: PROMOTION_111
+  category: 活动优惠
+  scene_name: 活动与促销规则
+  questions:
+  - 怎么最划算
+- name: PURCHASE_112
+  category: 购买咨询
+  scene_name: 订单备注问题
+  questions:
+  - 可以备注吗
+- name: PURCHASE_113
+  category: 购买咨询
+  scene_name: 订单备注问题
+  questions:
+  - 订单怎么加备注
+- name: PURCHASE_114
+  category: 购买咨询
+  scene_name: 订单备注问题
+  questions:
+  - 能帮我备注一下吗
+- name: PURCHASE_115
+  category: 购买咨询
+  scene_name: 订单备注问题
+  questions:
+  - 忘记写备注了
+- name: PURCHASE_116
+  category: 购买咨询
+  scene_name: 订单备注问题
+  questions:
+  - 备注内容能改吗
+- name: PURCHASE_117
+  category: 购买咨询
+  scene_name: 订单备注问题
+  questions:
+  - 帮我在订单里写个备注
+- name: PURCHASE_118
+  category: 购买咨询
+  scene_name: 订单备注问题
+  questions:
+  - 备注发货时间
+- name: PURCHASE_119
+  category: 购买咨询
+  scene_name: 订单备注问题
+  questions:
+  - 备注颜色和尺寸
+- name: SPECIAL_MESSAGE_120
+  category: 特殊消息
+  scene_name: 买家发送图片
+  questions:
+  - '[买家发送图片]'

@@ -1,0 +1,1956 @@
+# 合并数据：以店铺585测试数据为基准，合并正常、异常和官方质检草稿场景。
+# 说明：588/690 中与585仅商品链接不同的重复问题未重复加入；699 商品链接已替换为585商品链接。
+# 运行：target_env 固定为 dev；当前项目 dev 运行配置指向店铺585。
+suite:
+  name: shop_585_ai_quality_combined
+  mode: sequential
+  quality: false
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+  assertions: false
+target_env: dev
+cases:
+  - name: learning_candidate_shampoo_oily_scalp
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款洗发水适合油头吗
+      - question: 洗完会不会很干
+      - question: 建议多久洗一次
+      - question: 油头可以每天使用这款洗发水吗
+  - name: learning_candidate_sunscreen_usage
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款防晒霜的防晒指数是多少
+      - question: 油皮用起来会不会很黏
+      - question: 晚上需要卸妆吗
+      - question: 在户外大概多久需要补涂一次
+  - name: learning_candidate_sensitive_skin
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款面霜敏感肌能用吗
+      - question: 里面有酒精和香精吗
+      - question: 换季泛红的时候怎么使用
+      - question: 第一次使用需要先做局部测试吗
+  - name: learning_candidate_product_effect
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品主要有什么功效
+      - question: 坚持使用可以改善什么问题
+      - question: 一般使用多久能感受到效果
+      - question: 停止使用以后效果会不会慢慢消失
+  - name: learning_candidate_ingredients
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品主要有哪些成分
+      - question: 核心成分分别有什么作用
+      - question: 有没有需要注意的刺激性成分
+      - question: 这些成分对敏感肌会不会有刺激
+  - name: learning_candidate_usage_steps
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品具体怎么使用
+      - question: 应该用在护肤的哪一个步骤
+      - question: 每次大概使用多少量
+      - question: 使用以后需要再清洗吗
+  - name: learning_candidate_usage_frequency
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品一天使用几次合适
+      - question: 早晚都可以使用吗
+      - question: 需要每天连续使用吗
+      - question: 出现轻微不适时需要降低使用频率吗
+  - name: learning_candidate_suitable_people
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品适合哪些人使用
+      - question: 男生和女生都可以用吗
+      - question: 多大年龄开始使用比较合适
+      - question: 孕妇或者哺乳期可以使用吗
+  - name: learning_candidate_skin_type
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品更适合什么肤质
+      - question: 油性皮肤使用会不会油腻
+      - question: 干性皮肤使用保湿够吗
+      - question: 混合性皮肤应该怎么控制用量
+  - name: learning_candidate_precautions
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 使用这款产品有什么注意事项
+      - question: 皮肤有破损的时候可以使用吗
+      - question: 第一次使用需要先做测试吗
+      - question: 使用后出现刺痛应该怎么处理
+  - name: learning_candidate_spec_difference
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款商品不同规格有什么区别
+      - question: 小规格和大规格的成分一样吗
+      - question: 第一次购买更建议选择哪个规格
+      - question: 不同规格的使用方法是一样的吗
+  - name: learning_candidate_storage_and_shelf_life
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品平时应该怎么保存
+      - question: 开封以后可以使用多长时间
+      - question: 需要放在冰箱里面保存吗
+      - question: 天气炎热时常温保存会不会变质
+  - name: learning_candidate_four_turns
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品的主要作用是什么
+      - question: 敏感肌可以使用吗
+      - question: 应该早上用还是晚上用
+      - question: 使用后还需要搭配其他产品吗
+  - name: learning_candidate_same_focus_product
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 我想了解链接里的这款产品
+      - question: 它适合油性皮肤吗
+      - question: 油性皮肤应该怎么控制用量
+      - question: 使用这款产品还需要注意什么
+  - name: learning_exclude_logistics
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 我昨天买的订单怎么还没发货
+      - question: 可以帮我催一下仓库吗
+      - question: 发货后能改收货地址吗
+      - question: 正常情况下快递大概几天能送到
+  - name: learning_exclude_promotion_only
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 现在有满减活动吗
+      - question: 优惠券在哪里领取
+      - question: 买两件会更便宜吗
+      - question: 这个优惠活动什么时候结束
+  - name: learning_exclude_after_sales
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 收到后发现不适合可以退吗
+      - question: 退货运费谁承担
+      - question: 退款大概多久到账
+      - question: 商品拆封以后还可以申请退货吗
+  - name: learning_exclude_order_status
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 帮我查一下这个订单有没有付款成功
+      - question: 为什么订单状态还是待付款
+      - question: 已经取消的订单还能恢复吗
+      - question: 订单关闭后支付的钱多久退回
+  - name: learning_exclude_complaint
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 你们客服一直不处理我的问题
+      - question: 我要投诉负责这个订单的客服
+      - question: 请告诉我投诉渠道在哪里
+      - question: 投诉以后多久可以给出处理结果
+  - name: learning_exclude_invoice
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 购买后可以开电子发票吗
+      - question: 发票抬头在哪里填写
+      - question: 已经开出的发票可以修改吗
+      - question: 电子发票一般什么时候开出来
+  - name: learning_exclude_platform_operation
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 淘宝里面怎么申请退款
+      - question: 我找不到修改地址的入口
+      - question: 平台客服应该从哪里联系
+      - question: 申请退款后在哪里查看处理进度
+  - name: learning_exclude_greeting_only
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 你好在吗
+      - question: 有客服在线吗
+      - question: 看到消息回复一下
+      - question: 现在方便回复消息吗
+  - name: learning_exclude_urge_only
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 麻烦快点处理
+      - question: 可以马上回复我吗
+      - question: 我已经等很久了
+      - question: 今天可以帮我处理好吗
+  - name: learning_exclude_end_only
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 好的我知道了
+      - question: 谢谢你的回复
+      - question: 没有其他问题了
+      - question: 那我先不咨询了
+  - name: learning_exclude_pure_purchase_intent
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 我准备买这款
+      - question: 现在下单可以吗
+      - question: 麻烦给我推荐一下购买数量
+      - question: 第一次买一次买几件比较合适
+  - name: learning_exclude_multi_product_comparison
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+      - role: user
+        content: https://item.taobao.com/item.htm?id=679396708196
+    turns:
+      - question: 这两个商品哪个效果更好
+      - question: 哪一个更适合敏感皮肤
+      - question: 只能买一个的话应该选哪个
+      - question: 这两款的使用方法有什么区别
+  - name: learning_exclude_transfer_at_start
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 帮我转人工客服
+      - question: 我想咨询一下这款产品
+      - question: 人工客服什么时候能接待
+      - question: 请尽快帮我接入人工客服
+  - name: learning_exclude_transfer_in_middle
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品敏感肌可以使用吗
+      - question: 这个回答不清楚帮我转人工
+      - question: 请让人工客服继续回答
+      - question: 人工客服现在在线吗
+  - name: learning_exclude_transfer_at_end
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品主要有哪些成分
+      - question: 这些成分分别有什么作用
+      - question: 我还是想找人工客服确认一下
+      - question: 麻烦现在直接帮我转人工
+  - name: learning_boundary_two_effective_product_turns
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品敏感肌可以使用吗
+      - question: 一天使用几次比较合适
+      - question: 你好在吗
+      - question: 谢谢你的回复
+  - name: learning_boundary_one_effective_product_turn
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品有什么功效
+      - question: 你好在吗
+      - question: 可以回复一下吗
+      - question: 没有其他问题了
+  - name: learning_exclude_unclear_questions
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这个怎么样
+      - question: 可以用吗
+      - question: 效果好吗
+      - question: 这款值得买吗
+  - name: learning_exclude_unreadable_content
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 😊😊😊
+      - question: '[图片]'
+      - question: '[表情消息]'
+      - question: '[语音消息]'
+  - name: learning_exclude_system_event_only
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: '[系统通知] 买家进入商品详情页'
+      - question: '[平台事件] 买家收藏了商品'
+      - question: '[系统通知] 会话已结束'
+      - question: '[平台事件] 买家离开会话'
+  - name: learning_exclude_no_focus_product
+    context_messages: []
+    turns:
+      - question: 这个适合敏感肌吗
+      - question: 它的主要成分是什么
+      - question: 具体应该怎么使用
+      - question: 使用的时候有什么注意事项
+  - name: learning_boundary_product_switch
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 第一款产品适合油皮吗
+      - question: https://item.taobao.com/item.htm?id=679396708196 这款又适合什么肤质
+      - question: 后面这个商品应该怎么使用
+      - question: 这两个商品可以一起使用吗
+  - name: learning_boundary_mixed_product_and_logistics
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品适合敏感肌吗
+      - question: 正确的使用方法是什么
+      - question: 我下单后大概什么时候发货
+      - question: 快递发出后大概几天能收到
+  - name: learning_boundary_mixed_product_and_promotion
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品的主要功效是什么
+      - question: 敏感肌应该怎么使用
+      - question: 现在购买有没有优惠活动
+      - question: 店铺优惠券和满减可以叠加吗
+  - name: learning_boundary_multiple_questions_one_focus
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品适合什么肤质，主要成分又是什么
+      - question: 早上和晚上分别应该怎么使用
+      - question: 使用时有哪些注意事项
+      - question: 开封以后应该怎么保存
+  - name: learning_boundary_repeated_question
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品敏感肌可以使用吗
+      - question: 我主要想确认敏感肌到底能不能用
+      - question: 敏感肌第一次使用要注意什么
+      - question: 所以敏感肌使用这款是安全的吗
+  - name: learning_boundary_product_name_link_conflict
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款护手霜适合油性头皮吗
+      - question: 洗完头会不会很干
+      - question: 建议多久使用一次
+      - question: 这款洗发水晚上使用需要卸妆吗
+  - name: learning_boundary_personalized_advice
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 我今年25岁而且正在长痘可以用吗
+      - question: 我每天熬夜应该增加使用次数吗
+      - question: 按照我的情况多久可以看到效果
+      - question: 按照我的情况一天使用几次合适
+  - name: learning_boundary_possible_absolute_claim
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品是不是用了就一定有效
+      - question: 能保证一个星期完全改善吗
+      - question: 没有效果是不是可以全额退款
+      - question: 能不能保证停用以后不会复发
+  - name: abnormal_product_switch_after_three_questions
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款洗发水适合油头吗
+      - question: 洗完会不会很干
+      - question: https://item.taobao.com/item.htm?id=679396708196
+      - question: 油头可以每天使用这款洗发水吗
+      - question: 效果怎么样
+  - name: abnormal_product_switch_after_four_questions
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=7648341672091
+    turns:
+      - question: 这款产品适合什么肤质
+      - question: 干皮使用会不会拔干
+      - question: 敏感肌可以使用吗
+      - question: 使用时有哪些注意事项
+      - question: https://item.taobao.com/item.htm?id=679396708196
+      - question: 这款产品主要有什么功效
+      - question: 油皮使用会不会油腻
+      - question: 应该多久使用一次
+  - name: abnormal_product_switch_after_four_questions_2
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品适合什么肤质
+      - question: 干皮使用会不会拔干
+      - question: 敏感肌可以使用吗
+      - question: 使用时有哪些注意事项
+      - question: https://item.taobao.com/item.htm?id=679396708196
+      - question: 这款产品主要有什么功效
+      - question: 油皮使用会不会油腻
+      - question: 应该多久使用一次
+      - question: 看看成分表
+  - name: boundary_three_turn_product_consultation
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+      - question: 这款产品适合什么肤质
+      - question: 应该多久使用一次
+      - question: 使用时有哪些注意事项
+  - name: non_product_logistics
+    turns:
+      - question: 我的订单什么时候可以发货
+      - question: 物流单号在哪里查看
+      - question: 已经发货后可以催一下物流吗
+      - question: 正常情况下快递大概几天送到
+  - name: non_product_order
+    turns:
+      - question: 订单一直显示待付款是什么情况
+      - question: 支付成功后订单状态没有更新怎么办
+      - question: 已经关闭的订单还能恢复吗
+      - question: 在哪里可以查看订单详情
+  - name: non_product_after_sales
+    turns:
+      - question: 收到后发现不合适可以退货吗
+      - question: 退货运费需要谁承担
+      - question: 商品拆封后还可以申请退款吗
+      - question: 退款大概多久到账
+  - name: non_product_complaint
+    turns:
+      - question: 你们客服一直没有处理我的问题
+      - question: 我要投诉这次服务
+      - question: 投诉渠道在哪里
+      - question: 投诉后多久能给处理结果
+  - name: non_product_invoice
+    turns:
+      - question: 购买后可以开电子发票吗
+      - question: 发票抬头在哪里填写
+      - question: 已经开出的发票可以修改吗
+      - question: 电子发票一般什么时候开出来
+  - name: non_product_platform_operation
+    turns:
+      - question: 快手小店里面怎么申请退款
+      - question: 我找不到修改收货地址的入口
+      - question: 平台客服应该从哪里联系
+      - question: 申请退款后在哪里查看处理进度
+  - name: non_product_greeting
+    turns:
+      - question: 你好在吗
+      - question: 现在有客服在线吗
+      - question: 看到消息回复一下
+      - question: 现在方便咨询吗
+  - name: non_product_urge
+    turns:
+      - question: 麻烦快点处理
+      - question: 可以马上回复我吗
+      - question: 我已经等很久了
+      - question: 今天可以帮我处理好吗
+  - name: non_product_end
+    turns:
+      - question: 好的我知道了
+      - question: 谢谢你的回复
+      - question: 没有其他问题了
+      - question: 那我先不咨询了
+  - name: non_product_promotion
+    turns:
+      - question: 店铺现在有满减活动吗
+      - question: 优惠券在哪里领取
+      - question: 买两件会更便宜吗
+      - question: 这个优惠活动什么时候结束
+  - name: non_product_multi_product_comparison
+    context_messages:
+      - role: user
+        content: https://item.taobao.com/item.htm?id=764834167209
+      - role: user
+        content: https://item.taobao.com/item.htm?id=679396708196
+    turns:
+      - question: 这两个商品有什么区别
+      - question: 哪一款更适合敏感肌
+      - question: 只能买一个的话建议选哪个
+      - question: 这两款商品的使用方法有什么不同
+  - name: 未发送欢迎语_补水面膜咨询
+    conversation_record:
+      - role: user
+        content: 我想买一套补水面膜，主要是换季脸干、容易泛红，应该怎么选？
+      - role: assistant
+        content: 如果主要是换季干燥和容易泛红，可以优先选择成分简单、以补水和舒缓为主的面膜。首次使用建议先在耳后或下颌处试用，确认没有刺痛、红肿等不适后再敷全脸。
+      - role: user
+        content: 如果我每天晚上使用，敷完以后还需要再涂水乳吗？
+      - role: assistant
+        content: 敷完后可以轻轻按摩至剩余精华吸收，再按照日常护肤顺序涂水乳或面霜，帮助锁住水分。如果敷完感觉黏腻，可以减少后续产品用量，不建议敷着面膜直接睡觉。
+      - role: user
+        content: 这套面膜一盒有多少片？敏感肌可以直接使用吗？
+      - role: assistant
+        content: 一盒的具体片数请以商品详情页和收到的外包装标注为准。敏感肌首次使用建议先做局部测试，使用过程中如果出现明显刺痛、发红或瘙痒，应立即停止使用并及时清洁。
+      - role: user
+        content: 我想今天下单，发货时间和赠品情况可以一起说明一下吗？
+      - role: assistant
+        content: 发货时间和当前赠品以提交订单时页面显示的活动规则为准。下单前可以查看商品详情页和结算页的发货及赠品说明；如果页面显示有赠品，通常会随订单一起发出，具体以订单记录为准。
+  - name: 使用不恰当标点和表情
+    conversation_record:
+      - role: user
+        content: 我现在遇到“使用不恰当标点和表情”的情况，具体是：客服回复中使用了不礼貌、嘲讽或可能引起误解的标点或表情。，请帮我处理。
+      - role: assistant
+        content: 这个也要问吗。。。🙄
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 这个也要问吗。。。🙄
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 使用不恰当网络用语
+    conversation_record:
+      - role: user
+        content: 我现在遇到“使用不恰当网络用语”的情况，具体是：客服回复中使用了带负面、贬低或可能让买家难以理解的网络用语。，请帮我处理。
+      - role: assistant
+        content: 这都不知道吗，自己看详情，别杠。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 这都不知道吗，自己看详情，别杠。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 纯表情回复
+    conversation_record:
+      - role: user
+        content: 我现在遇到“纯表情回复”的情况，具体是：买家提出问题时，客服只发送表情，没有文字说明。，请帮我处理。
+      - role: assistant
+        content: 🙂
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 🙂
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 发送欢迎语后未跟进
+    conversation_record:
+      - role: user
+        content: 我现在遇到“发送欢迎语后未跟进”的情况，具体是：客服发送欢迎语后，买家提出问题但没有得到后续回复。，请帮我处理。
+      - role: assistant
+        content: 欢迎光临本店。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 欢迎光临本店。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 回复稍等后未跟进
+    conversation_record:
+      - role: user
+        content: 我现在遇到“回复稍等后未跟进”的情况，具体是：客服表示需要稍等、查询或核实后，没有再回复处理结果或进展。，请帮我处理。
+      - role: assistant
+        content: 您稍等，我查一下。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 您稍等，我查一下。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 撤回消息未致歉
+    conversation_record:
+      - role: user
+        content: 我现在遇到“撤回消息未致歉”的情况，具体是：客服撤回消息后，没有及时向买家说明或致歉。，请帮我处理。
+      - role: assistant
+        content: '[客服撤回了一条消息]'
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: '[客服撤回了一条消息]'
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 纯标点符号回复
+    conversation_record:
+      - role: user
+        content: 我现在遇到“纯标点符号回复”的情况，具体是：客服回复内容只有标点符号，没有提供有效信息。，请帮我处理。
+      - role: assistant
+        content: 。。。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 。。。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 疑似刷问答比
+    conversation_record:
+      - role: user
+        content: 我现在遇到“疑似刷问答比”的情况，具体是：买家未插话时，客服连续发送 3 句且每句不超过 3 个字的简短回复。，请帮我处理。
+      - role: assistant
+        content: 嗯。好的。是的。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 嗯。好的。是的。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 未使用礼貌用语
+    conversation_record:
+      - role: user
+        content: 我现在遇到“未使用礼貌用语”的情况，具体是：整段会话中，客服没有使用“请问”“您”“谢谢”等礼貌用语。，请帮我处理。
+      - role: assistant
+        content: 按页面信息处理。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 按页面信息处理。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 最后一句非客服发送
+    conversation_record:
+      - role: user
+        content: 我现在遇到“最后一句非客服发送”的情况，具体是：会话结束时，买家最后提出的问题或诉求没有得到客服回复。，请帮我处理。
+      - role: assistant
+        content: 我先记录一下。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 我先记录一下。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 使用“你”称呼客户
+    conversation_record:
+      - role: user
+        content: 我现在遇到“使用“你”称呼客户”的情况，具体是：客服直接使用“你”称呼买家，而没有使用更礼貌的“您”。，请帮我处理。
+      - role: assistant
+        content: 你自己看一下详情页。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 你自己看一下详情页。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 连续发送欢迎语结束语
+    conversation_record:
+      - role: user
+        content: 我现在遇到“连续发送欢迎语结束语”的情况，具体是：客服发送欢迎语后，未等买家回复就紧接着发送结束语或告别语。，请帮我处理。
+      - role: assistant
+        content: 您好，欢迎光临本店。没有其他问题我先结束咨询了。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 您好，欢迎光临本店。没有其他问题我先结束咨询了。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 慢响应
+    conversation_record:
+      - role: user
+        content: 我现在遇到“慢响应”的情况，具体是：买家发送需要回复的问题后，客服超过 60 秒才首次回复。，请帮我处理。
+      - role: assistant
+        content: '[65秒后回复] 有现货。'
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: '[65秒后回复] 有现货。'
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 单句响应超时（3分钟）
+    conversation_record:
+      - role: user
+        content: 我现在遇到“单句响应超时（3分钟）”的情况，具体是：买家发送需要回复的问题后，客服超过 3 分钟才回复。，请帮我处理。
+      - role: assistant
+        content: '[4分钟后回复] 正在处理。'
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: '[4分钟后回复] 正在处理。'
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 重复机械式致歉
+    conversation_record:
+      - role: user
+        content: 我现在遇到“重复机械式致歉”的情况，具体是：客服在连续 10 句话内致歉超过 3 次，且没有推进问题处理。，请帮我处理。
+      - role: assistant
+        content: 抱歉，不好意思，对不起，真的很抱歉。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 抱歉，不好意思，对不起，真的很抱歉。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 答非所问
+    conversation_record:
+      - role: user
+        content: 我现在遇到“答非所问”的情况，具体是：买家问题表达清楚时，客服回复没有回答核心问题。，请帮我处理。
+      - role: assistant
+        content: 现在下单可以参加店铺活动。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 现在下单可以参加店铺活动。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 未告知查询核实时间
+    conversation_record:
+      - role: user
+        content: 我现在遇到“未告知查询核实时间”的情况，具体是：客服表示需要查询或核实，但没有告知买家预计的反馈时间。，请帮我处理。
+      - role: assistant
+        content: 我帮您查询一下，查到会告诉您。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 我帮您查询一下，查到会告诉您。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 机械式回复
+    conversation_record:
+      - role: user
+        content: 我现在遇到“机械式回复”的情况，具体是：客服多次只回复“嗯嗯”“好的”“是的”等简短用语，未提供有效帮助。，请帮我处理。
+      - role: assistant
+        content: 嗯嗯，好的，是的，可以。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 嗯嗯，好的，是的，可以。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客户情绪异常未安抚
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客户情绪异常未安抚”的情况，具体是：买家表达生气、失望或不满时，客服没有安抚或处理问题。，请帮我处理。
+      - role: assistant
+        content: 按售后流程处理。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 按售后流程处理。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客户致谢未回应
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客户致谢未回应”的情况，具体是：买家表达感谢后，客服没有作出礼貌回应。，请帮我处理。
+      - role: assistant
+        content: 好的。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 好的。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 拒绝客户未致歉
+    conversation_record:
+      - role: user
+        content: 我现在遇到“拒绝客户未致歉”的情况，具体是：客服无法满足买家需求时，没有礼貌致歉或安抚。，请帮我处理。
+      - role: assistant
+        content: 不能办。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 不能办。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 投诉差评未安抚
+    conversation_record:
+      - role: user
+        content: 我现在遇到“投诉差评未安抚”的情况，具体是：买家表示要投诉或给差评时，客服没有安抚、挽留或提供解决办法。，请帮我处理。
+      - role: assistant
+        content: 那您按自己的想法投诉就行。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 那您按自己的想法投诉就行。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 承诺未履约
+    conversation_record:
+      - role: user
+        content: 我现在遇到“承诺未履约”的情况，具体是：客服作出的备注、赠品、发货等承诺没有兑现。，请帮我处理。
+      - role: assistant
+        content: 订单已经发出了，现在改不了。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 订单已经发出了，现在改不了。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客户表示客服像机器人
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客户表示客服像机器人”的情况，具体是：买家明确表示客服回复像机器人或过于机械。，请帮我处理。
+      - role: assistant
+        content: 我就是按流程回复的。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 我就是按流程回复的。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客户催促未致歉安抚
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客户催促未致歉安抚”的情况，具体是：买家催促处理进度时，客服没有致歉、安抚或说明进展。，请帮我处理。
+      - role: assistant
+        content: 还在处理，继续等。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 还在处理，继续等。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客户不满仍邀评
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客户不满仍邀评”的情况，具体是：买家对商品或服务不满且问题未解决时，客服仍邀请评价或好评。，请帮我处理。
+      - role: assistant
+        content: 麻烦给个五星好评哦。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 麻烦给个五星好评哦。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 纯图片回复
+    conversation_record:
+      - role: user
+        content: 我现在遇到“纯图片回复”的情况，具体是：买家提出需要说明的问题时，客服只发送图片或截图，没有文字解释。，请帮我处理。
+      - role: assistant
+        content: '[图片]'
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: '[图片]'
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 多次撤回消息
+    conversation_record:
+      - role: user
+        content: 我现在遇到“多次撤回消息”的情况，具体是：客服在一段会话中多次撤回消息，影响买家理解。，请帮我处理。
+      - role: assistant
+        content: '[客服撤回了一条消息] [客服撤回了一条消息]'
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: '[客服撤回了一条消息] [客服撤回了一条消息]'
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 多次超字数回复
+    conversation_record:
+      - role: user
+        content: 我现在遇到“多次超字数回复”的情况，具体是：客服连续发送多条冗长、信息密集的回复，增加买家阅读负担。，请帮我处理。
+      - role: assistant
+        content: 本店商品相关信息很多，建议您继续阅读详情页、活动规则、品牌介绍、售后规则和评价问答后自行判断。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 本店商品相关信息很多，建议您继续阅读详情页、活动规则、品牌介绍、售后规则和评价问答后自行判断。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 让客户自己到页面去看
+    conversation_record:
+      - role: user
+        content: 我现在遇到“让客户自己到页面去看”的情况，具体是：客服只让买家自己查看页面或详情页，没有提供答案或具体指引。，请帮我处理。
+      - role: assistant
+        content: 你自己去详情页看，页面上都有。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 你自己去详情页看，页面上都有。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 超时未致歉
+    conversation_record:
+      - role: user
+        content: 我现在遇到“超时未致歉”的情况，具体是：客服回复已经超时，但首次回复没有就等待向买家致歉或说明。，请帮我处理。
+      - role: assistant
+        content: '[超时后回复] 已经处理了。'
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: '[超时后回复] 已经处理了。'
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 连续发送链接
+    conversation_record:
+      - role: user
+        content: 我现在遇到“连续发送链接”的情况，具体是：客服连续发送多个链接，没有说明链接用途或结合买家问题进行指引。，请帮我处理。
+      - role: assistant
+        content: https://example.com/a https://example.com/b https://example.com/c
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: https://example.com/a https://example.com/b https://example.com/c
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 退差价或补偿未邀评
+    conversation_record:
+      - role: user
+        content: 我现在遇到“退差价或补偿未邀评”的情况，具体是：客服办理退差价或补偿后，没有礼貌邀请买家评价。，请帮我处理。
+      - role: assistant
+        content: 退差价已经处理完成。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 退差价已经处理完成。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 退货未挽留
+    conversation_record:
+      - role: user
+        content: 我现在遇到“退货未挽留”的情况，具体是：客户表示要退货时，客服没有主动安抚挽留。，请帮我处理。
+      - role: assistant
+        content: 那就直接申请退货吧。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 那就直接申请退货吧。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 重复让客户复述问题
+    conversation_record:
+      - role: user
+        content: 我现在遇到“重复让客户复述问题”的情况，具体是：买家已经说明问题后，客服仍要求买家重复提供相同信息。，请帮我处理。
+      - role: assistant
+        content: 麻烦您再说一遍具体问题。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 麻烦您再说一遍具体问题。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 质量问题未安抚
+    conversation_record:
+      - role: user
+        content: 我现在遇到“质量问题未安抚”的情况，具体是：买家反馈商品质量问题时，客服没有表达理解、致歉或安抚。，请帮我处理。
+      - role: assistant
+        content: 发照片过来，按流程处理。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 发照片过来，按流程处理。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 严重舆情未报备升级处理
+    conversation_record:
+      - role: user
+        content: 我现在遇到“严重舆情未报备升级处理”的情况，具体是：买家提及曝光、12315 或工商投诉时，客服没有说明会报备或升级处理。，请帮我处理。
+      - role: assistant
+        content: 您可以去12315投诉，随您。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 您可以去12315投诉，随您。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 问题应对不知变通
+    conversation_record:
+      - role: user
+        content: 我现在遇到“问题应对不知变通”的情况，具体是：买家明确表示客服处理方式死板、不会变通或只会重复规则。，请帮我处理。
+      - role: assistant
+        content: 按规则处理，不能变。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 按规则处理，不能变。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 拍下送赠品未邀评
+    conversation_record:
+      - role: user
+        content: 我现在遇到“拍下送赠品未邀评”的情况，具体是：客服介绍拍下送赠品活动后，没有礼貌邀请买家评价。，请帮我处理。
+      - role: assistant
+        content: 赠品会随订单发出。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 赠品会随订单发出。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 未主动帮客户做选择
+    conversation_record:
+      - role: user
+        content: 我现在遇到“未主动帮客户做选择”的情况，具体是：买家询问商品区别、哪个好或哪款更适合时，客服没有给出选择建议。，请帮我处理。
+      - role: assistant
+        content: 两款都可以，你自己选。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 两款都可以，你自己选。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 多次让客户稍等
+    conversation_record:
+      - role: user
+        content: 我现在遇到“多次让客户稍等”的情况，具体是：客服在连续 5 句话内至少 2 次让买家等待，且没有提供实质进展。，请帮我处理。
+      - role: assistant
+        content: 您稍等，我再查一下。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 您稍等，我再查一下。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 简单问题滥用核实留言
+    conversation_record:
+      - role: user
+        content: 我现在遇到“简单问题滥用核实留言”的情况，具体是：买家咨询材质、成分、产地、保质期、颜色或正品等基础信息时，客服没有直接回答而让买家等待核实。，请帮我处理。
+      - role: assistant
+        content: 这个需要留言核实，您先等通知。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 这个需要留言核实，您先等通知。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客户不满多次查询
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客户不满多次查询”的情况，具体是：买家不满客服反复查询或迟迟未给结果时，客服仍没有说明原因、进展或替代处理方式。，请帮我处理。
+      - role: assistant
+        content: 还在查询，继续等结果。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 还在查询，继续等结果。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客服推卸责任
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客服推卸责任”的情况，具体是：买家提出问题时，客服以“不是我的事情”“我也没办法”等方式推脱责任且未提供帮助。，请帮我处理。
+      - role: assistant
+        content: 这不是我的事情，您去找其他人。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 这不是我的事情，您去找其他人。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客服引导好评返现
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客服引导好评返现”的情况，具体是：客服以返现、红包、补偿等利益诱导买家给好评。，请帮我处理。
+      - role: assistant
+        content: 给五星好评截图，可以返现五元。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 给五星好评截图，可以返现五元。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 承诺发票内容开具其他品类
+    conversation_record:
+      - role: user
+        content: 我现在遇到“承诺发票内容开具其他品类”的情况，具体是：买家要求按非实际购买品类开票时，客服直接承诺可以开具。，请帮我处理。
+      - role: assistant
+        content: 可以按您要求开成其他品类。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 可以按您要求开成其他品类。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客服引导跨平台购买
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客服引导跨平台购买”的情况，具体是：客服主动引导买家前往京东、拼多多等其他平台购买。，请帮我处理。
+      - role: assistant
+        content: 您去京东或拼多多购买吧。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 您去京东或拼多多购买吧。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客服辱骂讥讽买家
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客服辱骂讥讽买家”的情况，具体是：客服在回复中辱骂、嘲讽、贬低或挖苦买家。，请帮我处理。
+      - role: assistant
+        content: 这点事情都弄不明白吗？
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 这点事情都弄不明白吗？
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客服使用涉及虚假宣传、欺诈用词
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客服使用涉及虚假宣传、欺诈用词”的情况，具体是：客服使用“第一”“最好”“最强”“全网销量冠军”等夸大或可能涉嫌虚假宣传的用语。，请帮我处理。
+      - role: assistant
+        content: 这是全网第一、最好、销量冠军的产品。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 这是全网第一、最好、销量冠军的产品。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客服态度差
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客服态度差”的情况，具体是：客服回复表现出明显不耐烦、冷漠、粗鲁、敷衍或不专业。，请帮我处理。
+      - role: assistant
+        content: 爱买不买，不想买就算了。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 爱买不买，不想买就算了。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客服催客离店
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客服催客离店”的情况，具体是：买家仍在咨询时，客服以不耐烦或驱赶的方式催促买家结束咨询或离开。，请帮我处理。
+      - role: assistant
+        content: 没问题就赶紧离开咨询吧。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 没问题就赶紧离开咨询吧。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 反问质疑客户
+    conversation_record:
+      - role: user
+        content: 我现在遇到“反问质疑客户”的情况，具体是：客服使用带责备、质疑或冒犯意味的反问方式回复买家。，请帮我处理。
+      - role: assistant
+        content: 这个你都不明白吗？
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 这个你都不明白吗？
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客服表示图片与实物不符
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客服表示图片与实物不符”的情况，具体是：客服明确表示或确认商品图片、SKU 选项与实物不一致。，请帮我处理。
+      - role: assistant
+        content: 详情图片和收到的实物本来就可能不一样。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 详情图片和收到的实物本来就可能不一样。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客服诋毁自家店铺
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客服诋毁自家店铺”的情况，具体是：客服使用贬低、诋毁本店信誉、商品质量或服务能力的表达。，请帮我处理。
+      - role: assistant
+        content: 我们家商品质量一般，服务也就这样。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 我们家商品质量一般，服务也就这样。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客服引导客户差评、投诉
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客服引导客户差评、投诉”的情况，具体是：买家表达不满时，客服直接引导或鼓励买家去差评、投诉。，请帮我处理。
+      - role: assistant
+        content: 您想投诉就去投诉，直接给差评也可以。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 您想投诉就去投诉，直接给差评也可以。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客服引导客户线下付款
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客服引导客户线下付款”的情况，具体是：客服引导买家通过线下转账、微信或支付宝私下收款等方式付款。，请帮我处理。
+      - role: assistant
+        content: 可以加我微信，通过微信或支付宝转账。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 可以加我微信，通过微信或支付宝转账。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客服发送违禁词
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客服发送违禁词”的情况，具体是：客服发送了店铺所属平台限制使用的敏感词或违禁词。，请帮我处理。
+      - role: assistant
+        content: 这个问题涉及[平台敏感词/违禁词]，我直接这样处理。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 这个问题涉及[平台敏感词/违禁词]，我直接这样处理。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 催拍催付时机不当
+    conversation_record:
+      - role: user
+        content: 我现在遇到“催拍催付时机不当”的情况，具体是：售前接待结束后，客服超过 3 分钟才发送催拍或催付话术。，请帮我处理。
+      - role: assistant
+        content: 您几天前问过了，现在怎么还不拍？赶紧付款吧。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 您几天前问过了，现在怎么还不拍？赶紧付款吧。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客户咨询凑单未推荐
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客户咨询凑单未推荐”的情况，具体是：买家咨询凑单、搭配或活动门槛时，客服没有推荐商品或活动方案。，请帮我处理。
+      - role: assistant
+        content: 您自己随便选个商品凑单就行。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 您自己随便选个商品凑单就行。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客户犹豫未挽留
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客户犹豫未挽留”的情况，具体是：买家表示再考虑、先看看或暂不下单时，客服没有回应顾虑或适度挽留。，请帮我处理。
+      - role: assistant
+        content: 不想买就先不买。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 不想买就先不买。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 客户索要商品链接未发送
+    conversation_record:
+      - role: user
+        content: 我现在遇到“客户索要商品链接未发送”的情况，具体是：买家索要商品链接时，客服没有发送链接，也没有说明无法提供的原因。，请帮我处理。
+      - role: assistant
+        content: 商品链接就在页面上，您自己找。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 商品链接就在页面上，您自己找。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 未发送商品卖点
+    conversation_record:
+      - role: user
+        content: 我现在遇到“未发送商品卖点”的情况，具体是：买家咨询商品特点、用途或优势时，客服没有介绍与需求相关的商品卖点。，请帮我处理。
+      - role: assistant
+        content: 就是普通商品，没什么好介绍的。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 就是普通商品，没什么好介绍的。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 未打消客户价格顾虑
+    conversation_record:
+      - role: user
+        content: 我现在遇到“未打消客户价格顾虑”的情况，具体是：买家认为价格高或要求降价时，客服没有解释价格、商品优势或优惠方案。，请帮我处理。
+      - role: assistant
+        content: 贵就不要买，价格不能改。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 贵就不要买，价格不能改。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 缺货未推荐相似款
+    conversation_record:
+      - role: user
+        content: 我现在遇到“缺货未推荐相似款”的情况，具体是：买家想购买的商品、规格或颜色缺货时，客服没有推荐相似款或其他选择。，请帮我处理。
+      - role: assistant
+        content: 没有货了，没办法。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 没有货了，没办法。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 未催拍
+    conversation_record:
+      - role: user
+        content: 我现在遇到“未催拍”的情况，具体是：买家完成售前咨询并表现出购买意向后，客服没有进行自然的下单或拍下引导。，请帮我处理。
+      - role: assistant
+        content: 您了解完了就自己下单吧。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 您了解完了就自己下单吧。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 质量问题未提供处理方案
+    conversation_record:
+      - role: user
+        content: 我现在遇到“质量问题未提供处理方案”的情况，具体是：买家反馈商品或赠品质量问题时，客服没有提供补偿、补发、换货、退货退款等处理方案。，请帮我处理。
+      - role: assistant
+        content: 发照片过来，后面再说。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 发照片过来，后面再说。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 质量问题未解释产生原因
+    conversation_record:
+      - role: user
+        content: 我现在遇到“质量问题未解释产生原因”的情况，具体是：买家反馈质量问题时，客服没有说明可能的产生原因。，请帮我处理。
+      - role: assistant
+        content: 质量问题的原因不清楚，无法说明。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 质量问题的原因不清楚，无法说明。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 质量问题未核对照片
+    conversation_record:
+      - role: user
+        content: 我现在遇到“质量问题未核对照片”的情况，具体是：买家反馈质量问题时，客服没有请求提供照片或其他凭证进行核对。，请帮我处理。
+      - role: assistant
+        content: 先不用发照片，直接等处理结果。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 先不用发照片，直接等处理结果。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 退款原因引导错误
+    conversation_record:
+      - role: user
+        content: 我现在遇到“退款原因引导错误”的情况，具体是：买家填写退款原因时，客服没有根据实际情况进行正确指引。，请帮我处理。
+      - role: assistant
+        content: 退款原因就选质量问题，比较容易通过。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 退款原因就选质量问题，比较容易通过。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 商品没收到但显示已签收应对不合理
+    conversation_record:
+      - role: user
+        content: 我现在遇到“商品没收到但显示已签收应对不合理”的情况，具体是：买家未收到商品但物流显示签收时，客服没有核实或提供合理的查找指引。，请帮我处理。
+      - role: assistant
+        content: 物流显示签收了，您自己去找快递或物业。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 物流显示签收了，您自己去找快递或物业。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 退货退款未提供解决方案
+    conversation_record:
+      - role: user
+        content: 我现在遇到“退货退款未提供解决方案”的情况，具体是：买家要退货退款或咨询办理方式时，客服没有提供具体处理方案或办理路径。，请帮我处理。
+      - role: assistant
+        content: 退货退款您自己按页面操作。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 退货退款您自己按页面操作。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 少发漏发未核实
+    conversation_record:
+      - role: user
+        content: 我现在遇到“少发漏发未核实”的情况，具体是：买家反馈少发、漏发商品或赠品时，客服没有核实订单、照片或其他必要信息。，请帮我处理。
+      - role: assistant
+        content: 少了就先这样，暂时没法核实。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 少了就先这样，暂时没法核实。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 错发未核实
+    conversation_record:
+      - role: user
+        content: 我现在遇到“错发未核实”的情况，具体是：买家反馈收到的商品、规格或颜色与订单不符时，客服没有核实订单或商品信息。，请帮我处理。
+      - role: assistant
+        content: 收到什么就是什么，订单信息不用看。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 收到什么就是什么，订单信息不用看。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 快递破损未核实
+    conversation_record:
+      - role: user
+        content: 我现在遇到“快递破损未核实”的情况，具体是：买家反馈快递或商品破损时，客服没有请求提供破损照片或其他凭证核实。，请帮我处理。
+      - role: assistant
+        content: 快递破损很正常，先不用提供照片。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 快递破损很正常，先不用提供照片。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 登记拦截未告知客户拒收
+    conversation_record:
+      - role: user
+        content: 我现在遇到“登记拦截未告知客户拒收”的情况，具体是：客服登记快递拦截后，没有提醒买家包裹仍送达时应拒收。，请帮我处理。
+      - role: assistant
+        content: 已经登记拦截了，包裹到了您正常签收就行。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 已经登记拦截了，包裹到了您正常签收就行。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 解决方案不满
+    conversation_record:
+      - role: user
+        content: 我现在遇到“解决方案不满”的情况，具体是：客服给出处理方案后，买家明确表示不同意、不接受或不认可。，请帮我处理。
+      - role: assistant
+        content: 这是我们给的方案，不接受也只能这样。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 这是我们给的方案，不接受也只能这样。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 主动引导客户退货
+    conversation_record:
+      - role: user
+        content: 我现在遇到“主动引导客户退货”的情况，具体是：买家尚未提出退货退款意向时，客服直接引导买家退货退款。，请帮我处理。
+      - role: assistant
+        content: 您要是不满意就直接退货退款吧。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 您要是不满意就直接退货退款吧。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 直接抛出补偿&换货方案让客户选
+    conversation_record:
+      - role: user
+        content: 我现在遇到“直接抛出补偿&换货方案让客户选”的情况，具体是：客服未说明具体补偿内容时，直接让买家在补偿和换货之间选择。，请帮我处理。
+      - role: assistant
+        content: 我们可以补偿或者换货，您自己选一个。
+      - role: user
+        content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+      - role: assistant
+        content: 我刚才已经说明了，按这个方式处理即可。
+      - role: user
+        content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+      - role: assistant
+        content: 我们可以补偿或者换货，您自己选一个。
+      - role: user
+        content: 请结合刚才的情况，给我一个明确的最终答复。
+      - role: assistant
+        content: 好的，按上述规则处理。
+  - name: 综合多场景_破损订单处理
+    conversation_record:
+      - role: user
+        content: 我刚收到的面霜已经破损漏液了，我等了好几天，真的很生气。
+      - role: assistant
+        content: 你先别激动。。。把照片发来🙄
+      - role: user
+        content: 照片我已经拍好了，我担心里面的产品不能用了，能给我一个处理方案吗？
+      - role: assistant
+        content: 补偿或者换货，你自己选一个。
+      - role: user
+        content: 补偿具体是多少？换货要多久？我不想一直等。
+      - role: assistant
+        content: 你先给五星好评截图，我给你返现五元，再加我微信转账处理。
+      - role: user
+        content: 问题还没解决，为什么要我先好评和线下付款？
+      - role: assistant
+        content: 不接受就算了，按你自己的想法办吧。

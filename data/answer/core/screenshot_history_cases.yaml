@@ -1,0 +1,29 @@
+# 根据质检详情截图还原的历史上下文调用数据。
+# 截图底部 07:22:00 的 AI 回复未完整展示，因此不写入不可确认的内容。
+suite:
+  name: screenshot_history
+  mode: sequential
+  quality: false
+  match_score: false
+  final_reply_equals_chat: false
+  assertions: false
+  turn_interval_seconds: 1
+target_env: dev
+
+cases:
+  - name: skin_serum_breakout_history
+    context_messages:
+      - role: assistant
+        content: "看到您发的图片啦😊，是想了解祛痘精华的使用方法、效果，还是其他问题呢？可以跟我说下具体想法，我来帮您解答~"
+      - role: user
+        content: "越涂越严重"
+      - role: user
+        content: "是什么情况，"
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将在变美的道路上一直陪伴您~"
+      - role: user
+        content: "之前还没啥痘痘的"
+      - role: assistant
+        content: "宝宝~很抱歉给您带来不便，目前人工不在线，宝宝可以明天早上8点后再来咨询，您也早点休息哈\n【人工接待时间 8:00-24:00】"
+    turns:
+      - question: "我应该先停用吗？"

@@ -1,0 +1,33 @@
+# 347店铺正式环境的使用方法和步骤测试数据
+# 说明：保留原始订单外壳，同时补齐接口常用的顶层订单字段，便于兼容不同解析方式。
+suite:
+  name: shop_347_formal_usage_steps
+  mode: sequential
+  quality: false
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+  assertions: false
+
+target_env: prod
+
+cases:
+  - name: usage_steps_with_order_347
+    inquiry_product:
+      id: "920270674112"
+      url: "https://item.taobao.com/item.htm?id=clear"
+      platform: tmall
+    turns:
+      - question: 使用方法和步骤
+        last_order_info:
+          inquiry_order:
+            id: "123"
+            create_time: 1788163546
+            status: 待收货
+            item_list:
+              - title: 羽素闭口水控油乳套装
+                sku: "【二代】闭口水90ml+控油乳50g+水15ml*2"
+                quantity: 1
+          id: "123"
+          create_time: 1788163546
+          status: 待收货

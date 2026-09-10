@@ -1,0 +1,65 @@
+﻿suite:
+  name: "random_account_smoke"
+  mode: "sequential"
+  quality: false
+  assertions: false
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+
+target_env: "dev"
+
+cases:
+  - name: "recommend_shampoo"
+    questions: ["推荐一款洗发水"]
+  - name: "recommend_body_wash"
+    questions: ["推荐一款沐浴露"]
+  - name: "product_follow_up"
+    questions:
+      - "推荐一款洗发水"
+      - "这款适合油性头发吗"
+      - "有没有优惠活动"
+  - name: "simple_greeting"
+    questions: ["你好，在吗"]
+  - name: "recommend_oily_shampoo"
+    questions: ["我是油性头发，推荐一款洗发水"]
+  - name: "recommend_dandruff_shampoo"
+    questions: ["头皮屑比较多，有没有合适的洗发水"]
+  - name: "recommend_dry_hair_shampoo"
+    questions: ["头发比较干枯，推荐一款洗发水"]
+  - name: "recommend_body_wash_moisturizing"
+    questions: ["推荐一款保湿一点的沐浴露"]
+  - name: "recommend_body_wash_fragrance"
+    questions: ["想要留香久一点的沐浴露，推荐一款"]
+  - name: "recommend_sensitive_skin_body_wash"
+    questions: ["敏感肌可以用哪款沐浴露"]
+  - name: "shampoo_price_follow_up"
+    questions:
+      - "推荐一款洗发水"
+      - "多少钱"
+  - name: "body_wash_price_follow_up"
+    questions:
+      - "推荐一款沐浴露"
+      - "这款多少钱"
+  - name: "shampoo_usage_follow_up"
+    questions:
+      - "推荐一款控油洗发水"
+      - "怎么使用效果更好"
+  - name: "body_wash_usage_follow_up"
+    questions:
+      - "推荐一款沐浴露"
+      - "每天都可以用吗"
+  - name: "shipping_question"
+    questions: ["买完一般多久发货"]
+  - name: "return_question"
+    questions: ["收到后不合适可以退货吗"]
+  - name: "order_status_question"
+    questions: ["订单状态在哪里查看"]
+  - name: "invoice_question"
+    questions: ["购买后可以开发票吗"]
+  - name: "promotion_question"
+    questions: ["现在店铺有什么优惠活动吗"]
+  - name: "compare_shampoo_body_wash"
+    questions:
+      - "推荐一款洗发水"
+      - "你们家沐浴露也推荐一款"

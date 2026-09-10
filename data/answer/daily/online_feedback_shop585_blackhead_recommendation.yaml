@@ -1,0 +1,35 @@
+# 线上反馈复现:AI 不应回复“店铺只有这一款去黑头产品”。
+suite:
+  name: online_feedback_shop585_blackhead_recommendation
+  mode: sequential
+  quality: false
+  match_score: false
+  final_reply_equals_chat: false
+  assertions: true
+  turn_interval_seconds: 1
+target_env: dev
+cases:
+  - name: shop585_blackhead_recommendation_feedback
+    issue_summary: 询问闭口和黑头推荐时不应断言店铺只有一款去黑头产品
+    source: 线上反馈截图 2026-09-06
+    shop_id: "585"
+    product_id: "1046091025119"
+    product_url: "http://item.taobao.com/item.htm?id=1046091025119"
+    expected_behavior: 根据店铺实际商品提供合理推荐,不能回复店铺只有一款去黑头产品
+    context_messages:
+      - role: user
+        content: "http://item.taobao.com/item.htm?id=1046091025119"
+    turns:
+      - question: 去闭口推荐哪款
+      - question: 还有黑头，可以推荐一下吗
+      - question: 看好多款
+        expect:
+          response:
+            status_code: 200
+            code: 200
+            reply_not_contains:
+              - 店铺只有这一款去黑头
+              - 目前店铺就只有这一款
+              - 目前店铺目前就只有这一款
+              - 只有这一款去黑头产品
+              - 只有这一款去黑头泥膜

@@ -1,0 +1,611 @@
+# 定时任务数据:商品链接上下文 + 单条追问(先注入商品 URL,再提问)
+suite:
+  name: scheduled_product_context
+  mode: sequential
+  quality: false
+  match_score: false
+  final_reply_equals_chat: false
+  assertions: false
+  turn_interval_seconds: 1
+target_env: dev
+cases:
+- name: context_001
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这个规格里面包含什么
+- name: context_002
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这个套餐里都有啥
+- name: context_003
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这一套具体都有什么
+- name: context_004
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这个SKU都包含什么
+- name: context_005
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这个规格配了哪些东西
+- name: context_006
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这款多少毫升
+- name: context_007
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 净含量是多少
+- name: context_008
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这个是多少克
+- name: context_009
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 一盒有几片
+- name: context_010
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 一共有多少支
+- name: context_011
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这个是什么颜色
+- name: context_012
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 偏冷调还是暖调
+- name: context_013
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这个颜色深吗
+- name: context_014
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这是豆沙色吗
+- name: context_015
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 有几个颜色
+- name: context_016
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这款主打什么功效
+- name: context_017
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 有保湿作用吗
+- name: context_018
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 能修护吗
+- name: context_019
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 有什么作用
+- name: context_020
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这个主要是干嘛的
+- name: context_021
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 防水吗
+- name: context_022
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 防汗吗
+- name: context_023
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 防潮吗
+- name: context_024
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 防泼溅吗
+- name: context_025
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 防护等级是多少
+- name: context_026
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 会不会褪色
+- name: context_027
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 容易掉色吗
+- name: context_028
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 会不会脱落
+- name: context_029
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 会不会开裂
+- name: context_030
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 会不会沾色
+- name: context_031
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 能持续多久
+- name: context_032
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 效果能维持多久
+- name: context_033
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 气味能留多久
+- name: context_034
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 大概能撑几个小时
+- name: context_035
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这个作用时间长吗
+- name: context_036
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 什么时候生产的
+- name: context_037
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 是近期生产的吗
+- name: context_038
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 离过期还有多久
+- name: context_039
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这个批次新不新
+- name: context_040
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这个瓶子是玻璃的吗
+- name: context_041
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 外壳是什么材质
+- name: context_042
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 刷毛是什么材质
+- name: context_043
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 泵头是金属的吗
+- name: context_044
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 内胆是什么材质
+- name: context_045
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这个怎么用
+- name: context_046
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 具体使用步骤是什么
+- name: context_047
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这个要怎么涂
+- name: context_048
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 怎么操作
+- name: context_049
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 正确用法是什么
+- name: context_050
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 使用时需要注意什么
+- name: context_051
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 用了能不能晒太阳
+- name: context_052
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这个要避光吗
+- name: context_053
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 需要避开眼周吗
+- name: context_054
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 破皮的时候能用吗
+- name: context_055
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 有没有什么禁忌
+- name: context_056
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 哪些情况下不能用
+- name: context_057
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 使用前要不要先测试
+- name: context_058
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 有实物图吗
+- name: context_059
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 能看实物图片吗
+- name: context_060
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 能看看是什么样子吗
+- name: context_061
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 有商品图片吗
+- name: context_062
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 有实拍图吗
+- name: context_063
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 有效果图吗
+- name: context_064
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 有实体店吗
+- name: context_065
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 有线下门店吗
+- name: context_066
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 有专柜吗
+- name: context_067
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 你们有门店吗
+- name: context_068
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 哪里有实体店
+- name: context_069
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 有专卖店吗
+- name: context_070
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 线下能买吗
+- name: context_071
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 线下门店卖的是一样的吗
+- name: context_072
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 专柜卖的是一样的吗
+- name: context_073
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 实体店卖的一样吗
+- name: context_074
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 线上线下是一样的吗
+- name: context_075
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 跟门店卖的是同款吗
+- name: context_076
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 和专柜的是一样的吗
+- name: context_077
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 线下和网上卖的是同一个吗
+- name: context_078
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 网店和实体店一样吗
+- name: context_079
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 推荐一下好用的
+- name: context_080
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 帮我推荐一下适合我的
+- name: context_081
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 有没有适合我的
+- name: context_082
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 你建议买哪个
+- name: context_083
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 哪个卖得最好
+- name: context_084
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 新手适合买哪个
+- name: context_085
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 第一次买选哪个
+- name: context_086
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 给我推荐一个
+- name: context_087
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 你们家卖得好的有哪些
+- name: context_088
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 推荐一下你们家卖得好的
+- name: context_089
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这个是预售商品吗
+- name: context_090
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 这是现货还是预售
+- name: context_091
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 需要付定金才能买吗
+- name: context_092
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 是预约购买吗
+- name: context_093
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 预售和现货有什么区别
+- name: context_094
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 能预订吗
+- name: context_095
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 预售啥时候发
+- name: context_096
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 货期多久
+- name: context_097
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 预售多久能发
+- name: context_098
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 预售规则是什么
+- name: context_099
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 什么时候补货
+- name: context_100
+  context_messages:
+  - role: user
+    content: https://item.taobao.com/item.htm?id=764834167209
+  questions:
+  - 还会补货吗

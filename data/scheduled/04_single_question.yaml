@@ -1,0 +1,371 @@
+# 定时任务数据:单条独立问题(无上下文,仅验证基础回复链路)
+suite:
+  name: scheduled_single_question
+  mode: sequential
+  quality: false
+  match_score: false
+  final_reply_equals_chat: false
+  assertions: false
+  turn_interval_seconds: 1
+target_env: dev
+cases:
+- name: single_001
+  questions:
+  - 推荐一款保湿精华
+- name: single_002
+  questions:
+  - 一瓶多少毫升
+- name: single_003
+  questions:
+  - 有几个规格可选
+- name: single_004
+  questions:
+  - 大瓶装划算还是小瓶好
+- name: single_005
+  questions:
+  - 推荐一款适合敏感肌的水乳
+- name: single_006
+  questions:
+  - 有没有香精和防腐剂
+- name: single_007
+  questions:
+  - 成分表里有没有刺激性的东西
+- name: single_008
+  questions:
+  - 推荐一款精华液
+- name: single_009
+  questions:
+  - 这款主要功效是什么
+- name: single_010
+  questions:
+  - 是补水还是修护为主
+- name: single_011
+  questions:
+  - 能改善暗沉吗
+- name: single_012
+  questions:
+  - 适合日常维稳吗
+- name: single_013
+  questions:
+  - 能不能保证一周内把痘痘治好
+- name: single_014
+  questions:
+  - 用了多久痘印能完全消掉
+- name: single_015
+  questions:
+  - 孕妇能用吗
+- name: single_016
+  questions:
+  - 学生党合适吗
+- name: single_017
+  questions:
+  - 我干皮想补水，推荐哪款
+- name: single_018
+  questions:
+  - 价格大概多少
+- name: single_019
+  questions:
+  - 有没有活动
+- name: single_020
+  questions:
+  - 你推荐哪款
+- name: single_021
+  questions:
+  - 我是油皮，适合哪个
+- name: single_022
+  questions:
+  - 第一次买，先入哪一个
+- name: single_023
+  questions:
+  - 别解释了，直接说最好的
+- name: single_024
+  questions:
+  - 你们还有别的款吗
+- name: single_025
+  questions:
+  - 这两款哪个更适合油皮
+- name: single_026
+  questions:
+  - 新款和老款差别大吗
+- name: single_027
+  questions:
+  - 那我选清爽款吧
+- name: single_028
+  questions:
+  - A款和B款哪个好
+- name: single_029
+  questions:
+  - 你就说哪个效果绝对更好
+- name: single_030
+  questions:
+  - 这两个我该怎么选
+- name: single_031
+  questions:
+  - 正装和中样怎么选
+- name: single_032
+  questions:
+  - 有没有试色图
+- name: single_033
+  questions:
+  - 想补水加修护，怎么搭配买
+- name: single_034
+  questions:
+  - 这款和哪款一起用更好
+- name: single_035
+  questions:
+  - 搭配买有优惠吗
+- name: single_036
+  questions:
+  - 护肤第几步使用
+- name: single_037
+  questions:
+  - 用量大概多少
+- name: single_038
+  questions:
+  - 推荐一款面膜
+- name: single_039
+  questions:
+  - 一天用几次
+- name: single_040
+  questions:
+  - 能和酸类一起用吗
+- name: single_041
+  questions:
+  - 可以和别的品牌精华叠加吗
+- name: single_042
+  questions:
+  - 和A醇搭配要注意什么
+- name: single_043
+  questions:
+  - 一般多久能看到效果
+- name: single_044
+  questions:
+  - 用了一周感觉没变化正常吗
+- name: single_045
+  questions:
+  - 需要长期使用吗
+- name: single_046
+  questions:
+  - 推荐一款刷酸产品
+- name: single_047
+  questions:
+  - 用了刺痛正常吗
+- name: single_048
+  questions:
+  - 过敏了怎么办
+- name: single_049
+  questions:
+  - 现在多少钱
+- name: single_050
+  questions:
+  - 最近会降价吗
+- name: single_051
+  questions:
+  - 有没有更便宜的规格
+- name: single_052
+  questions:
+  - 推荐一款洗面奶
+- name: single_053
+  questions:
+  - 有优惠券吗
+- name: single_054
+  questions:
+  - 店铺券和平台券能叠加吗
+- name: single_055
+  questions:
+  - 满多少减多少
+- name: single_056
+  questions:
+  - 活动什么时候结束
+- name: single_057
+  questions:
+  - 第二件有优惠吗
+- name: single_058
+  questions:
+  - 现在买划算还是等大促
+- name: single_059
+  questions:
+  - 推荐一款护肤套装
+- name: single_060
+  questions:
+  - 买这个送什么
+- name: single_061
+  questions:
+  - 套餐里面都有什么
+- name: single_062
+  questions:
+  - 赠品和正装是一样的吗
+- name: single_063
+  questions:
+  - 这个地区能发吗
+- name: single_064
+  questions:
+  - 现在下单今天能发吗
+- name: single_065
+  questions:
+  - 用什么快递
+- name: single_066
+  questions:
+  - 我想下单
+- name: single_067
+  questions:
+  - 地址填错了怎么改
+- name: single_068
+  questions:
+  - 下单后能改规格吗
+- name: single_069
+  questions:
+  - 这个规格还有吗
+- name: single_070
+  questions:
+  - 可以先预定吗
+- name: single_071
+  questions:
+  - 多久发货
+- name: single_072
+  questions:
+  - 预售要等几天
+- name: single_073
+  questions:
+  - 能加急吗
+- name: single_074
+  questions:
+  - 我之前买的那个为什么物流一直没动
+- name: single_075
+  questions:
+  - 能帮我催一下吗
+- name: single_076
+  questions:
+  - 如果一直不动能退款吗
+- name: single_077
+  questions:
+  - 我的订单怎么还没到
+- name: single_078
+  questions:
+  - 可以催快递吗
+- name: single_079
+  questions:
+  - 超时了能不能赔偿
+- name: single_080
+  questions:
+  - 我收到的东西少了一件怎么办
+- name: single_081
+  questions:
+  - 需要提供什么凭证
+- name: single_082
+  questions:
+  - 能直接补发吗
+- name: single_083
+  questions:
+  - 快递丢了怎么办
+- name: single_084
+  questions:
+  - 收到时包装破损怎么处理
+- name: single_085
+  questions:
+  - 能直接退款吗
+- name: single_086
+  questions:
+  - 买了之后不喜欢可以退吗
+- name: single_087
+  questions:
+  - 拆封后还能退吗
+- name: single_088
+  questions:
+  - 退款多久到账
+- name: single_089
+  questions:
+  - 推荐一款乳液
+- name: single_090
+  questions:
+  - 发错货了怎么换
+- name: single_091
+  questions:
+  - 漏发的可以补发吗
+- name: single_092
+  questions:
+  - 换货运费谁出
+- name: single_093
+  questions:
+  - 我要找人工客服
+- name: single_094
+  questions:
+  - 你帮我转人工
+- name: single_095
+  questions:
+  - 这个问题你解决不了，转人工
+- name: single_096
+  questions:
+  - 别机器人回复了
+- name: single_097
+  questions:
+  - 你别复制粘贴了，给我转人工
+- name: single_098
+  questions:
+  - 我之前的问题一直没解决
+- name: single_099
+  questions:
+  - 你们处理太慢了
+- name: single_100
+  questions:
+  - 我要投诉你们
+- name: single_101
+  questions:
+  - 烂脸期间能用吗
+- name: single_102
+  questions:
+  - 哺乳期可以用吗
+- name: single_103
+  questions:
+  - 能不能治痘痘
+- name: single_104
+  questions:
+  - 这个能修复激素脸吗
+- name: single_105
+  questions:
+  - 用了多久能痊愈
+- name: single_106
+  questions:
+  - 是正品吗
+- name: single_107
+  questions:
+  - 保质期多久
+- name: single_108
+  questions:
+  - 有没有授权证书
+- name: single_109
+  questions:
+  - 线下门店有卖吗
+- name: single_110
+  questions:
+  - 和别的品牌比哪个更好
+- name: single_111
+  questions:
+  - 你们品牌是哪个国家的
+- name: single_112
+  questions:
+  - 页面没写清楚，你确定吗
+- name: single_113
+  questions:
+  - 如果你不清楚就转人工
+- name: single_114
+  questions:
+  - 我要一个准确的答案
+- name: single_115
+  questions:
+  - 它的主要成分是什么
+- name: single_116
+  questions:
+  - 具体应该怎么使用
+- name: single_117
+  questions:
+  - 使用的时候有什么注意事项
+- name: single_118
+  questions:
+  - 我的订单什么时候可以发货
+- name: single_119
+  questions:
+  - 物流单号在哪里查看
+- name: single_120
+  questions:
+  - 已经发货后可以催一下物流吗

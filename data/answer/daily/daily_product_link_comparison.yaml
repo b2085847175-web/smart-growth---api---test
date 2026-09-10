@@ -1,0 +1,30 @@
+# 日常问题：根据两个淘宝商品链接判断是否为同一商品。
+suite:
+  name: daily_product_link_comparison
+  mode: sequential
+  quality: false
+  match_score: false
+  final_reply_equals_chat: false
+  assertions: false
+  turn_interval_seconds: 0
+
+target_env: dev
+
+cases:
+  - name: compare_two_taobao_item_links
+    source_context:
+      account: tmall_8811d15c6c5547fe2026
+      events:
+        - timestamp: "2026-09-10 10:40:24"
+          content: "http://item.taobao.com/item.htm?id=835951799159"
+        - timestamp: "2026-09-10 10:40:25"
+          content: "http://item.taobao.com/item.htm?id=764837431415"
+        - timestamp: "2026-09-10 10:40:28"
+          content: "这两个链接是同一个吗"
+    context_messages:
+      - role: user
+        content: "http://item.taobao.com/item.htm?id=835951799159"
+      - role: user
+        content: "http://item.taobao.com/item.htm?id=764837431415"
+    turns:
+      - question: "这两个链接是同一个吗"

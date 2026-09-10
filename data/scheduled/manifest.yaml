@@ -1,0 +1,38 @@
+generated_by: scripts/generate_scheduled_task_data.py
+target_env: dev
+assertions: disabled (suite.assertions=false, suite.quality=false)
+unique_questions_total: 857
+dedupe_rule: one question string used at most once across all files
+files:
+  01_scene_questions.yaml:
+    suite: scheduled_scene_questions
+    cases: 120
+    questions: 120
+  02_product_context.yaml:
+    suite: scheduled_product_context
+    cases: 100
+    questions: 100
+  03_conversation_history.yaml:
+    suite: scheduled_conversation_history
+    cases: 60
+    questions: 60
+  04_single_question.yaml:
+    suite: scheduled_single_question
+    cases: 120
+    questions: 120
+  05_multi_question.yaml:
+    suite: scheduled_multi_question
+    cases: 100
+    questions: 457
+scene_cases_per_category:
+  AFTER_SALES: 11
+  CHAT: 16
+  LOGISTICS: 9
+  PRE_SALES: 1
+  PRODUCT_INFO: 63
+  PROMOTION: 11
+  PURCHASE: 8
+  SPECIAL_MESSAGE: 1
+single_cases_per_pool:
+  multiturn_leftover: 114
+  merged_585_standalone: 6

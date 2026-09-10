@@ -1,0 +1,408 @@
+# 定时任务数据:完整对话记录(conversation_record 一次性发送)
+# 官方质检点记录的后续追问为同一模板话术,已截取首轮场景对话,保证每条实际提问不重复。
+suite:
+  name: scheduled_conversation_history
+  mode: sequential
+  quality: false
+  match_score: false
+  final_reply_equals_chat: false
+  assertions: false
+  turn_interval_seconds: 1
+target_env: dev
+cases:
+- name: 未发送欢迎语_补水面膜咨询
+  conversation_record:
+  - role: user
+    content: 我想买一套补水面膜，主要是换季脸干、容易泛红，应该怎么选？
+  - role: assistant
+    content: 如果主要是换季干燥和容易泛红，可以优先选择成分简单、以补水和舒缓为主的面膜。首次使用建议先在耳后或下颌处试用，确认没有刺痛、红肿等不适后再敷全脸。
+  - role: user
+    content: 如果我每天晚上使用，敷完以后还需要再涂水乳吗？
+  - role: assistant
+    content: 敷完后可以轻轻按摩至剩余精华吸收，再按照日常护肤顺序涂水乳或面霜，帮助锁住水分。如果敷完感觉黏腻，可以减少后续产品用量，不建议敷着面膜直接睡觉。
+  - role: user
+    content: 这套面膜一盒有多少片？敏感肌可以直接使用吗？
+  - role: assistant
+    content: 一盒的具体片数请以商品详情页和收到的外包装标注为准。敏感肌首次使用建议先做局部测试，使用过程中如果出现明显刺痛、发红或瘙痒，应立即停止使用并及时清洁。
+  - role: user
+    content: 我想今天下单，发货时间和赠品情况可以一起说明一下吗？
+  - role: assistant
+    content: 发货时间和当前赠品以提交订单时页面显示的活动规则为准。下单前可以查看商品详情页和结算页的发货及赠品说明；如果页面显示有赠品，通常会随订单一起发出，具体以订单记录为准。
+- name: 综合多场景_破损订单处理
+  conversation_record:
+  - role: user
+    content: 我刚收到的面霜已经破损漏液了，我等了好几天，真的很生气。
+  - role: assistant
+    content: 你先别激动。。。把照片发来🙄
+  - role: user
+    content: 照片我已经拍好了，我担心里面的产品不能用了，能给我一个处理方案吗？
+  - role: assistant
+    content: 补偿或者换货，你自己选一个。
+  - role: user
+    content: 补偿具体是多少？换货要多久？我不想一直等。
+  - role: assistant
+    content: 你先给五星好评截图，我给你返现五元，再加我微信转账处理。
+  - role: user
+    content: 问题还没解决，为什么要我先好评和线下付款？
+  - role: assistant
+    content: 不接受就算了，按你自己的想法办吧。
+- name: 使用不恰当标点和表情
+  conversation_record:
+  - role: user
+    content: 我现在遇到“使用不恰当标点和表情”的情况，具体是：客服回复中使用了不礼貌、嘲讽或可能引起误解的标点或表情。，请帮我处理。
+  - role: assistant
+    content: 这个也要问吗。。。🙄
+  - role: user
+    content: 我还想确认一下，刚才这个问题具体应该怎么解决？
+  - role: assistant
+    content: 我刚才已经说明了，按这个方式处理即可。
+  - role: user
+    content: 如果我现在继续处理，还需要提供什么信息或采取什么措施？
+  - role: assistant
+    content: 这个也要问吗。。。🙄
+  - role: user
+    content: 请结合刚才的情况，给我一个明确的最终答复。
+  - role: assistant
+    content: 好的，按上述规则处理。
+- name: 使用不恰当网络用语
+  conversation_record:
+  - role: user
+    content: 我现在遇到“使用不恰当网络用语”的情况，具体是：客服回复中使用了带负面、贬低或可能让买家难以理解的网络用语。，请帮我处理。
+  - role: assistant
+    content: 这都不知道吗，自己看详情，别杠。
+- name: 纯表情回复
+  conversation_record:
+  - role: user
+    content: 我现在遇到“纯表情回复”的情况，具体是：买家提出问题时，客服只发送表情，没有文字说明。，请帮我处理。
+  - role: assistant
+    content: 🙂
+- name: 发送欢迎语后未跟进
+  conversation_record:
+  - role: user
+    content: 我现在遇到“发送欢迎语后未跟进”的情况，具体是：客服发送欢迎语后，买家提出问题但没有得到后续回复。，请帮我处理。
+  - role: assistant
+    content: 欢迎光临本店。
+- name: 回复稍等后未跟进
+  conversation_record:
+  - role: user
+    content: 我现在遇到“回复稍等后未跟进”的情况，具体是：客服表示需要稍等、查询或核实后，没有再回复处理结果或进展。，请帮我处理。
+  - role: assistant
+    content: 您稍等，我查一下。
+- name: 撤回消息未致歉
+  conversation_record:
+  - role: user
+    content: 我现在遇到“撤回消息未致歉”的情况，具体是：客服撤回消息后，没有及时向买家说明或致歉。，请帮我处理。
+  - role: assistant
+    content: '[客服撤回了一条消息]'
+- name: 纯标点符号回复
+  conversation_record:
+  - role: user
+    content: 我现在遇到“纯标点符号回复”的情况，具体是：客服回复内容只有标点符号，没有提供有效信息。，请帮我处理。
+  - role: assistant
+    content: 。。。
+- name: 疑似刷问答比
+  conversation_record:
+  - role: user
+    content: 我现在遇到“疑似刷问答比”的情况，具体是：买家未插话时，客服连续发送 3 句且每句不超过 3 个字的简短回复。，请帮我处理。
+  - role: assistant
+    content: 嗯。好的。是的。
+- name: 未使用礼貌用语
+  conversation_record:
+  - role: user
+    content: 我现在遇到“未使用礼貌用语”的情况，具体是：整段会话中，客服没有使用“请问”“您”“谢谢”等礼貌用语。，请帮我处理。
+  - role: assistant
+    content: 按页面信息处理。
+- name: 最后一句非客服发送
+  conversation_record:
+  - role: user
+    content: 我现在遇到“最后一句非客服发送”的情况，具体是：会话结束时，买家最后提出的问题或诉求没有得到客服回复。，请帮我处理。
+  - role: assistant
+    content: 我先记录一下。
+- name: 使用“你”称呼客户
+  conversation_record:
+  - role: user
+    content: 我现在遇到“使用“你”称呼客户”的情况，具体是：客服直接使用“你”称呼买家，而没有使用更礼貌的“您”。，请帮我处理。
+  - role: assistant
+    content: 你自己看一下详情页。
+- name: 连续发送欢迎语结束语
+  conversation_record:
+  - role: user
+    content: 我现在遇到“连续发送欢迎语结束语”的情况，具体是：客服发送欢迎语后，未等买家回复就紧接着发送结束语或告别语。，请帮我处理。
+  - role: assistant
+    content: 您好，欢迎光临本店。没有其他问题我先结束咨询了。
+- name: 慢响应
+  conversation_record:
+  - role: user
+    content: 我现在遇到“慢响应”的情况，具体是：买家发送需要回复的问题后，客服超过 60 秒才首次回复。，请帮我处理。
+  - role: assistant
+    content: '[65秒后回复] 有现货。'
+- name: 单句响应超时（3分钟）
+  conversation_record:
+  - role: user
+    content: 我现在遇到“单句响应超时（3分钟）”的情况，具体是：买家发送需要回复的问题后，客服超过 3 分钟才回复。，请帮我处理。
+  - role: assistant
+    content: '[4分钟后回复] 正在处理。'
+- name: 重复机械式致歉
+  conversation_record:
+  - role: user
+    content: 我现在遇到“重复机械式致歉”的情况，具体是：客服在连续 10 句话内致歉超过 3 次，且没有推进问题处理。，请帮我处理。
+  - role: assistant
+    content: 抱歉，不好意思，对不起，真的很抱歉。
+- name: 答非所问
+  conversation_record:
+  - role: user
+    content: 我现在遇到“答非所问”的情况，具体是：买家问题表达清楚时，客服回复没有回答核心问题。，请帮我处理。
+  - role: assistant
+    content: 现在下单可以参加店铺活动。
+- name: 未告知查询核实时间
+  conversation_record:
+  - role: user
+    content: 我现在遇到“未告知查询核实时间”的情况，具体是：客服表示需要查询或核实，但没有告知买家预计的反馈时间。，请帮我处理。
+  - role: assistant
+    content: 我帮您查询一下，查到会告诉您。
+- name: 机械式回复
+  conversation_record:
+  - role: user
+    content: 我现在遇到“机械式回复”的情况，具体是：客服多次只回复“嗯嗯”“好的”“是的”等简短用语，未提供有效帮助。，请帮我处理。
+  - role: assistant
+    content: 嗯嗯，好的，是的，可以。
+- name: 客户情绪异常未安抚
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客户情绪异常未安抚”的情况，具体是：买家表达生气、失望或不满时，客服没有安抚或处理问题。，请帮我处理。
+  - role: assistant
+    content: 按售后流程处理。
+- name: 客户致谢未回应
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客户致谢未回应”的情况，具体是：买家表达感谢后，客服没有作出礼貌回应。，请帮我处理。
+  - role: assistant
+    content: 好的。
+- name: 拒绝客户未致歉
+  conversation_record:
+  - role: user
+    content: 我现在遇到“拒绝客户未致歉”的情况，具体是：客服无法满足买家需求时，没有礼貌致歉或安抚。，请帮我处理。
+  - role: assistant
+    content: 不能办。
+- name: 投诉差评未安抚
+  conversation_record:
+  - role: user
+    content: 我现在遇到“投诉差评未安抚”的情况，具体是：买家表示要投诉或给差评时，客服没有安抚、挽留或提供解决办法。，请帮我处理。
+  - role: assistant
+    content: 那您按自己的想法投诉就行。
+- name: 承诺未履约
+  conversation_record:
+  - role: user
+    content: 我现在遇到“承诺未履约”的情况，具体是：客服作出的备注、赠品、发货等承诺没有兑现。，请帮我处理。
+  - role: assistant
+    content: 订单已经发出了，现在改不了。
+- name: 客户表示客服像机器人
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客户表示客服像机器人”的情况，具体是：买家明确表示客服回复像机器人或过于机械。，请帮我处理。
+  - role: assistant
+    content: 我就是按流程回复的。
+- name: 客户催促未致歉安抚
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客户催促未致歉安抚”的情况，具体是：买家催促处理进度时，客服没有致歉、安抚或说明进展。，请帮我处理。
+  - role: assistant
+    content: 还在处理，继续等。
+- name: 客户不满仍邀评
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客户不满仍邀评”的情况，具体是：买家对商品或服务不满且问题未解决时，客服仍邀请评价或好评。，请帮我处理。
+  - role: assistant
+    content: 麻烦给个五星好评哦。
+- name: 纯图片回复
+  conversation_record:
+  - role: user
+    content: 我现在遇到“纯图片回复”的情况，具体是：买家提出需要说明的问题时，客服只发送图片或截图，没有文字解释。，请帮我处理。
+  - role: assistant
+    content: '[图片]'
+- name: 多次撤回消息
+  conversation_record:
+  - role: user
+    content: 我现在遇到“多次撤回消息”的情况，具体是：客服在一段会话中多次撤回消息，影响买家理解。，请帮我处理。
+  - role: assistant
+    content: '[客服撤回了一条消息] [客服撤回了一条消息]'
+- name: 多次超字数回复
+  conversation_record:
+  - role: user
+    content: 我现在遇到“多次超字数回复”的情况，具体是：客服连续发送多条冗长、信息密集的回复，增加买家阅读负担。，请帮我处理。
+  - role: assistant
+    content: 本店商品相关信息很多，建议您继续阅读详情页、活动规则、品牌介绍、售后规则和评价问答后自行判断。
+- name: 让客户自己到页面去看
+  conversation_record:
+  - role: user
+    content: 我现在遇到“让客户自己到页面去看”的情况，具体是：客服只让买家自己查看页面或详情页，没有提供答案或具体指引。，请帮我处理。
+  - role: assistant
+    content: 你自己去详情页看，页面上都有。
+- name: 超时未致歉
+  conversation_record:
+  - role: user
+    content: 我现在遇到“超时未致歉”的情况，具体是：客服回复已经超时，但首次回复没有就等待向买家致歉或说明。，请帮我处理。
+  - role: assistant
+    content: '[超时后回复] 已经处理了。'
+- name: 连续发送链接
+  conversation_record:
+  - role: user
+    content: 我现在遇到“连续发送链接”的情况，具体是：客服连续发送多个链接，没有说明链接用途或结合买家问题进行指引。，请帮我处理。
+  - role: assistant
+    content: https://example.com/a https://example.com/b https://example.com/c
+- name: 退差价或补偿未邀评
+  conversation_record:
+  - role: user
+    content: 我现在遇到“退差价或补偿未邀评”的情况，具体是：客服办理退差价或补偿后，没有礼貌邀请买家评价。，请帮我处理。
+  - role: assistant
+    content: 退差价已经处理完成。
+- name: 退货未挽留
+  conversation_record:
+  - role: user
+    content: 我现在遇到“退货未挽留”的情况，具体是：客户表示要退货时，客服没有主动安抚挽留。，请帮我处理。
+  - role: assistant
+    content: 那就直接申请退货吧。
+- name: 重复让客户复述问题
+  conversation_record:
+  - role: user
+    content: 我现在遇到“重复让客户复述问题”的情况，具体是：买家已经说明问题后，客服仍要求买家重复提供相同信息。，请帮我处理。
+  - role: assistant
+    content: 麻烦您再说一遍具体问题。
+- name: 质量问题未安抚
+  conversation_record:
+  - role: user
+    content: 我现在遇到“质量问题未安抚”的情况，具体是：买家反馈商品质量问题时，客服没有表达理解、致歉或安抚。，请帮我处理。
+  - role: assistant
+    content: 发照片过来，按流程处理。
+- name: 严重舆情未报备升级处理
+  conversation_record:
+  - role: user
+    content: 我现在遇到“严重舆情未报备升级处理”的情况，具体是：买家提及曝光、12315 或工商投诉时，客服没有说明会报备或升级处理。，请帮我处理。
+  - role: assistant
+    content: 您可以去12315投诉，随您。
+- name: 问题应对不知变通
+  conversation_record:
+  - role: user
+    content: 我现在遇到“问题应对不知变通”的情况，具体是：买家明确表示客服处理方式死板、不会变通或只会重复规则。，请帮我处理。
+  - role: assistant
+    content: 按规则处理，不能变。
+- name: 拍下送赠品未邀评
+  conversation_record:
+  - role: user
+    content: 我现在遇到“拍下送赠品未邀评”的情况，具体是：客服介绍拍下送赠品活动后，没有礼貌邀请买家评价。，请帮我处理。
+  - role: assistant
+    content: 赠品会随订单发出。
+- name: 未主动帮客户做选择
+  conversation_record:
+  - role: user
+    content: 我现在遇到“未主动帮客户做选择”的情况，具体是：买家询问商品区别、哪个好或哪款更适合时，客服没有给出选择建议。，请帮我处理。
+  - role: assistant
+    content: 两款都可以，你自己选。
+- name: 多次让客户稍等
+  conversation_record:
+  - role: user
+    content: 我现在遇到“多次让客户稍等”的情况，具体是：客服在连续 5 句话内至少 2 次让买家等待，且没有提供实质进展。，请帮我处理。
+  - role: assistant
+    content: 您稍等，我再查一下。
+- name: 简单问题滥用核实留言
+  conversation_record:
+  - role: user
+    content: 我现在遇到“简单问题滥用核实留言”的情况，具体是：买家咨询材质、成分、产地、保质期、颜色或正品等基础信息时，客服没有直接回答而让买家等待核实。，请帮我处理。
+  - role: assistant
+    content: 这个需要留言核实，您先等通知。
+- name: 客户不满多次查询
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客户不满多次查询”的情况，具体是：买家不满客服反复查询或迟迟未给结果时，客服仍没有说明原因、进展或替代处理方式。，请帮我处理。
+  - role: assistant
+    content: 还在查询，继续等结果。
+- name: 客服推卸责任
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客服推卸责任”的情况，具体是：买家提出问题时，客服以“不是我的事情”“我也没办法”等方式推脱责任且未提供帮助。，请帮我处理。
+  - role: assistant
+    content: 这不是我的事情，您去找其他人。
+- name: 客服引导好评返现
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客服引导好评返现”的情况，具体是：客服以返现、红包、补偿等利益诱导买家给好评。，请帮我处理。
+  - role: assistant
+    content: 给五星好评截图，可以返现五元。
+- name: 承诺发票内容开具其他品类
+  conversation_record:
+  - role: user
+    content: 我现在遇到“承诺发票内容开具其他品类”的情况，具体是：买家要求按非实际购买品类开票时，客服直接承诺可以开具。，请帮我处理。
+  - role: assistant
+    content: 可以按您要求开成其他品类。
+- name: 客服引导跨平台购买
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客服引导跨平台购买”的情况，具体是：客服主动引导买家前往京东、拼多多等其他平台购买。，请帮我处理。
+  - role: assistant
+    content: 您去京东或拼多多购买吧。
+- name: 客服辱骂讥讽买家
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客服辱骂讥讽买家”的情况，具体是：客服在回复中辱骂、嘲讽、贬低或挖苦买家。，请帮我处理。
+  - role: assistant
+    content: 这点事情都弄不明白吗？
+- name: 客服使用涉及虚假宣传、欺诈用词
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客服使用涉及虚假宣传、欺诈用词”的情况，具体是：客服使用“第一”“最好”“最强”“全网销量冠军”等夸大或可能涉嫌虚假宣传的用语。，请帮我处理。
+  - role: assistant
+    content: 这是全网第一、最好、销量冠军的产品。
+- name: 客服态度差
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客服态度差”的情况，具体是：客服回复表现出明显不耐烦、冷漠、粗鲁、敷衍或不专业。，请帮我处理。
+  - role: assistant
+    content: 爱买不买，不想买就算了。
+- name: 客服催客离店
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客服催客离店”的情况，具体是：买家仍在咨询时，客服以不耐烦或驱赶的方式催促买家结束咨询或离开。，请帮我处理。
+  - role: assistant
+    content: 没问题就赶紧离开咨询吧。
+- name: 反问质疑客户
+  conversation_record:
+  - role: user
+    content: 我现在遇到“反问质疑客户”的情况，具体是：客服使用带责备、质疑或冒犯意味的反问方式回复买家。，请帮我处理。
+  - role: assistant
+    content: 这个你都不明白吗？
+- name: 客服表示图片与实物不符
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客服表示图片与实物不符”的情况，具体是：客服明确表示或确认商品图片、SKU 选项与实物不一致。，请帮我处理。
+  - role: assistant
+    content: 详情图片和收到的实物本来就可能不一样。
+- name: 客服诋毁自家店铺
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客服诋毁自家店铺”的情况，具体是：客服使用贬低、诋毁本店信誉、商品质量或服务能力的表达。，请帮我处理。
+  - role: assistant
+    content: 我们家商品质量一般，服务也就这样。
+- name: 客服引导客户差评、投诉
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客服引导客户差评、投诉”的情况，具体是：买家表达不满时，客服直接引导或鼓励买家去差评、投诉。，请帮我处理。
+  - role: assistant
+    content: 您想投诉就去投诉，直接给差评也可以。
+- name: 客服引导客户线下付款
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客服引导客户线下付款”的情况，具体是：客服引导买家通过线下转账、微信或支付宝私下收款等方式付款。，请帮我处理。
+  - role: assistant
+    content: 可以加我微信，通过微信或支付宝转账。
+- name: 客服发送违禁词
+  conversation_record:
+  - role: user
+    content: 我现在遇到“客服发送违禁词”的情况，具体是：客服发送了店铺所属平台限制使用的敏感词或违禁词。，请帮我处理。
+  - role: assistant
+    content: 这个问题涉及[平台敏感词/违禁词]，我直接这样处理。
+- name: 催拍催付时机不当
+  conversation_record:
+  - role: user
+    content: 我现在遇到“催拍催付时机不当”的情况，具体是：售前接待结束后，客服超过 3 分钟才发送催拍或催付话术。，请帮我处理。
+  - role: assistant
+    content: 您几天前问过了，现在怎么还不拍？赶紧付款吧。
