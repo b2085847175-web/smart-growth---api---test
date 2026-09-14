@@ -1,0 +1,349 @@
+# 来源：AI质检问题-羽素9月7号.xlsx（13 张质检截图，对应 12 条会话）。
+# 说明：截图中的聊天图片没有原始媒体 URL，统一还原为 [图片消息] / [订单消息] 占位。
+# 每个 context-only 用例保留到最后一条用户消息作为触发语。reference_replies 保存截图中的原客服回复，仅供后续断言设计参照，当前运行器不会将其发送给接口。
+# 截图里无法辨认的装饰性前缀表情未做臆测还原。
+suite:
+  name: yusu_20260907_qc_context
+  mode: sequential
+  quality: true
+  assertions: false
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+
+target_env: dev
+
+cases:
+  # 第2行/图1：售后转人工后，质检误判“纯标点符号回复”；修改意见：应判无问题/未正面回复。
+  - name: after_sales_transfer_false_punctuation
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，看您的订单是4天前下单的，目前显示待收货状态"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "请问是物流方面有什么疑问吗~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "试用了 没有效果能退吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "试用了没效果想退货的话，可以先看看正装有没有拆封哦"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "要是正装塑封完好是可以七天无理由退的，如果拆封了就需要联系售后处理呢。"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "打开正装了"
+        media_type: text
+        media_url: ""
+    reference_replies:
+      - role: assistant
+        content: "宝宝，为确保您的问题顺利解决，稍后会有人工专员对接您，请您注意接待哦~"
+
+  # 第3行/图2-3：人工已先发营销话术，AI首轮又发欢迎语；图3仅含质检摘要，无新对话。修改意见：进线后首轮只要发送过即可。
+  - name: late_welcome_after_marketing_reply
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "您看的这款商品有264749人购买，近期回购人数有4014，您可以放心购买哦~"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "您咨询的具体内容是什么呢~可以详细说一下，我来帮您解答哦"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "这个有卖的小样吗"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我想试试"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "皮肤比较敏感"
+        media_type: text
+        media_url: ""
+    reference_replies:
+      - role: assistant
+        content: "这个是有小样的哦"
+      - role: assistant
+        content: "我们现在有198元的套装里就包含5ml的小样呢，而且敏感肌也是可以放心使用的，这款祛痘精华采用了温和配方，对敏感肌很友好的哈"
+
+  # 第4行/图4：用户要求备注加赠，AI明确说明暂不支持；质检误判“拒绝客户未致歉”。
+  - name: gift_remark_not_supported_apology
+    context_messages:
+      - role: assistant
+        content: "备注参考模板：【备注加赠大灯泡精华 1ml×1】"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "[图片消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，这边看见您没有下单是对产品有什么疑惑吗？可以跟小客服说一下的哦，这边帮您解答的呢～"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，看到您这边刚下单了祛痘次抛精华5ml*3盒的两份，是有哪里需要帮忙的嘛"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "[备注加赠大灯泡精华 1ml×1]"
+        media_type: text
+        media_url: ""
+    reference_replies:
+      - role: assistant
+        content: "抱歉亲，这款商品目前暂不支持备注哦。"
+
+  # 第5行/图5：AI正面回答点涂用法；质检误判“答非所问”。
+  - name: spot_apply_usage_direct_answer
+    context_messages:
+      - role: assistant
+        content: "尊敬的V3会员，您看的这款商品有35321人购买，您可以放心购买哦~"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "您好呀宝宝"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "您具体想了解哪款商品的什么问题呢~是直接问功效、用法还是其他方面呀~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "这个能一直抹还是有痘痘才抹"
+        media_type: text
+        media_url: ""
+    reference_replies:
+      - role: assistant
+        content: "宝宝，这款是专门点涂在痘痘上的，有痘痘的时候才用，没有痘痘不需要一直抹哦"
+      - role: assistant
+        content: "[图片消息]"
+
+  # 第6行/图6：用户过敏并说明历史使用情况；原AI回复会转接高级专员，质检误判多个售后点。
+  - name: allergy_history_transfer_to_specialist
+    context_messages:
+      - role: user
+        content: "你好，我用了咱们刚给我发的这套产品后，脸上过敏啦，这个正常么 [捂脸]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝~很抱歉给您带来不便，人工客服已经下班，麻烦您次日8点后再进线咨询下，方便人工客服帮您处理哈【人工接待时间 8:00-24:00】"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "因为之前也一直在用咱们家产品，然后这次买了个不一样的套装，然后今天用了之后，脸过敏，就肿了 [捂脸] [捂脸] [捂脸]"
+        media_type: text
+        media_url: ""
+    reference_replies:
+      - role: assistant
+        content: "宝宝，麻烦稍等一下呢，这边为您转接高级专员为您处理哦"
+
+  # 第7行/图7：用户确认收到说明；原AI正常确认并告别，质检误判机械式回复/催客离店。
+  - name: trial_pack_confirmation_normal_reply
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，您这边是想咨询物流、使用效果、用法还是其他售后问题呢~可以告诉我为您解决哟"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "这女试用装是哪一个"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，试用装就是拍【祛痘+修红】这个选项哦"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "里面有送小蓝盾1.5ml和大灯泡1ml的小样可以试试效果呢"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "哦哦，好的"
+        media_type: text
+        media_url: ""
+    reference_replies:
+      - role: assistant
+        content: "嗯嗯，好的宝宝"
+      - role: assistant
+        content: "那就不打扰您啦，祝您生活愉快！"
+
+  # 第8行/图8：用户质疑补差价；原AI道歉、解释渠道差异并说明退货流程，质检误判未安抚。
+  - name: price_difference_apology_and_return_process
+    context_messages:
+      - role: user
+        content: "在吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "在的呢宝宝，有什么可以帮您的呀~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "刚收到货，在别的直播间看到同样的产品有优惠券，才119"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝理解您的心情呢，咱们店铺的价格和赠品方案都是经过慎重考虑的，产品品质和正品保障也请您放心呀～不同渠道的活动力度确实会有差异，还请您多多理解哈。"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "产品我没拆 直接退回 我重新拍了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "好的宝宝，未拆封的正装是支持7天无理由退换的呢～您直接在订单页面申请退货就可以，重拍的新订单也会正常安排发货的哈。"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "搞什么 真是无语，不然你们之间补个差价 我也不用来回退，再重新拍了"
+        media_type: text
+        media_url: ""
+    reference_replies:
+      - role: assistant
+        content: "宝宝真的很抱歉，咱们平台这边暂时没有补差价的相关服务呢。未拆封的产品支持7天无理由退换的，您直接按流程申请就好，真的非常理解您的心情，给您添麻烦了"
+
+  # 第9行/图9：用户两次问“怎么用”；原AI文字说明并发送搭配图，质检误判纯图片/未发送卖点。
+  - name: usage_question_answered_with_image
+    context_messages:
+      - role: user
+        content: "怎么用"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "请问是收到货有什么疑问吗~看到您的订单状态是待收货呢，有需要咨询的随时说哦"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "怎么用"
+        media_type: text
+        media_url: ""
+    reference_replies:
+      - role: assistant
+        content: "宝宝，您是问您拍的这款【祛痘+修红】组合对不对~咱们白天正常护肤到乳液后涂大灯泡，小蓝盾就用在爽肤水后当精华全脸涂抹哈"
+      - role: assistant
+        content: "[图片消息]"
+
+  # 第10行/图10：用户致谢；原AI发送不客气、联系提示和评价引导，质检误判客户致谢未回应。
+  - name: thanks_followed_by_reply_and_review_guide
+    context_messages:
+      - role: user
+        content: "谢谢"
+        media_type: text
+        media_url: ""
+    reference_replies:
+      - role: assistant
+        content: "不客气哒宝宝"
+      - role: assistant
+        content: "有任何问题随时联系这边哦😘"
+      - role: assistant
+        content: "如果有帮到您，可以帮忙点个【很满意】吗，麻烦宝宝了😊"
+      - role: assistant
+        content: "[图片消息]"
+
+  # 第11行/图11：用户问蓝瓶功效；原AI准确解释小蓝盾作用，质检误判未打消价格顾虑。
+  - name: blue_bottle_function_question
+    context_messages:
+      - role: user
+        content: "蓝屏的是去印还是淡印?"
+        media_type: text
+        media_url: ""
+    reference_replies:
+      - role: assistant
+        content: "宝宝，蓝瓶的是小蓝盾，主打舒缓维稳和修护泛红的哦，对淡化痘印效果有限，建议搭配专门的淡印产品效果更好呢"
+
+  # 第12行/图12：用户要求转问备注问题；原AI说明闪拍款固定配色，质检误判客户不满意邀评/最后一句非客服。
+  - name: fixed_color_note_follow_up
+    context_messages:
+      - role: assistant
+        content: "✅重要规则（不按操作无赠品）：下单后15分钟内联系客服发送备注！订单自己备注无效❗\n📌备注参考模板：【备注加赠大灯泡精华 1ml×1】"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "[图片消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，这边看见您没有下单是对产品有什么疑惑吗？可以跟小客服说一下的哦，这边帮您解答的呢～"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "感谢宝宝的咨询，希望我们的服务能为您带来帮助，如有任何其他问题，欢迎随时联系我们。祝您有一个美好的一天！"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "你问问"
+        media_type: text
+        media_url: ""
+    reference_replies:
+      - role: assistant
+        content: "宝宝，闪钻款是星星形状的，目前是固定配色发货的，没办法单独备注更改颜色哦"
+
+  # 第13行/图13：青春期适用问题；原AI正面回答13岁以上可用，质检误判未发欢迎语/标点不当。
+  - name: teenager_facial_cleanser_suitability
+    context_messages:
+      - role: user
+        content: "青春期的适合用吗?"
+        media_type: text
+        media_url: ""
+    source_events:
+      - "当前用户来自 商品详情页"
+    reference_replies:
+      - role: assistant
+        content: "适合的宝宝"
+      - role: assistant
+        content: "这款洁面慕斯13岁以上就可以用啦，青春期完全没问题哦。"

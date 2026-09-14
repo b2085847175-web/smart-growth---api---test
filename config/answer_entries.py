@@ -9,7 +9,7 @@ from typing import Dict, List
 
 # 日常执行数据；保持 1-2 个文件，方便每天快速跑。
 DAILY_FILES: List[str] = [
-    "data/answer/daily/daily_context_follow_up_cases.yaml",
+    "data/answer/daily/received_goods_image_context.yaml",
 ]
 
 # 回归执行数据；和日常完全分开。

@@ -1,0 +1,2446 @@
+# 来源：AI核心意图_用户可见描述优化版_76条.xlsx（76 条标签逐条生成 context-only 会话）。
+# 说明：每个 context-only 用例保留到最后一条用户消息作为触发语。对话严格命中对应标签的"命中条件"，并避开"排除条件"中提到的其他标签。
+# 场景沿用店铺现有护肤品类（羽素）。每个用例上方注释标注：一级分组/二级分组/核心意图。
+suite:
+  name: ai_core_intent_qc_context_76
+  mode: sequential
+  quality: true
+  assertions: false
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+
+target_env: dev
+
+cases:
+  # 物流咨询/发货时间/咨询何时发货
+  - name: ask_shipping_time
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，看您刚拍下了羽素修护精华液正装，这边马上为您安排哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "你们家什么时候发货"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，现货商品下单后48小时内为您发出哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "能在周五之前发出来吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝放心，今天下午5点前拍下的订单当天就能安排发出，周五前肯定到不了的话也不会耽误您收货的呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "那大概是几号能发"
+        media_type: text
+        media_url: ""
+
+  # 物流咨询/发货时间/咨询能否加急发货，催促发货
+  - name: urge_expedite_shipping
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，看您拍下了羽素修护精华液，这边马上为您安排哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "帮我在系统里催一下呗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "好的呢宝宝，已经帮您备注催促仓库优先处理了哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "今天能不能发出来啊，我很急"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝放心，我这边给您加急备注上了，会优先安排您的订单呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "快点发啊，不发我就直接退款了"
+        media_type: text
+        media_url: ""
+
+  # 物流咨询/物流发货/反馈订单迟迟未发货或无法发货
+  - name: report_never_shipped
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我这个订单几天了还没发"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "非常抱歉让您久等了宝宝，我这边帮您看下订单情况哈~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "为什么一直不发啊，都下单5天了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "抱歉宝宝，看您的订单目前还在待发货状态，我这边帮您备注催促仓库优先处理了呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "一直显示不能发货，到底怎么回事啊"
+        media_type: text
+        media_url: ""
+
+  # 物流咨询/物流发货/咨询是否已发货、物流单号或物流信息
+  - name: ask_shipped_and_tracking
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "发了吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝看您的订单已经发货了哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "单号多少，帮我查下物流"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "好的呢宝宝，快递单号发您啦，您也可以在订单页面直接查看物流动态哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "现在到哪儿了"
+        media_type: text
+        media_url: ""
+
+  # 物流咨询/快递选择/咨询使用哪家快递，能否更换快递
+  - name: ask_carrier_change
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "你们发什么快递"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱家默认发中通和邮政哦，偏远地区会安排邮政呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "能发顺丰吗，中通不要"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝下单备注可以优先安排顺丰的哦，部分偏远地区可能到不了呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "那帮我备注发顺丰，不要中通"
+        media_type: text
+        media_url: ""
+
+  # 物流咨询/物流派送/咨询何时送达及配送方式
+  - name: ask_delivery_time_mode
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "你们这个什么时候能到"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝正常发货后48小时内送达，具体看物流时效哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "能送上门吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，市区一般都支持送上门的，如果快递员放到驿站您也可以联系派送哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "可以放驿站吗，白天家里没人"
+        media_type: text
+        media_url: ""
+
+  # 物流咨询/物流反馈/反馈物流停滞、揽收或运输异常
+  - name: report_logistics_stuck
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我的物流三天没动了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "非常抱歉宝宝，我这边帮您看下物流情况哈~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "一直显示待揽收，是不是出了什么问题"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝看您的包裹显示快递已揽收在途，中间站点可能有点延误，我这边帮您备注跟进哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "快递是不是绕路了，路线怎么这么奇怪"
+        media_type: text
+        media_url: ""
+
+  # 物流咨询/物流派送/反馈未收到货或签收异常
+  - name: report_not_received
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "物流显示签收了但我没收到货"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "抱歉宝宝，我这边帮您核实一下签收情况哈~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "驿站也没有我的包裹，包裹去哪了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝看您的包裹显示已放入菜鸟驿站，我这边联系驿站帮您核实签收记录呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我也没有取件码，怎么取啊"
+        media_type: text
+        media_url: ""
+
+  # 物流咨询/物流发货/咨询或修改收货地址、配送地点
+  - name: ask_change_address
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "地址写错了，能改收货地址吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝订单还没发货可以帮您改的哦，您把正确地址发我~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "应该寄到XX省XX市XX区XX街道，联系电话也换个号"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "好的呢宝宝，已经帮您登记修改，发货前会按新地址寄出哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "能送到我们小区另一个门的代收点吗，那边离我近"
+        media_type: text
+        media_url: ""
+
+  # 物流咨询/运费相关/咨询运费、包邮或补运费
+  - name: ask_shipping_fee
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "你们家包邮吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱家大部分商品都是包邮的哦，偏远地区除外呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "为什么我下单还要补运费"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝看您的收货地址属于偏远地区，系统会自动补部分运费差价，确实抱歉哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "那运费是多少呢"
+        media_type: text
+        media_url: ""
+
+  # 物流咨询/分包少件/反馈少件、漏发、错发或收到空包
+  - name: report_missing_item
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "包裹收到了，少发了一件"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "抱歉宝宝，我这边帮您核实下订单明细哈~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "订单里是两瓶，只收到一瓶，收到的不是这个"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝看您的订单确实是两件装呢，仓库分包发运时可能出了差错，实在抱歉哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "帮我查下是不是漏发了，包裹里没有"
+        media_type: text
+        media_url: ""
+
+  # 物流咨询/订单请求/咨询快递拦截、拒收或召回
+  - name: ask_intercept_reject
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "快递能拦截吗，我拍错了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，包裹已经发出的话咱们可以尝试联系快递拦截召回哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "那我想拒收，直接退回去"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "好的呢宝宝，您也可以直接拒收，包裹退回后我们安排处理哈~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "拒收之后包裹召回要多久"
+        media_type: text
+        media_url: ""
+  # 售后咨询/撤销操作/申请取消订单或停止发货
+  - name: apply_cancel_order
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "帮我取消订单，不要发了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，我看您的订单还没发货，这边帮您登记取消哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "对，我要撤单"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "好的呢宝宝，已经帮您提交取消申请，一般24小时内生效哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "那就不要发货了，取消吧"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/收货相关/咨询订单信息或如何确认收货
+  - name: ask_order_info_confirm
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我的订单号在哪看啊"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝在抖音App【我的订单】里点开这笔订单就能看到订单号哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "订单里都有什么东西"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲看您这笔订单包含精华正装一支和同款小样两支呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "怎么确认收货"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/退货退款需求/咨询是否支持退货退款
+  - name: ask_refund_eligibility
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "这个能退吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱家支持七天无理由退货哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "拆了还能退吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，正装塑封拆开后会影响二次销售呢，未拆封的部分是可以退的哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "几天内可以退款"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/退货退款需求/申请或查询退货退款
+  - name: apply_or_check_refund
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我要申请退货退款"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，可以的哦，您在订单页面找到这笔订单就可以发起申请啦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "退款申请入口在哪里"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，打开抖音App，点击【我的订单】，选择这笔订单，再点【申请售后】就是退款入口哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我刚刚已经提交申请了，帮我看下现在到哪一步了"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/退货退款需求/咨询退货退款如何操作
+  - name: how_to_refund_steps
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "退货退款流程是什么"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，您先在订单页面点【申请售后】，选择退货退款就可以发起啦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "退款原因怎么填"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲按您的实际情况选就可以，比如不想要了、效果不符合预期都可以哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "退货怎么寄回"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/退货退款需求/反馈退货退款申请失败或被拒
+  - name: refund_rejected
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我昨天提交的退款申请被拒绝了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "抱歉宝宝，我帮您看下拒绝原因哈，系统显示您的申请提交时选错了售后类型呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "售后入口也打不开，申请不了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲别急，您先退出账号重新登录再试下，我这边同步帮您记录反馈哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "还是不行，一直显示提交失败"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/催促流程/催退款到账或查询退款进度
+  - name: urge_refund_progress
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "退款什么时候到"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，商家确认退款后1-3个工作日原路退回哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "怎么还没到账，都两天了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲我看您的退款已经在银行处理中了呢，到账会有短信提醒的哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "退款金额不对，怎么少了几块钱"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/撤销操作/申请撤销退款或退货
+  - name: cancel_refund_request
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我不退了，帮我撤销退款"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "好的宝宝，您在售后详情页点【撤销申请】就可以啦，我这边也可以帮您操作哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "那你帮我撤销退款申请吧"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "已为您撤销成功了呢宝宝，商品您继续使用，有问题随时找我哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "好的，东西我留下继续用"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/换货需求/咨询能否换货及如何申请
+  - name: ask_exchange_apply
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "可以换货吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝可以的哦，未拆封不影响二次销售支持换货呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "怎么申请换货"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲在订单页面点【申请售后】选择【换货】，选好要换的款式提交就可以啦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "换货有什么条件吗"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/换货需求/催换货处理或查询换货物流
+  - name: urge_exchange_logistics
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我上周申请的换货，换货什么时候发"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝我看您的换货申请已经审核通过，仓库正在为您备货中呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "帮我催下换货，等好几天了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "已帮您催促仓库优先处理了呢，一般24小时内会寄出哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "换货单号多少，寄出来发哪个快递"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/退换货寄回/咨询退货地址、寄回方式或收件信息
+  - name: ask_return_address
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "退货退到哪里"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝退货地址我在下一条消息发您哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "收件人是谁，电话多少"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，收件人是XX电商仓，电话138XXXX0000，地址是XX省XX市XX区退货仓库哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "退货用什么快递寄回去"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/退换运费/咨询退换货运费由谁承担
+  - name: ask_return_shipping_who
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "退货运费谁出"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，无理由退货运费需要您承担哦，质量问题的话咱们承担呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "可以到付吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，寄回建议您先垫付运费，签收核实后给您报销运费补贴哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "运费怎么报销给我"
+        media_type: text
+        media_url: ""
+  # 售后咨询/运费险相关/咨询运费险使用、理赔或赔付
+  - name: ask_freight_insurance
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "你们有运费险吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱家部分商品下单赠送运费险，看您的订单已经包含了呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "退货的话怎么理赔"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，退货签收后运费险会自动理赔到您的收款账户哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "运费险赔多少"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/质量相关/反馈商品质量、破损或真伪问题
+  - name: report_quality_issue
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "收到就是坏的，瓶身裂了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "非常抱歉宝宝，麻烦您拍几张破损的照片发我看下哈~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "拍好了你看下，还有点漏液"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝这边看到了，确实是运输破损了呢，实在抱歉哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "而且这个包装印刷很粗糙，像假货"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/售后反馈/反馈商品不好用、过敏或使用异常
+  - name: report_bad_use_allergy
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我用了你们家精华之后过敏了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "抱歉宝宝，您先停用观察下，脸现在是什么情况呢"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "脸又红又痒，用了三四天没效果还这样"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝建议您先停用哦，如果比较严重建议去看下医生呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "这个东西功能也不正常，跟说的完全不一样"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/维修售后服务/咨询保修、维修、安装或售后服务
+  - name: ask_warranty_repair
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "你们这个美容仪保修多久"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱们店的美容仪整机保修一年哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "用了两个月充不进电了，哪里能维修"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲您把订单号发我，我帮您登记售后维修，寄回检测就可以呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "维修收费吗"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/其他-售后相关/申请补发、补偿或赔付
+  - name: ask_reship_compensation
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "你们少发了我一瓶精华，给我补发"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "抱歉宝宝，我核实下您的订单明细哈，看确实少了一瓶呢"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "对，订单是两瓶只到了一瓶，给我补发一瓶"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "好的呢宝宝，已经帮您登记补发，48小时内为您寄出哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "等这么久能补偿我张优惠券吗"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/差价相关/申请退差价或咨询价保
+  - name: ask_price_protection
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我刚买三天就降价了，能退差价吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱家支持15天价保，看您的订单还在价保期内呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "那帮我把差价退给我"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "好的呢亲，已为您登记差价退款，差价会原路退回哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "价保是几天的，差额怎么算"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/发票相关/咨询开票、发票或收据
+  - name: ask_invoice
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "可以开发票吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱家支持开电子发票，您把开票信息发我就好~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "发票抬头怎么填"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，抬头填公司名称或您个人姓名，税号填统一社会信用代码就可以啦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "电子发票在哪下载"
+        media_type: text
+        media_url: ""
+
+  # 售后咨询/评价相关/表示差评
+  - name: say_bad_review
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "这次购物体验太差了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "非常抱歉宝宝，让您有不好的体验了呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我已经给差评了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝真的抱歉，您的问题我们一定重视，您看还有什么可以为您做的呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "不解决的话我就一直挂着这个差评"
+        media_type: text
+        media_url: ""
+  # 服务相关/专业能力/催客服回复或尽快给处理方案
+  - name: urge_reply_solution
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "在吗，怎么还不回复"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "在的宝宝，非常抱歉让您久等了，您请讲~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我前一天反馈的问题你们尽快处理，什么时候给我结果"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝已经加急帮您登记了呢，24小时内给您答复哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "尽快给我处理方案，别又拖好几天"
+        media_type: text
+        media_url: ""
+
+  # 服务相关/服务投诉/投诉客服态度或处理不当
+  - name: complain_agent_attitude
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "你们客服态度太差了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "非常抱歉宝宝，给您带来不好的体验了呢，您跟我说说具体怎么回事~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "问什么都是敷衍我，一直答非所问"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "抱歉宝宝，这边记录您的问题，会认真为您处理的呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我要投诉客服"
+        media_type: text
+        media_url: ""
+
+  # 服务相关/服务欠缺/投诉商品、发货或物流服务
+  - name: complain_logistics_service
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "发货这么慢，物流也乱七八糟，没人处理"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "非常抱歉宝宝，您的心情我特别理解，您跟我说下订单情况我帮您跟进呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "商品出问题也没人管，发货太差了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "抱歉宝宝，我这边马上为您升级登记，安排专人处理您的订单问题哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我要投诉你们的物流服务"
+        media_type: text
+        media_url: ""
+
+  # 服务相关/服务称赞/表达感谢、满意或表扬服务
+  - name: express_praise
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝看您的订单已经签收啦，使用中有什么问题随时找我哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "服务很好，给你们好评"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "谢谢宝宝的认可呢，羽素会一直努力哒~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "很满意，谢谢你们"
+        media_type: text
+        media_url: ""
+
+  # 服务相关/服务反馈/表示还要考虑、以后回购或再联系
+  - name: say_will_consider
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝看您在咱家精华和面霜之间纠结呢，需要我帮您介绍下吗~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我再考虑下"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "好的呢宝宝，您慢慢考虑，有任何问题随时找我哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "过几天再买，之后再联系"
+        media_type: text
+        media_url: ""
+  # 购买操作/下单支付/咨询如何下单或选择商品规格
+  - name: how_to_order_specs
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝您看的这款精华现在有活动价哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "怎么买"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝点击商品页面右下角【立即购买】，选好规格提交订单就可以啦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "下单时怎么选规格"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲在颜色分类那里选您要的版本，30ml和50ml都有货呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "那怎么拍下两件"
+        media_type: text
+        media_url: ""
+
+  # 购买操作/下单支付/反馈无法下单或订单被关闭
+  - name: cannot_place_order
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "拍不了，提交订单一直失败"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "抱歉宝宝，您重新下拉刷新下页面再试一次哈~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "试了还是不行，订单被关闭了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲看您这笔订单因为超时未支付被系统关闭了呢，您重新拍一笔就好哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "重新拍还是显示交易关闭"
+        media_type: text
+        media_url: ""
+
+  # 购买操作/下单支付/反馈支付失败或支付状态异常
+  - name: payment_failed
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "付不了款，一直转圈"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，您切换下网络或者换个支付方式试试哈~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "换了，扣钱了订单还是未支付"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "抱歉宝宝，您先别重复支付哦，扣款异常一般是银行处理延迟，24小时内会自动恢复呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "这算支付失败了，钱却扣了"
+        media_type: text
+        media_url: ""
+
+  # 购买操作/下单支付/咨询重复付款、漏付款或待付款订单
+  - name: duplicate_payment
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我是不是付了两次"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝我帮您看下，您这个订单只支付成功了一笔呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "扣款记录里有两笔，这个订单怎么还待付款"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲另一笔是银行冻结的预授权，失败后3-5个工作日会退回哦，订单这边您重新支付下就可以呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "那我还有个订单忘了付款怎么办，是不是漏付款了"
+        media_type: text
+        media_url: ""
+
+  # 购买操作/下单支付/咨询支付方式、代付或货到付款
+  - name: ask_payment_methods
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "支持什么支付方式"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝支持抖音支付、支付宝和银行卡支付哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "能让别人代付吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "可以的呢宝宝，提交订单后点【找人代付】发给朋友就行啦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "可以货到付款吗"
+        media_type: text
+        media_url: ""
+
+  # 购买操作/分期付款/咨询是否支持分期及分期费用
+  - name: ask_installment
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "这个能分期吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱家支持3期、6期、12期分期付款哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "分几期有手续费吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，3期免息，6期和12期按平台标准费率收取少量手续费呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "分期之后怎么还款"
+        media_type: text
+        media_url: ""
+
+  # 购买操作/定金尾款/咨询预售定金、尾款及支付时间
+  - name: ask_deposit_final_payment
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "预售怎么付款"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝预售是先付定金，到尾款时间再付尾款哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "尾款什么时候付"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，10月20号晚上8点开付尾款，系统会提醒您的呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "定金能退吗"
+        media_type: text
+        media_url: ""
+
+  # 购买操作/订单备注/咨询修改订单内容或补充备注
+  - name: modify_order_note
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "下错颜色了，帮我改一下规格"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝订单还没发货可以帮您改哦，您要改成哪个颜色呢"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "改成白色的那款"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "好的呢，已经帮您备注修改，发货前会按白色款发出哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "订单备注怎么加"
+        media_type: text
+        media_url: ""
+
+  # 购买操作/加购收藏关注/咨询如何加购、收藏或关注商品
+  - name: ask_cart_favorite
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "怎么加购物车"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝在商品页面点【加入购物车】就可以啦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "怎么收藏这个商品"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲点商品右上角的星星图标就是收藏哦，收藏后降价会提醒您呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "关注店铺在哪里关注，我关注不了怎么办"
+        media_type: text
+        media_url: ""
+  # 活动优惠/活动相关/咨询活动玩法、条件或时间
+  - name: ask_activity_rules
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "你们这次活动什么时候开始"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱家的88大促活动8月8号晚上8点开始哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "怎么参加"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲活动期间下单自动享活动价，不用额外操作呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "秒杀有什么条件吗"
+        media_type: text
+        media_url: ""
+
+  # 活动优惠/讨价还价/咨询能否优惠、改价或议价
+  - name: ask_bargain
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "能便宜点吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，咱们链接价格已经是活动价了呢，这个价格真的很划算哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "最低多少，可以改价吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，链接价格没法手动改价呢，您可以先领下页面里的优惠券，叠加更划算哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "那就按最低价给我改一下，不然算了"
+        media_type: text
+        media_url: ""
+
+  # 活动优惠/优惠使用/咨询如何领取或查询优惠券
+  - name: ask_get_coupon
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "优惠券怎么领"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝在商品页面点【领券】就能领啦，现在有满199减30的券哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我领了但是券怎么没到账"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲您在下单页或者【我的-卡券包】里看下，一般领取后实时到账呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我的券在哪，卡券包里没有"
+        media_type: text
+        media_url: ""
+
+  # 活动优惠/优惠使用/咨询优惠券如何使用或为何失效
+  - name: coupon_usage_or_invalid
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "您看的这款精华正是咱们的回购王，现在下单还有专属优惠哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我账户里有一张满199减30的优惠券"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "是的呢宝宝，满199减30的优惠券本店商品都可以用的哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "结算的时候怎么用这张券"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝在提交订单页面，点击【优惠券】那一栏，勾选这张券就可以自动抵扣啦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我勾选了但是显示不可用，为什么不能用"
+        media_type: text
+        media_url: ""
+
+  # 活动优惠/优惠退款/咨询退款或重拍后优惠如何处理
+  - name: ask_coupon_after_refund
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我刚才那单退款了，退款后券会退吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝放心，退款成功后使用的优惠券会自动退回到您的账户哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "重拍还能用这个优惠吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲可以的，券退回后在有效期内重新下单还能用呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "红包也能退回来吗"
+        media_type: text
+        media_url: ""
+
+  # 活动优惠/赠品相关/咨询是否有赠品及加赠条件
+  - name: ask_gifts
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "有赠品吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝现在下单送同款小样2支哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "买几件送"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲买正装就送，买2件加赠化妆包1个呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "赠品能选吗，还是随机的"
+        media_type: text
+        media_url: ""
+
+  # 活动优惠/会员相关/咨询会员开通、权益或取消
+  - name: ask_membership
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "怎么开会员"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝在店铺首页点【加入会员】免费注册就可以啦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "会员有什么权益"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，会员享积分翻倍、生日礼和会员专属价呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "怎么取消会员"
+        media_type: text
+        media_url: ""
+
+  # 活动优惠/积分相关/咨询积分获取、兑换或使用
+  - name: ask_points
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "积分怎么来"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝下单确认收货后按实付金额获得积分，签到也能攒积分哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "积分能换什么"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，积分可以兑换小样、优惠券和周边好物呢，在积分商城就能看~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我上次兑换的积分没到账"
+        media_type: text
+        media_url: ""
+
+  # 活动优惠/奖品抽奖/咨询抽奖资格、规则或奖品
+  - name: ask_lottery
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "怎么参加抽奖"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱家直播间有整点抽奖，进直播间点抽奖组件参与就可以啦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "抽奖有什么规则"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲每人每天3次抽奖机会，抽中的奖品7天内发放呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我中奖了吗，奖品什么时候发"
+        media_type: text
+        media_url: ""
+
+  # 活动优惠/直播活动/咨询直播时间、直播价或福利
+  - name: ask_livestream
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "你们什么时候直播"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱们每周三、周五晚上8点直播哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "直播间多少钱，比链接便宜吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲直播间有专属直播价，这款精华直播间到手价更划算呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "直播有券吗"
+        media_type: text
+        media_url: ""
+
+  # 活动优惠/活动相关/咨询试用、新品体验或首单礼
+  - name: ask_trial_first_gift
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "有试用装吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱家有小样试用装哦，9.9元3支呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "怎么申请试用"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲在店铺首页【试用中心】提交申请就有机会免费体验新品呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "首单送什么"
+        media_type: text
+        media_url: ""
+  # 商品咨询/商品属性/咨询商品是什么或基本情况
+  - name: ask_what_product
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "这是什么"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝这是咱家的羽素修护精华液，主打屏障修护的护肤精华哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "介绍一下这个商品"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，它含有神经酰胺和积雪草成分，质地清爽，适合换季维稳呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "是做什么用的"
+        media_type: text
+        media_url: ""
+
+  # 商品咨询/商品属性/咨询商品的规格、款式或颜色
+  - name: ask_specs_colors
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "这个精华有几个颜色"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝精华液是透明质地的，包装有白色经典款和粉色联名款两种哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "套装里有几件"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，套装是正装1支加小样2支，一共3件呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "这个什么型号，和链接里的版本一样吗"
+        media_type: text
+        media_url: ""
+
+  # 商品咨询/商品属性/咨询商品材质、成分或认证
+  - name: ask_material_cert
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "含不含酒精"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱们这款精华是不含酒精的，配方表里没有酒精成分呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "有备案认证吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，产品有国家化妆品备案，详情页可以查到备案编号哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "瓶子是什么材质的"
+        media_type: text
+        media_url: ""
+
+  # 商品咨询/商品属性/咨询商品功能、功效或特点
+  - name: ask_function_features
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "这个有什么作用"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝这款精华主打修护屏障、舒缓维稳，还能改善泛红呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "有什么优点"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲它质地轻薄好吸收，温和不粘腻，敏感肌也能安心用呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "跟普通精华比有什么特点"
+        media_type: text
+        media_url: ""
+
+  # 商品咨询/适用范围/咨询是否适合某类人群或场景
+  - name: ask_suitability
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "孕妇能用吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝这款配方温和不含孕妇慎用成分，不过孕期建议您先咨询下医生再使用哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "油皮适合吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲适合的，质地清爽不闷痘，油皮夏天用也没有负担呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "敏感肌能用吗，冬天能用吗"
+        media_type: text
+        media_url: ""
+
+  # 商品咨询/商品使用/咨询商品如何使用或查看教程
+  - name: ask_usage_tutorial
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "这个怎么使用"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝洁面后取2-3滴涂抹于面部，轻轻按摩至吸收就可以啦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "先用哪个，水前还是水后"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲建议爽肤水之后、乳液之前使用哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "有教程吗"
+        media_type: text
+        media_url: ""
+
+  # 商品咨询/商品使用/咨询商品用量、频率或使用周期
+  - name: ask_usage_amount
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "一次用多少"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝一次2-3滴就够了，全脸薄涂一层哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "几天用一次"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲建议早晚各一次，每天使用呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "一瓶能用多久"
+        media_type: text
+        media_url: ""
+
+  # 商品咨询/商品属性/咨询是否安全、会否过敏或有副作用
+  - name: ask_safety_allergy
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "会过敏吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝这款通过敏感肌测试，温和低刺激，大部分肤质都适用呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "安全吗，有没有副作用"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，成分安全无激素，正常肤质使用没有副作用，建议您首次使用先在耳后试下呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "用了会不会刺激皮肤"
+        media_type: text
+        media_url: ""
+
+  # 商品咨询/商品属性/咨询保质期、生产日期或保存方法
+  - name: ask_shelf_life
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "保质期多久"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱们现在发的批次保质期到2028年6月哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "生产日期在哪看"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，生产日期在瓶身底部和包装盒上都可以看到呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "开封后能放多久，怎么保存"
+        media_type: text
+        media_url: ""
+  # 商品咨询/包装相关/咨询包装形式、配件或替换装
+  - name: ask_packaging
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "有礼盒吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱们有节日限定礼盒款，下单可以直接选礼盒装哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "有替换装吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲有的，替换装比正装划算，环保又省钱呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "里面带工具吗，包装大不大"
+        media_type: text
+        media_url: ""
+
+  # 商品咨询/尺码相关/咨询商品尺寸或如何选择尺码
+  - name: ask_size_guide
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "这个家居服尺码怎么选"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱们家居服有M、L、XL三个码，您可以告诉我身高体重帮您推荐呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "多大尺寸，胸围多少"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，M码适合90-100斤，L码适合100-130斤，XL码胸围110cm呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "身高170穿什么码"
+        media_type: text
+        media_url: ""
+
+  # 商品咨询/库存上货/咨询是否有货、何时补货或停售
+  - name: ask_stock_restock
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "有货吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝这款有现货，下单48小时内就发呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "白色那个版本什么时候补货"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，白色款预计下周三补货上架，可以点个到货提醒呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "是不是停售了，怎么一直缺货"
+        media_type: text
+        media_url: ""
+
+  # 商品咨询/商品价格/咨询商品价格、到手价或价格构成
+  - name: ask_product_price
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "到手多少钱"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝这款链接价159，叠加店铺券后到手129哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "为什么两个渠道价格不同"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，不同渠道的活动力度不一样，官方直播间和店铺活动价会有差异呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "这个价格包含什么，小样也包含吗"
+        media_type: text
+        media_url: ""
+
+  # 商品咨询/商品区别/咨询不同商品或款式有什么区别
+  - name: ask_differences
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "这两款精华有什么区别"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，蓝色款主打补水保湿，绿色款主打修护舒缓呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "哪个更好"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲看您的需求哦，皮肤容易泛红选绿色款，单纯缺水选蓝色款呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "新旧版差在哪"
+        media_type: text
+        media_url: ""
+
+  # 商品咨询/商品推荐/咨询哪款更适合，想要商品推荐
+  - name: ask_recommendation
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我是干皮还有点敏感，推荐哪款"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝推荐您绿色修护款，温和不刺激，很适合敏感肌呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "哪个适合我，有没有替代款"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲如果预算低一点，同系列的水乳套装也很适合干皮哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "有没有性价比高的套装推荐"
+        media_type: text
+        media_url: ""
+
+  # 商品咨询/商品属性/咨询品牌、正品、产地或货源
+  - name: ask_brand_authentic
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "是正品吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱们是品牌官方旗舰店，正品保证，支持专柜验货哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "官网吗，产地是哪里"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，咱们是官方店铺，产品产地是广州，都是品牌自有工厂生产的呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "货源是官方的吗"
+        media_type: text
+        media_url: ""
+
+  # 商品咨询/商品属性/咨询能否定制、刻字或单独购买
+  - name: ask_customize
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "礼盒可以刻字吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝咱家礼盒不支持刻字服务呢，非常抱歉哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "能定制吗，定制专属包装"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "亲亲，目前暂不支持定制服务，后续有的话第一时间告诉您呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "那配件能单买吗，替换头单独卖吗"
+        media_type: text
+        media_url: ""
+  # 商品咨询/商品使用/咨询商品效果、多久见效
+  - name: ask_effect_and_timeline
+    context_messages:
+      - role: user
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "你们这款精华有用吗"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝这款精华是咱们店的口碑款，主打修护屏障，回购率很高的呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "一般坚持用多久能见效"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝坚持早晚各一次，一般28天一个皮肤周期就能看到变化哦，因人而异呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "效果能维持多久，停用了会不会反弹"
+        media_type: text
+        media_url: ""
+
+  # 服务相关/专业能力/要求转人工客服或咨询联系方式
+  - name: ask_transfer_to_human
+    context_messages:
+      - role: user
+        content: "[订单消息]"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "帮我查一下我这个订单的售后进度"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝，看您的订单有一笔售后申请正在审核中，一般24小时内会有结果的呢~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "我这边情况比较特殊，机器人说不太清楚，转人工"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "宝宝先别着急，您可以先跟我说说您的具体情况，我尽力帮您解答哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "不说了，我要找人工客服"
+        media_type: text
+        media_url: ""

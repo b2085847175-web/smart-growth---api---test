@@ -1,0 +1,39 @@
+# 单条 context-only 会话：用户提供订单信息，收到货后发送图片。
+suite:
+  name: received_goods_image_context
+  mode: sequential
+  quality: true
+  assertions: false
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+
+target_env: console
+
+cases:
+  - name: received_goods_image
+    context_messages:
+      - role: user
+        content: "订单号:5127195351618010830\n\n共1件商品,合计￥89.00\n\n交易时间:2026-08-24 10:44:22"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "\a\b宝子，是对这个订单有什么问题吗~这边为您解答哦~"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "收到货了"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "\a\b收到货啦，亲亲真棒"
+        media_type: text
+        media_url: ""
+      - role: assistant
+        content: "\a\b水乳套装用起来效果很棒的哦，记得坚持使用哈"
+        media_type: text
+        media_url: ""
+      - role: user
+        content: "[图片消息]"
+        media_type: image
+        media_url: "https://img.alicdn.com/imgextra/i4/O1CN01kexIxk3XCUD2Rp48_!!4611686018427380816-0-amp.jpg"
