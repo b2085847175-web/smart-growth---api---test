@@ -9,7 +9,9 @@ from typing import Dict, List
 
 # 日常执行数据；保持 1-2 个文件，方便每天快速跑。
 DAILY_FILES: List[str] = [
-    "data/answer/daily/received_goods_image_context.yaml",
+    # an
+    # AI质检记录（console 10 个店铺 116 条）对应的真实会话上下文用例，其中 20 条带人工复核结论。
+    "data/answer/daily/ai_quality_tag_review_context_cases.yaml",
 ]
 
 # 回归执行数据；和日常完全分开。

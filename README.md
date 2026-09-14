@@ -32,6 +32,7 @@ project_root/
 │   │   ├── regression/          # 回归补充场景
 │   │   ├── smoke/               # 归 regression 执行的冒烟数据
 │   │   └── kb_scene_categories/ # KB 场景生成数据
+│   ├── ai_quality_inspection/   # AI 质检记录快照（records/）
 │   ├── kb/scenes/               # KB 场景导出数据
 └── scheduled/                 # 历史定时数据；默认不再执行
 ├── scripts/                     # 数据生成、导出、导入和迁移工具
@@ -78,6 +79,28 @@ $env:ANSWER_ENTRY = "regression"
 $env:ANSWER_SUITES = "main_flow,context,multiturn"
 .\.venv\Scripts\python.exe run_tests.py --env dev --pattern "test_answer_yaml.py" -v
 ```
+
+### AI 质检聊天记录 → 上下文用例
+
+按「AI 质检有问题的记录 → 对应用户 → 完整聊天记录」拉数据，再生成 `/chat/answer` 的上下文用例：
+
+```powershell
+# 1. 导出质检有问题用户的聊天记录（自动翻页取全量）
+.\.venv\Scripts\python.exe scripts\export_ai_quality_chat_transcripts.py
+
+# 2. 用真实聊天记录生成 / 重写日常用例 YAML
+.\.venv\Scripts\python.exe scripts\generate_ai_quality_tag_review_context_cases.py
+```
+
+- 质检结果走 `POST /api/ai-quality-inspection/list`（`has_issues=true`），聊天记录走
+  `GET /api/users/{user_id}/messages`；鉴权优先用 `.env` 里的 `ACCESS_TOKEN_CONSOLE`，
+  没配 token 时回退到 `LOGIN_ACCOUNT_CONSOLE` / `LOGIN_PASSWORD_CONSOLE` 登录。
+- 常用参数：`--env`、`--shop-ids`、`--start-time` / `--end-time`、`--limit`（调试）、
+  `--output-dir`、`--print-records`。
+- 快照落在 `data/ai_quality_inspection/records/`（带时间戳一份 + `*_latest.json` 一份）。
+- 生成脚本会合并该目录下 `*_tag_review_latest.json` 里的人工复核结论，输出到
+  `data/answer/daily/ai_quality_tag_review_context_cases.yaml`（全量重写），由 daily 入口执行；
+  用例 `assertions: false`，只执行接口观察回复。
 
 ## answer 入口
 

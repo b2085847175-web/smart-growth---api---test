@@ -1,0 +1,1508 @@
+{
+  "env": "console",
+  "base_url": "https://console.zhiyan.chat",
+  "shop_ids": "888,917,924,925,926,927,928,929,934,941",
+  "has_issues": true,
+  "start_time": 1789228800,
+  "end_time": 1789315199,
+  "start_time_text": "2026-09-13 00:00:00",
+  "end_time_text": "2026-09-13 23:59:59",
+  "exported_at": "2026-09-14 12:14:19",
+  "request": {
+    "start_time": 1789228800,
+    "end_time": 1789315199,
+    "shop_ids": "888,917,924,925,926,927,928,929,934,941",
+    "page": 1,
+    "page_size": 10,
+    "has_issues": true
+  },
+  "total": 116,
+  "pages": 12,
+  "record_count": 20,
+  "has_issues_count": 116,
+  "earliest_chat_time": 1789243690,
+  "latest_chat_time": 1789299592,
+  "issue_counter": {
+    "答非所问": 52,
+    "回复稍等后未跟进": 22,
+    "客户情绪异常未安抚": 8,
+    "未使用礼貌用语": 8,
+    "连续发送欢迎语结束语": 6,
+    "催拍催付时机不当": 5,
+    "质量问题未提供处理方案": 5,
+    "未发送欢迎语": 4,
+    "未打消客户价格顾虑": 4,
+    "纯图片回复": 4,
+    "退货退款未提供解决方案": 3,
+    "质量问题未安抚": 3,
+    "最后一句非客服发送": 3,
+    "未主动帮客户做选择": 3,
+    "质量问题未解释产生原因": 3,
+    "质量问题未核对照片": 3,
+    "退货未挽留": 2,
+    "未告知查询核实时间": 2,
+    "纯标点符号回复": 2,
+    "未发送商品卖点": 2,
+    "让客户自己到页面去看": 2,
+    "客户催促未致歉安抚": 1,
+    "重复机械式致歉": 1,
+    "使用不恰当标点": 1,
+    "客服使用涉及虚假宣传、欺诈用词": 1,
+    "使用不恰当网络用语": 1,
+    "客户致谢未回应": 1,
+    "客户不满仍邀评": 1,
+    "连续发送链接": 1,
+    "客服引导好评返现": 1,
+    "客服推卸责任": 1
+  },
+  "review_of": "ai_quality_inspection_console_888_10shops_latest.json",
+  "review_method": "人工反馈表口径 + AI摘要与标签一致性复核；误判=人工已确认或摘要自相矛盾，疑似误判=同口径同类判定待业务确认",
+  "reviewed_total": 116,
+  "misjudged_count": 8,
+  "suspected_misjudged_count": 12,
+  "wrong_tag_counter": {
+    "未使用礼貌用语": 8,
+    "未发送欢迎语": 3,
+    "质量问题未提供处理方案": 3,
+    "纯标点符号回复": 2,
+    "质量问题未核对照片": 2,
+    "质量问题未解释产生原因": 2,
+    "未打消客户价格顾虑": 2,
+    "客服使用涉及虚假宣传、欺诈用词": 1,
+    "让客户自己到页面去看": 1,
+    "答非所问": 1,
+    "客户情绪异常未安抚": 1
+  },
+  "records": [
+    {
+      "_id": "6aa6f7a941727bf17b4291cc",
+      "shop_id": 917,
+      "company_id": 28,
+      "request_id": "3ae4961f-5624-96e8-80ed-5975345703b1",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789255692,
+      "has_issues": true,
+      "issues": [],
+      "summary": "客服全程未使用“您”等礼貌称呼",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70191220,
+          "ids": [
+            69397
+          ],
+          "names": [
+            "未使用礼貌用语"
+          ],
+          "session_names": []
+        }
+      ],
+      "user": {
+        "id": 5045241,
+        "username": "AQAU_VaLJubZGUVLRjclbmEoTw13ajX9-Oh9T4Q4s4v0kiwIv5YCU6acLjRuXlNj3z7acK56nfMEXkZ9wc-cDjDC",
+        "dnick": "你是真der啊"
+      },
+      "worker": {
+        "id": 2389,
+        "account": "护理顾问-沁羽"
+      },
+      "shop_name": "羽素官方旗舰店",
+      "tag_review": {
+        "verdict": "疑似误判",
+        "wrong_tags": [
+          "未使用礼貌用语"
+        ],
+        "reason": "客服全程使用店铺话术称呼“宝宝”，人工反馈第1条已认定同类判定“本次质检没有问题”；“宝宝”是否属店认可称呼需业务确认。",
+        "basis": "人工反馈第1条口径（需确认）",
+        "all_tags": [
+          "未使用礼貌用语"
+        ]
+      }
+    },
+    {
+      "_id": "6aa6f7a941727bf17b4291da",
+      "shop_id": 917,
+      "company_id": 28,
+      "request_id": "d35dd95f-9ab1-9b60-a9bd-73e9243b63fd",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789255803,
+      "has_issues": true,
+      "issues": [],
+      "summary": "客服在买家首问后先回复了商品销量信息，随后才发送欢迎语，导致整段会话中第一条客服回复缺失自然礼貌的开场欢迎表达。",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70191371,
+          "ids": [
+            69389
+          ],
+          "names": [
+            "未发送欢迎语"
+          ],
+          "session_names": []
+        },
+        {
+          "message_id": 70191402,
+          "ids": [
+            249563
+          ],
+          "names": [],
+          "session_names": [
+            "咨询商品功能、功效或特点"
+          ]
+        }
+      ],
+      "user": {
+        "id": 5154543,
+        "username": "AQDU1iWOuULPDpB3KQJCtUFtTw13ajX9-Oh9T4Q4s4v0ko8wzVv48xGmUtgzKffXjOk1HzyL5g6S7P6sVAMyOo5D",
+        "dnick": "高高 ᥫᩣ໌້ᮨ"
+      },
+      "worker": {
+        "id": 1932,
+        "account": "护理顾问-智羽"
+      },
+      "shop_name": "羽素官方旗舰店",
+      "tag_review": {
+        "verdict": "误判",
+        "wrong_tags": [
+          "未发送欢迎语"
+        ],
+        "reason": "摘要写明“先回复了商品销量信息，随后才发送欢迎语”，欢迎语实际已发送，属于发送时机偏晚，不是未发送；标签应为“欢迎语发送时机不当”。",
+        "basis": "AI摘要自相矛盾",
+        "all_tags": [
+          "未发送欢迎语"
+        ]
+      }
+    },
+    {
+      "_id": "6aa6f7a941727bf17b4291fb",
+      "shop_id": 917,
+      "company_id": 28,
+      "request_id": "0c905e6e-1637-4222-a4d5-5c53b671c874",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789256512,
+      "has_issues": true,
+      "issues": [],
+      "summary": "客服对买家关于产品不成膜撕的问题，先以人工下班为由让次日再来，未直接解答；随后又发送仅含\"宝宝\"两字的无有效信息消息。",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70192644,
+          "ids": [
+            69404
+          ],
+          "names": [
+            "答非所问"
+          ],
+          "session_names": []
+        },
+        {
+          "message_id": 70192645,
+          "ids": [
+            69395,
+            249544
+          ],
+          "names": [
+            "纯标点符号回复"
+          ],
+          "session_names": [
+            "反馈商品不好用、过敏或使用异常"
+          ]
+        },
+        {
+          "message_id": 70192611,
+          "ids": [
+            249544
+          ],
+          "names": [],
+          "session_names": [
+            "反馈商品不好用、过敏或使用异常"
+          ]
+        }
+      ],
+      "user": {
+        "id": 5154633,
+        "username": "AQA1h0_xJydHT8wiL2kPKvCLTw13ajX9-Oh9T4Q4s4v0krwRxBVMJWakJnbBbnhQWI9VyKjfvGKW76hhxm-7Ue-O",
+        "dnick": "水草1988"
+      },
+      "worker": {
+        "id": 2389,
+        "account": "护理顾问-沁羽"
+      },
+      "shop_name": "羽素官方旗舰店",
+      "tag_review": {
+        "verdict": "误判",
+        "wrong_tags": [
+          "纯标点符号回复"
+        ],
+        "reason": "摘要说明该条消息内容为“宝宝”两字，是有文字的回复，与“纯标点符号回复”不符；标签应为“无有效信息回复”。",
+        "basis": "AI摘要自相矛盾",
+        "all_tags": [
+          "答非所问",
+          "纯标点符号回复"
+        ]
+      }
+    },
+    {
+      "_id": "6aa6f7a941727bf17b4291df",
+      "shop_id": 917,
+      "company_id": 28,
+      "request_id": "bb4abf36-a02e-4a67-9c33-c616955a9daa",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789257571,
+      "has_issues": true,
+      "issues": [],
+      "summary": "买家反馈未收到货且情绪不满，客服多次以人工下班为由推诿，未安抚也未提供有效处理，且全程未使用礼貌称呼用语。",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70194991,
+          "ids": [
+            69397,
+            69407
+          ],
+          "names": [
+            "未使用礼貌用语",
+            "客户情绪异常未安抚"
+          ],
+          "session_names": []
+        },
+        {
+          "message_id": 70195031,
+          "ids": [
+            69407
+          ],
+          "names": [
+            "客户情绪异常未安抚"
+          ],
+          "session_names": []
+        },
+        {
+          "message_id": 70195032,
+          "ids": [
+            69407,
+            249516
+          ],
+          "names": [
+            "客户情绪异常未安抚"
+          ],
+          "session_names": [
+            "反馈未收到货或签收异常"
+          ]
+        },
+        {
+          "message_id": 70194819,
+          "ids": [
+            249516
+          ],
+          "names": [],
+          "session_names": [
+            "反馈未收到货或签收异常"
+          ]
+        },
+        {
+          "message_id": 70194992,
+          "ids": [
+            249516
+          ],
+          "names": [],
+          "session_names": [
+            "反馈未收到货或签收异常"
+          ]
+        }
+      ],
+      "user": {
+        "id": 5154765,
+        "username": "AQDJiCptEGyb_o0NAipYp9n2Tw13ajX9-Oh9T4Q4s4v0ktnk4k8ejiu89_rjzVtwc6fX9H1IAV0jNULozL9YbrDw",
+        "dnick": "给你发好人卡"
+      },
+      "worker": {
+        "id": 1932,
+        "account": "护理顾问-智羽"
+      },
+      "shop_name": "羽素官方旗舰店",
+      "tag_review": {
+        "verdict": "疑似误判",
+        "wrong_tags": [
+          "未使用礼貌用语"
+        ],
+        "reason": "判定依据仅为“未使用‘您’等礼貌称呼”，人工反馈第1条已认定同类判定不成立；“宝宝”是否属店认可称呼需业务确认。",
+        "basis": "人工反馈第1条口径（需确认）",
+        "all_tags": [
+          "客户情绪异常未安抚",
+          "未使用礼貌用语"
+        ]
+      }
+    },
+    {
+      "_id": "6aa6f7a941727bf17b42920c",
+      "shop_id": 917,
+      "company_id": 28,
+      "request_id": "eee6b6e0-c467-973e-b363-68e2529534ee",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789266199,
+      "has_issues": true,
+      "issues": [],
+      "summary": "客服在买家咨询后先进行了商品介绍，随后才发送欢迎语，不符合欢迎语应在接待初期发送的规范。",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70232463,
+          "ids": [
+            69389
+          ],
+          "names": [
+            "未发送欢迎语"
+          ],
+          "session_names": []
+        }
+      ],
+      "user": {
+        "id": 5157211,
+        "username": "AQANPGi8tKHV6zf5-LISPFCXTw13ajX9-Oh9T4Q4s4v0khioFDerwcG3-5BLTzkYKOmmhvQgou8en4v4c9nt565p",
+        "dnick": "吸蛋糕⬮ω⬮"
+      },
+      "worker": {
+        "id": 2369,
+        "account": "护理顾问-司羽"
+      },
+      "shop_name": "羽素官方旗舰店",
+      "tag_review": {
+        "verdict": "误判",
+        "wrong_tags": [
+          "未发送欢迎语"
+        ],
+        "reason": "摘要写明“先进行了商品介绍，随后才发送欢迎语”，欢迎语实际已发送，属于发送时机偏晚，不是未发送。",
+        "basis": "AI摘要自相矛盾",
+        "all_tags": [
+          "未发送欢迎语"
+        ]
+      }
+    },
+    {
+      "_id": "6aa6f7a941727bf17b429206",
+      "shop_id": 917,
+      "company_id": 28,
+      "request_id": "3b7df652-ea66-982d-bc96-d60036f92c21",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789270417,
+      "has_issues": true,
+      "issues": [],
+      "summary": "客服回复“宝宝，祛痘效果很好的哈”未使用礼貌称呼且未回应买家关于“祛痘”效果的具体询问",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70257934,
+          "ids": [
+            69397,
+            69404,
+            249567
+          ],
+          "names": [
+            "未使用礼貌用语",
+            "答非所问"
+          ],
+          "session_names": [
+            "咨询商品效果、多久见效"
+          ]
+        },
+        {
+          "message_id": 70257842,
+          "ids": [
+            249567
+          ],
+          "names": [],
+          "session_names": [
+            "咨询商品效果、多久见效"
+          ]
+        }
+      ],
+      "user": {
+        "id": 5158730,
+        "username": "AQC3CkUkNUwMhu4KV4wSWCtATw13ajX9-Oh9T4Q4s4v0khY_dD6ufonV0DKoWnvu5azfe4UeKY9ydJXI1QT_4z_J",
+        "dnick": "不吃辣👀"
+      },
+      "worker": {
+        "id": 2295,
+        "account": "护理顾问-知羽"
+      },
+      "shop_name": "羽素官方旗舰店",
+      "tag_review": {
+        "verdict": "疑似误判",
+        "wrong_tags": [
+          "未使用礼貌用语"
+        ],
+        "reason": "客服回复“宝宝，祛痘效果很好的哈”，人工反馈第1条已认定同类判定不成立；“宝宝”是否属店认可称呼需业务确认。",
+        "basis": "人工反馈第1条口径（需确认）",
+        "all_tags": [
+          "未使用礼貌用语",
+          "答非所问"
+        ]
+      }
+    },
+    {
+      "_id": "6aa6f7a941727bf17b42925b",
+      "shop_id": 917,
+      "company_id": 28,
+      "request_id": "86af2fa7-3af7-447a-acda-6e840b83fede",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789277803,
+      "has_issues": true,
+      "issues": [],
+      "summary": "客服存在仅发送\"宝宝\"两字无有效信息、以及仅发送图片无文字说明的回复，影响买家理解。",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70300368,
+          "ids": [
+            69395,
+            69415,
+            249565
+          ],
+          "names": [
+            "纯标点符号回复",
+            "纯图片回复"
+          ],
+          "session_names": [
+            "咨询商品如何使用或查看教程"
+          ]
+        }
+      ],
+      "user": {
+        "id": 5161433,
+        "username": "AQBpAlnWF64E97nvZdoktYR-Tw13ajX9-Oh9T4Q4s4v0kh8JYzwUfnIQINZRqaBE-jIUvb8hI9x7-3EFjiz6pPmz",
+        "dnick": "天天i"
+      },
+      "worker": {
+        "id": 2389,
+        "account": "护理顾问-沁羽"
+      },
+      "shop_name": "羽素官方旗舰店",
+      "tag_review": {
+        "verdict": "误判",
+        "wrong_tags": [
+          "纯标点符号回复"
+        ],
+        "reason": "摘要说明该条消息内容为“宝宝”两字，是有文字的回复，与“纯标点符号回复”不符；标签应为“无有效信息回复”。",
+        "basis": "AI摘要自相矛盾",
+        "all_tags": [
+          "纯图片回复",
+          "纯标点符号回复"
+        ]
+      }
+    },
+    {
+      "_id": "6aa6f7a941727bf17b429253",
+      "shop_id": 917,
+      "company_id": 28,
+      "request_id": "ff7f3980-4a5c-4e0b-82c2-2bf27b3973f3",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789280537,
+      "has_issues": true,
+      "issues": [],
+      "summary": "客服在买家咨询后发送结束语导致未接待即结束，且最后一条仅发送图片无文字说明，整段会话未使用礼貌称呼用语。",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70312213,
+          "ids": [
+            69397
+          ],
+          "names": [
+            "未使用礼貌用语"
+          ],
+          "session_names": []
+        },
+        {
+          "message_id": 70315202,
+          "ids": [
+            69400
+          ],
+          "names": [
+            "连续发送欢迎语结束语"
+          ],
+          "session_names": []
+        },
+        {
+          "message_id": 70316057,
+          "ids": [
+            69415,
+            249565
+          ],
+          "names": [
+            "纯图片回复"
+          ],
+          "session_names": [
+            "咨询商品如何使用或查看教程"
+          ]
+        },
+        {
+          "message_id": 70312212,
+          "ids": [
+            249566
+          ],
+          "names": [],
+          "session_names": [
+            "咨询商品用量、频率或使用周期"
+          ]
+        },
+        {
+          "message_id": 70314856,
+          "ids": [
+            249575
+          ],
+          "names": [],
+          "session_names": [
+            "咨询哪款更适合，想要商品推荐"
+          ]
+        },
+        {
+          "message_id": 70315203,
+          "ids": [
+            249575
+          ],
+          "names": [],
+          "session_names": [
+            "咨询哪款更适合，想要商品推荐"
+          ]
+        },
+        {
+          "message_id": 70315995,
+          "ids": [
+            249566,
+            249565
+          ],
+          "names": [],
+          "session_names": [
+            "咨询商品用量、频率或使用周期",
+            "咨询商品如何使用或查看教程"
+          ]
+        }
+      ],
+      "user": {
+        "id": 5162238,
+        "username": "AQBV80NLM31lFAimjLUNrmYHTw13ajX9-Oh9T4Q4s4v0ktCkYSpNbwQg0MoLNnjPQo7y5uyAL57pDPgDWc_gcK7H",
+        "dnick": "兀昂王"
+      },
+      "worker": {
+        "id": 2369,
+        "account": "护理顾问-司羽"
+      },
+      "shop_name": "羽素官方旗舰店",
+      "tag_review": {
+        "verdict": "疑似误判",
+        "wrong_tags": [
+          "未使用礼貌用语"
+        ],
+        "reason": "判定依据为“整段会话未使用礼貌称呼用语”，人工反馈第1条已认定同类判定不成立。",
+        "basis": "人工反馈第1条口径（需确认）",
+        "all_tags": [
+          "未使用礼貌用语",
+          "纯图片回复",
+          "连续发送欢迎语结束语"
+        ]
+      }
+    },
+    {
+      "_id": "6aa7099e41727bf17b42bd5b",
+      "shop_id": 926,
+      "company_id": 28,
+      "request_id": "697e3ec1-8e85-4f05-ba2c-6cd51cecdeac",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789262588,
+      "has_issues": true,
+      "issues": [],
+      "summary": "买家反馈使用后痘痘增多，客服仅表示转接售后，未安抚、未解释原因、未核对照片，也未给出具体处理方案。",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70213570,
+          "ids": [
+            70136,
+            70137,
+            70138,
+            250228
+          ],
+          "names": [
+            "质量问题未提供处理方案",
+            "质量问题未解释产生原因",
+            "质量问题未核对照片"
+          ],
+          "session_names": [
+            "反馈商品不好用、过敏或使用异常"
+          ]
+        }
+      ],
+      "user": {
+        "id": 5155980,
+        "username": "4059971139",
+        "dnick": "陆**"
+      },
+      "worker": {
+        "id": 2570,
+        "account": "羽素旗舰店奥特曼"
+      },
+      "shop_name": "羽素旗舰店",
+      "tag_review": {
+        "verdict": "疑似误判",
+        "wrong_tags": [
+          "质量问题未提供处理方案",
+          "质量问题未核对照片",
+          "质量问题未解释产生原因"
+        ],
+        "reason": "摘要显示客服执行的是转接售后；按人工反馈第3条口径，命中转接知识执行转接属正确动作，三项“质量问题未…”标签不成立。",
+        "basis": "人工反馈第3条口径（需确认）",
+        "all_tags": [
+          "质量问题未提供处理方案",
+          "质量问题未核对照片",
+          "质量问题未解释产生原因"
+        ]
+      }
+    },
+    {
+      "_id": "6aa7099e41727bf17b42bd6b",
+      "shop_id": 926,
+      "company_id": 28,
+      "request_id": "1c2f9fcd-9856-9854-9b0c-5c3bade8efd2",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789281019,
+      "has_issues": true,
+      "issues": [],
+      "summary": "客服虽发送了欢迎语，但未在买家首问后立即发送；且整段会话中未使用‘您’等礼貌称呼",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70319093,
+          "ids": [
+            70073,
+            70081
+          ],
+          "names": [
+            "未发送欢迎语",
+            "未使用礼貌用语"
+          ],
+          "session_names": []
+        }
+      ],
+      "user": {
+        "id": 5162677,
+        "username": "1658878887625",
+        "dnick": "棉**"
+      },
+      "worker": {
+        "id": 2570,
+        "account": "羽素旗舰店奥特曼"
+      },
+      "shop_name": "羽素旗舰店",
+      "tag_review": {
+        "verdict": "误判",
+        "wrong_tags": [
+          "未发送欢迎语",
+          "未使用礼貌用语"
+        ],
+        "reason": "摘要写明“客服虽发送了欢迎语，但未在买家首问后立即发送”，欢迎语实际已发送；礼貌用语部分同人工反馈第1条口径。",
+        "basis": "AI摘要自相矛盾 + 人工反馈第1条口径",
+        "all_tags": [
+          "未使用礼貌用语",
+          "未发送欢迎语"
+        ]
+      }
+    },
+    {
+      "_id": "6aa7037541727bf17b42aea1",
+      "shop_id": 927,
+      "company_id": 28,
+      "request_id": "293b3938-6ca3-944f-8638-4e90a1852e6b",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789284199,
+      "has_issues": true,
+      "issues": [],
+      "summary": "客服未回应买家关于‘痘痘瘪了之后还能用大灯泡吗’的核心问题，且在买家明确要求退款并转人工后，仅表示转接而未提供任何退货退款处理方案",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70337826,
+          "ids": [
+            70164
+          ],
+          "names": [
+            "答非所问"
+          ],
+          "session_names": []
+        },
+        {
+          "message_id": 70337892,
+          "ids": [
+            70217,
+            250293,
+            250339
+          ],
+          "names": [
+            "退货退款未提供解决方案"
+          ],
+          "session_names": [
+            "申请或查询退货退款",
+            "要求转人工客服或咨询联系方式"
+          ]
+        },
+        {
+          "message_id": 70337633,
+          "ids": [
+            250324
+          ],
+          "names": [],
+          "session_names": [
+            "咨询是否适合某类人群或场景"
+          ]
+        },
+        {
+          "message_id": 70337825,
+          "ids": [
+            250324
+          ],
+          "names": [],
+          "session_names": [
+            "咨询是否适合某类人群或场景"
+          ]
+        },
+        {
+          "message_id": 70337874,
+          "ids": [
+            250339
+          ],
+          "names": [],
+          "session_names": [
+            "要求转人工客服或咨询联系方式"
+          ]
+        },
+        {
+          "message_id": 70337875,
+          "ids": [
+            250339
+          ],
+          "names": [],
+          "session_names": [
+            "要求转人工客服或咨询联系方式"
+          ]
+        },
+        {
+          "message_id": 70337876,
+          "ids": [
+            250339
+          ],
+          "names": [],
+          "session_names": [
+            "要求转人工客服或咨询联系方式"
+          ]
+        }
+      ],
+      "user": {
+        "id": 4652296,
+        "username": "2362632547794",
+        "dnick": "钰**"
+      },
+      "worker": {
+        "id": 2571,
+        "account": "娃哈哈哈哈哈哈"
+      },
+      "shop_name": "羽素护肤旗舰店",
+      "tag_review": {
+        "verdict": "疑似误判",
+        "wrong_tags": [
+          "质量问题未提供处理方案",
+          "质量问题未核对照片",
+          "质量问题未解释产生原因"
+        ],
+        "reason": "摘要显示客服仅表示转接售后；按人工反馈第3条口径，转接属正确动作，三项“质量问题未…”标签不成立。",
+        "basis": "人工反馈第3条口径（需确认）",
+        "all_tags": [
+          "答非所问",
+          "退货退款未提供解决方案"
+        ]
+      }
+    },
+    {
+      "_id": "6aa7079b41727bf17b42b832",
+      "shop_id": 928,
+      "company_id": 28,
+      "request_id": "6aaff310-ef7e-9b91-858e-8a104e43d6ef",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789270879,
+      "has_issues": true,
+      "issues": [],
+      "summary": "买家表示担心没效果，客服未解释产品功效验证数据、使用方法或试用建议来缓解顾虑，仅强调正装拆封不退。",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70260338,
+          "ids": [
+            70285,
+            250368
+          ],
+          "names": [
+            "未打消客户价格顾虑"
+          ],
+          "session_names": [
+            "咨询是否支持退货退款"
+          ]
+        },
+        {
+          "message_id": 70259536,
+          "ids": [
+            250399
+          ],
+          "names": [],
+          "session_names": [
+            "咨询商品功能、功效或特点"
+          ]
+        },
+        {
+          "message_id": 70259687,
+          "ids": [
+            250400
+          ],
+          "names": [],
+          "session_names": [
+            "咨询是否适合某类人群或场景"
+          ]
+        },
+        {
+          "message_id": 70259871,
+          "ids": [
+            250368
+          ],
+          "names": [],
+          "session_names": [
+            "咨询是否支持退货退款"
+          ]
+        },
+        {
+          "message_id": 70260054,
+          "ids": [
+            250368
+          ],
+          "names": [],
+          "session_names": [
+            "咨询是否支持退货退款"
+          ]
+        }
+      ],
+      "user": {
+        "id": 5158830,
+        "username": "2766177584",
+        "dnick": "威***克"
+      },
+      "worker": {
+        "id": 2572,
+        "account": "羽素个护奥特曼"
+      },
+      "shop_name": "羽素美容个护旗舰店",
+      "tag_review": {
+        "verdict": "疑似误判",
+        "wrong_tags": [
+          "未打消客户价格顾虑"
+        ],
+        "reason": "摘要描述买家担心“没效果”，属效果顾虑，与“价格顾虑”不符。",
+        "basis": "标签与摘要不符",
+        "all_tags": [
+          "未打消客户价格顾虑"
+        ]
+      }
+    },
+    {
+      "_id": "6aa6ff4841727bf17b42a4a6",
+      "shop_id": 941,
+      "company_id": 28,
+      "request_id": "d56861a6-ea24-97cf-a3b2-e754d4405f7d",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789257411,
+      "has_issues": true,
+      "issues": [],
+      "summary": "客服全程未使用‘您’等礼貌称呼",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70194550,
+          "ids": [
+            71221
+          ],
+          "names": [
+            "未使用礼貌用语"
+          ],
+          "session_names": []
+        },
+        {
+          "message_id": 70194551,
+          "ids": [
+            71221
+          ],
+          "names": [
+            "未使用礼貌用语"
+          ],
+          "session_names": []
+        },
+        {
+          "message_id": 70194552,
+          "ids": [
+            71221,
+            251345
+          ],
+          "names": [
+            "未使用礼貌用语"
+          ],
+          "session_names": [
+            "咨询如何下单或选择商品规格"
+          ]
+        }
+      ],
+      "user": {
+        "id": 5154750,
+        "username": "AQAPD7JN3kCLnLBNxSgLKQb8Qa5QHa9KJEo0TrQCHcEJowiYaHrmlu_TFThy9NGDoBGQTjhZRyxjRTQUg33CKtF2",
+        "dnick": "舒雅💤"
+      },
+      "worker": {
+        "id": 2083,
+        "account": "护理顾问-智羽"
+      },
+      "shop_name": "羽素美妆旗舰店",
+      "tag_review": {
+        "verdict": "疑似误判",
+        "wrong_tags": [
+          "未使用礼貌用语"
+        ],
+        "reason": "判定依据仅为“未使用‘您’等礼貌称呼”，人工反馈第1条已认定同类判定不成立。",
+        "basis": "人工反馈第1条口径（需确认）",
+        "all_tags": [
+          "未使用礼貌用语"
+        ]
+      }
+    },
+    {
+      "_id": "6aa6ff4841727bf17b42a4c2",
+      "shop_id": 941,
+      "company_id": 28,
+      "request_id": "7429b1ce-97ab-410e-982e-f9a159140b03",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789258073,
+      "has_issues": true,
+      "issues": [],
+      "summary": "客服在备孕期咨询中直接回复\"可以放心\"，与知识库要求的孕妇人群应遵医嘱、不可说放心使用的规范不符，存在合规风险。",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70196436,
+          "ids": [
+            71260
+          ],
+          "names": [
+            "客服使用涉及虚假宣传、欺诈用词"
+          ],
+          "session_names": []
+        },
+        {
+          "message_id": 70196304,
+          "ids": [
+            251388
+          ],
+          "names": [],
+          "session_names": [
+            "咨询是否适合某类人群或场景"
+          ]
+        },
+        {
+          "message_id": 70196438,
+          "ids": [
+            251386
+          ],
+          "names": [],
+          "session_names": [
+            "咨询商品材质、成分或认证"
+          ]
+        }
+      ],
+      "user": {
+        "id": 5154860,
+        "username": "AQAO0K3uV1fNuTcZxzKbkvoeQa5QHa9KJEo0TrQCHcEJo1xJWVcUibnDhYGXy87PWA0k6CHu-ZrxphuUn04Z8Jwe",
+        "dnick": "小小唐"
+      },
+      "worker": {
+        "id": 2083,
+        "account": "护理顾问-智羽"
+      },
+      "shop_name": "羽素美妆旗舰店",
+      "tag_review": {
+        "verdict": "疑似误判",
+        "wrong_tags": [
+          "客服使用涉及虚假宣传、欺诈用词"
+        ],
+        "reason": "摘要描述的是备孕期“可以放心”的回复与知识库“遵医嘱、不可说放心使用”不符，属合规提示缺失或表述不当，未达到“虚假宣传、欺诈用词”程度，标签过重。",
+        "basis": "标签与摘要程度不匹配",
+        "all_tags": [
+          "客服使用涉及虚假宣传、欺诈用词"
+        ]
+      }
+    },
+    {
+      "_id": "6aa6ff4841727bf17b42a4c5",
+      "shop_id": 941,
+      "company_id": 28,
+      "request_id": "d5ad326b-d72b-41e7-b745-f7321340443b",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789262537,
+      "has_issues": true,
+      "issues": [],
+      "summary": "客服在买家询问运费险时，仅让买家自己看详情页，未直接核实订单是否投保，直到买家再次追问才给出明确答复。",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70213249,
+          "ids": [
+            71241
+          ],
+          "names": [
+            "让客户自己到页面去看"
+          ],
+          "session_names": []
+        },
+        {
+          "message_id": 70213195,
+          "ids": [
+            71241
+          ],
+          "names": [
+            "让客户自己到页面去看"
+          ],
+          "session_names": []
+        },
+        {
+          "message_id": 70212187,
+          "ids": [
+            251388
+          ],
+          "names": [],
+          "session_names": [
+            "咨询是否适合某类人群或场景"
+          ]
+        },
+        {
+          "message_id": 70212482,
+          "ids": [
+            251366
+          ],
+          "names": [],
+          "session_names": [
+            "咨询运费险使用、理赔或赔付"
+          ]
+        },
+        {
+          "message_id": 70213197,
+          "ids": [
+            251366
+          ],
+          "names": [],
+          "session_names": [
+            "咨询运费险使用、理赔或赔付"
+          ]
+        },
+        {
+          "message_id": 70213318,
+          "ids": [
+            251349
+          ],
+          "names": [],
+          "session_names": [
+            "咨询支付方式、代付或货到付款"
+          ]
+        },
+        {
+          "message_id": 70213346,
+          "ids": [
+            251366
+          ],
+          "names": [],
+          "session_names": [
+            "咨询运费险使用、理赔或赔付"
+          ]
+        }
+      ],
+      "user": {
+        "id": 5155894,
+        "username": "AQC3lg0qjK1O20Y3HwqidWPZQa5QHa9KJEo0TrQCHcEJo4vUEhvm0jOToIMlMmRUyCCZgk29S-bTEunA8ytfLroN",
+        "dnick": "A今生遇见你"
+      },
+      "worker": {
+        "id": 2083,
+        "account": "护理顾问-智羽"
+      },
+      "shop_name": "羽素美妆旗舰店",
+      "tag_review": {
+        "verdict": "误判",
+        "wrong_tags": [
+          "让客户自己到页面去看"
+        ],
+        "reason": "人工反馈：买家询问运费险，AI 回复的是已配置的知识内容，不存在“让客户自己到页面去看”。",
+        "basis": "人工反馈表（羽素9月13号）第2条",
+        "all_tags": [
+          "让客户自己到页面去看"
+        ]
+      }
+    },
+    {
+      "_id": "6aa6ff4841727bf17b42a4c3",
+      "shop_id": 941,
+      "company_id": 28,
+      "request_id": "7969cc0e-2fee-46c9-b1a8-f5ac29aefee2",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789266594,
+      "has_issues": true,
+      "issues": [],
+      "summary": "客服对买家\"是否正品\"的咨询未正面回应商品卖点，且整段会话未使用礼貌称呼用语。",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70234613,
+          "ids": [
+            71221
+          ],
+          "names": [
+            "未使用礼貌用语"
+          ],
+          "session_names": []
+        },
+        {
+          "message_id": 70234612,
+          "ids": [
+            71228,
+            251400
+          ],
+          "names": [
+            "答非所问"
+          ],
+          "session_names": [
+            "咨询品牌、正品、产地或货源"
+          ]
+        },
+        {
+          "message_id": 70234567,
+          "ids": [
+            251388
+          ],
+          "names": [],
+          "session_names": [
+            "咨询是否适合某类人群或场景"
+          ]
+        }
+      ],
+      "user": {
+        "id": 4933014,
+        "username": "AQB2dYQaceG4brJV6WQi6AvLQa5QHa9KJEo0TrQCHcEJo4T3UhVWA5-b48qgsufjyDWvYdOXww5aV7JogiC4IWgs",
+        "dnick": "˚椰子比耶"
+      },
+      "worker": {
+        "id": 2083,
+        "account": "护理顾问-智羽"
+      },
+      "shop_name": "羽素美妆旗舰店",
+      "tag_review": {
+        "verdict": "误判",
+        "wrong_tags": [
+          "未使用礼貌用语",
+          "答非所问"
+        ],
+        "reason": "人工反馈：AI 正常回复欢迎语并解释了是否为正品，两个标签均不成立。",
+        "basis": "人工反馈表（羽素9月13号）第1条",
+        "all_tags": [
+          "未使用礼貌用语",
+          "答非所问"
+        ]
+      }
+    },
+    {
+      "_id": "6aa6ff4841727bf17b42a4cb",
+      "shop_id": 941,
+      "company_id": 28,
+      "request_id": "f0136d92-1a14-498e-a475-8b8957c98e5a",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789267514,
+      "has_issues": true,
+      "issues": [],
+      "summary": "买家反馈商品量少不满，客服回复未针对问题安抚或给出处理方案，仅表示转接售后。",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70240490,
+          "ids": [
+            71231,
+            251368
+          ],
+          "names": [
+            "客户情绪异常未安抚"
+          ],
+          "session_names": [
+            "反馈商品不好用、过敏或使用异常"
+          ]
+        }
+      ],
+      "user": {
+        "id": 5157673,
+        "username": "AQBlL-1N3CqrK7WFYcZ-9Y66Qa5QHa9KJEo0TrQCHcEJo3xVeqbLNirv8hBZS-wxtzhs4rcSY0f2DlyYt61S0n3y",
+        "dnick": "🌸仙女不讲李"
+      },
+      "worker": {
+        "id": 2083,
+        "account": "护理顾问-智羽"
+      },
+      "shop_name": "羽素美妆旗舰店",
+      "tag_review": {
+        "verdict": "疑似误判",
+        "wrong_tags": [
+          "客户情绪异常未安抚"
+        ],
+        "reason": "摘要显示客服回复后执行转接售后；若按人工反馈第3条口径认定转接为正确动作，则“未安抚”不成立。",
+        "basis": "人工反馈第3条口径（需确认）",
+        "all_tags": [
+          "客户情绪异常未安抚"
+        ]
+      }
+    },
+    {
+      "_id": "6aa6ff4841727bf17b42a4ad",
+      "shop_id": 941,
+      "company_id": 28,
+      "request_id": "23c3fb34-1a22-9eff-bb07-6b9a50f5151c",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789267626,
+      "has_issues": true,
+      "issues": [],
+      "summary": "客服未发送欢迎语且全程未使用礼貌用语",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70241229,
+          "ids": [
+            71213,
+            71221
+          ],
+          "names": [
+            "未发送欢迎语",
+            "未使用礼貌用语"
+          ],
+          "session_names": []
+        },
+        {
+          "message_id": 70241230,
+          "ids": [
+            71213,
+            71221
+          ],
+          "names": [
+            "未发送欢迎语",
+            "未使用礼貌用语"
+          ],
+          "session_names": []
+        },
+        {
+          "message_id": 70241117,
+          "ids": [
+            251389
+          ],
+          "names": [],
+          "session_names": [
+            "咨询商品如何使用或查看教程"
+          ]
+        }
+      ],
+      "user": {
+        "id": 5157710,
+        "username": "AQD-LnnuMhrsDXi1cPXVPYPrQa5QHa9KJEo0TrQCHcEJo9qKbtHMXVYla87lVaPrNO-RkfcSkaFgWczzN9MDhv0v",
+        "dnick": "普格卖饲料买露虎✨"
+      },
+      "worker": {
+        "id": 2083,
+        "account": "护理顾问-智羽"
+      },
+      "shop_name": "羽素美妆旗舰店",
+      "tag_review": {
+        "verdict": "疑似误判",
+        "wrong_tags": [
+          "未使用礼貌用语"
+        ],
+        "reason": "摘要同时给出“未发送欢迎语”和“未使用礼貌用语”，后者与人工反馈第1条同类，需确认店铺称呼口径。",
+        "basis": "人工反馈第1条口径（需确认）",
+        "all_tags": [
+          "未使用礼貌用语",
+          "未发送欢迎语"
+        ]
+      }
+    },
+    {
+      "_id": "6aa6ff4841727bf17b42a4ca",
+      "shop_id": 941,
+      "company_id": 28,
+      "request_id": "40f1ff70-5892-9457-887a-6a9efb4ca969",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789267950,
+      "has_issues": true,
+      "issues": [],
+      "summary": "买家反馈使用小样过敏并提出退货，客服仅表示转接售后，未提供任何具体处理方案",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70243179,
+          "ids": [
+            71276,
+            251368,
+            251356
+          ],
+          "names": [
+            "质量问题未提供处理方案"
+          ],
+          "session_names": [
+            "反馈商品不好用、过敏或使用异常",
+            "咨询是否支持退货退款"
+          ]
+        }
+      ],
+      "user": {
+        "id": 5157835,
+        "username": "AQCJapo2yr-C6FdzbYfviQUlQa5QHa9KJEo0TrQCHcEJoymWeoJ1m7zjsT-ynWaOm9qCaq2fHWa8pE3ekUNc1S2A",
+        "dnick": "一颗苹果🍎"
+      },
+      "worker": {
+        "id": 2083,
+        "account": "护理顾问-智羽"
+      },
+      "shop_name": "羽素美妆旗舰店",
+      "tag_review": {
+        "verdict": "误判",
+        "wrong_tags": [
+          "质量问题未提供处理方案"
+        ],
+        "reason": "人工反馈：AI 命中转接知识执行转接，转接即为正确动作，不应判定“未提供处理方案”。",
+        "basis": "人工反馈表（羽素9月13号）第3条",
+        "all_tags": [
+          "质量问题未提供处理方案"
+        ]
+      }
+    },
+    {
+      "_id": "6aa6ff4841727bf17b42a4f6",
+      "shop_id": 941,
+      "company_id": 28,
+      "request_id": "8fc03d37-3a70-43b9-a60b-19f844e26be8",
+      "start_time": 1789243200,
+      "end_time": 1789300800,
+      "chat_time": 1789278156,
+      "has_issues": true,
+      "issues": [],
+      "summary": "客服在买家咨询后发送了告别语结束会话，且买家询问试用装时未提供替代方案或有效引导。",
+      "created_at": 1789326030,
+      "updated_at": 1789326030,
+      "tags": [
+        {
+          "message_id": 70302288,
+          "ids": [
+            71224
+          ],
+          "names": [
+            "连续发送欢迎语结束语"
+          ],
+          "session_names": []
+        },
+        {
+          "message_id": 70302289,
+          "ids": [
+            71273,
+            251383
+          ],
+          "names": [
+            "未打消客户价格顾虑"
+          ],
+          "session_names": [
+            "咨询试用、新品体验或首单礼"
+          ]
+        },
+        {
+          "message_id": 70298793,
+          "ids": [
+            251391
+          ],
+          "names": [],
+          "session_names": [
+            "咨询商品效果、多久见效"
+          ]
+        },
+        {
+          "message_id": 70298812,
+          "ids": [
+            251391
+          ],
+          "names": [],
+          "session_names": [
+            "咨询商品效果、多久见效"
+          ]
+        }
+      ],
+      "user": {
+        "id": 5161338,
+        "username": "AQBUkNw3xfLmfb8MluSZFDh1Qa5QHa9KJEo0TrQCHcEJo8RwnXeMqSnn2tOUBwYq26_v6v5gCxsIPqxilPYuz22d",
+        "dnick": "嘿嘿嘿嘿"
+      },
+      "worker": {
+        "id": 2083,
+        "account": "护理顾问-智羽"
+      },
+      "shop_name": "羽素美妆旗舰店",
+      "tag_review": {
+        "verdict": "疑似误判",
+        "wrong_tags": [
+          "未打消客户价格顾虑"
+        ],
+        "reason": "摘要描述买家咨询试用装未获替代方案引导，未涉及价格顾虑。",
+        "basis": "标签与摘要不符",
+        "all_tags": [
+          "未打消客户价格顾虑",
+          "连续发送欢迎语结束语"
+        ]
+      }
+    }
+  ]
+}
