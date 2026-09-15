@@ -15,7 +15,8 @@
   就是 ``/chat/answer`` 的触发语；真实会话里位于最后一条 user 消息之后的客服回复会裁掉。
 - 平台内部的 ``\\x07\\x08`` 等控制字符已清洗；图片保留 ``media_type: image`` + ``media_url``，
   其他非文本消息降级为 text + 占位文案（``[图片]`` / ``[订单消息]`` …），保证 content 非空。
-- ``created_at`` 保留真实时间戳，便于回溯会话时序。
+- ``created_at`` 默认平移到运行当天（保持时刻和相对间隔，日期换成今天），便于把会话
+  当成"今天”发生的对话；需要真实时间戳时用 ``--timestamp-mode keep``。
 
 示例：
 
@@ -145,6 +146,39 @@ def _trim_trailing_assistant(messages: List[Dict[str, Any]]) -> List[Dict[str, A
     return messages[: last_user_index + 1]
 
 
+def _midnight_of(timestamp: Any) -> Optional[int]:
+    try:
+        local = time.localtime(int(float(timestamp)))
+    except (TypeError, ValueError, OSError, OverflowError):
+        return None
+    return int(time.mktime((local.tm_year, local.tm_mon, local.tm_mday, 0, 0, 0, 0, 0, -1)))
+
+
+def _shift_to_today(
+    messages: List[Dict[str, Any]], reference_ts: Optional[float]
+) -> List[Dict[str, Any]]:
+    """把消息时间戳整体挪到 reference_ts 当天：保持时刻与相对间隔，只换日期。"""
+    if reference_ts is None:
+        return messages
+    reference_midnight = _midnight_of(reference_ts)
+    if reference_midnight is None:
+        return messages
+
+    shifted: List[Dict[str, Any]] = []
+    for message in messages:
+        created_at = message.get("created_at")
+        if created_at is None:
+            shifted.append(message)
+            continue
+        message_midnight = _midnight_of(created_at)
+        if message_midnight is None:
+            shifted.append(message)
+            continue
+        day_delta = round((reference_midnight - message_midnight) / 86400)
+        shifted.append({**message, "created_at": int(float(created_at)) + day_delta * 86400})
+    return shifted
+
+
 # ---------------------------------------------------------------------------
 # 用例组装
 # ---------------------------------------------------------------------------
@@ -156,12 +190,17 @@ def _worker_of(record: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def _build_case(
-    record: Dict[str, Any], index: int, tag_review: Optional[Dict[str, Any]]
+    record: Dict[str, Any],
+    index: int,
+    tag_review: Optional[Dict[str, Any]],
+    *,
+    reference_ts: Optional[float] = None,
 ) -> Dict[str, Any]:
     user = record.get("user") or {}
     worker = _worker_of(record)
     chat_time = record.get("chat_time")
     transcript = _trim_trailing_assistant(_normalize_messages(record.get("transcript") or []))
+    transcript = _shift_to_today(transcript, reference_ts)
     return {
         "seq": index,
         "name": f"qc_{index:03d}_{record.get('shop_id')}_{_record_suffix(record.get('record_id'))}",
@@ -236,6 +275,12 @@ def main() -> int:
         help="人工复核快照；不传时自动取 records 目录下最新的 *_tag_review_latest.json（可选）",
     )
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT))
+    parser.add_argument(
+        "--timestamp-mode",
+        choices=["today", "keep"],
+        default="today",
+        help="context_messages.created_at：today=平移到运行当天（默认），keep=保留原始时间戳",
+    )
     args = parser.parse_args()
 
     transcript_path = Path(args.transcripts) if args.transcripts else _latest_snapshot(
@@ -265,8 +310,14 @@ def main() -> int:
     ordered = sorted(
         records, key=lambda item: (str(item.get("shop_id")), int(item.get("chat_time") or 0))
     )
+    reference_ts = time.time() if args.timestamp_mode == "today" else None
     cases = [
-        _build_case(record, index, reviews.get(str(record.get("record_id"))))
+        _build_case(
+            record,
+            index,
+            reviews.get(str(record.get("record_id"))),
+            reference_ts=reference_ts,
+        )
         for index, record in enumerate(ordered, start=1)
     ]
 
@@ -284,7 +335,11 @@ def main() -> int:
         "# 说明：context_messages 为真实会话原文（通过 /api/users/{id}/messages 拉取），",
         "#       最后一条 user 消息作为 /chat/answer 的触发语；位于其后的客服回复已裁掉；",
         "#       平台控制字符已清洗，图片保留 media_type/media_url，非文本消息降级为 text + 占位文案，",
-        "#       created_at 为真实时间戳。",
+        (
+            "#       created_at 已平移到今天（保持时刻与相对间隔）。"
+            if args.timestamp_mode == "today"
+            else "#       created_at 为原始真实时间戳。"
+        ),
         f"# 规模：{len(cases)} 条质检记录，会话消息合计 {message_total} 条，"
         f"其中 {reviewed_total} 条带人工复核结论。",
         f"# 店铺分布：{shop_counter}",
