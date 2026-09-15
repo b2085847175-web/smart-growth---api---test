@@ -104,18 +104,41 @@ $env:ANSWER_SUITES = "main_flow,context,multiturn"
 
 ## answer 入口
 
-入口映射统一维护在 `config/answer_entries.py`，只保留两个入口：
+入口映射统一维护在 `config/answer_entries.py`，共三个入口：
 
-| entry | 默认测试文件 | 数据范围 |
-|---|---|---|
-| `daily` | `test_daily_usage.py` | daily（默认 1-2 个文件） |
-| `regression` | `test_answer_yaml.py` | regression + smoke |
+| entry | 默认测试文件 | 数据范围 | 用例数 |
+|---|---|---|---|
+| `daily` | `test_daily_usage.py` | daily（默认 1-2 个文件） | 116 |
+| `regression` | `test_answer_yaml.py` | regression + smoke | 1202 |
+| `all` | `test_answer_yaml.py` | data/answer 下全部 dev 数据 | 2916 |
+
+`all` 是 Jenkins 每日定时任务用的入口，两条口径：
+
+- `kb_scene_categories/` 只注册 `all_categories.yaml`，它是其余 8 个分类文件的完整超集，
+  一起注册会让同一批用例跑两遍。
+- 声明 `target_env` 为 console / prod 的文件不在范围内，`data/scheduled/` 也不在。
 
 切换入口：
 
 ```powershell
 $env:ANSWER_ENTRY = "regression"
 .\.venv\Scripts\python.exe run_tests.py --env dev --pattern "test_answer_yaml.py" -v
+```
+
+### 本地跑全量
+
+2916 条串行要 8 小时以上，必须开并行：
+
+```powershell
+$env:ANSWER_ENTRY = "all"
+.\.venv\Scripts\python.exe run_tests.py --env dev --pattern "test_answer_yaml.py" -n 8 -v
+```
+
+只做收集校验（不发请求）：
+
+```powershell
+$env:ANSWER_ENTRY = "all"
+.\.venv\Scripts\python.exe run_tests.py --pattern "test_answer_yaml.py" --collect-only -q
 ```
 
 ## 新增 answer 用例
@@ -175,4 +198,71 @@ suite 策略写在 YAML 文件头部：
 - `.env` 中的 `ENV` 只在 YAML 未写 `target_env` 时兜底。
 - `prod` 会被归一成 `console`。
 - 店铺、账号、密码统一放在 `.env`，推荐使用 `*_DEV` / `*_CONSOLE` 后缀。
+- **注意**：仓库 `.env` 里当前是 `ENV=console`。任何新写的、不声明 `target_env`
+  的 YAML 都会落到生产环境。新增数据文件时务必显式写上 `target_env`。
+
+## Jenkins 定时回归
+
+`Jenkinsfile` 是声明式流水线，每天 02:30（Jenkins 服务器时区）跑 `all` 入口的
+2916 条用例，用 `pytest-xdist` 并行。
+
+### 节点要求
+
+- Windows 节点（脚本按 `.venv\Scripts\python.exe` 的布局写），agent label 为 `windows`。
+- 节点上 `python` 要在 `PATH` 里，用于首次创建 venv。
+- venv 建在 workspace 之外（`C:\jenkins-tools\venv-answer-test`），构建之间复用，
+  只有 `requirements.txt` 的 SHA256 变化时才重装依赖。换路径改 Jenkinsfile 里的
+  `VENV_DIR`。
+
+### 需要的凭据
+
+在 Jenkins 里建好这几条，否则对应环节会失败（通知环节失败不影响构建结论）：
+
+| 凭据 ID | 类型 | 用途 |
+|---|---|---|
+| `zhiyan-dev-login` | Username/Password | 注入 `LOGIN_ACCOUNT_DEV` / `LOGIN_PASSWORD_DEV` |
+| `answer-wecom-webhook` | Secret text | 企业微信群机器人 webhook |
+| `answer-dingtalk-webhook` | Secret text | 钉钉群机器人 webhook |
+| `answer-dingtalk-secret` | Secret text | 钉钉机器人加签密钥（没开加签就留空） |
+
+凭据注入的环境变量**优先于**仓库里的 `.env`，这是 `config/project_env.py` 里
+`reload_project_env` 的既定行为，不需要改代码。钉钉机器人如果开了安全设置，
+记得把自定义关键词设成消息里出现的词（例如 `answer`）。
+
+### 构建参数
+
+| 参数 | 默认 | 说明 |
+|---|---|---|
+| `ENTRY` | `all` | 执行入口，可选 all / daily / regression |
+| `WORKERS` | `8` | pytest-xdist 并发进程数 |
+| `COLLECT_ONLY` | false | 只做收集校验，不发请求，改数据文件后可以先跑这个 |
+| `NOTIFY_ON_SUCCESS` | true | 关掉则只在失败时推送 |
+
+### 流水线阶段
+
+```
+Workspace → Prepare python env → Validate data → Unit tests → Run answer cases
+```
+
+- `Validate data` 会把收集到的用例数和该入口的下限比对，低于下限直接失败 ——
+  防止"数据文件没注册进 `config/answer_entries.py`，跑绿了但实际没跑"。
+- `Unit tests` 跑 19 个不发请求的纯逻辑单测，先于接口用例。它挂了说明是环境或代码
+  问题，不必再花两小时打接口，也能避免把基础设施故障误读成 AI 回复不稳定。
+- 两个测试文件（`test_answer_yaml.py` / `test_daily_usage.py`）都读 `ANSWER_ENTRY`，
+  必须分开调用，否则同一份数据会被加载两遍。
+
+### 通知
+
+`scripts/notify_ci.py` 解析 JUnit XML，把失败摘要推到企微和钉钉：
+
+```powershell
+.\.venv\Scripts\python.exe scripts\notify_ci.py `
+    --junit reports\jenkins\junit.xml --entry all --status FAILURE `
+    --duration-seconds 4920 --build-number 128 --build-url http://jenkins/job/answer-daily/128/ `
+    --wecom-webhook $env:WECOM_WEBHOOK --dingtalk-webhook $env:DINGTALK_WEBHOOK `
+    --dingtalk-secret $env:DINGTALK_SECRET
+```
+
+加 `--dry-run` 只打印消息不发送，本地调试用。消息会按企业微信 4096 字节的上限
+自动截断失败明细，超出部分指向 Jenkins 构建页。
 
