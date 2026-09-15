@@ -1,0 +1,150 @@
+# 由 scripts/build_key_regression_cases.py 生成，请勿手工编辑。
+# 精简回归集，约 200 条。完整集见 `all` 入口（2916 条）。
+#
+# 选材原则：人工复核过的用例优先；官方质检点用得最多（断言二级质检点名称）；
+# KB 场景分类按场景轮转，优先铺开场景覆盖而不是同一场景多问法。
+
+# 用途：只跑接口、不查质检的冒烟用例
+suite:
+  name: key_smoke
+  mode: sequential
+  quality: false
+  assertions: false
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+target_env: dev
+
+cases:
+  - name: basic_reply_smoke::recommend_shampoo
+    questions:
+    - 推荐一款洗发水
+    _source_case: recommend_shampoo
+    _source_file: data/answer/smoke/basic_reply_smoke_cases.yaml
+  - name: basic_reply_smoke::recommend_body_wash
+    questions:
+    - 推荐一款沐浴露
+    _source_case: recommend_body_wash
+    _source_file: data/answer/smoke/basic_reply_smoke_cases.yaml
+  - name: basic_reply_smoke::recommend_shampoo_for_oily_hair
+    questions:
+    - 我是油性头发，推荐一款适合的洗发水
+    _source_case: recommend_shampoo_for_oily_hair
+    _source_file: data/answer/smoke/basic_reply_smoke_cases.yaml
+  - name: basic_reply_smoke::recommend_body_wash_for_dry_skin
+    questions:
+    - 皮肤比较干，推荐一款温和保湿的沐浴露
+    _source_case: recommend_body_wash_for_dry_skin
+    _source_file: data/answer/smoke/basic_reply_smoke_cases.yaml
+  - name: basic_reply_smoke::simple_product_follow_up
+    questions:
+    - 推荐一款洗发水
+    - 这款适合每天使用吗
+    - 有没有优惠活动
+    _source_case: simple_product_follow_up
+    _source_file: data/answer/smoke/basic_reply_smoke_cases.yaml
+  - name: basic_reply_smoke::simple_greeting
+    questions:
+    - 你好，在吗
+    _source_case: simple_greeting
+    _source_file: data/answer/smoke/basic_reply_smoke_cases.yaml
+  - name: basic_reply_smoke::simple_shipping_question
+    questions:
+    - 买完一般多久发货
+    _source_case: simple_shipping_question
+    _source_file: data/answer/smoke/basic_reply_smoke_cases.yaml
+  - name: basic_reply_smoke::simple_after_sales_question
+    questions:
+    - 收到后不合适可以退货吗
+    _source_case: simple_after_sales_question
+    _source_file: data/answer/smoke/basic_reply_smoke_cases.yaml
+  - name: scene_multiturn::scene_001_01
+    context_messages:
+    - role: user
+      content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+    - question: 这个规格里面包含什么
+    - question: 这个规格适合日常使用吗
+    - question: 和其他规格有什么区别
+    _source_case: scene_001_01
+    _source_file: data/answer/regression/scene_multiturn_cases.yaml
+  - name: scene_multiturn::scene_028_02
+    context_messages:
+    - role: user
+      content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+    - question: 高铁能带吗
+    - question: 平时保存时还有什么禁忌吗
+    - question: 如果已经开封了还能放多久
+    _source_case: scene_028_02
+    _source_file: data/answer/regression/scene_multiturn_cases.yaml
+  - name: scene_multiturn::scene_066_11
+    context_messages:
+    - role: user
+      content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+    - question: 发票在哪里下载
+    - question: 这个权益有什么使用限制吗
+    - question: 下单后在哪里查看或处理
+    _source_case: scene_066_11
+    _source_file: data/answer/regression/scene_multiturn_cases.yaml
+  - name: scene_multiturn::scene_087_04
+    context_messages:
+    - role: user
+      content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+    - question: 肯定是正品吗
+    - question: 这个使用时有什么注意事项
+    - question: 如果收到后发现有问题怎么处理
+    _source_case: scene_087_04
+    _source_file: data/answer/regression/scene_multiturn_cases.yaml
+  - name: scene_multiturn::scene_107_09
+    context_messages:
+    - role: user
+      content: https://item.taobao.com/item.htm?id=764834167209
+    turns:
+    - question: 虚假发货
+    - question: 一般多久可以发出
+    - question: 如果物流异常应该怎么处理
+    _source_case: scene_107_09
+    _source_file: data/answer/regression/scene_multiturn_cases.yaml
+  - name: random_account::recommend_shampoo
+    questions:
+    - 推荐一款洗发水
+    _source_case: recommend_shampoo
+    _source_file: data/answer/smoke/random_account_cases.yaml
+  - name: random_account::recommend_dandruff_shampoo
+    questions:
+    - 头皮屑比较多，有没有合适的洗发水
+    _source_case: recommend_dandruff_shampoo
+    _source_file: data/answer/smoke/random_account_cases.yaml
+  - name: random_account::shampoo_price_follow_up
+    questions:
+    - 推荐一款洗发水
+    - 多少钱
+    _source_case: shampoo_price_follow_up
+    _source_file: data/answer/smoke/random_account_cases.yaml
+  - name: random_account::return_question
+    questions:
+    - 收到后不合适可以退货吗
+    _source_case: return_question
+    _source_file: data/answer/smoke/random_account_cases.yaml
+  - name: daily_product_link_comparison::compare_two_taobao_item_links
+    source_context:
+      account: tmall_8811d15c6c5547fe2026
+      events:
+      - timestamp: '2026-09-10 10:40:24'
+        content: http://item.taobao.com/item.htm?id=835951799159
+      - timestamp: '2026-09-10 10:40:25'
+        content: http://item.taobao.com/item.htm?id=764837431415
+      - timestamp: '2026-09-10 10:40:28'
+        content: 这两个链接是同一个吗
+    context_messages:
+    - role: user
+      content: http://item.taobao.com/item.htm?id=835951799159
+    - role: user
+      content: http://item.taobao.com/item.htm?id=764837431415
+    turns:
+    - question: 这两个链接是同一个吗
+    _source_case: compare_two_taobao_item_links
+    _source_file: data/answer/daily/daily_product_link_comparison.yaml

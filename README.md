@@ -104,15 +104,45 @@ $env:ANSWER_SUITES = "main_flow,context,multiturn"
 
 ## answer 入口
 
-入口映射统一维护在 `config/answer_entries.py`，共三个入口：
+入口映射统一维护在 `config/answer_entries.py`，共四个入口：
 
-| entry | 默认测试文件 | 数据范围 | 用例数 |
-|---|---|---|---|
-| `daily` | `test_daily_usage.py` | daily（默认 1-2 个文件） | 116 |
-| `regression` | `test_answer_yaml.py` | regression + smoke | 1202 |
-| `all` | `test_answer_yaml.py` | data/answer 下全部 dev 数据 | 2916 |
+| entry | 数据范围 | 收集到的用例数 | 说明 |
+|---|---|---:|---|
+| `key` | 精简回归集 | **218** | **Jenkins 每日任务默认**，199 条数据用例 + 19 个单测 |
+| `daily` | `data/answer/daily` 里 1 个文件 | 135 | 116 条数据用例 + 19 个单测 |
+| `regression` | regression + smoke | 1221 | 1202 条 + 19 个单测 |
+| `all` | `data/answer` 下全部 dev 数据 | 2935 | 2916 条 + 19 个单测，需要时手动跑 |
 
-`all` 是 Jenkins 每日定时任务用的入口，两条口径：
+（收集数 = 数据用例 + `test_answer_yaml.py` 里那 19 个不发请求的单元测试）
+
+### key —— 精简回归集
+
+`all` 有 2916 条，日常跑不完。`key` 是从里面抽出来的约 200 条，选材口径：
+
+- **人工复核过的用例优先**（`ai_quality_tag_review_context_cases.yaml` 里带
+  `tag_review` 字段的 20 条全部纳入）。
+- **官方质检点用得最多**（`official_quality_points_cases.yaml` 取 70 条），因为它
+  断言的是二级质检点名称，是仓库里最硬的回归依据。
+- **KB 场景分类按分类占比 + 场景轮转抽样**（60 条覆盖 60 个不同场景，各分类比例
+  与原文件一致）。
+- 真实质检问题会话、使用说明场景、冒烟用例各取少量。
+
+由 `scripts/build_key_regression_cases.py` 生成，源数据更新后重跑即可：
+
+```powershell
+.\.venv\Scripts\python.exe scripts\build_key_regression_cases.py --dry-run   # 先看选材
+.\.venv\Scripts\python.exe scripts\build_key_regression_cases.py             # 实际生成
+```
+
+生成的用例名带来源前缀（如 `official_quality_points::未发送欢迎语`），并保留
+`_source_file` / `_source_case` 两个字段便于追溯。
+
+**为什么分成 `key_assertions.yaml` 和 `key_smoke.yaml` 两个文件**：runner 里
+`quality: true` 表示每条用例都必须匹配到质检记录，否则判失败。把原本
+`quality: false` 的用例混进 `quality: true` 的 suite 会产生虚假失败，所以按
+质检开关分开。
+
+### all 的两条口径
 
 - `kb_scene_categories/` 只注册 `all_categories.yaml`，它是其余 8 个分类文件的完整超集，
   一起注册会让同一批用例跑两遍。

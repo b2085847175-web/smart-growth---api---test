@@ -1,8 +1,10 @@
-﻿"""`/chat/answer` 执行入口：daily / regression / all。
+﻿"""`/chat/answer` 执行入口：key / daily / regression / all。
 
+- key：精简回归集，约 200 条。**Jenkins 每日任务默认用这个**，覆盖人工复核过的
+  用例、官方质检点、各分类场景的代表性样本。
 - daily：日常执行，只放少量高频验证数据。
 - regression：回归执行，回归专项和基础冒烟数据都在这里。
-- all：定时全量回归，覆盖 data/answer 下所有 dev 环境数据（Jenkins 每日任务用）。
+- all：全量，覆盖 data/answer 下所有 dev 环境数据（2916 条），偶尔手动跑。
 - 新增文件时，直接把 YAML 路径加到下面的列表里。
 """
 
@@ -57,13 +59,25 @@ ALL_FILES: List[str] = [
     "data/answer/core/screenshot_history_cases.yaml",
 ]
 
-# 对外暴露三个入口。
+# 精简回归集：约 200 条，Jenkins 每日任务默认用这个。
+#
+# 由 scripts/build_key_regression_cases.py 从上面这些来源抽样生成，源数据更新后
+# 重跑那个脚本即可。分两个文件是因为 quality 开关不能混：
+# 见文件里 key_assertions / key_smoke 的说明。
+KEY_FILES: List[str] = [
+    "data/answer/regression/key_assertions.yaml",
+    "data/answer/regression/key_smoke.yaml",
+]
+
+# 对外暴露四个入口。
 ANSWER_ENTRIES: Dict[str, List[str]] = {
+    "key": KEY_FILES,
     "daily": DAILY_FILES,
     "regression": REGRESSION_FILES,
     "all": ALL_FILES,
 }
 
+KEY_ENTRY = "key"
 DAILY_ENTRY = "daily"
 REGRESSION_ENTRY = "regression"
 ALL_ENTRY = "all"

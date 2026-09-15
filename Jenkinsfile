@@ -1,8 +1,8 @@
 /*
  * /chat/answer 定时全量回归流水线。
  *
- * 每天 02:30 在 Windows 节点上跑 data/answer 下全部 dev 环境用例（2916 条，含 19 个
- * 纯逻辑单测共 2935 个用例），用 pytest-xdist 并行，把串行 8 小时压到 1-2 小时。
+ * 每天 02:30 在 Windows 节点上跑精简回归集 `key`（199 条 + 19 个纯逻辑单测），
+ * 用 pytest-xdist 并行。需要全量时手动触发，把 ENTRY 改成 all（2916 条）。
  *
  * 几个刻意为之的地方：
  *
@@ -39,13 +39,13 @@ pipeline {
     parameters {
         choice(
             name: 'ENTRY',
-            choices: ['all', 'daily', 'regression'],
-            description: '执行入口。all = data/answer 下全部 dev 用例（2916 条）；daily = 116 条；regression = 1202 条。'
+            choices: ['key', 'daily', 'regression', 'all'],
+            description: '执行入口。key = 精简回归集（199 条，默认）；daily = 116 条；regression = 1202 条；all = 全量 2916 条。'
         )
         string(
             name: 'WORKERS',
-            defaultValue: '8',
-            description: 'pytest-xdist 并发进程数。全量建议 8；daily 用 1-4 就够了。'
+            defaultValue: '4',
+            description: 'pytest-xdist 并发进程数。精简集 4 就够；跑 all（2916 条）建议加到 8-16。'
         )
         booleanParam(
             name: 'COLLECT_ONLY',
@@ -157,6 +157,7 @@ pipeline {
                     $floor = switch ($env:ANSWER_ENTRY) {
                         "all"        { 2900 }
                         "regression" { 1200 }
+                        "key"        { 210 }
                         "daily"      { 116 }
                         default      { 1 }
                     }
