@@ -179,6 +179,9 @@ data/*.sqlite
 *.temp
 artifacts/product_migration/
 
+# 脚本生成物（AI 质检聊天记录快照等，可随时重跑生成）
+outputs/
+
 # 系统文件
 .DS_Store
 Thumbs.db

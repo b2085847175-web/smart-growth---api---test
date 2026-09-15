@@ -1,0 +1,2815 @@
+# 由 scripts/ai_quality/generate_context_cases.py 生成，请勿手工编辑。
+#       数据来源：scripts/ai_quality/export_chat_records.py（质检有问题记录 + 真实聊天记录）
+# 来源：outputs/ai_quality_chat/ai_quality_chat_transcripts_console_888_10shops_latest.json
+#       人工复核结论：未使用
+# 说明：context_messages 为真实会话原文（通过 /api/users/{id}/messages 拉取），
+#       最后一条 user 消息作为 /chat/answer 的触发语；位于其后的客服回复已裁掉；
+#       平台控制字符已清洗，图片保留 media_type/media_url，非文本消息降级为 text + 占位文案，
+#       created_at 已平移到今天（保持时刻与相对间隔）。
+# 规模：33 条质检记录，会话消息合计 453 条，其中 0 条带人工复核结论。
+# 店铺分布：917×8, 926×2, 927×10, 928×3, 941×10
+# 断言策略：quality/assertions 均为 false，只执行接口并观察回复。
+suite:
+  name: ai_quality_tag_review_context
+  mode: sequential
+  quality: true
+  assertions: false
+  match_score: false
+  final_reply_equals_chat: false
+  turn_interval_seconds: 1
+
+target_env: dev
+
+cases:
+  # [001] 917｜羽素官方旗舰店｜护理顾问-知羽｜2026-09-14 07:42:28｜质检标签：未发送欢迎语
+  - name: "qc_001_917_edbf2f"
+    record_id: "6aa86aadd13f8cf686edbf2f"
+    request_id: "47efdea1-2925-91d2-8bbc-427ddf13dfc1"
+    shop_id: "917"
+    shop_name: "羽素官方旗舰店"
+    worker: "护理顾问-知羽"
+    worker_id: 2295
+    user_id: 5177704
+    chat_time: 1789342948
+    chat_time_text: "2026-09-14 07:42:28"
+    issue_summary: "客服在买家首次咨询后发送欢迎语，但未跟进回答发货时间问题"
+    quality_tags: ["未发送欢迎语"]
+    session_names: ["咨询何时发货"]
+    context_messages:
+      - role: "user"
+        content: "[订单消息]"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429335
+      - role: "assistant"
+        content: "亲亲，我们查询到您的订单信息已修改成功，可点击查看修改详情～"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429336
+      - role: "user"
+        content: "请问啥时候发货"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429344
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429347
+      - role: "user"
+        content: "[订单消息]"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429348
+
+  # [002] 917｜羽素官方旗舰店｜护理顾问-沁羽｜2026-09-14 08:15:00｜质检标签：答非所问
+  - name: "qc_002_917_edbf43"
+    record_id: "6aa86aadd13f8cf686edbf43"
+    request_id: "de2d8d2a-b4be-90bb-9d97-bbf65c3b5efd"
+    shop_id: "917"
+    shop_name: "羽素官方旗舰店"
+    worker: "护理顾问-沁羽"
+    worker_id: 2389
+    user_id: 5177947
+    chat_time: 1789344900
+    chat_time_text: "2026-09-14 08:15:00"
+    issue_summary: "客服未回应买家关于直播间赠品的诉求，两次均回避问题、重复引导备注加赠"
+    quality_tags: ["答非所问"]
+    session_names: ["咨询直播时间、直播价或福利"]
+    context_messages:
+      - role: "user"
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3519616218325773468"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789430944
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789430947
+      - role: "assistant"
+        content: "大灯泡主打速瘪痘、修护痘肌屏障~尤其针对新生泛红痘、熬夜红肿痘这些突发痘痘效果都很好~核心成分17.5% 胶态硫 PRO× 羽安修 PRO组合，多项自研技术加持，温和无酸，多维度呵护脆弱痘肌，维稳修护兼顾；✅搭配国妆特证-【美白淡印霜体验装】使用，祛痘淡印，协同调理更有效。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789430947
+      - role: "assistant"
+        content: "有运费险和7天无理由保障，入手无压力～已有5.4万+位用户给出真实满意的评价，祛痘实力看得见👍"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789430948
+      - role: "assistant"
+        content: "宝宝，感谢您对羽素青睐！邀请您核对订单收件地址，如地址信息有误，本店订单支持自主修改地址哦~\n①订单未发货：支持自行修改地址；\n②订单已发货：仅支持自行改同省地址（邮政除外），如需跨省需联系人工客服确认是否可修改；\n\n⭐方法一（客服页修改）：点击【自助服务】-【改地址及对应订单】-【勾选】新地址-【提交】-可在订单详情中查看修改结果；\n⭐方法二（订单页修改）：点击【我的订单】-【修改地址】-【勾选】新地址-【提交】-可在订单详情中查看修改结果；\n\n温馨提示：①如修改后显示失败需及时联系店铺客服；\n②已发货改地址后无法二次修改和拦截退回的，请知悉哈！\n③我们的产品都经过了层层严格测试，为了确保宝宝使用起来更放心，建议宝宝在使用前先来个【测敏】哦～如有任何不适，及时联系护理顾问反馈！"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789430959
+      - role: "user"
+        content: "麻烦赠品不要忘记了"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789430959
+      - role: "assistant"
+        content: "宝宝放心~您拍的是有试用装【祛痘+修红】规格，赠品都会给您带上：小蓝盾1.5ml（可试用）+大灯泡1ml（可试用）+美白淡印霜1.5g*2。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789430965
+      - role: "assistant"
+        content: "另外还有【客服加赠礼】活动哦：\n①单笔订单实付满100元，3款赠品任选1款：大灯泡精华1ml*1、闭口水15ml*1、淡印精华霜1.5g*1；\n②单笔订单实付满200元，3款赠品任选1款：大灯泡祛痘面膜*1片、闭口水15ml*2、淡印精华霜1.5g*2。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789430966
+      - role: "assistant"
+        content: "选择加赠礼时，告知一下具体想要的赠品名称和规格哦，比如「【备注加赠】大灯泡精华 1ml*1」，我这边马上帮您登记～"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789430966
+      - role: "user"
+        content: "直播间不是有送的吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789431000
+      - role: "assistant"
+        content: "直播间具体赠品活动以直播间当场公布为准哈宝宝，我这边看到的是店铺的加赠活动，您核对下想参与哪个档位"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789431008
+      - role: "user"
+        content: "你按照直播间"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789431037
+      - role: "assistant"
+        content: "辛苦您告知一下具体想要的赠品名称哦，比如「【备注加赠】大灯泡精华 1ml*1」，我这边马上帮您登记～"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789431045
+      - role: "user"
+        content: "加赠的要大灯泡"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789431300
+
+  # [003] 917｜羽素官方旗舰店｜护理顾问-知羽｜2026-09-14 09:45:55｜质检标签：客户催促未致歉安抚
+  - name: "qc_003_917_edbf4d"
+    record_id: "6aa86aadd13f8cf686edbf4d"
+    request_id: "961f41a6-c55f-9191-907c-8dc94c54e8ea"
+    shop_id: "917"
+    shop_name: "羽素官方旗舰店"
+    worker: "护理顾问-知羽"
+    worker_id: 2295
+    user_id: 3780062
+    chat_time: 1789350355
+    chat_time_text: "2026-09-14 09:45:55"
+    issue_summary: "买家催促发货时客服未致歉安抚。"
+    quality_tags: ["客户催促未致歉安抚"]
+    session_names: ["咨询能否加急发货，催促发货", "反馈订单迟迟未发货或无法发货"]
+    context_messages:
+      - role: "user"
+        content: "[订单消息]"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789436346
+      - role: "assistant"
+        content: "亲亲，我们查询到您的订单信息已修改成功，可点击查看修改详情～"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789436347
+      - role: "user"
+        content: "你好"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789436350
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789436354
+      - role: "user"
+        content: "人工客服"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789436356
+      - role: "user"
+        content: "收货人: 华阳, 手机号码: 18952482872, 所在地区: 江苏省连云港市海州区, 详细地址: 通灌南路108号江苏海洋大学（通灌校区）"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789436696
+      - role: "assistant"
+        content: "好的宝宝 您稍等下~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789436700
+      - role: "user"
+        content: "修改后发这个收货地址"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789436721
+      - role: "user"
+        content: "对"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789436734
+      - role: "assistant"
+        content: "这边帮您登记 发出后预计48小时内为您留言哈宝宝 非常感谢宝宝对羽素品牌的关注以及对我们产品的支持"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789436745
+      - role: "user"
+        content: "今天能不能发货"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789436747
+      - role: "user"
+        content: "都三天了"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789436755
+
+  # [004] 917｜羽素官方旗舰店｜护理顾问-知羽｜2026-09-14 10:29:33｜质检标签：答非所问/未主动帮客户做选择
+  - name: "qc_004_917_edbf54"
+    record_id: "6aa86aadd13f8cf686edbf54"
+    request_id: "8267f123-bc94-945e-a448-fd5555962c50"
+    shop_id: "917"
+    shop_name: "羽素官方旗舰店"
+    worker: "护理顾问-知羽"
+    worker_id: 2295
+    user_id: 5180629
+    chat_time: 1789352973
+    chat_time_text: "2026-09-14 10:29:33"
+    issue_summary: "客服未清晰对比两款洁面区别，也未根据买家需求推荐合适款"
+    quality_tags: ["答非所问", "未主动帮客户做选择"]
+    session_names: ["咨询不同商品或款式有什么区别", "咨询哪款更适合，想要商品推荐"]
+    context_messages:
+      - role: "user"
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3765489410267808102"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439272
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439276
+      - role: "assistant"
+        content: "宝宝，这款是羽素双肽控油祛痘洁面乳，净含量100g，乳状质地，主打油皮、混油皮使用，四季都能用哦~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439278
+      - role: "assistant"
+        content: "它采用氨泥复配清洁加双肽内源抑痘的双重通路：表层的加拿大冰川红泥能物理吸附毛孔里的油脂、角栓和污垢，椰油甘氨酸钾温和溶解多余油脂和轻彩妆防晒；内源方面六肽-5降低痤疮致病菌，精氨酸/赖氨酸多肽调节皮脂腺出油，全程无强酸，温和抑痘不伤屏障。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439279
+      - role: "assistant"
+        content: "洗完即刻清爽哑光，长效控油能维持大半天不泛油，坚持使用对闭口、熬夜反复痘和周期性痘都有帮助。配方无酒精、无香精、无色素、无激素，通过了斑贴测试，温和不刺激~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439279
+      - role: "assistant"
+        content: "宝宝，您的羽素订单已经飞奔在路上啦！记得签收时检查包裹是否完好，万一有破损，就赶紧找我们的护理顾问“吐槽”吧！皮肤有任何小情绪，也随时可以找他们“诉苦”，我们随时待命，帮解决烦恼！😊"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439286
+      - role: "user"
+        content: "这款和那个洁面慕斯有啥区别"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439288
+      - role: "assistant"
+        content: "宝宝，我们这边看到的是羽素双肽控油祛痘洁面乳这款乳状质地的洁面哦，您说的洁面慕斯暂时没有相关信息呢，方便的话把慕斯的链接发我确认一下哈"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439297
+      - role: "user"
+        content: "[订单消息]"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439306
+      - role: "assistant"
+        content: "宝宝，您这款是羽素控油祛痘洁面慕斯，130ml一瓶，免起泡设计，主打祛痘、去黑头，同时控油保湿、舒缓，干敏肌也能用哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439310
+      - role: "user"
+        content: "这两款有啥区别"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439316
+      - role: "assistant"
+        content: "宝宝，您手里这款白色的洁面慕斯是免起泡设计，主打控油保湿、祛痘去黑头，还能舒缓，干敏肌也能用；黄色的双肽洁面乳适合油脂分泌多的长痘肌肤日常清洁，两款都是揉开出泡的哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439322
+      - role: "user"
+        content: "推荐哪款"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439347
+      - role: "assistant"
+        content: "宝宝，您手上这款白色的洁面慕斯就很合适呀，免起泡用着方便，祛痘去黑头的同时还能控油保湿、舒缓，干敏肌也能放心用哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439356
+      - role: "assistant"
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3819462995122192661"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439357
+      - role: "user"
+        content: "这两款有啥区别"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439373
+
+  # [005] 917｜羽素官方旗舰店｜护理顾问-司羽｜2026-09-14 12:52:18｜质检标签：机械式回复
+  - name: "qc_005_917_edbf7a"
+    record_id: "6aa86aadd13f8cf686edbf7a"
+    request_id: "2f2f9953-359e-9887-9843-4d743ff8fd9d"
+    shop_id: "917"
+    shop_name: "羽素官方旗舰店"
+    worker: "护理顾问-司羽"
+    worker_id: 2369
+    user_id: 5183980
+    chat_time: 1789361538
+    chat_time_text: "2026-09-14 12:52:18"
+    issue_summary: "客服在买家多次询问时重复发送相同赠品规则和邀评话术，构成连续机械式回复"
+    quality_tags: ["机械式回复"]
+    session_names: ["咨询能否定制、刻字或单独购买", "咨询是否有赠品及加赠条件", "投诉客服态度或处理不当"]
+    context_messages:
+      - role: "user"
+        content: "有单独的卖吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447626
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447629
+      - role: "assistant"
+        content: "您好，有的哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447632
+      - role: "assistant"
+        content: "这款美白淡印霜有多种容量可选，1.5g、7.5g、15g、30g、50g都有单独售卖的，您按需选购就可以啦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447633
+      - role: "user"
+        content: "有单独的50克吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447638
+      - role: "assistant"
+        content: "宝宝，50g是有的，可以作为日常规格单独选购哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447643
+      - role: "user"
+        content: "链接"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447648
+      - role: "assistant"
+        content: "宝宝，50g的正装单品链接给您放这里啦："
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447654
+      - role: "assistant"
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3723180368212394339"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447655
+      - role: "assistant"
+        content: "这个是美白淡印霜正装单品，单独购买很合适哦~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447656
+      - role: "user"
+        content: "其他都是送的？"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447702
+      - role: "assistant"
+        content: "宝宝，不是的哦，每个规格都有主品和对应的赠品呢，具体是这样的：【到手40.5g】淡印霜[30g*1瓶]\n主品：美白淡印霜30g\n赠品：美白淡印霜7.5g+美白淡印霜1.5g*2（其中1.5g*1可试用）【大容量!】淡印霜[50g*1瓶]\n主品：美白淡印霜50g*1\n赠品：美白淡印霜7.5g*2+闭口水15ml+祛痘面膜*1片"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447708
+      - role: "assistant"
+        content: "另外除规格包含的赠品外，还有【客服加赠礼】活动哦：\n①单笔订单买实付满100元，3款赠品任选1款：大灯泡精华1ml*1、闭口水15ml*1、淡印精华霜1.5g*1；\n②单笔订单实付满200元，3款赠品任选1款：大灯泡祛痘面膜*1片、闭口水15ml*2、淡印精华霜1.5g*2。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447709
+      - role: "assistant"
+        content: "选择加赠礼时，告知一下具体想要的赠品名称和规格哦，比如「【备注加赠】大灯泡精华 1ml*1」，我这边马上帮您登记～"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447709
+      - role: "assistant"
+        content: "宝宝还在考虑吗🥰\n加赠限量30份|仅限今日\n送完即止⏰\n🎁下单享满额好礼，3 选 1\n▪单笔实付满100元：大灯泡精华1ml*1、闭口水15ml*1、淡印霜1.5g*1\n▪单笔实付满200元：大灯泡面膜*1片、闭口水15ml*2、淡印霜1.5g*2"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447768
+      - role: "assistant"
+        content: "✅重要规则（不按操作无赠品）：\n下单后15分钟内联系客服发送备注！\n订单自己备注无效❗\n📝备注参考模板：\n【备注加赠大灯泡精华 1ml×1】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447768
+      - role: "assistant"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://p6-pigeon-sign.ecombdimg.com/tos-cn-i-scl3phc04j/2d0aa36859344066a60cb563d7b08ff5~tplv-jxcbcipi3j-image-limit.image?lk3s=c879ea0d&x-expires=1794545370&x-signature=bUL%2BigRD5fZWsHCLvuGcI%2FCK4VI%3D"
+        created_at: 1789447771
+      - role: "user"
+        content: "赠三个大灯泡可以吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447773
+      - role: "assistant"
+        content: "宝宝，不可以的哦，满100元和满200元都只支持3款赠品任选1款，不能选三个大灯泡呢"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447780
+      - role: "user"
+        content: "199元算没满100元？"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447818
+      - role: "assistant"
+        content: "宝宝🥰，您今天内下单还可以帮您申请【加赠】福利，您看需要吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447824
+      - role: "assistant"
+        content: "①单笔订单实付满100元，3款赠品任选1款：大灯泡精华1ml*1、闭口水15ml*1、淡印精华霜1.5g*1\n②单笔订单实付满200元，3款赠品任选1款：大灯泡祛痘面膜*1片、闭口水15ml*2、淡印精华霜1.5g*2"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447825
+      - role: "assistant"
+        content: "需要的话今天拍下，付款后指定赠品“如：备注加赠大灯泡精华 1ml*1”，不联系没有送出哦，【15 分钟内有效】每日限量30份/:R"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447826
+      - role: "assistant"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://p6-pigeon-sign.ecombdimg.com/tos-cn-i-scl3phc04j/45c440ecd39345eb8e3f08290d43445a~tplv-jxcbcipi3j-image-limit.image?lk3s=c879ea0d&x-expires=1794545428&x-signature=IVxNy9NgArDq3AMUhg5gcPMuOw4%3D"
+        created_at: 1789447828
+      - role: "assistant"
+        content: "宝宝，这边看见您没有下单是对产品有什么疑惑吗❓可以跟小客服说一下的哦，这边帮您解答的呢~😊"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447832
+      - role: "user"
+        content: "什么意思"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447861
+      - role: "assistant"
+        content: "宝宝🥰，您今天内下单还可以帮您申请【加赠】福利，您看需要吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447866
+      - role: "assistant"
+        content: "①单笔订单实付满100元，3款赠品任选1款：大灯泡精华1ml*1、闭口水15ml*1、淡印精华霜1.5g*1\n②单笔订单实付满200元，3款赠品任选1款：大灯泡祛痘面膜*1片、闭口水15ml*2、淡印精华霜1.5g*2"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447867
+      - role: "assistant"
+        content: "需要的话今天拍下，付款后指定赠品“如：备注加赠大灯泡精华 1ml*1”，不联系没有送出哦，【15 分钟内有效】每日限量30份/:R"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447867
+      - role: "assistant"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://p3-pigeon-sign.ecombdimg.com/tos-cn-i-scl3phc04j/e438d6990f6b423ea7dd60d12939379c~tplv-jxcbcipi3j-image-limit.image?lk3s=c879ea0d&x-expires=1794545470&x-signature=Un4OJngpOduXnOgUrPmhuBvGr5g%3D"
+        created_at: 1789447870
+      - role: "user"
+        content: "满100赠几个"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447872
+      - role: "assistant"
+        content: "宝宝🥰，您今天内下单还可以帮您申请【加赠】福利，您看需要吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447877
+      - role: "assistant"
+        content: "①单笔订单实付满100元，3款赠品任选1款：大灯泡精华1ml*1、闭口水15ml*1、淡印精华霜1.5g*1\n②单笔订单实付满200元，3款赠品任选1款：大灯泡祛痘面膜*1片、闭口水15ml*2、淡印精华霜1.5g*2"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447878
+      - role: "assistant"
+        content: "需要的话今天拍下，付款后指定赠品“如：备注加赠大灯泡精华 1ml*1”，不联系没有送出哦，【15 分钟内有效】每日限量30份/:R"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447878
+      - role: "assistant"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://p6-pigeon-sign.ecombdimg.com/tos-cn-i-scl3phc04j/aee904002d3640a9bfd1231f1625c115~tplv-jxcbcipi3j-image-limit.image?lk3s=c879ea0d&x-expires=1794545480&x-signature=0V0Zc70SB8yuBGVl20mWBfy0T2o%3D"
+        created_at: 1789447880
+      - role: "user"
+        content: "？"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447917
+      - role: "assistant"
+        content: "宝宝🥰，您今天内下单还可以帮您申请【加赠】福利，您看需要吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447922
+      - role: "assistant"
+        content: "①单笔订单实付满100元，3款赠品任选1款：大灯泡精华1ml*1、闭口水15ml*1、淡印精华霜1.5g*1\n②单笔订单实付满200元，3款赠品任选1款：大灯泡祛痘面膜*1片、闭口水15ml*2、淡印精华霜1.5g*2"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447923
+      - role: "assistant"
+        content: "需要的话今天拍下，付款后指定赠品“如：备注加赠大灯泡精华 1ml*1”，不联系没有送出哦，【15 分钟内有效】每日限量30份/:R"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447924
+      - role: "assistant"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://p9-pigeon-sign.ecombdimg.com/tos-cn-i-scl3phc04j/d59ea0b4cb0f45f086b384edd6407c67~tplv-jxcbcipi3j-image-limit.image?lk3s=c879ea0d&x-expires=1794545525&x-signature=38liCbwvt65ltONUh3SHqd6TCZw%3D"
+        created_at: 1789447925
+      - role: "user"
+        content: "没懂我意思？"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447929
+      - role: "assistant"
+        content: "非常抱歉是我理解偏了呢宝宝"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447935
+      - role: "assistant"
+        content: "关于满100赠几个，单笔订单实付满100元的话，3款赠品是任选1款哦，就是赠1个哈"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447936
+      - role: "user"
+        content: "一直给我发这种的"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447938
+
+  # [006] 917｜羽素官方旗舰店｜护理顾问-沁羽｜2026-09-14 13:41:51｜质检标签：未主动帮客户做选择
+  - name: "qc_006_917_edbf98"
+    record_id: "6aa86aadd13f8cf686edbf98"
+    request_id: "452b0f82-46e6-918f-bb63-c1cf098b0597"
+    shop_id: "917"
+    shop_name: "羽素官方旗舰店"
+    worker: "护理顾问-沁羽"
+    worker_id: 2389
+    user_id: 5185285
+    chat_time: 1789364511
+    chat_time_text: "2026-09-14 13:41:51"
+    issue_summary: "买家明确表示不要小的，客服未推荐只含大号的替代商品或提供其他可行方案"
+    quality_tags: ["未主动帮客户做选择"]
+    session_names: ["咨询商品的规格、款式或颜色"]
+    context_messages:
+      - role: "user"
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3775692388530520085"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450878
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450884
+      - role: "assistant"
+        content: "宝宝，这款是羽素彩虹星闪痘痘贴，一盒共60贴（20贴*3片）"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450886
+      - role: "assistant"
+        content: "它采用水胶体祛痘技术，通过物理隔离、吸收渗液、促进创面修复来温和祛痘，无酸配方不刺激，还能控油保湿。经第三方检测，使用约3天后痘痘能显著改善，敏感肌也可以放心用哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450886
+      - role: "user"
+        content: "我只要大一点的"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450902
+      - role: "assistant"
+        content: "宝宝，单独盒装的闪钻款、多彩款都是有大有小的，隐形款和多彩款也是有大小之分的，爱心款则是爱心形状；目前这边没有单独区分大号规格，您可以选有大小款的规格，贴的时候挑大的那片用就好啦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450911
+      - role: "user"
+        content: "不要小的可以吗？"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450911
+
+  # [007] 917｜羽素官方旗舰店｜护理顾问-沁羽｜2026-09-14 15:31:10｜质检标签：最后一句非客服发送
+  - name: "qc_007_917_edbf8a"
+    record_id: "6aa86aadd13f8cf686edbf8a"
+    request_id: "87c6ac09-824c-950e-874a-ac9a1d2609c5"
+    shop_id: "917"
+    shop_name: "羽素官方旗舰店"
+    worker: "护理顾问-沁羽"
+    worker_id: 2389
+    user_id: 5115398
+    chat_time: 1789371070
+    chat_time_text: "2026-09-14 15:31:10"
+    issue_summary: "会话以买家未处理的追问结束，客服未作有效回复"
+    quality_tags: ["最后一句非客服发送"]
+    session_names: ["反馈未收到货或签收异常"]
+    context_messages:
+      - role: "user"
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3637845948610251820"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789454625
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789454629
+      - role: "assistant"
+        content: "您好宝宝，您发的这两个链接目前看不出来具体是哪款商品哦，方便告诉我想咨询的是哪款产品吗~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789454630
+      - role: "assistant"
+        content: "我帮您详细介绍～"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789454631
+      - role: "user"
+        content: "退回的退到哪里去了？我怎么没收到？￼"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789454633
+      - role: "user"
+        content: "？"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789454636
+      - role: "assistant"
+        content: "抱歉给您添麻烦了，马上为您转接到专业【售后专员】为您解决掉，售后接待繁忙，如未及时回复辛苦可爱的您稍等下哦~售后一定会为您解决好的～"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789454639
+      - role: "assistant"
+        content: "很高兴为您服务；稍等我看一下聊天记录以便为您解答问题~ ❤​​"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789454643
+      - role: "assistant"
+        content: "宝宝，您那边稍等一下的,这边帮您看下。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789454651
+      - role: "assistant"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://p3-pigeon-sign.ecombdimg.com/tos-cn-i-scl3phc04j/5dd5e1bfa94b4cdda1191f4e96e4f37a~tplv-jxcbcipi3j-image-limit.image?lk3s=c879ea0d&x-expires=1794552610&x-signature=mL9PfsjFAIF4dKUTf5qzfEbhJCs%3D"
+        created_at: 1789455010
+      - role: "assistant"
+        content: "宝宝 您看下呢"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789455014
+      - role: "assistant"
+        content: "看您没有回复，小素先退下了，后续有任何问题都可以来联系这边哦，祝宝宝财源广进 好运连连 越来越好[玫瑰]"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457197
+      - role: "user"
+        content: "不是"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457470
+
+  # [008] 917｜羽素官方旗舰店｜护理顾问-司羽｜2026-09-14 18:04:14｜质检标签：退货退款未提供解决方案
+  - name: "qc_008_917_edbfae"
+    record_id: "6aa86aadd13f8cf686edbfae"
+    request_id: "9f4fdad3-4fcc-9691-b982-6ec9e9aa2584"
+    shop_id: "917"
+    shop_name: "羽素官方旗舰店"
+    worker: "护理顾问-司羽"
+    worker_id: 2369
+    user_id: 5190917
+    chat_time: 1789380254
+    chat_time_text: "2026-09-14 18:04:14"
+    issue_summary: "买家明确表示要退货，客服未提供具体退货退款解决方案，仅建议自行申请售后"
+    quality_tags: ["退货退款未提供解决方案"]
+    session_names: ["咨询试用、新品体验或首单礼", "申请或查询退货退款", "要求转人工客服或咨询联系方式"]
+    context_messages:
+      - role: "user"
+        content: "[订单消息]"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461598
+      - role: "user"
+        content: "[订单消息]"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461600
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461608
+      - role: "user"
+        content: "这个可以打开试用吧"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461615
+      - role: "assistant"
+        content: "宝宝，您这单是淡印霜15g单瓶规格哦，这个规格是不含试用装的，所以没办法打开试用呢~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461628
+      - role: "user"
+        content: "[订单消息]"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466489
+      - role: "user"
+        content: "那怎么办"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466499
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466502
+      - role: "assistant"
+        content: "宝宝，15g规格确实是不含试用装的哈，所以打开就没法退了。想先试用的话，可以选139的30g规格，下单就赠7.5g加1.5g*2，其中1.5g*1可以试用，确认合适再留正装就好"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466507
+      - role: "user"
+        content: "我就是买来试用的"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466515
+      - role: "assistant"
+        content: "宝宝，15g这个规格是不带可试用的小样的，打开影响二次销售就退不了啦。想试用的话建议拍139的30g规格，主图上标了\"可试用\"，赠品里的1.5g*1可以打开试用，不扣钱，确认合适再留正装就好"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466521
+      - role: "user"
+        content: "你们没有送试用装"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466525
+      - role: "assistant"
+        content: "宝宝，15g规格本身是不带试用装的哦，所以没有赠送呢。想有试用装的话，139的30g规格是有送的，下单即赠7.5g加1.5g*2，其中1.5g*1可以试用"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466531
+      - role: "user"
+        content: "那只能退货？"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466636
+      - role: "assistant"
+        content: "宝宝，退货相关规则这边暂时没有查到明确说明呢，建议您直接在订单里点申请售后看下具体流程哈"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466645
+      - role: "user"
+        content: "这个我买的好像没有试用装"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466647
+      - role: "assistant"
+        content: "宝宝，您买的是15g规格，本身是不带试用装的哦，主图上标注\"可试用\"的是139的30g规格，下单赠7.5g加1.5g*2，其中1.5g*1可以试用"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466652
+      - role: "user"
+        content: "人工客服"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466654
+
+  # [009] 926｜羽素旗舰店｜羽素旗舰店奥特曼｜2026-09-14 16:45:09｜质检标签：未打消客户价格顾虑
+  - name: "qc_009_926_ede3b5"
+    record_id: "6aa87c92d13f8cf686ede3b5"
+    request_id: "188f2ec9-9b71-9843-b66d-e19496608e6f"
+    shop_id: "926"
+    shop_name: "羽素旗舰店"
+    worker: "羽素旗舰店奥特曼"
+    worker_id: 2570
+    user_id: 4470712
+    chat_time: 1789375509
+    chat_time_text: "2026-09-14 16:45:09"
+    issue_summary: "买家多次表示赠品太少，客服未针对性解释赠品价值或提供额外补偿，反而重复强调赠品数量，且在买家不满时继续发送邀评话术"
+    quality_tags: ["未打消客户价格顾虑"]
+    session_names: ["咨询商品功能、功效或特点", "咨询是否适合某类人群或场景", "咨询是否有赠品及加赠条件", "咨询不同商品或款式有什么区别"]
+    context_messages:
+      - role: "user"
+        content: "https://mobile.yangkeduo.com/goods.html?goods_id=945012212476&need_lego=1&_oak_rcto=YWLyaAXvsw8XsqxkDpz0TVaBNhpTxYCsPyJBkFcndYkb8BlSntliqTSX6aKtdjrdTvY&page_from=23&_oc_trace_mark=199&_oc_refer_ad=1&_oc_adinfo=eyJwYWdlX3NuIjoxMDAxNSwic2NlbmVfaWQiOjJ9&_oak_actype=1&_oak_sub_actype=9"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461282
+      - role: "assistant"
+        content: "宝宝，欢迎光临羽素，我是您的护理顾问，很高兴为您服务～\n【温馨叮嘱：初次使用产品前先测敏，护肤更安心】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461284
+      - role: "assistant"
+        content: "宝宝，这款是羽素清肌焕肤精萃水Ⅱ（闭口水2.0），主打保湿、祛痘、控油、舒缓、修护、提拉紧致，适合混合性、油性、中性肤质，尤其适合有闭口、粉刺、毛孔粗大、黑头、肌肤粗糙、暗沉困扰的宝宝使用~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461287
+      - role: "user"
+        content: "可以祛黑头吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461287
+      - role: "assistant"
+        content: "它的核心是4%高浓度3X智慧酶，走的是温和无酸焕肤路线，能精准脱落毛囊口的老废角质，同时搭配控油素和专研缩孔肽，控油、细毛孔、修护屏障同步起效。实测数据显示：7天左右闭口改善率提升58%，14天闭口减少97%、出油减少53.33%、毛孔细腻度提升97%，对受损皮肤也有明显修护能力，温和无刺激率达96.88%~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461289
+      - role: "assistant"
+        content: "另外这款无激素、无香精、无传统防腐剂，美修全绿配方，通过了斑贴和敏感肌测试，敏感肌也能放心用；13岁以上、男女均可使用。孕产妇和哺乳期人群就不建议使用了哈~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461291
+      - role: "user"
+        content: "敏感皮可以用吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461297
+      - role: "assistant"
+        content: "宝宝，轻度敏感肌是可以用的哈，先在耳后或面部小范围测敏，等15到30分钟没有不适，就可以正常护肤使用了~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461303
+      - role: "assistant"
+        content: "但如果是严重敏感肌、屏障重度受损期、玫瑰痤疮、激素痘、红血丝、正在过敏或皮炎的情况，就不建议使用了哦~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461305
+      - role: "assistant"
+        content: "滴滴~您有一份小礼品🎁待领取！\n现在下单满足金额可领小样，付款后回复【备注加赠】，客服会为您备注（15分钟内有效，不备注不送哦，每日限量30份/日，先到先得！！）\n👉举个例子：【备注加赠】大灯泡1ml*1"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461425
+      - role: "assistant"
+        content: "①单笔订单实付满100元加赠（3款任选1款）：大灯泡1ml*1包、海葡萄补水面膜*1片、闭口水15ml *1瓶\n②单笔订单实付满200元赠品（3款任选1款）：大灯泡1ml*2包、海葡萄补水面膜*2片、闭口水15ml *2瓶"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461427
+      - role: "assistant"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://chat-img.pddugc.com/chat-pic-mall-cs-v1/2026-09-14/9ee05887-48cd-4064-9b84-3848d119ce01.jpeg"
+        created_at: 1789461431
+      - role: "assistant"
+        content: "咱们家支持【7天无理由退换】，还提供【退货包运费】、【过敏包退】等服务哦，宝宝可以放心冲哟"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461494
+      - role: "assistant"
+        content: "宝宝，这边看见您没有下单是对产品有什么疑惑吗❓可以跟小客服说一下的哦，这边帮您解答的呢~😊"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461559
+      - role: "user"
+        content: "赠品太少了"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461598
+      - role: "assistant"
+        content: "宝宝，咱们这套到手是200ml闭口水二代+90ml+30ml，还有海葡萄面膜一盒、湿敷棉巾和喷雾头，东西还是挺实在哒"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461605
+      - role: "user"
+        content: "太少了"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461614
+      - role: "assistant"
+        content: "宝宝，咱们这套到手是200ml+90ml+30ml三瓶闭口水二代，还加上海葡萄面膜一盒、80片湿敷棉巾和喷雾头，分量真的不少啦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461621
+      - role: "assistant"
+        content: "感谢宝宝的咨询，希望我们的服务能为您带来帮助，如有任何其他问题，欢迎随时联系我们。祝您有一个美好的一天！"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461869
+      - role: "user"
+        content: "我想要旧版的"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461909
+
+  # [010] 926｜羽素旗舰店｜羽素旗舰店奥特曼｜2026-09-14 17:30:57｜质检标签：答非所问/客户催促未致歉安抚
+  - name: "qc_010_926_ede3b1"
+    record_id: "6aa87c92d13f8cf686ede3b1"
+    request_id: "4d0d332e-a21d-947a-8db9-f1d47c09e3a8"
+    shop_id: "926"
+    shop_name: "羽素旗舰店"
+    worker: "羽素旗舰店奥特曼"
+    worker_id: 2570
+    user_id: 5175893
+    chat_time: 1789378257
+    chat_time_text: "2026-09-14 17:30:57"
+    issue_summary: "客服未回应买家‘今天能不能发’的发货时效问题，且在买家表达不满后未致歉安抚"
+    quality_tags: ["答非所问", "客户催促未致歉安抚"]
+    session_names: ["咨询何时发货", "咨询能否加急发货，催促发货"]
+    context_messages:
+      - role: "user"
+        content: "这个快递什么时候发"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789455091
+      - role: "assistant"
+        content: "宝宝，欢迎光临羽素，我是您的护理顾问，很高兴为您服务～\n【温馨叮嘱：初次使用产品前先测敏，护肤更安心】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789455093
+      - role: "assistant"
+        content: "宝宝，现货商品一般付款后24小时内发货，按下单时间顺序排单发出哦～"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789455098
+      - role: "user"
+        content: "这个怎么用可以过夜吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789455125
+      - role: "assistant"
+        content: "宝宝，可以过夜的呢~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789455133
+      - role: "assistant"
+        content: "⭐【用法】：洁面后先做好补水保湿，再取适量产品点涂在痘痘处，仅点涂痘痘部位、不要全脸涂抹。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789455135
+      - role: "assistant"
+        content: "⭐【过夜】：晚上睡前使用可以停留过夜，次日早晨正常洁面洗净就行，夜间厚涂修护祛痘效果更好哦~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789455137
+      - role: "user"
+        content: "今天能不能发"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789464638
+      - role: "assistant"
+        content: "您的订单物流正常运输中，快递公司正在快马加鞭的帮您运输包裹，这边已经帮您催促物流尽快派送了，请您再耐心等待一下。有问题随时联系我们，帮您负责到底！"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789464643
+      - role: "user"
+        content: "搞这么久"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789464657
+
+  # [011] 927｜羽素护肤旗舰店｜娃哈哈哈哈哈哈｜2026-09-14 05:43:43｜质检标签：答非所问
+  - name: "qc_011_927_edd302"
+    record_id: "6aa8748ed13f8cf686edd302"
+    request_id: "e6b2fa0a-fb89-9a69-b380-3963585aba44"
+    shop_id: "927"
+    shop_name: "羽素护肤旗舰店"
+    worker: "娃哈哈哈哈哈哈"
+    worker_id: 2571
+    user_id: 5145601
+    chat_time: 1789335823
+    chat_time_text: "2026-09-14 05:43:43"
+    issue_summary: "客服未直接回答买家关于小痘痘是否可以大面积涂的问题，而是给出了产品使用顺序的通用说明"
+    quality_tags: ["答非所问"]
+    session_names: ["咨询商品如何使用或查看教程"]
+    context_messages:
+      - role: "user"
+        content: "[订单消息]"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789422200
+      - role: "assistant"
+        content: "[待收货]"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789422201
+      - role: "assistant"
+        content: "宝宝，欢迎光临羽素，我是您的护理顾问，很高兴为您服务～\n【温馨叮嘱：初次使用产品前先测敏，护肤更安心】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789422205
+      - role: "assistant"
+        content: "宝宝，您这单已经在待收货啦，耐心等等就能收到咯"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789422208
+      - role: "user"
+        content: "如果脸上那种小痘痘很多可以大面积涂吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789422223
+
+  # [012] 927｜羽素护肤旗舰店｜娃哈哈哈哈哈哈｜2026-09-14 07:31:53｜质检标签：答非所问
+  - name: "qc_012_927_edd2fc"
+    record_id: "6aa8748ed13f8cf686edd2fc"
+    request_id: "60955626-f5c2-9947-bbc7-e47809c24069"
+    shop_id: "927"
+    shop_name: "羽素护肤旗舰店"
+    worker: "娃哈哈哈哈哈哈"
+    worker_id: 2571
+    user_id: 5177627
+    chat_time: 1789342313
+    chat_time_text: "2026-09-14 07:31:53"
+    issue_summary: "买家询问赠品喷头，客服未回应，转而介绍产品功效"
+    quality_tags: ["答非所问"]
+    session_names: ["咨询包装形式、配件或替换装"]
+    context_messages:
+      - role: "user"
+        content: "https://mobile.yangkeduo.com/goods.html?goods_id=988961819612&_oak_rcto=YWKbS-ntQ_61GnNFDMJtExBng6B9zau9JFL-xfH3XLFCjsFYtsasrQBcr3VYG7R0hhY&page_from=23&_oc_trace_mark=199&_oc_refer_ad=1&_oc_adinfo=eyJwYWdlX3NuIjoxMDAxNSwic2NlbmVfaWQiOjJ9&_oak_actype=34&_oak_sub_actype=0"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789428705
+      - role: "assistant"
+        content: "宝宝，欢迎光临羽素，我是您的护理顾问，很高兴为您服务～\n【温馨叮嘱：初次使用产品前先测敏，护肤更安心】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789428707
+      - role: "assistant"
+        content: "宝宝好呀~这是羽素家超火的清肌焕肤精萃水Ⅱ，主打祛痘+控油+舒缓+去角质四效合一，特别适合油痘肌和混合肌～"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789428711
+      - role: "assistant"
+        content: "它用的是品牌独家3X智慧酶技术，比水杨酸更温和、代谢力还强167%，敏感肌也能安心用哦！"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789428713
+      - role: "user"
+        content: "有喷头送的吧？"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789428713
+      - role: "user"
+        content: "当前用户来自 商品详情页"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789428713
+
+  # [013] 927｜羽素护肤旗舰店｜娃哈哈哈哈哈哈｜2026-09-14 08:32:27｜质检标签：客户索要商品链接未发送
+  - name: "qc_013_927_edd303"
+    record_id: "6aa8748ed13f8cf686edd303"
+    request_id: "b56f9f41-8478-9e85-ac44-fc408044d0c2"
+    shop_id: "927"
+    shop_name: "羽素护肤旗舰店"
+    worker: "娃哈哈哈哈哈哈"
+    worker_id: 2571
+    user_id: 5178158
+    chat_time: 1789345947
+    chat_time_text: "2026-09-14 08:32:27"
+    issue_summary: "买家明确索要商品链接，客服未发送可用链接，仅引导自行搜索"
+    quality_tags: ["客户索要商品链接未发送"]
+    session_names: ["咨询如何下单或选择商品规格", "咨询是否有货、何时补货或停售"]
+    context_messages:
+      - role: "user"
+        content: "https://mobile.yangkeduo.com/goods.html?goods_id=969257358473&_oak_rcto=YWIRk79ofEEjHjauvsYd6b_qWVJ2wP5M63JqQgC7fQklKdDBctDNEQ89&page_from=26&_oc_trace_mark=199&_oc_refer_ad=1&_oak_actype=34&_oak_sub_actype=0"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432186
+      - role: "assistant"
+        content: "宝宝，欢迎光临羽素，我是您的护理顾问，很高兴为您服务～\n【温馨叮嘱：初次使用产品前先测敏，护肤更安心】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432188
+      - role: "assistant"
+        content: "宝宝，您发的这个链接我这边打不开具体商品信息呢，麻烦您把想咨询的商品链接重新发一下，或者直接说下商品名称，我帮您详细介绍哈"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432190
+      - role: "user"
+        content: "要水乳套装有吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432194
+      - role: "user"
+        content: "当前用户来自 商品详情页"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432195
+      - role: "assistant"
+        content: "宝宝，有的呢"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432201
+      - role: "assistant"
+        content: "咱们这套羽素清肌套装包含清肌毛孔精萃水100ml、清肌控油乳50g和清肌净透洁面乳50g，还送精萃水15ml两份和湿敷化妆棉柔巾一份哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432203
+      - role: "assistant"
+        content: "滴滴~您有一份小礼品🎁待领取！\n现在下单满足金额可领小样，付款后回复【备注加赠】，客服会为您备注（15分钟内有效，不备注不送哦，每日限量30份/日，先到先得！！）\n👉举个例子：【备注加赠】大灯泡1ml*1"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432263
+      - role: "assistant"
+        content: "①单笔订单实付满100元加赠（3款任选1款）：大灯泡1ml*1包、海葡萄补水面膜*1片、闭口水15ml *1瓶\n②单笔订单实付满200元赠品（3款任选1款）：大灯泡1ml*2包、海葡萄补水面膜*2片、闭口水15ml *2瓶"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432265
+      - role: "assistant"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://chat-img.pddugc.com/chat-pic-mall-cs-v1/2026-09-14/5d9a6ee3-b722-4f88-9fad-0a0b487fad81.jpeg"
+        created_at: 1789432270
+      - role: "assistant"
+        content: "宝宝，这边看见您没有下单是对产品有什么疑惑吗❓可以跟小客服说一下的哦，这边帮您解答的呢~😊"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432328
+      - role: "user"
+        content: "给我个链接"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432347
+
+  # [014] 927｜羽素护肤旗舰店｜娃哈哈哈哈哈哈｜2026-09-14 08:37:24｜质检标签：答非所问
+  - name: "qc_014_927_edd322"
+    record_id: "6aa8748ed13f8cf686edd322"
+    request_id: "193db477-5f48-906a-be09-9cce02d4341b"
+    shop_id: "927"
+    shop_name: "羽素护肤旗舰店"
+    worker: "娃哈哈哈哈哈哈"
+    worker_id: 2571
+    user_id: 5178252
+    chat_time: 1789346244
+    chat_time_text: "2026-09-14 08:37:24"
+    issue_summary: "买家询问适用年龄，客服未回应，而是重复介绍产品成分和功效"
+    quality_tags: ["答非所问"]
+    session_names: ["咨询是否适合某类人群或场景"]
+    context_messages:
+      - role: "user"
+        content: "https://mobile.yangkeduo.com/goods.html?goods_id=550684716649&_oak_rcto=YWK1YHjS20lvij14wZ2fXMpI-IfwXIIn1aycaTxRyxP5Oc16iEnuSnKo4LA6x5BpeeM&page_from=500&_oak_actype=34&_oak_sub_actype=0"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432635
+      - role: "assistant"
+        content: "宝宝，欢迎光临羽素，我是您的护理顾问，很高兴为您服务～\n【温馨叮嘱：初次使用产品前先测敏，护肤更安心】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432637
+      - role: "assistant"
+        content: "宝宝，这款是羽素清肌净透洁面乳，主打深层清洁和卸妆，特别适合油性、混合性、中性肤质使用~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432640
+      - role: "assistant"
+        content: "它添加了大灯泡精华同款胶态硫加皮傲宁，能改善痘肌基底、瓦解痘痘生长环境，还有酵母精华调节水油失衡，四重表活深层洗净油脂堵塞，从源头减少痘痘滋生。清洁后有三重舒缓植萃（SymRelief100草本、积雪草、马齿苋）帮忙舒缓泛红刺痛，洗完清爽不紧绷。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432642
+      - role: "user"
+        content: "多大的孩子可以用"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432643
+      - role: "user"
+        content: "当前用户来自 商品详情页"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432644
+
+  # [015] 927｜羽素护肤旗舰店｜娃哈哈哈哈哈哈｜2026-09-14 10:04:54｜质检标签：拒绝客户未致歉
+  - name: "qc_015_927_edd30d"
+    record_id: "6aa8748ed13f8cf686edd30d"
+    request_id: "0de08bfb-a912-9cb3-93c0-71d7417ee9d3"
+    shop_id: "927"
+    shop_name: "羽素护肤旗舰店"
+    worker: "娃哈哈哈哈哈哈"
+    worker_id: 2571
+    user_id: 5180024
+    chat_time: 1789351494
+    chat_time_text: "2026-09-14 10:04:54"
+    issue_summary: "客服拒绝买家赠卷请求时未致歉；买家流泪表达情绪后，客服虽有安抚但未提供处理方案"
+    quality_tags: ["拒绝客户未致歉"]
+    session_names: ["咨询是否有赠品及加赠条件", "咨询如何下单或选择商品规格", "咨询商品的规格、款式或颜色"]
+    context_messages:
+      - role: "user"
+        content: "客服宝宝能送我一个卷吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789437824
+      - role: "assistant"
+        content: "宝宝，欢迎光临羽素，我是您的护理顾问，很高兴为您服务～\n【温馨叮嘱：初次使用产品前先测敏，护肤更安心】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789437826
+      - role: "assistant"
+        content: "宝宝，目前没有赠卷活动呢~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789437830
+      - role: "user"
+        content: "我想买这个"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789437848
+      - role: "user"
+        content: "我要咨询这个规格的商品"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789437856
+      - role: "user"
+        content: "求求你了"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789437862
+      - role: "assistant"
+        content: "宝宝，目前下单不送卷哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789437880
+      - role: "assistant"
+        content: "不过现在拍第二代闭口水200ml*2，会送B5面膜1盒+小样+湿敷棉，很划算呢"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789437882
+      - role: "user"
+        content: "[流泪]"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789437894
+
+  # [016] 927｜羽素护肤旗舰店｜娃哈哈哈哈哈哈｜2026-09-14 12:45:59｜质检标签：答非所问
+  - name: "qc_016_927_edd34d"
+    record_id: "6aa8748ed13f8cf686edd34d"
+    request_id: "2f7f9bc4-a46e-9754-80dc-bc859907c6ba"
+    shop_id: "927"
+    shop_name: "羽素护肤旗舰店"
+    worker: "娃哈哈哈哈哈哈"
+    worker_id: 2571
+    user_id: 5183957
+    chat_time: 1789361159
+    chat_time_text: "2026-09-14 12:45:59"
+    issue_summary: "买家询问一盒多少片，客服未回答而介绍产品功效"
+    quality_tags: ["答非所问"]
+    session_names: ["咨询商品的规格、款式或颜色"]
+    context_messages:
+      - role: "user"
+        content: "https://mobile.yangkeduo.com/goods.html?goods_id=997570919752&_oak_rcto=YWLeOuZAnkP8zlYEr3PJm_-4zvb7C2L9Gw-KR09PU9kMBykloh-Dt6fMIFKvHBcv4w4&page_from=63&_oc_trace_mark=199&_oc_adinfo=eyJwYWdlX3NuIjoxMDAxNSwic2NlbmVfaWQiOjJ9&_oc_refer_ad=1&_oak_actype=43&_oak_sub_actype=0"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447552
+      - role: "assistant"
+        content: "宝宝，欢迎光临羽素，我是您的护理顾问，很高兴为您服务～\n【温馨叮嘱：初次使用产品前先测敏，护肤更安心】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447555
+      - role: "assistant"
+        content: "宝宝，这款是羽素安修祛痘面膜Ⅱ，主打祛痘控油、快速褪红和修护屏障哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447557
+      - role: "user"
+        content: "一盒多少片"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447558
+      - role: "assistant"
+        content: "敷15分钟就能速褪红，坚持7天能祛痘控油，28天痘痘数量减少率能达到71.15%，专为敏感肌设计，不含香精、防腐剂、酒精及致痘成分，孕妇也能安心用呢"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447559
+      - role: "user"
+        content: "当前用户来自 商品详情页"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789447559
+
+  # [017] 927｜羽素护肤旗舰店｜娃哈哈哈哈哈哈｜2026-09-14 13:00:41｜质检标签：客服推卸责任/投诉差评未安抚
+  - name: "qc_017_927_edd32c"
+    record_id: "6aa8748ed13f8cf686edd32c"
+    request_id: "da3edfb2-1f58-9d23-8d45-2abeee6b812d"
+    shop_id: "927"
+    shop_name: "羽素护肤旗舰店"
+    worker: "娃哈哈哈哈哈哈"
+    worker_id: 2571
+    user_id: 5184245
+    chat_time: 1789362041
+    chat_time_text: "2026-09-14 13:00:41"
+    issue_summary: "客服推卸责任，将补偿和售后问题直接转人工且未提供处理方案；买家提出退款并要求转人工售后时，客服未主动安抚或提供解决方案"
+    quality_tags: ["客服推卸责任", "投诉差评未安抚"]
+    session_names: ["反馈商品质量、破损或真伪问题", "申请补发、补偿或赔付", "申请取消订单或停止发货", "要求转人工客服或咨询联系方式", "反馈少件、漏发、错发或收到空包"]
+    context_messages:
+      - role: "user"
+        content: "湿敷棉"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448207
+      - role: "assistant"
+        content: "宝宝，欢迎光临羽素，我是您的护理顾问，很高兴为您服务～\n【温馨叮嘱：初次使用产品前先测敏，护肤更安心】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448209
+      - role: "assistant"
+        content: "宝宝，湿敷棉的具体材质资料里没有单独标注，不过它是随产品搭配使用的化妆棉，用来配合精萃水湿敷5到15分钟，用来控油和改善闭口效果很好哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448215
+      - role: "user"
+        content: "和小样没有"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448216
+      - role: "assistant"
+        content: "宝宝，湿敷棉和小样都有的哈"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448222
+      - role: "assistant"
+        content: "这个规格是5ml大灯泡+110ml闭口水+15g淡印霜，赠送1ml大灯泡+15ml闭口水+1.5g淡印霜+32片湿敷棉，还可以先试用小样看看效果呢"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448224
+      - role: "user"
+        content: "然后那个祛痘的用着不管用"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448227
+      - role: "assistant"
+        content: "宝宝，很理解您的心情～咱们这套是控油改善闭口、辅助淡印的护理套装，护肤效果需要坚持使用一段时间才能看到变化，建议您按湿敷流程耐心用下去哦。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448233
+      - role: "assistant"
+        content: "另外本店支持七天无理由退货，过敏包退，正装拆封不支持退换，您方便的话可以联系在线客服帮您处理哈～"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448235
+      - role: "user"
+        content: "没有"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448235
+      - role: "assistant"
+        content: "宝宝，很高兴与您相遇，我是您的护理顾问，羽素将会在变美的道路上一直陪伴您 ❤‎‎"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448246
+      - role: "assistant"
+        content: "宝宝，稍等我看一下聊天记录以便为您解答问题~ ❤‎‎"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448247
+      - role: "user"
+        content: "你看能不能补偿些"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448257
+      - role: "user"
+        content: "我要退款，帮我转人工售后处理"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448261
+      - role: "user"
+        content: "我朋友买的有小样"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448265
+      - role: "user"
+        content: "我买的没有"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448269
+      - role: "assistant"
+        content: "您好 小素在的呢"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448283
+      - role: "user"
+        content: "你好"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448420
+      - role: "assistant"
+        content: "宝宝您好"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448426
+      - role: "assistant"
+        content: "小素在的呢，您先别着急哈，关于补偿和转人工售后的问题，请您联系咱们店铺客服，客服会帮您登记处理哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448428
+      - role: "user"
+        content: "行"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448434
+      - role: "user"
+        content: "而且正装那个水"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789448441
+
+  # [018] 927｜羽素护肤旗舰店｜娃哈哈哈哈哈哈｜2026-09-14 14:18:09｜质检标签：退货退款未提供解决方案
+  - name: "qc_018_927_edd340"
+    record_id: "6aa8748ed13f8cf686edd340"
+    request_id: "4598ef1f-38d6-9d99-84a5-eb919d5d5a72"
+    shop_id: "927"
+    shop_name: "羽素护肤旗舰店"
+    worker: "娃哈哈哈哈哈哈"
+    worker_id: 2571
+    user_id: 5064629
+    chat_time: 1789366689
+    chat_time_text: "2026-09-14 14:18:09"
+    issue_summary: "买家明确表示要退货退款，客服仅引导其自行申请，未提供具体操作路径或处理方案"
+    quality_tags: ["退货退款未提供解决方案"]
+    session_names: ["申请或查询退货退款", "反馈商品不好用、过敏或使用异常"]
+    context_messages:
+      - role: "user"
+        content: "试用了两天小样，用完痘更红了，而且还有针扎的感觉"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453064
+      - role: "assistant"
+        content: "宝宝，欢迎光临羽素，我是您的护理顾问，很高兴为您服务～\n【温馨叮嘱：初次使用产品前先测敏，护肤更安心】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453067
+      - role: "assistant"
+        content: "宝宝，咱们产品无激素无香精，成分安全可靠，还通过了第三方权威认证，受试用户人体皮肤报告均无刺激反应，是不会导致皮肤发红的哦~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453073
+      - role: "assistant"
+        content: "痘痘本身就会发红，并不是点涂后导致的，这款产品还专门添加了褪红成分，坚持用几天能帮助消退痘痘区域的红。至于针扎的刺痛感，是因为皮肤长期缺水干燥处于不稳定状态，就像沙漠里久没喝水的人刚喝水会肠胃痛一样，少量用几次产品后皮肤适应了就不会有刺痛感了。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453075
+      - role: "user"
+        content: "我正装都没拆封"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453079
+      - role: "assistant"
+        content: "宝宝，正装没拆封的话，签收后七天内是可以申请退货退款的哈"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453085
+      - role: "assistant"
+        content: "您这套里大灯泡精华1ml*1是可试用的小样，可以先拆开体验看看效果；如果过敏的话我们还支持过敏包退哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453088
+      - role: "user"
+        content: "我这边发起退货退款，你同意一下"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453089
+
+  # [019] 927｜羽素护肤旗舰店｜娃哈哈哈哈哈哈｜2026-09-14 14:28:28｜质检标签：客户情绪异常未安抚
+  - name: "qc_019_927_edd32b"
+    record_id: "6aa8748ed13f8cf686edd32b"
+    request_id: "d3aecc60-7483-9446-abb4-e6c30ee94754"
+    shop_id: "927"
+    shop_name: "羽素护肤旗舰店"
+    worker: "娃哈哈哈哈哈哈"
+    worker_id: 2571
+    user_id: 5186320
+    chat_time: 1789367308
+    chat_time_text: "2026-09-14 14:28:28"
+    issue_summary: "买家反馈脸部过敏，客服未致歉、未安抚、未提供处理方案"
+    quality_tags: ["客户情绪异常未安抚"]
+    session_names: ["反馈商品不好用、过敏或使用异常"]
+    context_messages:
+      - role: "user"
+        content: "https://mobile.yangkeduo.com/goods.html?goods_id=866412358862&_oak_rcto=YWKo0IoZkLN9u1D7pO6iLBUEtBN7i3hxiyxBkFcndYkb8I67OOrf0vdgXzuKZTfm-GI&page_from=101&_oak_actype=34&_oak_sub_actype=0"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453699
+      - role: "assistant"
+        content: "宝宝，欢迎光临羽素，我是您的护理顾问，很高兴为您服务～\n【温馨叮嘱：初次使用产品前先测敏，护肤更安心】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453701
+      - role: "assistant"
+        content: "宝宝，这是一款针对油痘肌的套装产品哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453704
+      - role: "assistant"
+        content: "集合了控油、保湿、舒缓、去角质、抗痘多种功效，适合油性和混合性肤质使用。里面搭配了闭口水和控油乳：闭口水含3X智慧酶，坚持用能改善闭口粉刺、调节水油、收缩毛孔、改善暗沉；控油乳日夜兼顾控油加嫩肤，妆前用还能隐匿毛孔、让持妆更服帖"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453706
+      - role: "user"
+        content: "用的脸过敏"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453707
+      - role: "user"
+        content: "当前用户来自 商品详情页"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453708
+
+  # [020] 927｜羽素护肤旗舰店｜娃哈哈哈哈哈哈｜2026-09-14 18:00:12｜质检标签：答非所问
+  - name: "qc_020_927_edd383"
+    record_id: "6aa8748ed13f8cf686edd383"
+    request_id: "6a8d48f4-72f9-906b-b7ad-34455396f30a"
+    shop_id: "927"
+    shop_name: "羽素护肤旗舰店"
+    worker: "娃哈哈哈哈哈哈"
+    worker_id: 2571
+    user_id: 5190687
+    chat_time: 1789380012
+    chat_time_text: "2026-09-14 18:00:12"
+    issue_summary: "客服未回应买家关于满100元赠品活动的疑问，反而引导查看平台优惠券"
+    quality_tags: ["答非所问"]
+    session_names: ["咨询活动玩法、条件或时间"]
+    context_messages:
+      - role: "user"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://chat-img.pddugc.com/chat-pic-mall-user-v1/2026-09-14/23c21541-9253-4311-9b0d-54eb2fe8d468.jpeg"
+        created_at: 1789465831
+      - role: "user"
+        content: "当前用户来自 商品详情页"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789465832
+      - role: "assistant"
+        content: "宝宝，欢迎光临羽素，我是您的护理顾问，很高兴为您服务～\n【温馨叮嘱：初次使用产品前先测敏，护肤更安心】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789465833
+      - role: "assistant"
+        content: "宝宝，这款精萃水主打祛痘平粉刺、控油平衡和细致毛孔，坚持用还能温和去角质、舒缓修护，帮助淡化痘印减少反复。控油和去闭口效果也很不错，用7天出油量能减少53.33%，闭口减少27.77%，14天后97%的使用者认同出油减少、96.88%认同闭口减少。补水保湿方面，用7天角质层含水量能提升33.33%，帮助肌肤平衡水油状态"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789465845
+      - role: "user"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://chat-img.pddugc.com/chat-pic-mall-user-v1/2026-09-14/eb762028-1b15-4458-b409-85888aeaa28f.jpeg"
+        created_at: 1789465847
+      - role: "user"
+        content: "他俩有啥区别？"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789465850
+      - role: "assistant"
+        content: "宝宝，这两款是闭口水的二代和三代哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789465867
+      - role: "assistant"
+        content: "二代的核心功效也很出色，现在活动价更优惠；三代则升级了去闭口、收毛孔、净油光、湿敷救急、提亮肌肤这五个维度，效果也很不错。效果上差不多，主要是肤感不同，三代质地相对清澈，二代相对粘稠，宝宝可以根据自己喜欢的肤感来选哈"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789465869
+      - role: "user"
+        content: "我主要是想去痘印去痘痘。痘痘特别厉害。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789465896
+      - role: "user"
+        content: "哪一款比较好？"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789465899
+      - role: "assistant"
+        content: "宝宝，痘痘和痘印比较严重的话，可以选第三代闭口水哦，它专注解决痘肌问题，改善痘痘和闭口，帮助淡化痘印、减少反复，坚持用痘痘数量能减少51.27%，粉刺数量减少41.04%，肌肤会越来越细腻的。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789465914
+      - role: "assistant"
+        content: "滴滴~您有一份小礼品🎁待领取！\n现在下单满足金额可领小样，付款后回复【备注加赠】，客服会为您备注（15分钟内有效，不备注不送哦，每日限量30份/日，先到先得！！）\n👉举个例子：【备注加赠】大灯泡1ml*1"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789465960
+      - role: "assistant"
+        content: "①单笔订单实付满100元加赠（3款任选1款）：大灯泡1ml*1包、海葡萄补水面膜*1片、闭口水15ml *1瓶\n②单笔订单实付满200元赠品（3款任选1款）：大灯泡1ml*2包、海葡萄补水面膜*2片、闭口水15ml *2瓶"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789465962
+      - role: "assistant"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://chat-img.pddugc.com/chat-pic-mall-cs-v1/2026-09-14/f0482ff9-5122-465c-a861-24dc7be07003.jpeg"
+        created_at: 1789465967
+      - role: "assistant"
+        content: "宝宝，这边看见您没有下单是对产品有什么疑惑吗❓可以跟小客服说一下的哦，这边帮您解答的呢~😊"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466027
+      - role: "user"
+        content: "https://mobile.yangkeduo.com/goods.html?goods_id=969257358473&_oak_rcto=YWIJDI3Tf279joEynwk1eZnUvPb50zIZY_KKR09PU9kMB1DRl2rlbwogVTYbAzFrjRQ&page_from=63&_oc_trace_mark=199&_oak_actype=34&_oak_sub_actype=0"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466080
+      - role: "assistant"
+        content: "宝宝，收到您的链接啦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466083
+      - role: "assistant"
+        content: "这几个是同一款商品哦，就是咱家的闭口水哈。您是想了解这款的哪方面呢，跟小客服说一下，我帮您解答"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466085
+      - role: "user"
+        content: "这款是三代啊"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466089
+      - role: "user"
+        content: "当前用户来自 商品详情页"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466089
+      - role: "assistant"
+        content: "宝宝，您这款就是第三代闭口水哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466101
+      - role: "assistant"
+        content: "它添加了极地酶核心成分，能精准针对毛囊口堵塞的老废角质，约3天显著改善闭口粉刺，约14天改善毛孔体积，还能养护屏障、减少闭口反复。二代和三代的核心功效都挺出色的，主要区别是三代在去闭口、收毛孔、净油光这些维度做了升级，效果更全面；三代质地相对清澈，二代相对粘稠一些。区分的话看包装就能认出来，三代是羽素清肌毛孔精萃水这款透明瓶装的哈"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466103
+      - role: "user"
+        content: "加赠"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466279
+      - role: "assistant"
+        content: "辛苦您告知一下具体想要的赠品名称哦，比如「【备注加赠】大灯泡精华 1ml*1」，我这边马上帮您登记～"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466290
+      - role: "user"
+        content: "海葡萄补水面膜"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466297
+      - role: "assistant"
+        content: "宝宝，您这单的海葡萄补水面膜加赠需要单独确认呢，我这边没看到这个赠品的登记信息"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466303
+      - role: "assistant"
+        content: "您可以先跟我说下具体要怎么加赠哦。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466305
+      - role: "assistant"
+        content: "宝宝，感谢您对羽素青睐！我们的产品都经过了层层严格测试，为了确保宝宝使用起来更放心，建议宝宝在使用前先来个【测敏】哦～如有任何不适，及时联系护理顾问反馈！"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466318
+      - role: "user"
+        content: "不是说满一百可以赠送吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466354
+      - role: "assistant"
+        content: "宝宝，我这边没有查到满一百赠送的活动哦，具体优惠您可以下单提交时看看有没有平台优惠券呢"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789466361
+      - role: "user"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://chat-img.pddugc.com/chat-pic-mall-user-v1/2026-09-14/4ceffa25-c552-4212-828c-1b34194b5f44.jpeg"
+        created_at: 1789466412
+
+  # [021] 928｜羽素美容个护旗舰店｜羽素个护奥特曼｜2026-09-14 07:41:35｜质检标签：重复机械式致歉
+  - name: "qc_021_928_ede475"
+    record_id: "6aa87cecd13f8cf686ede475"
+    request_id: "895ab3b2-8779-9480-9c0c-86cbf8738f00"
+    shop_id: "928"
+    shop_name: "羽素美容个护旗舰店"
+    worker: "羽素个护奥特曼"
+    worker_id: 2572
+    user_id: 4989662
+    chat_time: 1789342895
+    chat_time_text: "2026-09-14 07:41:35"
+    issue_summary: "客服在第7条消息中重复发送与第5条相同的内容，构成机械式重复回复"
+    quality_tags: ["重复机械式致歉"]
+    session_names: ["咨询商品如何使用或查看教程"]
+    context_messages:
+      - role: "user"
+        content: "你好"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429211
+      - role: "assistant"
+        content: "宝宝，欢迎光临羽素，我是您的护理顾问，很高兴为您服务～\n【温馨叮嘱：初次使用产品前先测敏，护肤更安心】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429213
+      - role: "user"
+        content: "这个早上怎么用啊"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429215
+      - role: "assistant"
+        content: "哈喽宝宝～在线等您吩咐💖"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429215
+      - role: "user"
+        content: "早上用完可以涂防晒吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429222
+      - role: "assistant"
+        content: "宝宝，早上洁面爽肤水后，取1支次抛精华轻柔涂全脸，按摩吸收就好～完全可以用防晒哦，它不光敏，妆前用还能让底妆更服帖呢！"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429233
+      - role: "user"
+        content: "好"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429295
+
+  # [022] 928｜羽素美容个护旗舰店｜羽素个护奥特曼｜2026-09-14 13:42:49｜质检标签：答非所问
+  - name: "qc_022_928_ede498"
+    record_id: "6aa87cecd13f8cf686ede498"
+    request_id: "2cead3c1-f50b-9106-a288-78f00e5d7297"
+    shop_id: "928"
+    shop_name: "羽素美容个护旗舰店"
+    worker: "羽素个护奥特曼"
+    worker_id: 2572
+    user_id: 5185213
+    chat_time: 1789364569
+    chat_time_text: "2026-09-14 13:42:49"
+    issue_summary: "客服在买家第38条消息再次询问是否可以祛痘时，第39条回复称“没有针对性祛痘功效”，与之前第6条消息“是的呢，这款焕肤次抛是有祛痘功效的哦”自相矛盾，属于答非所问"
+    quality_tags: ["答非所问"]
+    session_names: ["咨询商品功能、功效或特点", "咨询是否适合某类人群或场景", "咨询商品如何使用或查看教程", "咨询使用哪家快递，能否更换快递"]
+    context_messages:
+      - role: "user"
+        content: "https://mobile.yangkeduo.com/goods.html?goods_id=964039564790&_oak_rcto=YWLS55tJYFl6RGdGPgqitD43xGsM3i7Dp7pBkFcndYkb8LpBIYrjmrElZChg57q_Pvs&page_from=63&_oak_actype=34&_oak_sub_actype=0"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450646
+      - role: "assistant"
+        content: "宝宝，欢迎光临羽素，我是您的护理顾问，很高兴为您服务～\n【温馨叮嘱：初次使用产品前先测敏，护肤更安心】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450648
+      - role: "assistant"
+        content: "宝宝，这款是羽素清肌焕肤次抛精华液，主打祛痘、修护、保湿、舒缓、控油、去角质，能深入毛孔溶解油脂栓和老废角质，调节角质代谢，降低痘痘细菌繁殖，改善闭口反复、毛孔粗大和熬夜蜡黄。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450650
+      - role: "assistant"
+        content: "它采用自研3X智慧酶焕肤专利加羽清妍Pro，涡旋包裹缓释技术，温和不伤屏障，六大零添加，敏感肌也能适配；18岁以上油皮、混油皮、痘肌男女都能用，孕产妇及哺乳期除外。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450652
+      - role: "user"
+        content: "这款精华液是祛痘的吗？"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450653
+      - role: "user"
+        content: "当前用户来自 商品详情页"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450654
+      - role: "assistant"
+        content: "宝宝，是的呢，这款焕肤次抛是有祛痘功效的哦，能深入毛孔溶解油脂栓、降低痘痘细菌繁殖"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450661
+      - role: "user"
+        content: "敏感肌可以用吗？"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450683
+      - role: "user"
+        content: "[微笑]"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450685
+      - role: "assistant"
+        content: "宝宝，敏感肌可以用的哦，不过一定要建立好耐受：刚开始3天用1次，取黄豆大小薄涂，停留15分钟左右用清水洗净再涂面霜，没刺痛泛红再慢慢拉长间隔就好啦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450695
+      - role: "assistant"
+        content: "滴滴~您有一份小礼品🎁待领取！\n现在下单满足金额可领小样，付款后回复【备注加赠】，客服会为您备注（15分钟内有效，不备注不送哦，每日限量30份/日，先到先得！！）\n👉举个例子：【备注加赠】大灯泡1ml*1"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450748
+      - role: "assistant"
+        content: "①单笔订单实付满100元加赠（3款任选1款）：大灯泡1ml*1包、海葡萄补水面膜*1片、闭口水15ml *1瓶\n②单笔订单实付满200元赠品（3款任选1款）：大灯泡1ml*2包、海葡萄补水面膜*2片、闭口水15ml *2瓶"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450750
+      - role: "assistant"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://chat-img.pddugc.com/chat-pic-mall-cs-v1/2026-09-14/f7a5c539-f9c5-4559-a43b-78d2715b5df1.jpeg"
+        created_at: 1789450755
+      - role: "user"
+        content: "怎么用啊，这个精华液"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450758
+      - role: "assistant"
+        content: "宝宝，这款是次抛精华哦~洁面后、爽肤水之后用，取1支轻柔涂抹于面部，轻轻按摩至吸收，每日1-2次，早晚都可以用的哈~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450764
+      - role: "assistant"
+        content: "不过刚开始用记得先建立耐受哦：前2周隔天1支、晚间使用，等没有刺痛泛红之后，再慢慢改成每晚1支就可以啦~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450766
+      - role: "user"
+        content: "可以发什么快递"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450804
+      - role: "assistant"
+        content: "宝宝，我们默认免费发申通、中通、邮政哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450811
+      - role: "user"
+        content: "有中通吗？"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450812
+      - role: "assistant"
+        content: "如果需要指定，下单付款后发送【备注+快递】就可以啦，比如：备注邮政。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450813
+      - role: "assistant"
+        content: "可以在中通、申通、邮政三个快递任选一个指定，您付款成功发送“如：备注邮政”指定快递哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450817
+      - role: "user"
+        content: "好的"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450818
+      - role: "assistant"
+        content: "好哒宝宝～有任何问题都可以随时来找我哦！😊"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450823
+      - role: "assistant"
+        content: "宝宝，这边看见您没有下单是对产品有什么疑惑吗❓可以跟小客服说一下的哦，这边帮您解答的呢~😊"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450826
+      - role: "user"
+        content: "下单了"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450840
+      - role: "assistant"
+        content: "好哒宝宝~这边会尽快安排发出，期待您的签收哦~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450843
+      - role: "user"
+        content: "备注中通"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450846
+      - role: "user"
+        content: "谢谢"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450851
+      - role: "assistant"
+        content: "宝宝，这边已经帮您备注好啦，发货后您可关注下快递信息，有需要帮助欢迎再来找我们~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450852
+      - role: "user"
+        content: "好的"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450857
+      - role: "assistant"
+        content: "嗯嗯好的宝宝~耐心等待收货就好啦~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450863
+      - role: "user"
+        content: "这个精华是全脸涂吗？"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450890
+      - role: "user"
+        content: "我是敏感肌"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450893
+      - role: "assistant"
+        content: "宝宝，敏感痘肌可以用的，但一定要严格建立耐受哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450902
+      - role: "assistant"
+        content: "初期3天用1次，取约黄豆大小薄涂于面部，停留约15分钟后用清水洗净，再涂抹养护面霜；使用后无刺痛泛红反应，再逐步拉长使用间隔、延长停留时间，使用前也建议先做皮肤测试，无不良反应再使用哈"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450904
+      - role: "assistant"
+        content: "宝宝，感谢您对羽素青睐！我们的产品都经过了层层严格测试，为了确保宝宝使用起来更放心，建议宝宝在使用前先来个【测敏】哦～如有任何不适，及时联系护理顾问反馈！"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450906
+      - role: "user"
+        content: "这个精华的功效有哪些"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450948
+      - role: "assistant"
+        content: "宝宝，这款焕肤次抛主打减黄提亮、改善油糙状态，兼顾控油保湿，很适合日常维稳或者熬夜急救哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450955
+      - role: "user"
+        content: "可以祛痘吗？"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789450969
+
+  # [023] 928｜羽素美容个护旗舰店｜羽素个护奥特曼｜2026-09-14 19:41:51｜质检标签：答非所问
+  - name: "qc_023_928_ede4a5"
+    record_id: "6aa87cecd13f8cf686ede4a5"
+    request_id: "a920304e-9e20-9538-9754-3456c950cdf6"
+    shop_id: "928"
+    shop_name: "羽素美容个护旗舰店"
+    worker: "羽素个护奥特曼"
+    worker_id: 2572
+    user_id: 5026548
+    chat_time: 1789386111
+    chat_time_text: "2026-09-14 19:41:51"
+    issue_summary: "买家询问产品敷多久，客服未回答问题，反而询问买家想了解什么"
+    quality_tags: ["答非所问"]
+    session_names: ["咨询商品如何使用或查看教程"]
+    context_messages:
+      - role: "user"
+        content: "[订单消息]"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789472507
+      - role: "assistant"
+        content: "宝宝，欢迎光临羽素，我是您的护理顾问，很高兴为您服务～\n【温馨叮嘱：初次使用产品前先测敏，护肤更安心】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789472509
+      - role: "assistant"
+        content: "宝宝"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789472510
+      - role: "user"
+        content: "这个要敷多久？"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789472511
+
+  # [024] 941｜羽素美妆旗舰店｜护理顾问-智羽｜2026-09-14 04:50:55｜质检标签：拒绝客户未致歉
+  - name: "qc_024_941_edcb87"
+    record_id: "6aa86fd2d13f8cf686edcb87"
+    request_id: "a65a5908-f263-97e2-b4ea-66a036b1bc00"
+    shop_id: "941"
+    shop_name: "羽素美妆旗舰店"
+    worker: "护理顾问-智羽"
+    worker_id: 2083
+    user_id: 5177076
+    chat_time: 1789332655
+    chat_time_text: "2026-09-14 04:50:55"
+    issue_summary: "客服拒绝买家去掉灯泡的请求时未致歉"
+    quality_tags: ["拒绝客户未致歉"]
+    session_names: []
+    context_messages:
+      - role: "user"
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3728320292855087356"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789418662
+      - role: "assistant"
+        content: "羽素美妆旗舰店为您看中的商品提供了运费险，早买早发货，赶快下单迎接宝贝吧~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789418663
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789418668
+      - role: "user"
+        content: "可以不要灯泡吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789418670
+      - role: "user"
+        content: "换成蓝盾"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789418675
+      - role: "assistant"
+        content: "目前高级客服暂不在线，但我们已收到您的消息，早上8点上线后会第一时间为您处理。感谢您的理解与支持"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789418689
+      - role: "user"
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3728320292855087356"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789419008
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789419012
+      - role: "assistant"
+        content: "宝宝，您发的这个链接是【祛痘去闭口套组】，里面包含三款产品，我给您分别说说哈~**羽素祛痘大灯泡（祛痘精华液Ⅲ）**\n急救突发痘、红肿痘，针对青少年期、姨妈期、熬夜上火爆发的粉刺、丘疹、脓包痘痘都能瘪痘，升级后灭痘更快；痘中使用还能舒缓炎症泛红、修护屏障、预防留印。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789419015
+      - role: "assistant"
+        content: "用法是点涂在痘痘上不要抹开，自然变干形成保护膜，第二天早上洗掉即可。**羽素闭口水（第三代）**\n主打0酸极地酶肽焕肤，精准溶解毛孔角栓、改善反复闭口白头，调节油脂分泌、改善黑头出油，疏通后紧致收敛粗大毛孔，还添加舒缓成分修护屏障、缓解泛红，敏感油痘肌也能用。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789419015
+      - role: "assistant"
+        content: "**淡印霜**\n双通路抑黑提亮，改善暗沉发黄、晒黑、肤色不均，针对性淡化新生红痘印和陈年黑褐色痘印，预防痘印加深，同时舒缓、修护痘后屏障，质地清爽不闷痘，全脸薄涂、痘印点涂两用，持证美白哦~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789419016
+      - role: "user"
+        content: "269这个套装能不要灯泡么"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789419055
+
+  # [025] 941｜羽素美妆旗舰店｜护理顾问-智羽｜2026-09-14 07:53:22｜质检标签：连续发送链接
+  - name: "qc_025_941_edcb82"
+    record_id: "6aa86fd2d13f8cf686edcb82"
+    request_id: "93d79b46-3a95-98bd-91e7-b5a76b4d2de4"
+    shop_id: "941"
+    shop_name: "羽素美妆旗舰店"
+    worker: "护理顾问-智羽"
+    worker_id: 2083
+    user_id: 5177681
+    chat_time: 1789343602
+    chat_time_text: "2026-09-14 07:53:22"
+    issue_summary: "客服在买家表示‘没有喷头’后，连续发送3个商品链接且未说明各链接用途"
+    quality_tags: ["连续发送链接"]
+    session_names: ["咨询包装形式、配件或替换装"]
+    context_messages:
+      - role: "user"
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3619271928470238574"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429166
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429169
+      - role: "assistant"
+        content: "宝宝，这款是羽素清肌毛孔精萃水（闭口水），100ml/200ml两种规格，中性肤质适用，四季都能用~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429171
+      - role: "user"
+        content: "有喷头么"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429172
+      - role: "assistant"
+        content: "它主打改善闭口粉刺、调节水油平衡、收缩毛孔、改善暗沉和舒缓褪红。核心是4%极地酶角质调理技术，靶向脱落堵塞毛囊口的老废角质；再配合控油素和缩孔肽Pro，减少油脂分泌、细腻紧致毛孔，预防新痘。第三方实测约3天闭口-31.31%、约14天毛孔体积-52.88%、黑头粉刺-61.90%。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429172
+      - role: "assistant"
+        content: "用法上，油皮建议当精华水每天早晚用，也可以湿敷：浸透湿敷棉敷8分钟揭下，每周2-3次。成分无酒精、无激素、无香精、无致痘成分，SGS敏感肌认证，温和不刺激，放心用哈~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429172
+      - role: "assistant"
+        content: "宝宝，这款精萃水本身是倒取式的，不是喷头设计哈"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429180
+      - role: "assistant"
+        content: "不过拍200ml规格的话，赠品里会含一个喷头哦。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429181
+      - role: "assistant"
+        content: "宝宝还在考虑吗🥰\n限量 30 份｜仅限今日，\n送完即止⏰\n🎁下单享满额好礼，3 选 1\n▪单笔实付满100元：大灯泡精华1ml*1、闭口水15ml*1、淡印霜1.5g*1\n▪单笔实付满200元：大灯泡面膜*1片、闭口水15ml*2、淡印霜1.5g*2"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429235
+      - role: "assistant"
+        content: "✅重要规则（不按操作无赠品）：\n下单后15分钟内联系客服发送备注！\n订单自己备注无效❗\n📝备注参考模板：\n【备注加赠大灯泡精华 1ml×1】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429236
+      - role: "assistant"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://p9-pigeon-sign.ecombdimg.com/tos-cn-i-scl3phc04j/b68dd1c6a99a416f887ee183a7016763~tplv-jxcbcipi3j-image-limit.image?lk3s=c879ea0d&x-expires=1794526837&x-signature=wghECXg%2Fvw1YcRSNgBDOW4TpJzw%3D"
+        created_at: 1789429237
+      - role: "assistant"
+        content: "宝宝，这边看见您没有下单是对产品有什么疑惑吗❓可以跟小客服说一下的哦，这边帮您解答的呢~😊"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429298
+      - role: "assistant"
+        content: "感谢宝宝的咨询，希望我们的服务能为您带来帮助，如有任何其他问题，欢迎随时联系我们。祝您有一个美好的一天！"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789429601
+      - role: "user"
+        content: "没有喷头"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789430002
+
+  # [026] 941｜羽素美妆旗舰店｜护理顾问-智羽｜2026-09-14 08:39:51｜质检标签：答非所问
+  - name: "qc_026_941_edcb95"
+    record_id: "6aa86fd2d13f8cf686edcb95"
+    request_id: "518604c8-123e-9a50-82ee-a3bf5fbda798"
+    shop_id: "941"
+    shop_name: "羽素美妆旗舰店"
+    worker: "护理顾问-智羽"
+    worker_id: 2083
+    user_id: 5178272
+    chat_time: 1789346391
+    chat_time_text: "2026-09-14 08:39:51"
+    issue_summary: "客服在买家询问使用顺序时，未直接回答先用哪个，而是笼统描述整个流程"
+    quality_tags: ["答非所问"]
+    session_names: ["咨询商品如何使用或查看教程"]
+    context_messages:
+      - role: "user"
+        content: "我有洗面奶还有面膜还有精华加上这个我应该按什么顺序来用"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432726
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432729
+      - role: "assistant"
+        content: "洗脸奶先清洁面部，然后如果敷面膜就在洁面后作为步用，接着用闭口水轻拍吸收（爽肤或湿敷8分钟选一个就行），最后再用精华按摩吸收哈"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432733
+      - role: "user"
+        content: "先用这个还是先敷面膜"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432767
+      - role: "assistant"
+        content: "宝宝，先敷面膜哈，面膜是在洁面后作为护肤流程的步，敷完面膜之后再用闭口水，最后用精华"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432773
+      - role: "user"
+        content: "ok"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789432791
+
+  # [027] 941｜羽素美妆旗舰店｜护理顾问-智羽｜2026-09-14 10:38:49｜质检标签：重复机械式致歉
+  - name: "qc_027_941_edcba0"
+    record_id: "6aa86fd2d13f8cf686edcba0"
+    request_id: "e95aae52-d346-9b7c-8421-03fe9c9eaddc"
+    shop_id: "941"
+    shop_name: "羽素美妆旗舰店"
+    worker: "护理顾问-智羽"
+    worker_id: 2083
+    user_id: 5180737
+    chat_time: 1789353529
+    chat_time_text: "2026-09-14 10:38:49"
+    issue_summary: "客服在买家多次询问快递问题时，连续重复发送完全相同的快递说明话术，构成重复机械式回复"
+    quality_tags: ["重复机械式致歉"]
+    session_names: ["咨询商品功能、功效或特点", "咨询使用哪家快递，能否更换快递"]
+    context_messages:
+      - role: "user"
+        content: "祛痘吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439500
+      - role: "user"
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3688287939982393749"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439503
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439503
+      - role: "assistant"
+        content: "宝宝，这款羽素双肽控油祛痘洁面乳是可以祛痘的哦~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439513
+      - role: "assistant"
+        content: "它采用氨泥复配清洁加双肽内源抑痘双重通路：表层用加拿大冰川红泥物理吸附毛孔油脂、角栓和污垢，从源头减少毛孔堵塞长痘；内源靠六肽-5抑制痤疮致病菌繁殖、降低痘痘红肿，精氨酸/赖氨酸多肽调节皮脂腺出油，双肽协同阻断痘痘生成链路，全程无强酸、温和抑痘不伤屏障。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439514
+      - role: "assistant"
+        content: "适合油皮、混油皮、熬夜出油反复爆痘和下巴周期性痘，不过破损流血痘和大面积溃烂痘不建议摩擦使用哦~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439514
+      - role: "user"
+        content: "痤疮痘印管用吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439536
+      - role: "assistant"
+        content: "宝宝，这款是洁面乳哦，对痘痘本身是有帮助的，但没有痘印改善作用呢"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439543
+      - role: "assistant"
+        content: "想淡化痘印的话可以搭配淡印霜一起用，专门美白淡印修护的"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439544
+      - role: "user"
+        content: "黑头呢"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439554
+      - role: "assistant"
+        content: "宝宝，这款洁面乳对黑头是有改善作用的哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439562
+      - role: "assistant"
+        content: "它里面的椰油甘氨酸钾绵密泡沫能深入毛孔溶解油脂膜，加拿大冰川红泥可以吸附毛孔深处的油脂栓、老废角质和黑头垃圾，温和疏通堵塞毛孔"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439562
+      - role: "assistant"
+        content: "宝宝还在考虑吗🥰\n限量 30 份｜仅限今日，\n送完即止⏰\n🎁下单享满额好礼，3 选 1\n▪单笔实付满100元：大灯泡精华1ml*1、闭口水15ml*1、淡印霜1.5g*1\n▪单笔实付满200元：大灯泡面膜*1片、闭口水15ml*2、淡印霜1.5g*2"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439624
+      - role: "assistant"
+        content: "✅重要规则（不按操作无赠品）：\n下单后15分钟内联系客服发送备注！\n订单自己备注无效❗\n📝备注参考模板：\n【备注加赠大灯泡精华 1ml×1】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439624
+      - role: "assistant"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://p6-pigeon-sign.ecombdimg.com/tos-cn-i-scl3phc04j/60fddcee2e034a3a947ac1fc2f1e14ad~tplv-jxcbcipi3j-image-limit.image?lk3s=c879ea0d&x-expires=1794537226&x-signature=PKypAA6GqsoH%2BXBKuaojcEDBDMY%3D"
+        created_at: 1789439626
+      - role: "assistant"
+        content: "宝宝，这边看见您没有下单是对产品有什么疑惑吗❓可以跟小客服说一下的哦，这边帮您解答的呢~😊"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439688
+      - role: "user"
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3688287939982393749"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439874
+      - role: "assistant"
+        content: "宝宝，您发的是【祛痘洁面】羽素双肽洗面奶哦～它主打控油清洁、保湿舒缓、卸妆二合一，适合油皮痘肌使用的呢。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439878
+      - role: "assistant"
+        content: "采用氨泥复配清洁加双肽内源抑痘：加拿大冰川红泥能物理吸附毛孔油脂、角栓和污垢，椰油甘氨酸钾温和溶解表层多余油脂、轻彩妆防晒；六肽-5抑制痤疮致病菌繁殖，精氨酸/赖氨酸多肽调节皮脂腺出油，温和抑痘不伤屏障。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439879
+      - role: "assistant"
+        content: "洗完即刻清爽控油，双肽长效调控皮脂，日常早晚用能维持大半天不泛油，还能预防新痘、疏通毛孔黑头。要提醒宝宝的是，它作为洁面没有痘印改善作用哦～"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439879
+      - role: "user"
+        content: "发啥快递"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439883
+      - role: "assistant"
+        content: "店铺快递服务说明：\n【默认快递】店铺默认免费发申通、中通、邮政快递。\n【是否支持其他快递】不支持除申通、中通、邮政以外的其他快递公司。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439888
+      - role: "assistant"
+        content: "【指定快递】若需指定快递，可在下单付款后发送【备注中通】，我会帮您备注指定。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439888
+      - role: "user"
+        content: "我这边中通发不了"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439890
+      - role: "assistant"
+        content: "店铺快递服务说明：\n【默认快递】店铺默认免费发申通、中通、邮政快递。\n【是否支持其他快递】不支持除申通、中通、邮政以外的其他快递公司。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439894
+      - role: "assistant"
+        content: "【指定快递】若需指定快递，可在下单付款后发送【备注中通】，我会帮您备注指定。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439895
+      - role: "user"
+        content: "能不能指定"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439909
+      - role: "assistant"
+        content: "店铺快递服务说明：\n【默认快递】店铺默认免费发申通、中通、邮政快递。\n【是否支持其他快递】不支持除申通、中通、邮政以外的其他快递公司。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439913
+      - role: "assistant"
+        content: "【指定快递】若需指定快递，可在下单付款后发送【备注中通】，我会帮您备注指定。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439914
+      - role: "user"
+        content: "申通吧"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439923
+      - role: "assistant"
+        content: "店铺快递服务说明：\n【默认快递】店铺默认免费发申通、中通、邮政快递。\n【是否支持其他快递】不支持除申通、中通、邮政以外的其他快递公司。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439927
+      - role: "assistant"
+        content: "【指定快递】若需指定快递，可在下单付款后发送【备注中通】，我会帮您备注指定。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439927
+      - role: "user"
+        content: "我这边中通发不了"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789439929
+
+  # [028] 941｜羽素美妆旗舰店｜护理顾问-智羽｜2026-09-14 10:50:35｜质检标签：答非所问
+  - name: "qc_028_941_edcb9e"
+    record_id: "6aa86fd2d13f8cf686edcb9e"
+    request_id: "3f24ffc5-909b-91b6-8377-9fdeed9dd5fd"
+    shop_id: "941"
+    shop_name: "羽素美妆旗舰店"
+    worker: "护理顾问-智羽"
+    worker_id: 2083
+    user_id: 5181187
+    chat_time: 1789354235
+    chat_time_text: "2026-09-14 10:50:35"
+    issue_summary: "客服未正面回应买家关于‘脸上斑’是否有效的问题，仅重复强调痘印效果"
+    quality_tags: ["答非所问"]
+    session_names: ["咨询商品功能、功效或特点"]
+    context_messages:
+      - role: "user"
+        content: "有淡斑的效果吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789440582
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789440585
+      - role: "assistant"
+        content: "宝宝，这款淡印霜主打美白淡痘印，对红印、黑印都有淡化效果，坚持用约28天能明显看到改善哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789440589
+      - role: "user"
+        content: "脸上的斑没有效果是吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789440635
+
+  # [029] 941｜羽素美妆旗舰店｜护理顾问-智羽｜2026-09-14 14:28:21｜质检标签：让客户自己到页面去看
+  - name: "qc_029_941_edcbad"
+    record_id: "6aa86fd2d13f8cf686edcbad"
+    request_id: "b057542d-a54c-94d2-a441-85bc08730caa"
+    shop_id: "941"
+    shop_name: "羽素美妆旗舰店"
+    worker: "护理顾问-智羽"
+    worker_id: 2083
+    user_id: 5186317
+    chat_time: 1789367301
+    chat_time_text: "2026-09-14 14:28:21"
+    issue_summary: "客服未直接回答是否有运费险，仅引导买家自行查看详情页"
+    quality_tags: ["让客户自己到页面去看"]
+    session_names: ["咨询运费险使用、理赔或赔付", "咨询品牌、正品、产地或货源"]
+    context_messages:
+      - role: "user"
+        content: "是正品么"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453687
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453690
+      - role: "assistant"
+        content: "宝宝，是的哦，我们是羽素品牌直营店铺，产品都是正品保障的，您可以放心"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453695
+      - role: "assistant"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://p3-pigeon-sign.ecombdimg.com/tos-cn-i-scl3phc04j/3e86a5c78d6a452bb4aba5de34cd812a~tplv-jxcbcipi3j-image-limit.image?lk3s=c879ea0d&x-expires=1794551297&x-signature=m916EHh9z2f3Cy2QSCv2XfIhsps%3D"
+        created_at: 1789453697
+      - role: "user"
+        content: "有运费险吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789453701
+
+  # [030] 941｜羽素美妆旗舰店｜护理顾问-智羽｜2026-09-14 15:25:23｜质检标签：质量问题未安抚
+  - name: "qc_030_941_edcbd4"
+    record_id: "6aa86fd2d13f8cf686edcbd4"
+    request_id: "00ccc4f4-24f3-9b56-a26d-b1bcce6a8827"
+    shop_id: "941"
+    shop_name: "羽素美妆旗舰店"
+    worker: "护理顾问-智羽"
+    worker_id: 2083
+    user_id: 5187546
+    chat_time: 1789370723
+    chat_time_text: "2026-09-14 15:25:23"
+    issue_summary: "买家反馈新款产品没效果，客服未致歉、未表达理解或安抚，仅说明效果因人而异"
+    quality_tags: ["质量问题未安抚"]
+    session_names: ["反馈商品不好用、过敏或使用异常", "咨询商品的规格、款式或颜色", "咨询是否有货、何时补货或停售"]
+    context_messages:
+      - role: "user"
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3619446177373763728"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789456987
+      - role: "assistant"
+        content: "您看的这款商品有83124人购买，近期回购人数有2455，您可以放心购买哦~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789456988
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789456991
+      - role: "assistant"
+        content: "您好宝宝，请问有什么可以帮到您的呢~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789456995
+      - role: "user"
+        content: "这款产品有霜质地的吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457015
+      - role: "assistant"
+        content: "宝宝，这款是清透凝霜质地哦，轻盈好吸收，不闷痘的"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457023
+      - role: "user"
+        content: "以前老款霜质地的不售了吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457054
+      - role: "assistant"
+        content: "宝宝，目前在售的美白淡印修护精华霜就是这款清透凝霜质地的哦，您说的老款霜质地的目前没有看到在售呢"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457061
+      - role: "assistant"
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3619446177373763728"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457062
+      - role: "user"
+        content: "什么时候出老款的啊"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457114
+      - role: "assistant"
+        content: "宝宝，目前没有老款霜质地产品的重新上架时间信息哦，建议您关注店铺动态呢"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457122
+      - role: "user"
+        content: "新款用着没效果"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457123
+
+  # [031] 941｜羽素美妆旗舰店｜护理顾问-智羽｜2026-09-14 15:42:24｜质检标签：拒绝客户未致歉
+  - name: "qc_031_941_edcbd5"
+    record_id: "6aa86fd2d13f8cf686edcbd5"
+    request_id: "a7ab022d-3dff-9fdf-811c-26d4be4b79d3"
+    shop_id: "941"
+    shop_name: "羽素美妆旗舰店"
+    worker: "护理顾问-智羽"
+    worker_id: 2083
+    user_id: 5187889
+    chat_time: 1789371744
+    chat_time_text: "2026-09-14 15:42:24"
+    issue_summary: "客服多次拒绝买家加赠诉求时，均未使用致歉、理解或安抚类表达"
+    quality_tags: ["拒绝客户未致歉"]
+    session_names: ["咨询商品功能、功效或特点", "咨询是否有赠品及加赠条件"]
+    context_messages:
+      - role: "user"
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3619271928470238574"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457840
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457843
+      - role: "user"
+        content: "黑头可以用吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457846
+      - role: "assistant"
+        content: "宝宝，您发的这两个链接是同一款哦~这款是羽素清肌毛孔精萃水（【陈梦推荐】羽素闭口水无酸细毛孔湿敷祛闭口保湿控油精华爽肤水），100ml/200ml规格可选。"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457846
+      - role: "assistant"
+        content: "它的核心卖点有这些：\n- 采用8项发明专利技术，核心是诺奖技术加持的4%极地酶角质调理技术，搭配缩孔肽Pro技术，针对油痘肌专项研发\n- 核心成分极地酶能精准定向脱落堵塞毛囊口的老废角质，配合控油素、缩孔肽Pro减少油脂分泌、收缩毛孔，预防长痘\n- 第三方实测：约3天闭口数量-31.31%、闭口平滑-30.73%，约14天毛孔体积-52.88%、黑头粉刺-61.90%，7天多余油脂-50.70%\n- 添加依克多因，可约4周养护肌肤屏障，减少闭口反复\n- 通过SGS敏感肌测试，无酒精、无激素、无香精等10项无添加，温和安全\n- 质地清爽，油皮可作精华水每天早晚用，也可湿敷，每周2-3次，停留8分钟揭下"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457847
+      - role: "assistant"
+        content: "宝宝想了解哪方面更多一些呀~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457848
+      - role: "assistant"
+        content: "宝宝，可以用的哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457856
+      - role: "assistant"
+        content: "这款精萃水对黑头是有改善效果的，第三方实测约14天黑头粉刺能减少61.90%，坚持使用会有明显改善的"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457857
+      - role: "user"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://p6-pigeon-sign.ecombdimg.com/tos-cn-i-scl3phc04j/a799a12df9b246a0a1500356b69d6079~tplv-jxcbcipi3j-image-limit.image?lk3s=c879ea0d&x-expires=1794555476&x-signature=EaEF7dUwXXN90pmuW8iPTBoJY2c%3D"
+        created_at: 1789457877
+      - role: "user"
+        content: "这种可以可以弄好吗"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457888
+      - role: "user"
+        content: "用的话"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457890
+      - role: "assistant"
+        content: "宝宝，从照片看您主要是痘痘、闭口和毛孔的问题，这款精萃水挺适合您的哦~它含有专研的极地酶成分，针对性改善闭口粉刺、调节水油平衡，还能收缩毛孔、改善黑头粗糙，坚持用效果很不错的~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457909
+      - role: "assistant"
+        content: "第三方实测大概3天闭口粉刺能改善31.31%，约14天毛孔体积改善52.88%，黑头粉刺也能减少61.90%；不过具体见效时间会因人而异，和闭口严重程度、肤质状态、日常作息饮食都有关系~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457910
+      - role: "assistant"
+        content: "宝宝还在考虑吗🥰\n限量 30 份｜仅限今日，\n送完即止⏰\n🎁下单享满额好礼，3 选 1\n▪单笔实付满100元：大灯泡精华1ml*1、闭口水15ml*1、淡印霜1.5g*1\n▪单笔实付满200元：大灯泡面膜*1片、闭口水15ml*2、淡印霜1.5g*2"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457954
+      - role: "assistant"
+        content: "✅重要规则（不按操作无赠品）：\n下单后15分钟内联系客服发送备注！\n订单自己备注无效❗\n📝备注参考模板：\n【备注加赠大灯泡精华 1ml×1】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457954
+      - role: "assistant"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://p9-pigeon-sign.ecombdimg.com/tos-cn-i-scl3phc04j/601ba37fd56b4aceb5f569b7d54a9fd2~tplv-jxcbcipi3j-image-limit.image?lk3s=c879ea0d&x-expires=1794555556&x-signature=ML26hxBqRUt3YYxQ4wnvUkm5D7Y%3D"
+        created_at: 1789457956
+      - role: "user"
+        content: "[订单消息]"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457970
+      - role: "assistant"
+        content: "宝宝，看到您的订单啦，买的是闭口水200ml"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457976
+      - role: "assistant"
+        content: "有什么可以帮到您的呢~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789457976
+      - role: "user"
+        content: "加赠大灯泡面膜"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789458027
+      - role: "assistant"
+        content: "实在很抱歉，这款商品目前暂时没有额外加赠的安排，没办法为您追加登记呢，非常感谢您的理解～"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789458037
+      - role: "assistant"
+        content: "宝宝，感谢您对羽素青睐！邀请您核对订单收件地址，如地址信息有误，本店订单支持自主修改地址哦~\n①订单未发货：支持自行修改地址；\n②订单已发货：仅支持自行改同省地址（邮政除外），如需跨省需联系人工客服确认是否可修改；\n\n⭐方法一（客服页修改）：点击【自助服务】-【改地址及对应订单】-【勾选】新地址-【提交】-可在订单详情中查看修改结果；\n⭐方法二（订单页修改）：点击【我的订单】-【修改地址】-【勾选】新地址-【提交】-可在订单详情中查看修改结果；\n\n温馨提示：①如修改后显示失败需及时联系店铺客服；\n②已发货改地址后无法二次修改和拦截退回的，请知悉哈！\n③我们的产品都经过了层层严格测试，为了确保宝宝使用起来更放心，建议宝宝在使用前先来个【测敏】哦～如有任何不适，及时联系护理顾问反馈！"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789458050
+      - role: "user"
+        content: "加赠大灯泡精华"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789458092
+      - role: "assistant"
+        content: "宝宝，闭口水200ml这款的赠品是第三代闭口水15ml*2+开孔湿敷棉80片*1包+喷头，没有大灯泡精华哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789458100
+      - role: "user"
+        content: "不是说单笔超过"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789458117
+      - role: "assistant"
+        content: "宝宝，这款闭口水200ml的赠品是第三代闭口水15ml*2+开孔湿敷棉80片*1包+喷头，没有单笔满额加赠大灯泡精华的活动哦"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789458124
+      - role: "user"
+        content: "100"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789458126
+      - role: "assistant"
+        content: "宝宝，满100元没有加赠大灯泡精华的活动哦，您这单闭口水200ml的赠品是第三代闭口水15ml*2+开孔湿敷棉80片*1包+喷头"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789458132
+      - role: "user"
+        content: "哪个祛痘印得呢"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789458144
+
+  # [032] 941｜羽素美妆旗舰店｜护理顾问-智羽｜2026-09-14 16:52:52｜质检标签：客户索要商品链接未发送/未发送商品卖点
+  - name: "qc_032_941_edcbdd"
+    record_id: "6aa86fd2d13f8cf686edcbdd"
+    request_id: "4dffdfca-b84b-9616-8cf8-3fee7a1e6249"
+    shop_id: "941"
+    shop_name: "羽素美妆旗舰店"
+    worker: "护理顾问-智羽"
+    worker_id: 2083
+    user_id: 5189347
+    chat_time: 1789375972
+    chat_time_text: "2026-09-14 16:52:52"
+    issue_summary: "买家两次索要完整成分表，客服均未提供完整成分表，仅重复核心成分；且未发送商品链接"
+    quality_tags: ["客户索要商品链接未发送", "未发送商品卖点"]
+    session_names: ["咨询商品材质、成分或认证"]
+    context_messages:
+      - role: "user"
+        content: "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?id=3802764722567250472"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461911
+      - role: "assistant"
+        content: "尊敬的V2会员，羽素美妆旗舰店为您看中的商品提供了运费险和7天无理由退货，让您售后没有后顾之忧~赶快下单吧~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461912
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461915
+      - role: "user"
+        content: "成分表发一下"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461917
+      - role: "assistant"
+        content: "宝宝，这款鼻贴核心成分是互生叶白千层（茶树精油）、丙二醇和甘草酸二钾，主打物理吸附去黑头，还含有酒精、无香精、无激素，成分安全～"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461927
+      - role: "assistant"
+        content: "宝宝还在考虑吗🥰\n限量 30 份｜仅限今日，\n送完即止⏰\n🎁下单享满额好礼，3 选 1\n▪单笔实付满100元：大灯泡精华1ml*1、闭口水15ml*1、淡印霜1.5g*1\n▪单笔实付满200元：大灯泡面膜*1片、闭口水15ml*2、淡印霜1.5g*2"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461979
+      - role: "assistant"
+        content: "✅重要规则（不按操作无赠品）：\n下单后15分钟内联系客服发送备注！\n订单自己备注无效❗\n📝备注参考模板：\n【备注加赠大灯泡精华 1ml×1】"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789461979
+      - role: "assistant"
+        content: "[图片消息]"
+        media_type: "image"
+        media_url: "https://p3-pigeon-sign.ecombdimg.com/tos-cn-i-scl3phc04j/f7f5f1c4f2ba4818933561e3df22b20e~tplv-jxcbcipi3j-image-limit.image?lk3s=c879ea0d&x-expires=1794559581&x-signature=7gVD5G7ZhEpVU%2FUqIgJum2iV7YI%3D"
+        created_at: 1789461981
+      - role: "assistant"
+        content: "宝宝，这边看见您没有下单是对产品有什么疑惑吗❓可以跟小客服说一下的哦，这边帮您解答的呢~😊"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789462044
+      - role: "assistant"
+        content: "感谢宝宝的咨询，希望我们的服务能为您带来帮助，如有任何其他问题，欢迎随时联系我们。祝您有一个美好的一天！"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789462348
+      - role: "user"
+        content: "完整的成分表发一下"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789462372
+
+  # [033] 941｜羽素美妆旗舰店｜护理顾问-智羽｜2026-09-14 17:37:39｜质检标签：客户不满仍邀评
+  - name: "qc_033_941_edcbfd"
+    record_id: "6aa86fd2d13f8cf686edcbfd"
+    request_id: "3ec8573b-299d-9173-9054-a85d4effe476"
+    shop_id: "941"
+    shop_name: "羽素美妆旗舰店"
+    worker: "护理顾问-智羽"
+    worker_id: 2083
+    user_id: 5190383
+    chat_time: 1789378659
+    chat_time_text: "2026-09-14 17:37:39"
+    issue_summary: "买家仅表示感谢，问题已解决，客服在无不满情绪场景下发送邀评话术"
+    quality_tags: ["客户不满仍邀评"]
+    session_names: ["咨询商品如何使用或查看教程"]
+    context_messages:
+      - role: "user"
+        content: "[订单消息]"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789464836
+      - role: "user"
+        content: "您好"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789464842
+      - role: "assistant"
+        content: "欢迎光临本店，很高兴与您相遇，我是您的专属护肤顾问，羽素将会在变美的道路上一直陪伴您~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789464845
+      - role: "user"
+        content: "怎么使用？"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789464846
+      - role: "assistant"
+        content: "宝宝，咱们这款淡印霜可以全脸薄涂，也可以重点点涂哈~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789464854
+      - role: "assistant"
+        content: "⭐️【用法顺序】：\n①洁面爽肤后，取黄豆粒到指甲盖大小，均匀薄涂全脸，按摩至吸收；\n②新生痘印、色沉区域可以重点叠涂加强修护；\n③每天早晚都能用，白天用无需避光，用后不用清洗哦~"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789464854
+      - role: "user"
+        content: "好的，谢谢"
+        media_type: "text"
+        media_url: ""
+        created_at: 1789465059

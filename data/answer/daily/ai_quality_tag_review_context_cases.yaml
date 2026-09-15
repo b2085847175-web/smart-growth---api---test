@@ -1,5 +1,5 @@
-# 由 scripts/generate_ai_quality_tag_review_context_cases.py 生成，请勿手工编辑。
-# 来源：data/ai_quality_inspection/records/ai_quality_chat_transcripts_console_888_10shops_latest.json
+# 由 scripts/ai_quality/generate_context_cases.py 生成，请勿手工编辑。
+# 来源：scripts/ai_quality/export_chat_records.py 导出的聊天记录快照
 #       （console 环境 10 个店铺 2026-09-13 全天质检记录 + 通过 /api/users/{id}/messages 拉取的真实完整聊天记录）
 # 规模：116 条质检记录 = 116 条 context-only 用例，会话消息合计 1527 条；其中 20 条带人工复核结论。
 # 店铺分布：917×43, 926×13, 927×24, 928×12, 941×24

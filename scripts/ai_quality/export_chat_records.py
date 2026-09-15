@@ -5,16 +5,19 @@
 1. ``POST /api/ai-quality-inspection/list``（``has_issues=true``）拿质检有问题的记录，自动翻页取全量；
 2. 从每条记录里取 ``user.id`` / ``shop_id`` / ``start_time`` / ``end_time``；
 3. ``GET /api/users/{user_id}/messages`` 取该用户在这段会话里的完整聊天记录；
-4. 写成 JSON 快照（带时间戳一份 + ``*_latest.json`` 一份），供
-   ``scripts/generate_ai_quality_tag_review_context_cases.py`` 生成用例 YAML。
+4. 写成 JSON 快照（带时间戳一份 + ``*_latest.json`` 一份），默认落在
+   ``outputs/ai_quality_chat/``（属于生成物，不进版本库），供
+   ``scripts/ai_quality/generate_context_cases.py`` 生成用例 YAML。
 
 鉴权：优先用 ``.env`` 里的 ``ACCESS_TOKEN_<ENV>``（console 就是 ``ACCESS_TOKEN_CONSOLE``），
 没有配 token 时回退到 ``LOGIN_ACCOUNT_<ENV>`` / ``LOGIN_PASSWORD_<ENV>`` 登录拿 token。
 
 示例：
 
-    .\\.venv\\Scripts\\python.exe scripts\\export_ai_quality_chat_transcripts.py
-    .\\.venv\\Scripts\\python.exe scripts\\export_ai_quality_chat_transcripts.py --limit 3 --print-records 1
+    .\\.venv\\Scripts\\python.exe scripts\\ai_quality\\export_chat_records.py
+    .\\.venv\\Scripts\\python.exe scripts\\ai_quality\\export_chat_records.py --limit 3 --print-records 1
+    .\\.venv\\Scripts\\python.exe scripts\\ai_quality\\export_chat_records.py `
+        --shop-ids "888,917" --start-time 1789315200 --end-time 1789401599
 """
 
 from __future__ import annotations
@@ -27,7 +30,7 @@ import time
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Union
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
@@ -45,7 +48,7 @@ DEFAULT_BASE_URLS = {
 DEFAULT_SHOP_IDS = "888,917,924,925,926,927,928,929,934,941"
 DEFAULT_START_TIME = 1789228800  # 2026-09-13 00:00:00
 DEFAULT_END_TIME = 1789315199  # 2026-09-13 23:59:59
-DEFAULT_OUTPUT_DIR = "data/ai_quality_inspection/records"
+DEFAULT_OUTPUT_DIR = "outputs/ai_quality_chat"
 
 ShopIds = Union[str, int, Iterable[Union[str, int]], None]
 
@@ -280,6 +283,7 @@ def _build_entry(record: Dict[str, Any], messages_api: UserMessagesAPI) -> Dict[
             user_id=user_id, shop_id=shop_id, start_time=start_time, end_time=end_time
         )
 
+    normalized = UserMessagesAPI.normalize_messages(result.get("messages") or [])
     return {
         "record_id": record.get("_id"),
         "request_id": record.get("request_id"),
@@ -291,6 +295,7 @@ def _build_entry(record: Dict[str, Any], messages_api: UserMessagesAPI) -> Dict[
         "issue_summary": record.get("summary"),
         "quality_tags": extract_issue_names(record),
         "session_names": extract_session_names(record),
+        "tags": record.get("tags") or [],
         "user": {"id": user_id, "dnick": user.get("dnick")},
         "worker": {"id": worker.get("id"), "account": worker.get("account")},
         "transcript_status": {
@@ -298,8 +303,21 @@ def _build_entry(record: Dict[str, Any], messages_api: UserMessagesAPI) -> Dict[
             "code": result.get("code"),
             "message": result.get("message"),
         },
-        "transcript": UserMessagesAPI.normalize_messages(result.get("messages") or []),
+        # transcript 供生成用例 YAML 使用（裁掉最后一条 user 之后的客服回复）；
+        # transcript_full 是未裁剪的完整会话，供人工复核标签用。
+        "transcript": _trim_after_last_user(normalized),
+        "transcript_full": normalized,
     }
+
+
+def _trim_after_last_user(messages: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    last_user_index: Optional[int] = None
+    for index, message in enumerate(messages):
+        if message.get("role") == "user":
+            last_user_index = index
+    if last_user_index is None:
+        return []
+    return messages[: last_user_index + 1]
 
 
 def main() -> int:

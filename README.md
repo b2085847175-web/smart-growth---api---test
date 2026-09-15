@@ -86,21 +86,21 @@ $env:ANSWER_SUITES = "main_flow,context,multiturn"
 
 ```powershell
 # 1. 导出质检有问题用户的聊天记录（自动翻页取全量）
-.\.venv\Scripts\python.exe scripts\export_ai_quality_chat_transcripts.py
+.\.venv\Scripts\python.exe scripts\ai_quality\export_chat_records.py
 
 # 2. 用真实聊天记录生成 / 重写日常用例 YAML
-.\.venv\Scripts\python.exe scripts\generate_ai_quality_tag_review_context_cases.py
+.\.venv\Scripts\python.exe scripts\ai_quality\generate_context_cases.py
 ```
 
 - 质检结果走 `POST /api/ai-quality-inspection/list`（`has_issues=true`），聊天记录走
   `GET /api/users/{user_id}/messages`；鉴权优先用 `.env` 里的 `ACCESS_TOKEN_CONSOLE`，
   没配 token 时回退到 `LOGIN_ACCOUNT_CONSOLE` / `LOGIN_PASSWORD_CONSOLE` 登录。
 - 常用参数：`--env`、`--shop-ids`、`--start-time` / `--end-time`、`--limit`（调试）、
-  `--output-dir`、`--print-records`。
-- 快照落在 `data/ai_quality_inspection/records/`（带时间戳一份 + `*_latest.json` 一份）。
-- 生成脚本会合并该目录下 `*_tag_review_latest.json` 里的人工复核结论，输出到
-  `data/answer/daily/ai_quality_tag_review_context_cases.yaml`（全量重写），由 daily 入口执行；
-  用例 `assertions: false`，只执行接口观察回复。
+  `--output-dir`、`--print-records`；详细说明见 `scripts/ai_quality/README.md`。
+- 中间快照默认落在 `outputs/ai_quality_chat/`（生成物，不进版本库），随时重跑即可重建。
+- 生成脚本输出到 `data/answer/daily/ai_quality_tag_review_context_cases.yaml`（全量重写），
+  从既有 YAML 继承人工复核结论 `tag_review`，由 daily 入口执行；用例 `assertions: false`，
+  只执行接口观察回复。
 
 ## answer 入口
 

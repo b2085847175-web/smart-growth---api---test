@@ -2,10 +2,10 @@
 
 数据来源：
 
-- ``data/ai_quality_inspection/records/ai_quality_chat_transcripts_*_latest.json``
-  （``scripts/export_ai_quality_chat_transcripts.py`` 导出的"质检有问题记录 + 聊天记录"）
-- ``data/ai_quality_inspection/records/*_tag_review_latest.json``
-  （人工复核结论，按 record_id 合并，可选）
+- ``outputs/ai_quality_chat/ai_quality_chat_transcripts_*_latest.json``
+  （``scripts/ai_quality/export_chat_records.py`` 导出的"质检有问题记录 + 聊天记录"）
+- 人工复核结论：默认从既有用例 YAML 按 record_id 继承 ``tag_review``；
+  也可以 ``--tag-review-json <复核快照.json>`` 显式指定复核来源（可选）
 
 输出：``data/answer/daily/ai_quality_tag_review_context_cases.yaml``（全量重写）。
 
@@ -20,9 +20,9 @@
 
 示例：
 
-    .\\.venv\\Scripts\\python.exe scripts\\generate_ai_quality_tag_review_context_cases.py
-    .\\.venv\\Scripts\\python.exe scripts\\generate_ai_quality_tag_review_context_cases.py `
-        --transcripts <快照.json> --tag-review <复核.json> --output <目标.yaml>
+    .\\.venv\\Scripts\\python.exe scripts\\ai_quality\\generate_context_cases.py
+    .\\.venv\\Scripts\\python.exe scripts\\ai_quality\\generate_context_cases.py `
+        --transcripts <快照.json> --output <目标.yaml>
 """
 
 from __future__ import annotations
@@ -34,11 +34,11 @@ import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-RECORDS_DIR = ROOT / "data" / "ai_quality_inspection" / "records"
+TRANSCRIPTS_DIR = ROOT / "outputs" / "ai_quality_chat"
 DEFAULT_OUTPUT = ROOT / "data" / "answer" / "daily" / "ai_quality_tag_review_context_cases.yaml"
 
 # 框架的 context_messages 只接受 text / image。
@@ -58,8 +58,20 @@ def _load_json(path: Path) -> Dict[str, Any]:
         return json.load(file)
 
 
-def _latest_snapshot(pattern: str) -> Optional[Path]:
-    candidates = sorted(RECORDS_DIR.glob(pattern), key=lambda item: item.stat().st_mtime)
+def _load_yaml_cases(path: Path) -> List[Dict[str, Any]]:
+    """读取既有用例 YAML 里的 cases，用于继承人工复核结论。"""
+    import yaml
+
+    with path.open("r", encoding="utf-8") as file:
+        document = yaml.safe_load(file) or {}
+    cases = document.get("cases")
+    return cases if isinstance(cases, list) else []
+
+
+def _latest_snapshot(pattern: str, directory: Path = TRANSCRIPTS_DIR) -> Optional[Path]:
+    if not directory.exists():
+        return None
+    candidates = sorted(directory.glob(pattern), key=lambda item: item.stat().st_mtime)
     return candidates[-1] if candidates else None
 
 
@@ -267,12 +279,17 @@ def main() -> int:
     parser.add_argument(
         "--transcripts",
         default="",
-        help="聊天记录快照；不传时自动取 records 目录下最新的 ai_quality_chat_transcripts_*_latest.json",
+        help="聊天记录快照；不传时自动取 outputs/ai_quality_chat 下最新的 *_latest.json",
     )
     parser.add_argument(
-        "--tag-review",
+        "--tag-review-json",
         default="",
-        help="人工复核快照；不传时自动取 records 目录下最新的 *_tag_review_latest.json（可选）",
+        help="人工复核快照（可选）；不传时从 --reviews-from 指定的用例 YAML 继承 tag_review",
+    )
+    parser.add_argument(
+        "--reviews-from",
+        default="",
+        help="既有用例 YAML，用于继承人工复核结论；默认取 --output 指向的文件",
     )
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT))
     parser.add_argument(
@@ -288,7 +305,7 @@ def main() -> int:
     )
     if transcript_path is None or not transcript_path.exists():
         print(f"TRANSCRIPTS_MISSING {transcript_path}")
-        print("先跑：.\\\\.venv\\\\Scripts\\\\python.exe scripts\\\\export_ai_quality_chat_transcripts.py")
+        print("先跑：.\\\\.venv\\\\Scripts\\\\python.exe scripts\\\\ai_quality\\\\export_chat_records.py")
         return 1
 
     snapshot = _load_json(transcript_path)
@@ -297,15 +314,25 @@ def main() -> int:
         print(f"TRANSCRIPTS_EMPTY {transcript_path}")
         return 1
 
-    review_path = Path(args.tag_review) if args.tag_review else _latest_snapshot(
-        "*_tag_review_latest.json"
-    )
     reviews: Dict[str, Dict[str, Any]] = {}
-    if review_path is not None and review_path.exists():
-        for item in _load_json(review_path).get("records") or []:
-            review = item.get("tag_review")
-            if review and item.get("_id"):
-                reviews[str(item["_id"])] = review
+    review_source = ""
+    if args.tag_review_json:
+        review_path = Path(args.tag_review_json)
+        if review_path.exists():
+            for item in _load_json(review_path).get("records") or []:
+                review = item.get("tag_review")
+                if review and item.get("_id"):
+                    reviews[str(item["_id"])] = review
+            review_source = _display_path(review_path)
+    else:
+        # 从既有用例 YAML 继承人工复核结论，避免复核结果随中间快照一起丢失。
+        yaml_path = Path(args.reviews_from) if args.reviews_from else Path(args.output)
+        if yaml_path.exists():
+            for case in _load_yaml_cases(yaml_path):
+                review = case.get("tag_review")
+                if review and case.get("record_id"):
+                    reviews[str(case["record_id"])] = review
+            review_source = _display_path(yaml_path)
 
     ordered = sorted(
         records, key=lambda item: (str(item.get("shop_id")), int(item.get("chat_time") or 0))
@@ -329,9 +356,10 @@ def main() -> int:
     )
 
     header = [
-        "# 由 scripts/generate_ai_quality_tag_review_context_cases.py 生成，请勿手工编辑。",
+        "# 由 scripts/ai_quality/generate_context_cases.py 生成，请勿手工编辑。",
+        "#       数据来源：scripts/ai_quality/export_chat_records.py（质检有问题记录 + 真实聊天记录）",
         f"# 来源：{_display_path(transcript_path)}",
-        f"#       人工复核结论：{_display_path(review_path) if review_path else '未使用'}",
+        f"#       人工复核结论：{review_source or '未使用'}",
         "# 说明：context_messages 为真实会话原文（通过 /api/users/{id}/messages 拉取），",
         "#       最后一条 user 消息作为 /chat/answer 的触发语；位于其后的客服回复已裁掉；",
         "#       平台控制字符已清洗，图片保留 media_type/media_url，非文本消息降级为 text + 占位文案，",
