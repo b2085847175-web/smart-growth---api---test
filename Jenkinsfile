@@ -199,22 +199,32 @@ pipeline {
         stage('Run answer cases') {
             when { expression { return !params.COLLECT_ONLY } }
             steps {
-                powershell '''
-                    [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-                    $python = Join-Path $env:VENV_DIR "Scripts\\python.exe"
+                // 登录账号密码必须从这里注入。缺了这段，runner 会在
+                // load_context_runtime 里直接抛 ValueError：
+                //   dev context runtime requires LOGIN_ACCOUNT_DEV/LOGIN_PASSWORD_DEV
+                // 而且是在发请求之前就抛，所以表现为"所有用例几秒内全挂"。
+                withCredentials([usernamePassword(
+                    credentialsId: 'zhiyan-dev-login',
+                    usernameVariable: 'LOGIN_ACCOUNT_DEV',
+                    passwordVariable: 'LOGIN_PASSWORD_DEV'
+                )]) {
+                    powershell '''
+                        [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+                        $python = Join-Path $env:VENV_DIR "Scripts\\python.exe"
 
-                    $pytestArgs = @(
-                        "run_tests.py"
-                        "--env", "dev"
-                        "--pattern", "test_answer_yaml.py"
-                        "--junitxml=$env:REPORT_DIR\\junit.xml"
-                        "-n", $env:WORKERS
-                    )
-                    & $python @pytestArgs
-                    $exit = $LASTEXITCODE
-                    Write-Host "pytest 退出码：$exit"
-                    if ($exit -ne 0) { exit $exit }
-                '''
+                        $pytestArgs = @(
+                            "run_tests.py"
+                            "--env", "dev"
+                            "--pattern", "test_answer_yaml.py"
+                            "--junitxml=$env:REPORT_DIR\\junit.xml"
+                            "-n", $env:WORKERS
+                        )
+                        & $python @pytestArgs
+                        $exit = $LASTEXITCODE
+                        Write-Host "pytest 退出码：$exit"
+                        if ($exit -ne 0) { exit $exit }
+                    '''
+                }
             }
         }
     }
