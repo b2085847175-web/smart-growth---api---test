@@ -142,6 +142,21 @@ $env:ANSWER_SUITES = "main_flow,context,multiturn"
 `quality: false` 的用例混进 `quality: true` 的 suite 会产生虚假失败，所以按
 质检开关分开。
 
+#### 实测表现（2026-09-15，dev 环境，4 并发）
+
+```
+73 failed, 145 passed in 733.40s      ← 12 分 13 秒
+```
+
+失败集中在 `official_quality_points_cases.yaml` 抽样出来的那 70 条，统一报
+`stats.scene_knowledge missing expected scene: <质检点名称>`。经比对，这 70 条
+与源文件逐字段一致（仅名字前缀不同），**在原文件里跑同样会失败**，不是抽样
+造成的。
+
+这批用例由「官方质检点最终版.xlsx」自动生成，结构是三轮提问都直接包含质检点
+名称，第三轮断言命中同名知识场景。**是 AI 的真实回归问题还是用例本身不成立，
+还没有结论** —— 跑之前先确认这一点，否则每天都会收到失败通知。
+
 ### all 的两条口径
 
 - `kb_scene_categories/` 只注册 `all_categories.yaml`，它是其余 8 个分类文件的完整超集，
