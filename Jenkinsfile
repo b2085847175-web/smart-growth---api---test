@@ -232,20 +232,43 @@ pipeline {
 }
 
 /**
- * 推企微 + 钉钉。用 try/catch 兜住：凭据没建、webhook 失效都不该改变构建结论。
- * 需要的 Jenkins 凭据（String 类型）：
- *   answer-wecom-webhook / answer-dingtalk-webhook / answer-dingtalk-secret
+ * 推企微 + 钉钉。
+ *
+ * 每个渠道单独绑定凭据、单独 try/catch。不能把三个凭据塞进同一个 withCredentials：
+ * 凭据不存在时它会抛异常，那样缺任何一个渠道都会导致所有渠道都发不出去。
+ * 同样地，通知失败也不该改变构建结论，所以整段都兜在 try/catch 里。
+ *
+ * 需要的 Jenkins 凭据（Secret text）：
+ *   answer-wecom-webhook                       企微群机器人 webhook
+ *   answer-dingtalk-webhook / answer-dingtalk-secret   钉钉 webhook + 加签密钥
  */
 def notifyBuild(String result) {
     // post 阶段 currentBuild.duration 未必已结算，用起始时间自己算。
     def elapsedSeconds = (System.currentTimeMillis() - currentBuild.startTimeInMillis) / 1000
 
-    try {
-        withCredentials([
-            string(credentialsId: 'answer-wecom-webhook', variable: 'WECOM_WEBHOOK'),
+    notifyChannel(
+        "企微",
+        result,
+        elapsedSeconds,
+        [string(credentialsId: 'answer-wecom-webhook', variable: 'WECOM_WEBHOOK')],
+        "'--wecom-webhook', \$env:WECOM_WEBHOOK"
+    )
+
+    notifyChannel(
+        "钉钉",
+        result,
+        elapsedSeconds,
+        [
             string(credentialsId: 'answer-dingtalk-webhook', variable: 'DINGTALK_WEBHOOK'),
             string(credentialsId: 'answer-dingtalk-secret', variable: 'DINGTALK_SECRET')
-        ]) {
+        ],
+        "'--dingtalk-webhook', \$env:DINGTALK_WEBHOOK, '--dingtalk-secret', \$env:DINGTALK_SECRET"
+    )
+}
+
+def notifyChannel(String label, String result, def elapsedSeconds, List creds, String channelArgs) {
+    try {
+        withCredentials(creds) {
             powershell """
                 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
                 \$python = Join-Path '${env.VENV_DIR}' 'Scripts\\python.exe'
@@ -257,6 +280,7 @@ def notifyBuild(String result) {
                     '--duration-seconds', '${elapsedSeconds}'
                     '--build-number', '${env.BUILD_NUMBER}'
                     '--build-url', '${env.BUILD_URL}'
+                    ${channelArgs}
                 )
                 # 条件参数必须用追加的方式。写成内联插值的话，不启用时会往数组里塞一个
                 # 空字符串元素，splat 出去 argparse 会当成多余参数直接报错。
@@ -268,6 +292,6 @@ def notifyBuild(String result) {
             """
         }
     } catch (err) {
-        echo "通知发送失败（不影响构建结论）：${err}"
+        echo "${label} 通知跳过（凭据未配置或发送失败，不影响构建结论）：${err}"
     }
 }
