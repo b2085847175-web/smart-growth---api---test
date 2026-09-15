@@ -198,8 +198,13 @@ suite 策略写在 YAML 文件头部：
 - `.env` 中的 `ENV` 只在 YAML 未写 `target_env` 时兜底。
 - `prod` 会被归一成 `console`。
 - 店铺、账号、密码统一放在 `.env`，推荐使用 `*_DEV` / `*_CONSOLE` 后缀。
-- **注意**：仓库 `.env` 里当前是 `ENV=console`。任何新写的、不声明 `target_env`
+- **`.env` 不入库**（已加进 `.gitignore`）。里面是真实密码和 console 的 access token，
+  仓库又是公开的。新环境照 `.env.example` 建一份本地的即可。
+- **注意**：本地 `.env` 里当前是 `ENV=console`。任何新写的、不声明 `target_env`
   的 YAML 都会落到生产环境。新增数据文件时务必显式写上 `target_env`。
+
+没有 `.env` 时也能跑：`AI_BASE_URL_DEV`、`CHAT_PLATFORM` 这类在 `config/env.yaml`
+里都有默认值，账号密码由 Jenkins 凭据注入。已实测验证。
 
 ## Jenkins 定时回归
 

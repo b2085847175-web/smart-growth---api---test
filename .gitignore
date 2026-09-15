@@ -184,6 +184,10 @@ artifacts/product_migration/
 Thumbs.db
 
 # 配置文件（包含敏感信息）
+# .env 里是真实的登录密码和 console 的 access token（JWT），不入库。
+# 本地保留一份即可；Jenkins 上由凭据注入同名环境变量，
+# 优先级更高（见 config/project_env.py 的 reload_project_env）。
+.env
 config/local_*.yaml
 config/*_secret.yaml
 config/context_tokens.yaml
