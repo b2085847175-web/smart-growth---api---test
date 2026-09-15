@@ -121,11 +121,14 @@ $env:ANSWER_SUITES = "main_flow,context,multiturn"
 
 - **人工复核过的用例优先**（`ai_quality_tag_review_context_cases.yaml` 里带
   `tag_review` 字段的 20 条全部纳入）。
-- **官方质检点用得最多**（`official_quality_points_cases.yaml` 取 70 条），因为它
-  断言的是二级质检点名称，是仓库里最硬的回归依据。
 - **KB 场景分类按分类占比 + 场景轮转抽样**（60 条覆盖 60 个不同场景，各分类比例
-  与原文件一致）。
+  与原文件一致）。它是目前**唯一带有效业务断言的大块数据**。
 - 真实质检问题会话、使用说明场景、冒烟用例各取少量。
+- `official_quality_points_cases.yaml` 取 70 条，但它已无断言（见下），归在
+  `key_smoke` 组。
+
+两个文件的分工：`key_assertions`（111 条，`quality/assertions` 都开）和
+`key_smoke`（88 条，都关）。
 
 由 `scripts/build_key_regression_cases.py` 生成，源数据更新后重跑即可：
 
@@ -149,13 +152,19 @@ $env:ANSWER_SUITES = "main_flow,context,multiturn"
 ```
 
 失败集中在 `official_quality_points_cases.yaml` 抽样出来的那 70 条，统一报
-`stats.scene_knowledge missing expected scene: <质检点名称>`。经比对，这 70 条
-与源文件逐字段一致（仅名字前缀不同），**在原文件里跑同样会失败**，不是抽样
-造成的。
+`stats.scene_knowledge missing expected scene: <质检点名称>`。
 
-这批用例由「官方质检点最终版.xlsx」自动生成，结构是三轮提问都直接包含质检点
-名称，第三轮断言命中同名知识场景。**是 AI 的真实回归问题还是用例本身不成立，
-还没有结论** —— 跑之前先确认这一点，否则每天都会收到失败通知。
+**结论：是用例本身不成立，不是 AI 回归问题。** 依据是 `all_categories` 的 60 条
+同样断言场景命中，只挂了 1 条 —— 断言机制和 dev 环境都是好的，问题只出在这批
+自动生成的数据上。它们由「官方质检点最终版.xlsx」生成，期望是"三轮提问里直接
+包含质检点名称，就应命中同名知识场景"，这个对应关系没有做过有效性验证。
+
+**处理：该文件的 expect 已全部移除**，`assertions` 和 `quality` 都改为 `false`，
+现在只跑接口不判内容（`quality` 也必须关：runner 在 `quality=true` 时会无条件
+`assert selected_record is not None`，那同样是一条会失败的断言）。
+
+因此这个文件同时被 `regression` 和 `all` 两个入口引用，那两个入口跑这 80 条时
+也不再判内容了。精简集里它被归到 `key_smoke`（无断言组）。
 
 ### all 的两条口径
 
