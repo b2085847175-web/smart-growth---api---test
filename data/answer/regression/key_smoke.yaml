@@ -16,6 +16,496 @@ suite:
 target_env: dev
 
 cases:
+  - name: official_quality_points::未发送欢迎语
+    turns:
+    - question: 客户咨询“未发送欢迎语”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“未发送欢迎语”的问题，能再具体说明一下吗？
+    - question: 关于“未发送欢迎语”，请给我一个明确的处理结果。
+    _source_case: 未发送欢迎语
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::使用不恰当标点和表情
+    turns:
+    - question: 客户咨询“使用不恰当标点和表情”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“使用不恰当标点和表情”的问题，能再具体说明一下吗？
+    - question: 关于“使用不恰当标点和表情”，请给我一个明确的处理结果。
+    _source_case: 使用不恰当标点和表情
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::使用不恰当网络用语
+    turns:
+    - question: 客户咨询“使用不恰当网络用语”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“使用不恰当网络用语”的问题，能再具体说明一下吗？
+    - question: 关于“使用不恰当网络用语”，请给我一个明确的处理结果。
+    _source_case: 使用不恰当网络用语
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::纯表情回复
+    turns:
+    - question: 客户咨询“纯表情回复”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“纯表情回复”的问题，能再具体说明一下吗？
+    - question: 关于“纯表情回复”，请给我一个明确的处理结果。
+    _source_case: 纯表情回复
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::发送欢迎语后未跟进
+    turns:
+    - question: 客户咨询“发送欢迎语后未跟进”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“发送欢迎语后未跟进”的问题，能再具体说明一下吗？
+    - question: 关于“发送欢迎语后未跟进”，请给我一个明确的处理结果。
+    _source_case: 发送欢迎语后未跟进
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::回复稍等后未跟进
+    turns:
+    - question: 客户咨询“回复稍等后未跟进”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“回复稍等后未跟进”的问题，能再具体说明一下吗？
+    - question: 关于“回复稍等后未跟进”，请给我一个明确的处理结果。
+    _source_case: 回复稍等后未跟进
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::撤回消息未致歉
+    turns:
+    - question: 客户咨询“撤回消息未致歉”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“撤回消息未致歉”的问题，能再具体说明一下吗？
+    - question: 关于“撤回消息未致歉”，请给我一个明确的处理结果。
+    _source_case: 撤回消息未致歉
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::疑似刷问答比
+    turns:
+    - question: 客户咨询“疑似刷问答比”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“疑似刷问答比”的问题，能再具体说明一下吗？
+    - question: 关于“疑似刷问答比”，请给我一个明确的处理结果。
+    _source_case: 疑似刷问答比
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::未使用礼貌用语
+    turns:
+    - question: 客户咨询“未使用礼貌用语”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“未使用礼貌用语”的问题，能再具体说明一下吗？
+    - question: 关于“未使用礼貌用语”，请给我一个明确的处理结果。
+    _source_case: 未使用礼貌用语
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::最后一句非客服发送
+    turns:
+    - question: 客户咨询“最后一句非客服发送”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“最后一句非客服发送”的问题，能再具体说明一下吗？
+    - question: 关于“最后一句非客服发送”，请给我一个明确的处理结果。
+    _source_case: 最后一句非客服发送
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::使用“你”称呼客户
+    turns:
+    - question: 客户咨询“使用“你”称呼客户”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“使用“你”称呼客户”的问题，能再具体说明一下吗？
+    - question: 关于“使用“你”称呼客户”，请给我一个明确的处理结果。
+    _source_case: 使用“你”称呼客户
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::连续发送欢迎语结束语
+    turns:
+    - question: 客户咨询“连续发送欢迎语结束语”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“连续发送欢迎语结束语”的问题，能再具体说明一下吗？
+    - question: 关于“连续发送欢迎语结束语”，请给我一个明确的处理结果。
+    _source_case: 连续发送欢迎语结束语
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::慢响应
+    turns:
+    - question: 客户咨询“慢响应”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“慢响应”的问题，能再具体说明一下吗？
+    - question: 关于“慢响应”，请给我一个明确的处理结果。
+    _source_case: 慢响应
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::单句响应超时（3分钟）
+    turns:
+    - question: 客户咨询“单句响应超时（3分钟）”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“单句响应超时（3分钟）”的问题，能再具体说明一下吗？
+    - question: 关于“单句响应超时（3分钟）”，请给我一个明确的处理结果。
+    _source_case: 单句响应超时（3分钟）
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::答非所问
+    turns:
+    - question: 客户咨询“答非所问”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“答非所问”的问题，能再具体说明一下吗？
+    - question: 关于“答非所问”，请给我一个明确的处理结果。
+    _source_case: 答非所问
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::未告知查询核实时间
+    turns:
+    - question: 客户咨询“未告知查询核实时间”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“未告知查询核实时间”的问题，能再具体说明一下吗？
+    - question: 关于“未告知查询核实时间”，请给我一个明确的处理结果。
+    _source_case: 未告知查询核实时间
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::机械式回复
+    turns:
+    - question: 客户咨询“机械式回复”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“机械式回复”的问题，能再具体说明一下吗？
+    - question: 关于“机械式回复”，请给我一个明确的处理结果。
+    _source_case: 机械式回复
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客户情绪异常未安抚
+    turns:
+    - question: 客户咨询“客户情绪异常未安抚”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客户情绪异常未安抚”的问题，能再具体说明一下吗？
+    - question: 关于“客户情绪异常未安抚”，请给我一个明确的处理结果。
+    _source_case: 客户情绪异常未安抚
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客户致谢未回应
+    turns:
+    - question: 客户咨询“客户致谢未回应”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客户致谢未回应”的问题，能再具体说明一下吗？
+    - question: 关于“客户致谢未回应”，请给我一个明确的处理结果。
+    _source_case: 客户致谢未回应
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::拒绝客户未致歉
+    turns:
+    - question: 客户咨询“拒绝客户未致歉”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“拒绝客户未致歉”的问题，能再具体说明一下吗？
+    - question: 关于“拒绝客户未致歉”，请给我一个明确的处理结果。
+    _source_case: 拒绝客户未致歉
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::投诉差评未安抚
+    turns:
+    - question: 客户咨询“投诉差评未安抚”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“投诉差评未安抚”的问题，能再具体说明一下吗？
+    - question: 关于“投诉差评未安抚”，请给我一个明确的处理结果。
+    _source_case: 投诉差评未安抚
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客户表示客服像机器人
+    turns:
+    - question: 客户咨询“客户表示客服像机器人”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客户表示客服像机器人”的问题，能再具体说明一下吗？
+    - question: 关于“客户表示客服像机器人”，请给我一个明确的处理结果。
+    _source_case: 客户表示客服像机器人
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客户催促未致歉安抚
+    turns:
+    - question: 客户咨询“客户催促未致歉安抚”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客户催促未致歉安抚”的问题，能再具体说明一下吗？
+    - question: 关于“客户催促未致歉安抚”，请给我一个明确的处理结果。
+    _source_case: 客户催促未致歉安抚
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客户不满仍邀评
+    turns:
+    - question: 客户咨询“客户不满仍邀评”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客户不满仍邀评”的问题，能再具体说明一下吗？
+    - question: 关于“客户不满仍邀评”，请给我一个明确的处理结果。
+    _source_case: 客户不满仍邀评
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::纯图片回复
+    turns:
+    - question: 客户咨询“纯图片回复”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“纯图片回复”的问题，能再具体说明一下吗？
+    - question: 关于“纯图片回复”，请给我一个明确的处理结果。
+    _source_case: 纯图片回复
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::多次撤回消息
+    turns:
+    - question: 客户咨询“多次撤回消息”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“多次撤回消息”的问题，能再具体说明一下吗？
+    - question: 关于“多次撤回消息”，请给我一个明确的处理结果。
+    _source_case: 多次撤回消息
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::多次超字数回复
+    turns:
+    - question: 客户咨询“多次超字数回复”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“多次超字数回复”的问题，能再具体说明一下吗？
+    - question: 关于“多次超字数回复”，请给我一个明确的处理结果。
+    _source_case: 多次超字数回复
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::让客户自己到页面去看
+    turns:
+    - question: 客户咨询“让客户自己到页面去看”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“让客户自己到页面去看”的问题，能再具体说明一下吗？
+    - question: 关于“让客户自己到页面去看”，请给我一个明确的处理结果。
+    _source_case: 让客户自己到页面去看
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::连续发送链接
+    turns:
+    - question: 客户咨询“连续发送链接”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“连续发送链接”的问题，能再具体说明一下吗？
+    - question: 关于“连续发送链接”，请给我一个明确的处理结果。
+    _source_case: 连续发送链接
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::退差价或补偿未邀评
+    turns:
+    - question: 客户咨询“退差价或补偿未邀评”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“退差价或补偿未邀评”的问题，能再具体说明一下吗？
+    - question: 关于“退差价或补偿未邀评”，请给我一个明确的处理结果。
+    _source_case: 退差价或补偿未邀评
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::退货未挽留
+    turns:
+    - question: 客户咨询“退货未挽留”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“退货未挽留”的问题，能再具体说明一下吗？
+    - question: 关于“退货未挽留”，请给我一个明确的处理结果。
+    _source_case: 退货未挽留
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::重复让客户复述问题
+    turns:
+    - question: 客户咨询“重复让客户复述问题”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“重复让客户复述问题”的问题，能再具体说明一下吗？
+    - question: 关于“重复让客户复述问题”，请给我一个明确的处理结果。
+    _source_case: 重复让客户复述问题
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::质量问题未安抚
+    turns:
+    - question: 客户咨询“质量问题未安抚”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“质量问题未安抚”的问题，能再具体说明一下吗？
+    - question: 关于“质量问题未安抚”，请给我一个明确的处理结果。
+    _source_case: 质量问题未安抚
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::严重舆情未报备升级处理
+    turns:
+    - question: 客户咨询“严重舆情未报备升级处理”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“严重舆情未报备升级处理”的问题，能再具体说明一下吗？
+    - question: 关于“严重舆情未报备升级处理”，请给我一个明确的处理结果。
+    _source_case: 严重舆情未报备升级处理
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::问题应对不知变通
+    turns:
+    - question: 客户咨询“问题应对不知变通”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“问题应对不知变通”的问题，能再具体说明一下吗？
+    - question: 关于“问题应对不知变通”，请给我一个明确的处理结果。
+    _source_case: 问题应对不知变通
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::未主动帮客户做选择
+    turns:
+    - question: 客户咨询“未主动帮客户做选择”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“未主动帮客户做选择”的问题，能再具体说明一下吗？
+    - question: 关于“未主动帮客户做选择”，请给我一个明确的处理结果。
+    _source_case: 未主动帮客户做选择
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::多次让客户稍等
+    turns:
+    - question: 客户咨询“多次让客户稍等”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“多次让客户稍等”的问题，能再具体说明一下吗？
+    - question: 关于“多次让客户稍等”，请给我一个明确的处理结果。
+    _source_case: 多次让客户稍等
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::简单问题滥用核实留言
+    turns:
+    - question: 客户咨询“简单问题滥用核实留言”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“简单问题滥用核实留言”的问题，能再具体说明一下吗？
+    - question: 关于“简单问题滥用核实留言”，请给我一个明确的处理结果。
+    _source_case: 简单问题滥用核实留言
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客户不满多次查询
+    turns:
+    - question: 客户咨询“客户不满多次查询”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客户不满多次查询”的问题，能再具体说明一下吗？
+    - question: 关于“客户不满多次查询”，请给我一个明确的处理结果。
+    _source_case: 客户不满多次查询
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客服推卸责任
+    turns:
+    - question: 客户咨询“客服推卸责任”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客服推卸责任”的问题，能再具体说明一下吗？
+    - question: 关于“客服推卸责任”，请给我一个明确的处理结果。
+    _source_case: 客服推卸责任
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客服引导好评返现
+    turns:
+    - question: 客户咨询“客服引导好评返现”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客服引导好评返现”的问题，能再具体说明一下吗？
+    - question: 关于“客服引导好评返现”，请给我一个明确的处理结果。
+    _source_case: 客服引导好评返现
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::承诺发票内容开具其他品类
+    turns:
+    - question: 客户咨询“承诺发票内容开具其他品类”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“承诺发票内容开具其他品类”的问题，能再具体说明一下吗？
+    - question: 关于“承诺发票内容开具其他品类”，请给我一个明确的处理结果。
+    _source_case: 承诺发票内容开具其他品类
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客服辱骂讥讽买家
+    turns:
+    - question: 客户咨询“客服辱骂讥讽买家”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客服辱骂讥讽买家”的问题，能再具体说明一下吗？
+    - question: 关于“客服辱骂讥讽买家”，请给我一个明确的处理结果。
+    _source_case: 客服辱骂讥讽买家
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客服使用涉及虚假宣传、欺诈用词
+    turns:
+    - question: 客户咨询“客服使用涉及虚假宣传、欺诈用词”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客服使用涉及虚假宣传、欺诈用词”的问题，能再具体说明一下吗？
+    - question: 关于“客服使用涉及虚假宣传、欺诈用词”，请给我一个明确的处理结果。
+    _source_case: 客服使用涉及虚假宣传、欺诈用词
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客服态度差
+    turns:
+    - question: 客户咨询“客服态度差”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客服态度差”的问题，能再具体说明一下吗？
+    - question: 关于“客服态度差”，请给我一个明确的处理结果。
+    _source_case: 客服态度差
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客服催客离店
+    turns:
+    - question: 客户咨询“客服催客离店”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客服催客离店”的问题，能再具体说明一下吗？
+    - question: 关于“客服催客离店”，请给我一个明确的处理结果。
+    _source_case: 客服催客离店
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::反问质疑客户
+    turns:
+    - question: 客户咨询“反问质疑客户”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“反问质疑客户”的问题，能再具体说明一下吗？
+    - question: 关于“反问质疑客户”，请给我一个明确的处理结果。
+    _source_case: 反问质疑客户
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客服表示图片与实物不符
+    turns:
+    - question: 客户咨询“客服表示图片与实物不符”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客服表示图片与实物不符”的问题，能再具体说明一下吗？
+    - question: 关于“客服表示图片与实物不符”，请给我一个明确的处理结果。
+    _source_case: 客服表示图片与实物不符
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客服诋毁自家店铺
+    turns:
+    - question: 客户咨询“客服诋毁自家店铺”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客服诋毁自家店铺”的问题，能再具体说明一下吗？
+    - question: 关于“客服诋毁自家店铺”，请给我一个明确的处理结果。
+    _source_case: 客服诋毁自家店铺
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客服引导客户线下付款
+    turns:
+    - question: 客户咨询“客服引导客户线下付款”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客服引导客户线下付款”的问题，能再具体说明一下吗？
+    - question: 关于“客服引导客户线下付款”，请给我一个明确的处理结果。
+    _source_case: 客服引导客户线下付款
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客服发送违禁词
+    turns:
+    - question: 客户咨询“客服发送违禁词”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客服发送违禁词”的问题，能再具体说明一下吗？
+    - question: 关于“客服发送违禁词”，请给我一个明确的处理结果。
+    _source_case: 客服发送违禁词
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::催拍催付时机不当
+    turns:
+    - question: 客户咨询“催拍催付时机不当”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“催拍催付时机不当”的问题，能再具体说明一下吗？
+    - question: 关于“催拍催付时机不当”，请给我一个明确的处理结果。
+    _source_case: 催拍催付时机不当
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客户咨询凑单未推荐
+    turns:
+    - question: 客户咨询“客户咨询凑单未推荐”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客户咨询凑单未推荐”的问题，能再具体说明一下吗？
+    - question: 关于“客户咨询凑单未推荐”，请给我一个明确的处理结果。
+    _source_case: 客户咨询凑单未推荐
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客户犹豫未挽留
+    turns:
+    - question: 客户咨询“客户犹豫未挽留”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客户犹豫未挽留”的问题，能再具体说明一下吗？
+    - question: 关于“客户犹豫未挽留”，请给我一个明确的处理结果。
+    _source_case: 客户犹豫未挽留
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::客户索要商品链接未发送
+    turns:
+    - question: 客户咨询“客户索要商品链接未发送”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“客户索要商品链接未发送”的问题，能再具体说明一下吗？
+    - question: 关于“客户索要商品链接未发送”，请给我一个明确的处理结果。
+    _source_case: 客户索要商品链接未发送
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::未主动推荐活动
+    turns:
+    - question: 客户咨询“未主动推荐活动”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“未主动推荐活动”的问题，能再具体说明一下吗？
+    - question: 关于“未主动推荐活动”，请给我一个明确的处理结果。
+    _source_case: 未主动推荐活动
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::未打消客户价格顾虑
+    turns:
+    - question: 客户咨询“未打消客户价格顾虑”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“未打消客户价格顾虑”的问题，能再具体说明一下吗？
+    - question: 关于“未打消客户价格顾虑”，请给我一个明确的处理结果。
+    _source_case: 未打消客户价格顾虑
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::缺货未推荐相似款
+    turns:
+    - question: 客户咨询“缺货未推荐相似款”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“缺货未推荐相似款”的问题，能再具体说明一下吗？
+    - question: 关于“缺货未推荐相似款”，请给我一个明确的处理结果。
+    _source_case: 缺货未推荐相似款
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::未催拍
+    turns:
+    - question: 客户咨询“未催拍”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“未催拍”的问题，能再具体说明一下吗？
+    - question: 关于“未催拍”，请给我一个明确的处理结果。
+    _source_case: 未催拍
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::质量问题未提供处理方案
+    turns:
+    - question: 客户咨询“质量问题未提供处理方案”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“质量问题未提供处理方案”的问题，能再具体说明一下吗？
+    - question: 关于“质量问题未提供处理方案”，请给我一个明确的处理结果。
+    _source_case: 质量问题未提供处理方案
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::质量问题未解释产生原因
+    turns:
+    - question: 客户咨询“质量问题未解释产生原因”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“质量问题未解释产生原因”的问题，能再具体说明一下吗？
+    - question: 关于“质量问题未解释产生原因”，请给我一个明确的处理结果。
+    _source_case: 质量问题未解释产生原因
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::质量问题未核对照片
+    turns:
+    - question: 客户咨询“质量问题未核对照片”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“质量问题未核对照片”的问题，能再具体说明一下吗？
+    - question: 关于“质量问题未核对照片”，请给我一个明确的处理结果。
+    _source_case: 质量问题未核对照片
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::退款原因引导错误
+    turns:
+    - question: 客户咨询“退款原因引导错误”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“退款原因引导错误”的问题，能再具体说明一下吗？
+    - question: 关于“退款原因引导错误”，请给我一个明确的处理结果。
+    _source_case: 退款原因引导错误
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::退货退款未提供解决方案
+    turns:
+    - question: 客户咨询“退货退款未提供解决方案”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“退货退款未提供解决方案”的问题，能再具体说明一下吗？
+    - question: 关于“退货退款未提供解决方案”，请给我一个明确的处理结果。
+    _source_case: 退货退款未提供解决方案
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::少发漏发未核实
+    turns:
+    - question: 客户咨询“少发漏发未核实”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“少发漏发未核实”的问题，能再具体说明一下吗？
+    - question: 关于“少发漏发未核实”，请给我一个明确的处理结果。
+    _source_case: 少发漏发未核实
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::错发未核实
+    turns:
+    - question: 客户咨询“错发未核实”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“错发未核实”的问题，能再具体说明一下吗？
+    - question: 关于“错发未核实”，请给我一个明确的处理结果。
+    _source_case: 错发未核实
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::快递破损未核实
+    turns:
+    - question: 客户咨询“快递破损未核实”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“快递破损未核实”的问题，能再具体说明一下吗？
+    - question: 关于“快递破损未核实”，请给我一个明确的处理结果。
+    _source_case: 快递破损未核实
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::登记拦截未告知客户拒收
+    turns:
+    - question: 客户咨询“登记拦截未告知客户拒收”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“登记拦截未告知客户拒收”的问题，能再具体说明一下吗？
+    - question: 关于“登记拦截未告知客户拒收”，请给我一个明确的处理结果。
+    _source_case: 登记拦截未告知客户拒收
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::解决方案不满
+    turns:
+    - question: 客户咨询“解决方案不满”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“解决方案不满”的问题，能再具体说明一下吗？
+    - question: 关于“解决方案不满”，请给我一个明确的处理结果。
+    _source_case: 解决方案不满
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
+  - name: official_quality_points::主动引导客户退货
+    turns:
+    - question: 客户咨询“主动引导客户退货”，请问这种情况应该怎么处理？
+    - question: 如果现在仍然遇到“主动引导客户退货”的问题，能再具体说明一下吗？
+    - question: 关于“主动引导客户退货”，请给我一个明确的处理结果。
+    _source_case: 主动引导客户退货
+    _source_file: data/answer/regression/official_quality_points_cases.yaml
   - name: basic_reply_smoke::recommend_shampoo
     questions:
     - 推荐一款洗发水
