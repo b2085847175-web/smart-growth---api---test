@@ -104,67 +104,31 @@ $env:ANSWER_SUITES = "main_flow,context,multiturn"
 
 ## answer 入口
 
-入口映射统一维护在 `config/answer_entries.py`，共四个入口：
+入口映射统一维护在 `config/answer_entries.py`，共三个入口：
 
 | entry | 数据范围 | 收集到的用例数 | 说明 |
 |---|---|---:|---|
-| `key` | 精简回归集 | **218** | **Jenkins 每日任务默认**，199 条数据用例 + 19 个单测 |
 | `daily` | `data/answer/daily` 里 1 个文件 | 135 | 116 条数据用例 + 19 个单测 |
 | `regression` | regression + smoke | 1221 | 1202 条 + 19 个单测 |
-| `all` | `data/answer` 下全部 dev 数据 | 2935 | 2916 条 + 19 个单测，需要时手动跑 |
+| `all` | `data/answer` 下全部 dev 数据 | 2935 | 2916 条 + 19 个单测 |
 
 （收集数 = 数据用例 + `test_answer_yaml.py` 里那 19 个不发请求的单元测试）
 
-### key —— 精简回归集
+### official_quality_points 已移除断言
 
-`all` 有 2916 条，日常跑不完。`key` 是从里面抽出来的约 200 条，选材口径：
+`data/answer/regression/official_quality_points_cases.yaml` 的 expect 已全部移除，
+`assertions` 和 `quality` 都改为 `false`，现在只跑接口、不判内容。
 
-- **人工复核过的用例优先**（`ai_quality_tag_review_context_cases.yaml` 里带
-  `tag_review` 字段的 20 条全部纳入）。
-- **KB 场景分类按分类占比 + 场景轮转抽样**（60 条覆盖 60 个不同场景，各分类比例
-  与原文件一致）。它是目前**唯一带有效业务断言的大块数据**。
-- 真实质检问题会话、使用说明场景、冒烟用例各取少量。
-- `official_quality_points_cases.yaml` 取 70 条，但它已无断言（见下），归在
-  `key_smoke` 组。
+原因：原先每条断言 `expect.scene` 命中同名二级质检点，实测 80 条 **100% 失败**，
+统一报 `stats.scene_knowledge missing expected scene: <质检点名称>`。而同为场景
+断言的 `all_categories` 60 条只挂了 1 条 —— 断言机制和 dev 环境都是好的，问题
+出在这批由「官方质检点最终版.xlsx」自动生成的期望上，没做过有效性验证。
 
-两个文件的分工：`key_assertions`（111 条，`quality/assertions` 都开）和
-`key_smoke`（88 条，都关）。
+`quality` 也必须关：runner 在 `quality=true` 时会无条件
+`assert selected_record is not None`，那同样是一条会失败的断言。
 
-由 `scripts/build_key_regression_cases.py` 生成，源数据更新后重跑即可：
-
-```powershell
-.\.venv\Scripts\python.exe scripts\build_key_regression_cases.py --dry-run   # 先看选材
-.\.venv\Scripts\python.exe scripts\build_key_regression_cases.py             # 实际生成
-```
-
-生成的用例名带来源前缀（如 `official_quality_points::未发送欢迎语`），并保留
-`_source_file` / `_source_case` 两个字段便于追溯。
-
-**为什么分成 `key_assertions.yaml` 和 `key_smoke.yaml` 两个文件**：runner 里
-`quality: true` 表示每条用例都必须匹配到质检记录，否则判失败。把原本
-`quality: false` 的用例混进 `quality: true` 的 suite 会产生虚假失败，所以按
-质检开关分开。
-
-#### 实测表现（2026-09-15，dev 环境，4 并发）
-
-```
-73 failed, 145 passed in 733.40s      ← 12 分 13 秒
-```
-
-失败集中在 `official_quality_points_cases.yaml` 抽样出来的那 70 条，统一报
-`stats.scene_knowledge missing expected scene: <质检点名称>`。
-
-**结论：是用例本身不成立，不是 AI 回归问题。** 依据是 `all_categories` 的 60 条
-同样断言场景命中，只挂了 1 条 —— 断言机制和 dev 环境都是好的，问题只出在这批
-自动生成的数据上。它们由「官方质检点最终版.xlsx」生成，期望是"三轮提问里直接
-包含质检点名称，就应命中同名知识场景"，这个对应关系没有做过有效性验证。
-
-**处理：该文件的 expect 已全部移除**，`assertions` 和 `quality` 都改为 `false`，
-现在只跑接口不判内容（`quality` 也必须关：runner 在 `quality=true` 时会无条件
-`assert selected_record is not None`，那同样是一条会失败的断言）。
-
-因此这个文件同时被 `regression` 和 `all` 两个入口引用，那两个入口跑这 80 条时
-也不再判内容了。精简集里它被归到 `key_smoke`（无断言组）。
+注意这个文件同时被 `regression` 和 `all` 两个入口引用，那两个入口跑这 80 条时
+也不再判内容了。
 
 ### all 的两条口径
 
@@ -257,71 +221,18 @@ suite 策略写在 YAML 文件头部：
 - **注意**：本地 `.env` 里当前是 `ENV=console`。任何新写的、不声明 `target_env`
   的 YAML 都会落到生产环境。新增数据文件时务必显式写上 `target_env`。
 
-没有 `.env` 时也能跑：`AI_BASE_URL_DEV`、`CHAT_PLATFORM` 这类在 `config/env.yaml`
-里都有默认值，账号密码由 Jenkins 凭据注入。已实测验证。
+没有 `.env` 时部分配置仍可用：`AI_BASE_URL_DEV`、`CHAT_PLATFORM` 这类在
+`config/env.yaml` 里都有默认值。但**登录账号密码必须由 `.env` 或环境变量提供**，
+缺了会在 `load_context_runtime` 里直接抛 `ValueError`。
 
-## Jenkins 定时回归
+### 本地跑全量
 
-`Jenkinsfile` 是声明式流水线，每天 02:30（Jenkins 服务器时区）跑 `all` 入口的
-2916 条用例，用 `pytest-xdist` 并行。
-
-### 节点要求
-
-- Windows 节点（脚本按 `.venv\Scripts\python.exe` 的布局写），agent label 为 `windows`。
-- 节点上 `python` 要在 `PATH` 里，用于首次创建 venv。
-- venv 建在 workspace 之外（`C:\jenkins-tools\venv-answer-test`），构建之间复用，
-  只有 `requirements.txt` 的 SHA256 变化时才重装依赖。换路径改 Jenkinsfile 里的
-  `VENV_DIR`。
-
-### 需要的凭据
-
-在 Jenkins 里建好这几条，否则对应环节会失败（通知环节失败不影响构建结论）：
-
-| 凭据 ID | 类型 | 用途 |
-|---|---|---|
-| `zhiyan-dev-login` | Username/Password | 注入 `LOGIN_ACCOUNT_DEV` / `LOGIN_PASSWORD_DEV` |
-| `answer-wecom-webhook` | Secret text | 企业微信群机器人 webhook |
-| `answer-dingtalk-webhook` | Secret text | 钉钉群机器人 webhook |
-| `answer-dingtalk-secret` | Secret text | 钉钉机器人加签密钥（没开加签就留空） |
-
-凭据注入的环境变量**优先于**仓库里的 `.env`，这是 `config/project_env.py` 里
-`reload_project_env` 的既定行为，不需要改代码。钉钉机器人如果开了安全设置，
-记得把自定义关键词设成消息里出现的词（例如 `answer`）。
-
-### 构建参数
-
-| 参数 | 默认 | 说明 |
-|---|---|---|
-| `ENTRY` | `all` | 执行入口，可选 all / daily / regression |
-| `WORKERS` | `8` | pytest-xdist 并发进程数 |
-| `COLLECT_ONLY` | false | 只做收集校验，不发请求，改数据文件后可以先跑这个 |
-| `NOTIFY_ON_SUCCESS` | true | 关掉则只在失败时推送 |
-
-### 流水线阶段
-
-```
-Workspace → Prepare python env → Validate data → Unit tests → Run answer cases
-```
-
-- `Validate data` 会把收集到的用例数和该入口的下限比对，低于下限直接失败 ——
-  防止"数据文件没注册进 `config/answer_entries.py`，跑绿了但实际没跑"。
-- `Unit tests` 跑 19 个不发请求的纯逻辑单测，先于接口用例。它挂了说明是环境或代码
-  问题，不必再花两小时打接口，也能避免把基础设施故障误读成 AI 回复不稳定。
-- 两个测试文件（`test_answer_yaml.py` / `test_daily_usage.py`）都读 `ANSWER_ENTRY`，
-  必须分开调用，否则同一份数据会被加载两遍。
-
-### 通知
-
-`scripts/notify_ci.py` 解析 JUnit XML，把失败摘要推到企微和钉钉：
+2916 条串行要几小时，用 `pytest-xdist` 并行（`requirements.txt` 里已包含）：
 
 ```powershell
-.\.venv\Scripts\python.exe scripts\notify_ci.py `
-    --junit reports\jenkins\junit.xml --entry all --status FAILURE `
-    --duration-seconds 4920 --build-number 128 --build-url http://jenkins/job/answer-daily/128/ `
-    --wecom-webhook $env:WECOM_WEBHOOK --dingtalk-webhook $env:DINGTALK_WEBHOOK `
-    --dingtalk-secret $env:DINGTALK_SECRET
+$env:ANSWER_ENTRY = "all"
+.\.venv\Scripts\python.exe run_tests.py --env dev --pattern "test_answer_yaml.py" -n 4 -v
 ```
 
-加 `--dry-run` 只打印消息不发送，本地调试用。消息会按企业微信 4096 字节的上限
-自动截断失败明细，超出部分指向 Jenkins 构建页。
+实测参考：4 并发跑 199 条约 12 分钟。
 

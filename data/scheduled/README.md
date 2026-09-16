@@ -58,9 +58,8 @@
   不会混入 `data/answer/` 的日常调试数据。
 - 5 个 suite 当前均保持 `mode: sequential`,每日按顺序执行,实际同时运行的 Case 为 1 个,
   用于控制接口压力;如需调整,应先经过试运行确认。
-- 项目根目录的 `Jenkinsfile` 负责每天触发、锁定 `dev/585`、执行收集检查、运行任务和归档
-  `reports/scheduled/` 下的 JUnit 报告。
-- Jenkins 凭据 ID 默认写为 `zhiyan-dev-login`,需要在 Jenkins 中配置为 dev 环境测试账号密码。
+- 本目录的数据当前**没有接入任何定时任务**。原先的 `Jenkinsfile` 已随 Jenkins 一起移除，
+  需要重跑时手工执行本目录的用例即可。
 - 若之后要开启场景命中校验:给 `01_scene_questions.yaml` 的 case 加回
   `expect.scene: <scene_name>` 并把该文件 suite 的 `assertions`/`quality` 改为 `true`。
 
@@ -70,5 +69,5 @@
 .\.venv\Scripts\python.exe -m pytest testcases\answer\test_scheduled_answer_yaml.py --collect-only -q
 ```
 
-正式执行应由 Jenkins 使用同一个测试文件,并通过 Jenkins 凭据提供
-`LOGIN_ACCOUNT_DEV` / `LOGIN_PASSWORD_DEV`。
+正式执行需要提供 `LOGIN_ACCOUNT_DEV` / `LOGIN_PASSWORD_DEV`（放在 `.env` 里，
+或作为环境变量传入）。
